@@ -1,0 +1,1339 @@
+{
+  "utilitarianism": {
+    "word": "utilitarianism",
+    "phonetic": "/ˌjuːtɪlɪˈteriənɪzəm/",
+    "pos": "n.",
+    "def_cn": "功利主义，功利论（以多数人的最大利益和幸福为衡量正义的标准）",
+    "contexts": [
+      {
+        "source_id": "ep01",
+        "source_title": "第 01 集：杀人的道德侧面 / 海难食人案司法审判",
+        "sentence": "Bentham's utilitarianism claims that the highest principle of morality is to maximize the general welfare.",
+        "trans": "边沁的功利主义认为，最高的道德原则就是实现普遍福利的最大化。",
+        "audio_url": "/assets/audio/ep01_utilitarianism.mp3"
+      },
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：生命定价与快乐计量",
+        "sentence": "The central challenge to utilitarianism is whether it respects individual rights or merely aggregates preferences.",
+        "trans": "对功利主义的核心挑战在于它是否尊重个人权利，还是仅仅将所有偏好相加。",
+        "audio_url": "/assets/audio/ep02_utilitarianism_ctx2.mp3"
+      },
+      {
+        "source_id": "bilibili_justice_review",
+        "source_title": "Bilibili 研讨课：罗翔解析公正与法治",
+        "sentence": "Utilitarianism cannot be the sole foundation of criminal law, because justice requires moral boundaries.",
+        "trans": "功利主义不能作为刑法的唯一基石，因为正义需要道德底线。",
+        "audio_url": "/assets/audio/bili_utilitarianism_ctx3.mp3"
+      },
+      {
+        "source_id": "custom_1789528228",
+        "source_title": "Bilibili 哲学与法理研讨课：罗翔解析公正与功利主义",
+        "sentence": "In our legal seminar today, we examine the deep philosophical debate between utilitarianism and deontological ethics.",
+        "trans": "在今天的法律研讨会上，我们审视功利主义与义务论伦理学之间深刻的哲学辩论。",
+        "audio_url": "/assets/audio/custom_1789528228_utilitarianism.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 1,
+      "today_seconds": 0,
+      "total_seconds": 18,
+      "status": "consolidating",
+      "last_rating": "good",
+      "last_reviewed_at": "2026-09-16 12:09:46"
+    }
+  },
+  "consequentialist": {
+    "word": "consequentialist",
+    "phonetic": "/ˌkɑːnsəˈkwenʃəlɪst/",
+    "pos": "adj./n.",
+    "def_cn": "后果主义的，结果论的；后果论者（认为行为的对错完全取决于其结果）",
+    "contexts": [
+      {
+        "source_id": "ep01",
+        "source_title": "第 01 集：杀人的道德侧面 / 海难食人案司法审判",
+        "sentence": "Consequentialist moral reasoning locates morality in the consequences of an act, in the state of the world that will result from the thing you do.",
+        "trans": "后果主义道德推理把道德定位在一个行为的后果上，即你的行为所导致的未来世界状态。",
+        "audio_url": "/assets/audio/ep01_consequentialist.mp3"
+      },
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：生命定价与快乐计量",
+        "sentence": "A purely consequentialist calculation of human lives risks treating people as mere instruments for economic gain.",
+        "trans": "对人类生命的纯粹后果论计算，极易将人降格为追求经济利益的单纯工具。",
+        "audio_url": "/assets/audio/ep02_consequentialist_ctx2.mp3"
+      },
+      {
+        "source_id": "custom_1789528228",
+        "source_title": "Bilibili 哲学与法理研讨课：罗翔解析公正与功利主义",
+        "sentence": "However, in jurisprudence, critics argue that purely consequentialist reasoning fails to respect human dignity.",
+        "trans": "然而，在法理学中，批评者认为纯粹后果主义的推理未能尊重人的尊严。",
+        "audio_url": "/assets/audio/custom_1789528228_consequentialist.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "learning",
+      "last_rating": "new",
+      "last_reviewed_at": null
+    }
+  },
+  "categorical": {
+    "word": "categorical",
+    "phonetic": "/ˌkætəˈɡɔːrɪkl/",
+    "pos": "adj.",
+    "def_cn": "绝对的，明确的，无条件的（不依赖任何后果的内在道德原则）",
+    "contexts": [
+      {
+        "source_id": "ep01",
+        "source_title": "第 01 集：杀人的道德侧面 / 海难食人案司法审判",
+        "sentence": "Categorical moral reasoning locates morality in certain duties and rights, regardless of the consequences.",
+        "trans": "绝对主义道德推理将道德定位在某些职责和权利中，无论其后果如何。",
+        "audio_url": "/assets/audio/ep01_categorical.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "learning",
+      "last_rating": "new",
+      "last_reviewed_at": null
+    }
+  },
+  "trolley": {
+    "word": "trolley",
+    "phonetic": "/ˈtrɑːli/",
+    "pos": "n.",
+    "def_cn": "有轨电车（经典思想实验的主角）",
+    "contexts": [
+      {
+        "source_id": "ep01",
+        "source_title": "第 01 集：杀人的道德侧面 / 海难食人案司法审判",
+        "sentence": "Imagine you are the driver of a trolley car hurtling down the track at 60 miles an hour.",
+        "trans": "想象你是一名有轨电车司机，电车正以时速 60 英里沿着轨道疾驰。",
+        "audio_url": "/assets/audio/ep01_trolley.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "learning",
+      "last_rating": "new",
+      "last_reviewed_at": null
+    }
+  },
+  "sidetrack": {
+    "word": "sidetrack",
+    "phonetic": "/ˈsaɪdtræk/",
+    "pos": "n./v.",
+    "def_cn": "侧线轨道，支轨；使转入旁轨，使分心",
+    "contexts": [
+      {
+        "source_id": "ep01",
+        "source_title": "第 01 集：杀人的道德侧面 / 海难食人案司法审判",
+        "sentence": "Off to the right, there is a side track, and on that track there is only one worker.",
+        "trans": "在右侧有一条侧轨，在那条轨道上只有一名工人在干活。",
+        "audio_url": "/assets/audio/ep01_sidetrack.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "learning",
+      "last_rating": "new",
+      "last_reviewed_at": null
+    }
+  },
+  "conundrum": {
+    "word": "conundrum",
+    "phonetic": "/kəˈnʌndrəm/",
+    "pos": "n.",
+    "def_cn": "难题，令人困惑的问题",
+    "contexts": [
+      {
+        "source_id": "ep01",
+        "source_title": "第 01 集：杀人的道德侧面 / 海难食人案司法审判",
+        "sentence": "These hypothetical scenarios create a philosophical conundrum that tests our moral intuitions.",
+        "trans": "这些假设的情景构成了一个哲学难题，考验着我们的道德直觉。",
+        "audio_url": "/assets/audio/ep01_conundrum.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "learning",
+      "last_rating": "new",
+      "last_reviewed_at": null
+    }
+  },
+  "dilemma": {
+    "word": "dilemma",
+    "phonetic": "/daɪˈlemə/",
+    "pos": "n.",
+    "def_cn": "进退两难的困境，尴尬处境",
+    "contexts": [
+      {
+        "source_id": "ep01",
+        "source_title": "第 01 集：杀人的道德侧面 / 海难食人案司法审判",
+        "sentence": "Now, let's consider another moral dilemma: what if you are an onlooker standing on a bridge?",
+        "trans": "现在，让我们考虑另一个道德困境：如果你是一个站在桥上的旁观者呢？",
+        "audio_url": "/assets/audio/ep01_dilemma.mp3"
+      },
+      {
+        "source_id": "ep03",
+        "source_title": "第 03 集：自由选择权与财富再分配",
+        "sentence": "The libertarian dilemma arises when individual property rights directly collide with the survival needs of the impoverished.",
+        "trans": "当个人财产权与贫困者的生存需求直接冲突时，自由至上主义的道德困境便由此显现。",
+        "audio_url": "/assets/audio/ep03_dilemma_ctx2.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "learning",
+      "last_rating": "new",
+      "last_reviewed_at": null
+    }
+  },
+  "onlooker": {
+    "word": "onlooker",
+    "phonetic": "/ˈɑːnlʊkər/",
+    "pos": "n.",
+    "def_cn": "旁观者",
+    "contexts": [
+      {
+        "source_id": "ep01",
+        "source_title": "第 01 集：杀人的道德侧面 / 海难食人案司法审判",
+        "sentence": "As an onlooker standing on a bridge, would you push the very fat man to stop the runaway trolley?",
+        "trans": "作为站在桥上的旁观者，你会把那个大胖子推下去去挡住失控的电车吗？",
+        "audio_url": "/assets/audio/ep01_onlooker.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "learning",
+      "last_rating": "new",
+      "last_reviewed_at": null
+    }
+  },
+  "deliberation": {
+    "word": "deliberation",
+    "phonetic": "/dɪˌlɪbəˈreɪʃn/",
+    "pos": "n.",
+    "def_cn": "深思熟虑，慎重考量，审议",
+    "contexts": [
+      {
+        "source_id": "ep01",
+        "source_title": "第 01 集：杀人的道德侧面 / 海难食人案司法审判",
+        "sentence": "Moral reflection consists in a back-and-forth between our judgments and the principles we arrive at upon deliberation.",
+        "trans": "道德反思就在于我们的直觉判断与经过深思熟虑后得出的原则之间来回往复的思考。",
+        "audio_url": "/assets/audio/ep01_deliberation.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "learning",
+      "last_rating": "new",
+      "last_reviewed_at": null
+    }
+  },
+  "cannibalism": {
+    "word": "cannibalism",
+    "phonetic": "/ˈkænɪbəlɪzəm/",
+    "pos": "n.",
+    "def_cn": "同类相食，食人行为",
+    "contexts": [
+      {
+        "source_id": "ep01",
+        "source_title": "第 01 集：杀人的道德侧面 / 海难食人案司法审判",
+        "sentence": "In the 19th-century legal case of Dudley and Stephens, the crew members resorted to cannibalism to stay alive.",
+        "trans": "在19世纪达德利和斯蒂芬斯案的司法审判中，船员们为了活命诉诸了同类相食。",
+        "audio_url": "/assets/audio/ep01_cannibalism.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "learning",
+      "last_rating": "new",
+      "last_reviewed_at": null
+    }
+  },
+  "shipwreck": {
+    "word": "shipwreck",
+    "phonetic": "/ˈʃɪprek/",
+    "pos": "n./v.",
+    "def_cn": "海难，遇难船只；遭海难",
+    "contexts": [
+      {
+        "source_id": "ep01",
+        "source_title": "第 01 集：杀人的道德侧面 / 海难食人案司法审判",
+        "sentence": "After the shipwreck of the Mignonette, four crew members escaped in an open lifeboat.",
+        "trans": "在木犀草号遭海难沉没后，四名船员乘坐一艘敞篷救生艇逃生。",
+        "audio_url": "/assets/audio/ep01_shipwreck.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "learning",
+      "last_rating": "new",
+      "last_reviewed_at": null
+    }
+  },
+  "cabin boy": {
+    "word": "cabin boy",
+    "phonetic": "/ˈkæbɪn bɔɪ/",
+    "pos": "n.",
+    "def_cn": "船舱杂役，侍役男童（达德利案受害者 Richard Parker）",
+    "contexts": [
+      {
+        "source_id": "ep01",
+        "source_title": "第 01 集：杀人的道德侧面 / 海难食人案司法审判",
+        "sentence": "Richard Parker was the seventeen-year-old cabin boy on the ill-fated vessel.",
+        "trans": "理查德·帕克是那艘不幸船只上一位17岁的船舱侍役。",
+        "audio_url": "/assets/audio/ep01_cabin_boy.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "learning",
+      "last_rating": "new",
+      "last_reviewed_at": null
+    }
+  },
+  "castaway": {
+    "word": "castaway",
+    "phonetic": "/ˈkæstəweɪ/",
+    "pos": "n.",
+    "def_cn": "遇难漂流者，被遗弃的人",
+    "contexts": [
+      {
+        "source_id": "ep01",
+        "source_title": "第 01 集：杀人的道德侧面 / 海难食人案司法审判",
+        "sentence": "The castaways had nothing to eat except two cans of preserved turnips and no fresh water.",
+        "trans": "漂流在海上的幸存者们除两罐腌芜菁外一无所有，而且没有淡水。",
+        "audio_url": "/assets/audio/ep01_castaway.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "learning",
+      "last_rating": "new",
+      "last_reviewed_at": null
+    }
+  },
+  "ration": {
+    "word": "ration",
+    "phonetic": "/ˈræʃn/",
+    "pos": "n./v.",
+    "def_cn": "配给量，定量；按定额分配",
+    "contexts": [
+      {
+        "source_id": "ep01",
+        "source_title": "第 01 集：杀人的道德侧面 / 海难食人案司法审判",
+        "sentence": "They strictly rationed the turnip and whatever rainwater they could collect.",
+        "trans": "他们严格配给所剩无几的芜菁以及能收集到的雨水。",
+        "audio_url": "/assets/audio/ep01_ration.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "learning",
+      "last_rating": "new",
+      "last_reviewed_at": null
+    }
+  },
+  "subsist": {
+    "word": "subsist",
+    "phonetic": "/səbˈsɪst/",
+    "pos": "v.",
+    "def_cn": "维持生计，勉强生存",
+    "contexts": [
+      {
+        "source_id": "ep01",
+        "source_title": "第 01 集：杀人的道德侧面 / 海难食人案司法审判",
+        "sentence": "For several days, they subsisted on seawater, which made the boy violently ill.",
+        "trans": "连续几天，他们靠喝海水勉强度日，这使得那个男孩病重危急。",
+        "audio_url": "/assets/audio/ep01_subsist.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "learning",
+      "last_rating": "new",
+      "last_reviewed_at": null
+    }
+  },
+  "lottery": {
+    "word": "lottery",
+    "phonetic": "/ˈlɑːtəri/",
+    "pos": "n.",
+    "def_cn": "抽签，摸彩，抓阄",
+    "contexts": [
+      {
+        "source_id": "ep01",
+        "source_title": "第 01 集：杀人的道德侧面 / 海难食人案司法审判",
+        "sentence": "Someone suggested casting lots—a lottery to see who should be sacrificed to save the rest.",
+        "trans": "有人提议抓阄——抽签决定应该牺牲谁来拯救其余的人。",
+        "audio_url": "/assets/audio/ep01_lottery.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "learning",
+      "last_rating": "new",
+      "last_reviewed_at": null
+    }
+  },
+  "heinous": {
+    "word": "heinous",
+    "phonetic": "/ˈheɪnəs/",
+    "pos": "adj.",
+    "def_cn": "极其可恶的，令人发指的，十恶不赦的",
+    "contexts": [
+      {
+        "source_id": "ep01",
+        "source_title": "第 01 集：杀人的道德侧面 / 海难食人案司法审判",
+        "sentence": "Was what they did a heinous murder, or an act justified by extreme necessity?",
+        "trans": "他们的所作所为是令人发指的谋杀，还是因极端紧急避险而合理的行为？",
+        "audio_url": "/assets/audio/ep01_heinous.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "learning",
+      "last_rating": "new",
+      "last_reviewed_at": null
+    }
+  },
+  "necessity": {
+    "word": "necessity",
+    "phonetic": "/nəˈsesəti/",
+    "pos": "n.",
+    "def_cn": "必要性；【法】紧急避险原则（defense of necessity）",
+    "contexts": [
+      {
+        "source_id": "ep01",
+        "source_title": "第 01 集：杀人的道德侧面 / 海难食人案司法审判",
+        "sentence": "The defense argued necessity: that sacrificing one saved three lives, resulting in a better overall outcome.",
+        "trans": "辩护方主张紧急避险原则：牺牲一人保全了三条生命，产生了更好的整体结果。",
+        "audio_url": "/assets/audio/ep01_necessity.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "learning",
+      "last_rating": "new",
+      "last_reviewed_at": null
+    }
+  },
+  "culpability": {
+    "word": "culpability",
+    "phonetic": "/ˌkʌlpəˈbɪləti/",
+    "pos": "n.",
+    "def_cn": "有过失，有责任，可归责性",
+    "contexts": [
+      {
+        "source_id": "ep01",
+        "source_title": "第 01 集：杀人的道德侧面 / 海难食人案司法审判",
+        "sentence": "Did the extremity of their circumstances diminish their moral and legal culpability?",
+        "trans": "环境的极端严酷是否减轻了他们在道德和法律上的可归责性？",
+        "audio_url": "/assets/audio/ep01_culpability.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "learning",
+      "last_rating": "new",
+      "last_reviewed_at": null
+    }
+  },
+  "absolve": {
+    "word": "absolve",
+    "phonetic": "/əbˈzɑːlv/",
+    "pos": "v.",
+    "def_cn": "免除（责任、过错），赦免",
+    "contexts": [
+      {
+        "source_id": "ep01",
+        "source_title": "第 01 集：杀人的道德侧面 / 海难食人案司法审判",
+        "sentence": "Does consent absolve someone from the guilt of participating in taking a human life?",
+        "trans": "经过同意是否就能免除一个人参与剥夺人类生命的罪责？",
+        "audio_url": "/assets/audio/ep01_absolve.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "learning",
+      "last_rating": "new",
+      "last_reviewed_at": null
+    }
+  },
+  "skepticism": {
+    "word": "skepticism",
+    "phonetic": "/ˈskeptɪsɪzəm/",
+    "pos": "n.",
+    "def_cn": "怀疑态度，怀疑论",
+    "contexts": [
+      {
+        "source_id": "ep01",
+        "source_title": "第 01 集：杀人的道德侧面 / 海难食人案司法审判",
+        "sentence": "Moral skepticism is the temptation to conclude that there are no fixed moral truths.",
+        "trans": "道德怀疑论是一种容易让人倾向于断定世上不存在固定道德真理的心态。",
+        "audio_url": "/assets/audio/ep01_skepticism.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "learning",
+      "last_rating": "new",
+      "last_reviewed_at": null
+    }
+  },
+  "intrinsic": {
+    "word": "intrinsic",
+    "phonetic": "/ɪnˈtrɪnzɪk/",
+    "pos": "adj.",
+    "def_cn": "内在的，本质的，固有的",
+    "contexts": [
+      {
+        "source_id": "ep01",
+        "source_title": "第 01 集：杀人的道德侧面 / 海难食人案司法审判",
+        "sentence": "Does every human being possess an intrinsic moral worth that no calculation can outweigh?",
+        "trans": "是否每个人都拥有某种任何功利计算都无法逾越的内在道德价值？",
+        "audio_url": "/assets/audio/ep01_intrinsic.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "learning",
+      "last_rating": "new",
+      "last_reviewed_at": null
+    }
+  },
+  "utility": {
+    "word": "utility",
+    "phonetic": "/juːˈtɪləti/",
+    "pos": "n.",
+    "def_cn": "效用，功利（产生快乐或防止痛苦的能力）",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：生命定价的逻辑 / 如何衡量高级与低级快乐",
+        "sentence": "By 'utility' Bentham meant whatever produces pleasure or happiness, and prevents pain or suffering.",
+        "trans": "边沁所指的‘效用’，是指任何能产生快乐或幸福，并防止痛苦或苦难的事物。",
+        "audio_url": "/assets/audio/ep02_utility.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "learning",
+      "last_rating": "new",
+      "last_reviewed_at": null
+    }
+  },
+  "maximize": {
+    "word": "maximize",
+    "phonetic": "/ˈmæksɪmaɪz/",
+    "pos": "v.",
+    "def_cn": "使最大化，极大化",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：生命定价的逻辑 / 如何衡量高级与低级快乐",
+        "sentence": "The right thing to do, the just thing to do, is to maximize utility.",
+        "trans": "正确的、正义的做法，就是使效用最大化。",
+        "audio_url": "/assets/audio/ep02_maximize.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "learning",
+      "last_rating": "new",
+      "last_reviewed_at": null
+    }
+  },
+  "sovereign": {
+    "word": "sovereign",
+    "phonetic": "/ˈsɑːvrɪn/",
+    "pos": "adj./n.",
+    "def_cn": "至高无上的；君主，主宰者",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：生命定价的逻辑 / 如何衡量高级与低级快乐",
+        "sentence": "Nature has placed mankind under the governance of two sovereign masters, pain and pleasure.",
+        "trans": "大自然把人类置于两位至高无上的主宰之下：痛苦与快乐。",
+        "audio_url": "/assets/audio/ep02_sovereign.mp3"
+      },
+      {
+        "source_id": "ep03",
+        "source_title": "第 03 集：自由选择权与财富再分配",
+        "sentence": "A truly free individual possesses sovereign authority over their own person and faculties.",
+        "trans": "一个真正自由的人对其自身的人格与才能拥有至高无上的主权。",
+        "audio_url": "/assets/audio/ep03_sovereign_ctx2.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "learning",
+      "last_rating": "new",
+      "last_reviewed_at": null
+    }
+  },
+  "cost-benefit analysis": {
+    "word": "cost-benefit analysis",
+    "phonetic": "/kɔːst ˈbenɪfɪt əˈnæləsɪs/",
+    "pos": "n.",
+    "def_cn": "成本效益分析（将所有社会后果折算为货币进行权衡）",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：生命定价的逻辑 / 如何衡量高级与低级快乐",
+        "sentence": "The tobacco company Philip Morris did a cost-benefit analysis of smoking in the Czech Republic.",
+        "trans": "烟草巨头菲利普莫里斯公司在捷克做了一项关于吸烟的成本效益分析。",
+        "audio_url": "/assets/audio/ep02_cost_benefit_analysis.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "learning",
+      "last_rating": "new",
+      "last_reviewed_at": null
+    }
+  },
+  "actuary": {
+    "word": "actuary",
+    "phonetic": "/ˈæktʃueri/",
+    "pos": "n.",
+    "def_cn": "精算师，保险精算人员",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：生命定价的逻辑 / 如何衡量高级与低级快乐",
+        "sentence": "Actuaries calculate the monetary value of human life when determining insurance compensation.",
+        "trans": "精算师在确定保险赔偿额度时会计算人类生命的货币价值。",
+        "audio_url": "/assets/audio/ep02_actuary.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "learning",
+      "last_rating": "new",
+      "last_reviewed_at": null
+    }
+  },
+  "incommensurability": {
+    "word": "incommensurability",
+    "phonetic": "/ɪnˌkəmɛnʃərəˈbɪləti/",
+    "pos": "n.",
+    "def_cn": "不可通约性，无公度性（无法用单一尺度/货币衡量不同价值）",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：生命定价的逻辑 / 如何衡量高级与低级快乐",
+        "sentence": "Critics claim there is an incommensurability between the value of a human life and a monetary figure.",
+        "trans": "批评者认为，人类生命的价值与具体的金钱数字之间存在不可通约性。",
+        "audio_url": "/assets/audio/ep02_incommensurability.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "learning",
+      "last_rating": "new",
+      "last_reviewed_at": null
+    }
+  },
+  "commensurable": {
+    "word": "commensurable",
+    "phonetic": "/kəˈmenʃərəbl/",
+    "pos": "adj.",
+    "def_cn": "可用同一度量衡量的，可通约的",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：生命定价的逻辑 / 如何衡量高级与低级快乐",
+        "sentence": "Bentham believed all moral goods are commensurable on a single scale of pleasure and pain.",
+        "trans": "边沁认为所有道德善恶都可以统一放到痛苦与快乐这同一个尺度上来通约衡量。",
+        "audio_url": "/assets/audio/ep02_commensurable.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "learning",
+      "last_rating": "new",
+      "last_reviewed_at": null
+    }
+  },
+  "depravity": {
+    "word": "depravity",
+    "phonetic": "/dɪˈprævəti/",
+    "pos": "n.",
+    "def_cn": "堕落，道德败坏，邪恶",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：生命定价的逻辑 / 如何衡量高级与低级快乐",
+        "sentence": "Should the base pleasures of the Coliseum crowd outweigh the agony of Christian martyrs, or does that reward depravity?",
+        "trans": "古罗马斗兽场观众低俗的快感难道应该超过基督殉道者的痛苦吗？还是说这反而在奖赏堕落？",
+        "audio_url": "/assets/audio/ep02_depravity.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "learning",
+      "last_rating": "new",
+      "last_reviewed_at": null
+    }
+  },
+  "gladiator": {
+    "word": "gladiator",
+    "phonetic": "/ˈɡlædiˌeɪtər/",
+    "pos": "n.",
+    "def_cn": "古罗马角斗士",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：生命定价的逻辑 / 如何衡量高级与低级快乐",
+        "sentence": "In ancient Rome, gladiator fights entertained tens of thousands at the cost of human slaughter.",
+        "trans": "在古罗马，角斗士的生死搏斗以屠杀人命为代价取悦了成千上万的民众。",
+        "audio_url": "/assets/audio/ep02_gladiator.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "learning",
+      "last_rating": "new",
+      "last_reviewed_at": null
+    }
+  },
+  "degrade": {
+    "word": "degrade",
+    "phonetic": "/dɪˈɡreɪd/",
+    "pos": "v.",
+    "def_cn": "降低人格，侮辱，使堕落",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：生命定价的逻辑 / 如何衡量高级与低级快乐",
+        "sentence": "Does putting a dollar value on human life degrade human dignity?",
+        "trans": "给人类生命标上美元价格是否侮辱了人性的尊严？",
+        "audio_url": "/assets/audio/ep02_degrade.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "learning",
+      "last_rating": "new",
+      "last_reviewed_at": null
+    }
+  },
+  "qualitative": {
+    "word": "qualitative",
+    "phonetic": "/ˈkwɑːləteɪtɪv/",
+    "pos": "adj.",
+    "def_cn": "质量上的，定性的",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：生命定价的逻辑 / 如何衡量高级与低级快乐",
+        "sentence": "John Stuart Mill tried to introduce a qualitative distinction between higher and lower pleasures.",
+        "trans": "约翰·斯图尔特·密尔试图在高级快乐与低级快乐之间引入定性的质的区别。",
+        "audio_url": "/assets/audio/ep02_qualitative.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "learning",
+      "last_rating": "new",
+      "last_reviewed_at": null
+    }
+  },
+  "quantitative": {
+    "word": "quantitative",
+    "phonetic": "/ˈkwɑːntəteɪtɪv/",
+    "pos": "adj.",
+    "def_cn": "数量上的，定量的",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：生命定价的逻辑 / 如何衡量高级与低级快乐",
+        "sentence": "Bentham recognized only quantitative differences in pleasure: quantity of pleasure being equal, push-pin is as good as poetry.",
+        "trans": "边沁只承认快乐在数量上的差异：快乐的数量若相同，图钉游戏与诗歌一样美好。",
+        "audio_url": "/assets/audio/ep02_quantitative.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "learning",
+      "last_rating": "new",
+      "last_reviewed_at": null
+    }
+  },
+  "tyranny": {
+    "word": "tyranny",
+    "phonetic": "/ˈtɪrəni/",
+    "pos": "n.",
+    "def_cn": "暴政（tyranny of the majority 指多数人的暴政）",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：生命定价的逻辑 / 如何衡量高级与低级快乐",
+        "sentence": "A major criticism of utilitarianism is that it can justify the tyranny of the majority over individual rights.",
+        "trans": "对功利主义的一个重大批评是，它可以为多数人对个体权利施加暴政提供辩护。",
+        "audio_url": "/assets/audio/ep02_tyranny.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "learning",
+      "last_rating": "new",
+      "last_reviewed_at": null
+    }
+  },
+  "dissent": {
+    "word": "dissent",
+    "phonetic": "/dɪˈsent/",
+    "pos": "n./v.",
+    "def_cn": "异议，不同政见；持异议",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：生命定价的逻辑 / 如何衡量高级与低级快乐",
+        "sentence": "If utilitarianism rules, what protects the lonely dissenter who holds an unpopular view?",
+        "trans": "如果功利主义统治一切，谁来保护持有非主流异议的孤独异见者？",
+        "audio_url": "/assets/audio/ep02_dissent.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "learning",
+      "last_rating": "new",
+      "last_reviewed_at": null
+    }
+  },
+  "coercion": {
+    "word": "coercion",
+    "phonetic": "/koʊˈɜːrʒn/",
+    "pos": "n.",
+    "def_cn": "强迫，威逼，高压统治",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：生命定价的逻辑 / 如何衡量高级与低级快乐",
+        "sentence": "Using people as mere instruments for social welfare involves an unacceptable degree of coercion.",
+        "trans": "仅仅将人当作增进社会福利的工具，包含着不可接受的强迫程度。",
+        "audio_url": "/assets/audio/ep02_coercion.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "learning",
+      "last_rating": "new",
+      "last_reviewed_at": null
+    }
+  },
+  "indignity": {
+    "word": "indignity",
+    "phonetic": "/ɪnˈdɪɡnəti/",
+    "pos": "n.",
+    "def_cn": "侮辱，屈辱，有损尊严的举动",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：生命定价的逻辑 / 如何衡量高级与低级快乐",
+        "sentence": "Subjecting humans to a mere financial calculation inflicts an indignity upon their inherent value.",
+        "trans": "让人类屈从于纯粹的财务计算，是对其固有价值的侮辱。",
+        "audio_url": "/assets/audio/ep02_indignity.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "learning",
+      "last_rating": "new",
+      "last_reviewed_at": null
+    }
+  },
+  "gratification": {
+    "word": "gratification",
+    "phonetic": "/ˌɡrætɪfɪˈkeɪʃn/",
+    "pos": "n.",
+    "def_cn": "满足，喜悦，即时快感",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：生命定价的逻辑 / 如何衡量高级与低级快乐",
+        "sentence": "Immediate gratification from watching 'The Simpsons' might feel stronger than reading Shakespeare, but which is truly higher?",
+        "trans": "看《辛普森一家》获得的即时满足感可能比读莎士比亚更强烈，但究竟哪一种才是真正更高阶的呢？",
+        "audio_url": "/assets/audio/ep02_gratification.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "learning",
+      "last_rating": "new",
+      "last_reviewed_at": null
+    }
+  },
+  "repugnant": {
+    "word": "repugnant",
+    "phonetic": "/rɪˈpʌɡnənt/",
+    "pos": "adj.",
+    "def_cn": "令人反感的，令人作呕的",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：生命定价的逻辑 / 如何衡量高级与低级快乐",
+        "sentence": "Many people find the Ford Pinto memo morally repugnant because it priced life at $200,000.",
+        "trans": "许多人觉得福特平托汽车的内部备忘录在道德上令人作呕，因为它把一条人命标价为 20 万美元。",
+        "audio_url": "/assets/audio/ep02_repugnant.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "learning",
+      "last_rating": "new",
+      "last_reviewed_at": null
+    }
+  },
+  "counterbalance": {
+    "word": "counterbalance",
+    "phonetic": "/ˈkaʊntərbæləns/",
+    "pos": "v./n.",
+    "def_cn": "抗衡，抵消；起平衡作用的事物",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：生命定价的逻辑 / 如何衡量高级与低级快乐",
+        "sentence": "Can the economic benefits of cost-cutting counterbalance the loss of innocent human lives?",
+        "trans": "削减成本带来的经济利益能够抵消无辜生命的丧失吗？",
+        "audio_url": "/assets/audio/ep02_counterbalance.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "learning",
+      "last_rating": "new",
+      "last_reviewed_at": null
+    }
+  },
+  "surplus": {
+    "word": "surplus",
+    "phonetic": "/ˈsɜːrpləs/",
+    "pos": "n.",
+    "def_cn": "顺差，盈余，净胜值",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：生命定价的逻辑 / 如何衡量高级与低级快乐",
+        "sentence": "The utilitarian ideal is to choose whichever policy produces the greatest surplus of pleasure over pain.",
+        "trans": "功利主义的理想就是选择能够产生最大‘快乐超出痛苦之净顺差’的政策。",
+        "audio_url": "/assets/audio/ep02_surplus.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "learning",
+      "last_rating": "new",
+      "last_reviewed_at": null
+    }
+  },
+  "libertarianism": {
+    "word": "libertarianism",
+    "phonetic": "/ˌlɪbərˈteriənɪzəm/",
+    "pos": "n.",
+    "def_cn": "自由至上主义（主张极小政府与绝对自主所有权）",
+    "contexts": [
+      {
+        "source_id": "ep03",
+        "source_title": "第 03 集：自由选择权 / 谁拥有我的身体与劳动？",
+        "sentence": "Libertarians argue that government should not have the power to coerce people into helping others through redistributive taxation.",
+        "trans": "自由至上主义者主张，政府无权通过再分配税收强迫人们去救助他人。",
+        "audio_url": "/assets/audio/ep03_libertarianism.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "learning",
+      "last_rating": "new",
+      "last_reviewed_at": null
+    }
+  },
+  "redistribution": {
+    "word": "redistribution",
+    "phonetic": "/ˌriːdɪstrɪˈbjuːʃn/",
+    "pos": "n.",
+    "def_cn": "财富再分配，重新分配",
+    "contexts": [
+      {
+        "source_id": "ep03",
+        "source_title": "第 03 集：自由选择权 / 谁拥有我的身体与劳动？",
+        "sentence": "Robert Nozick claims that taxation of earnings from labor is on a par with forced labor, making redistribution unjust.",
+        "trans": "罗伯特·诺齐克声称，对劳动收入征税等同于强迫劳动，因此财富再分配是非正义的。",
+        "audio_url": "/assets/audio/ep03_redistribution.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "learning",
+      "last_rating": "new",
+      "last_reviewed_at": null
+    }
+  },
+  "paternalism": {
+    "word": "paternalism",
+    "phonetic": "/pəˈtɜːrnəlɪzəm/",
+    "pos": "n.",
+    "def_cn": "家长式统治，家长主义（国家为了公民好而立法强迫其行为，如强制系安全带）",
+    "contexts": [
+      {
+        "source_id": "ep03",
+        "source_title": "第 03 集：自由选择权 / 谁拥有我的身体与劳动？",
+        "sentence": "Libertarians reject paternalistic laws that prevent individuals from inflicting harm on themselves.",
+        "trans": "自由至上主义者拒绝为了防止个人对自己造成伤害而设立的家长式法律。",
+        "audio_url": "/assets/audio/ep03_paternalism.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "learning",
+      "last_rating": "new",
+      "last_reviewed_at": null
+    }
+  },
+  "self-ownership": {
+    "word": "self-ownership",
+    "phonetic": "/ˌself ˈoʊnərʃɪp/",
+    "pos": "n.",
+    "def_cn": "自我所有权（我拥有自己的身体、天赋与劳动所得）",
+    "contexts": [
+      {
+        "source_id": "ep03",
+        "source_title": "第 03 集：自由选择权 / 谁拥有我的身体与劳动？",
+        "sentence": "The moral crux of the libertarian claim is the fundamental idea of self-ownership.",
+        "trans": "自由至上主义主张的核心道德关键，就在于‘自我所有权’这一根本理念。",
+        "audio_url": "/assets/audio/ep03_self_ownership.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "learning",
+      "last_rating": "new",
+      "last_reviewed_at": null
+    }
+  },
+  "deontological ethics": {
+    "word": "deontological ethics",
+    "phonetic": "/ˌdiːɒntəˈlɒdʒɪkl ˈeθɪks/",
+    "pos": "n.",
+    "def_cn": "义务论伦理学（强调行为本身的对错而非后果的伦理理论）",
+    "contexts": [
+      {
+        "source_id": "custom_1789528228",
+        "source_title": "Bilibili 哲学与法理研讨课：罗翔解析公正与功利主义",
+        "sentence": "In our legal seminar today, we examine the deep philosophical debate between utilitarianism and deontological ethics.",
+        "trans": "在今天的法律研讨会上，我们审视功利主义与义务论伦理学之间深刻的哲学辩论。",
+        "audio_url": "/assets/audio/custom_1789528228_deontological_ethics.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "learning",
+      "last_rating": "new",
+      "last_reviewed_at": null
+    }
+  },
+  "principle of utility": {
+    "word": "principle of utility",
+    "phonetic": "/ˈprɪnsəpl əv juːˈtɪləti/",
+    "pos": "n.",
+    "def_cn": "功利原则（边沁提出，主张以最大多数人的最大幸福为道德标准）",
+    "contexts": [
+      {
+        "source_id": "custom_1789528228",
+        "source_title": "Bilibili 哲学与法理研讨课：罗翔解析公正与功利主义",
+        "sentence": "Jeremy Bentham formulated the principle of utility, arguing that all morality should aim to maximize the general welfare.",
+        "trans": "杰里米·边沁提出了功利原则，主张一切道德都应以最大化普遍福祉为目标。",
+        "audio_url": "/assets/audio/custom_1789528228_principle_of_utility.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "learning",
+      "last_rating": "new",
+      "last_reviewed_at": null
+    }
+  },
+  "general welfare": {
+    "word": "general welfare",
+    "phonetic": "/ˈdʒenrəl ˈwelfeə(r)/",
+    "pos": "n.",
+    "def_cn": "普遍福祉，公共福利（社会中全体成员的总体幸福与利益）",
+    "contexts": [
+      {
+        "source_id": "custom_1789528228",
+        "source_title": "Bilibili 哲学与法理研讨课：罗翔解析公正与功利主义",
+        "sentence": "Jeremy Bentham formulated the principle of utility, arguing that all morality should aim to maximize the general welfare.",
+        "trans": "杰里米·边沁提出了功利原则，主张一切道德都应以最大化普遍福祉为目标。",
+        "audio_url": "/assets/audio/custom_1789528228_general_welfare.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "learning",
+      "last_rating": "new",
+      "last_reviewed_at": null
+    }
+  },
+  "jurisprudence": {
+    "word": "jurisprudence",
+    "phonetic": "/ˌdʒʊrɪsˈpruːdns/",
+    "pos": "n.",
+    "def_cn": "法理学，法律哲学",
+    "contexts": [
+      {
+        "source_id": "custom_1789528228",
+        "source_title": "Bilibili 哲学与法理研讨课：罗翔解析公正与功利主义",
+        "sentence": "However, in jurisprudence, critics argue that purely consequentialist reasoning fails to respect human dignity.",
+        "trans": "然而，在法理学中，批评者认为纯粹后果主义的推理未能尊重人的尊严。",
+        "audio_url": "/assets/audio/custom_1789528228_jurisprudence.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "learning",
+      "last_rating": "new",
+      "last_reviewed_at": null
+    }
+  },
+  "human dignity": {
+    "word": "human dignity",
+    "phonetic": "/ˈhjuːmən ˈdɪɡnəti/",
+    "pos": "n.",
+    "def_cn": "人的尊严（每个人固有的、不可剥夺的内在价值）",
+    "contexts": [
+      {
+        "source_id": "custom_1789528228",
+        "source_title": "Bilibili 哲学与法理研讨课：罗翔解析公正与功利主义",
+        "sentence": "However, in jurisprudence, critics argue that purely consequentialist reasoning fails to respect human dignity.",
+        "trans": "然而，在法理学中，批评者认为纯粹后果主义的推理未能尊重人的尊严。",
+        "audio_url": "/assets/audio/custom_1789528228_human_dignity.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "learning",
+      "last_rating": "new",
+      "last_reviewed_at": null
+    }
+  },
+  "defense of necessity": {
+    "word": "defense of necessity",
+    "phonetic": "/dɪˈfens əv nəˈsesəti/",
+    "pos": "n.",
+    "def_cn": "紧急避险抗辩（刑法中因极端情况而实施违法行为的正当化事由）",
+    "contexts": [
+      {
+        "source_id": "custom_1789528228",
+        "source_title": "Bilibili 哲学与法理研讨课：罗翔解析公正与功利主义",
+        "sentence": "Furthermore, the defense of necessity in criminal law tests whether extreme circumstances diminish legal culpability.",
+        "trans": "此外，刑法中的紧急避险抗辩检验极端情况是否能减轻法律责任。",
+        "audio_url": "/assets/audio/custom_1789528228_defense_of_necessity.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "learning",
+      "last_rating": "new",
+      "last_reviewed_at": null
+    }
+  },
+  "criminal law": {
+    "word": "criminal law",
+    "phonetic": "/ˈkrɪmɪnl lɔː/",
+    "pos": "n.",
+    "def_cn": "刑法",
+    "contexts": [
+      {
+        "source_id": "custom_1789528228",
+        "source_title": "Bilibili 哲学与法理研讨课：罗翔解析公正与功利主义",
+        "sentence": "Furthermore, the defense of necessity in criminal law tests whether extreme circumstances diminish legal culpability.",
+        "trans": "此外，刑法中的紧急避险抗辩检验极端情况是否能减轻法律责任。",
+        "audio_url": "/assets/audio/custom_1789528228_criminal_law.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "learning",
+      "last_rating": "new",
+      "last_reviewed_at": null
+    }
+  },
+  "legal culpability": {
+    "word": "legal culpability",
+    "phonetic": "/ˈliːɡl ˌkʌlpəˈbɪləti/",
+    "pos": "n.",
+    "def_cn": "法律上的可归责性，法律责任（行为人在法律上应受谴责的程度）",
+    "contexts": [
+      {
+        "source_id": "custom_1789528228",
+        "source_title": "Bilibili 哲学与法理研讨课：罗翔解析公正与功利主义",
+        "sentence": "Furthermore, the defense of necessity in criminal law tests whether extreme circumstances diminish legal culpability.",
+        "trans": "此外，刑法中的紧急避险抗辩检验极端情况是否能减轻法律责任。",
+        "audio_url": "/assets/audio/custom_1789528228_legal_culpability.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "learning",
+      "last_rating": "new",
+      "last_reviewed_at": null
+    }
+  },
+  "moral deliberation": {
+    "word": "moral deliberation",
+    "phonetic": "/ˈmɒrəl dɪˌlɪbəˈreɪʃn/",
+    "pos": "n.",
+    "def_cn": "道德审议，道德慎思（对道德问题进行审慎推理与权衡的过程）",
+    "contexts": [
+      {
+        "source_id": "custom_1789528228",
+        "source_title": "Bilibili 哲学与法理研讨课：罗翔解析公正与功利主义",
+        "sentence": "Students must develop rigorous moral deliberation rather than succumbing to moral skepticism.",
+        "trans": "学生必须培养严谨的道德审议能力，而非屈服于道德怀疑主义。",
+        "audio_url": "/assets/audio/custom_1789528228_moral_deliberation.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "learning",
+      "last_rating": "new",
+      "last_reviewed_at": null
+    }
+  },
+  "moral skepticism": {
+    "word": "moral skepticism",
+    "phonetic": "/ˈmɒrəl ˈskeptɪsɪzəm/",
+    "pos": "n.",
+    "def_cn": "道德怀疑主义（否认存在客观道德真理或道德知识的哲学立场）",
+    "contexts": [
+      {
+        "source_id": "custom_1789528228",
+        "source_title": "Bilibili 哲学与法理研讨课：罗翔解析公正与功利主义",
+        "sentence": "Students must develop rigorous moral deliberation rather than succumbing to moral skepticism.",
+        "trans": "学生必须培养严谨的道德审议能力，而非屈服于道德怀疑主义。",
+        "audio_url": "/assets/audio/custom_1789528228_moral_skepticism.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "learning",
+      "last_rating": "new",
+      "last_reviewed_at": null
+    }
+  }
+}

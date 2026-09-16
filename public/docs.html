@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VerbaLex Studio - 开放 API 接口文档 (OpenAPI 3.0)</title>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/swagger-ui-dist@5/swagger-ui.css" />
+  <link rel="icon" type="image/png" href="/assets/scenes/banner_harvard_series.jpg" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #f8fafc;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    }
+    .custom-header {
+      background: #ffffff;
+      border-bottom: 1px solid #e2e8f0;
+      padding: 16px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+    .brand-box {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .brand-logo {
+      width: 38px;
+      height: 38px;
+      background: #b91c1c;
+      color: #ffffff;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 20px;
+    }
+    .brand-text h1 {
+      margin: 0;
+      font-size: 18px;
+      font-weight: 700;
+      color: #0f172a;
+    }
+    .brand-text p {
+      margin: 2px 0 0 0;
+      font-size: 13px;
+      color: #64748b;
+    }
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .btn-nav {
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.15s;
+    }
+    .btn-outline {
+      border: 1px solid #cbd5e1;
+      color: #334155;
+      background: #ffffff;
+    }
+    .btn-outline:hover {
+      background: #f1f5f9;
+      color: #0f172a;
+    }
+    .btn-primary {
+      background: #b91c1c;
+      color: #ffffff;
+      border: 1px solid #b91c1c;
+    }
+    .btn-primary:hover {
+      background: #991b1b;
+    }
+    #swagger-ui {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+    .swagger-ui .topbar { display: none !important; }
+    .swagger-ui .info { margin: 20px 0 !important; }
+    .swagger-ui .info .title { font-size: 26px !important; color: #0f172a !important; }
+  </style>
+</head>
+<body>
+  <div class="custom-header">
+    <div class="brand-box">
+      <div class="brand-logo">V</div>
+      <div class="brand-text">
+        <h1>VerbaLex Studio · 开发者开放接口中心</h1>
+        <p>RESTful API & OpenAPI 3.0 Specification · 哈佛公正课与学术听说沉浸式研学系统</p>
+      </div>
+    </div>
+    <div class="nav-actions">
+      <a href="/collections" class="btn-nav btn-outline">&larr; 返回研学合集库</a>
+      <a href="/api/openapi.json" target="_blank" class="btn-nav btn-outline">查看 OpenAPI JSON</a>
+      <a href="https://github.com/Arthurchen-01/vocab" target="_blank" class="btn-nav btn-primary">GitHub 仓库源码 &rarr;</a>
+    </div>
+  </div>
+
+  <div id="swagger-ui"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/swagger-ui-dist@5/swagger-ui-bundle.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swagger-ui-dist@5/swagger-ui-standalone-preset.js"></script>
+  <script>
+    window.onload = function() {
+      window.ui = SwaggerUIBundle({
+        url: "/api/openapi.json",
+        dom_id: '#swagger-ui',
+        deepLinking: true,
+        presets: [
+          SwaggerUIBundle.presets.apis,
+          SwaggerUIStandalonePreset
+        ],
+        plugins: [
+          SwaggerUIBundle.plugins.DownloadUrl
+        ],
+        layout: "BaseLayout"
+      });
+    };
+  </script>
+</body>
+</html>

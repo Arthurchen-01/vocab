@@ -1,0 +1,29 @@
+# Python runtime & caches
+__pycache__/
+*.py[cod]
+*.class
+*.so
+.env
+venv/
+env/
+.pytest_cache/
+
+# Large raw media files (>50MB) - genuine video frames & clips remain tracked
+data/raw_video/
+*.mp4
+ep01_full.mp3
+test.docx
+
+# Runtime user records & feedback screenshot uploads (privacy & state)
+public/assets/feedback/*.png
+!public/assets/feedback/.gitkeep
+data/feedback_records.json
+data/users.json
+data/study_records.json
+data/custom_episodes.json
+
+# OS and IDE caches
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

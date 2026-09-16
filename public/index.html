@@ -1,0 +1,2728 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VerbaLex · 名校公开课词汇智能预习与抗遗忘复习研学馆 | Academic Vocabulary Preview & Spaced Review Studio</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' stop-color='%23881337'/><stop offset='100%25' stop-color='%231e1b4b'/></linearGradient></defs><rect width='100' height='100' rx='24' fill='url(%23g)'/><polygon points='50,18 22,34 78,34' fill='%23ffffff'/><rect x='28' y='40' width='5' height='22' rx='1.5' fill='%23ffffff'/><rect x='42' y='40' width='5' height='22' rx='1.5' fill='%23ffffff'/><rect x='53' y='40' width='5' height='22' rx='1.5' fill='%23ffffff'/><rect x='67' y='40' width='5' height='22' rx='1.5' fill='%23ffffff'/><circle cx='50' cy='14' r='4' fill='%23fbbf24'/></svg>">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400;1,6..72,600&display=swap');
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    .font-serif-quote {
+      font-family: 'Newsreader', Georgia, Cambria, serif;
+    }
+    .card-perspective {
+      perspective: 1200px;
+    }
+    .card-inner {
+      transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+      transform-style: preserve-3d;
+    }
+    .card-flipped {
+      transform: rotateY(180deg);
+    }
+    .card-face {
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+    }
+    .card-back {
+      transform: rotateY(180deg);
+    }
+    @keyframes soundwave {
+      0%, 100% { height: 4px; }
+      50% { height: 16px; }
+    }
+    .wave-bar {
+      animation: soundwave 0.8s ease-in-out infinite;
+    }
+    .wave-bar:nth-child(2) { animation-delay: 0.15s; }
+    .wave-bar:nth-child(3) { animation-delay: 0.3s; }
+    .wave-bar:nth-child(4) { animation-delay: 0.45s; }
+  </style>
+</head>
+<body class="bg-slate-50/70 text-slate-800 min-h-screen flex flex-col selection:bg-rose-100 selection:text-rose-900 antialiased">
+
+  <!-- ==================== GLOBAL HEADER ==================== -->
+  <header id="global-header" class="border-b border-slate-200/80 bg-white/95 backdrop-blur sticky top-0 z-40 shadow-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex flex-wrap items-center justify-between gap-4">
+      
+      <!-- Brand & Series Logo (VerbaLex Academic Edition) -->
+      <div class="flex items-center gap-3 cursor-pointer group" onclick="navigateRoute('landing')">
+        <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-rose-950 via-rose-900 to-indigo-950 flex items-center justify-center shadow-md shadow-rose-900/25 border border-amber-400/30 group-hover:scale-105 transition-transform duration-200">
+          <!-- Vector SVG Academic Logo -->
+          <svg class="w-8 h-8" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="50,18 22,34 78,34" fill="#ffffff" fill-opacity="0.95" />
+            <rect x="20" y="34" width="60" height="3" rx="1" fill="#fbbf24" />
+            <rect x="28" y="39" width="5" height="22" rx="1.5" fill="#ffffff" fill-opacity="0.9" />
+            <rect x="42" y="39" width="5" height="22" rx="1.5" fill="#ffffff" fill-opacity="0.9" />
+            <rect x="53" y="39" width="5" height="22" rx="1.5" fill="#ffffff" fill-opacity="0.9" />
+            <rect x="67" y="39" width="5" height="22" rx="1.5" fill="#ffffff" fill-opacity="0.9" />
+            <rect x="22" y="61" width="56" height="3.5" rx="1" fill="#fbbf24" />
+            <path d="M50,67 C42,64 30,65 22,69 L22,81 C30,77 42,76 50,80 C58,76 70,77 78,81 L78,69 C70,65 58,64 50,67 Z" fill="#ffffff" fill-opacity="0.95" />
+            <circle cx="50" cy="13" r="3.5" fill="#fbbf24" />
+            <line x1="50" y1="5" x2="50" y2="9" stroke="#fbbf24" stroke-width="1.5" stroke-linecap="round" />
+            <rect x="38" y="86" width="3" height="5" rx="1" fill="#fbbf24" />
+            <rect x="44" y="84" width="3" height="9" rx="1" fill="#ffffff" />
+            <rect x="50" y="83" width="3" height="11" rx="1" fill="#fbbf24" />
+            <rect x="56" y="84" width="3" height="9" rx="1" fill="#ffffff" />
+            <rect x="62" y="86" width="3" height="5" rx="1" fill="#fbbf24" />
+          </svg>
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="text-xs font-black tracking-wider text-rose-900 uppercase">VerbaLex AI</span>
+            <span class="text-[10px] px-2 py-0.5 rounded-full bg-rose-50 text-rose-800 font-bold border border-rose-200">v2.5 词汇预习研学版</span>
+          </div>
+          <h1 class="font-extrabold text-sm sm:text-base text-slate-900 tracking-tight">
+            知源思辨 · 名校公开课词汇预习与抗遗忘复习研学馆
+          </h1>
+        </div>
+      </div>
+
+      <!-- Navigation Tabs -->
+      <nav class="flex items-center gap-1 bg-slate-100 p-1 rounded-xl border border-slate-200/80 text-xs font-bold">
+        <button id="nav-btn-landing" onclick="navigateRoute('landing')" class="px-3.5 py-1.5 rounded-lg text-slate-600 hover:text-slate-900 flex items-center gap-1.5 transition">
+          <i class="fa-solid fa-house text-slate-500"></i>
+          <span>首页</span>
+        </button>
+        <button id="nav-btn-collections" onclick="navigateRoute('collections')" class="px-3.5 py-1.5 rounded-lg text-slate-600 hover:text-slate-900 flex items-center gap-1.5 transition">
+          <i class="fa-solid fa-layer-group text-rose-700"></i>
+          <span>课程合集大厅</span>
+        </button>
+        <button id="nav-btn-vocab-bank" onclick="navigateRoute('vocab-bank')" class="px-3.5 py-1.5 rounded-lg text-slate-600 hover:text-slate-900 flex items-center gap-1.5 transition">
+          <i class="fa-solid fa-book-bookmark text-indigo-600"></i>
+          <span>全景词汇库</span>
+          <span id="nav-vocab-badge" class="px-1.5 py-0.2 rounded-full bg-indigo-100 text-indigo-700 text-[10px] font-extrabold">56</span>
+        </button>
+        <a id="nav-btn-docs" href="/docs" target="_blank" class="px-3.5 py-1.5 rounded-lg text-slate-600 hover:text-slate-900 flex items-center gap-1.5 transition hover:bg-slate-200/60" title="打开交互式 OpenAPI 3.0 接口文档中心">
+          <i class="fa-solid fa-code text-amber-600"></i>
+          <span>API 接口文档</span>
+          <span class="px-1.5 py-0.2 rounded-full bg-amber-100 text-amber-800 text-[9px] font-extrabold">v1.0</span>
+        </a>
+      </nav>
+
+      <!-- Right User & Action Area -->
+      <div class="flex items-center gap-3">
+        <!-- Live Study Timer Pill (Strict Criteria: Logged In + Card Open) -->
+        <div id="header-timer-pill" onclick="handleTimerPillClick()" class="hidden md:flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-100 border border-slate-200 text-slate-600 text-xs font-semibold cursor-pointer hover:bg-slate-200 transition select-none" title="严格判定规则：仅在【登录账号】且【打开词汇卡】时计算学习时长">
+          <span id="header-timer-dot" class="w-2 h-2 rounded-full bg-slate-400"></span>
+          <span>今日学习：<b id="header-today-time">未登录</b></span>
+          <span id="header-timer-badge" class="text-[10px] px-1.5 py-0.2 rounded bg-slate-200 text-slate-600 font-bold">待机</span>
+        </div>
+
+        <!-- Add Collection Shortcut -->
+        <button onclick="openAddCollectionModal()" class="px-3.5 py-1.5 rounded-xl bg-rose-900 hover:bg-rose-950 text-white text-xs font-bold flex items-center gap-1.5 shadow-sm transition">
+          <i class="fa-solid fa-plus text-xs"></i>
+          <span>添加合集</span>
+        </button>
+
+        <!-- User Profile & Status -->
+        <div id="user-status-container" class="flex items-center gap-2"></div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ==================== MAIN CONTENT CONTAINER ==================== -->
+  <main class="flex-1 w-full flex flex-col">
+
+    <!-- ============================================================== -->
+    <!-- VIEW 1: LANDING PAGE (HOMEPAGE)                                -->
+    <!-- Open-Source SaaS GitHub Style Landing Page with English Title  -->
+    <!-- ============================================================== -->
+    <section id="view-landing" class="space-y-16 pb-16">
+
+      <!-- Hero Section -->
+      <div class="relative overflow-hidden pt-12 pb-16 sm:pt-20 sm:pb-24 border-b border-slate-200/80 bg-white">
+        <!-- Background subtle glow & grid pattern -->
+        <div class="absolute inset-0 bg-[linear-gradient(to_right,#f1f5f9_1px,transparent_1px),linear-gradient(to_bottom,#f1f5f9_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-60"></div>
+        
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 text-center space-y-8">
+          
+          <!-- Announcement Pill -->
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-rose-50 border border-rose-200/80 text-rose-900 text-xs font-semibold shadow-xs">
+            <span class="w-2 h-2 rounded-full bg-rose-600 animate-ping"></span>
+            <span>VerbaLex Studio v2.5</span>
+            <span class="text-slate-300">|</span>
+            <span class="text-slate-600">哈佛《公正》课前智能预习 · 课堂原声切片 · 艾宾浩斯抗遗忘复习</span>
+            <i class="fa-solid fa-arrow-right text-[10px] text-rose-700"></i>
+          </div>
+
+          <!-- Prominent English Headline -->
+          <div class="max-w-4xl mx-auto space-y-4">
+            <h1 class="text-4xl sm:text-6xl font-black text-slate-900 tracking-tight leading-[1.12]">
+              Master Academic English Through <span class="text-transparent bg-clip-text bg-gradient-to-r from-rose-900 via-rose-700 to-amber-700">Iconic University Lectures</span>
+            </h1>
+            <p class="text-base sm:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed font-serif-quote italic">
+              "An immersive listening & philosophy vocabulary studio. Sourced from Harvard's 'Justice' and world-class debates with millisecond-accurate audio slices and multi-context spaced repetition."
+            </p>
+            <p class="text-xs sm:text-sm text-slate-600 max-w-3xl mx-auto leading-relaxed">
+              专为名校公开课研学打造：告别孤立生硬背词表。上课前完成 <span class="font-bold text-rose-900">托福/雅思核心</span>、<span class="font-bold text-purple-900">GRE/SAT拔高</span> 与 <span class="font-bold text-amber-900">哲学学术专精</span> 三维立体预习；课后借助原声切片与时间戳定位，实现抗遗忘长效内化。
+            </p>
+          </div>
+
+          <!-- Hero CTA Actions -->
+          <div class="flex flex-wrap items-center justify-center gap-4 pt-2">
+            <button onclick="navigateRoute('collections')" class="px-7 py-3.5 rounded-2xl bg-rose-900 hover:bg-rose-950 text-white font-extrabold text-sm flex items-center gap-2.5 shadow-lg shadow-rose-900/25 transition-all duration-200 hover:-translate-y-0.5">
+              <i class="fa-solid fa-compass"></i>
+              <span>探索课程合集大厅 (Browse Collections)</span>
+            </button>
+            <button onclick="openAddCollectionModal()" class="px-6 py-3.5 rounded-2xl bg-white hover:bg-slate-50 text-slate-800 font-bold text-sm border border-slate-300 flex items-center gap-2 shadow-xs transition-all duration-200 hover:-translate-y-0.5">
+              <i class="fa-solid fa-cloud-arrow-down text-indigo-600"></i>
+              <span>粘贴链接创建新合集</span>
+            </button>
+          </div>
+
+          <!-- Hero Interactive Card Mockup Preview -->
+          <div class="max-w-4xl mx-auto pt-6">
+            <div class="relative rounded-3xl bg-slate-900/95 p-3 sm:p-4 shadow-2xl border border-slate-800 text-white overflow-hidden text-left">
+              <div class="flex items-center justify-between border-b border-slate-800 pb-3 px-3 text-xs text-slate-400">
+                <div class="flex items-center gap-2">
+                  <div class="flex gap-1.5">
+                    <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
+                    <div class="w-3 h-3 rounded-full bg-amber-500/80"></div>
+                    <div class="w-3 h-3 rounded-full bg-emerald-500/80"></div>
+                  </div>
+                  <span class="font-mono text-[11px] text-slate-300 ml-2">Harvard University · Sanders Theatre · Justice Ep01</span>
+                </div>
+                <span class="px-2 py-0.5 rounded bg-rose-900 text-white font-bold text-[10px]">LIVE PREVIEW</span>
+              </div>
+
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-4 p-4 items-center">
+                <div class="relative rounded-2xl overflow-hidden aspect-video border border-slate-700 bg-slate-800">
+                  <img src="/assets/scenes/scene_theatre.jpg" alt="Sanders Theatre" class="w-full h-full object-cover">
+                  <div class="absolute bottom-2 left-2 px-2 py-0.5 rounded bg-black/75 text-white text-[10px] font-mono">
+                    Michael Sandel 教授
+                  </div>
+                </div>
+
+                <div class="md:col-span-2 space-y-2.5">
+                  <div class="flex items-baseline gap-3">
+                    <span class="text-2xl font-black text-rose-400">utilitarianism</span>
+                    <span class="text-xs font-mono text-slate-400">/ˌjuːtɪlɪˈteriənɪzəm/</span>
+                    <span class="text-xs bg-slate-800 px-2 py-0.5 rounded text-rose-300 font-bold">n. 功利主义</span>
+                  </div>
+                  <p class="text-sm font-serif-quote italic text-slate-200 leading-relaxed">
+                    "Bentham's <span class="text-amber-400 font-bold underline decoration-amber-400/50">utilitarianism</span> claims that the highest principle of morality is to maximize the general welfare."
+                  </p>
+                  <div class="flex items-center gap-3 pt-1">
+                    <button onclick="playAudio('/assets/audio/ep01_utilitarianism.mp3')" class="px-3 py-1.5 rounded-xl bg-rose-800 hover:bg-rose-700 text-white text-xs font-bold flex items-center gap-2 transition">
+                      <i class="fa-solid fa-play text-[10px]"></i>
+                      <span>播放真实课堂原声切片</span>
+                    </button>
+                    <div class="flex items-center gap-1 text-rose-400">
+                      <span class="w-1 bg-rose-500 rounded-full wave-bar"></span>
+                      <span class="w-1 bg-rose-500 rounded-full wave-bar"></span>
+                      <span class="w-1 bg-rose-500 rounded-full wave-bar"></span>
+                      <span class="w-1 bg-rose-500 rounded-full wave-bar"></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Bento Grid Features Section -->
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 space-y-8">
+        <div class="text-center space-y-2 max-w-2xl mx-auto">
+          <span class="text-xs font-extrabold text-rose-900 tracking-wider uppercase">CORE ARCHITECTURE</span>
+          <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">
+            专为深度听力与学术思辨打造的研学工程
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-500">
+            摒弃传统死记硬背。将哈佛耶鲁名校辩论场景、原声音频与双向艾宾浩斯记忆模型紧密融合。
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          
+          <!-- Bento 1 -->
+          <div class="rounded-3xl p-6 bg-white border border-slate-200/90 shadow-xs hover:shadow-md transition space-y-4">
+            <div class="w-12 h-12 rounded-2xl bg-rose-50 border border-rose-200 text-rose-900 flex items-center justify-center text-xl shadow-xs">
+              <i class="fa-solid fa-headphones"></i>
+            </div>
+            <h3 class="text-lg font-extrabold text-slate-900">真实课堂例句切片</h3>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              彻底告别机械合成音。每一条例句均截取自大学礼堂现场授课与辩论实录，感受地道学术语调、连读重音与逻辑停顿。
+            </p>
+          </div>
+
+          <!-- Bento 2 -->
+          <div class="rounded-3xl p-6 bg-white border border-slate-200/90 shadow-xs hover:shadow-md transition space-y-4">
+            <div class="w-12 h-12 rounded-2xl bg-indigo-50 border border-indigo-200 text-indigo-900 flex items-center justify-center text-xl shadow-xs">
+              <i class="fa-solid fa-diagram-project"></i>
+            </div>
+            <h3 class="text-lg font-extrabold text-slate-900">全景多语境词汇归一</h3>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              以“单词”为主键。同一个核心词在第 01 集、第 02 集及外部视频中再次出现时，所有出处例句自动汇聚，实现一词多场景通透理解。
+            </p>
+          </div>
+
+          <!-- Bento 3 -->
+          <div class="rounded-3xl p-6 bg-white border border-slate-200/90 shadow-xs hover:shadow-md transition space-y-4">
+            <div class="w-12 h-12 rounded-2xl bg-emerald-50 border border-emerald-200 text-emerald-900 flex items-center justify-center text-xl shadow-xs">
+              <i class="fa-solid fa-wand-magic-sparkles"></i>
+            </div>
+            <h3 class="text-lg font-extrabold text-slate-900">B站/油管/字幕一键摄入</h3>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              只需粘贴音视频或字幕网址，DeepSeek 官方大模型秒级提炼哲学法理高阶术语，并自动化生成原声切片与独立合集。
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Curated Collections Preview -->
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 space-y-6">
+        <div class="flex items-center justify-between border-b border-slate-200/80 pb-4">
+          <div>
+            <h3 class="text-xl font-extrabold text-slate-900">精选名校哲学法理公开课合集</h3>
+            <p class="text-xs text-slate-500 mt-0.5">即刻开启名校原声沉浸式专注研学</p>
+          </div>
+          <button onclick="navigateRoute('collections')" class="text-xs font-bold text-rose-900 hover:text-rose-950 flex items-center gap-1">
+            <span>浏览全部合集</span>
+            <i class="fa-solid fa-arrow-right text-[10px]"></i>
+          </button>
+        </div>
+
+        <div id="landing-collections-preview" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+
+      <!-- Philosophical Quote -->
+      <div class="max-w-5xl mx-auto px-4 sm:px-6">
+        <div class="rounded-3xl bg-gradient-to-tr from-rose-950 via-slate-900 to-slate-950 p-8 sm:p-12 text-center text-white shadow-xl space-y-4 relative overflow-hidden">
+          <i class="fa-solid fa-quote-left text-4xl text-rose-600/40"></i>
+          <p class="text-lg sm:text-2xl font-serif-quote italic text-slate-200 max-w-2xl mx-auto leading-relaxed">
+            "Philosophy begins in wonder, but it ends in conviction. When reflection turns back upon itself, we discover that justice is not merely an idea, but a way of living."
+          </p>
+          <div class="text-xs text-slate-400 font-sans tracking-wide">
+            — Prof. Michael J. Sandel · Harvard University
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ============================================================== -->
+    <!-- VIEW 2: COLLECTIONS GALLERY (合集大厅)                         -->
+    <!-- Select collection, browse covers, and Add Collection via link  -->
+    <!-- ============================================================== -->
+    <section id="view-collections" class="max-w-7xl mx-auto px-4 sm:px-6 py-8 space-y-6 hidden w-full">
+      
+      <!-- Top Action & Header -->
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-200/80 pb-5">
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="px-2.5 py-1 rounded-lg bg-rose-50 text-rose-900 font-bold text-xs border border-rose-200">
+              🏛️ CURRICULUM COLLECTIONS GALLERY
+            </span>
+            <span class="text-xs text-slate-500">选择公开课系列进入剧集，或通过链接添加全新合集</span>
+          </div>
+          <h2 class="text-2xl font-extrabold text-slate-900 mt-1.5 tracking-tight">
+            课程合集总览大厅
+          </h2>
+        </div>
+
+        <!-- Add Collection CTA -->
+        <button onclick="openAddCollectionModal()" class="px-5 py-2.5 rounded-xl bg-rose-900 hover:bg-rose-950 text-white text-xs font-extrabold flex items-center gap-2 shadow-md transition self-start md:self-auto">
+          <i class="fa-solid fa-circle-plus"></i>
+          <span>+ 导入链接添加新合集 (Add Collection via Link)</span>
+        </button>
+      </div>
+
+      <!-- Collections Grid Container -->
+      <div id="collections-grid-container" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Rendered dynamically -->
+      </div>
+
+    </section>
+
+    <!-- ============================================================== -->
+    <!-- VIEW 3: COLLECTION DETAIL / EPISODES LIST (合集内剧集列表)     -->
+    <!-- Shows collection metadata & lists individual episodes          -->
+    <!-- ============================================================== -->
+    <section id="view-collection-detail" class="max-w-7xl mx-auto px-4 sm:px-6 py-8 space-y-6 hidden w-full">
+      
+      <!-- Navigation Back Button -->
+      <div class="flex items-center justify-between">
+        <button onclick="navigateRoute('collections')" class="px-3.5 py-1.5 rounded-xl bg-white hover:bg-slate-50 border border-slate-200 text-slate-700 text-xs font-bold flex items-center gap-1.5 shadow-xs transition">
+          <i class="fa-solid fa-arrow-left text-[11px]"></i>
+          <span>返回合集列表 (Back to Collections)</span>
+        </button>
+
+        <div class="flex items-center gap-2">
+          <button onclick="exportCollectionGuide('docx')" class="px-3.5 py-1.5 rounded-xl bg-rose-900 hover:bg-rose-950 text-white text-xs font-bold flex items-center gap-1.5 shadow-xs transition">
+            <i class="fa-solid fa-file-word"></i>
+            <span>导出合集精读手册 (.docx)</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Collection Cover Hero Banner -->
+      <div class="relative rounded-3xl overflow-hidden bg-slate-900 text-white border border-slate-800 shadow-lg">
+        <img id="col-detail-banner" src="/assets/scenes/banner_harvard_series.jpg" alt="Collection Banner" class="absolute inset-0 w-full h-full object-cover opacity-30 mix-blend-overlay">
+        <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-900/90 to-rose-950/40"></div>
+
+        <div class="relative z-10 p-6 sm:p-10 space-y-3 max-w-3xl">
+          <div class="flex flex-wrap items-center gap-2">
+            <span id="col-detail-badge" class="px-2.5 py-1 rounded-lg bg-rose-900/80 border border-rose-700 text-white text-xs font-bold">
+              哈佛旗舰 · 伦理法理必修
+            </span>
+            <span id="col-detail-univ" class="px-2.5 py-1 rounded-lg bg-white/10 text-slate-200 text-xs font-semibold">
+              Harvard University
+            </span>
+            <span id="col-detail-instructor" class="px-2.5 py-1 rounded-lg bg-white/10 text-slate-200 text-xs font-semibold">
+              Prof. Michael J. Sandel
+            </span>
+          </div>
+
+          <h2 id="col-detail-title" class="text-2xl sm:text-3xl font-black text-white tracking-tight">
+            哈佛大学《公正：该如何做是好？》(Justice)
+          </h2>
+          <p id="col-detail-desc" class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+            探讨功利主义、自由至上主义与康德道德绝对论的经典哲学名篇。
+          </p>
+
+          <div class="pt-2 flex items-center gap-3 text-xs text-slate-300 font-mono">
+            <span>收录剧集：<b id="col-detail-ep-count" class="text-white">3 节课</b></span>
+            <span>·</span>
+            <span>精选词汇：<b id="col-detail-words-count" class="text-rose-400">46 个核心学术词</b></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Episodes List Section -->
+      <div class="space-y-4">
+        <div class="flex items-center justify-between">
+          <h3 class="text-base font-extrabold text-slate-900 flex items-center gap-2">
+            <i class="fa-solid fa-list-check text-rose-800"></i>
+            <span>剧集列表 (Episodes) · 点击直接进入专注练习模式</span>
+          </h3>
+          <span class="text-xs text-slate-500">每集独立截屏封面 · 原声切片 · 沉浸自测</span>
+        </div>
+
+        <div id="col-episodes-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <!-- Rendered dynamically -->
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ============================================================== -->
+    <!-- VIEW 4: FOCUSED STUDY MODE (专注沉浸学习模式)                  -->
+    <!-- Distraction-free full-focus flashcard study, NO messy scroll   -->
+    <!-- ============================================================== -->
+    <section id="view-focused-study" class="max-w-5xl mx-auto px-4 sm:px-6 py-6 space-y-6 hidden w-full flex-1 flex flex-col justify-between">
+      
+      <!-- Focused Topbar (Clean and isolated) -->
+      <div class="bg-white rounded-2xl p-4 border border-slate-200/90 shadow-xs flex flex-wrap items-center justify-between gap-4">
+        <!-- Back button to return to collection -->
+        <button onclick="exitFocusedStudy()" class="px-3 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold flex items-center gap-1.5 transition">
+          <i class="fa-solid fa-arrow-left"></i>
+          <span>退出专注模式 (Exit to Episodes)</span>
+        </button>
+
+        <!-- Episode & Progress -->
+        <div class="flex items-center gap-3 text-center">
+          <span id="focus-ep-title" class="font-extrabold text-sm sm:text-base text-slate-900 line-clamp-1">
+            Episode 01: The Moral Side of Murder
+          </span>
+          <div class="px-2.5 py-0.5 rounded-lg bg-rose-50 border border-rose-200 text-rose-900 font-mono text-xs font-bold">
+            <span id="focus-card-current">1</span> / <span id="focus-card-total">22</span>
+          </div>
+        </div>
+
+        <!-- Card Timer & Session Info -->
+        <div class="flex items-center gap-3 text-xs text-slate-500">
+          <span id="focus-card-timer" class="font-mono font-bold text-slate-700 bg-slate-100 px-2 py-1 rounded-lg">用时: 0s</span>
+          <div class="hidden sm:flex items-center gap-1 text-[11px] text-slate-400">
+            <span>[空格] 翻转</span>
+            <span>·</span>
+            <span>[方向键] 切换</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Active Study Audit Status Banner (Condition 1: Logged In & Condition 2: Card Open) -->
+      <div id="focus-auth-study-status" class="hidden"></div>
+
+      <!-- 3-Tier Level Filter Pill Selector (Interactive Sub-Filter) -->
+      <div class="bg-white rounded-2xl p-3 border border-slate-200/90 shadow-xs flex flex-wrap items-center justify-between gap-3">
+        <div class="flex items-center gap-2 text-xs font-bold text-slate-700">
+          <i class="fa-solid fa-filter text-rose-800"></i>
+          <span>词汇层级筛选：</span>
+        </div>
+        <div id="focus-level-pills" class="flex flex-wrap items-center gap-2">
+          <!-- Populated dynamically: All, TOEFL/IELTS, GRE/SAT, Academic Philosophy -->
+        </div>
+      </div>
+
+      <!-- Focused Anki 3D Stage Card -->
+      <div class="card-perspective w-full max-w-4xl mx-auto min-h-[520px] flex-1 flex flex-col">
+        <div id="focus-anki-inner" class="card-inner relative w-full h-full min-h-[520px] flex-1">
+          
+          <!-- ==================== CARD FRONT FACE ==================== -->
+          <div class="card-face absolute inset-0 w-full h-full bg-white rounded-3xl border border-slate-200/90 shadow-xl p-6 sm:p-8 flex flex-col justify-between space-y-4 cursor-pointer select-none" onclick="onCardFaceClick(event)">
+            
+            <!-- Front Topbar: Level Badge + Lecture Video Timestamp -->
+            <div class="flex flex-wrap justify-between items-center gap-2 text-xs border-b border-slate-100 pb-3">
+              <div class="flex items-center gap-2">
+                <span class="px-2.5 py-1 rounded-lg bg-rose-50 text-rose-900 font-bold border border-rose-200/70 flex items-center gap-1.5">
+                  <i class="fa-solid fa-question text-rose-700"></i>
+                  <span>【卡片正面 · 听说盲测预习】</span>
+                </span>
+                <span id="focus-front-level-badge" class="px-2.5 py-1 rounded-lg bg-blue-50 text-blue-800 font-bold border border-blue-200 text-[11px]">
+                  📘 TOEFL / IELTS 核心高频
+                </span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span id="focus-front-timestamp-badge" class="px-2.5 py-1 rounded-lg bg-slate-100 text-slate-700 font-mono text-[11px] font-bold border border-slate-200 flex items-center gap-1">
+                  ⏱️ [01:21] Prof. Michael Sandel
+                </span>
+                <span class="text-slate-400 text-xs hidden sm:inline">[按空格键翻转]</span>
+              </div>
+            </div>
+
+            <!-- Front Header: Word + Phonetic + POS + Prominent Audio Controls -->
+            <div class="flex flex-wrap items-center justify-between gap-3 bg-slate-50/70 border border-slate-200/80 rounded-2xl p-4">
+              <div class="flex flex-wrap items-baseline gap-3">
+                <h3 id="focus-word" class="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
+                  hurdling
+                </h3>
+                <span id="focus-phonetic" class="text-sm sm:text-base font-mono font-semibold text-slate-600 bg-white px-3 py-1 rounded-xl border border-slate-200 shadow-2xs">
+                  /ˈhɜːrdlɪŋ/
+                </span>
+                <span id="focus-pos" class="text-xs sm:text-sm font-bold text-rose-800 bg-rose-100/70 px-3 py-1 rounded-xl border border-rose-200">
+                  词性: v.
+                </span>
+              </div>
+              <div class="flex flex-wrap items-center gap-2">
+                <button onclick="event.stopPropagation(); playFocusWordAudio()" id="btn-play-word-audio" class="px-3 py-1.5 rounded-xl bg-white hover:bg-slate-100 text-slate-700 text-xs font-bold flex items-center gap-1.5 transition border border-slate-200 shadow-2xs">
+                  <i class="fa-solid fa-volume-high text-slate-600"></i>
+                  <span>单字发音</span>
+                </button>
+                <button onclick="event.stopPropagation(); playFocusNativeAudio()" id="btn-play-native-audio" class="px-3.5 py-1.5 rounded-xl bg-amber-100 hover:bg-amber-200 text-amber-950 border border-amber-300 text-xs font-extrabold flex items-center gap-1.5 transition shadow-xs hover:scale-105">
+                  <i class="fa-solid fa-microphone-lines text-amber-800"></i>
+                  <span>🎙️ 课堂现场原声 (Sandel原音)</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Front Main Stage: Real Video Screenshot (Left) + Spoken Cloze Sentence (Right) -->
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-5 items-center flex-1 my-1">
+              <!-- Left: Real Video Still Screenshot from Lecture -->
+              <div class="md:col-span-5 space-y-1.5">
+                <div class="relative rounded-2xl overflow-hidden border border-slate-200 shadow-sm aspect-video bg-slate-900 group">
+                  <img id="focus-scene-img" src="/assets/scenes/scene_theatre.jpg" alt="Lecture Screenshot" class="w-full h-full object-cover">
+                  <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-slate-950/90 via-slate-950/60 to-transparent p-2 text-white text-[11px] font-mono flex items-center justify-between">
+                    <span class="flex items-center gap-1 text-amber-300 font-semibold">
+                      <i class="fa-solid fa-video text-xs"></i> 现场视频真实截图
+                    </span>
+                    <span id="focus-scene-desc" class="text-slate-300 text-[10px]">授课实景</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Right: Spoken Cloze Sentence -->
+              <div class="md:col-span-7 space-y-3">
+                <div class="bg-slate-50 hover:bg-slate-100/90 border border-slate-200/90 rounded-2xl p-4 sm:p-5 shadow-inner space-y-2 cursor-pointer transition">
+                  <div class="flex justify-between items-center text-xs font-bold text-slate-400 uppercase tracking-wider">
+                    <span class="flex items-center gap-1.5 text-rose-900">
+                      <i class="fa-solid fa-quote-left text-rose-700"></i>
+                      <span>课堂原声例句 (CLOZE 填空)：</span>
+                    </span>
+                    <span class="text-slate-400 font-normal lowercase">[点击卡片翻面]</span>
+                  </div>
+                  <p id="focus-sentence" class="text-base sm:text-lg text-slate-800 font-serif-quote leading-relaxed">
+                    This is a course about Justice...
+                  </p>
+                </div>
+
+                <!-- Playback & Speed Bar -->
+                <div class="flex flex-wrap items-center justify-between gap-2 bg-white border border-slate-200 rounded-xl p-2.5">
+                  <div class="flex items-center gap-2">
+                    <button onclick="event.stopPropagation(); playFocusNativeAudio()" class="px-3.5 py-1.5 rounded-lg bg-amber-800 hover:bg-amber-900 text-white text-xs font-bold flex items-center gap-1.5 shadow-xs transition hover:scale-105">
+                      <i class="fa-solid fa-play text-[10px]"></i>
+                      <span>播放整句原声切片</span>
+                    </button>
+                    <div class="flex items-center gap-1 text-amber-800 px-2">
+                      <span class="w-1 bg-amber-600 rounded-full wave-bar"></span>
+                      <span class="w-1 bg-amber-600 rounded-full wave-bar"></span>
+                      <span class="w-1 bg-amber-600 rounded-full wave-bar"></span>
+                      <span class="w-1 bg-amber-600 rounded-full wave-bar"></span>
+                    </div>
+                  </div>
+
+                  <div class="flex items-center gap-1 text-xs text-slate-500">
+                    <span>语速:</span>
+                    <button onclick="event.stopPropagation(); setFocusSpeed(0.85)" class="px-2 py-0.5 rounded bg-slate-100 hover:bg-slate-200 font-mono text-[11px] focus-speed-btn" data-speed="0.85">0.85x</button>
+                    <button onclick="event.stopPropagation(); setFocusSpeed(1.0)" class="px-2 py-0.5 rounded bg-rose-900 text-white font-mono text-[11px] focus-speed-btn" data-speed="1.0">1.0x</button>
+                    <button onclick="event.stopPropagation(); setFocusSpeed(1.2)" class="px-2 py-0.5 rounded bg-slate-100 hover:bg-slate-200 font-mono text-[11px] focus-speed-btn" data-speed="1.2">1.2x</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Flip Action Bar -->
+            <div class="pt-2 flex justify-center">
+              <button onclick="flipFocusCard()" class="px-8 py-3 rounded-2xl bg-slate-900 hover:bg-black text-white text-xs font-bold flex items-center gap-2.5 shadow-md transition hover:-translate-y-0.5">
+                <i class="fa-solid fa-rotate text-xs"></i>
+                <span>翻开卡片查看哲学释义与原文翻译 (空格键)</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- ==================== CARD BACK FACE ==================== -->
+          <div class="card-face card-back absolute inset-0 w-full h-full bg-white rounded-3xl border border-slate-200/90 shadow-xl p-6 sm:p-8 flex flex-col justify-between space-y-4 cursor-pointer select-none" onclick="onCardFaceClick(event)">
+            
+            <!-- Back Topbar: Title + Flip Back Button -->
+            <div class="flex justify-between items-center text-xs border-b border-slate-100 pb-3">
+              <div class="flex items-center gap-2">
+                <span id="focus-back-level-badge" class="px-2.5 py-1 rounded-lg bg-emerald-50 text-emerald-900 font-bold border border-emerald-200/70 flex items-center gap-1.5">
+                  <i class="fa-solid fa-circle-check text-emerald-600"></i>
+                  <span>【卡片背面 · 深度释义与原文翻译】</span>
+                </span>
+                <span id="focus-back-timestamp-badge" class="px-2.5 py-1 rounded-lg bg-slate-100 text-slate-700 font-mono text-[11px] font-bold border border-slate-200">
+                  ⏱️ [01:21] Prof. Michael Sandel
+                </span>
+              </div>
+              <button onclick="flipFocusCard()" class="px-3.5 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs flex items-center gap-1.5 transition">
+                <i class="fa-solid fa-rotate-left"></i>
+                <span>翻回正面盲测 (空格键)</span>
+              </button>
+            </div>
+
+            <!-- Back Content Scrollable Body -->
+            <div class="space-y-4 flex-1 overflow-y-auto pr-1">
+              <!-- Back Header: Word + Phonetic + POS + Audio -->
+              <div class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-100 pb-3">
+                <div class="flex flex-wrap items-baseline gap-3">
+                  <h3 id="focus-back-word" class="text-3xl font-black text-rose-950 tracking-tight">
+                    hurdling
+                  </h3>
+                  <span id="focus-back-phonetic" class="text-sm font-mono text-slate-500 bg-slate-100 px-2.5 py-1 rounded-lg border border-slate-200">
+                    /ˈhɜːrdlɪŋ/
+                  </span>
+                  <span id="focus-back-pos" class="text-xs font-bold text-rose-800 bg-rose-50 px-2.5 py-1 rounded-lg border border-rose-200">
+                    v.
+                  </span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <button onclick="playFocusWordAudio()" class="px-3 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold flex items-center gap-1.5 transition">
+                    <i class="fa-solid fa-volume-high text-xs"></i>
+                    <span>单字发音</span>
+                  </button>
+                  <button onclick="playFocusNativeAudio()" class="px-3.5 py-1.5 rounded-xl bg-amber-100 hover:bg-amber-200 text-amber-900 border border-amber-300 text-xs font-bold flex items-center gap-1.5 transition">
+                    <i class="fa-solid fa-microphone-lines text-xs text-amber-800"></i>
+                    <span>重听现场原声</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Contextual Chinese Definition -->
+              <div class="bg-rose-50/70 border-l-4 border-rose-800 p-4 rounded-r-2xl space-y-1">
+                <div class="text-[11px] font-bold text-rose-900 uppercase tracking-wider">课堂考点中文释义：</div>
+                <p id="focus-back-def" class="text-base sm:text-lg font-extrabold text-slate-900 leading-snug">
+                  疾驰冲去，飞速驶向
+                </p>
+              </div>
+
+              <!-- Full Spoken Sentence AND Authentic Chinese Translation -->
+              <div class="bg-amber-50/60 border border-amber-200 rounded-2xl p-4 sm:p-5 space-y-3">
+                <div class="flex justify-between items-center text-xs font-bold text-amber-950">
+                  <span class="flex items-center gap-1.5">
+                    <i class="fa-solid fa-quote-left text-amber-700"></i>
+                    <span>哈佛授课原文完整出处句：</span>
+                  </span>
+                  <button onclick="playFocusNativeAudio()" class="px-3 py-1 rounded-xl bg-white hover:bg-amber-100 text-amber-900 border border-amber-300 text-xs font-bold flex items-center gap-1 shadow-2xs transition">
+                    <i class="fa-solid fa-volume-high text-amber-800"></i>
+                    <span>播放此句原声</span>
+                  </button>
+                </div>
+                <p id="focus-back-sentence" class="text-base sm:text-lg text-slate-900 font-serif-quote leading-relaxed">
+                  "This is a course about Justice..."
+                </p>
+                <div class="pt-2.5 border-t border-amber-200/70">
+                  <div class="text-[11px] font-bold text-amber-800 mb-1">权威中文对照翻译：</div>
+                  <p id="focus-back-trans" class="text-sm sm:text-base text-slate-800 font-sans font-medium leading-relaxed">
+                    这是一门关于正义的课程，我们从一个故事开始...
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Back Footer: 4-Level Anki Rating Buttons with 1/2/3/4 Badges -->
+            <div class="pt-3 border-t border-slate-100 space-y-2.5">
+              <div class="flex justify-between items-center text-xs text-slate-500">
+                <span class="font-bold text-slate-700">记忆自评（键盘直接按数字键 1 / 2 / 3 / 4）：</span>
+                <button onclick="flipFocusCard()" class="text-rose-900 hover:underline font-bold text-xs">
+                  &larr; 翻回正面 (空格键)
+                </button>
+              </div>
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
+                <button onclick="submitFocusRating(1)" class="p-3 rounded-2xl bg-red-50 hover:bg-red-100 border border-red-200 text-left transition hover:-translate-y-0.5 group">
+                  <div class="flex justify-between items-center">
+                    <span class="text-xs font-bold text-red-900">忘记 (Again)</span>
+                    <span class="px-1.5 py-0.5 rounded bg-red-200/80 text-red-900 font-mono text-[10px] font-bold">[1]</span>
+                  </div>
+                  <div class="text-[11px] text-red-700 mt-1">完全没印象 · 稍后重试</div>
+                </button>
+                <button onclick="submitFocusRating(2)" class="p-3 rounded-2xl bg-amber-50 hover:bg-amber-100 border border-amber-200 text-left transition hover:-translate-y-0.5 group">
+                  <div class="flex justify-between items-center">
+                    <span class="text-xs font-bold text-amber-900">模糊 (Hard)</span>
+                    <span class="px-1.5 py-0.5 rounded bg-amber-200/80 text-amber-900 font-mono text-[10px] font-bold">[2]</span>
+                  </div>
+                  <div class="text-[11px] text-amber-700 mt-1">勉强想起 · 缩短周期</div>
+                </button>
+                <button onclick="submitFocusRating(3)" class="p-3 rounded-2xl bg-blue-50 hover:bg-blue-100 border border-blue-200 text-left transition hover:-translate-y-0.5 group">
+                  <div class="flex justify-between items-center">
+                    <span class="text-xs font-bold text-blue-900">掌握 (Good)</span>
+                    <span class="px-1.5 py-0.5 rounded bg-blue-200/80 text-blue-900 font-mono text-[10px] font-bold">[3]</span>
+                  </div>
+                  <div class="text-[11px] text-blue-700 mt-1">正确回忆 · 正常递增</div>
+                </button>
+                <button onclick="submitFocusRating(4)" class="p-3 rounded-2xl bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 text-left transition hover:-translate-y-0.5 group">
+                  <div class="flex justify-between items-center">
+                    <span class="text-xs font-bold text-emerald-900">熟练 (Easy)</span>
+                    <span class="px-1.5 py-0.5 rounded bg-emerald-200/80 text-emerald-900 font-mono text-[10px] font-bold">[4]</span>
+                  </div>
+                  <div class="text-[11px] text-emerald-700 mt-1">熟稔于心 · 最大化间隔</div>
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+<!-- ============================================================== -->
+    <!-- VIEW 5: UNIVERSAL MASTER VOCABULARY BANK (全景词汇库)          -->
+    <!-- Word as primary key, multi-context aggregation across courses  -->
+    <!-- ============================================================== -->
+    <section id="view-vocab-bank" class="max-w-7xl mx-auto px-4 sm:px-6 py-8 space-y-6 hidden w-full">
+      <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/90 shadow-sm space-y-6">
+        
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-100 pb-5">
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="px-2.5 py-1 rounded-lg bg-indigo-50 text-indigo-900 font-bold text-xs border border-indigo-200">
+                📚 UNIVERSAL VOCABULARY MASTER BANK
+              </span>
+              <span class="text-xs text-slate-500">以单词为主键 · 汇聚所有公开课出处</span>
+            </div>
+            <h2 class="text-2xl font-extrabold text-slate-900 mt-1.5 tracking-tight">
+              个人全景词汇库 (Cross-Episode Master Bank)
+            </h2>
+            <p class="text-xs sm:text-sm text-slate-500 mt-1">
+              自动收集练习过的所有单词。若同一单词在不同合集或导入视频中再次出现，所有真实课堂例句自动归一汇聚！
+            </p>
+          </div>
+
+          <div class="flex items-center gap-2">
+            <button onclick="exportVocabBank('docx')" class="px-4 py-2 rounded-xl bg-rose-900 hover:bg-rose-950 text-white text-xs font-bold flex items-center gap-1.5 shadow-sm transition">
+              <i class="fa-solid fa-file-word"></i>
+              <span>导出词库手册 (.docx)</span>
+            </button>
+            <button onclick="exportVocabBank('anki_csv')" class="px-4 py-2 rounded-xl bg-white hover:bg-slate-50 text-slate-700 border border-slate-300 text-xs font-bold flex items-center gap-1.5 shadow-xs transition">
+              <i class="fa-solid fa-file-csv text-emerald-600"></i>
+              <span>导出全量 Anki</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- 4 Metric Cards -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+          <div class="bg-slate-50 border border-slate-200/80 rounded-2xl p-4 space-y-1">
+            <div class="text-xs text-slate-500 flex items-center gap-1.5">
+              <i class="fa-solid fa-book text-indigo-600"></i>
+              <span>收录词汇总数</span>
+            </div>
+            <div id="vb-stat-total" class="text-2xl sm:text-3xl font-extrabold text-slate-900 font-mono">56</div>
+            <div class="text-[10px] text-slate-400">跨合集自动去重聚合</div>
+          </div>
+
+          <div class="bg-emerald-50/50 border border-emerald-200/80 rounded-2xl p-4 space-y-1">
+            <div class="text-xs text-emerald-800 flex items-center gap-1.5">
+              <i class="fa-solid fa-circle-check text-emerald-600"></i>
+              <span>已掌握熟词</span>
+            </div>
+            <div id="vb-stat-mastered" class="text-2xl sm:text-3xl font-extrabold text-emerald-900 font-mono">0</div>
+            <div class="text-[10px] text-emerald-700">自测评价良好 3次+</div>
+          </div>
+
+          <div class="bg-indigo-50/50 border border-indigo-200/80 rounded-2xl p-4 space-y-1">
+            <div class="text-xs text-indigo-800 flex items-center gap-1.5">
+              <i class="fa-solid fa-diagram-project text-indigo-600"></i>
+              <span>多语境互通词</span>
+            </div>
+            <div id="vb-stat-multi" class="text-2xl sm:text-3xl font-extrabold text-indigo-900 font-mono">4</div>
+            <div class="text-[10px] text-indigo-700">含 2+ 个不同课堂出处</div>
+          </div>
+
+          <div class="bg-rose-50/50 border border-rose-200/80 rounded-2xl p-4 space-y-1">
+            <div class="text-xs text-rose-900 flex items-center gap-1.5">
+              <i class="fa-solid fa-clock-rotate-left text-rose-700"></i>
+              <span>总复习投入用时</span>
+            </div>
+            <div id="vb-stat-time" class="text-2xl sm:text-3xl font-extrabold text-rose-950 font-mono">0分</div>
+            <div class="text-[10px] text-rose-800">按秒级精密计量</div>
+          </div>
+        </div>
+
+        <!-- Filter & Search Controls -->
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-3 pt-2">
+          <div class="flex flex-wrap items-center gap-1.5 w-full sm:w-auto">
+            <button onclick="filterVocabBank('all')" class="vb-filter-btn px-3.5 py-1.5 rounded-xl text-xs font-bold bg-slate-900 text-white shadow-xs" data-filter="all">
+              全部单词 (<span id="vb-filter-all-count">56</span>)
+            </button>
+            <button onclick="filterVocabBank('multi')" class="vb-filter-btn px-3.5 py-1.5 rounded-xl text-xs font-semibold bg-white text-slate-600 border border-slate-200 hover:bg-slate-50" data-filter="multi">
+              🌟 多语境词 (<span id="vb-filter-multi-count">4</span>)
+            </button>
+            <button onclick="filterVocabBank('learning')" class="vb-filter-btn px-3.5 py-1.5 rounded-xl text-xs font-semibold bg-white text-slate-600 border border-slate-200 hover:bg-slate-50" data-filter="learning">
+              📖 学习中
+            </button>
+            <button onclick="filterVocabBank('mastered')" class="vb-filter-btn px-3.5 py-1.5 rounded-xl text-xs font-semibold bg-white text-slate-600 border border-slate-200 hover:bg-slate-50" data-filter="mastered">
+              ✅ 已掌握
+            </button>
+          </div>
+
+          <div class="relative w-full sm:w-64">
+            <i class="fa-solid fa-magnifying-glass absolute left-3 top-2.5 text-xs text-slate-400"></i>
+            <input id="vb-search-input" oninput="searchVocabBank()" type="text" placeholder="输入单词或中文释义检索..." class="w-full pl-8 pr-3 py-1.5 rounded-xl border border-slate-200 text-xs bg-slate-50/50">
+          </div>
+        </div>
+
+        <!-- Vocab Cards Container -->
+        <div id="vocab-bank-cards-container" class="space-y-3 pt-2"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== MODALS & DRAWERS ==================== -->
+
+  <!-- Add Collection Modal (Link Importer) -->
+  <div id="add-collection-modal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-xs z-50 flex items-center justify-center p-4 hidden">
+    <div class="bg-white rounded-3xl max-w-2xl w-full p-6 sm:p-8 shadow-2xl border border-slate-200 space-y-5 max-h-[90vh] overflow-y-auto">
+      <div class="flex justify-between items-center border-b border-slate-100 pb-3">
+        <div>
+          <h3 class="text-lg font-extrabold text-slate-900 flex items-center gap-2">
+            <i class="fa-solid fa-cloud-arrow-down text-rose-800"></i>
+            <span>通过音视频/字幕链接添加全新合集</span>
+          </h3>
+          <p class="text-xs text-slate-500">支持 Bilibili、YouTube 链接与 DownSub 提取字幕</p>
+        </div>
+        <button onclick="closeAddCollectionModal()" class="text-slate-400 hover:text-slate-600 p-1">
+          <i class="fa-solid fa-xmark text-lg"></i>
+        </button>
+      </div>
+
+      <div class="space-y-4 text-xs">
+        <div class="space-y-1.5">
+          <label class="font-bold text-slate-700">输入音视频链接 (Bilibili BV号 / YouTube 链接)：</label>
+          <div class="flex flex-wrap sm:flex-nowrap gap-2">
+            <input id="modal-import-url" type="text" placeholder="例如：https://www.bilibili.com/video/BV1xx411c7mD 或 YouTube 链接" class="flex-1 px-3 py-2 rounded-xl border border-slate-300">
+            <button onclick="autoFetchSubtitlesFromLink()" id="btn-fetch-subtitles" class="px-3.5 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold flex items-center gap-1.5 shadow-sm transition whitespace-nowrap">
+              <i class="fa-solid fa-wand-magic-sparkles text-xs"></i>
+              <span>一键提取字幕</span>
+            </button>
+            <button onclick="autofillImportModal()" class="px-3 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 font-bold text-slate-700 whitespace-nowrap">测试范例</button>
+          </div>
+        </div>
+
+        <div class="space-y-1.5">
+          <label class="font-bold text-slate-700">全新合集/课程名称：</label>
+          <input id="modal-import-title" type="text" placeholder="例如：哈佛公开课·法学辩论精选合集" class="w-full px-3 py-2 rounded-xl border border-slate-300">
+        </div>
+
+        <div class="space-y-1.5">
+          <div class="flex justify-between">
+            <label class="font-bold text-slate-700">字幕或原声逐字例文本：</label>
+            <a href="https://downsub.com" target="_blank" class="text-indigo-600 underline">打开 DownSub 免费提取字幕</a>
+          </div>
+          <textarea id="modal-import-transcript" rows="5" placeholder="请在此粘贴字幕文本或音频逐字稿..." class="w-full p-3 rounded-xl border border-slate-200 font-mono text-xs"></textarea>
+        </div>
+
+        <button onclick="submitAddCollection()" id="modal-import-submit-btn" class="w-full py-3 rounded-xl bg-rose-900 hover:bg-rose-950 text-white font-extrabold flex items-center justify-center gap-2 shadow-md transition">
+          <i class="fa-solid fa-brain"></i>
+          <span>调用 DeepSeek AI 解析术语并创建新合集</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- User Auth Modal -->
+  <div id="auth-modal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-xs z-50 flex items-center justify-center p-4 hidden">
+    <div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-8 shadow-2xl border border-slate-200 space-y-5">
+      <div class="flex justify-between items-center border-b border-slate-100 pb-3">
+        <h3 id="auth-modal-title" class="text-lg font-extrabold text-slate-900">登录个人研学账号</h3>
+        <button onclick="closeAuthModal()" class="text-slate-400 hover:text-slate-600 p-1">
+          <i class="fa-solid fa-xmark text-lg"></i>
+        </button>
+      </div>
+
+      <div class="space-y-3.5 text-xs">
+        <div class="space-y-1">
+          <label class="font-bold text-slate-700">用户名：</label>
+          <input id="auth-input-username" type="text" placeholder="请输入用户名（如 student_alex）" class="w-full px-3 py-2 rounded-xl border border-slate-300">
+        </div>
+
+        <div id="auth-nickname-container" class="space-y-1 hidden">
+          <label class="font-bold text-slate-700">学习昵称：</label>
+          <input id="auth-input-nickname" type="text" placeholder="学习昵称（如 亚历山大同学）" class="w-full px-3 py-2 rounded-xl border border-slate-300">
+        </div>
+
+        <div class="space-y-1">
+          <label class="font-bold text-slate-700">登录密码：</label>
+          <input id="auth-input-password" type="password" placeholder="请输入密码" class="w-full px-3 py-2 rounded-xl border border-slate-300">
+        </div>
+
+        <div id="auth-error-msg" class="text-xs text-red-600 font-bold hidden"></div>
+
+        <button id="auth-submit-btn" onclick="submitAuthForm()" class="w-full py-2.5 rounded-xl bg-rose-900 hover:bg-rose-950 text-white font-bold shadow-md transition">
+          立即登录
+        </button>
+
+        <div class="flex justify-between items-center text-slate-500 pt-2 border-t border-slate-100">
+          <button id="auth-switch-mode-btn" onclick="toggleAuthMode()" class="text-rose-900 hover:underline font-bold">
+            没有账号？立即注册 &rarr;
+          </button>
+          <button onclick="closeAuthModal()" class="text-slate-500 hover:text-slate-800">
+            跳过直接体验
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Analytics Modal -->
+  <div id="analytics-modal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-xs z-50 flex items-center justify-center p-4 hidden">
+    <div class="bg-white rounded-3xl max-w-2xl w-full p-6 sm:p-8 shadow-2xl border border-slate-200 space-y-6 max-h-[90vh] overflow-y-auto">
+      <div class="flex justify-between items-center border-b border-slate-100 pb-3">
+        <div>
+          <h3 class="text-lg font-extrabold text-slate-900 flex items-center gap-2">
+            <i class="fa-solid fa-chart-line text-rose-800"></i>
+            <span>个人学情与艾宾浩斯复习档案</span>
+          </h3>
+          <p class="text-xs text-slate-500" id="analytics-user-tag">当前账号：student_alex</p>
+        </div>
+        <button onclick="closeAnalyticsModal()" class="text-slate-400 hover:text-slate-600 p-1">
+          <i class="fa-solid fa-xmark text-lg"></i>
+        </button>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+        <div class="p-3.5 rounded-2xl bg-rose-50 border border-rose-200 text-center">
+          <div class="text-[11px] text-rose-800 font-semibold">今日复习用时</div>
+          <div class="text-xl font-extrabold text-rose-950 font-mono mt-1" id="an-today-time">0分00秒</div>
+        </div>
+        <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-200 text-center">
+          <div class="text-[11px] text-slate-600 font-semibold">累计历史总用时</div>
+          <div class="text-xl font-extrabold text-slate-900 font-mono mt-1" id="an-hist-time">0分00秒</div>
+        </div>
+        <div class="p-3.5 rounded-2xl bg-emerald-50 border border-emerald-200 text-center">
+          <div class="text-[11px] text-emerald-800 font-semibold">已牢固掌握</div>
+          <div class="text-xl font-extrabold text-emerald-900 font-mono mt-1" id="an-mastered-count">0 词</div>
+        </div>
+        <div class="p-3.5 rounded-2xl bg-indigo-50 border border-indigo-200 text-center">
+          <div class="text-[11px] text-indigo-800 font-semibold">正在强化学习</div>
+          <div class="text-xl font-extrabold text-indigo-900 font-mono mt-1" id="an-learning-count">0 词</div>
+        </div>
+      </div>
+
+      <div class="space-y-2">
+        <h4 class="text-xs font-bold text-slate-700">最近自测单词明细流水：</h4>
+        <div id="analytics-words-list" class="max-h-60 overflow-y-auto divide-y divide-slate-100 border border-slate-200 rounded-2xl text-xs"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Global Footer -->
+  <footer id="global-footer" class="border-t border-slate-200/80 bg-white py-8 text-center text-xs text-slate-500">
+    <div class="max-w-7xl mx-auto px-4 space-y-1.5">
+      <p class="font-bold text-slate-700">
+        🏛️ Veritas Vocab AI · 名校公开课沉浸式听说精读与全景词库平台
+      </p>
+      <p class="text-[11px] text-slate-400">
+        基于 Michael Sandel 教授桑德斯剧院授课原声 · DeepSeek 官方大模型强力赋能 · 艾宾浩斯智能记忆算法
+      </p>
+    </div>
+  </footer>
+
+  <!-- ==================== FRONTEND CONTROLLER JAVASCRIPT ==================== -->
+  <script>
+    // Master Application State
+    let app = {
+      currentRoute: 'landing',     // 'landing' | 'collections' | 'collection-detail' | 'focused-study' | 'vocab-bank'
+      currentUser: localStorage.getItem('justice_user') || '',
+      currentNickname: localStorage.getItem('justice_nickname') || '',
+      collections: [],
+      activeCollectionId: 'harvard_justice',
+      activeCollectionData: null,
+      activeEpisodeId: 'ep01',
+      activeEpisodeData: null,
+      focusCardIndex: 0,
+      focusCardStartTime: Date.now(),
+      focusActiveContextIndex: 0,
+      focusPlaybackRate: 1.0,
+      vocabBankWords: [],
+      vocabBankSummary: {},
+      vocabFilter: 'all',
+      vocabSearchQuery: '',
+      authMode: 'login'
+    };
+
+    
+    // ==============================================================
+    // PRE-STUDY LAUNCHER CONTROLLER (研学前置配置与自由多选分类)     //
+    // ==============================================================
+    let currentPreStudyEpisodeData = null;
+    const episodeDataCache = {};
+    let isOpeningLauncher = false;
+
+    function onCardFaceClick(event) {
+      // Ignore if user clicked on button, link, input, audio control
+      if (event.target.closest('button') || event.target.closest('a') || event.target.closest('input') || event.target.closest('.focus-speed-btn')) {
+        return;
+      }
+      flipFocusCard();
+    }
+
+
+    async function openPreStudyLauncher(episodeId) {
+      if (isOpeningLauncher) return;
+      isOpeningLauncher = true;
+      app.pendingEpisodeId = episodeId;
+
+      try {
+        if (episodeDataCache[episodeId]) {
+          currentPreStudyEpisodeData = episodeDataCache[episodeId];
+        } else {
+          const res = await fetch(`/api/preset/${episodeId}`);
+          currentPreStudyEpisodeData = await res.json();
+          episodeDataCache[episodeId] = currentPreStudyEpisodeData;
+        }
+        
+        // Update Title & Subtitle
+        document.getElementById('pre-study-ep-title').innerText = currentPreStudyEpisodeData.title || episodeId;
+        document.getElementById('pre-study-ep-subtitle').innerText = currentPreStudyEpisodeData.cn_title || currentPreStudyEpisodeData.topic || '';
+        document.getElementById('pre-study-ep-badge').innerText = (episodeId.toUpperCase());
+
+        const words = currentPreStudyEpisodeData.words || [];
+        const toeflCount = words.filter(w => (w.level || 'toefl_ielts') === 'toefl_ielts').length;
+        const greCount = words.filter(w => w.level === 'sat_gre' || w.level === 'gre_sat').length;
+        const acadCount = words.filter(w => w.level === 'academic_philosophy').length;
+        const phrasalCount = words.filter(w => w.level === 'phrasal_verbs').length;
+
+        document.getElementById('badge-count-toefl').innerText = `${toeflCount} 词`;
+        document.getElementById('badge-count-gre').innerText = `${greCount} 词`;
+        document.getElementById('badge-count-acad').innerText = `${acadCount} 词`;
+        document.getElementById('badge-count-phrasal').innerText = `${phrasalCount} 组`;
+
+        document.getElementById('pre-study-default-desc').innerText = `加载当前分集全部 4 个维度共 ${words.length} 个词汇与动词短语，零阻碍立即开练。`;
+
+        // Default all checkboxes to checked
+        document.getElementById('chk-level-toefl').checked = true;
+        document.getElementById('chk-level-gre').checked = true;
+        document.getElementById('chk-level-acad').checked = true;
+        document.getElementById('chk-level-phrasal').checked = true;
+
+        onPreStudyCheckboxChange();
+        document.getElementById('pre-study-modal').classList.remove('hidden');
+      } catch (e) {
+        console.error("Error opening pre-study launcher:", e);
+        startFocusedStudy(episodeId, 'all');
+      } finally {
+        isOpeningLauncher = false;
+      }
+    }
+
+    function closePreStudyModal() {
+      document.getElementById('pre-study-modal').classList.add('hidden');
+    }
+
+    function onPreStudyCheckboxChange() {
+      if (!currentPreStudyEpisodeData || !currentPreStudyEpisodeData.words) return;
+      const words = currentPreStudyEpisodeData.words;
+      
+      const chkToefl = document.getElementById('chk-level-toefl').checked;
+      const chkGre = document.getElementById('chk-level-gre').checked;
+      const chkAcad = document.getElementById('chk-level-acad').checked;
+      const chkPhrasal = document.getElementById('chk-level-phrasal').checked;
+
+      const selectedLevels = [];
+      if (chkToefl) selectedLevels.push('toefl_ielts');
+      if (chkGre) { selectedLevels.push('sat_gre'); selectedLevels.push('gre_sat'); }
+      if (chkAcad) selectedLevels.push('academic_philosophy');
+      if (chkPhrasal) selectedLevels.push('phrasal_verbs');
+
+      const count = words.filter(w => selectedLevels.includes(w.level || 'toefl_ielts')).length;
+      // Fast flashcard pace: 6-8 seconds per card (8-10 words/minute)
+      const minMin = Math.max(1, Math.round(count * 0.10));
+      const maxMin = Math.max(minMin + 1, Math.round(count * 0.14));
+
+      const summarySpan = document.getElementById('summary-selected-count');
+      if (summarySpan) {
+        summarySpan.innerText = `${selectedLevels.length} 个分类共 ${count} 词`;
+      }
+      const summaryBox = document.getElementById('pre-study-selection-summary');
+      if (summaryBox) {
+        summaryBox.innerHTML = `已勾选：<span class="font-bold text-rose-900">${selectedLevels.length} 个分类共 ${count} 词</span> · 快速闪刷预估 <span class="font-bold text-slate-800">${minMin}-${maxMin} 分钟</span>`;
+      }
+
+      const btn = document.getElementById('btn-start-selected-levels');
+      if (btn) {
+        btn.disabled = (selectedLevels.length === 0);
+        btn.innerHTML = (selectedLevels.length === 0) 
+          ? '请至少勾选一个分类' 
+          : `<i class="fa-solid fa-play text-[10px]"></i> <span>开启所选 (${count} 词) 研学 &rarr;</span>`;
+      }
+    }
+
+    function confirmPreStudyStart(isDefaultAll) {
+      closePreStudyModal();
+      const epId = app.pendingEpisodeId || app.activeEpisodeId || 'ep01';
+      if (isDefaultAll) {
+        startFocusedStudy(epId, 'all');
+      } else {
+        const selectedLevels = [];
+        if (document.getElementById('chk-level-toefl').checked) selectedLevels.push('toefl_ielts');
+        if (document.getElementById('chk-level-gre').checked) selectedLevels.push('gre_sat');
+        if (document.getElementById('chk-level-acad').checked) selectedLevels.push('academic_philosophy');
+        if (document.getElementById('chk-level-phrasal').checked) selectedLevels.push('phrasal_verbs');
+
+        if (selectedLevels.length === 0) {
+          alert("请至少勾选一个分类！");
+          return;
+        }
+        if (selectedLevels.length === 4) {
+          startFocusedStudy(epId, 'all');
+        } else {
+          startFocusedStudyMultiLevels(epId, selectedLevels);
+        }
+      }
+    }
+
+    async function startFocusedStudyMultiLevels(episodeId, selectedLevels) {
+      app.activeEpisodeId = episodeId;
+      app.activeLevelFilter = selectedLevels.length === 1 ? selectedLevels[0] : 'custom';
+      app.selectedLevels = selectedLevels;
+
+      try {
+        const res = await fetch(`/api/preset/${episodeId}`);
+        app.activeEpisodeData = await res.json();
+        app.filteredWords = app.activeEpisodeData.words.filter(w => selectedLevels.includes(w.level || 'toefl_ielts'));
+
+        if (app.filteredWords.length === 0) {
+          app.filteredWords = app.activeEpisodeData.words;
+          app.activeLevelFilter = 'all';
+        }
+
+        app.focusCardIndex = 0;
+        document.getElementById('focus-ep-title').innerText = app.activeEpisodeData.title;
+        navigateRoute('focused-study', episodeId);
+        renderFocusLevelPills();
+        renderFocusCard();
+      } catch (e) {
+        console.error("Error starting focused study with custom levels:", e);
+      }
+    }
+
+    // Bootstrap app with HTML5 History Routing & Deep-Linking
+    document.addEventListener('DOMContentLoaded', async () => {
+      renderUserStatus();
+      await loadCollections();
+      await loadVocabBank();
+      startTodayTimer();
+      renderLandingCollectionsPreview();
+      await resolveUrlRouteOnLoad(false);
+    });
+
+    // HTML5 History Popstate Handler (Browser Back / Forward Buttons)
+    window.addEventListener('popstate', (e) => {
+      if (e.state && e.state.route) {
+        navigateRoute(e.state.route, e.state.param, false);
+      } else {
+        resolveUrlRouteOnLoad(false);
+      }
+    });
+
+    // Resolve URL Route on Initial Page Load or Direct Access
+    async function resolveUrlRouteOnLoad(pushHistory = false) {
+      const path = window.location.pathname;
+      if (path === '/collections') {
+        navigateRoute('collections', null, pushHistory);
+      } else if (path.startsWith('/collection/')) {
+        const cid = path.replace('/collection/', '').split('/')[0] || 'harvard_justice';
+        navigateRoute('collection-detail', cid, pushHistory);
+      } else if (path.startsWith('/study/')) {
+        const eid = path.replace('/study/', '').split('/')[0] || 'ep01';
+        await startFocusedStudy(eid, 'all');
+        if (!pushHistory) {
+          window.history.replaceState({ route: 'focused-study', param: eid }, '', `/study/${eid}`);
+        }
+      } else if (path.startsWith('/episode/')) {
+        const eid = path.replace('/episode/', '').split('/')[0] || 'ep01';
+        navigateRoute('collection-detail', 'harvard_justice', pushHistory);
+        setTimeout(() => {
+          openPreStudyLauncher(eid);
+        }, 350);
+      } else if (path === '/vocab-bank') {
+        navigateRoute('vocab-bank', null, pushHistory);
+      } else {
+        navigateRoute('landing', null, pushHistory);
+      }
+    }
+
+    // Main Router with HTML5 History PushState
+    function navigateRoute(route, param = null, pushHistory = true) {
+      app.currentRoute = route;
+
+      // Calculate corresponding browser URL
+      let targetPath = '/';
+      if (route === 'landing') {
+        targetPath = '/';
+      } else if (route === 'collections') {
+        targetPath = '/collections';
+      } else if (route === 'collection-detail') {
+        const cid = param || app.activeCollectionId || 'harvard_justice';
+        targetPath = `/collection/${cid}`;
+      } else if (route === 'focused-study') {
+        const epId = param || app.activeEpisodeId || 'ep01';
+        targetPath = `/study/${epId}`;
+      } else if (route === 'vocab-bank') {
+        targetPath = '/vocab-bank';
+      }
+
+      // Synchronize browser address bar with HTML5 pushState
+      if (pushHistory && window.location.pathname !== targetPath) {
+        window.history.pushState({ route: route, param: param }, '', targetPath);
+      }
+
+      // Views mapping
+      const views = {
+        'landing': document.getElementById('view-landing'),
+        'collections': document.getElementById('view-collections'),
+        'collection-detail': document.getElementById('view-collection-detail'),
+        'focused-study': document.getElementById('view-focused-study'),
+        'vocab-bank': document.getElementById('view-vocab-bank')
+      };
+
+      // Hide all views
+      Object.values(views).forEach(v => { if (v) v.classList.add('hidden'); });
+
+      // In focused study mode, hide global footer to ensure 100% distraction-free environment!
+      const footer = document.getElementById('global-footer');
+      if (route === 'focused-study') {
+        if (footer) footer.classList.add('hidden');
+      } else {
+        if (footer) footer.classList.remove('hidden');
+      }
+
+      // Update Nav buttons
+      document.querySelectorAll('nav button').forEach(b => {
+        b.className = "px-3.5 py-1.5 rounded-lg text-slate-600 hover:text-slate-900 flex items-center gap-1.5 transition";
+      });
+      const activeNavBtn = document.getElementById(`nav-btn-${route}`);
+      if (activeNavBtn) {
+        activeNavBtn.className = "px-3.5 py-1.5 rounded-lg bg-white text-rose-900 shadow-xs border border-slate-200/80 flex items-center gap-1.5 transition";
+      }
+
+      // Show target view & initialize
+      if (views[route]) {
+        views[route].classList.remove('hidden');
+        window.scrollTo(0, 0);
+      }
+      updateTimerUI();
+
+      if (route === 'collections') {
+        renderCollectionsGrid();
+      } else if (route === 'collection-detail' && param) {
+        openCollection(param);
+      } else if (route === 'vocab-bank') {
+        loadVocabBank();
+      }
+    }
+
+    // Load Collections from API
+    async function loadCollections() {
+      try {
+        const res = await fetch('/api/collections');
+        app.collections = await res.json();
+      } catch (e) {
+        console.error("Error loading collections:", e);
+      }
+    }
+
+    // Render Collections Preview on Landing Page
+    function renderLandingCollectionsPreview() {
+      const container = document.getElementById('landing-collections-preview');
+      if (!container) return;
+
+      container.innerHTML = app.collections.map(c => `
+        <div onclick="navigateRoute('collection-detail', '${c.id}')" class="cursor-pointer rounded-3xl p-5 bg-white border border-slate-200/90 shadow-xs hover:shadow-lg hover:border-slate-300 transition-all duration-200 flex flex-col justify-between space-y-4">
+          <div class="space-y-3">
+            <div class="relative rounded-2xl overflow-hidden aspect-video bg-slate-100 shadow-inner">
+              <img src="${c.cover_scene}" alt="${c.title}" class="w-full h-full object-cover">
+              <div class="absolute top-2.5 left-2.5 px-2.5 py-0.5 rounded-md text-[10px] font-extrabold bg-rose-900 text-white shadow-xs">
+                ${c.badge || '官方精品公开课'}
+              </div>
+              <div class="absolute bottom-2.5 right-2.5 px-2 py-0.5 rounded-md bg-black/70 backdrop-blur text-white text-[10px] font-mono">
+                ${c.total_episodes || c.episodes.length} 节课 · ${c.total_words || 0} 词
+              </div>
+            </div>
+
+            <div class="space-y-1">
+              <div class="text-[11px] font-bold text-rose-900">${c.university} · ${c.instructor}</div>
+              <h4 class="font-extrabold text-base text-slate-900 leading-snug line-clamp-1">${c.title}</h4>
+              <p class="text-xs text-slate-500 line-clamp-2">${c.desc}</p>
+            </div>
+          </div>
+
+          <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-rose-900">
+            <span>进入合集探索剧集</span>
+            <i class="fa-solid fa-arrow-right text-[10px]"></i>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // Render Collections Gallery View
+    function renderCollectionsGrid() {
+      const container = document.getElementById('collections-grid-container');
+      if (!container) return;
+
+      container.innerHTML = app.collections.map(c => `
+        <div class="rounded-3xl p-5 bg-white border border-slate-200/90 shadow-xs hover:shadow-lg transition-all duration-200 flex flex-col justify-between space-y-4">
+          <div class="space-y-3">
+            <div class="relative rounded-2xl overflow-hidden aspect-video bg-slate-100 shadow-inner">
+              <img src="${c.cover_scene}" alt="${c.title}" class="w-full h-full object-cover">
+              <div class="absolute top-2.5 left-2.5 px-2.5 py-0.5 rounded-md text-[10px] font-extrabold bg-rose-900 text-white shadow-xs">
+                ${c.badge || '名校旗舰'}
+              </div>
+              <div class="absolute bottom-2.5 right-2.5 px-2 py-0.5 rounded-md bg-black/70 backdrop-blur text-white text-[10px] font-mono">
+                ${c.total_episodes || c.episodes.length} 节课 · ${c.total_words || 0} 核心词
+              </div>
+            </div>
+
+            <div class="space-y-1">
+              <div class="text-[11px] font-bold text-rose-900">${c.university} · ${c.instructor}</div>
+              <h3 class="font-extrabold text-lg text-slate-900 leading-snug">${c.title}</h3>
+              <p class="text-xs text-slate-500 leading-relaxed line-clamp-2">${c.desc}</p>
+            </div>
+          </div>
+
+          <div class="pt-3 border-t border-slate-100 flex items-center justify-between">
+            <span class="text-xs font-mono text-slate-400">已收录 ${c.total_words || 0} 词</span>
+            <button onclick="navigateRoute('collection-detail', '${c.id}')" class="px-4 py-2 rounded-xl bg-rose-900 hover:bg-rose-950 text-white text-xs font-bold shadow-xs transition flex items-center gap-1.5">
+              <span>进入合集 &rarr;</span>
+            </button>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // Open a specific Collection
+    async function openCollection(collectionId) {
+      app.activeCollectionId = collectionId;
+      try {
+        const res = await fetch(`/api/collection/${collectionId}`);
+        app.activeCollectionData = await res.json();
+
+        // Update header elements
+        document.getElementById('col-detail-banner').src = app.activeCollectionData.cover_scene;
+        document.getElementById('col-detail-title').innerText = app.activeCollectionData.title;
+        document.getElementById('col-detail-desc').innerText = app.activeCollectionData.desc;
+        document.getElementById('col-detail-badge').innerText = app.activeCollectionData.badge || '名校公开课';
+        document.getElementById('col-detail-univ').innerText = app.activeCollectionData.university;
+        document.getElementById('col-detail-instructor').innerText = app.activeCollectionData.instructor;
+        document.getElementById('col-detail-ep-count').innerText = `${app.activeCollectionData.episode_details.length} 节课`;
+        
+        const totalWords = app.activeCollectionData.episode_details.reduce((sum, ep) => sum + (ep.words ? ep.words.length : 0), 0);
+        document.getElementById('col-detail-words-count').innerText = `${totalWords} 个核心学术词`;
+
+        renderEpisodesList();
+      } catch (e) {
+        console.error("Error opening collection:", e);
+      }
+    }
+
+    // Render Episodes inside the Collection
+    function renderEpisodesList() {
+      const container = document.getElementById('col-episodes-grid');
+      if (!container || !app.activeCollectionData) return;
+
+      const eps = app.activeCollectionData.episode_details || [];
+      container.innerHTML = eps.map((ep, idx) => `
+        <div class="rounded-3xl p-5 bg-white border border-slate-200/90 shadow-xs hover:shadow-lg transition-all duration-200 flex flex-col justify-between space-y-4">
+          <div class="space-y-3">
+            <div class="relative rounded-2xl overflow-hidden aspect-video bg-slate-100 shadow-inner">
+              <img src="${ep.cover_scene || '/assets/scenes/scene_theatre.jpg'}" alt="${ep.title}" class="w-full h-full object-cover">
+              <div class="absolute top-2.5 left-2.5 px-2.5 py-0.5 rounded-md text-[10px] font-bold bg-black/70 backdrop-blur text-white">
+                第 0${idx + 1} 集
+              </div>
+              <div class="absolute bottom-2.5 right-2.5 px-2 py-0.5 rounded-md bg-black/70 backdrop-blur text-white text-[10px] font-mono">
+                ${ep.duration || '50 分钟'} · ${ep.words ? ep.words.length : 0} 词
+              </div>
+            </div>
+
+            <div class="space-y-1">
+              <h4 class="font-extrabold text-base text-slate-900 leading-snug line-clamp-1">${ep.title}</h4>
+              <p class="text-xs text-slate-500 line-clamp-2">${ep.cn_title || ep.topic}</p>
+            </div>
+          </div>
+
+          <div class="pt-3 border-t border-slate-100 flex items-center justify-between gap-2 flex-wrap">
+            <span class="text-xs font-mono text-rose-800 font-bold">${ep.words ? ep.words.length : 0} 词汇/词组</span>
+            <div class="flex items-center gap-2">
+              <button onclick="startFocusedStudy('${ep.id}', 'all')" class="px-3 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold transition flex items-center gap-1.5" title="一键默认加载全量词汇">
+                <i class="fa-solid fa-bolt text-amber-600 text-[10px]"></i>
+                <span>默认直开</span>
+              </button>
+              <button onclick="openPreStudyLauncher('${ep.id}')" class="px-3.5 py-2 rounded-xl bg-rose-900 hover:bg-rose-950 text-white text-xs font-extrabold shadow-sm transition flex items-center gap-1.5 hover:-translate-y-0.5">
+                <i class="fa-solid fa-sliders text-[10px]"></i>
+                <span>选分类开始 &rarr;</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // ==============================================================
+    // FOCUSED STUDY MODE CONTROLLER (专注沉浸练习模式)              //
+    // ==============================================================
+    async function startFocusedStudy(episodeId, initialLevel = 'all') {
+      app.activeEpisodeId = episodeId;
+      app.activeLevelFilter = initialLevel;
+      try {
+        const res = await fetch(`/api/preset/${episodeId}`);
+        app.activeEpisodeData = await res.json();
+        app.filteredWords = (app.activeLevelFilter === 'all') 
+          ? app.activeEpisodeData.words 
+          : app.activeEpisodeData.words.filter(w => (w.level || 'toefl_ielts') === app.activeLevelFilter);
+
+        app.focusCardIndex = 0;
+        document.getElementById('focus-ep-title').innerText = app.activeEpisodeData.title;
+        navigateRoute('focused-study', episodeId);
+        renderFocusLevelPills();
+        renderFocusCard();
+      } catch (e) {
+        console.error("Error starting focused study:", e);
+      }
+    }
+
+    function exitFocusedStudy() {
+      // Cleanly return to collection detail
+      navigateRoute('collection-detail', app.activeCollectionId);
+    }
+
+    function renderFocusCard() {
+      const words = app.filteredWords || (app.activeEpisodeData ? app.activeEpisodeData.words : []);
+      if (!words || words.length === 0) return;
+
+      if (app.focusCardIndex >= words.length) app.focusCardIndex = 0;
+      if (app.focusCardIndex < 0) app.focusCardIndex = words.length - 1;
+
+      const w = words[app.focusCardIndex];
+      
+      // Update Level Badges and Timestamps on Front & Back
+      const lvlBadge = document.getElementById('focus-front-level-badge');
+      const backLvlBadge = document.getElementById('focus-back-level-badge');
+      const lvlClass = getLevelBadgeStyle(w.level || 'toefl_ielts');
+      const lvlText = w.level_name || getLevelDisplayName(w.level || 'toefl_ielts');
+
+      if (lvlBadge) {
+        lvlBadge.className = `px-2.5 py-1 rounded-lg font-bold text-[11px] border ${lvlClass}`;
+        lvlBadge.innerText = lvlText;
+      }
+      if (backLvlBadge) {
+        backLvlBadge.className = `px-2.5 py-1 rounded-lg font-bold text-[11px] border ${lvlClass}`;
+        backLvlBadge.innerText = lvlText;
+      }
+
+      const tsText = `⏱️ ${w.timestamp || '[01:21]'} ${w.speaker || 'Prof. Michael Sandel'}`;
+      const frontTs = document.getElementById('focus-front-timestamp-badge');
+      const backTs = document.getElementById('focus-back-timestamp-badge');
+      if (frontTs) frontTs.innerText = tsText;
+      if (backTs) backTs.innerText = tsText;
+      
+      app.focusCardStartTime = Date.now();
+
+      // Ensure front side visible initially
+      const inner = document.getElementById('focus-anki-inner');
+      if (inner) inner.classList.remove('card-flipped');
+
+      // Update counters
+      document.getElementById('focus-card-current').innerText = app.focusCardIndex + 1;
+      document.getElementById('focus-card-total').innerText = words.length;
+
+      // Front Face Population
+      document.getElementById('focus-word').innerText = w.word;
+      document.getElementById('focus-phonetic').innerText = w.phonetic || '';
+      document.getElementById('focus-pos').innerText = `词性: ${w.pos || 'n.'}`;
+      document.getElementById('focus-scene-img').src = w.scene_img || '/assets/scenes/scene_theatre.jpg';
+      document.getElementById('focus-scene-desc').innerText = w.scene_desc || `现场截帧 ${w.timestamp || ''}`;
+
+      // Cloze Deletion
+      const escaped = w.word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      const clozeHtml = (w.sentence || '').replace(new RegExp(escaped, 'gi'), `<span class="px-2 py-0.5 border-b-2 border-rose-800 bg-rose-100/80 text-rose-950 font-bold rounded font-sans">_______</span>`);
+      document.getElementById('focus-sentence').innerHTML = clozeHtml;
+
+      // Back Face Population
+      document.getElementById('focus-back-word').innerText = w.word;
+      document.getElementById('focus-back-phonetic').innerText = w.phonetic || '';
+      document.getElementById('focus-back-pos').innerText = w.pos || 'n.';
+      document.getElementById('focus-back-def').innerText = w.def_cn || '暂无详细释义';
+
+      // Full spoken sentence & Chinese translation
+      const backSentenceEl = document.getElementById('focus-back-sentence');
+      if (backSentenceEl) backSentenceEl.innerText = `"${w.sentence || ''}"`;
+
+      const backTransEl = document.getElementById('focus-back-trans');
+      if (backTransEl) backTransEl.innerText = w.sentence_cn || w.trans || '（本句暂无官方中文翻译）';
+    }
+
+    function renderFocusContexts(contexts) {
+      document.getElementById('focus-context-count').innerText = contexts.length;
+      const tabs = document.getElementById('focus-context-tabs');
+      if (!tabs) return;
+
+      tabs.innerHTML = contexts.map((c, idx) => {
+        const isSel = idx === app.focusActiveContextIndex;
+        const cls = isSel ? "bg-rose-900 text-white font-bold" : "bg-white text-slate-700 hover:bg-slate-100 border border-slate-200";
+        return `
+          <button onclick="switchFocusContext(${idx})" class="px-2.5 py-1 rounded-lg text-xs ${cls} transition shadow-xs">
+            出处 ${idx + 1}: ${c.source_title || '课文例句'}
+          </button>
+        `;
+      }).join('');
+
+      const active = contexts[app.focusActiveContextIndex] || contexts[0];
+      document.getElementById('focus-active-context-source').innerText = active.source_title || '课堂原句';
+      document.getElementById('focus-active-context-sentence').innerText = `"${active.sentence}"`;
+      document.getElementById('focus-active-context-trans').innerText = `译：${active.trans}`;
+      window.focusContextAudioUrl = active.audio_url;
+      window.focusContextSentence = active.sentence;
+    }
+
+    function switchFocusContext(idx) {
+      app.focusActiveContextIndex = idx;
+      const w = app.activeEpisodeData.words[app.focusCardIndex];
+      const bankEntry = app.vocabBankWords.find(item => item.word.toLowerCase() === w.word.toLowerCase());
+      const contexts = (bankEntry && bankEntry.contexts && bankEntry.contexts.length) ? bankEntry.contexts : [{
+        source_title: app.activeEpisodeData.cn_title || app.activeEpisodeData.title,
+        sentence: w.sentence,
+        trans: w.trans,
+        audio_url: w.audio_url
+      }];
+      renderFocusContexts(contexts);
+    }
+
+    function flipFocusCard() {
+      const inner = document.getElementById('focus-anki-inner');
+      if (inner) inner.classList.toggle('card-flipped');
+    }
+
+    function playFocusAudio() {
+      playFocusNativeAudio();
+    }
+
+    function playFocusNativeAudio() {
+      if (!app.activeEpisodeData) return;
+      const w = app.activeEpisodeData.words[app.focusCardIndex];
+      const safe = (w.word || '').toLowerCase().replace(/[^a-z0-9_]/g, '_');
+      const clipUrl = w.native_clip_url || `/assets/audio/clips/${app.activeEpisodeId || 'ep01'}_${safe}_native.mp3`;
+      playAudio(clipUrl, w.sentence);
+    }
+
+    function playFocusWordAudio() {
+      if (!app.activeEpisodeData) return;
+      const w = app.activeEpisodeData.words[app.focusCardIndex];
+      playAudio(w.audio_url, w.word);
+    }
+
+    function playFocusActiveContextAudio() {
+      playAudio(window.focusContextAudioUrl, window.focusContextSentence);
+    }
+
+    function setFocusSpeed(spd) {
+      app.focusPlaybackRate = spd;
+      document.querySelectorAll('.focus-speed-btn').forEach(b => {
+        if (parseFloat(b.dataset.speed) === spd) {
+          b.className = "px-2 py-0.5 rounded bg-rose-900 text-white font-mono text-[11px] focus-speed-btn";
+        } else {
+          b.className = "px-2 py-0.5 rounded bg-slate-100 hover:bg-slate-200 font-mono text-[11px] focus-speed-btn";
+        }
+      });
+      if (window.currentAudioInstance) {
+        window.currentAudioInstance.playbackRate = spd;
+      }
+    }
+
+    function nextFocusCard() {
+      app.focusCardIndex++;
+      renderFocusCard();
+    }
+
+    function prevFocusCard() {
+      app.focusCardIndex--;
+      renderFocusCard();
+    }
+
+    async function submitFocusRating(rating) {
+      if (!app.activeEpisodeData) return;
+      const w = app.activeEpisodeData.words[app.focusCardIndex];
+      const dur = Math.max(1, Math.round((Date.now() - app.focusCardStartTime) / 1000));
+
+      const payload = {
+        username: app.currentUser,
+        word: w.word,
+        duration_seconds: dur,
+        rating: rating,
+        episode_id: app.activeEpisodeId
+      };
+
+      try {
+        await fetch('/api/user/record', {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify(payload)
+        });
+        await fetch('/api/vocab-bank/record', {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify(payload)
+        });
+      } catch (e) {
+        console.error("Error submitting focus rating:", e);
+      }
+      nextFocusCard();
+    }
+
+    // Keyboard bindings in focused study mode
+    window.addEventListener('keydown', (e) => {
+      if (app.currentRoute !== 'focused-study') return;
+      if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+
+      if (e.code === 'Space') {
+        e.preventDefault();
+        flipFocusCard();
+      } else if (['1', '2', '3', '4'].includes(e.key) || ['Digit1', 'Digit2', 'Digit3', 'Digit4', 'Numpad1', 'Numpad2', 'Numpad3', 'Numpad4'].includes(e.code)) {
+        e.preventDefault();
+        const rating = parseInt(e.key) || parseInt(e.code.replace(/\D/g, ''));
+        if (rating >= 1 && rating <= 4) {
+          submitFocusRating(rating);
+        }
+      } else if (e.code === 'ArrowRight' || e.code === 'KeyN') {
+        e.preventDefault();
+        nextFocusCard();
+      } else if (e.code === 'ArrowLeft' || e.code === 'KeyP') {
+        e.preventDefault();
+        prevFocusCard();
+      } else if (e.code === 'KeyR') {
+        e.preventDefault();
+        playFocusNativeAudio();
+      } else if (e.code === 'Escape') {
+        exitFocusedStudy();
+      }
+    });
+
+    // ==============================================================
+    // AUDIO ENGINE & TIMER                                           //
+    // ==============================================================
+    function playAudio(url, fallbackText) {
+      if (window.currentAudioInstance) {
+        window.currentAudioInstance.pause();
+        window.currentAudioInstance = null;
+      }
+      if (url) {
+        const audio = new Audio(url);
+        window.currentAudioInstance = audio;
+        audio.playbackRate = app.focusPlaybackRate || 1.0;
+        audio.play().catch(e => {
+          console.log("Audio failed, speech synthesis fallback:", e);
+          speakNative(fallbackText);
+        });
+      } else if (fallbackText) {
+        speakNative(fallbackText);
+      }
+    }
+
+    function speakNative(text) {
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+        const u = new SpeechSynthesisUtterance(text);
+        u.lang = 'en-US';
+        u.rate = app.focusPlaybackRate || 1.0;
+        window.speechSynthesis.speak(u);
+      }
+    }
+
+        // ==============================================================
+    // STRICT STUDY TIME TRACKING ENGINE                            //
+    // Two Mandatory Invariants:                                    //
+    // 1. User MUST be authenticated (已登录账号)                     //
+    // 2. Vocabulary card MUST be opened (点开了词汇卡)                //
+    // ==============================================================
+    let todaySecCounter = 0;
+    let syncHeartbeatCounter = 0;
+
+    function isActivelyStudying() {
+      // Condition 1: Logged In
+      const isLoggedIn = Boolean(app.currentUser && app.currentUser.trim());
+      // Condition 2: Opened vocabulary card in focused study view
+      const isCardOpen = app.currentRoute === 'focused-study' && 
+                         Boolean(app.activeEpisodeData && app.activeEpisodeData.words && app.activeEpisodeData.words.length > 0);
+      return isLoggedIn && isCardOpen;
+    }
+
+    function updateTimerUI() {
+      const pill = document.getElementById('header-timer-pill');
+      const dot = document.getElementById('header-timer-dot');
+      const timeEl = document.getElementById('header-today-time');
+      const badge = document.getElementById('header-timer-badge');
+      const statusBanner = document.getElementById('focus-auth-study-status');
+
+      const isLoggedIn = Boolean(app.currentUser && app.currentUser.trim());
+      const isCardOpen = app.currentRoute === 'focused-study';
+      const mins = Math.floor(todaySecCounter / 60);
+      const secs = todaySecCounter % 60;
+      const timeStr = `${mins}分${secs < 10 ? '0' : ''}${secs}秒`;
+
+      if (!isLoggedIn) {
+        // [FAIL CONDITION 1]: Not logged in
+        if (pill) {
+          pill.className = "hidden md:flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-100 border border-slate-200 text-slate-500 text-xs font-semibold cursor-pointer hover:bg-slate-200 transition select-none";
+          pill.title = "点击登录账号。研学规则：仅在【登录账号】且【打开词汇卡】时计算学习时间";
+        }
+        if (dot) dot.className = "w-2 h-2 rounded-full bg-slate-400";
+        if (timeEl) timeEl.innerText = "未登录";
+        if (badge) {
+          badge.className = "text-[10px] px-1.5 py-0.2 rounded bg-slate-200 text-slate-600 font-bold";
+          badge.innerText = "未登录";
+        }
+        if (statusBanner && isCardOpen) {
+          statusBanner.className = "p-3 rounded-2xl bg-amber-50 border border-amber-200/90 text-amber-900 text-xs flex flex-wrap items-center justify-between gap-3 shadow-xs";
+          statusBanner.innerHTML = `
+            <div class="flex items-center gap-2">
+              <i class="fa-solid fa-circle-exclamation text-amber-600 text-sm"></i>
+              <span><b>访客体验提示</b>：您当前尚未登录。研学计时规则要求：必须在 <b>登录账号</b> 且 <b>打开词汇卡</b> 时才计入个人学习时间。</span>
+            </div>
+            <button onclick="openAuthModal('login')" class="px-3.5 py-1.5 rounded-xl bg-rose-900 hover:bg-rose-950 text-white font-bold text-xs shadow-xs transition">
+              立即登录并计学时
+            </button>
+          `;
+          statusBanner.classList.remove('hidden');
+        } else if (statusBanner) {
+          statusBanner.classList.add('hidden');
+        }
+      } else if (!isCardOpen) {
+        // [PASS CONDITION 1, FAIL CONDITION 2]: Logged in, but NOT studying a word card (e.g. on landing/collections)
+        if (pill) {
+          pill.className = "hidden md:flex items-center gap-2 px-3 py-1.5 rounded-xl bg-amber-50 border border-amber-200 text-amber-900 text-xs font-semibold cursor-pointer hover:bg-amber-100 transition select-none";
+          pill.title = "已登录账号，但当前未进入词汇卡，计时自动暂停。点击进入课程合集点开词卡开始研学";
+        }
+        if (dot) dot.className = "w-2 h-2 rounded-full bg-amber-500";
+        if (timeEl) timeEl.innerText = timeStr;
+        if (badge) {
+          badge.className = "text-[10px] px-1.5 py-0.2 rounded bg-amber-100 text-amber-800 font-bold";
+          badge.innerText = "待机暂停";
+        }
+        if (statusBanner) statusBanner.classList.add('hidden');
+      } else {
+        // [BOTH CONDITIONS MET]: Logged In AND Word Card Open!
+        if (pill) {
+          pill.className = "hidden md:flex items-center gap-2 px-3 py-1.5 rounded-xl bg-emerald-50 border border-emerald-300 text-emerald-950 text-xs font-bold cursor-pointer ring-2 ring-emerald-400/30 transition select-none";
+          pill.title = "已达成双重条件：正在研学词汇卡，系统正在精准计入学习时长！";
+        }
+        if (dot) dot.className = "w-2 h-2 rounded-full bg-emerald-500 animate-pulse";
+        if (timeEl) timeEl.innerText = timeStr;
+        if (badge) {
+          badge.className = "text-[10px] px-1.5 py-0.2 rounded bg-emerald-100 text-emerald-800 font-bold";
+          badge.innerText = "学习中...";
+        }
+        if (statusBanner) {
+          statusBanner.className = "p-3 rounded-2xl bg-emerald-50 border border-emerald-200 text-emerald-950 text-xs flex flex-wrap items-center justify-between gap-3 shadow-xs";
+          statusBanner.innerHTML = `
+            <div class="flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+              <span><b>研学计时生效中</b>：正在精准记录学员 <b>${app.currentNickname || app.currentUser}</b> 的词卡专注用时。</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="font-mono text-xs font-bold text-emerald-900 bg-white px-2 py-0.5 rounded-lg border border-emerald-200">今日累计：${timeStr}</span>
+              <button onclick="openAnalyticsModal()" class="text-xs text-emerald-800 hover:underline font-bold">查看学情档案 &rarr;</button>
+            </div>
+          `;
+          statusBanner.classList.remove('hidden');
+        }
+      }
+    }
+
+    function handleTimerPillClick() {
+      if (!app.currentUser) {
+        openAuthModal('login');
+      } else {
+        openAnalyticsModal();
+      }
+    }
+
+    async function syncActiveStudyTimeToBackend(secs) {
+      if (!app.currentUser || secs <= 0) return;
+      try {
+        await fetch('/api/user/heartbeat-time', {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({ username: app.currentUser, duration_seconds: secs })
+        });
+      } catch (e) {
+        console.warn("Heartbeat sync error:", e);
+      }
+    }
+
+    function startTodayTimer() {
+      // Sync initial today_seconds from backend if user already logged in
+      if (app.currentUser) {
+        fetch(`/api/user/stats?username=${encodeURIComponent(app.currentUser)}`)
+          .then(r => r.json())
+          .then(data => {
+            todaySecCounter = data.today_seconds || 0;
+            updateTimerUI();
+          })
+          .catch(() => {});
+      } else {
+        todaySecCounter = 0;
+        updateTimerUI();
+      }
+
+      setInterval(() => {
+        // STRICT INVARIANT: Only tick when BOTH (1) logged in AND (2) word card is open
+        if (isActivelyStudying()) {
+          todaySecCounter++;
+          syncHeartbeatCounter++;
+
+          // Card elapsed seconds
+          const cardSec = Math.round((Date.now() - app.focusCardStartTime) / 1000);
+          const cTimer = document.getElementById('focus-card-timer');
+          if (cTimer) cTimer.innerText = `用时: ${cardSec}s`;
+
+          // Synchronize every 10 seconds of active card study to server
+          if (syncHeartbeatCounter >= 10) {
+            syncHeartbeatCounter = 0;
+            syncActiveStudyTimeToBackend(10);
+          }
+        }
+        updateTimerUI();
+      }, 1000);
+    }
+
+    // ==============================================================
+    // VOCAB BANK FUNCTIONS                                           //
+    // ==============================================================
+    async function loadVocabBank() {
+      try {
+        const res = await fetch(`/api/vocab-bank?username=${encodeURIComponent(app.currentUser)}`);
+        const data = await res.json();
+        app.vocabBankWords = data.words || [];
+        app.vocabBankSummary = data.summary || {};
+
+        document.getElementById('vb-stat-total').innerText = app.vocabBankSummary.total_words || 0;
+        document.getElementById('vb-stat-mastered').innerText = app.vocabBankSummary.mastered_count || 0;
+        document.getElementById('vb-stat-multi').innerText = app.vocabBankSummary.multi_context_count || 0;
+        
+        const totalSec = app.vocabBankSummary.historical_seconds || 0;
+        document.getElementById('vb-stat-time').innerText = `${Math.floor(totalSec / 60)} 分钟`;
+
+        document.getElementById('nav-vocab-badge').innerText = app.vocabBankSummary.total_words || 0;
+        document.getElementById('vb-filter-all-count').innerText = app.vocabBankSummary.total_words || 0;
+        document.getElementById('vb-filter-multi-count').innerText = app.vocabBankSummary.multi_context_count || 0;
+
+        renderVocabBankList();
+      } catch (e) {
+        console.error("Error loading vocab bank:", e);
+      }
+    }
+
+    function filterVocabBank(filter) {
+      app.vocabFilter = filter;
+      document.querySelectorAll('.vb-filter-btn').forEach(b => {
+        if (b.dataset.filter === filter) {
+          b.className = "vb-filter-btn px-3.5 py-1.5 rounded-xl text-xs font-bold bg-slate-900 text-white shadow-xs";
+        } else {
+          b.className = "vb-filter-btn px-3.5 py-1.5 rounded-xl text-xs font-semibold bg-white text-slate-600 border border-slate-200 hover:bg-slate-50";
+        }
+      });
+      renderVocabBankList();
+    }
+
+    function searchVocabBank() {
+      app.vocabSearchQuery = (document.getElementById('vb-search-input').value || '').trim().toLowerCase();
+      renderVocabBankList();
+    }
+
+    function renderVocabBankList() {
+      const container = document.getElementById('vocab-bank-cards-container');
+      if (!container) return;
+
+      let filtered = app.vocabBankWords.filter(w => {
+        if (app.vocabFilter === 'multi' && (!w.contexts || w.contexts.length <= 1)) return false;
+        if (app.vocabFilter === 'mastered' && w.status !== 'mastered') return false;
+        if (app.vocabFilter === 'learning' && w.status === 'mastered') return false;
+
+        if (app.vocabSearchQuery) {
+          const matchWord = w.word.toLowerCase().includes(app.vocabSearchQuery);
+          const matchDef = (w.def_cn || '').toLowerCase().includes(app.vocabSearchQuery);
+          if (!matchWord && !matchDef) return false;
+        }
+        return true;
+      });
+
+      if (filtered.length === 0) {
+        container.innerHTML = `
+          <div class="text-center py-12 text-slate-400 text-xs border border-dashed border-slate-200 rounded-2xl bg-slate-50/50">
+            <i class="fa-solid fa-inbox text-2xl text-slate-300 mb-2"></i>
+            <p>暂无符合条件的词汇记录</p>
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = filtered.map(w => {
+        const contexts = w.contexts || [];
+        const isMulti = contexts.length > 1;
+        const statusBadge = w.status === 'mastered' ? 
+          '<span class="px-2 py-0.5 rounded-md bg-emerald-100 text-emerald-800 font-bold text-[10px]">已掌握</span>' :
+          '<span class="px-2 py-0.5 rounded-md bg-slate-100 text-slate-600 font-semibold text-[10px]">自测学习中</span>';
+        
+        const multiTag = isMulti ? 
+          `<span class="px-2 py-0.5 rounded-md bg-indigo-100 text-indigo-800 font-bold text-[10px] border border-indigo-200">🌟 多语境汇聚 (${contexts.length}个出处)</span>` : 
+          '';
+
+        const contextsHtml = contexts.map(c => `
+          <div class="bg-slate-50/80 rounded-xl p-3 border border-slate-200/80 space-y-1">
+            <div class="flex justify-between items-center text-[11px]">
+              <span class="font-bold text-rose-900 flex items-center gap-1">
+                <i class="fa-solid fa-bookmark text-rose-700 text-[10px]"></i>
+                <span>${c.source_title || '课堂原句'}</span>
+              </span>
+              <button onclick="playAudio('${c.audio_url}', '${c.sentence}')" class="text-xs text-rose-800 hover:text-rose-950 font-bold flex items-center gap-1">
+                <i class="fa-solid fa-volume-high"></i>
+                <span>原声</span>
+              </button>
+            </div>
+            <p class="text-xs text-slate-800 font-serif-quote italic">"${c.sentence}"</p>
+            <p class="text-[11px] text-slate-500">译：${c.trans}</p>
+          </div>
+        `).join('');
+
+        return `
+          <div class="bg-white rounded-2xl p-4 sm:p-5 border border-slate-200/90 shadow-xs hover:border-slate-300 transition space-y-3">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <div class="flex items-center gap-3">
+                <span class="text-lg font-extrabold text-slate-900">${w.word}</span>
+                <span class="font-mono text-xs text-slate-500">${w.phonetic || ''}</span>
+                <span class="text-xs font-bold text-rose-800 bg-rose-50 px-2 py-0.2 rounded border border-rose-200">${w.pos || 'n.'}</span>
+                ${multiTag}
+              </div>
+              <div class="flex items-center gap-2">
+                ${statusBadge}
+                <span class="text-[11px] font-mono text-slate-400">已复习 ${w.review_count || 0} 次 · 累计用时 ${w.total_seconds || 0}s</span>
+              </div>
+            </div>
+
+            <div class="text-xs text-slate-700 font-semibold bg-rose-50/40 p-2.5 rounded-xl border-l-3 border-rose-800">
+              ${w.def_cn || ''}
+            </div>
+
+            <div class="space-y-2 pt-1">
+              <div class="text-[11px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1">
+                <i class="fa-solid fa-quote-left text-slate-300"></i>
+                <span>历史出处例句全景展示：</span>
+              </div>
+              <div class="grid grid-cols-1 ${isMulti ? 'md:grid-cols-2' : ''} gap-2">
+                ${contextsHtml}
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    // ==============================================================
+    // ADD COLLECTION VIA LINK MODAL                                 //
+    // ==============================================================
+    function openAddCollectionModal() {
+      document.getElementById('add-collection-modal').classList.remove('hidden');
+    }
+
+    function closeAddCollectionModal() {
+      document.getElementById('add-collection-modal').classList.add('hidden');
+    }
+
+    function autofillImportModal() {
+      document.getElementById('modal-import-url').value = "https://www.bilibili.com/video/BV1xx411c7mD";
+      document.getElementById('modal-import-title').value = "耶鲁大学公开课 · 理想国与古代哲学研讨合集";
+      document.getElementById('modal-import-transcript').value = `In our legal philosophy seminar today, we examine the deep tension between utilitarian calculations and deontological rights.
+Jeremy Bentham claimed that utility is the sole sovereign master of human action.
+However, in ancient virtue ethics, Aristotle insisted on eudaimonia—living a life in accordance with moral virtue and temperance.
+Does mandatory redistribution of wealth violate the moral principle of self-ownership as Robert Nozick famously argued?
+To resolve this moral dilemma, students must cultivate rigorous deliberation and rise above cynicism.`;
+    }
+
+    async function submitAddCollection() {
+      const url = document.getElementById('modal-import-url').value.trim();
+      const title = document.getElementById('modal-import-title').value.trim();
+      const transcript = document.getElementById('modal-import-transcript').value.trim();
+
+      if (!transcript) {
+        alert("请先填入字幕或原声逐字稿文本！");
+        return;
+      }
+
+      const btn = document.getElementById('modal-import-submit-btn');
+      btn.innerHTML = `<i class="fa-solid fa-brain animate-bounce"></i><span>DeepSeek AI 正在提取学术词汇并合成音频...</span>`;
+      btn.disabled = true;
+
+      try {
+        const payload = {
+          url: url,
+          title: title || "用户自定义公开课合集",
+          transcript: transcript,
+          username: app.currentUser
+        };
+        const res = await fetch('/api/import/link', {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify(payload)
+        });
+        const data = await res.json();
+        if (data.success) {
+          alert(`恭喜！成功提取并生成 ${data.extracted_count} 个核心词汇与原声音频，已生成新剧集并同步汇入全景词汇库！`);
+          closeAddCollectionModal();
+          await loadCollections();
+          await loadVocabBank();
+          navigateRoute('collections');
+        } else {
+          alert("导入解析失败: " + (data.error || "未知异常"));
+        }
+      } catch (e) {
+        alert("调用异常: " + e.message);
+      } finally {
+        btn.innerHTML = `<i class="fa-solid fa-brain"></i><span>调用 DeepSeek AI 解析术语并创建新合集</span>`;
+        btn.disabled = false;
+      }
+    }
+
+    // ==============================================================
+    // EXPORT FUNCTIONS                                              //
+    // ==============================================================
+    async function exportCollectionGuide(format) {
+      if (!app.activeCollectionData) return;
+      let words = [];
+      (app.activeCollectionData.episode_details || []).forEach(ep => {
+        if (ep.words) words.push(...ep.words);
+      });
+      downloadExport(format, words, app.activeCollectionData.title);
+    }
+
+    async function exportVocabBank(format) {
+      if (!app.vocabBankWords.length) {
+        alert("词汇库为空！");
+        return;
+      }
+      downloadExport(format, app.vocabBankWords, "Harvard_Justice_Universal_Vocab_Bank");
+    }
+
+    async function downloadExport(format, words, title) {
+      try {
+        const res = await fetch('/api/export', {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({ format: format, words: words, title: title })
+        });
+        const blob = await res.blob();
+        const ext = format === 'docx' ? 'docx' : (format === 'study_guide_md' ? 'md' : (format === 'anki_csv' ? 'csv' : 'txt'));
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = `${title}.${ext}`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+      } catch (e) {
+        alert("导出失败: " + e.message);
+      }
+    }
+
+    // ==============================================================
+    // AUTH & ANALYTICS MODALS                                       //
+    // ==============================================================
+    function renderUserStatus() {
+      const container = document.getElementById('user-status-container');
+      if (!container) return;
+
+      if (app.currentUser) {
+        container.innerHTML = `
+          <div class="flex items-center gap-2">
+            <button onclick="openAnalyticsModal()" class="w-8 h-8 rounded-full bg-rose-900 text-white flex items-center justify-center font-bold text-xs shadow-xs hover:ring-2 hover:ring-rose-800/20 transition" title="查看个人学情档案">
+              ${app.currentNickname.slice(0, 1)}
+            </button>
+            <div class="hidden sm:block text-left cursor-pointer" onclick="openAnalyticsModal()">
+              <div class="text-xs font-bold text-slate-800 leading-tight">${app.currentNickname}</div>
+              <div class="text-[10px] text-slate-400">学情档案</div>
+            </div>
+            <button onclick="logoutUser()" class="text-xs text-slate-400 hover:text-slate-600 ml-1 p-1" title="退出登录">
+              <i class="fa-solid fa-arrow-right-from-bracket"></i>
+            </button>
+          </div>
+        `;
+      } else {
+        container.innerHTML = `
+          <button onclick="openAuthModal('login')" class="px-3 py-1.5 rounded-xl bg-slate-900 hover:bg-black text-white text-xs font-bold flex items-center gap-1.5 shadow-xs transition">
+            <i class="fa-solid fa-user"></i>
+            <span>登录 / 注册</span>
+          </button>
+        `;
+      }
+    }
+
+    function openAuthModal(mode) {
+      app.authMode = mode;
+      document.getElementById('auth-modal').classList.remove('hidden');
+      updateAuthModalUI();
+    }
+
+    function closeAuthModal() {
+      document.getElementById('auth-modal').classList.add('hidden');
+    }
+
+    function toggleAuthMode() {
+      app.authMode = app.authMode === 'login' ? 'register' : 'login';
+      updateAuthModalUI();
+    }
+
+    function updateAuthModalUI() {
+      const title = document.getElementById('auth-modal-title');
+      const btn = document.getElementById('auth-submit-btn');
+      const swBtn = document.getElementById('auth-switch-mode-btn');
+      const nickContainer = document.getElementById('auth-nickname-container');
+
+      if (app.authMode === 'register') {
+        title.innerText = "注册哈佛研学新账号";
+        btn.innerText = "立即注册并开始研学";
+        swBtn.innerText = "已有账号？直接登录 →";
+        nickContainer.classList.remove('hidden');
+      } else {
+        title.innerText = "登录个人研学账号";
+        btn.innerText = "立即登录";
+        swBtn.innerText = "没有账号？立即注册 →";
+        nickContainer.classList.add('hidden');
+      }
+    }
+
+    async function submitAuthForm() {
+      const u = document.getElementById('auth-input-username').value.trim();
+      const p = document.getElementById('auth-input-password').value.trim();
+      const nick = document.getElementById('auth-input-nickname').value.trim();
+      const errEl = document.getElementById('auth-error-msg');
+
+      if (!u || !p) {
+        errEl.innerText = "请输入用户名和密码！";
+        errEl.classList.remove('hidden');
+        return;
+      }
+
+      const endpoint = app.authMode === 'register' ? '/api/auth/register' : '/api/auth/login';
+      try {
+        const res = await fetch(endpoint, {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({ username: u, password: p, nickname: nick })
+        });
+        const data = await res.json();
+        if (data.success) {
+          app.currentUser = data.username;
+          app.currentNickname = data.nickname || data.username;
+          localStorage.setItem('justice_user', app.currentUser);
+          localStorage.setItem('justice_nickname', app.currentNickname);
+          closeAuthModal();
+          renderUserStatus();
+          await loadVocabBank();
+          try {
+            const sRes = await fetch(`/api/user/stats?username=${encodeURIComponent(app.currentUser)}`);
+            const sData = await sRes.json();
+            todaySecCounter = sData.today_seconds || 0;
+          } catch(e) {}
+          updateTimerUI();
+        } else {
+          errEl.innerText = data.error || "操作失败";
+          errEl.classList.remove('hidden');
+        }
+      } catch (e) {
+        errEl.innerText = e.message;
+        errEl.classList.remove('hidden');
+      }
+    }
+
+    function logoutUser() {
+      app.currentUser = "";
+      app.currentNickname = "";
+      localStorage.removeItem('justice_user');
+      localStorage.removeItem('justice_nickname');
+      todaySecCounter = 0;
+      renderUserStatus();
+      updateTimerUI();
+      loadVocabBank();
+    }
+
+    async function openAnalyticsModal() {
+      document.getElementById('analytics-modal').classList.remove('hidden');
+      document.getElementById('analytics-user-tag').innerText = `当前账号：${app.currentNickname || app.currentUser || '游客'}`;
+
+      try {
+        const res = await fetch(`/api/user/stats?username=${encodeURIComponent(app.currentUser)}`);
+        const stats = await res.json();
+        
+        const todaySec = stats.today_seconds || 0;
+        const histSec = stats.historical_seconds || 0;
+        document.getElementById('an-today-time').innerText = `${Math.floor(todaySec / 60)}分${todaySec % 60}秒`;
+        document.getElementById('an-hist-time').innerText = `${Math.floor(histSec / 60)}分${histSec % 60}秒`;
+
+        const words = stats.words || {};
+        let mastered = 0;
+        let learning = 0;
+        const listHtml = Object.values(words).map(w => {
+          if (w.status === 'mastered') mastered++;
+          else learning++;
+          return `
+            <div class="p-2.5 flex justify-between items-center hover:bg-slate-50">
+              <div>
+                <span class="font-extrabold text-slate-800">${w.word}</span>
+                <span class="text-slate-400 ml-2 text-[10px]">最近评价: ${w.last_rating || '良好'}</span>
+              </div>
+              <div class="text-right">
+                <span class="px-2 py-0.5 rounded text-[10px] ${w.status === 'mastered' ? 'bg-emerald-100 text-emerald-800' : 'bg-slate-100 text-slate-600'} font-bold">
+                  ${w.status === 'mastered' ? '已掌握' : '学习中'}
+                </span>
+                <span class="text-slate-500 font-mono ml-2 text-[11px]">${w.review_count}次 / ${w.total_seconds}s</span>
+              </div>
+            </div>
+          `;
+        }).join('');
+
+        document.getElementById('an-mastered-count').innerText = `${mastered} 词`;
+        document.getElementById('an-learning-count').innerText = `${learning} 词`;
+        document.getElementById('analytics-words-list').innerHTML = listHtml || '<div class="p-4 text-center text-slate-400">暂无自测记录，请在专注练习模式中开始测试</div>';
+      } catch (e) {
+        console.error("Error fetching analytics:", e);
+      }
+    }
+
+    function closeAnalyticsModal() {
+      document.getElementById('analytics-modal').classList.add('hidden');
+    }
+  
+    // ==============================================================
+    // 3-TIER VOCABULARY FILTER & ENHANCED LEVEL MANAGEMENT          //
+    // ==============================================================
+    app.activeLevelFilter = 'all'; // 'all' | 'toefl_ielts' | 'gre_sat' | 'academic_philosophy'
+    app.filteredWords = [];
+    app.feedbackScreenshotBase64 = '';
+
+    function getLevelBadgeStyle(level) {
+      if (level === 'toefl_ielts') return 'bg-blue-50 text-blue-800 border-blue-200';
+      if (level === 'gre_sat') return 'bg-purple-50 text-purple-800 border-purple-200';
+      if (level === 'academic_philosophy') return 'bg-amber-50 text-amber-900 border-amber-300';
+      if (level === 'phrasal_verbs') return 'bg-rose-50 text-rose-900 border-rose-300';
+      return 'bg-slate-50 text-slate-700 border-slate-200';
+    }
+
+    function getLevelDisplayName(level) {
+      if (level === 'toefl_ielts') return '📘 TOEFL / IELTS 核心高频';
+      if (level === 'gre_sat') return '⚡ GRE / SAT 进阶拔高';
+      if (level === 'academic_philosophy') return '🏛️ 哲学学术专精';
+      if (level === 'phrasal_verbs') return '🔥 核心动词词组 · PHRASAL VERB';
+      return '通用高阶词汇';
+    }
+
+    function setFocusLevelFilter(level) {
+      app.activeLevelFilter = level;
+      if (!app.activeEpisodeData || !app.activeEpisodeData.words) return;
+
+      if (level === 'all') {
+        app.filteredWords = app.activeEpisodeData.words;
+      } else {
+        app.filteredWords = app.activeEpisodeData.words.filter(w => (w.level || 'toefl_ielts') === level);
+      }
+      
+      if (app.filteredWords.length === 0) {
+        alert("该课程集暂未包含此类别的词汇，已为您显示全部词汇。");
+        app.activeLevelFilter = 'all';
+        app.filteredWords = app.activeEpisodeData.words;
+      }
+
+      app.focusCardIndex = 0;
+      renderFocusLevelPills();
+      renderFocusCard();
+    }
+
+    function renderFocusLevelPills() {
+      const container = document.getElementById('focus-level-pills');
+      if (!container || !app.activeEpisodeData) return;
+
+      const all = app.activeEpisodeData.words || [];
+      const toefl = all.filter(w => (w.level || 'toefl_ielts') === 'toefl_ielts');
+      const gre = all.filter(w => w.level === 'gre_sat');
+      const acad = all.filter(w => w.level === 'academic_philosophy');
+      const phrasal = all.filter(w => w.level === 'phrasal_verbs');
+
+      const btnCls = (isActive, baseColor) => {
+        if (isActive) return `px-3 py-1.5 rounded-xl text-xs font-bold text-white shadow-xs ${baseColor}`;
+        return `px-3 py-1.5 rounded-xl text-xs font-bold bg-slate-50 text-slate-700 hover:bg-slate-100 border border-slate-200 transition`;
+      };
+
+      container.innerHTML = `
+        <button onclick="setFocusLevelFilter('all')" class="${btnCls(app.activeLevelFilter === 'all', 'bg-slate-900')}">
+          全部 (${all.length})
+        </button>
+        <button onclick="setFocusLevelFilter('toefl_ielts')" class="${btnCls(app.activeLevelFilter === 'toefl_ielts', 'bg-blue-700')}">
+          📘 托福/雅思 (${toefl.length})
+        </button>
+        <button onclick="setFocusLevelFilter('gre_sat')" class="${btnCls(app.activeLevelFilter === 'gre_sat', 'bg-purple-700')}">
+          ⚡ GRE/SAT (${gre.length})
+        </button>
+        <button onclick="setFocusLevelFilter('academic_philosophy')" class="${btnCls(app.activeLevelFilter === 'academic_philosophy', 'bg-amber-700')}">
+          🏛️ 哲学专精 (${acad.length})
+        </button>
+        <button onclick="setFocusLevelFilter('phrasal_verbs')" class="${btnCls(app.activeLevelFilter === 'phrasal_verbs', 'bg-rose-800')}">
+          🔥 动词词组 (${phrasal.length})
+        </button>
+        <button onclick="openPreStudyLauncher(app.activeEpisodeId)" class="px-3 py-1.5 rounded-xl text-xs font-bold bg-white text-rose-900 hover:bg-rose-50 border border-rose-200 transition ml-1 flex items-center gap-1">
+          <i class="fa-solid fa-sliders text-[10px]"></i>
+          <span>重选分类</span>
+        </button>
+      `;
+    }
+
+    // ==============================================================
+    // FEEDBACK & SCREENSHOT PASTE ENGINE                           //
+    // ==============================================================
+    function openFeedbackModal() {
+      document.getElementById('feedback-modal').classList.remove('hidden');
+      const dropzone = document.getElementById('fb-paste-dropzone');
+      if (dropzone) dropzone.focus();
+    }
+
+    function closeFeedbackModal() {
+      document.getElementById('feedback-modal').classList.add('hidden');
+      const msg = document.getElementById('fb-status-msg');
+      if (msg) {
+        msg.classList.add('hidden');
+        msg.innerText = '';
+      }
+    }
+
+    function triggerFeedbackFileInput() {
+      const fi = document.getElementById('fb-file-input');
+      if (fi) fi.click();
+    }
+
+    function handleFeedbackFileSelect(event) {
+      const file = event.target.files[0];
+      if (!file) return;
+      processFeedbackImageFile(file);
+    }
+
+    function processFeedbackImageFile(file) {
+      if (!file.type.startsWith('image/')) {
+        alert("请选择有效的图片文件！");
+        return;
+      }
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        app.feedbackScreenshotBase64 = e.target.result;
+        displayFeedbackScreenshotPreview(e.target.result, `${file.name || 'screenshot.png'} (${Math.round(file.size / 1024)} KB)`);
+      };
+      reader.readAsDataURL(file);
+    }
+
+    function displayFeedbackScreenshotPreview(dataUrl, infoText) {
+      document.getElementById('fb-screenshot-preview').src = dataUrl;
+      document.getElementById('fb-screenshot-info').innerText = infoText || '已捕获现场剪贴板截图';
+      document.getElementById('fb-paste-idle-prompt').classList.add('hidden');
+      document.getElementById('fb-paste-preview-box').classList.remove('hidden');
+    }
+
+    function removeFeedbackScreenshot(event) {
+      if (event) event.stopPropagation();
+      app.feedbackScreenshotBase64 = '';
+      document.getElementById('fb-screenshot-preview').src = '';
+      document.getElementById('fb-paste-idle-prompt').classList.remove('hidden');
+      document.getElementById('fb-paste-preview-box').classList.add('hidden');
+      const fi = document.getElementById('fb-file-input');
+      if (fi) fi.value = '';
+    }
+
+    // Global Clipboard Paste Listener for Direct Ctrl+V
+    window.addEventListener('paste', (e) => {
+      const modal = document.getElementById('feedback-modal');
+      if (!modal || modal.classList.contains('hidden')) return;
+
+      const items = (e.clipboardData || e.originalEvent.clipboardData).items;
+      for (let i = 0; i < items.length; i++) {
+        if (items[i].type.indexOf('image') !== -1) {
+          const blob = items[i].getAsFile();
+          processFeedbackImageFile(blob);
+          e.preventDefault();
+          break;
+        }
+      }
+    });
+
+    async function submitFeedbackForm() {
+      const text = document.getElementById('fb-text').value.trim();
+      if (!text && !app.feedbackScreenshotBase64) {
+        alert("请至少输入问题描述或粘贴一张故障截图！");
+        return;
+      }
+
+      const category = document.getElementById('fb-category').value;
+      const userEmail = document.getElementById('fb-user-email').value.trim();
+      const btn = document.getElementById('fb-submit-btn');
+      const statusMsg = document.getElementById('fb-status-msg');
+
+      btn.disabled = true;
+      btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> 正在归档并投递至开发者邮箱...';
+
+      try {
+        const res = await fetch('/api/feedback', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            category: category,
+            user_email: userEmail,
+            text: text,
+            current_page: app.currentRoute,
+            image_base64: app.feedbackScreenshotBase64,
+            timestamp: new Date().toISOString()
+          })
+        });
+
+        const data = await res.json();
+        if (data.success) {
+          statusMsg.className = "text-xs text-center font-bold text-emerald-700 bg-emerald-50 p-2.5 rounded-xl border border-emerald-200 block";
+          statusMsg.innerText = `✅ 反馈已成功提交！工单号：${data.feedback_id}，已同步至开发者邮箱 billychen0726@gmail.com`;
+          
+          // Reset form after short delay
+          setTimeout(() => {
+            document.getElementById('fb-text').value = '';
+            document.getElementById('fb-user-email').value = '';
+            removeFeedbackScreenshot();
+            closeFeedbackModal();
+            btn.disabled = false;
+            btn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> 提交反馈并同步至开发者邮箱';
+          }, 1800);
+        } else {
+          statusMsg.className = "text-xs text-center font-bold text-red-600 bg-red-50 p-2.5 rounded-xl border border-red-200 block";
+          statusMsg.innerText = `❌ 提交失败：${data.error || '未知错误'}`;
+          btn.disabled = false;
+          btn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> 重试提交';
+        }
+      } catch (err) {
+        statusMsg.className = "text-xs text-center font-bold text-red-600 bg-red-50 p-2.5 rounded-xl border border-red-200 block";
+        statusMsg.innerText = `❌ 网络异常：${err.message}`;
+        btn.disabled = false;
+        btn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> 重试提交';
+      }
+    }
+
+    // ==============================================================
+    // VIDEO DOWNLOADER & SUBTITLE FETCHER ENGINE                    //
+    // ==============================================================
+    async function autoFetchSubtitlesFromLink() {
+      const url = document.getElementById('modal-import-url').value.trim();
+      if (!url) {
+        alert("请先输入音视频或字幕网址！");
+        return;
+      }
+
+      const btn = document.getElementById('btn-fetch-subtitles');
+      const origHtml = btn.innerHTML;
+      btn.disabled = true;
+      btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> 正在抓取...';
+
+      try {
+        const res = await fetch('/api/video/fetch-subtitles', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ url: url })
+        });
+
+        const data = await res.json();
+        if (data.success) {
+          if (data.title) {
+            document.getElementById('modal-import-title').value = data.title;
+          }
+          if (data.transcript) {
+            document.getElementById('modal-import-transcript').value = data.transcript;
+          }
+          alert(`成功解析并抓取 [${data.platform || '视频'}] 课程信息与字幕逐字稿！`);
+        } else {
+          alert(`抓取提示：${data.error || '未能自动获取字幕，请直接手动粘贴原声文本或打开 DownSub 提取。'}`);
+        }
+      } catch (err) {
+        alert(`抓取接口请求异常：${err.message}`);
+      } finally {
+        btn.disabled = false;
+        btn.innerHTML = origHtml;
+      }
+    }
+
+  </script>
+
+  <!-- ==================== FLOATING FEEDBACK BUTTON ==================== -->
+  <div class="fixed bottom-6 right-6 z-40">
+    <button onclick="openFeedbackModal()" class="flex items-center gap-2.5 px-4 py-2.5 rounded-full bg-slate-900/95 hover:bg-black text-white font-bold text-xs shadow-2xl border border-slate-700/60 hover:scale-105 transition-all duration-200 group">
+      <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+      <i class="fa-solid fa-comment-dots text-rose-400 text-sm"></i>
+      <span>问题反馈与建议</span>
+      <span class="hidden sm:inline text-[10px] px-2 py-0.5 rounded-full bg-white/10 text-slate-300 font-medium">支持截图粘贴</span>
+    </button>
+  </div>
+
+    <!-- ==================== PRE-STUDY LAUNCHER MODAL ==================== -->
+  <div id="pre-study-modal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center z-50 p-4 hidden">
+    <div class="bg-white rounded-3xl max-w-xl w-full p-6 shadow-2xl border border-slate-200/90 space-y-5 animate-in fade-in zoom-in-95 duration-150">
+      <!-- Modal Header -->
+      <div class="flex items-start justify-between border-b border-slate-100 pb-4">
+        <div class="space-y-1">
+          <div class="flex items-center gap-2">
+            <span class="px-2.5 py-0.5 rounded-md text-[10px] font-extrabold uppercase tracking-wider bg-rose-50 text-rose-900 border border-rose-200">
+              VerbaLex · 研学启程配置
+            </span>
+            <span class="text-xs text-slate-400 font-mono" id="pre-study-ep-badge">Episode</span>
+          </div>
+          <h3 class="text-lg font-black text-slate-900 leading-snug" id="pre-study-ep-title">
+            课程分集名称
+          </h3>
+          <p class="text-xs text-slate-500 line-clamp-1" id="pre-study-ep-subtitle">
+            哈佛大学公开课《公正》· 视频原声切片与四维词汇库
+          </p>
+        </div>
+        <button onclick="closePreStudyModal()" class="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-500 hover:text-slate-900 flex items-center justify-center transition">
+          <i class="fa-solid fa-xmark text-sm"></i>
+        </button>
+      </div>
+
+      <!-- Quick Launch Option 1: Default Direct Start (一键全量直接开始) -->
+      <div class="space-y-2">
+        <label class="text-xs font-black text-slate-800 uppercase tracking-wider flex items-center gap-1.5">
+          <i class="fa-solid fa-bolt text-amber-500"></i>
+          <span>极速起航（推荐伙伴今晚直接开练）：</span>
+        </label>
+        <button onclick="confirmPreStudyStart(true)" class="w-full p-4 rounded-2xl bg-gradient-to-r from-rose-900 via-rose-800 to-indigo-950 hover:from-rose-950 hover:to-slate-950 text-white shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5 text-left flex items-center justify-between group cursor-pointer border border-rose-800/40">
+          <div class="space-y-1 pr-3">
+            <div class="flex items-center gap-2">
+              <span class="px-2 py-0.5 rounded-md bg-amber-400/20 text-amber-300 text-[10px] font-extrabold tracking-wider">
+                ⚡ 默认全量
+              </span>
+              <h4 class="text-sm sm:text-base font-black text-white">直接开始全部词汇研学 (一键启程)</h4>
+            </div>
+            <p class="text-xs text-rose-100/80 leading-relaxed" id="pre-study-default-desc">
+              加载全部 4 个维度共 66 个词汇与动词短语，无需逐项配置，零阻碍立即开练。
+            </p>
+          </div>
+          <div class="w-10 h-10 shrink-0 rounded-xl bg-white/10 group-hover:bg-white/20 flex items-center justify-center text-white text-base transition">
+            <i class="fa-solid fa-arrow-right"></i>
+          </div>
+        </button>
+      </div>
+
+      <!-- Option 2: Selective Levels Checkboxes (自由勾选练习分类) -->
+      <div class="space-y-3 pt-2 border-t border-slate-100">
+        <div class="flex items-center justify-between">
+          <label class="text-xs font-black text-slate-800 uppercase tracking-wider flex items-center gap-1.5">
+            <i class="fa-solid fa-sliders text-rose-800"></i>
+            <span>或者自由勾选强化分类与动词词组：</span>
+          </label>
+          <span class="text-[11px] text-slate-400 font-medium">支持单选或任意多选组合</span>
+        </div>
+
+        <!-- Checkbox Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+          <!-- 1. TOEFL / IELTS -->
+          <label class="p-3 rounded-xl border border-slate-200 hover:border-blue-300 bg-slate-50/60 hover:bg-blue-50/30 cursor-pointer flex items-start gap-3 transition">
+            <input type="checkbox" id="chk-level-toefl" checked onchange="onPreStudyCheckboxChange()" class="mt-0.5 w-4 h-4 rounded text-blue-700 focus:ring-blue-600 cursor-pointer">
+            <div class="space-y-0.5 flex-1">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold text-slate-800">📘 托福 / 雅思核心高频</span>
+                <span id="badge-count-toefl" class="text-[10px] font-mono px-1.5 py-0.2 rounded bg-blue-100 text-blue-800 font-bold">20词</span>
+              </div>
+              <p class="text-[11px] text-slate-500">听力关键场景与案情高频词</p>
+            </div>
+          </label>
+
+          <!-- 2. GRE / SAT -->
+          <label class="p-3 rounded-xl border border-slate-200 hover:border-purple-300 bg-slate-50/60 hover:bg-purple-50/30 cursor-pointer flex items-start gap-3 transition">
+            <input type="checkbox" id="chk-level-gre" checked onchange="onPreStudyCheckboxChange()" class="mt-0.5 w-4 h-4 rounded text-purple-700 focus:ring-purple-600 cursor-pointer">
+            <div class="space-y-0.5 flex-1">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold text-slate-800">⚡ GRE / SAT 进阶拔高</span>
+                <span id="badge-count-gre" class="text-[10px] font-mono px-1.5 py-0.2 rounded bg-purple-100 text-purple-800 font-bold">22词</span>
+              </div>
+              <p class="text-[11px] text-slate-500">哲学思辨与学术辩护高阶词</p>
+            </div>
+          </label>
+
+          <!-- 3. Academic Philosophy -->
+          <label class="p-3 rounded-xl border border-slate-200 hover:border-amber-300 bg-slate-50/60 hover:bg-amber-50/30 cursor-pointer flex items-start gap-3 transition">
+            <input type="checkbox" id="chk-level-acad" checked onchange="onPreStudyCheckboxChange()" class="mt-0.5 w-4 h-4 rounded text-amber-700 focus:ring-amber-600 cursor-pointer">
+            <div class="space-y-0.5 flex-1">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold text-slate-800">🏛️ 哲学法理学术专精</span>
+                <span id="badge-count-acad" class="text-[10px] font-mono px-1.5 py-0.2 rounded bg-amber-100 text-amber-900 font-bold">12词</span>
+              </div>
+              <p class="text-[11px] text-slate-500">道德哲学、功利与自然法专业术语</p>
+            </div>
+          </label>
+
+          <!-- 4. Phrasal Verbs (NEW) -->
+          <label class="p-3 rounded-xl border-2 border-rose-200/80 hover:border-rose-400 bg-rose-50/40 hover:bg-rose-50/70 cursor-pointer flex items-start gap-3 transition shadow-xs">
+            <input type="checkbox" id="chk-level-phrasal" checked onchange="onPreStudyCheckboxChange()" class="mt-0.5 w-4 h-4 rounded text-rose-800 focus:ring-rose-700 cursor-pointer">
+            <div class="space-y-0.5 flex-1">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-black text-rose-950">🔥 核心动词词组 (短语)</span>
+                <span id="badge-count-phrasal" class="text-[10px] font-mono px-1.5 py-0.2 rounded bg-rose-100 text-rose-900 font-bold">12组</span>
+              </div>
+              <p class="text-[11px] text-rose-700">教授真实原声高频短语动词与搭配</p>
+            </div>
+          </label>
+        </div>
+
+        <!-- Selection Summary & Custom Start Button -->
+        <div class="pt-2 flex flex-col sm:flex-row items-center justify-between gap-3">
+          <div class="text-xs text-slate-600 font-medium text-center sm:text-left" id="pre-study-selection-summary">
+            已勾选：<span class="font-bold text-rose-900" id="summary-selected-count">4 个分类共 66 词</span> · 预估用时 <span class="font-bold text-slate-800">12-16 分钟</span>
+          </div>
+          <button onclick="confirmPreStudyStart(false)" id="btn-start-selected-levels" class="w-full sm:w-auto px-6 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs font-extrabold shadow-sm transition flex items-center justify-center gap-1.5 hover:-translate-y-0.5 cursor-pointer">
+            <i class="fa-solid fa-play text-[10px]"></i>
+            <span>按所选分类开始研学 &rarr;</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Feedback Modal (with direct clipboard paste and developer mail dispatch) -->
+  <div id="feedback-modal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-xs z-50 flex items-center justify-center p-4 hidden">
+    <div class="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-7 shadow-2xl border border-slate-200 space-y-4 max-h-[90vh] overflow-y-auto">
+      
+      <!-- Modal Header -->
+      <div class="flex justify-between items-start border-b border-slate-100 pb-3">
+        <div class="space-y-0.5">
+          <h3 class="text-base sm:text-lg font-extrabold text-slate-900 flex items-center gap-2">
+            <i class="fa-solid fa-envelope-open-text text-rose-800"></i>
+            <span>提交研学反馈与问题排查凭证</span>
+          </h3>
+          <p class="text-xs text-slate-500">
+            支持直接按 <kbd class="px-1.5 py-0.5 bg-slate-100 border border-slate-300 rounded text-slate-800 font-mono text-[10px]">Ctrl + V</kbd> 粘贴现场截图
+          </p>
+        </div>
+        <button onclick="closeFeedbackModal()" class="text-slate-400 hover:text-slate-600 p-1">
+          <i class="fa-solid fa-xmark text-lg"></i>
+        </button>
+      </div>
+
+      <!-- Developer Email Notification Banner -->
+      <div class="p-3 rounded-2xl bg-amber-50/80 border border-amber-200/90 text-amber-900 text-xs flex items-start gap-2.5">
+        <i class="fa-solid fa-shield-halved text-amber-600 mt-0.5 text-sm"></i>
+        <div class="space-y-1">
+          <div class="font-bold">开发者直联投递与工单归档保障：</div>
+          <p class="text-[11px] leading-relaxed text-amber-800">
+            您填写的反馈说明与粘贴的现场截图，将自动完成本地数据落盘留痕，并进入分发队列同步至开发者邮箱：
+            <span class="font-mono font-bold text-rose-950 underline decoration-rose-900/40">billychen0726@gmail.com</span>。
+          </p>
+        </div>
+      </div>
+
+      <!-- Feedback Form -->
+      <div class="space-y-3 text-xs">
+        <!-- Category & Email Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div class="space-y-1">
+            <label class="font-bold text-slate-700">反馈类别：</label>
+            <select id="fb-category" class="w-full px-3 py-2 rounded-xl border border-slate-300 bg-white font-medium">
+              <option value="课文/词汇释义疑问">课文/词汇释义疑问</option>
+              <option value="课堂例句与原声音频问题">课堂例句与原声音频问题</option>
+              <option value="预习与抗遗忘复习建议">预习与抗遗忘复习建议</option>
+              <option value="界面交互与系统Bug">界面交互与系统Bug</option>
+              <option value="其他学术交流">其他学术交流</option>
+            </select>
+          </div>
+          <div class="space-y-1">
+            <label class="font-bold text-slate-700">您的邮箱 (选填，用于答复)：</label>
+            <input id="fb-user-email" type="email" placeholder="name@example.com" class="w-full px-3 py-2 rounded-xl border border-slate-300 font-medium">
+          </div>
+        </div>
+
+        <!-- Feedback Description Textarea -->
+        <div class="space-y-1">
+          <label class="font-bold text-slate-700">问题或建议详细描述：</label>
+          <textarea id="fb-text" rows="3" placeholder="请在此输入您的具体问题、听力疑点或优化建议..." class="w-full p-3 rounded-xl border border-slate-300 font-medium text-xs leading-relaxed focus:outline-rose-800"></textarea>
+        </div>
+
+        <!-- Clipboard Paste Screenshot Area -->
+        <div class="space-y-1">
+          <div class="flex justify-between items-center">
+            <label class="font-bold text-slate-700">现场故障截图凭证 (可选)：</label>
+            <span class="text-[11px] text-slate-400">支持截屏后直接 Ctrl+V</span>
+          </div>
+          
+          <div id="fb-paste-dropzone" tabindex="0" onclick="triggerFeedbackFileInput()" class="relative border-2 border-dashed border-slate-300 hover:border-rose-800 rounded-2xl p-4 text-center cursor-pointer bg-slate-50 hover:bg-rose-50/20 transition-all outline-none group">
+            <input type="file" id="fb-file-input" accept="image/*" class="hidden" onchange="handleFeedbackFileSelect(event)">
+            
+            <div id="fb-paste-idle-prompt" class="space-y-1 py-1">
+              <i class="fa-solid fa-camera-retro text-2xl text-slate-400 group-hover:text-rose-800 transition"></i>
+              <p class="text-xs font-bold text-slate-700">
+                点击此处直接按 <kbd class="px-1.5 py-0.5 bg-white border border-slate-300 rounded text-slate-800 font-mono shadow-2xs">Ctrl + V</kbd> 粘贴截图
+              </p>
+              <p class="text-[10px] text-slate-400">
+                支持系统剪贴板截屏、QQ/微信截图直接粘贴，或点击选取本地图片
+              </p>
+            </div>
+
+            <!-- Preview Container when Screenshot Pasted -->
+            <div id="fb-paste-preview-box" class="hidden space-y-2">
+              <div class="relative inline-block rounded-xl overflow-hidden border border-slate-300 shadow-sm max-h-40 bg-black">
+                <img id="fb-screenshot-preview" src="" alt="Screenshot" class="max-h-40 object-contain">
+                <button type="button" onclick="removeFeedbackScreenshot(event)" class="absolute top-1.5 right-1.5 w-6 h-6 rounded-full bg-slate-900/80 hover:bg-black text-white text-xs flex items-center justify-center transition shadow" title="清除截图">
+                  <i class="fa-solid fa-xmark"></i>
+                </button>
+              </div>
+              <div id="fb-screenshot-info" class="text-[11px] text-slate-500 font-mono"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Submit Button -->
+        <button id="fb-submit-btn" onclick="submitFeedbackForm()" class="w-full py-3 rounded-2xl bg-rose-900 hover:bg-rose-950 text-white font-extrabold flex items-center justify-center gap-2 shadow-md transition hover:-translate-y-0.5">
+          <i class="fa-solid fa-paper-plane"></i>
+          <span>提交反馈并同步至开发者邮箱</span>
+        </button>
+        <div id="fb-status-msg" class="text-xs text-center font-bold hidden"></div>
+
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

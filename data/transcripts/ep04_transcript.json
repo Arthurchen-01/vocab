@@ -1,0 +1,4607 @@
+[
+  {
+    "start": 0.0,
+    "duration": 2.22,
+    "text": "[AUDIO LOGO]"
+  },
+  {
+    "start": 2.22,
+    "duration": 0.89,
+    "text": "[MUSIC PLAYING]"
+  },
+  {
+    "start": 3.11,
+    "duration": 3.81,
+    "text": "ANNOUNCER: Funding for this\nprogram is provided by--"
+  },
+  {
+    "start": 6.92,
+    "duration": 2.35,
+    "text": "Additional funding provided by--"
+  },
+  {
+    "start": 9.27,
+    "duration": 3.5,
+    "text": "[MUSIC PLAYING]"
+  },
+  {
+    "start": 29.27,
+    "duration": 4.44,
+    "text": "MICHAEL SANDEL: Today,\nwe turn to the question"
+  },
+  {
+    "start": 33.71,
+    "duration": 3.03,
+    "text": "of distributive justice."
+  },
+  {
+    "start": 36.74,
+    "duration": 3.39,
+    "text": "How should income and wealth\nand power and opportunities"
+  },
+  {
+    "start": 40.13,
+    "duration": 4.08,
+    "text": "be distributed, according\nto what principles?"
+  },
+  {
+    "start": 44.21,
+    "duration": 4.5,
+    "text": "John Rawls offers a detailed\nanswer to that question."
+  },
+  {
+    "start": 48.71,
+    "duration": 2.49,
+    "text": "And we're going to examine\nand assess his answer"
+  },
+  {
+    "start": 51.2,
+    "duration": 1.92,
+    "text": "to that question today."
+  },
+  {
+    "start": 53.12,
+    "duration": 5.67,
+    "text": "We put ourselves in a\nposition to do so last time,"
+  },
+  {
+    "start": 58.79,
+    "duration": 8.64,
+    "text": "by trying to make sense of\nwhy he thinks that principles"
+  },
+  {
+    "start": 67.43,
+    "duration": 8.85,
+    "text": "of justice are best derived\nfrom a hypothetical contract"
+  },
+  {
+    "start": 76.28,
+    "duration": 3.54,
+    "text": "and what matters is that the\nhypothetical contract be carried"
+  },
+  {
+    "start": 79.82,
+    "duration": 4.08,
+    "text": "out in an original\nposition of equality,"
+  },
+  {
+    "start": 83.9,
+    "duration": 5.28,
+    "text": "behind, what Rawls calls,\nthe veil of ignorance."
+  },
+  {
+    "start": 89.18,
+    "duration": 1.415,
+    "text": "So that much is clear."
+  },
+  {
+    "start": 95.66,
+    "duration": 0.67,
+    "text": "All right."
+  },
+  {
+    "start": 96.33,
+    "duration": 5.9,
+    "text": "Then, let's turn to the\nprinciples that Rawls says"
+  },
+  {
+    "start": 102.23,
+    "duration": 5.416,
+    "text": "would be chosen behind\nthe veil of ignorance."
+  },
+  {
+    "start": 111.83,
+    "duration": 3.51,
+    "text": "First, he considers some\nof the major alternatives."
+  },
+  {
+    "start": 115.34,
+    "duration": 3.06,
+    "text": "What about utilitarianism?"
+  },
+  {
+    "start": 118.4,
+    "duration": 3.15,
+    "text": "Would the people, in\nthe original position,"
+  },
+  {
+    "start": 121.55,
+    "duration": 3.93,
+    "text": "choose to govern\ntheir collective lives"
+  },
+  {
+    "start": 125.48,
+    "duration": 2.25,
+    "text": "utilitarian principles,\nthe greatest good"
+  },
+  {
+    "start": 127.73,
+    "duration": 1.77,
+    "text": "for the greatest number?"
+  },
+  {
+    "start": 129.5,
+    "duration": 4.38,
+    "text": "No, they wouldn't, Rawls says."
+  },
+  {
+    "start": 133.88,
+    "duration": 5.02,
+    "text": "And the reason is that,\nbehind the veil of ignorance,"
+  },
+  {
+    "start": 138.9,
+    "duration": 4.82,
+    "text": "everyone knows that,\nonce the veil goes up"
+  },
+  {
+    "start": 143.72,
+    "duration": 6.81,
+    "text": "and real life begins,\nwe will each want"
+  },
+  {
+    "start": 150.53,
+    "duration": 5.01,
+    "text": "to be respected with dignity."
+  },
+  {
+    "start": 155.54,
+    "duration": 4.14,
+    "text": "Even if we turn out to be\na member of a minority,"
+  },
+  {
+    "start": 159.68,
+    "duration": 1.686,
+    "text": "we don't want to be oppressed."
+  },
+  {
+    "start": 164.69,
+    "duration": 6.42,
+    "text": "And so, we would agree\nto reject utilitarianism"
+  },
+  {
+    "start": 171.11,
+    "duration": 3.63,
+    "text": "and, instead, to adopt,\nas our first principle,"
+  },
+  {
+    "start": 174.74,
+    "duration": 4.26,
+    "text": "equal basic liberties,\nfundamental rights to freedom"
+  },
+  {
+    "start": 179.0,
+    "duration": 5.37,
+    "text": "of speech, freedom of assembly,\nreligious liberty, freedom"
+  },
+  {
+    "start": 184.37,
+    "duration": 2.91,
+    "text": "of conscience, and the like."
+  },
+  {
+    "start": 187.28,
+    "duration": 5.13,
+    "text": "We wouldn't want to take the\nchance that we would wind up"
+  },
+  {
+    "start": 192.41,
+    "duration": 7.14,
+    "text": "as members of an oppressed,\nor a despised, minority,"
+  },
+  {
+    "start": 199.55,
+    "duration": 4.59,
+    "text": "with the majority\ntyrannizing over us."
+  },
+  {
+    "start": 204.14,
+    "duration": 2.13,
+    "text": "And so, Rawls says\nutilitarianism"
+  },
+  {
+    "start": 206.27,
+    "duration": 0.903,
+    "text": "would be rejected."
+  },
+  {
+    "start": 211.94,
+    "duration": 2.86,
+    "text": "Utilitarianism\nmakes the mistake,"
+  },
+  {
+    "start": 214.8,
+    "duration": 6.11,
+    "text": "Rawls writes, of forgetting, or,\nat least, not taking seriously,"
+  },
+  {
+    "start": 220.91,
+    "duration": 3.39,
+    "text": "the distinction between persons."
+  },
+  {
+    "start": 224.3,
+    "duration": 2.77,
+    "text": "And in the original position,\nbehind the veil of ignorance,"
+  },
+  {
+    "start": 227.07,
+    "duration": 4.94,
+    "text": "we would recognize that\nand reject utilitarianism."
+  },
+  {
+    "start": 232.01,
+    "duration": 3.21,
+    "text": "We wouldn't trade off our\nfundamental rights and liberties"
+  },
+  {
+    "start": 235.22,
+    "duration": 3.06,
+    "text": "for any economic advantages."
+  },
+  {
+    "start": 238.28,
+    "duration": 1.616,
+    "text": "That's the first principle."
+  },
+  {
+    "start": 242.9,
+    "duration": 5.16,
+    "text": "Second principle has to do\nwith social and economic"
+  },
+  {
+    "start": 248.06,
+    "duration": 0.85,
+    "text": "inequalities."
+  },
+  {
+    "start": 248.91,
+    "duration": 2.63,
+    "text": "What would we agree to?"
+  },
+  {
+    "start": 251.54,
+    "duration": 1.68,
+    "text": "Remember, we don't\nknow whether we're"
+  },
+  {
+    "start": 253.22,
+    "duration": 5.014,
+    "text": "going to wind up being rich\nor poor, healthy or unhealthy."
+  },
+  {
+    "start": 258.234,
+    "duration": 4.046,
+    "text": "We don't know what kind of\nfamily we're going to come from,"
+  },
+  {
+    "start": 262.28,
+    "duration": 2.32,
+    "text": "whether we're going\nto inherit millions"
+  },
+  {
+    "start": 264.6,
+    "duration": 5.93,
+    "text": "or whether we will come\nfrom an impoverished family."
+  },
+  {
+    "start": 270.53,
+    "duration": 5.23,
+    "text": "So we might, at first\nthought, say, well,"
+  },
+  {
+    "start": 275.76,
+    "duration": 5.45,
+    "text": "let's require an equal\ndistribution of income"
+  },
+  {
+    "start": 281.21,
+    "duration": 5.7,
+    "text": "and wealth, just to\nbe on the safe side."
+  },
+  {
+    "start": 286.91,
+    "duration": 4.5,
+    "text": "But then we would\nrealize that we"
+  },
+  {
+    "start": 291.41,
+    "duration": 5.64,
+    "text": "could do better than that,\neven if we're unlucky"
+  },
+  {
+    "start": 297.05,
+    "duration": 2.82,
+    "text": "and wind up at the bottom."
+  },
+  {
+    "start": 299.87,
+    "duration": 5.16,
+    "text": "We could do better, if we\nagree to a qualified principle"
+  },
+  {
+    "start": 305.03,
+    "duration": 1.77,
+    "text": "of equality."
+  },
+  {
+    "start": 306.8,
+    "duration": 3.24,
+    "text": "Rawls calls it the\ndifference principle."
+  },
+  {
+    "start": 310.04,
+    "duration": 5.34,
+    "text": "A principle that says, only\nthose social and economic"
+  },
+  {
+    "start": 315.38,
+    "duration": 3.57,
+    "text": "inequalities will be\npermitted that work"
+  },
+  {
+    "start": 318.95,
+    "duration": 3.18,
+    "text": "to the benefit of\nthe least-well off."
+  },
+  {
+    "start": 322.13,
+    "duration": 6.01,
+    "text": "So we wouldn't reject all\ninequality of income and wealth."
+  },
+  {
+    "start": 328.14,
+    "duration": 1.11,
+    "text": "We would allow some."
+  },
+  {
+    "start": 329.25,
+    "duration": 5.55,
+    "text": "But the test would be, do they\nwork to the benefit of everyone,"
+  },
+  {
+    "start": 334.8,
+    "duration": 2.82,
+    "text": "including those,\nor, as he specifies,"
+  },
+  {
+    "start": 337.62,
+    "duration": 4.285,
+    "text": "the principle, especially\nthose, at the bottom?"
+  },
+  {
+    "start": 345.23,
+    "duration": 2.88,
+    "text": "Only those inequalities\nwould be accepted"
+  },
+  {
+    "start": 348.11,
+    "duration": 1.3,
+    "text": "behind the veil of ignorance."
+  },
+  {
+    "start": 349.41,
+    "duration": 2.78,
+    "text": "And so, Rawls argues,\nonly those inequalities"
+  },
+  {
+    "start": 352.19,
+    "duration": 3.275,
+    "text": "that work to the benefit of\nthe least-well off are just."
+  },
+  {
+    "start": 358.34,
+    "duration": 4.5,
+    "text": "We talked about the examples\nof Michael Jordan making"
+  },
+  {
+    "start": 362.84,
+    "duration": 4.86,
+    "text": "$31 million a year, of\nBill Gates having a fortune"
+  },
+  {
+    "start": 367.7,
+    "duration": 1.273,
+    "text": "in the tens of billions."
+  },
+  {
+    "start": 371.48,
+    "duration": 3.27,
+    "text": "Would those inequalities be\npermitted under the difference"
+  },
+  {
+    "start": 374.75,
+    "duration": 1.29,
+    "text": "principle?"
+  },
+  {
+    "start": 376.04,
+    "duration": 3.54,
+    "text": "Only if they were part\nof a system, those wage"
+  },
+  {
+    "start": 379.58,
+    "duration": 4.77,
+    "text": "differentials, that actually\nwork to the advantage"
+  },
+  {
+    "start": 384.35,
+    "duration": 1.42,
+    "text": "of the least-well off."
+  },
+  {
+    "start": 385.77,
+    "duration": 3.8,
+    "text": "Well, what would that system be?"
+  },
+  {
+    "start": 389.57,
+    "duration": 2.91,
+    "text": "Maybe it turns out that,\nas a practical matter,"
+  },
+  {
+    "start": 392.48,
+    "duration": 5.13,
+    "text": "you have to provide incentives,\nto attract the right people"
+  },
+  {
+    "start": 397.61,
+    "duration": 3.51,
+    "text": "to certain jobs."
+  },
+  {
+    "start": 401.12,
+    "duration": 4.65,
+    "text": "And when you do, having\nthose people in those jobs"
+  },
+  {
+    "start": 405.77,
+    "duration": 4.23,
+    "text": "will actually help\nthose at the bottom."
+  },
+  {
+    "start": 410.0,
+    "duration": 3.12,
+    "text": "Strictly speaking,\nRawls's argument"
+  },
+  {
+    "start": 413.12,
+    "duration": 3.36,
+    "text": "for the difference principle\nis that it would be chosen"
+  },
+  {
+    "start": 416.48,
+    "duration": 2.4,
+    "text": "behind the veil of ignorance."
+  },
+  {
+    "start": 418.88,
+    "duration": 4.95,
+    "text": "Let me hear what you\nthink about Rawls's claim"
+  },
+  {
+    "start": 423.83,
+    "duration": 3.33,
+    "text": "that these two principles\nwould be chosen"
+  },
+  {
+    "start": 427.16,
+    "duration": 2.52,
+    "text": "behind the veil of ignorance."
+  },
+  {
+    "start": 429.68,
+    "duration": 5.33,
+    "text": "Is there anyone who disagrees\nthat they would be chosen?"
+  },
+  {
+    "start": 435.01,
+    "duration": 0.5,
+    "text": "All right."
+  },
+  {
+    "start": 435.51,
+    "duration": 1.89,
+    "text": "Let's start up in the\nbalcony, if that's all right."
+  },
+  {
+    "start": 437.4,
+    "duration": 0.355,
+    "text": "Go ahead."
+  },
+  {
+    "start": 437.755,
+    "duration": 0.542,
+    "text": "AUDIENCE: OK."
+  },
+  {
+    "start": 438.297,
+    "duration": 2.123,
+    "text": "Your argument depends\nupon us believing"
+  },
+  {
+    "start": 440.42,
+    "duration": 2.28,
+    "text": "that we would argue\nand set policy,"
+  },
+  {
+    "start": 442.7,
+    "duration": 3.85,
+    "text": "or justice, from a bottom,\nfor the disadvantaged."
+  },
+  {
+    "start": 446.55,
+    "duration": 1.94,
+    "text": "And I just don't see,\nfrom a proof standpoint,"
+  },
+  {
+    "start": 448.49,
+    "duration": 1.48,
+    "text": "where we've proven that."
+  },
+  {
+    "start": 449.97,
+    "duration": 0.973,
+    "text": "Why not at the top?"
+  },
+  {
+    "start": 450.943,
+    "duration": 0.917,
+    "text": "MICHAEL SANDEL: Right."
+  },
+  {
+    "start": 451.86,
+    "duration": 1.08,
+    "text": "And what's your name?"
+  },
+  {
+    "start": 452.94,
+    "duration": 0.396,
+    "text": "AUDIENCE: Mike."
+  },
+  {
+    "start": 453.336,
+    "duration": 0.794,
+    "text": "MICHAEL SANDEL: Mike."
+  },
+  {
+    "start": 454.13,
+    "duration": 0.5,
+    "text": "All right."
+  },
+  {
+    "start": 454.63,
+    "duration": 2.62,
+    "text": "Good question."
+  },
+  {
+    "start": 457.25,
+    "duration": 2.56,
+    "text": "Put yourself behind\nthe veil of ignorance."
+  },
+  {
+    "start": 459.81,
+    "duration": 3.59,
+    "text": "Enter into the\nthought experiment."
+  },
+  {
+    "start": 463.4,
+    "duration": 2.38,
+    "text": "What principles\nwould you choose?"
+  },
+  {
+    "start": 465.78,
+    "duration": 1.813,
+    "text": "How would you think it through?"
+  },
+  {
+    "start": 467.593,
+    "duration": 1.667,
+    "text": "AUDIENCE: Well, I\nwould say things like."
+  },
+  {
+    "start": 469.26,
+    "duration": 2.078,
+    "text": "even Harvard's\nexistence is an example"
+  },
+  {
+    "start": 471.338,
+    "duration": 1.792,
+    "text": "of preaching toward\nthe top because Harvard"
+  },
+  {
+    "start": 473.13,
+    "duration": 1.34,
+    "text": "takes the top academics."
+  },
+  {
+    "start": 474.47,
+    "duration": 2.54,
+    "text": "And I didn't know, when I was\nborn, how smart I would be,"
+  },
+  {
+    "start": 477.01,
+    "duration": 3.19,
+    "text": "but I worked my life to get\nto a place of this caliber."
+  },
+  {
+    "start": 480.2,
+    "duration": 2.5,
+    "text": "Now, if you had said Harvard\nis going to randomly take 1,600"
+  },
+  {
+    "start": 482.7,
+    "duration": 2.365,
+    "text": "people, of absolutely\nno qualification,"
+  },
+  {
+    "start": 485.065,
+    "duration": 2.375,
+    "text": "we'd all be saying, well,\nthere's really not much to work"
+  },
+  {
+    "start": 487.44,
+    "duration": 1.98,
+    "text": "for."
+  },
+  {
+    "start": 489.42,
+    "duration": 2.97,
+    "text": "MICHAEL SANDEL: And so, what\nprinciple would you choose?"
+  },
+  {
+    "start": 492.39,
+    "duration": 3.48,
+    "text": "AUDIENCE: In that situation,\nI would say a merit-based one."
+  },
+  {
+    "start": 495.87,
+    "duration": 1.805,
+    "text": "One where I don't\nnecessarily know,"
+  },
+  {
+    "start": 497.675,
+    "duration": 1.375,
+    "text": "but I'd rather\nhave a system that"
+  },
+  {
+    "start": 499.05,
+    "duration": 2.76,
+    "text": "rewards me based on my efforts."
+  },
+  {
+    "start": 501.81,
+    "duration": 3.76,
+    "text": "MICHAEL SANDEL: So you, Mike,\nbehind the veil of ignorance,"
+  },
+  {
+    "start": 505.57,
+    "duration": 2.27,
+    "text": "would choose a\nmerit-based system,"
+  },
+  {
+    "start": 507.84,
+    "duration": 3.45,
+    "text": "where people are rewarded\naccording to their efforts?"
+  },
+  {
+    "start": 511.29,
+    "duration": 0.55,
+    "text": "All right."
+  },
+  {
+    "start": 511.84,
+    "duration": 0.98,
+    "text": "Fair enough."
+  },
+  {
+    "start": 512.82,
+    "duration": 1.06,
+    "text": "What would you say?"
+  },
+  {
+    "start": 513.88,
+    "duration": 0.69,
+    "text": "Go ahead."
+  },
+  {
+    "start": 514.57,
+    "duration": 3.08,
+    "text": "AUDIENCE: My question is\nif the merit-based argument"
+  },
+  {
+    "start": 517.65,
+    "duration": 5.1,
+    "text": "is based on when everyone\nis at a level of equality,"
+  },
+  {
+    "start": 522.75,
+    "duration": 5.58,
+    "text": "where, from that\nposition, you're"
+  },
+  {
+    "start": 528.33,
+    "duration": 1.36,
+    "text": "rewarded to where you get?"
+  },
+  {
+    "start": 529.69,
+    "duration": 5.41,
+    "text": "Or is it regardless of what\nadvantages you may have,"
+  },
+  {
+    "start": 535.1,
+    "duration": 4.167,
+    "text": "when you began your education,\nto get where you are here?"
+  },
+  {
+    "start": 539.267,
+    "duration": 1.833,
+    "text": "AUDIENCE: I think the\nquestion you're asking"
+  },
+  {
+    "start": 541.1,
+    "duration": 2.5,
+    "text": "is saying, if you want to look\nat, whatever, utilitarianism,"
+  },
+  {
+    "start": 543.6,
+    "duration": 2.7,
+    "text": "policy, whatever it is, do we\nwant to maximize world wealth?"
+  },
+  {
+    "start": 546.3,
+    "duration": 3.77,
+    "text": "And I think a system that\nrewards merit is the one that"
+  },
+  {
+    "start": 550.07,
+    "duration": 2.61,
+    "text": "we've pretty much all\nestablished is what is best"
+  },
+  {
+    "start": 552.68,
+    "duration": 2.61,
+    "text": "for all of us, despite the\nfact that some of us may be"
+  },
+  {
+    "start": 555.29,
+    "duration": 2.49,
+    "text": "in the second percentile\nand some may be in the 98th"
+  },
+  {
+    "start": 557.78,
+    "duration": 0.88,
+    "text": "percentile."
+  },
+  {
+    "start": 558.66,
+    "duration": 2.76,
+    "text": "At the end of the day,\nit lifts that lowest,"
+  },
+  {
+    "start": 561.42,
+    "duration": 2.57,
+    "text": "that lowest-base\nlevel, a community that"
+  },
+  {
+    "start": 563.99,
+    "duration": 3.37,
+    "text": "rewards effort, as opposed\nto innate differences."
+  },
+  {
+    "start": 567.36,
+    "duration": 5.12,
+    "text": "AUDIENCE: But I don't understand\nhow you're rewarding someone's"
+  },
+  {
+    "start": 572.48,
+    "duration": 2.58,
+    "text": "efforts, who clearly has--"
+  },
+  {
+    "start": 575.06,
+    "duration": 1.68,
+    "text": "not you, but maybe myself--"
+  },
+  {
+    "start": 576.74,
+    "duration": 2.5,
+    "text": "advantages throughout,\nto get where I am here?"
+  },
+  {
+    "start": 579.24,
+    "duration": 3.17,
+    "text": "I mean, I can't say that\nsomebody else, who maybe worked"
+  },
+  {
+    "start": 582.41,
+    "duration": 3.15,
+    "text": "as hard as I did, would have\nhad the same opportunity"
+  },
+  {
+    "start": 585.56,
+    "duration": 2.247,
+    "text": "to come to a school like this."
+  },
+  {
+    "start": 587.807,
+    "duration": 1.083,
+    "text": "MICHAEL SANDEL: All right."
+  },
+  {
+    "start": 588.89,
+    "duration": 1.27,
+    "text": "Let's look at that point."
+  },
+  {
+    "start": 590.16,
+    "duration": 0.795,
+    "text": "What's your name?"
+  },
+  {
+    "start": 590.955,
+    "duration": 0.625,
+    "text": "AUDIENCE: Kate."
+  },
+  {
+    "start": 591.58,
+    "duration": 1.83,
+    "text": "MICHAEL SANDEL:\nKate, you suspect"
+  },
+  {
+    "start": 593.41,
+    "duration": 5.67,
+    "text": "that the ability to\nget into top schools"
+  },
+  {
+    "start": 599.08,
+    "duration": 7.2,
+    "text": "may largely depend on coming\nfrom an affluent family,"
+  },
+  {
+    "start": 606.28,
+    "duration": 4.87,
+    "text": "having a favorable family\nbackground, social, cultural,"
+  },
+  {
+    "start": 611.15,
+    "duration": 1.623,
+    "text": "economic advantages, and so on?"
+  },
+  {
+    "start": 612.773,
+    "duration": 2.417,
+    "text": "AUDIENCE: I mean, economic,\nbut yes, social, cultural, all"
+  },
+  {
+    "start": 615.19,
+    "duration": 2.37,
+    "text": "of those advantages, for sure."
+  },
+  {
+    "start": 617.56,
+    "duration": 2.31,
+    "text": "MICHAEL SANDEL:\nSomeone did a study"
+  },
+  {
+    "start": 619.87,
+    "duration": 3.81,
+    "text": "of the 146 selective\ncolleges and universities"
+  },
+  {
+    "start": 623.68,
+    "duration": 2.79,
+    "text": "in the United States,\nand they looked"
+  },
+  {
+    "start": 626.47,
+    "duration": 4.89,
+    "text": "at the students in those\ncolleges and universities"
+  },
+  {
+    "start": 631.36,
+    "duration": 3.67,
+    "text": "to try to find out what\ntheir background was,"
+  },
+  {
+    "start": 635.03,
+    "duration": 2.66,
+    "text": "their economic background."
+  },
+  {
+    "start": 637.69,
+    "duration": 4.02,
+    "text": "What percentage do you think\ncome from the bottom quarter"
+  },
+  {
+    "start": 641.71,
+    "duration": 2.585,
+    "text": "of the income scale?"
+  },
+  {
+    "start": 644.295,
+    "duration": 2.335,
+    "text": "You know what the figure is?"
+  },
+  {
+    "start": 646.63,
+    "duration": 4.77,
+    "text": "Only 3% of students at the\nmost selective colleges"
+  },
+  {
+    "start": 651.4,
+    "duration": 3.1,
+    "text": "and universities come\nfrom poor backgrounds."
+  },
+  {
+    "start": 654.5,
+    "duration": 6.53,
+    "text": "Over 70% come from\naffluent families."
+  },
+  {
+    "start": 661.03,
+    "duration": 2.04,
+    "text": "Let's go one step\nfurther, then, and try"
+  },
+  {
+    "start": 663.07,
+    "duration": 5.13,
+    "text": "to address Mike's challenge."
+  },
+  {
+    "start": 668.2,
+    "duration": 4.47,
+    "text": "Rawls actually has two\narguments, not one,"
+  },
+  {
+    "start": 672.67,
+    "duration": 4.8,
+    "text": "in favor of his principles of\njustice and, in particular,"
+  },
+  {
+    "start": 677.47,
+    "duration": 1.83,
+    "text": "of the difference principle."
+  },
+  {
+    "start": 679.3,
+    "duration": 2.5,
+    "text": "One argument is the\nofficial argument,"
+  },
+  {
+    "start": 681.8,
+    "duration": 3.15,
+    "text": "what would be chosen behind\nthe veil of ignorance."
+  },
+  {
+    "start": 684.95,
+    "duration": 4.16,
+    "text": "Some people challenge\nthat argument, saying,"
+  },
+  {
+    "start": 689.11,
+    "duration": 5.43,
+    "text": "maybe people would want\nto take their chances,"
+  },
+  {
+    "start": 694.54,
+    "duration": 3.58,
+    "text": "maybe people would be gamblers\nbehind the veil of ignorance,"
+  },
+  {
+    "start": 698.12,
+    "duration": 3.3,
+    "text": "hoping that they\nwould wind up on top."
+  },
+  {
+    "start": 701.42,
+    "duration": 3.38,
+    "text": "That's one challenge that\nhas been put to Rawls."
+  },
+  {
+    "start": 704.8,
+    "duration": 3.96,
+    "text": "But backing up the argument\nfrom the original position"
+  },
+  {
+    "start": 708.76,
+    "duration": 4.22,
+    "text": "is a second argument, and that\nis a straightforwardly moral"
+  },
+  {
+    "start": 712.98,
+    "duration": 1.59,
+    "text": "argument."
+  },
+  {
+    "start": 714.57,
+    "duration": 3.0,
+    "text": "And it goes like this."
+  },
+  {
+    "start": 717.57,
+    "duration": 4.77,
+    "text": "It says, the distribution\nof income and wealth"
+  },
+  {
+    "start": 722.34,
+    "duration": 4.59,
+    "text": "and opportunities\nshould not be based"
+  },
+  {
+    "start": 726.93,
+    "duration": 7.02,
+    "text": "on factors for which\npeople can claim no credit."
+  },
+  {
+    "start": 733.95,
+    "duration": 3.36,
+    "text": "It shouldn't be based on\nfactors that are arbitrary,"
+  },
+  {
+    "start": 737.31,
+    "duration": 2.79,
+    "text": "from a moral point of view."
+  },
+  {
+    "start": 740.1,
+    "duration": 3.84,
+    "text": "Rawls illustrates\nthis by considering"
+  },
+  {
+    "start": 743.94,
+    "duration": 3.743,
+    "text": "several rival\ntheories of justice."
+  },
+  {
+    "start": 750.66,
+    "duration": 4.44,
+    "text": "He begins with the\ntheory of justice"
+  },
+  {
+    "start": 755.1,
+    "duration": 1.65,
+    "text": "that most everyone\nthese days would"
+  },
+  {
+    "start": 756.75,
+    "duration": 5.16,
+    "text": "reject, a feudal aristocracy."
+  },
+  {
+    "start": 761.91,
+    "duration": 5.25,
+    "text": "What's wrong with the\nallocation of life prospects"
+  },
+  {
+    "start": 767.16,
+    "duration": 2.13,
+    "text": "in a feudal aristocracy?"
+  },
+  {
+    "start": 769.29,
+    "duration": 1.36,
+    "text": "Rawls says."
+  },
+  {
+    "start": 770.65,
+    "duration": 2.69,
+    "text": "well, the thing that's\nobviously wrong about it"
+  },
+  {
+    "start": 773.34,
+    "duration": 3.48,
+    "text": "is that people's life\nprospects are determined"
+  },
+  {
+    "start": 776.82,
+    "duration": 2.7,
+    "text": "by the accident of birth--"
+  },
+  {
+    "start": 779.52,
+    "duration": 2.88,
+    "text": "are you born to a noble\nfamily or to the family"
+  },
+  {
+    "start": 782.4,
+    "duration": 1.57,
+    "text": "of peasants and serfs--"
+  },
+  {
+    "start": 783.97,
+    "duration": 1.02,
+    "text": "and that's it."
+  },
+  {
+    "start": 784.99,
+    "duration": 1.35,
+    "text": "You can't rise."
+  },
+  {
+    "start": 786.34,
+    "duration": 1.85,
+    "text": "It's not your doing,\nwhere you wind up"
+  },
+  {
+    "start": 788.19,
+    "duration": 3.93,
+    "text": "or what opportunities you have."
+  },
+  {
+    "start": 792.12,
+    "duration": 4.2,
+    "text": "But that's arbitrary, from\na moral point of view."
+  },
+  {
+    "start": 796.32,
+    "duration": 4.32,
+    "text": "And so, that objection\nto a feudal aristocracy"
+  },
+  {
+    "start": 800.64,
+    "duration": 5.43,
+    "text": "leads, and historically\nhas led, people to say,"
+  },
+  {
+    "start": 806.07,
+    "duration": 2.32,
+    "text": "careers should be\nopen to talents."
+  },
+  {
+    "start": 808.39,
+    "duration": 3.65,
+    "text": "There should be formal\nequality of opportunity,"
+  },
+  {
+    "start": 812.04,
+    "duration": 2.89,
+    "text": "regardless of the\naccident of birth."
+  },
+  {
+    "start": 814.93,
+    "duration": 5.51,
+    "text": "Every person should be free\nto strive, to work, to apply"
+  },
+  {
+    "start": 820.44,
+    "duration": 2.02,
+    "text": "for any job in the society."
+  },
+  {
+    "start": 822.46,
+    "duration": 4.19,
+    "text": "And then, if you\nopen up jobs and you"
+  },
+  {
+    "start": 826.65,
+    "duration": 3.91,
+    "text": "allow people to apply and\nto work as hard as they can,"
+  },
+  {
+    "start": 830.56,
+    "duration": 3.71,
+    "text": "then the results are just."
+  },
+  {
+    "start": 834.27,
+    "duration": 2.79,
+    "text": "So it's more or less\nthe libertarian system"
+  },
+  {
+    "start": 837.06,
+    "duration": 2.58,
+    "text": "that we've discussed\nin earlier weeks."
+  },
+  {
+    "start": 839.64,
+    "duration": 1.54,
+    "text": "What does Rawls\nthink about this?"
+  },
+  {
+    "start": 841.18,
+    "duration": 2.18,
+    "text": "He says it's an improvement."
+  },
+  {
+    "start": 843.36,
+    "duration": 2.61,
+    "text": "It's an improvement\nbecause it doesn't take"
+  },
+  {
+    "start": 845.97,
+    "duration": 3.94,
+    "text": "as fixed the accident of birth."
+  },
+  {
+    "start": 849.91,
+    "duration": 4.46,
+    "text": "But even with formal equality\nof opportunity, the libertarian"
+  },
+  {
+    "start": 854.37,
+    "duration": 4.98,
+    "text": "conception doesn't extend that,\ndoesn't extend its insight,"
+  },
+  {
+    "start": 859.35,
+    "duration": 2.16,
+    "text": "far enough."
+  },
+  {
+    "start": 861.51,
+    "duration": 4.2,
+    "text": "Because, if you let\neverybody run the race--"
+  },
+  {
+    "start": 865.71,
+    "duration": 3.48,
+    "text": "everybody can enter the\nrace, but some people"
+  },
+  {
+    "start": 869.19,
+    "duration": 2.44,
+    "text": "start at different\nstarting points,"
+  },
+  {
+    "start": 871.63,
+    "duration": 3.14,
+    "text": "that race isn't\ngoing to be fair."
+  },
+  {
+    "start": 874.77,
+    "duration": 3.81,
+    "text": "Intuitively, he says, the most\nobvious injustice of this system"
+  },
+  {
+    "start": 878.58,
+    "duration": 1.86,
+    "text": "is that it permits\ndistributive shares"
+  },
+  {
+    "start": 880.44,
+    "duration": 3.54,
+    "text": "to be improperly influenced\nby factors arbitrary,"
+  },
+  {
+    "start": 883.98,
+    "duration": 2.73,
+    "text": "from a moral point of view,\nsuch as whether you got"
+  },
+  {
+    "start": 886.71,
+    "duration": 4.62,
+    "text": "a good education or not, whether\nyou grew up in a family that"
+  },
+  {
+    "start": 891.33,
+    "duration": 3.03,
+    "text": "supported you and developed\nin you a work ethic"
+  },
+  {
+    "start": 894.36,
+    "duration": 2.76,
+    "text": "and gave you the opportunities."
+  },
+  {
+    "start": 897.12,
+    "duration": 5.22,
+    "text": "So that suggests moving to\na system of fair equality"
+  },
+  {
+    "start": 902.34,
+    "duration": 1.39,
+    "text": "of opportunity."
+  },
+  {
+    "start": 903.73,
+    "duration": 2.78,
+    "text": "And that's, really, the system\nthat Mike was advocating,"
+  },
+  {
+    "start": 906.51,
+    "duration": 3.97,
+    "text": "earlier on, what we might\ncall a merit-based system,"
+  },
+  {
+    "start": 910.48,
+    "duration": 2.27,
+    "text": "a meritocratic system."
+  },
+  {
+    "start": 912.75,
+    "duration": 3.45,
+    "text": "In a fair meritocracy,\nthe society"
+  },
+  {
+    "start": 916.2,
+    "duration": 3.06,
+    "text": "sets up institutions\nto bring everyone"
+  },
+  {
+    "start": 919.26,
+    "duration": 4.02,
+    "text": "to the same starting point\nbefore the race begins--"
+  },
+  {
+    "start": 923.28,
+    "duration": 5.65,
+    "text": "equal educational opportunities,\nHead Start programs,"
+  },
+  {
+    "start": 928.93,
+    "duration": 6.74,
+    "text": "for example; support for schools\nin impoverished neighborhoods--"
+  },
+  {
+    "start": 935.67,
+    "duration": 4.53,
+    "text": "so that everyone, regardless\nof their family background,"
+  },
+  {
+    "start": 940.2,
+    "duration": 3.63,
+    "text": "has a genuinely\nfair opportunity."
+  },
+  {
+    "start": 943.83,
+    "duration": 4.54,
+    "text": "Everyone starts from\nthe same starting line."
+  },
+  {
+    "start": 948.37,
+    "duration": 3.59,
+    "text": "Well, what does Rawls think\nabout the meritocratic system?"
+  },
+  {
+    "start": 955.33,
+    "duration": 3.54,
+    "text": "Even that, he says,\ndoesn't go far enough"
+  },
+  {
+    "start": 958.87,
+    "duration": 8.72,
+    "text": "in remedying, or addressing,\nthe moral arbitrariness"
+  },
+  {
+    "start": 967.59,
+    "duration": 3.16,
+    "text": "of the natural lottery."
+  },
+  {
+    "start": 970.75,
+    "duration": 4.89,
+    "text": "Because, if you bring everyone\nto the same starting point"
+  },
+  {
+    "start": 975.64,
+    "duration": 5.28,
+    "text": "and begin the race, who's\ngoing to win the race?"
+  },
+  {
+    "start": 980.92,
+    "duration": 4.89,
+    "text": "Who would win, to use\nthe runners example?"
+  },
+  {
+    "start": 985.81,
+    "duration": 3.39,
+    "text": "The fastest runners would win."
+  },
+  {
+    "start": 989.2,
+    "duration": 3.9,
+    "text": "But is it their doing,\nthat they happen"
+  },
+  {
+    "start": 993.1,
+    "duration": 2.983,
+    "text": "to be blessed with the\nathletic prowess to run fast?"
+  },
+  {
+    "start": 1001.5,
+    "duration": 4.8,
+    "text": "So Rawls says, even the\nprinciple of meritocracy,"
+  },
+  {
+    "start": 1006.3,
+    "duration": 3.32,
+    "text": "where you bring everyone\nto the same starting point,"
+  },
+  {
+    "start": 1009.62,
+    "duration": 3.12,
+    "text": "may eliminate the influence\nof social contingencies"
+  },
+  {
+    "start": 1012.74,
+    "duration": 2.82,
+    "text": "and upbringing, \"but it still\npermits the distribution"
+  },
+  {
+    "start": 1015.56,
+    "duration": 3.48,
+    "text": "of wealth and income to be\ndetermined by the natural"
+  },
+  {
+    "start": 1019.04,
+    "duration": 3.3,
+    "text": "distribution of\nabilities and talents.\""
+  },
+  {
+    "start": 1022.34,
+    "duration": 3.029,
+    "text": "And so, he thinks\nthat the principle"
+  },
+  {
+    "start": 1025.369,
+    "duration": 3.391,
+    "text": "of eliminating morally arbitrary\ninfluences in the distribution"
+  },
+  {
+    "start": 1028.76,
+    "duration": 6.39,
+    "text": "of income and wealth requires\ngoing beyond what Mike favors,"
+  },
+  {
+    "start": 1035.15,
+    "duration": 3.51,
+    "text": "the meritocratic system."
+  },
+  {
+    "start": 1038.66,
+    "duration": 2.909,
+    "text": "Now, how do you go beyond?"
+  },
+  {
+    "start": 1041.569,
+    "duration": 2.554,
+    "text": "If you bring everyone to\nthe same starting point,"
+  },
+  {
+    "start": 1044.123,
+    "duration": 2.667,
+    "text": "and you're still bothered by the\nfact that some are fast runners"
+  },
+  {
+    "start": 1046.79,
+    "duration": 4.17,
+    "text": "and some are not fast\nrunners, what can you do?"
+  },
+  {
+    "start": 1050.96,
+    "duration": 5.16,
+    "text": "Well, some critics, of a\nmore egalitarian conception,"
+  },
+  {
+    "start": 1056.12,
+    "duration": 4.5,
+    "text": "say the only thing you can do\nis handicap the fast runners,"
+  },
+  {
+    "start": 1060.62,
+    "duration": 2.34,
+    "text": "make them wear lead shoes."
+  },
+  {
+    "start": 1062.96,
+    "duration": 3.51,
+    "text": "But who wants to do that?"
+  },
+  {
+    "start": 1066.47,
+    "duration": 4.41,
+    "text": "That would defeat the whole\npoint of running the race."
+  },
+  {
+    "start": 1070.88,
+    "duration": 4.56,
+    "text": "But Rawls says, you don't have\nto have a kind of leveling"
+  },
+  {
+    "start": 1075.44,
+    "duration": 2.34,
+    "text": "equality, if you\nwant to go beyond"
+  },
+  {
+    "start": 1077.78,
+    "duration": 2.04,
+    "text": "a meritocratic conception."
+  },
+  {
+    "start": 1079.82,
+    "duration": 4.65,
+    "text": "You permit, you even\nencourage, those"
+  },
+  {
+    "start": 1084.47,
+    "duration": 4.9,
+    "text": "who may be gifted to\nexercise their talents."
+  },
+  {
+    "start": 1089.37,
+    "duration": 5.03,
+    "text": "But what you do is you change\nthe terms on which people"
+  },
+  {
+    "start": 1094.4,
+    "duration": 4.26,
+    "text": "are entitled to the fruits of\nthe exercise of those talents."
+  },
+  {
+    "start": 1098.66,
+    "duration": 3.3,
+    "text": "And that, really, is what\nthe difference principle is."
+  },
+  {
+    "start": 1101.96,
+    "duration": 2.82,
+    "text": "You establish a\nprinciple that says"
+  },
+  {
+    "start": 1104.78,
+    "duration": 3.96,
+    "text": "people may benefit from\ntheir good fortune,"
+  },
+  {
+    "start": 1108.74,
+    "duration": 3.57,
+    "text": "from their luck in\nthe genetic lottery,"
+  },
+  {
+    "start": 1112.31,
+    "duration": 3.35,
+    "text": "but only on terms that work to\nthe advantage of the least-well"
+  },
+  {
+    "start": 1115.66,
+    "duration": 0.5,
+    "text": "off."
+  },
+  {
+    "start": 1116.16,
+    "duration": 7.72,
+    "text": "And so, for example, Michael\nJordan can make $31 million,"
+  },
+  {
+    "start": 1123.88,
+    "duration": 4.46,
+    "text": "but only under a\nsystem that taxes away"
+  },
+  {
+    "start": 1128.34,
+    "duration": 4.71,
+    "text": "a chunk of that to help those\nwho lack the basketball skills"
+  },
+  {
+    "start": 1133.05,
+    "duration": 2.25,
+    "text": "that he's blessed with."
+  },
+  {
+    "start": 1135.3,
+    "duration": 4.05,
+    "text": "Likewise, Bill Gates, he\ncan make his billions,"
+  },
+  {
+    "start": 1139.35,
+    "duration": 3.75,
+    "text": "but he can't think that he\nsomehow morally deserves"
+  },
+  {
+    "start": 1143.1,
+    "duration": 2.19,
+    "text": "those billions."
+  },
+  {
+    "start": 1145.29,
+    "duration": 4.56,
+    "text": "\"Those who have been favored by\nnature may gain from their good"
+  },
+  {
+    "start": 1149.85,
+    "duration": 3.18,
+    "text": "fortune, but only on terms that\nimprove the situation of those"
+  },
+  {
+    "start": 1153.03,
+    "duration": 1.27,
+    "text": "who have lost out.\""
+  },
+  {
+    "start": 1154.3,
+    "duration": 3.17,
+    "text": "That's the difference\nprinciple, and it's an argument"
+  },
+  {
+    "start": 1157.47,
+    "duration": 2.26,
+    "text": "from moral arbitrariness."
+  },
+  {
+    "start": 1159.73,
+    "duration": 2.06,
+    "text": "Rawls claims that,\nif you're bothered"
+  },
+  {
+    "start": 1161.79,
+    "duration": 2.94,
+    "text": "by basing distributive\nshares on factors"
+  },
+  {
+    "start": 1164.73,
+    "duration": 1.71,
+    "text": "arbitrary, from a\nmoral point of view,"
+  },
+  {
+    "start": 1166.44,
+    "duration": 5.66,
+    "text": "you don't just reject a feudal\naristocracy for a free market,"
+  },
+  {
+    "start": 1172.1,
+    "duration": 6.58,
+    "text": "you don't even rest content\nwith a meritocratic system that"
+  },
+  {
+    "start": 1178.68,
+    "duration": 3.26,
+    "text": "brings everyone to the\nsame starting point,"
+  },
+  {
+    "start": 1181.94,
+    "duration": 3.09,
+    "text": "you set up a system where\neveryone, including those"
+  },
+  {
+    "start": 1185.03,
+    "duration": 4.26,
+    "text": "at the bottom, benefit from the\nexercise of the talents held"
+  },
+  {
+    "start": 1189.29,
+    "duration": 3.72,
+    "text": "by those who happen to be lucky."
+  },
+  {
+    "start": 1193.01,
+    "duration": 1.32,
+    "text": "What do you think?"
+  },
+  {
+    "start": 1194.33,
+    "duration": 1.176,
+    "text": "Is that persuasive?"
+  },
+  {
+    "start": 1199.0,
+    "duration": 2.92,
+    "text": "Who finds that argument\nunpersuasive, the argument"
+  },
+  {
+    "start": 1201.92,
+    "duration": 2.7,
+    "text": "from moral arbitrariness?"
+  },
+  {
+    "start": 1204.62,
+    "duration": 1.56,
+    "text": "Yes."
+  },
+  {
+    "start": 1206.18,
+    "duration": 4.78,
+    "text": "AUDIENCE: I think that, in\nthe egalitarian proposition,"
+  },
+  {
+    "start": 1210.96,
+    "duration": 2.18,
+    "text": "the more talented\npeople, I think"
+  },
+  {
+    "start": 1213.14,
+    "duration": 4.92,
+    "text": "it's very optimistic to\nthink that they would still"
+  },
+  {
+    "start": 1218.06,
+    "duration": 3.84,
+    "text": "work really hard, even if they\nknew that part of what they made"
+  },
+  {
+    "start": 1221.9,
+    "duration": 1.15,
+    "text": "would be given away."
+  },
+  {
+    "start": 1223.05,
+    "duration": 3.41,
+    "text": "So I think that the only way\nfor the more talented people"
+  },
+  {
+    "start": 1226.46,
+    "duration": 2.91,
+    "text": "to exercise their talents,\nto the best of their ability,"
+  },
+  {
+    "start": 1229.37,
+    "duration": 1.68,
+    "text": "is in the meritocracy"
+  },
+  {
+    "start": 1231.05,
+    "duration": 2.525,
+    "text": "MICHAEL SANDEL: And in a\nmeritocracy-- what's your name?"
+  },
+  {
+    "start": 1233.575,
+    "duration": 0.625,
+    "text": "AUDIENCE: Kate."
+  },
+  {
+    "start": 1234.2,
+    "duration": 3.19,
+    "text": "MICHAEL SANDEL: Kate, does\nit bother you-- and, Mike,"
+  },
+  {
+    "start": 1237.39,
+    "duration": 2.51,
+    "text": "does it bother you--"
+  },
+  {
+    "start": 1239.9,
+    "duration": 2.61,
+    "text": "that, in a meritocratic\nsystem, even"
+  },
+  {
+    "start": 1242.51,
+    "duration": 4.75,
+    "text": "with fair equality of\nopportunity, people get ahead,"
+  },
+  {
+    "start": 1247.26,
+    "duration": 3.23,
+    "text": "people get rewards that\nthey don't deserve, simply"
+  },
+  {
+    "start": 1250.49,
+    "duration": 2.41,
+    "text": "because they happen to\nbe naturally gifted?"
+  },
+  {
+    "start": 1252.9,
+    "duration": 1.7,
+    "text": "What about that?"
+  },
+  {
+    "start": 1254.6,
+    "duration": 2.91,
+    "text": "AUDIENCE: I think\nthat it is arbitrary--"
+  },
+  {
+    "start": 1257.51,
+    "duration": 2.37,
+    "text": "and, obviously, it's\narbitrary-- but I"
+  },
+  {
+    "start": 1259.88,
+    "duration": 4.77,
+    "text": "think that correcting for\nit would be detrimental."
+  },
+  {
+    "start": 1264.65,
+    "duration": 0.78,
+    "text": "And unlike--"
+  },
+  {
+    "start": 1265.43,
+    "duration": 2.667,
+    "text": "MICHAEL SANDEL: Because it would\nreduce incentives, is that why?"
+  },
+  {
+    "start": 1268.097,
+    "duration": 1.983,
+    "text": "AUDIENCE: It would\nreduce incentives, yeah."
+  },
+  {
+    "start": 1270.08,
+    "duration": 1.77,
+    "text": "MICHAEL SANDEL: Mike,\nwhat do you say?"
+  },
+  {
+    "start": 1271.85,
+    "duration": 1.708,
+    "text": "AUDIENCE: We're all\nsitting in this room,"
+  },
+  {
+    "start": 1273.558,
+    "duration": 2.912,
+    "text": "and we have undeserved-- we have\nundeserved glory of some sort."
+  },
+  {
+    "start": 1276.47,
+    "duration": 3.33,
+    "text": "So you should not be satisfied\nwith the process of your life"
+  },
+  {
+    "start": 1279.8,
+    "duration": 1.882,
+    "text": "because you have not\ncreated any of this."
+  },
+  {
+    "start": 1281.682,
+    "duration": 2.208,
+    "text": "And I think, from a standpoint\nof not just this room,"
+  },
+  {
+    "start": 1283.89,
+    "duration": 2.7,
+    "text": "us being upset, but, from\na societal standpoint,"
+  },
+  {
+    "start": 1286.59,
+    "duration": 3.38,
+    "text": "we should have some kind of a\ngut reaction to that feeling"
+  },
+  {
+    "start": 1289.97,
+    "duration": 3.78,
+    "text": "that, the guy who runs the race,\nhe actually harms us, as opposed"
+  },
+  {
+    "start": 1293.75,
+    "duration": 2.52,
+    "text": "to, maybe, makes me run\nthat last 10 yards faster,"
+  },
+  {
+    "start": 1296.27,
+    "duration": 2.79,
+    "text": "and that makes the guy\nbehind me run 10 yards faster"
+  },
+  {
+    "start": 1299.06,
+    "duration": 1.655,
+    "text": "and the guy behind\nhim 10 yards faster."
+  },
+  {
+    "start": 1300.715,
+    "duration": 0.275,
+    "text": "And so--"
+  },
+  {
+    "start": 1300.99,
+    "duration": 0.3,
+    "text": "MICHAEL SANDEL: All right."
+  },
+  {
+    "start": 1301.29,
+    "duration": 1.542,
+    "text": "So, Mike, let me\nask you-- you talked"
+  },
+  {
+    "start": 1302.832,
+    "duration": 2.828,
+    "text": "about effort before, effort."
+  },
+  {
+    "start": 1305.66,
+    "duration": 4.39,
+    "text": "Do you think, when people work\nhard to get ahead and succeed,"
+  },
+  {
+    "start": 1310.05,
+    "duration": 4.62,
+    "text": "that they deserve the\nrewards that go with effort?"
+  },
+  {
+    "start": 1314.67,
+    "duration": 1.82,
+    "text": "Isn't that the idea\nbehind your defense?"
+  },
+  {
+    "start": 1316.49,
+    "duration": 0.7,
+    "text": "AUDIENCE: I mean, of course."
+  },
+  {
+    "start": 1317.19,
+    "duration": 1.11,
+    "text": "Bring Michael Jordan here."
+  },
+  {
+    "start": 1318.3,
+    "duration": 1.042,
+    "text": "I'm sure you can get him."
+  },
+  {
+    "start": 1319.342,
+    "duration": 1.693,
+    "text": "And have him come\nand defend himself--"
+  },
+  {
+    "start": 1321.035,
+    "duration": 0.705,
+    "text": "[LAUGHTER]"
+  },
+  {
+    "start": 1321.74,
+    "duration": 1.6,
+    "text": "--about why he\nmakes $31 million."
+  },
+  {
+    "start": 1323.34,
+    "duration": 1.667,
+    "text": "And I think what\nyou're going to realize"
+  },
+  {
+    "start": 1325.007,
+    "duration": 2.463,
+    "text": "is his life was a very, very\ntough one, to get to the top,"
+  },
+  {
+    "start": 1327.47,
+    "duration": 3.382,
+    "text": "and that we are basically\nbeing the majority oppressing"
+  },
+  {
+    "start": 1330.852,
+    "duration": 1.458,
+    "text": "the minority, in\na different light."
+  },
+  {
+    "start": 1332.31,
+    "duration": 1.67,
+    "text": "It's very easy to pick\non him, very easy."
+  },
+  {
+    "start": 1333.98,
+    "duration": 0.51,
+    "text": "MICHAEL SANDEL: All right."
+  },
+  {
+    "start": 1334.49,
+    "duration": 0.5,
+    "text": "Effort."
+  },
+  {
+    "start": 1334.99,
+    "duration": 1.33,
+    "text": "You know what?"
+  },
+  {
+    "start": 1336.32,
+    "duration": 1.5,
+    "text": "[CLAPPING]"
+  },
+  {
+    "start": 1337.82,
+    "duration": 1.398,
+    "text": "You've got-- you've persuaded--"
+  },
+  {
+    "start": 1339.218,
+    "duration": 1.042,
+    "text": "AUDIENCE: I've got a few."
+  },
+  {
+    "start": 1340.26,
+    "duration": 0.89,
+    "text": "I've got a few, but\nthat's about it."
+  },
+  {
+    "start": 1341.15,
+    "duration": 0.57,
+    "text": "MICHAEL SANDEL:\n--a lot of people."
+  },
+  {
+    "start": 1341.72,
+    "duration": 1.32,
+    "text": "[LAUGHTER]"
+  },
+  {
+    "start": 1343.04,
+    "duration": 4.68,
+    "text": "Effort, you know what\nRawls' answer to that is?"
+  },
+  {
+    "start": 1347.72,
+    "duration": 4.65,
+    "text": "Even the effort that\nsome people expend--"
+  },
+  {
+    "start": 1352.37,
+    "duration": 3.15,
+    "text": "conscientious striving,\nthe work ethic--"
+  },
+  {
+    "start": 1355.52,
+    "duration": 5.11,
+    "text": "even effort depends a lot on\nfortunate family circumstances,"
+  },
+  {
+    "start": 1360.63,
+    "duration": 3.78,
+    "text": "for which you, we,\ncan claim no credit."
+  },
+  {
+    "start": 1364.41,
+    "duration": 0.87,
+    "text": "Now, let's--"
+  },
+  {
+    "start": 1365.28,
+    "duration": 1.72,
+    "text": "[CHEERING, CLAPPING]"
+  },
+  {
+    "start": 1367.0,
+    "duration": 0.5,
+    "text": "Wait."
+  },
+  {
+    "start": 1367.5,
+    "duration": 1.566,
+    "text": "We're going to let--"
+  },
+  {
+    "start": 1369.066,
+    "duration": 1.264,
+    "text": "Let's do the test."
+  },
+  {
+    "start": 1370.33,
+    "duration": 1.79,
+    "text": "Let's do a test here."
+  },
+  {
+    "start": 1372.12,
+    "duration": 2.89,
+    "text": "Never mind economic class."
+  },
+  {
+    "start": 1375.01,
+    "duration": 1.86,
+    "text": "Those differences\nare very significant."
+  },
+  {
+    "start": 1376.87,
+    "duration": 1.91,
+    "text": "Put those aside."
+  },
+  {
+    "start": 1378.78,
+    "duration": 2.82,
+    "text": "Psychologists say\nthat birth order"
+  },
+  {
+    "start": 1381.6,
+    "duration": 6.12,
+    "text": "makes a lot of difference in\nwork ethic, striving, effort."
+  },
+  {
+    "start": 1387.72,
+    "duration": 3.84,
+    "text": "How many here-- raise your\nhand, those of you here"
+  },
+  {
+    "start": 1391.56,
+    "duration": 2.63,
+    "text": "who are first in birth order."
+  },
+  {
+    "start": 1394.19,
+    "duration": 3.29,
+    "text": "[LAUGHTER]"
+  },
+  {
+    "start": 1398.43,
+    "duration": 1.235,
+    "text": "I am too, by the way."
+  },
+  {
+    "start": 1399.665,
+    "duration": 3.235,
+    "text": "[LAUGHTER]"
+  },
+  {
+    "start": 1402.9,
+    "duration": 2.0,
+    "text": "Mike, I noticed you\nraised your hand."
+  },
+  {
+    "start": 1404.9,
+    "duration": 3.31,
+    "text": "[LAUGHTER]"
+  },
+  {
+    "start": 1408.21,
+    "duration": 4.77,
+    "text": "If the case for the\nmeritocratic conception"
+  },
+  {
+    "start": 1412.98,
+    "duration": 3.54,
+    "text": "is that effort\nshould be rewarded,"
+  },
+  {
+    "start": 1416.52,
+    "duration": 5.69,
+    "text": "doesn't Rawls have a point,\nthat even effort, striving, work"
+  },
+  {
+    "start": 1422.21,
+    "duration": 2.7,
+    "text": "ethic, is largely shaped--"
+  },
+  {
+    "start": 1424.91,
+    "duration": 2.7,
+    "text": "even by birth order."
+  },
+  {
+    "start": 1427.61,
+    "duration": 1.84,
+    "text": "Is it your doing?"
+  },
+  {
+    "start": 1429.45,
+    "duration": 4.91,
+    "text": "Mike, is it your doing that\nyou were first in birth order?"
+  },
+  {
+    "start": 1434.36,
+    "duration": 2.85,
+    "text": "Then why, Rawls says--"
+  },
+  {
+    "start": 1437.21,
+    "duration": 1.59,
+    "text": "of course not."
+  },
+  {
+    "start": 1438.8,
+    "duration": 6.57,
+    "text": "So why should income and wealth\nand opportunities in life"
+  },
+  {
+    "start": 1445.37,
+    "duration": 5.41,
+    "text": "be based on factors arbitrary,\nfrom a moral point of view?"
+  },
+  {
+    "start": 1450.78,
+    "duration": 8.06,
+    "text": "That's a challenge that he\nputs to market societies,"
+  },
+  {
+    "start": 1458.84,
+    "duration": 5.98,
+    "text": "but, also, to those of\nus at places like this."
+  },
+  {
+    "start": 1464.82,
+    "duration": 2.14,
+    "text": "A question to think\nabout for next time."
+  },
+  {
+    "start": 1466.96,
+    "duration": 3.224,
+    "text": "[APPLAUSE]"
+  },
+  {
+    "start": 1470.184,
+    "duration": 3.353,
+    "text": "[MUSIC PLAYING]"
+  },
+  {
+    "start": 1476.9,
+    "duration": 4.11,
+    "text": "A justice of the United\nStates Supreme Court,"
+  },
+  {
+    "start": 1481.01,
+    "duration": 1.86,
+    "text": "what do they make?"
+  },
+  {
+    "start": 1482.87,
+    "duration": 3.72,
+    "text": "It's just under $200,000."
+  },
+  {
+    "start": 1486.59,
+    "duration": 3.51,
+    "text": "But there's another judge who\nmakes a lot more than Sandra Day"
+  },
+  {
+    "start": 1490.1,
+    "duration": 0.5,
+    "text": "O'Connor."
+  },
+  {
+    "start": 1490.6,
+    "duration": 2.124,
+    "text": "[LAUGHTER]"
+  },
+  {
+    "start": 1492.724,
+    "duration": 1.456,
+    "text": "Do you know who it is?"
+  },
+  {
+    "start": 1494.18,
+    "duration": 1.275,
+    "text": "AUDIENCE: Judge Judy."
+  },
+  {
+    "start": 1495.455,
+    "duration": 1.125,
+    "text": "MICHAEL SANDEL: Judge Judy."
+  },
+  {
+    "start": 1496.58,
+    "duration": 1.26,
+    "text": "How did you know that?"
+  },
+  {
+    "start": 1497.84,
+    "duration": 1.41,
+    "text": "[LAUGHTER]"
+  },
+  {
+    "start": 1499.25,
+    "duration": 1.948,
+    "text": "Judge Judy, do you know\nhow much she makes?"
+  },
+  {
+    "start": 1501.198,
+    "duration": 0.708,
+    "text": "[GASPS, LAUGHTER]"
+  },
+  {
+    "start": 1501.906,
+    "duration": 0.674,
+    "text": "AUDIENCE: Wow."
+  },
+  {
+    "start": 1502.58,
+    "duration": 2.49,
+    "text": "$25 million."
+  },
+  {
+    "start": 1505.07,
+    "duration": 2.73,
+    "text": "Now, is that just?"
+  },
+  {
+    "start": 1507.8,
+    "duration": 1.055,
+    "text": "Is it fair?"
+  },
+  {
+    "start": 1508.855,
+    "duration": 3.625,
+    "text": "[MUSIC PLAYING]"
+  },
+  {
+    "start": 1512.48,
+    "duration": 4.75,
+    "text": "We ended last time with\nthat remarkable poll."
+  },
+  {
+    "start": 1517.23,
+    "duration": 2.81,
+    "text": "Do you remember?"
+  },
+  {
+    "start": 1520.04,
+    "duration": 1.85,
+    "text": "The poll about birth order."
+  },
+  {
+    "start": 1525.35,
+    "duration": 5.55,
+    "text": "What percentage of\npeople in this room"
+  },
+  {
+    "start": 1530.9,
+    "duration": 5.54,
+    "text": "raised their hands, to say\nthat they were the first born?"
+  },
+  {
+    "start": 1539.72,
+    "duration": 1.303,
+    "text": "75%, 80%?"
+  },
+  {
+    "start": 1544.79,
+    "duration": 1.945,
+    "text": "And what was the\nsignificance of that,"
+  },
+  {
+    "start": 1546.735,
+    "duration": 1.625,
+    "text": "if you're thinking\nabout these theories"
+  },
+  {
+    "start": 1548.36,
+    "duration": 3.12,
+    "text": "of distributive justice?"
+  },
+  {
+    "start": 1551.48,
+    "duration": 7.5,
+    "text": "Remember we were discussing\nthree different theories"
+  },
+  {
+    "start": 1558.98,
+    "duration": 3.12,
+    "text": "of distributive justice, three\ndifferent ways of answering"
+  },
+  {
+    "start": 1562.1,
+    "duration": 2.67,
+    "text": "the question, how\nshould income and wealth"
+  },
+  {
+    "start": 1564.77,
+    "duration": 4.74,
+    "text": "and opportunities and the good\nthings in life be distributed?"
+  },
+  {
+    "start": 1569.51,
+    "duration": 4.17,
+    "text": "And, so far, we've looked at\nthe libertarian answer, that"
+  },
+  {
+    "start": 1573.68,
+    "duration": 3.39,
+    "text": "says just system\nof distribution is"
+  },
+  {
+    "start": 1577.07,
+    "duration": 4.02,
+    "text": "a system of free exchange,\na free market economy,"
+  },
+  {
+    "start": 1581.09,
+    "duration": 4.63,
+    "text": "against a background\nof formal equality,"
+  },
+  {
+    "start": 1585.72,
+    "duration": 6.53,
+    "text": "which simply means that jobs\nand careers are open to anyone."
+  },
+  {
+    "start": 1592.25,
+    "duration": 2.64,
+    "text": "Rawls says this\nrepresents an improvement"
+  },
+  {
+    "start": 1594.89,
+    "duration": 4.32,
+    "text": "over aristocratic\nand caste systems"
+  },
+  {
+    "start": 1599.21,
+    "duration": 3.3,
+    "text": "because everyone can\ncompete for every job,"
+  },
+  {
+    "start": 1602.51,
+    "duration": 2.46,
+    "text": "careers open to talents."
+  },
+  {
+    "start": 1604.97,
+    "duration": 1.86,
+    "text": "And, beyond that,\njust distribution"
+  },
+  {
+    "start": 1606.83,
+    "duration": 3.9,
+    "text": "is the one that results\nfrom free exchange,"
+  },
+  {
+    "start": 1610.73,
+    "duration": 2.61,
+    "text": "voluntary transactions."
+  },
+  {
+    "start": 1613.34,
+    "duration": 2.25,
+    "text": "No more, no less."
+  },
+  {
+    "start": 1615.59,
+    "duration": 6.64,
+    "text": "But then, Rawls argues, if all\nyou have is formal equality,"
+  },
+  {
+    "start": 1622.23,
+    "duration": 7.37,
+    "text": "jobs open to everyone, the\nresult is not going to be fair."
+  },
+  {
+    "start": 1629.6,
+    "duration": 2.88,
+    "text": "It will be biased\nin favor of those"
+  },
+  {
+    "start": 1632.48,
+    "duration": 4.65,
+    "text": "who happen to be born to\naffluent families, who"
+  },
+  {
+    "start": 1637.13,
+    "duration": 5.1,
+    "text": "happen to have the benefit of\ngood educational opportunities."
+  },
+  {
+    "start": 1642.23,
+    "duration": 5.1,
+    "text": "And that accident of\nbirth is not a just basis"
+  },
+  {
+    "start": 1647.33,
+    "duration": 2.213,
+    "text": "for distributing life chances."
+  },
+  {
+    "start": 1652.52,
+    "duration": 6.59,
+    "text": "And so, many people who\nnotice this unfairness,"
+  },
+  {
+    "start": 1659.11,
+    "duration": 7.34,
+    "text": "Rawls argues, are led to embrace\na system of fair equality"
+  },
+  {
+    "start": 1666.45,
+    "duration": 2.64,
+    "text": "of opportunity."
+  },
+  {
+    "start": 1669.09,
+    "duration": 4.8,
+    "text": "That leads to the\nmeritocratic system,"
+  },
+  {
+    "start": 1673.89,
+    "duration": 3.42,
+    "text": "fair equality of opportunity."
+  },
+  {
+    "start": 1677.31,
+    "duration": 2.73,
+    "text": "But Rawls says, even\nif you bring everyone"
+  },
+  {
+    "start": 1680.04,
+    "duration": 4.68,
+    "text": "to the same starting\npoint in the race, what's"
+  },
+  {
+    "start": 1684.72,
+    "duration": 1.0,
+    "text": "going to happen?"
+  },
+  {
+    "start": 1685.72,
+    "duration": 2.75,
+    "text": "Who's going to win?"
+  },
+  {
+    "start": 1688.47,
+    "duration": 2.73,
+    "text": "The fastest runners."
+  },
+  {
+    "start": 1691.2,
+    "duration": 4.08,
+    "text": "So once you're troubled by\nbasing distributive shares"
+  },
+  {
+    "start": 1695.28,
+    "duration": 2.82,
+    "text": "on morally arbitrary\ncontingencies,"
+  },
+  {
+    "start": 1698.1,
+    "duration": 4.3,
+    "text": "you should, if you\nreason it through,"
+  },
+  {
+    "start": 1702.4,
+    "duration": 2.9,
+    "text": "be carried all the\nway to what Rawls"
+  },
+  {
+    "start": 1705.3,
+    "duration": 4.29,
+    "text": "calls the democratic\nconception, a more egalitarian"
+  },
+  {
+    "start": 1709.59,
+    "duration": 2.82,
+    "text": "conception of\ndistributive justice,"
+  },
+  {
+    "start": 1712.41,
+    "duration": 3.79,
+    "text": "that he defines by the\ndifference principle."
+  },
+  {
+    "start": 1716.2,
+    "duration": 5.45,
+    "text": "Now, he doesn't say that\nthe only way to remedy,"
+  },
+  {
+    "start": 1721.65,
+    "duration": 3.45,
+    "text": "or to compensate for,\ndifferences in natural talents"
+  },
+  {
+    "start": 1725.1,
+    "duration": 4.56,
+    "text": "and abilities is to\nhave a kind of leveling"
+  },
+  {
+    "start": 1729.66,
+    "duration": 3.16,
+    "text": "equality, a guaranteed\nequality of outcome."
+  },
+  {
+    "start": 1732.82,
+    "duration": 4.19,
+    "text": "But he does say\nthere's another way"
+  },
+  {
+    "start": 1737.01,
+    "duration": 2.91,
+    "text": "to deal with these\ncontingencies."
+  },
+  {
+    "start": 1739.92,
+    "duration": 5.41,
+    "text": "People may gain, may benefit,\nfrom their good fortune,"
+  },
+  {
+    "start": 1745.33,
+    "duration": 3.303,
+    "text": "but only on terms that work to\nthe advantage of the least-well"
+  },
+  {
+    "start": 1748.633,
+    "duration": 0.5,
+    "text": "off."
+  },
+  {
+    "start": 1752.01,
+    "duration": 3.24,
+    "text": "And so, we can test how\nthis theory actually"
+  },
+  {
+    "start": 1755.25,
+    "duration": 3.45,
+    "text": "works by thinking about\nsome pay differentials that"
+  },
+  {
+    "start": 1758.7,
+    "duration": 4.41,
+    "text": "arise in our society."
+  },
+  {
+    "start": 1763.11,
+    "duration": 1.53,
+    "text": "What does the average\nschool teacher"
+  },
+  {
+    "start": 1764.64,
+    "duration": 5.91,
+    "text": "make, in the United States,\ndo you suppose, roughly?"
+  },
+  {
+    "start": 1770.55,
+    "duration": 0.61,
+    "text": "AUDIENCE: 35."
+  },
+  {
+    "start": 1771.16,
+    "duration": 0.92,
+    "text": "AUDIENCE: $35,000."
+  },
+  {
+    "start": 1772.08,
+    "duration": 2.73,
+    "text": "MICHAEL SANDEL: It's a\nlittle more, $40-, $42,000."
+  },
+  {
+    "start": 1774.81,
+    "duration": 2.01,
+    "text": "What about David Letterman?"
+  },
+  {
+    "start": 1776.82,
+    "duration": 2.94,
+    "text": "How much do you think\nDavid Letterman makes?"
+  },
+  {
+    "start": 1779.76,
+    "duration": 1.4,
+    "text": "More than a school teacher?"
+  },
+  {
+    "start": 1784.62,
+    "duration": 4.33,
+    "text": "$31 million, David Letterman."
+  },
+  {
+    "start": 1788.95,
+    "duration": 4.4,
+    "text": "Is that fair, that\nDavid Letterman makes"
+  },
+  {
+    "start": 1793.35,
+    "duration": 1.66,
+    "text": "that much more than\na schoolteacher?"
+  },
+  {
+    "start": 1795.01,
+    "duration": 2.93,
+    "text": "Well, Rawls's\nanswer would be, it"
+  },
+  {
+    "start": 1797.94,
+    "duration": 3.93,
+    "text": "depends whether the basic\nstructure of society"
+  },
+  {
+    "start": 1801.87,
+    "duration": 4.68,
+    "text": "is designed in such a way\nthat Letterman's $31 million"
+  },
+  {
+    "start": 1806.55,
+    "duration": 3.72,
+    "text": "is subject to taxation, so\nthat some of those earnings"
+  },
+  {
+    "start": 1810.27,
+    "duration": 6.33,
+    "text": "are taken to work for the\nadvantage of the least-well off."
+  },
+  {
+    "start": 1816.6,
+    "duration": 4.2,
+    "text": "One other example of\na pay differential."
+  },
+  {
+    "start": 1820.8,
+    "duration": 4.17,
+    "text": "A justice of the United\nStates Supreme Court,"
+  },
+  {
+    "start": 1824.97,
+    "duration": 1.085,
+    "text": "what do they make?"
+  },
+  {
+    "start": 1829.32,
+    "duration": 3.72,
+    "text": "It's just under $200,000."
+  },
+  {
+    "start": 1833.04,
+    "duration": 4.18,
+    "text": "Here's Sandra Day\nO'Connor, for example."
+  },
+  {
+    "start": 1837.22,
+    "duration": 0.715,
+    "text": "There she is."
+  },
+  {
+    "start": 1841.2,
+    "duration": 3.51,
+    "text": "But there's another judge who\nmakes a lot more than Sandra Day"
+  },
+  {
+    "start": 1844.71,
+    "duration": 0.686,
+    "text": "O'Connor."
+  },
+  {
+    "start": 1845.396,
+    "duration": 1.799,
+    "text": "[LAUGHTER]"
+  },
+  {
+    "start": 1847.195,
+    "duration": 1.625,
+    "text": "Do you know who it is?"
+  },
+  {
+    "start": 1848.82,
+    "duration": 1.245,
+    "text": "AUDIENCE: Judge Judy."
+  },
+  {
+    "start": 1850.065,
+    "duration": 1.125,
+    "text": "MICHAEL SANDEL: Judge Judy."
+  },
+  {
+    "start": 1851.19,
+    "duration": 1.36,
+    "text": "How did you know that?"
+  },
+  {
+    "start": 1852.55,
+    "duration": 1.49,
+    "text": "[LAUGHTER]"
+  },
+  {
+    "start": 1854.04,
+    "duration": 1.35,
+    "text": "You watch?"
+  },
+  {
+    "start": 1855.39,
+    "duration": 0.5,
+    "text": "No."
+  },
+  {
+    "start": 1855.89,
+    "duration": 1.67,
+    "text": "But you're right."
+  },
+  {
+    "start": 1857.56,
+    "duration": 3.83,
+    "text": "Judge Judy, do you know\nhow much she makes?"
+  },
+  {
+    "start": 1861.39,
+    "duration": 0.819,
+    "text": "There she is."
+  },
+  {
+    "start": 1862.209,
+    "duration": 1.083,
+    "text": "[GASPS, CHATTER, LAUGHTER]"
+  },
+  {
+    "start": 1863.292,
+    "duration": 2.838,
+    "text": "AUDIENCE: Wow."
+  },
+  {
+    "start": 1866.13,
+    "duration": 1.49,
+    "text": "MICHAEL SANDEL: $25 million."
+  },
+  {
+    "start": 1870.57,
+    "duration": 2.85,
+    "text": "Now, is that just?"
+  },
+  {
+    "start": 1873.42,
+    "duration": 1.45,
+    "text": "Is it fair?"
+  },
+  {
+    "start": 1874.87,
+    "duration": 7.13,
+    "text": "Well, the answer is,\nit depends whether this"
+  },
+  {
+    "start": 1882.0,
+    "duration": 3.09,
+    "text": "is against a background\nsystem in line"
+  },
+  {
+    "start": 1885.09,
+    "duration": 4.2,
+    "text": "with the difference principle,\nwhere those who come out on top,"
+  },
+  {
+    "start": 1889.29,
+    "duration": 1.74,
+    "text": "in terms of income\nand wealth, are"
+  },
+  {
+    "start": 1891.03,
+    "duration": 5.19,
+    "text": "taxed in a way that benefits\nthe least-well off members"
+  },
+  {
+    "start": 1896.22,
+    "duration": 1.56,
+    "text": "of society."
+  },
+  {
+    "start": 1897.78,
+    "duration": 6.51,
+    "text": "Now, we're going to come back\nto these wage differentials, pay"
+  },
+  {
+    "start": 1904.29,
+    "duration": 3.99,
+    "text": "differentials,\nbetween a real judge"
+  },
+  {
+    "start": 1908.28,
+    "duration": 6.33,
+    "text": "and a TV judge, the one\nMarcus watches all the time."
+  },
+  {
+    "start": 1914.61,
+    "duration": 4.14,
+    "text": "What I want to do now is\nreturn to these theories"
+  },
+  {
+    "start": 1918.75,
+    "duration": 11.89,
+    "text": "and to examine the objections to\nRawls's more egalitarian theory,"
+  },
+  {
+    "start": 1930.64,
+    "duration": 2.33,
+    "text": "the difference principle."
+  },
+  {
+    "start": 1932.97,
+    "duration": 4.95,
+    "text": "There are at least\nthree objections"
+  },
+  {
+    "start": 1937.92,
+    "duration": 3.81,
+    "text": "to Rawls's difference principle."
+  },
+  {
+    "start": 1941.73,
+    "duration": 3.82,
+    "text": "One of them came up last\ntime in the discussion,"
+  },
+  {
+    "start": 1945.55,
+    "duration": 2.19,
+    "text": "and a number of you\nraised this worry."
+  },
+  {
+    "start": 1947.74,
+    "duration": 3.26,
+    "text": "What about incentives?"
+  },
+  {
+    "start": 1951.0,
+    "duration": 2.52,
+    "text": "Isn't there the\nrisk, if taxes reach"
+  },
+  {
+    "start": 1953.52,
+    "duration": 6.87,
+    "text": "70%, 80%, 90% marginal rate,\nthat Michael Jordan won't play"
+  },
+  {
+    "start": 1960.39,
+    "duration": 9.87,
+    "text": "basketball, that David Letterman\nwon't do late-night comedy,"
+  },
+  {
+    "start": 1970.26,
+    "duration": 7.18,
+    "text": "or that CEOs will go into\nsome other line of work?"
+  },
+  {
+    "start": 1977.44,
+    "duration": 3.23,
+    "text": "Now, who-- among those\nwho are defenders"
+  },
+  {
+    "start": 1980.67,
+    "duration": 5.7,
+    "text": "of Rawls, who has an\nanswer to this objection"
+  },
+  {
+    "start": 1986.37,
+    "duration": 4.41,
+    "text": "about the need for incentives?"
+  },
+  {
+    "start": 1990.78,
+    "duration": 1.9,
+    "text": "Yes, go ahead."
+  },
+  {
+    "start": 1992.68,
+    "duration": 2.3,
+    "text": "Stand up."
+  },
+  {
+    "start": 1994.98,
+    "duration": 3.06,
+    "text": "AUDIENCE: Rawls's idea\nis that there should only"
+  },
+  {
+    "start": 1998.04,
+    "duration": 2.55,
+    "text": "be so much difference\nthat it helps"
+  },
+  {
+    "start": 2000.59,
+    "duration": 2.11,
+    "text": "the least-well off the most."
+  },
+  {
+    "start": 2002.7,
+    "duration": 2.97,
+    "text": "So, if there's\ntoo much equality,"
+  },
+  {
+    "start": 2005.67,
+    "duration": 2.0,
+    "text": "then the least-well\noff might not"
+  },
+  {
+    "start": 2007.67,
+    "duration": 2.52,
+    "text": "be able to watch\nlate-night TV, or might not"
+  },
+  {
+    "start": 2010.19,
+    "duration": 3.13,
+    "text": "have a job because their\nCEO doesn't want to work."
+  },
+  {
+    "start": 2013.32,
+    "duration": 4.28,
+    "text": "So you need to find the correct\nbalance, where taxation still"
+  },
+  {
+    "start": 2017.6,
+    "duration": 2.22,
+    "text": "leaves enough incentive\nfor the least-well"
+  },
+  {
+    "start": 2019.82,
+    "duration": 2.015,
+    "text": "off to benefit from the talents."
+  },
+  {
+    "start": 2021.835,
+    "duration": 0.875,
+    "text": "MICHAEL SANDEL: Good."
+  },
+  {
+    "start": 2022.71,
+    "duration": 0.877,
+    "text": "And what's your name?"
+  },
+  {
+    "start": 2023.587,
+    "duration": 0.583,
+    "text": "AUDIENCE: Tim."
+  },
+  {
+    "start": 2024.17,
+    "duration": 0.73,
+    "text": "MICHAEL SANDEL: Tim."
+  },
+  {
+    "start": 2024.9,
+    "duration": 0.6,
+    "text": "All right."
+  },
+  {
+    "start": 2025.5,
+    "duration": 2.81,
+    "text": "So Tim is saying, in\neffect, that Rawls"
+  },
+  {
+    "start": 2028.31,
+    "duration": 2.67,
+    "text": "takes account of\nincentives, and could"
+  },
+  {
+    "start": 2030.98,
+    "duration": 5.22,
+    "text": "allow for pay differentials and\nfor some adjustment in the tax"
+  },
+  {
+    "start": 2036.2,
+    "duration": 2.38,
+    "text": "rate to take account\nof incentives."
+  },
+  {
+    "start": 2038.58,
+    "duration": 4.79,
+    "text": "But, Tim points\nout, the standpoint"
+  },
+  {
+    "start": 2043.37,
+    "duration": 3.87,
+    "text": "from which the\nquestion of incentives"
+  },
+  {
+    "start": 2047.24,
+    "duration": 4.499,
+    "text": "needs to be considered is not\nthe effect on the total size"
+  },
+  {
+    "start": 2051.739,
+    "duration": 3.041,
+    "text": "of the economic\npie, but, instead,"
+  },
+  {
+    "start": 2054.78,
+    "duration": 2.81,
+    "text": "from the standpoint of\nthe effect of incentives,"
+  },
+  {
+    "start": 2057.59,
+    "duration": 2.879,
+    "text": "or disincentives,\non the well-being"
+  },
+  {
+    "start": 2060.469,
+    "duration": 2.581,
+    "text": "of those at the bottom."
+  },
+  {
+    "start": 2063.05,
+    "duration": 0.934,
+    "text": "Right?"
+  },
+  {
+    "start": 2063.984,
+    "duration": 0.916,
+    "text": "Good."
+  },
+  {
+    "start": 2064.9,
+    "duration": 0.5,
+    "text": "Thank you."
+  },
+  {
+    "start": 2065.4,
+    "duration": 2.04,
+    "text": "I think that is what\nRawls would say."
+  },
+  {
+    "start": 2067.44,
+    "duration": 5.58,
+    "text": "In fact, if you\nlook in section 17,"
+  },
+  {
+    "start": 2073.02,
+    "duration": 6.54,
+    "text": "where he describes the\ndifference principle,"
+  },
+  {
+    "start": 2079.56,
+    "duration": 3.72,
+    "text": "he allows for incentives."
+  },
+  {
+    "start": 2083.28,
+    "duration": 4.649,
+    "text": "\"The naturally advantaged are\nnot to gain merely because they"
+  },
+  {
+    "start": 2087.929,
+    "duration": 3.21,
+    "text": "are more gifted, but only to\ncover the costs of training"
+  },
+  {
+    "start": 2091.139,
+    "duration": 3.781,
+    "text": "and education and for using\ntheir endowments in ways that"
+  },
+  {
+    "start": 2094.92,
+    "duration": 2.14,
+    "text": "help the less\nfortunate as well.\""
+  },
+  {
+    "start": 2097.06,
+    "duration": 4.31,
+    "text": "So you can have incentives,\nyou can adjust the tax rate,"
+  },
+  {
+    "start": 2101.37,
+    "duration": 4.96,
+    "text": "if taking too much from David\nLetterman or from Michael Jordan"
+  },
+  {
+    "start": 2106.33,
+    "duration": 5.33,
+    "text": "or from Bill Gates winds\nup actually hurting those"
+  },
+  {
+    "start": 2111.66,
+    "duration": 0.94,
+    "text": "at the bottom."
+  },
+  {
+    "start": 2112.6,
+    "duration": 0.883,
+    "text": "That's the test."
+  },
+  {
+    "start": 2117.18,
+    "duration": 4.02,
+    "text": "So incentives, that's\nnot a decisive objection"
+  },
+  {
+    "start": 2121.2,
+    "duration": 3.45,
+    "text": "against Rawls's\ndifference principle."
+  },
+  {
+    "start": 2124.65,
+    "duration": 7.01,
+    "text": "But there are two weightier,\nmore difficult, objections."
+  },
+  {
+    "start": 2131.66,
+    "duration": 11.76,
+    "text": "One of them comes from defenders\nof a meritocratic conception,"
+  },
+  {
+    "start": 2143.42,
+    "duration": 3.31,
+    "text": "the argument that says,\nwhat about effort?"
+  },
+  {
+    "start": 2146.73,
+    "duration": 4.76,
+    "text": "What about people, working\nhard, having a right"
+  },
+  {
+    "start": 2151.49,
+    "duration": 3.01,
+    "text": "to what they earn because\nthey've deserved it,"
+  },
+  {
+    "start": 2154.5,
+    "duration": 1.97,
+    "text": "they've worked hard for it?"
+  },
+  {
+    "start": 2156.47,
+    "duration": 5.37,
+    "text": "That's the objection, from\neffort and moral desert."
+  },
+  {
+    "start": 2161.84,
+    "duration": 3.99,
+    "text": "Then, there's this--\nanother objection,"
+  },
+  {
+    "start": 2165.83,
+    "duration": 4.8,
+    "text": "that comes from libertarians."
+  },
+  {
+    "start": 2170.63,
+    "duration": 5.04,
+    "text": "And this objection has\nto do with reasserting"
+  },
+  {
+    "start": 2175.67,
+    "duration": 2.546,
+    "text": "the idea of self-ownership."
+  },
+  {
+    "start": 2181.37,
+    "duration": 2.34,
+    "text": "Doesn't the\ndifference principle,"
+  },
+  {
+    "start": 2183.71,
+    "duration": 6.66,
+    "text": "by treating our natural talents\nand endowments as common assets,"
+  },
+  {
+    "start": 2190.37,
+    "duration": 5.05,
+    "text": "doesn't that violate the\nidea that we own ourselves?"
+  },
+  {
+    "start": 2195.42,
+    "duration": 6.8,
+    "text": "Now, let me deal, first,\nwith the objection that comes"
+  },
+  {
+    "start": 2202.22,
+    "duration": 3.18,
+    "text": "from the libertarian direction."
+  },
+  {
+    "start": 2205.4,
+    "duration": 4.51,
+    "text": "Milton Friedman writes, in\nhis book Free to Choose,"
+  },
+  {
+    "start": 2209.91,
+    "duration": 5.06,
+    "text": "\"Life is not fair,\" and, \"It\nis tempting to believe that"
+  },
+  {
+    "start": 2214.97,
+    "duration": 5.28,
+    "text": "government can rectify\nwhat nature has spawned.\""
+  },
+  {
+    "start": 2220.25,
+    "duration": 5.31,
+    "text": "But his answer is,\nthe only way to try"
+  },
+  {
+    "start": 2225.56,
+    "duration": 5.44,
+    "text": "to rectify that is to have a\nleveling equality of outcome,"
+  },
+  {
+    "start": 2231.0,
+    "duration": 4.115,
+    "text": "everyone finishing the\nrace at the same point,"
+  },
+  {
+    "start": 2235.115,
+    "duration": 1.208,
+    "text": "and that would be a disaster."
+  },
+  {
+    "start": 2239.51,
+    "duration": 3.99,
+    "text": "This is an easy\nargument to answer."
+  },
+  {
+    "start": 2243.5,
+    "duration": 8.11,
+    "text": "And Rawls addresses it, in one\nof the most powerful passages,"
+  },
+  {
+    "start": 2251.61,
+    "duration": 1.62,
+    "text": "I think, of A Theory of Justice."
+  },
+  {
+    "start": 2253.23,
+    "duration": 3.74,
+    "text": "It's in section 17."
+  },
+  {
+    "start": 2256.97,
+    "duration": 3.57,
+    "text": "\"The natural distribution--\"\n--and here he's talking about"
+  },
+  {
+    "start": 2260.54,
+    "duration": 2.55,
+    "text": "the natural distribution\nof talents and endowment--\""
+  },
+  {
+    "start": 2263.09,
+    "duration": 4.86,
+    "text": "\"--is neither just nor unjust;\nnor is it unjust that persons"
+  },
+  {
+    "start": 2267.95,
+    "duration": 2.56,
+    "text": "are born into society at\nsome particular position."
+  },
+  {
+    "start": 2270.51,
+    "duration": 1.74,
+    "text": "These are simply natural facts."
+  },
+  {
+    "start": 2272.25,
+    "duration": 4.4,
+    "text": "What is just and unjust is the\nway that institutions deal with"
+  },
+  {
+    "start": 2276.65,
+    "duration": 2.82,
+    "text": "these facts.\""
+  },
+  {
+    "start": 2279.47,
+    "duration": 4.29,
+    "text": "That's his answer\nto libertarian,"
+  },
+  {
+    "start": 2283.76,
+    "duration": 2.64,
+    "text": "laissez-faire economists,\nlike Milton Friedman, who say,"
+  },
+  {
+    "start": 2286.4,
+    "duration": 3.84,
+    "text": "life is unfair, but get over it."
+  },
+  {
+    "start": 2290.24,
+    "duration": 2.64,
+    "text": "Get over it, and let's\nsee if we can, at least,"
+  },
+  {
+    "start": 2292.88,
+    "duration": 4.35,
+    "text": "maximize the benefits\nthat flow from it."
+  },
+  {
+    "start": 2297.23,
+    "duration": 3.24,
+    "text": "But the more powerful\nlibertarian objection to Rawls"
+  },
+  {
+    "start": 2300.47,
+    "duration": 2.79,
+    "text": "is not libertarian, from\nthe libertarian economists"
+  },
+  {
+    "start": 2303.26,
+    "duration": 4.14,
+    "text": "like Milton Friedman,\nit's from the argument"
+  },
+  {
+    "start": 2307.4,
+    "duration": 4.775,
+    "text": "about self-ownership,\ndeveloped, as we saw, in Nozick."
+  },
+  {
+    "start": 2315.56,
+    "duration": 2.88,
+    "text": "And, from that point\nof view, yes, it"
+  },
+  {
+    "start": 2318.44,
+    "duration": 3.15,
+    "text": "might be a good thing\nto create Head Start"
+  },
+  {
+    "start": 2321.59,
+    "duration": 3.45,
+    "text": "programs and public\nschools, so that everyone"
+  },
+  {
+    "start": 2325.04,
+    "duration": 2.79,
+    "text": "can go to a decent\nschool and start the race"
+  },
+  {
+    "start": 2327.83,
+    "duration": 1.36,
+    "text": "at the same starting line."
+  },
+  {
+    "start": 2329.19,
+    "duration": 2.24,
+    "text": "That might be good."
+  },
+  {
+    "start": 2331.43,
+    "duration": 4.77,
+    "text": "But, if you tax people\nto create public schools,"
+  },
+  {
+    "start": 2336.2,
+    "duration": 6.03,
+    "text": "if you tax people against\ntheir will, you coerce them."
+  },
+  {
+    "start": 2342.23,
+    "duration": 2.25,
+    "text": "It's a form of theft."
+  },
+  {
+    "start": 2344.48,
+    "duration": 4.32,
+    "text": "If you take some of\nLetterman's $31 million,"
+  },
+  {
+    "start": 2348.8,
+    "duration": 6.03,
+    "text": "tax it away to support public\nschools, against his will,"
+  },
+  {
+    "start": 2354.83,
+    "duration": 5.26,
+    "text": "the state is really doing no\nbetter than stealing from him."
+  },
+  {
+    "start": 2360.09,
+    "duration": 2.12,
+    "text": "It's coercion."
+  },
+  {
+    "start": 2362.21,
+    "duration": 5.22,
+    "text": "And the reason is, we have to\nthink of ourselves as owning"
+  },
+  {
+    "start": 2367.43,
+    "duration": 2.49,
+    "text": "our talents and endowments."
+  },
+  {
+    "start": 2369.92,
+    "duration": 2.04,
+    "text": "Because, otherwise,\nwe're back to just"
+  },
+  {
+    "start": 2371.96,
+    "duration": 3.57,
+    "text": "using people and\ncoercing people."
+  },
+  {
+    "start": 2375.53,
+    "duration": 3.15,
+    "text": "That's the libertarian reply."
+  },
+  {
+    "start": 2378.68,
+    "duration": 2.666,
+    "text": "What's Rawls' answer\nto that objection?"
+  },
+  {
+    "start": 2387.26,
+    "duration": 5.55,
+    "text": "He doesn't address the idea\nof self-ownership directly."
+  },
+  {
+    "start": 2392.81,
+    "duration": 2.67,
+    "text": "But the effect,\nthe moral weight,"
+  },
+  {
+    "start": 2395.48,
+    "duration": 2.07,
+    "text": "of his argument for the\ndifference principle"
+  },
+  {
+    "start": 2397.55,
+    "duration": 5.34,
+    "text": "is, maybe we don't own\nourselves, in that thoroughgoing"
+  },
+  {
+    "start": 2402.89,
+    "duration": 2.4,
+    "text": "sense, after all."
+  },
+  {
+    "start": 2405.29,
+    "duration": 5.16,
+    "text": "Now, he says, this doesn't\nmean that the state is"
+  },
+  {
+    "start": 2410.45,
+    "duration": 3.81,
+    "text": "an owner in me, in the\nsense that it can simply"
+  },
+  {
+    "start": 2414.26,
+    "duration": 2.37,
+    "text": "commandeer my life."
+  },
+  {
+    "start": 2416.63,
+    "duration": 2.37,
+    "text": "Because, remember,\nthe first principle"
+  },
+  {
+    "start": 2419.0,
+    "duration": 4.23,
+    "text": "we would agree to behind\nthe veil of ignorance"
+  },
+  {
+    "start": 2423.23,
+    "duration": 4.78,
+    "text": "is the principle of equal basic\nliberties, freedom of speech,"
+  },
+  {
+    "start": 2428.01,
+    "duration": 5.21,
+    "text": "religious liberty, freedom\nof conscience, and the like."
+  },
+  {
+    "start": 2433.22,
+    "duration": 6.63,
+    "text": "So the only respect in which\nthe idea of self-ownership"
+  },
+  {
+    "start": 2439.85,
+    "duration": 4.98,
+    "text": "must give way comes when\nwe're thinking about"
+  },
+  {
+    "start": 2444.83,
+    "duration": 6.96,
+    "text": "whether I own myself,\nin the sense that I have"
+  },
+  {
+    "start": 2451.79,
+    "duration": 5.07,
+    "text": "a privileged claim\non the benefits that"
+  },
+  {
+    "start": 2456.86,
+    "duration": 3.91,
+    "text": "come from the exercise of my\ntalents in a market economy."
+  },
+  {
+    "start": 2460.77,
+    "duration": 3.86,
+    "text": "And Rawls says, on\nreflection, we don't."
+  },
+  {
+    "start": 2464.63,
+    "duration": 4.27,
+    "text": "We can defend rights, we\ncan respect the individual,"
+  },
+  {
+    "start": 2468.9,
+    "duration": 6.92,
+    "text": "we can uphold human\ndignity, without embracing"
+  },
+  {
+    "start": 2475.82,
+    "duration": 3.16,
+    "text": "the idea of self-possession."
+  },
+  {
+    "start": 2481.58,
+    "duration": 6.04,
+    "text": "That, in effect, is his\nreply to the libertarian."
+  },
+  {
+    "start": 2487.62,
+    "duration": 3.02,
+    "text": "I want to turn,\nnow, to his reply"
+  },
+  {
+    "start": 2490.64,
+    "duration": 4.14,
+    "text": "to the defender of a\nmeritocratic conception, who"
+  },
+  {
+    "start": 2494.78,
+    "duration": 5.25,
+    "text": "invokes effort as the\nbasis of moral desert."
+  },
+  {
+    "start": 2500.03,
+    "duration": 6.534,
+    "text": "People who work hard to\ndevelop their talents"
+  },
+  {
+    "start": 2506.564,
+    "duration": 4.446,
+    "text": "deserve the benefits that\ncome from the exercise"
+  },
+  {
+    "start": 2511.01,
+    "duration": 1.89,
+    "text": "of their talents."
+  },
+  {
+    "start": 2512.9,
+    "duration": 4.53,
+    "text": "Well, we've already seen the\nbeginning of Rawls's answer"
+  },
+  {
+    "start": 2517.43,
+    "duration": 3.09,
+    "text": "to that question,\nand it goes back"
+  },
+  {
+    "start": 2520.52,
+    "duration": 3.39,
+    "text": "to that poll we took\nabout birth order."
+  },
+  {
+    "start": 2523.91,
+    "duration": 6.37,
+    "text": "His first answer is,\neven the work ethic,"
+  },
+  {
+    "start": 2530.28,
+    "duration": 3.0,
+    "text": "even the willingness to\nstrive conscientiously,"
+  },
+  {
+    "start": 2533.28,
+    "duration": 3.5,
+    "text": "depends on all sorts\nof family circumstances"
+  },
+  {
+    "start": 2536.78,
+    "duration": 2.94,
+    "text": "and social and cultural\ncontingencies for which we"
+  },
+  {
+    "start": 2539.72,
+    "duration": 2.13,
+    "text": "can claim no credit."
+  },
+  {
+    "start": 2541.85,
+    "duration": 1.86,
+    "text": "You can't claim\ncredit for the fact"
+  },
+  {
+    "start": 2543.71,
+    "duration": 3.03,
+    "text": "that you-- most of\nyou, most of us--"
+  },
+  {
+    "start": 2546.74,
+    "duration": 2.67,
+    "text": "happen to be first in\nbirth order and that,"
+  },
+  {
+    "start": 2549.41,
+    "duration": 4.08,
+    "text": "for some complex psychological\nand social reasons, that"
+  },
+  {
+    "start": 2553.49,
+    "duration": 3.22,
+    "text": "seems to be associated\nwith striving,"
+  },
+  {
+    "start": 2556.71,
+    "duration": 2.72,
+    "text": "with achieving, with effort."
+  },
+  {
+    "start": 2559.43,
+    "duration": 2.94,
+    "text": "That's one answer."
+  },
+  {
+    "start": 2562.37,
+    "duration": 3.03,
+    "text": "There's a second answer."
+  },
+  {
+    "start": 2565.4,
+    "duration": 5.13,
+    "text": "Those of you who\ninvoke effort, you"
+  },
+  {
+    "start": 2570.53,
+    "duration": 6.48,
+    "text": "don't really believe that moral\ndesert attaches to effort."
+  },
+  {
+    "start": 2577.01,
+    "duration": 1.99,
+    "text": "Take two construction workers."
+  },
+  {
+    "start": 2579.0,
+    "duration": 3.35,
+    "text": "One is strong and can raise\nfour walls in an hour,"
+  },
+  {
+    "start": 2582.35,
+    "duration": 3.36,
+    "text": "without even breaking a sweat."
+  },
+  {
+    "start": 2585.71,
+    "duration": 4.41,
+    "text": "And another construction\nworker is small and scrawny"
+  },
+  {
+    "start": 2590.12,
+    "duration": 6.18,
+    "text": "and has to spend three days\nto do the same amount of work."
+  },
+  {
+    "start": 2596.3,
+    "duration": 3.39,
+    "text": "No defender of\nmeritocracy is going"
+  },
+  {
+    "start": 2599.69,
+    "duration": 3.24,
+    "text": "to look at the effort of that\nweak and scrawny construction"
+  },
+  {
+    "start": 2602.93,
+    "duration": 3.66,
+    "text": "worker and say, therefore,\nhe deserves to make more."
+  },
+  {
+    "start": 2606.59,
+    "duration": 2.56,
+    "text": "So it isn't really effort--"
+  },
+  {
+    "start": 2609.15,
+    "duration": 5.18,
+    "text": "this is the second reply\nto the meritocratic claim."
+  },
+  {
+    "start": 2614.33,
+    "duration": 5.64,
+    "text": "It isn't really effort that the\ndefender of meritocracy believes"
+  },
+  {
+    "start": 2619.97,
+    "duration": 5.04,
+    "text": "is the moral basis of\ndistributive shares,"
+  },
+  {
+    "start": 2625.01,
+    "duration": 4.53,
+    "text": "its contribution, how\nmuch do you contribute."
+  },
+  {
+    "start": 2629.54,
+    "duration": 2.7,
+    "text": "But contribution\ntakes us straight"
+  },
+  {
+    "start": 2632.24,
+    "duration": 5.97,
+    "text": "back to our natural talents\nand abilities, not just effort."
+  },
+  {
+    "start": 2638.21,
+    "duration": 2.25,
+    "text": "And it's not our\ndoing, how we came"
+  },
+  {
+    "start": 2640.46,
+    "duration": 5.22,
+    "text": "into the possession of those\ntalents in the first place."
+  },
+  {
+    "start": 2645.68,
+    "duration": 0.64,
+    "text": "All right."
+  },
+  {
+    "start": 2646.32,
+    "duration": 3.5,
+    "text": "Suppose you accepted these\narguments, that effort isn't"
+  },
+  {
+    "start": 2649.82,
+    "duration": 3.84,
+    "text": "everything, that contribution\nmatters, from the standpoint"
+  },
+  {
+    "start": 2653.66,
+    "duration": 5.13,
+    "text": "of the meritocratic\nconception, that effort, even,"
+  },
+  {
+    "start": 2658.79,
+    "duration": 2.87,
+    "text": "isn't our own doing."
+  },
+  {
+    "start": 2664.19,
+    "duration": 5.22,
+    "text": "Does that mean the\nobjection continues?"
+  },
+  {
+    "start": 2669.41,
+    "duration": 2.35,
+    "text": "Does that mean that,\naccording to Rawls,"
+  },
+  {
+    "start": 2671.76,
+    "duration": 4.153,
+    "text": "moral desert has nothing to\ndo with distributive justice?"
+  },
+  {
+    "start": 2679.43,
+    "duration": 2.19,
+    "text": "Well, yes."
+  },
+  {
+    "start": 2681.62,
+    "duration": 3.48,
+    "text": "Distributive justice is\nnot about moral desert."
+  },
+  {
+    "start": 2685.1,
+    "duration": 5.07,
+    "text": "Now, here, Rawls introduces\nan important, and a tricky,"
+  },
+  {
+    "start": 2690.17,
+    "duration": 1.53,
+    "text": "distinction."
+  },
+  {
+    "start": 2691.7,
+    "duration": 4.92,
+    "text": "It's between moral desert, on\nthe one hand, and entitlements"
+  },
+  {
+    "start": 2696.62,
+    "duration": 3.87,
+    "text": "to legitimate\nexpectations on the other."
+  },
+  {
+    "start": 2700.49,
+    "duration": 5.85,
+    "text": "What is the difference between\nmoral deserts and entitlements?"
+  },
+  {
+    "start": 2706.34,
+    "duration": 3.21,
+    "text": "Consider two different\ngames, a game of chance"
+  },
+  {
+    "start": 2709.55,
+    "duration": 2.43,
+    "text": "and a game of skill."
+  },
+  {
+    "start": 2711.98,
+    "duration": 3.51,
+    "text": "Take a game of pure chance."
+  },
+  {
+    "start": 2715.49,
+    "duration": 3.33,
+    "text": "Say I play the\nMassachusetts state lottery,"
+  },
+  {
+    "start": 2718.82,
+    "duration": 2.13,
+    "text": "and my number comes up."
+  },
+  {
+    "start": 2720.95,
+    "duration": 3.533,
+    "text": "I'm entitled to my winnings."
+  },
+  {
+    "start": 2727.34,
+    "duration": 2.68,
+    "text": "But even though I'm\nentitled to my winnings,"
+  },
+  {
+    "start": 2730.02,
+    "duration": 2.3,
+    "text": "there's no sense in which--"
+  },
+  {
+    "start": 2732.32,
+    "duration": 2.5,
+    "text": "because it's just\na game of luck,"
+  },
+  {
+    "start": 2734.82,
+    "duration": 3.26,
+    "text": "no sense in which\nI morally deserved"
+  },
+  {
+    "start": 2738.08,
+    "duration": 2.4,
+    "text": "to win in the first place."
+  },
+  {
+    "start": 2740.48,
+    "duration": 2.22,
+    "text": "That's an entitlement."
+  },
+  {
+    "start": 2742.7,
+    "duration": 4.44,
+    "text": "Now, contrast the lottery\nwith a different kind of game,"
+  },
+  {
+    "start": 2747.14,
+    "duration": 3.09,
+    "text": "a game of skill."
+  },
+  {
+    "start": 2750.23,
+    "duration": 9.75,
+    "text": "Now, imagine the Boston Red\nSox winning the World Series."
+  },
+  {
+    "start": 2759.98,
+    "duration": 4.74,
+    "text": "When they win, they're\nentitled to the trophy."
+  },
+  {
+    "start": 2764.72,
+    "duration": 5.16,
+    "text": "But it can be always\nasked, of a game of skill,"
+  },
+  {
+    "start": 2769.88,
+    "duration": 3.48,
+    "text": "did they deserve to win?"
+  },
+  {
+    "start": 2773.36,
+    "duration": 2.14,
+    "text": "It's always possible,\nin principle,"
+  },
+  {
+    "start": 2775.5,
+    "duration": 7.53,
+    "text": "to distinguish what someone is\nentitled to, under the rules,"
+  },
+  {
+    "start": 2783.03,
+    "duration": 3.39,
+    "text": "and whether they deserved\nto win in the first place."
+  },
+  {
+    "start": 2786.42,
+    "duration": 5.43,
+    "text": "That's an antecedent\nstandard, moral desert."
+  },
+  {
+    "start": 2791.85,
+    "duration": 4.26,
+    "text": "Now, Rawls says\ndistributive justice is not"
+  },
+  {
+    "start": 2796.11,
+    "duration": 5.07,
+    "text": "a matter of moral desert, though\nit is a matter of entitlements"
+  },
+  {
+    "start": 2801.18,
+    "duration": 3.03,
+    "text": "to legitimate expectations."
+  },
+  {
+    "start": 2804.21,
+    "duration": 3.54,
+    "text": "Here's where he explains it."
+  },
+  {
+    "start": 2807.75,
+    "duration": 6.78,
+    "text": "\"A just scheme answers to\nwhat men are entitled to;"
+  },
+  {
+    "start": 2814.53,
+    "duration": 3.09,
+    "text": "it satisfies their\nlegitimate expectations,"
+  },
+  {
+    "start": 2817.62,
+    "duration": 4.5,
+    "text": "as founded upon\nsocial institutions."
+  },
+  {
+    "start": 2822.12,
+    "duration": 3.93,
+    "text": "But what they are entitled to\nis not proportional to,\" nor"
+  },
+  {
+    "start": 2826.05,
+    "duration": 4.14,
+    "text": "\"dependent on their\nintrinsic worth."
+  },
+  {
+    "start": 2830.19,
+    "duration": 3.57,
+    "text": "The principles of justice that\nregulate the basic structure do"
+  },
+  {
+    "start": 2833.76,
+    "duration": 4.02,
+    "text": "not mention moral desert,\nand there is no tendency"
+  },
+  {
+    "start": 2837.78,
+    "duration": 4.86,
+    "text": "for distributive shares\nto correspond to it.\""
+  },
+  {
+    "start": 2842.64,
+    "duration": 3.22,
+    "text": "Why does Rawls make\nthis distinction?"
+  },
+  {
+    "start": 2845.86,
+    "duration": 3.38,
+    "text": "What, morally, is at stake?"
+  },
+  {
+    "start": 2849.24,
+    "duration": 3.03,
+    "text": "One thing morally at stake is\nthe whole question of effort"
+  },
+  {
+    "start": 2852.27,
+    "duration": 3.18,
+    "text": "that we've already discussed."
+  },
+  {
+    "start": 2855.45,
+    "duration": 3.21,
+    "text": "But there's a second\ncontingency, a second source"
+  },
+  {
+    "start": 2858.66,
+    "duration": 2.97,
+    "text": "of moral arbitrariness,\nthat goes"
+  },
+  {
+    "start": 2861.63,
+    "duration": 3.24,
+    "text": "beyond the question of\nwhether it's to my credit"
+  },
+  {
+    "start": 2864.87,
+    "duration": 4.2,
+    "text": "that I have the talents\nthat enable me to get ahead."
+  },
+  {
+    "start": 2869.07,
+    "duration": 2.88,
+    "text": "And that has to do\nwith the contingency"
+  },
+  {
+    "start": 2871.95,
+    "duration": 7.92,
+    "text": "that I live in a society that\nhappens to prize my talents."
+  },
+  {
+    "start": 2879.87,
+    "duration": 4.02,
+    "text": "The fact that David\nLetterman lives"
+  },
+  {
+    "start": 2883.89,
+    "duration": 3.19,
+    "text": "in a society that\nputs a great premium,"
+  },
+  {
+    "start": 2887.08,
+    "duration": 7.55,
+    "text": "puts a great value, on a certain\ntype of smirky joke, that's"
+  },
+  {
+    "start": 2894.63,
+    "duration": 0.97,
+    "text": "not his doing."
+  },
+  {
+    "start": 2895.6,
+    "duration": 2.463,
+    "text": "He's lucky that he happens\nto live in such a society."
+  },
+  {
+    "start": 2902.04,
+    "duration": 2.35,
+    "text": "But this is the\nsecond contingency."
+  },
+  {
+    "start": 2904.39,
+    "duration": 3.47,
+    "text": "This isn't something that\nwe can claim credit for."
+  },
+  {
+    "start": 2907.86,
+    "duration": 3.63,
+    "text": "Even if I had sole,\nunproblematic claim"
+  },
+  {
+    "start": 2911.49,
+    "duration": 3.51,
+    "text": "to my talents, and\nto my effort, it"
+  },
+  {
+    "start": 2915.0,
+    "duration": 2.07,
+    "text": "would still be the\ncase that the benefits"
+  },
+  {
+    "start": 2917.07,
+    "duration": 2.73,
+    "text": "I get from exercising\nthose talents"
+  },
+  {
+    "start": 2919.8,
+    "duration": 3.87,
+    "text": "depend on factors\nthat are arbitrary,"
+  },
+  {
+    "start": 2923.67,
+    "duration": 2.94,
+    "text": "from a moral point of view."
+  },
+  {
+    "start": 2926.61,
+    "duration": 2.56,
+    "text": "What my talents will\nreap in a market economy,"
+  },
+  {
+    "start": 2929.17,
+    "duration": 1.91,
+    "text": "what does that depend on?"
+  },
+  {
+    "start": 2931.08,
+    "duration": 3.52,
+    "text": "What other people happen to\nwant, or like, in this society."
+  },
+  {
+    "start": 2934.6,
+    "duration": 2.49,
+    "text": "It depends on the law\nof supply and demand."
+  },
+  {
+    "start": 2937.09,
+    "duration": 2.732,
+    "text": "That's not my doing."
+  },
+  {
+    "start": 2939.822,
+    "duration": 5.088,
+    "text": "It's certainly not the\nbasis for moral desert."
+  },
+  {
+    "start": 2944.91,
+    "duration": 5.43,
+    "text": "What counts as contributing\ndepends on the qualities"
+  },
+  {
+    "start": 2950.34,
+    "duration": 3.03,
+    "text": "that this or that\nsociety happens to prize."
+  },
+  {
+    "start": 2953.37,
+    "duration": 4.39,
+    "text": "Most of us are fortunate to\npossess, in large measure,"
+  },
+  {
+    "start": 2957.76,
+    "duration": 4.31,
+    "text": "for whatever reason, the\nqualities that our society"
+  },
+  {
+    "start": 2962.07,
+    "duration": 5.28,
+    "text": "happens to prize, the\nqualities that enable us"
+  },
+  {
+    "start": 2967.35,
+    "duration": 4.11,
+    "text": "to provide what society wants."
+  },
+  {
+    "start": 2971.46,
+    "duration": 1.86,
+    "text": "In a capitalist\nsociety, it helps"
+  },
+  {
+    "start": 2973.32,
+    "duration": 2.28,
+    "text": "to have entrepreneurial drive."
+  },
+  {
+    "start": 2975.6,
+    "duration": 1.83,
+    "text": "In a bureaucratic\nsociety, it helps"
+  },
+  {
+    "start": 2977.43,
+    "duration": 4.11,
+    "text": "to get on easily and\nsmoothly with superiors."
+  },
+  {
+    "start": 2981.54,
+    "duration": 5.46,
+    "text": "In a mass democratic society, it\nhelps to look good on television"
+  },
+  {
+    "start": 2987.0,
+    "duration": 2.613,
+    "text": "and to speak in short,\nsuperficial soundbites."
+  },
+  {
+    "start": 2989.613,
+    "duration": 2.937,
+    "text": "[LAUGHTER]"
+  },
+  {
+    "start": 2992.55,
+    "duration": 4.86,
+    "text": "In a litigious society, it\nhelps to go to law school"
+  },
+  {
+    "start": 2997.41,
+    "duration": 4.41,
+    "text": "and to have the talents\nto do well on LSATs."
+  },
+  {
+    "start": 3001.82,
+    "duration": 1.865,
+    "text": "But none of this is our doing."
+  },
+  {
+    "start": 3003.685,
+    "duration": 1.825,
+    "text": "Suppose that we,\nwith our talents,"
+  },
+  {
+    "start": 3005.51,
+    "duration": 2.68,
+    "text": "inhabited, not our society--"
+  },
+  {
+    "start": 3008.19,
+    "duration": 2.72,
+    "text": "technologically advanced,\nhighly litigious--"
+  },
+  {
+    "start": 3010.91,
+    "duration": 3.01,
+    "text": "but a hunting society\nor a warrior society."
+  },
+  {
+    "start": 3013.92,
+    "duration": 3.08,
+    "text": "What would become\nof our talents then?"
+  },
+  {
+    "start": 3017.0,
+    "duration": 2.43,
+    "text": "They wouldn't get us very far."
+  },
+  {
+    "start": 3019.43,
+    "duration": 3.63,
+    "text": "No doubt, some of us\nwould develop others."
+  },
+  {
+    "start": 3023.06,
+    "duration": 2.65,
+    "text": "But would we be less worthy?"
+  },
+  {
+    "start": 3025.71,
+    "duration": 3.68,
+    "text": "Would we be less virtuous?"
+  },
+  {
+    "start": 3029.39,
+    "duration": 2.1,
+    "text": "Would we be less\nmeritorious, if we"
+  },
+  {
+    "start": 3031.49,
+    "duration": 4.11,
+    "text": "lived in that kind of\nsociety, rather than in ours?"
+  },
+  {
+    "start": 3035.6,
+    "duration": 3.3,
+    "text": "Rawls's answer is no."
+  },
+  {
+    "start": 3038.9,
+    "duration": 4.8,
+    "text": "We might make less\nmoney, and properly so."
+  },
+  {
+    "start": 3043.7,
+    "duration": 3.27,
+    "text": "But while we would\nbe entitled to less,"
+  },
+  {
+    "start": 3046.97,
+    "duration": 5.16,
+    "text": "we would be no less worthy, no\nless deserving, than we are now."
+  },
+  {
+    "start": 3052.13,
+    "duration": 1.54,
+    "text": "And here's the point--"
+  },
+  {
+    "start": 3053.67,
+    "duration": 3.44,
+    "text": "the same could be said of\nthose in our society, who"
+  },
+  {
+    "start": 3057.11,
+    "duration": 3.84,
+    "text": "happen to hold less\nprestigious positions, who"
+  },
+  {
+    "start": 3060.95,
+    "duration": 2.52,
+    "text": "happen to have\nfewer of the talents"
+  },
+  {
+    "start": 3063.47,
+    "duration": 4.29,
+    "text": "that our society\nhappens to reward."
+  },
+  {
+    "start": 3067.76,
+    "duration": 3.63,
+    "text": "So here's the moral\nimport of the distinction"
+  },
+  {
+    "start": 3071.39,
+    "duration": 2.85,
+    "text": "between moral desert\nand entitlements"
+  },
+  {
+    "start": 3074.24,
+    "duration": 2.58,
+    "text": "to legitimate expectations."
+  },
+  {
+    "start": 3076.82,
+    "duration": 3.42,
+    "text": "We are entitled to the benefits\nthat the rules of the game"
+  },
+  {
+    "start": 3080.24,
+    "duration": 3.18,
+    "text": "promise for the\nexercise of our talents."
+  },
+  {
+    "start": 3083.42,
+    "duration": 2.82,
+    "text": "But it's a mistake,\nand a conceit,"
+  },
+  {
+    "start": 3086.24,
+    "duration": 2.74,
+    "text": "to suppose that we deserve,\nin the first place,"
+  },
+  {
+    "start": 3088.98,
+    "duration": 2.93,
+    "text": "a society that values\nthe qualities we"
+  },
+  {
+    "start": 3091.91,
+    "duration": 3.45,
+    "text": "happen to have in abundance."
+  },
+  {
+    "start": 3095.36,
+    "duration": 4.8,
+    "text": "Now, we've been talking,\nhere, about income and wealth."
+  },
+  {
+    "start": 3100.16,
+    "duration": 4.44,
+    "text": "What about opportunities\nand honors?"
+  },
+  {
+    "start": 3104.6,
+    "duration": 5.19,
+    "text": "What about the distribution\nof access, of seats,"
+  },
+  {
+    "start": 3109.79,
+    "duration": 4.56,
+    "text": "in elite colleges\nand universities?"
+  },
+  {
+    "start": 3114.35,
+    "duration": 5.91,
+    "text": "It's true, all of you--"
+  },
+  {
+    "start": 3120.26,
+    "duration": 2.28,
+    "text": "most of you firstborn--"
+  },
+  {
+    "start": 3122.54,
+    "duration": 6.665,
+    "text": "worked hard, strived, developed\nyour talents, to get here."
+  },
+  {
+    "start": 3132.14,
+    "duration": 3.93,
+    "text": "But Rawls asks,\nin effect, what is"
+  },
+  {
+    "start": 3136.07,
+    "duration": 4.05,
+    "text": "the moral status of your\nclaim to the benefits"
+  },
+  {
+    "start": 3140.12,
+    "duration": 3.89,
+    "text": "that attach to the\nopportunities you have?"
+  },
+  {
+    "start": 3147.05,
+    "duration": 5.25,
+    "text": "Are seats, in colleges\nand universities,"
+  },
+  {
+    "start": 3152.3,
+    "duration": 3.24,
+    "text": "a matter, a kind of\nreward, an honor,"
+  },
+  {
+    "start": 3155.54,
+    "duration": 5.01,
+    "text": "for those who deserve them\nbecause they've worked so hard?"
+  },
+  {
+    "start": 3160.55,
+    "duration": 5.31,
+    "text": "Or are those seats, those\nopportunities and honors,"
+  },
+  {
+    "start": 3165.86,
+    "duration": 6.96,
+    "text": "entitlements to legitimate\nexpectations, that"
+  },
+  {
+    "start": 3172.82,
+    "duration": 9.3,
+    "text": "depend, for their justification,\non those of us who enjoy them,"
+  },
+  {
+    "start": 3182.12,
+    "duration": 7.62,
+    "text": "doing so, in a way, that\nworks to the benefit of those"
+  },
+  {
+    "start": 3189.74,
+    "duration": 1.48,
+    "text": "at the bottom of society?"
+  },
+  {
+    "start": 3191.22,
+    "duration": 4.64,
+    "text": "That's the question that Rawls's\ndifference principle poses."
+  },
+  {
+    "start": 3195.86,
+    "duration": 4.53,
+    "text": "It's a question that can be\nasked of the earnings of Michael"
+  },
+  {
+    "start": 3200.39,
+    "duration": 4.26,
+    "text": "Jordan and David\nLetterman and Judge Judy,"
+  },
+  {
+    "start": 3204.65,
+    "duration": 1.68,
+    "text": "but it's also a\nquestion that can"
+  },
+  {
+    "start": 3206.33,
+    "duration": 8.31,
+    "text": "be asked of opportunities\nto go to the top colleges"
+  },
+  {
+    "start": 3214.64,
+    "duration": 0.88,
+    "text": "and universities."
+  },
+  {
+    "start": 3215.52,
+    "duration": 3.38,
+    "text": "And that's a debate\nthat comes out"
+  },
+  {
+    "start": 3218.9,
+    "duration": 3.395,
+    "text": "when we turn to the question of\naffirmative action, next time."
+  },
+  {
+    "start": 3222.295,
+    "duration": 3.311,
+    "text": "[APPLAUSE]"
+  },
+  {
+    "start": 3230.025,
+    "duration": 3.91,
+    "text": "[MUSIC PLAYING]"
+  },
+  {
+    "start": 3233.935,
+    "duration": 2.125,
+    "text": "ANNOUNCER: Don't miss the\nchance to interact online"
+  },
+  {
+    "start": 3236.06,
+    "duration": 1.48,
+    "text": "with other viewers of Justice."
+  },
+  {
+    "start": 3237.54,
+    "duration": 2.64,
+    "text": "Join the conversation,\ntake a pop quiz,"
+  },
+  {
+    "start": 3240.18,
+    "duration": 2.4,
+    "text": "watch lectures you've\nmissed, and learn a lot more."
+  },
+  {
+    "start": 3242.58,
+    "duration": 1.77,
+    "text": "Visit justiceharvard.org."
+  },
+  {
+    "start": 3244.35,
+    "duration": 1.285,
+    "text": "It's the right thing to do."
+  },
+  {
+    "start": 3245.635,
+    "duration": 3.329,
+    "text": "[MUSIC PLAYING]"
+  },
+  {
+    "start": 3286.4,
+    "duration": 3.63,
+    "text": "Funding for this\nprogram is provided by--"
+  },
+  {
+    "start": 3290.03,
+    "duration": 2.07,
+    "text": "Additional funding provided by--"
+  },
+  {
+    "start": 3292.1,
+    "duration": 2.1,
+    "text": "[MUSIC PLAYING]"
+  },
+  {
+    "start": 3299.3,
+    "duration": 2.1,
+    "text": "[AUDIO LOGO]"
+  },
+  {
+    "start": 3303.5,
+    "duration": 3.0,
+    "text": "[AUDIO LOGO]"
+  }
+]

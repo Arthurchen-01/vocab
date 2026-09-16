@@ -1,0 +1,490 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "VerbaLex AI Vocabulary Studio Enterprise API",
+    "description": "Enterprise-grade RESTful API suite for Harvard Justice AI Vocabulary Studio. Supports multi-course hierarchies, tiered academic vocabulary extraction, authentic video/audio frame synchronization, Spaced Repetition System (SRS) telemetry, and AI proxy capabilities.",
+    "version": "1.0.0",
+    "contact": {
+      "name": "VerbaLex Studio Dev Team",
+      "email": "billychen0726@gmail.com",
+      "url": "https://vocab.samuraiguan.cloud"
+    },
+    "license": {
+      "name": "MIT",
+      "url": "https://opensource.org/licenses/MIT"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://vocab.samuraiguan.cloud",
+      "description": "Production Server (Cloudflare + Nginx Proxy)"
+    },
+    {
+      "url": "http://localhost:8765",
+      "description": "Local Development Server"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Collections",
+      "description": "Course collections and series hierarchy management"
+    },
+    {
+      "name": "Episodes & Curriculum",
+      "description": "Episode details, tiered vocabulary, authentic audio and video frame metadata"
+    },
+    {
+      "name": "Study & SRS Telemetry",
+      "description": "Spaced repetition (Anki SM-2 style) ratings, active learning time tracking, and heartbeat monitoring"
+    },
+    {
+      "name": "Vocabulary Bank",
+      "description": "Cross-episode master vocabulary bank, multi-context aggregation, and global review statistics"
+    },
+    {
+      "name": "Authentication & User",
+      "description": "User registration, authentication, profile management, and guest mode"
+    },
+    {
+      "name": "Export",
+      "description": "Multi-format export engine (Word .docx, Markdown .md, Anki .csv, Eudic/Quizlet .txt, Pure TXT)"
+    },
+    {
+      "name": "Media & Synthesis",
+      "description": "Neural text-to-speech audio streaming and video subtitle extraction"
+    },
+    {
+      "name": "AI Services",
+      "description": "DeepSeek / Claude LLM integration for automated academic vocabulary extraction"
+    },
+    {
+      "name": "System & Feedback",
+      "description": "Health checks, feedback submissions with screenshot attachments, and email dispatching"
+    }
+  ],
+  "paths": {
+    "/api/collections": {
+      "get": {
+        "tags": [
+          "Collections"
+        ],
+        "summary": "List all course collections",
+        "description": "Returns a comprehensive list of all academic course collections with total episode count, total vocabulary count, instructor metadata, and cover scenes.",
+        "responses": {
+          "200": {
+            "description": "List of course collections"
+          }
+        }
+      }
+    },
+    "/api/collection/{cid}": {
+      "get": {
+        "tags": [
+          "Collections"
+        ],
+        "summary": "Get collection details by ID",
+        "parameters": [
+          {
+            "name": "cid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Collection detail with episode metadata"
+          },
+          "404": {
+            "description": "Collection not found"
+          }
+        }
+      }
+    },
+    "/api/collection/add": {
+      "post": {
+        "tags": [
+          "Collections"
+        ],
+        "summary": "Create a new custom course collection",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Collection created successfully"
+          }
+        }
+      }
+    },
+    "/api/presets": {
+      "get": {
+        "tags": [
+          "Episodes & Curriculum"
+        ],
+        "summary": "List all episodes summary",
+        "responses": {
+          "200": {
+            "description": "List of episode summaries"
+          }
+        }
+      }
+    },
+    "/api/preset/{ep_id}": {
+      "get": {
+        "tags": [
+          "Episodes & Curriculum"
+        ],
+        "summary": "Get complete episode curriculum and tiered vocabulary",
+        "parameters": [
+          {
+            "name": "ep_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Full episode curriculum with 161 tiered items, audio, and video frames"
+          }
+        }
+      }
+    },
+    "/api/vocab-bank": {
+      "get": {
+        "tags": [
+          "Vocabulary Bank"
+        ],
+        "summary": "Retrieve master multi-context vocabulary bank",
+        "parameters": [
+          {
+            "name": "username",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Master vocabulary bank with personal SRS stats"
+          }
+        }
+      }
+    },
+    "/api/vocab-bank/record": {
+      "post": {
+        "tags": [
+          "Vocabulary Bank",
+          "Study & SRS Telemetry"
+        ],
+        "summary": "Record spaced repetition review in vocabulary bank",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Review recorded"
+          }
+        }
+      }
+    },
+    "/api/user/record": {
+      "post": {
+        "tags": [
+          "Study & SRS Telemetry"
+        ],
+        "summary": "Record word study progress in episode context",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Word review recorded"
+          }
+        }
+      }
+    },
+    "/api/user/heartbeat-time": {
+      "post": {
+        "tags": [
+          "Study & SRS Telemetry"
+        ],
+        "summary": "Study time heartbeat accumulator",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Heartbeat recorded"
+          }
+        }
+      }
+    },
+    "/api/user/stats": {
+      "get": {
+        "tags": [
+          "Study & SRS Telemetry"
+        ],
+        "summary": "Get user study statistics and word memory states",
+        "parameters": [
+          {
+            "name": "username",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "User study statistics"
+          }
+        }
+      }
+    },
+    "/api/auth/register": {
+      "post": {
+        "tags": [
+          "Authentication & User"
+        ],
+        "summary": "Register a new user account",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Registered successfully"
+          }
+        }
+      }
+    },
+    "/api/auth/login": {
+      "post": {
+        "tags": [
+          "Authentication & User"
+        ],
+        "summary": "User login authentication",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Login successful"
+          }
+        }
+      }
+    },
+    "/api/export": {
+      "post": {
+        "tags": [
+          "Export"
+        ],
+        "summary": "Export vocabulary to multiple file formats (Word, Markdown, Anki, Eudic, TXT)",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Exported file binary/text stream"
+          }
+        }
+      }
+    },
+    "/api/audio/tts": {
+      "get": {
+        "tags": [
+          "Media & Synthesis"
+        ],
+        "summary": "Neural text-to-speech stream",
+        "parameters": [
+          {
+            "name": "text",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Audio MP3 stream"
+          }
+        }
+      }
+    },
+    "/api/video/fetch-subtitles": {
+      "post": {
+        "tags": [
+          "Media & Synthesis"
+        ],
+        "summary": "Fetch video metadata and subtitle transcripts from URL",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Metadata and subtitle cues"
+          }
+        }
+      }
+    },
+    "/api/import/link": {
+      "post": {
+        "tags": [
+          "AI Services",
+          "Episodes & Curriculum"
+        ],
+        "summary": "Import video link, extract subtitles, and generate AI curriculum",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Imported and synthesized"
+          }
+        }
+      }
+    },
+    "/api/ai-extract": {
+      "post": {
+        "tags": [
+          "AI Services"
+        ],
+        "summary": "Extract tiered academic vocabulary from transcript using LLM",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Extracted vocabulary list"
+          }
+        }
+      }
+    },
+    "/api/test-connection": {
+      "post": {
+        "tags": [
+          "AI Services"
+        ],
+        "summary": "Test connectivity to AI provider API",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Connection test result"
+          }
+        }
+      }
+    },
+    "/api/feedback": {
+      "post": {
+        "tags": [
+          "System & Feedback"
+        ],
+        "summary": "Submit user feedback with screenshot upload",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Feedback saved and queued"
+          }
+        }
+      }
+    }
+  }
+}
