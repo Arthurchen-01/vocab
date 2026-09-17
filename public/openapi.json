@@ -485,6 +485,107 @@
           }
         }
       }
+    },
+    "/api/media/batch-extract": {
+      "post": {
+        "tags": [
+          "Media & Audio"
+        ],
+        "summary": "批量音视频链接解析与多级容灾保障提取 (Batch Media Resolver)",
+        "description": "支持批量粘贴 Scientific American, Bilibili, YouTube 及直接媒体链接，提供 4 级容灾保障。",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "urls": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "mode": {
+                    "type": "string",
+                    "enum": [
+                      "media",
+                      "curriculum"
+                    ],
+                    "default": "media"
+                  },
+                  "media_type": {
+                    "type": "string",
+                    "enum": [
+                      "audio",
+                      "video"
+                    ],
+                    "default": "audio"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "解析结果清单，包含流媒体直达下载链接与备用容灾等级"
+          }
+        }
+      }
+    },
+    "/api/media/stream-download": {
+      "get": {
+        "tags": [
+          "Media & Audio"
+        ],
+        "summary": "零磁盘损耗流式音视频代理下载 (Stream Downloader)",
+        "description": "流式转发上游媒体流至客户端，支持 Range 断点续传，零磁盘空间占用。",
+        "parameters": [
+          {
+            "name": "url",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filename",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "media_type",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "audio",
+                "video"
+              ],
+              "default": "audio"
+            }
+          },
+          {
+            "name": "platform",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "音视频流式文件下载 (audio/mpeg 或 video/mp4)"
+          }
+        }
+      }
     }
   }
 }

@@ -589,6 +589,11 @@ class RequestHandler(http.server.SimpleHTTPRequestHandler):
             self.wfile.write(json.dumps(user_data, ensure_ascii=False).encode("utf-8"))
             return
 
+        # 4. Stream Download Endpoint (zero-disk streaming proxy)
+        elif clean_path == "/api/media/stream-download":
+            self.handle_media_stream_download()
+            return
+
         return super().do_GET()
 
     def do_POST(self):
@@ -618,6 +623,8 @@ class RequestHandler(http.server.SimpleHTTPRequestHandler):
             self.handle_vocab_bank_record(body)
         elif clean_path == "/api/import/link":
             self.handle_import_link(body)
+        elif clean_path == "/api/media/batch-extract":
+            self.handle_batch_media_extract(body)
         elif clean_path == "/api/test-connection":
             self.handle_test_connection(body)
         elif clean_path == "/api/ai-extract":
@@ -1355,6 +1362,123 @@ class RequestHandler(http.server.SimpleHTTPRequestHandler):
             self.send_response(500)
             self.end_headers()
             self.wfile.write(json.dumps({"success": False, "error": str(e)}).encode("utf-8"))
+
+    def handle_batch_media_extract(self, body_str):
+        try:
+            req = json.loads(body_str) if body_str else {}
+            raw_urls = req.get("urls", [])
+            mode = req.get("mode", "media")
+            media_type = req.get("media_type", "audio")
+
+            from downloader import batch_resolve_media
+            result = batch_resolve_media(raw_urls, mode=mode, media_type=media_type)
+
+            self.send_response(200)
+            self.send_header("Content-Type", "application/json; charset=utf-8")
+            self.send_header("Access-Control-Allow-Origin", "*")
+            self.end_headers()
+            self.wfile.write(json.dumps(result, ensure_ascii=False).encode("utf-8"))
+        except Exception as e:
+            self.send_response(500)
+            self.send_header("Content-Type", "application/json; charset=utf-8")
+            self.send_header("Access-Control-Allow-Origin", "*")
+            self.end_headers()
+            self.wfile.write(json.dumps({"success": False, "error": f"批量解析异常: {str(e)}"}).encode("utf-8"))
+
+    def handle_media_stream_download(self):
+        try:
+            params = parse_query_params(self.path)
+            raw_url = params.get("url", "").strip()
+            filename = params.get("filename", "").strip()
+            media_type = params.get("media_type", "audio").strip().lower()
+            platform = params.get("platform", "").strip().lower()
+
+            if not raw_url:
+                self.send_error_json(400, "缺少 url 参数")
+                return
+
+            # Sanitize filename
+            if not filename:
+                ext = ".mp3" if media_type == "audio" else ".mp4"
+                filename = f"extracted_media_{int(time.time())}{ext}"
+            safe_filename = re.sub(r'[^a-zA-Z0-9_.\-\u4e00-\u9fa5]', '_', filename)
+            if not (safe_filename.endswith('.mp3') or safe_filename.endswith('.mp4') or safe_filename.endswith('.m4a')):
+                safe_filename += (".mp3" if media_type == "audio" else ".mp4")
+
+            # Determine Content-Type
+            content_type = "audio/mpeg" if (safe_filename.endswith(".mp3") or media_type == "audio") else "video/mp4"
+
+            # Check if upstream is YouTube
+            is_youtube = ("youtube.com" in raw_url or "youtu.be" in raw_url or platform == "youtube")
+
+            # If YouTube, try to resolve via yt-dlp direct stream or piping
+            if is_youtube:
+                import shutil
+                import subprocess
+                ytdlp_bin = shutil.which("yt-dlp") or ("/usr/local/bin/yt-dlp" if os.path.exists("/usr/local/bin/yt-dlp") else None)
+                if ytdlp_bin:
+                    try:
+                        # Extract direct stream URL using yt-dlp -g
+                        cmd = [
+                            ytdlp_bin, "-g",
+                            "-f", "bestaudio[ext=m4a]/bestaudio/best" if media_type == "audio" else "best[ext=mp4]/best",
+                            "--extractor-args", "youtube:player_client=android,ios,web",
+                            raw_url
+                        ]
+                        proc = subprocess.run(cmd, capture_output=True, text=True, timeout=15)
+                        if proc.returncode == 0 and proc.stdout.strip():
+                            raw_url = proc.stdout.strip().split("\n")[0]
+                    except Exception as yt_err:
+                        print(f"[WARN] yt-dlp -g resolution: {yt_err}")
+
+            # Stream direct URL to client
+            headers = {
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+            }
+            if "bilibili.com" in raw_url or platform == "bilibili":
+                headers["Referer"] = "https://www.bilibili.com/"
+
+            # Forward client Range header if requested
+            client_range = self.headers.get("Range")
+            if client_range:
+                headers["Range"] = client_range
+
+            req = urllib.request.Request(raw_url, headers=headers)
+            try:
+                resp = urllib.request.urlopen(req, timeout=30)
+                status_code = resp.status if hasattr(resp, 'status') else 200
+                self.send_response(status_code)
+                self.send_header("Content-Type", content_type)
+                self.send_header("Content-Disposition", f'attachment; filename="{safe_filename}"')
+                self.send_header("Accept-Ranges", "bytes")
+                self.send_header("Access-Control-Allow-Origin", "*")
+                
+                content_len = resp.headers.get("Content-Length")
+                if content_len:
+                    self.send_header("Content-Length", content_len)
+                content_range = resp.headers.get("Content-Range")
+                if content_range:
+                    self.send_header("Content-Range", content_range)
+
+                self.end_headers()
+
+                # Stream chunks directly (zero disk footprint)
+                while True:
+                    chunk = resp.read(65536)
+                    if not chunk:
+                        break
+                    self.wfile.write(chunk)
+                return
+            except urllib.error.HTTPError as he:
+                print(f"[ERROR] Upstream stream HTTPError: {he.code} {he.reason}")
+                self.send_error_json(he.code, f"上游媒体流传输受限 ({he.code}): {he.reason}")
+                return
+            except Exception as ue:
+                print(f"[ERROR] Upstream stream error: {ue}")
+                self.send_error_json(502, f"媒体流代理传输异常: {str(ue)}")
+                return
+        except Exception as e:
+            self.send_error_json(500, f"下载服务内部异常: {str(e)}")
 
     def handle_feedback(self, body_str):
         try:

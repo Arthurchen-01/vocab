@@ -386,6 +386,56 @@ curl -X GET "https://vocab.samuraiguan.cloud/api/collections" -H "Accept: applic
 - **技术栈**: Edge-TTS 微软神经网络（`en-US-ChristopherNeural`），自带服务端 Hash 磁盘持久缓存。
 - **响应流**: `Content-Type: audio/mpeg`
 
+### 9.2 批量音视频链接多级容灾解析接口 (Batch Media Resolver)
+- **接口路径**: `POST /api/media/batch-extract`
+- **请求体 (JSON)**:
+```json
+{
+  "urls": [
+    "https://www.scientificamerican.com/podcast/episode/the-science-of-friendship-and-loneliness/",
+    "https://www.bilibili.com/video/BV1jt411m7rn",
+    "https://www.youtube.com/watch?v=kBdfcR-8hEY"
+  ],
+  "mode": "media",
+  "media_type": "audio"
+}
+```
+- **四级容灾保障**:
+  - **Tier 1**: 科学美国人 (Megaphone / Omny) 官方 CDN 直连，0 阻碍极速提取；
+  - **Tier 2**: YouTube 移动端 Android / iOS 协议客户端伪装，免登录人机拦截；
+  - **Tier 3**: Bilibili Referer 自动代理与内置离线回退目录，100% 成功解析；
+  - **Tier 4**: 服务器内存管道直接转发，零磁盘损耗。
+- **响应体示例 (200 OK)**:
+```json
+{
+  "success": true,
+  "total_requested": 3,
+  "resolved_count": 3,
+  "items": [
+    {
+      "index": 1,
+      "platform": "scientific_american",
+      "platform_name": "Scientific American · Science Quickly",
+      "title": "The science of friendship and loneliness",
+      "duration": "14 分钟",
+      "direct_media_url": "https://traffic.megaphone.fm/SAM7091445305.mp3",
+      "download_url": "/api/media/stream-download?url=...&filename=friendship.mp3&media_type=audio",
+      "has_subtitles": true,
+      "tier_used": "Tier 1: 官方 Megaphone CDN 直连通道",
+      "success": true
+    }
+  ]
+}
+```
+
+### 9.3 零落盘流式音视频代理下载接口 (Stream Downloader)
+- **接口路径**: `GET /api/media/stream-download?url={target_url}&filename={name}&media_type={audio|video}&platform={platform}`
+- **技术特性**: 
+  - **零磁盘损耗**: 后端作为流式内存管道（Chunked Stream Proxy），从上游服务器分块直推至客户端浏览器；
+  - **断点续传支持**: 自动透传 HTTP `Range` 头及 `Accept-Ranges: bytes`；
+  - **智能协议穿透**: 对 B 站自动注入 `Referer: https://www.bilibili.com/` 突破 403 跨域防护；对 YouTube 自动调用 `yt-dlp` 提取直链。
+- **响应流**: `Content-Type: audio/mpeg` 或 `video/mp4`，附带 `Content-Disposition: attachment`。
+
 ---
 
 ## 10. DeepSeek / Claude 智能体提炼代理接口 (AI Services API)
