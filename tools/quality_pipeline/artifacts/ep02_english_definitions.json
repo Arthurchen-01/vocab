@@ -1,0 +1,11 @@
+{
+  "unique_headwords": 449,
+  "deck_slots": 466,
+  "authored": 53,
+  "usage": {
+    "calls": 524,
+    "cached": 263,
+    "prompt_tokens": 474262,
+    "completion_tokens": 111410
+  }
+}

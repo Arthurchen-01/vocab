@@ -1,0 +1,62 @@
+{
+  "stage": "ep02_s4c_english_definitions",
+  "started": "2026-09-17 12:09:51",
+  "finished": "2026-09-17 12:10:10",
+  "ok": true,
+  "passed": 9,
+  "failed": 0,
+  "checks": [
+    {
+      "check": "deck files available",
+      "ok": true,
+      "detail": "ep01=163, ep02=215, ep03=44, yale_ep01=32, custom_1789528228=12"
+    },
+    {
+      "check": "pass 1 produced a valid definition for every word",
+      "ok": true,
+      "detail": "53/53; rejected 0"
+    },
+    {
+      "check": "flagged definitions were rewritten into a passing form",
+      "ok": true,
+      "detail": "3/3"
+    },
+    {
+      "check": "no two headwords read identically",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "every headword has a definition before writing",
+      "ok": true,
+      "detail": "0 missing e.g. []"
+    },
+    {
+      "check": "every deck slot that lacked a definition was filled",
+      "ok": true,
+      "detail": "53 slots updated, 53 were empty (53 unique headwords authored)"
+    },
+    {
+      "check": "no deck word is left without an English definition",
+      "ok": true,
+      "detail": "0: []"
+    },
+    {
+      "check": "every stored definition passes the deterministic gate",
+      "ok": true,
+      "detail": "0: []"
+    },
+    {
+      "check": "a headword reused across decks carries one definition everywhere",
+      "ok": true,
+      "detail": "0 conflicting: []"
+    }
+  ],
+  "notes": [
+    "53 master-bank words are taught by no deck and are authored here too (written back into the bank)",
+    "502 unique headwords, 449 already carry def_en, 53 to author",
+    "AI review flagged 3 of 53 definitions",
+    "449 unique headwords across 466 deck slots",
+    "AI usage: {\"calls\": 524, \"cached\": 263, \"prompt_tokens\": 474262, \"completion_tokens\": 111410}"
+  ]
+}

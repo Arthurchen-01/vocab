@@ -1,0 +1,63 @@
+{
+  "stage": "ep02_s6b_bank_def_en",
+  "started": "2026-09-17 12:11:36",
+  "finished": "2026-09-17 12:11:36",
+  "ok": true,
+  "passed": 9,
+  "failed": 0,
+  "checks": [
+    {
+      "check": "master bank readable",
+      "ok": true,
+      "detail": "502 entries, 449 deck headwords"
+    },
+    {
+      "check": "no deck headword is missing from the master bank",
+      "ok": true,
+      "detail": "all 449 deck headwords are present"
+    },
+    {
+      "check": "every bank entry carries a def_en after the sync",
+      "ok": true,
+      "detail": "502 entries, 449 filled"
+    },
+    {
+      "check": "bank entry set is unchanged (no add, no remove)",
+      "ok": true,
+      "detail": "502 -> 502"
+    },
+    {
+      "check": "only def_en / taught_in / bank_only were modified",
+      "ok": true,
+      "detail": "changed: ['def_en', 'taught_in']"
+    },
+    {
+      "check": "taught_in matches the decks for every entry",
+      "ok": true,
+      "detail": "449 attributed, 53 historical"
+    },
+    {
+      "check": "written bank has def_en on every entry",
+      "ok": true,
+      "detail": "502/502"
+    },
+    {
+      "check": "written bank still has every key",
+      "ok": true,
+      "detail": "502 entries"
+    },
+    {
+      "check": "written bank def_en is identical to the decks",
+      "ok": true,
+      "detail": "0: []"
+    }
+  ],
+  "notes": [
+    "53 bank-only words (kept, marked bank_only): ['actuary', 'amount to', 'appropriation', 'cabin boy', 'castaway', 'coerce into', 'coercive', 'compulsory']",
+    "53 entries are taught by no current deck (retired decks only): ['trolley', 'sidetrack', 'onlooker', 'deliberation', 'shipwreck', 'cabin boy', 'castaway', 'ration']",
+    "their historical contexts claim these episodes: {'ep01': 8, 'ep02': 12, 'ep03': 33} (shown only under '全部' now)",
+    "16 words are reused across episodes and kept as ONE entry with one context per episode: ['utilitarianism', 'consequentialist', 'categorical', 'cannibalism', 'sovereign', 'principle of utility']",
+    "449 bank entries had no def_en before this stage: ['abhorrent', 'absolve', 'accommodate', 'account for', 'accurate', 'acquisition']",
+    "449 bank entries disagreed with the decks (449 corrected, 449 had no definition at all)"
+  ]
+}
