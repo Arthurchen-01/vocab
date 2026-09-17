@@ -1,0 +1,12 @@
+{
+  "bank_size": 502,
+  "per_source": {
+    "ep01": 163,
+    "ep02": 215,
+    "ep03": 44,
+    "yale_ep01": 32,
+    "custom_1789528228": 12
+  },
+  "multi_context": 16,
+  "study_stats_kept": 502
+}

@@ -1,0 +1,57 @@
+{
+  "stage": "ep03_s6_bank_sync",
+  "started": "2026-09-17 09:33:25",
+  "finished": "2026-09-17 09:33:25",
+  "ok": true,
+  "passed": 8,
+  "failed": 0,
+  "checks": [
+    {
+      "check": "episode decks available",
+      "ok": true,
+      "detail": "ep01=163, ep02=215, ep03=44, yale_ep01=32, custom_1789528228=12"
+    },
+    {
+      "check": "existing bank loaded",
+      "ok": true,
+      "detail": "502 entries"
+    },
+    {
+      "check": "every deck word exists in the bank",
+      "ok": true,
+      "detail": "502 entries"
+    },
+    {
+      "check": "no dictionary entry lost",
+      "ok": true,
+      "detail": "removed: []"
+    },
+    {
+      "check": "bank context text == deck card text for every (word, episode)",
+      "ok": true,
+      "detail": "0 mismatches: []"
+    },
+    {
+      "check": "every entry has def_cn",
+      "ok": true,
+      "detail": "0: []"
+    },
+    {
+      "check": "every entry has at least one context",
+      "ok": true,
+      "detail": "[]"
+    },
+    {
+      "check": "no SRS progress lost",
+      "ok": true,
+      "detail": "0 entries regressed: []"
+    }
+  ],
+  "notes": [
+    "coverage: ep01 163/163, ep02 215/215, ep03 44/44, yale_ep01 32/32, custom_1789528228 12/12",
+    "bank size 502 -> 502; multi-context words: 16 ([('utilitarianism', 3), ('consequentialist', 2), ('categorical', 2), ('cannibalism', 2), ('sovereign', 2), ('principle of utility', 2)])",
+    "entries keeping existing SRS stats: 502",
+    "53 bank-only entries carried over (in the bank but in no deck, kept so learner progress survives): ['trolley', 'sidetrack', 'onlooker', 'deliberation', 'shipwreck', 'cabin boy', 'castaway', 'ration', 'actuary', 'incommensurability']",
+    "wrote /var/www/harvard_justice_app/data/vocab_bank.json (441336 B)"
+  ]
+}

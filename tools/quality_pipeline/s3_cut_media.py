@@ -19,9 +19,12 @@ import subprocess
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from config import (AUDIO_CLIP_DIR, CLIP_PAD_HEAD, CLIP_PAD_TAIL, DATA_DIR,  # noqa: E402
+from config import (AUDIO_CLIP_DIR, AUDIO_DIR, CLIP_PAD_HEAD, CLIP_PAD_TAIL, DATA_DIR,  # noqa: E402
                     EPISODE, OUT_DIR, PUBLIC_DIR, RAW_AUDIO_DIR, RAW_VIDEO_DIR,
-                    Report, SCENE_DIR, fmt_ts, load_json, log, safe_name, save_json)
+                    Report, SCENE_DIR, WORK_DIR, fmt_ts, load_deck_words, load_json,
+                    log, safe_name, save_json)
+
+WORK_ORPHANS = os.path.join(WORK_DIR, "orphans")
 
 SENTS_FILE = os.path.join(OUT_DIR, f"{EPISODE}_sentences.json")
 MAP_FILE = os.path.join(OUT_DIR, f"{EPISODE}_word_map.json")
@@ -63,17 +66,67 @@ def cut_frame(src, t, dst):
          "-vf", "scale=854:-2", dst], timeout=180)
 
 
+def ensure_word_tts(words, rep):
+    """Every card needs its own pronunciation file (<ep>_<word>.mp3).
+
+    When a deck is rebuilt the word list changes, so the per-word TTS of the new
+    words does not exist yet - the card would offer a play button that 404s.
+    """
+    import asyncio
+
+    try:
+        import edge_tts
+    except Exception as e:  # noqa: BLE001
+        rep.check("edge-tts available for word pronunciation", False, str(e)[:120])
+        return
+
+    os.makedirs(AUDIO_DIR, exist_ok=True)
+    missing, made, failed = [], 0, []
+    for w in words:
+        path = os.path.join(AUDIO_DIR, f"{EPISODE}_{safe_name(w['word'])}.mp3")
+        if os.path.isfile(path) and os.path.getsize(path) > 2000:
+            continue
+        missing.append(w["word"])
+        try:
+            asyncio.run(edge_tts.Communicate(w["word"], "en-US-ChristopherNeural").save(path))
+            if os.path.isfile(path) and os.path.getsize(path) > 2000:
+                made += 1
+            else:
+                failed.append(w["word"])
+        except Exception as e:  # noqa: BLE001
+            failed.append(f"{w['word']}:{type(e).__name__}")
+    rep.check("every card has its own pronunciation clip", not failed,
+              f"{made} generated, {len(failed)} failed {failed[:5]}")
+    if made:
+        rep.note(f"generated {made} word-pronunciation files (were missing: {len(missing)})")
+
+    # retire pronunciation files whose word left the episode
+    keep = {f"{EPISODE}_{safe_name(w['word'])}.mp3" for w in words}
+    orphans = []
+    if os.path.isdir(AUDIO_DIR):
+        for f in os.listdir(AUDIO_DIR):
+            if f.startswith(f"{EPISODE}_") and f.endswith(".mp3") and f not in keep:
+                orphans.append(f)
+    if orphans:
+        odir = os.path.join(WORK_ORPHANS, EPISODE)
+        os.makedirs(odir, exist_ok=True)
+        for f in orphans:
+            os.replace(os.path.join(AUDIO_DIR, f), os.path.join(odir, f))
+        rep.note(f"retired {len(orphans)} orphan pronunciation files -> {odir}")
+
+
 def main():
     rep = Report(f"{EPISODE}_s3_media")
     sents = load_json(SENTS_FILE)
     wmap = load_json(MAP_FILE)
-    words = load_json(CURRICULUM)
+    words, deck_kind = load_deck_words(EPISODE)
     if not (sents and wmap and words):
         rep.check("inputs present", False,
-                  f"sentences={bool(sents)} map={bool(wmap)} curriculum={bool(words)}")
+                  f"sentences={bool(sents)} map={bool(wmap)} deck_words={len(words)} ({deck_kind})")
         rep.write()
         return 1
-    rep.check("inputs present", True, f"{len(sents)} sentences, {len(wmap['words'])} mapped words")
+    rep.check("inputs present", True,
+              f"{len(sents)} sentences, {len(wmap['words'])} mapped words (deck: {deck_kind})")
 
     rep.check("raw episode audio present", os.path.isfile(RAW_AUDIO), RAW_AUDIO)
     if not os.path.isfile(RAW_AUDIO):
@@ -169,6 +222,9 @@ def main():
                      if not os.path.isfile(os.path.join(scene_dir, f"frame_{safe_name(w['word'])}.jpg"))]
     if has_video:
         rep.check("no frame file missing", not frame_missing, str(frame_missing[:6]))
+
+    # ---- 3b. per-word pronunciation (TTS) ----
+    ensure_word_tts(words, rep)
 
     # ---- 4. before/after alignment metric --------------------------
     old_mid = []

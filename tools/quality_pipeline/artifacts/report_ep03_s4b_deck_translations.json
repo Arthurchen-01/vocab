@@ -1,0 +1,23 @@
+{
+  "stage": "ep03_s4b_deck_translations",
+  "started": "2026-09-17 09:33:21",
+  "finished": "2026-09-17 09:33:21",
+  "ok": true,
+  "passed": 2,
+  "failed": 0,
+  "checks": [
+    {
+      "check": "decks available",
+      "ok": true,
+      "detail": "ep01=163, ep02=215, ep03=44, yale_ep01=32, custom_1789528228=12"
+    },
+    {
+      "check": "nothing to translate",
+      "ok": true,
+      "detail": ""
+    }
+  ],
+  "notes": [
+    "0 deck words missing sentence_cn"
+  ]
+}

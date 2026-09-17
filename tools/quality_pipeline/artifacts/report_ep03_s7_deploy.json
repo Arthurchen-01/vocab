@@ -1,0 +1,78 @@
+{
+  "stage": "ep03_s7_deploy",
+  "started": "2026-09-17 09:33:25",
+  "finished": "2026-09-17 09:33:26",
+  "ok": true,
+  "passed": 13,
+  "failed": 0,
+  "checks": [
+    {
+      "check": "deck present",
+      "ok": true,
+      "detail": "44 words"
+    },
+    {
+      "check": "service restarted",
+      "ok": true,
+      "detail": "ok"
+    },
+    {
+      "check": "service is active",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "live API returns the episode",
+      "ok": true,
+      "detail": "live=44 deck=44"
+    },
+    {
+      "check": "every live card sentence is complete",
+      "ok": true,
+      "detail": "0: []"
+    },
+    {
+      "check": "every live card has a translation",
+      "ok": true,
+      "detail": "0: []"
+    },
+    {
+      "check": "every live card has an audio window",
+      "ok": true,
+      "detail": "0: []"
+    },
+    {
+      "check": "every clip covers its sentence head to tail",
+      "ok": true,
+      "detail": "0: []"
+    },
+    {
+      "check": "live cards match the delivered deck",
+      "ok": true,
+      "detail": "0 drifted: []"
+    },
+    {
+      "check": "sampled 24 asset URLs on the origin",
+      "ok": true,
+      "detail": "ok=24 bad=[]"
+    },
+    {
+      "check": "sampled 12 asset URLs through the public host",
+      "ok": true,
+      "detail": "ok=12"
+    },
+    {
+      "check": "every episode word is in the master bank",
+      "ok": true,
+      "detail": "0: []"
+    },
+    {
+      "check": "bank context matches the card text",
+      "ok": true,
+      "detail": "0 drifted: []"
+    }
+  ],
+  "notes": [
+    "acceptance report: /root/quality_pipeline/out/ep03_delivery.md"
+  ]
+}

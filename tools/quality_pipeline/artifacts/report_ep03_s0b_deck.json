@@ -1,0 +1,60 @@
+{
+  "stage": "ep03_s0b_deck",
+  "started": "2026-09-17 09:02:52",
+  "finished": "2026-09-17 09:03:14",
+  "ok": true,
+  "passed": 8,
+  "failed": 0,
+  "checks": [
+    {
+      "check": "sentences available (run S1 first)",
+      "ok": true,
+      "detail": "303 sentences"
+    },
+    {
+      "check": "candidate vocabulary built",
+      "ok": true,
+      "detail": "405 candidates already excluding 400 words used by other decks"
+    },
+    {
+      "check": "AI selection is a subset of the transcript vocabulary",
+      "ok": true,
+      "detail": "61 words chosen"
+    },
+    {
+      "check": "every chosen word really occurs in the lecture",
+      "ok": true,
+      "detail": "0: []"
+    },
+    {
+      "check": "rebuilt deck is grounded (>=90% of words occur)",
+      "ok": true,
+      "detail": "44/44"
+    },
+    {
+      "check": "every example sentence contains its word",
+      "ok": true,
+      "detail": "0: []"
+    },
+    {
+      "check": "no duplicate words",
+      "ok": true,
+      "detail": "[]"
+    },
+    {
+      "check": "all example spans are usable (0.8s..40s)",
+      "ok": true,
+      "detail": "min=4.8s max=24.4s"
+    }
+  ],
+  "notes": [
+    "existing deck is NOT grounded in the lecture (19/44 words occur) -> rebuilding from the transcript",
+    "repaired 3 sentence pointers deterministically (model mis-pointed)",
+    "dropped 17 picks: [\"utilitarianism (not in this episode's vocabulary)\", \"self-possession (not in this episode's vocabulary)\", \"self-ownership (not in this episode's vocabulary)\", \"entitlement (not in this episode's vocabulary)\", 'coercion (duplicate)', 'coercion (duplicate)', \"self-ownership (not in this episode's vocabulary)\", \"philanthropy (not in this episode's vocabulary)\"]",
+    "44 usable words remain (requested 45)",
+    "tier mix: {'academic_philosophy': 19, 'sat_gre': 3, 'toefl_ielts': 22}",
+    "previous deck archived (44 words) -> data/_retired/ep03_previous_deck.json",
+    "deck written: 44 words into curriculum_tiered.json[ep03]",
+    "AI usage: {\"calls\": 244, \"cached\": 157, \"prompt_tokens\": 306799, \"completion_tokens\": 87798}"
+  ]
+}

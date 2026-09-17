@@ -1,0 +1,10 @@
+{
+  "episode": "ep03",
+  "clips_cut": 39,
+  "words": 44,
+  "raw_audio": "/var/www/harvard_justice_app/data/raw_audio/ep03_full.mp3",
+  "pad_head": 0.12,
+  "pad_tail": 0.18,
+  "old_window_mismatch_count": 0,
+  "old_window_mismatch_examples": []
+}

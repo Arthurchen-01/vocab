@@ -155,6 +155,26 @@ def safe_name(word):
     return re.sub(r"[^a-zA-Z0-9_]", "_", (word or "").lower()).strip("_")
 
 
+def load_deck_words(ep):
+    """The word list for an episode, wherever it actually lives.
+
+    Decks are authored in different generations: Ep01/Ep02 have their own
+    `<ep>_curriculum_final_audited.json`, Ep03 and Yale only exist inside
+    curriculum_tiered.json, and imported episodes live in custom_episodes.json.
+    Returns (words, source_kind).
+    """
+    tiered = load_json(os.path.join(DATA_DIR, "curriculum_tiered.json")) or {}
+    if ep in tiered and tiered[ep].get("words"):
+        return tiered[ep]["words"], "curriculum_tiered"
+    custom = load_json(os.path.join(DATA_DIR, "custom_episodes.json")) or {}
+    if ep in custom and custom[ep].get("words"):
+        return custom[ep]["words"], "custom_episodes"
+    audited = load_json(os.path.join(DATA_DIR, f"{ep}_curriculum_final_audited.json"))
+    if isinstance(audited, list) and audited:
+        return audited, "audited"
+    return [], "missing"
+
+
 def fmt_ts(seconds):
     seconds = max(0, int(seconds or 0))
     return "%02d:%02d" % (seconds // 60, seconds % 60)

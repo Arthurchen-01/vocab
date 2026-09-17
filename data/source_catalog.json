@@ -1,0 +1,37 @@
+{
+  "harvard_justice": {
+    "series_title": "哈佛大学《公正：该如何做是好？》(Justice)",
+    "platform": "youtube",
+    "notes": "Verified by matching each video's duration against the existing transcript span (±15s). Bilibili mirror (BV1jt411m7rn?p=N) is catalogued in downloader.py but is currently rate-limited (HTTP 412) from the production host, so YouTube is the primary source.",
+    "episodes": {
+      "ep01": {
+        "url": "https://www.youtube.com/watch?v=kBdfcR-8hEY",
+        "video_id": "kBdfcR-8hEY",
+        "duration": 3296,
+        "title": "Justice: What's The Right Thing To Do? Episode 01 \"THE MORAL SIDE OF MURDER\"",
+        "cn_title": "第 01 集：杀人的道德侧面 / 海难食人案司法审判"
+      },
+      "ep02": {
+        "url": "https://www.youtube.com/watch?v=0O2Rq4HJBxw",
+        "video_id": "0O2Rq4HJBxw",
+        "duration": 3310,
+        "title": "Justice: What's The Right Thing To Do? Episode 02: \"PUTTING A PRICE TAG ON LIFE\"",
+        "cn_title": "第 02 集：给生命标价 / 如何衡量快乐"
+      },
+      "ep03": {
+        "url": "https://www.youtube.com/watch?v=Qw4l1w0rkjs",
+        "video_id": "Qw4l1w0rkjs",
+        "duration": 3308,
+        "title": "Justice: What's The Right Thing To Do? Episode 03: \"FREE TO CHOOSE\"",
+        "cn_title": "第 03 集：自由选择权 / 谁拥有我的身体"
+      },
+      "ep04": {
+        "url": "https://www.youtube.com/watch?v=MGyygiXMzRk",
+        "video_id": "MGyygiXMzRk",
+        "duration": 3299,
+        "title": "Justice: What's The Right Thing To Do? Episode 04: \"THIS LAND IS MY LAND\"",
+        "cn_title": "第 04 集：这片土地是我的 / 同意即正当吗"
+      }
+    }
+  }
+}

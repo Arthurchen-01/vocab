@@ -1,77 +1,105 @@
 # Ep0x 质量流水线（Quality Pipeline）
 
-面向「公开课词汇卡片」的**字幕重建 → 音频重切 → 语境翻译 → 端到端验证**流水线。
-每一段都有 **AI 把关 + 自动化断言**，任一门禁失败即中止，坏数据不会流到站点。
+**一句话**：给一个视频链接，产出一集「例句完整、原声对齐、译文自然、词库一致」并已上线验收的课程。
+AI 只作为流水线**内部的门禁**（断句复核 / 翻译审校 / evidence 裁定），不需要人在中间操作。
 
-## 为什么需要它
+---
 
-上线版本的问题（已实测确认）：
+## 1. 怎么用
 
-| 问题 | 根因 |
-| :-- | :-- |
-| 原声片段截头去尾、听不到完整例句 | 切片边界取自 ASR **任意分段组**（1–8 段，均长 13.7 s），不是句子边界 |
-| 英文例句断句错误、含识别讹误 | 直接把逐字稿拼接当句子用（1092 段里只有 13.9% 带句末标点） |
-| 中文翻译机械、缺上下文 | 按「词」分配译文，同一句英文在不同卡片上有最多 3 种不同中文 |
-
-## 流水线
+### 1.1 最省事：双击粘贴链接
 
 ```
-s1_build_sentences.py   ASR 逐段 → 完整英文句子（标点/大小写/讹误修正）   ← 2 次 AI 复核
-s2_map_words.py         目标词 → 真正包含它的句子（时间戳定位 + AI 裁定）
-s3_cut_media.py         按句子边界重切原声 + 重取课堂截帧（ffmpeg）
-s4_translate.py         带上下文的整句中文翻译 + AI 审校 + 单句重译
-s5_apply_and_verify.py  写回数据文件 + 端到端验证（可选线上比对）
-run_all.py              编排：按序执行、遇错即停、汇总门禁报告
+tools\quality_pipeline\交付-粘贴链接.cmd
 ```
 
-### 各阶段门禁（Gate）摘要
+按提示粘贴链接（已知课程会自动识别是哪一集），回车即可。跑完会把数据与验收报告拉回仓库，
+并在 `--commit` 模式下自动提交推送。
 
-**S1**
-- 分句结果必须是全体 ASR 段的**严格连续划分**（首尾相接、全覆盖、不重叠）——时间戳始终锚定原始分段，AI 不产生时间。
-- 润色：逐条校验「首尾词保留 + 与 ASR 文本 token LCS ≥ 0.70」，**拒绝原样回抄**；失败的条目以 ≤6 条为一批重试（绝不让模型「整批重做」——那正是内容串位的成因）。
-- 批量复核（带上下文）只能报 `merge_prev / merge_next / asr_error / not_english`。
-- 碎片判定：单条 AI 复核，必须**回填签名 sig**，防止结论落到相邻句。
-- 词数/时长上限、时间轴单调不重叠、每条都有 ≥0.8 s 可切音区间。
+### 1.2 命令行（等价）
 
-**S2**：每个词必须真的出现在它被绑定到的那一句里（词边界匹配 + 简单词形变化）；匹配不到的逐词交给 AI 裁定（只能选候选 id 或判 `absent`，不得造句）。
+```powershell
+# 已知课程：只给链接
+python tools\quality_pipeline\deliver_client.py --url "https://youtu.be/Qw4l1w0rkjs"
 
-**S3**：每条片段 `ffprobe` 时长与声明窗口一致（±0.30 s）、文件非空、帧文件齐全；并输出**修复前后对比指标**（旧窗口与真实句子边界不符的比例）。
+# 指定卡组 id
+python tools\quality_pipeline\deliver_client.py --episode ep03 --url "https://youtu.be/Qw4l1w0rkjs" --commit
 
-**S4**：整句翻译必须使用给定权威释义用词；AI 审校只**打标**（不改写），被标记的句子逐条重译，避免串位；门禁检查中文里不得残留大段英文、不得出现占位式短译。
-
-**S5**：句子必须包含目标词；片段头尾完整覆盖句子；**同一句只能有一个中文译文**（旧数据最多 3 个）；两份 Ep02 数据副本内容一致；可选与线上接口逐行比对。
-
-## 运行
-
-```bash
-# 依赖：python3、ffmpeg/ffprobe（S3 需要原始音视频）
-export VOCAB_APP_DIR=/var/www/harvard_justice_app     # 或本地仓库路径
-export VOCAB_WORK_DIR=/root/quality_pipeline          # 中间产物/缓存/报告目录
-export VOCAB_EP=ep02
-export DEEPSEEK_API_KEY=...                           # 或 data/secret_config.json
-
-python tools/quality_pipeline/run_all.py                 # 全流程（S5 干跑，不改数据）
-python tools/quality_pipeline/run_all.py --write         # 同时写回数据文件
-python tools/quality_pipeline/run_all.py --from s3       # 从某阶段续跑
-python tools/quality_pipeline/run_all.py --deploy-check https://vocab.samuraiguan.cloud
+# 只在服务器上跑（不发车客户端）
+python deliver.py --url "https://..." --write --deploy-check https://vocab.samuraiguan.cloud
 ```
 
-- 所有 AI 调用按 `(model, system, user)` 哈希**落盘缓存**（`<work>/cache`），重跑几乎不花钱且结果可复现。
-- 门禁报告：`<work>/reports/<stage>.{json,md}`；汇总：`<work>/out/<ep>_pipeline_summary.json`。
-- 中间产物：`<work>/out/<ep>_{sentences,word_map,translations,media_report,verification}.json`。
-- 环境变量可调：`VOCAB_PAD_HEAD/TAIL`（切片前后留白 0.12/0.18 s）、`VOCAB_MAX_SENT_SEC/WORDS`、`VOCAB_SIM_GATE` 等。
+**凭据**（绝不入库）：环境变量 `VOCAB_SSH_HOST / VOCAB_SSH_USER / VOCAB_SSH_PASSWORD`，
+或 `%USERPROFILE%\.vocab_deploy.json` = `{"host":"...","user":"root","password":"..."}`。
 
-## 产物落到哪里
+### 1.3 已知课程来源
 
-| 阶段 | 产物 |
-| :-- | :-- |
-| S1 | `out/<ep>_sentences.json`：`{sent_id,a,b,start,end,text,src_text,lcs}` |
-| S2 | `out/<ep>_word_map.json`：每个词 → `sent_id` + 匹配方式 |
-| S3 | `public/assets/audio/clips/<ep>_*_native.mp3`、`public/assets/scenes/<ep>/frame_*.jpg` |
-| S4 | `out/<ep>_translations.json`：每句一个中文译文（该句所有词共用） |
-| S5 | `data/<ep>_curriculum_final_audited.json` 与 `data/curriculum_tiered.json[ep]`（两份保持一致） |
+`data/source_catalog.json` 存了已验证的视频 id 与时长（用视频时长和逐字稿跨度交叉核对过）：
 
-## 设计上的两条硬规矩
+| 分集 | 来源 | 时长 |
+| :-- | :-- | --: |
+| ep01 | https://www.youtube.com/watch?v=kBdfcR-8hEY | 3296s |
+| ep02 | https://www.youtube.com/watch?v=0O2Rq4HJBxw | 3310s |
+| ep03 | https://www.youtube.com/watch?v=Qw4l1w0rkjs | 3308s |
+| ep04 | https://www.youtube.com/watch?v=MGyygiXMzRk | 3299s |
 
-1. **时间戳只能来自原始 ASR 分段。** AI 只被允许输出「段序号区间」，永远不产生秒数，因此不可能凭空造时间。
-2. **AI 产出必须可校验。** 每个 AI 输出都有对应的确定性断言（划分完整性、token 重叠下限、词包含关系、签名回填、时长一致性）；断言不过就重试，重试不过就回退到原始文本并记入门禁报告——绝不静默接受。
+> Bilibili 镜像（`BV1jt411m7rn?p=N`）在 `downloader.py` 里有目录，但生产机访问会被风控（HTTP 412），
+> 因此 YouTube 是主源；`s0` 对任何 yt-dlp 支持的站点都能用。
+
+---
+
+## 2. 九个阶段，各自的门禁
+
+```
+S0 采集  链接 ──► 原始音频 + 视频 + 带时间戳逐字稿
+S1 断句  逐字稿 ──► 完整英文句子（补标点/大小写、修 ASR 讹误）
+S2 绑定  卡组 + 句子 ──► 每个词真正属于哪一句
+S3 切媒体 句子 + 原始音频 ──► 按句子边界切片 + 取课堂截帧
+S4 翻译  句子 ──► 带上下文的整句中文（AI 审校）
+S4b 补译 其它卡组 ──► 补齐任何缺失译文（空译文会显示「暂无官方中文翻译」）
+S5 落盘  产物 ──► 写回数据文件 + 断言校验
+S6 词库  卡组 ──► 从卡组重建全景大词库（派生，不再手工维护）
+S7 部署  线上 ──► 重启服务 + 端到端验收报告
+```
+
+| 阶段 | AI 把关 | 自动化断言（不过就停） |
+| :-- | :-- | :-- |
+| S0 | — | 元数据可取、时长与目录一致、音视频时长相符、逐字稿段数/跨度/单调性 |
+| S1 | 分句 + 批量复核 + 碎片复核（须回填签名） | 严格连续划分、token 重叠下限、词数/时长上限、标点覆盖、时间轴单调 |
+| S2 | 疑难词逐条裁定并要求**原样摘录 evidence** | 词必须出现在绑定句中（词形变化 + evidence 子串校验） |
+| S3 | — | `ffprobe` 时长一致（±0.30s）、文件齐备、帧有效 |
+| S4 | 翻译 + 审校（只打标）+ 单句重译 | 一句一译、无英文残留、无占位短译 |
+| S4b | 同上 | 无空译文 |
+| S5 | — | 句子包含目标词、切片头尾覆盖整句、时长一致、词数/分级守恒、两份副本一致 |
+| S6 | — | 覆盖 0 缺失、**词库文本必须与卡片逐字相同**、SRS 进度只增不减、词典条目不丢失 |
+| S7 | — | 服务存活、线上卡片完整、资产可达（源站+公网）、词库↔卡片一致 |
+
+---
+
+## 3. 为什么需要这些门禁（都踩过）
+
+| 坑 | 现象 | 现在的防线 |
+| :-- | :-- | :-- |
+| 切片按 ASR 分段组切 | 88% 的切片两头都在句子中间 | S1 重建真句子 → S3 按句子边界切 → S5 断言头尾覆盖 |
+| 让模型「整批重做」 | 内容在 id 之间串位 | 失败只以 ≤6 条小批重试 |
+| 单句裁决不回填签名 | 结论落到相邻句 | 要求回显 `sig`，校验后采用 |
+| 词库是手工副本 | 与卡片 224/245 条文本不一致、Ep01 只覆盖 23/163 | S6 改为从卡组派生 + 逐字一致断言 |
+| 空译文 | 卡片显示「暂无官方中文翻译」 | S4b 补齐 + 门禁禁止空译文 |
+| 采集失效 | Bilibili 风控 412 | S0 元数据/时长双重校验，YouTube 主源 |
+
+---
+
+## 4. 运行环境
+
+- 服务器需 `ffmpeg/ffprobe`、`yt-dlp`、`python3`；原始媒体放 `data/raw_audio/`、`data/raw_video/`。
+- 环境变量：`VOCAB_APP_DIR`（应用目录）、`VOCAB_WORK_DIR`（中间产物/缓存/报告）、`VOCAB_EP`（卡组 id）。
+- AI Key：`data/secret_config.json`（不入库）或 `DEEPSEEK_API_KEY`。
+- 所有 AI 调用按内容哈希落盘缓存，重跑几乎不花钱且结果可复现。
+- 产物：`<work>/out/`（句子/映射/译文/验收报告）、`<work>/reports/`（各阶段门禁 JSON+MD）。
+
+## 5. 新增一集（任意链接）
+
+1. `s0` 会自动抓媒体与字幕（`data/source_catalog.json` 有目录的走目录，否则用你给的 `--url`）；
+2. 若该集还没有卡组（词表），流水线会在 S2 停下并提示——目前词表仍需先由选词环节生成
+   （应用内的「链接导入」走的是 `/api/import/link` 的 AI 抽词）；
+3. 生成卡组后重跑：`python deliver.py --episode <新id> --from s1 --write`。

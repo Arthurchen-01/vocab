@@ -1,0 +1,54 @@
+{
+  "stage": "ep03_s0_acquire",
+  "started": "2026-09-17 08:06:42",
+  "finished": "2026-09-17 08:09:12",
+  "ok": true,
+  "passed": 8,
+  "failed": 0,
+  "checks": [
+    {
+      "check": "source resolved",
+      "ok": true,
+      "detail": "https://www.youtube.com/watch?v=Qw4l1w0rkjs"
+    },
+    {
+      "check": "metadata fetched from the source",
+      "ok": true,
+      "detail": "youtube · Justice: What's The Right Thing To Do? Episode 03: \"FREE TO  · 3308.0s"
+    },
+    {
+      "check": "source duration matches the catalog",
+      "ok": true,
+      "detail": "source=3308s catalog=3308s"
+    },
+    {
+      "check": "audio present and probeable",
+      "ok": true,
+      "detail": "/var/www/harvard_justice_app/data/raw_audio/ep03_full.mp3 (3308s)"
+    },
+    {
+      "check": "video present and probeable",
+      "ok": true,
+      "detail": "/var/www/harvard_justice_app/data/raw_video/ep03_video.mp4 (3308s)"
+    },
+    {
+      "check": "audio and video durations agree",
+      "ok": true,
+      "detail": "3307.7s vs 3307.7s"
+    },
+    {
+      "check": "transcript acquired",
+      "ok": true,
+      "detail": "reused existing: 1110 segments, span 3299s"
+    },
+    {
+      "check": "transcript covers the media",
+      "ok": true,
+      "detail": "1110 segments, span 3299s"
+    }
+  ],
+  "notes": [
+    "expected duration: 3308s",
+    "artifacts: /var/www/harvard_justice_app/data/raw_audio/ep03_full.mp3 | /var/www/harvard_justice_app/data/raw_video/ep03_video.mp4 | /var/www/harvard_justice_app/data/transcripts/ep03_transcript.json"
+  ]
+}

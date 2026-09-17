@@ -380,6 +380,27 @@ def build_merged(sents, find, rep):
 
 
 # ------------------------------------------------------------------ stage 6
+def merge_short_spans(sents, rep, min_span=0.8):
+    """Glue sub-second 'sentences' onto a neighbour.
+
+    A sentence whose audio span is shorter than the minimum clip length cannot
+    produce a usable example clip (a word bound to it would get a <0.8s clip), so
+    it is merged into the previous sentence - these are always ASR crumbs like a
+    lone "Right." that the boundary pass left standing alone.
+    """
+    merged = 0
+    while len(sents) > 1:
+        idx = next((i for i, s in enumerate(sents) if (s["end"] - s["start"]) < min_span), None)
+        if idx is None:
+            break
+        kind = "merge_prev" if idx > 0 else "merge_next"
+        sents = build_merged(sents, collect_merge_plan([{"id": idx, "type": kind}], len(sents))[1], rep)
+        merged += 1
+    if merged:
+        rep.note(f"merged {merged} sub-{min_span}s sentence crumbs into their neighbours")
+    return sents
+
+
 def stage_split(segs, sents, rep):
     """Iteratively split overlong sentences (segment-aligned, AI gated)."""
     new_parts_all = []
@@ -585,6 +606,7 @@ def main():
         if parts:
             ch, fb = stage_polish(parts, f"s1_p{cycle}")
             rep.note(f"cycle {cycle}: split produced {len(parts)} parts, re-polished {ch}, {len(fb)} fallbacks")
+        sents = merge_short_spans(sents, rep)
         state = (len(sents), sum(len(norm_words(s["text"])) for s in sents))
         if state == prev_state:
             rep.note(f"segmentation reached a fixpoint after {cycle} cycle(s)")
@@ -592,6 +614,7 @@ def main():
         prev_state = state
     else:
         rep.note("segmentation hit the cycle cap (3) without a fixpoint")
+    sents = merge_short_spans(sents, rep)
 
     # deterministic last sweep: no sentence may be left without a terminal mark
     swept = 0

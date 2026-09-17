@@ -1,0 +1,47 @@
+{
+  "stage": "ep03_s4_translation",
+  "started": "2026-09-17 09:33:21",
+  "finished": "2026-09-17 09:33:21",
+  "ok": true,
+  "passed": 6,
+  "failed": 0,
+  "checks": [
+    {
+      "check": "inputs present",
+      "ok": true,
+      "detail": "303 sentences, 39 need translation"
+    },
+    {
+      "check": "first-pass translations produced for every sentence",
+      "ok": true,
+      "detail": "39/39; failed: []"
+    },
+    {
+      "check": "all used sentences have a translation",
+      "ok": true,
+      "detail": "39/39"
+    },
+    {
+      "check": "no long English residue inside Chinese",
+      "ok": true,
+      "detail": "0 sentences contain Latin runs (proper nouns allowed): []"
+    },
+    {
+      "check": "no stub translations",
+      "ok": true,
+      "detail": "[]"
+    },
+    {
+      "check": "no empty translations",
+      "ok": true,
+      "detail": "[]"
+    }
+  ],
+  "notes": [
+    "AI review flagged 14 of 39 translations",
+    "re-translated 14 flagged sentences individually",
+    "39 sentences serve 44 words; every word on a sentence now shows the SAME translation (old data had up to 3 different ones)",
+    "wrote /root/quality_pipeline/out/ep03_translations.json",
+    "AI usage: {\"calls\": 295, \"cached\": 185, \"prompt_tokens\": 349556, \"completion_tokens\": 94475}"
+  ]
+}

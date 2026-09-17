@@ -17,7 +17,7 @@ import re
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from config import (DATA_DIR, EPISODE, OUT_DIR, Report, load_json, log,  # noqa: E402
+from config import (DATA_DIR, EPISODE, OUT_DIR, Report, load_deck_words, load_json, log,  # noqa: E402
                     norm_words, save_json, tidy_english)
 from ai_gate import ask_json, usage  # noqa: E402
 
@@ -62,9 +62,10 @@ def main():
     rep = Report(f"{EPISODE}_s4_translation")
     sents = load_json(SENTS_FILE)
     wmap = load_json(MAP_FILE)
-    words = load_json(CURRICULUM)
+    words, deck_kind = load_deck_words(EPISODE)
     if not (sents and wmap and words):
-        rep.check("inputs present", False, "missing sentences/word_map/curriculum")
+        rep.check("inputs present", False,
+                  f"sentences={bool(sents)} map={bool(wmap)} deck_words={len(words)} ({deck_kind})")
         rep.write()
         return 1
 

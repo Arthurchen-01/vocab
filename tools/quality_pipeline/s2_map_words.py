@@ -21,8 +21,8 @@ import re
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from config import (DATA_DIR, EPISODE, OUT_DIR, Report, load_json, log,  # noqa: E402
-                    norm_words, normalize_text, save_json)
+from config import (DATA_DIR, EPISODE, OUT_DIR, Report, load_deck_words,  # noqa: E402
+                    load_json, log, norm_words, normalize_text, save_json)
 from ai_gate import ask_json, usage  # noqa: E402
 
 SENTS_FILE = os.path.join(OUT_DIR, f"{EPISODE}_sentences.json")
@@ -108,35 +108,82 @@ def sentence_at(sents, t):
     return prev
 
 
-def main():
-    rep = Report(f"{EPISODE}_s2_word_map")
-    sents = load_json(SENTS_FILE)
-    words = load_json(CURRICULUM)
-    if not sents or not words:
-        rep.check("inputs present", False, f"sentences={bool(sents)} curriculum={bool(words)}")
-        rep.write()
-        return 1
-    rep.check("inputs present", True, f"{len(sents)} sentences, {len(words)} target words")
+def parse_timestamp(value):
+    """Accept '00:32', '[02:10]', '1:02:10', 130.5 -> seconds (or None).
 
-    mapped, need_ai, absent = [], [], []
-    for w in words:
-        t = float(w.get("audio_start") or 0)
-        idx = sentence_at(sents, t)
+    Decks produced by earlier importers carry only a human-readable timestamp
+    hint instead of audio_start/audio_end, and some carry none at all.
+    """
+    if isinstance(value, (int, float)):
+        return float(value)
+    if not value:
+        return None
+    m = re.findall(r"\d+(?:\.\d+)?", str(value))
+    if not m:
+        return None
+    parts = [float(x) for x in m]
+    if len(parts) == 1:
+        return parts[0]
+    if len(parts) == 2:
+        return parts[0] * 60 + parts[1]
+    return parts[0] * 3600 + parts[1] * 60 + parts[2]
+
+
+def locate_word(sents, w):
+    """Return (sent_id, match_kind, evidence) for one target word.
+
+    Order of preference:
+      1. the sentence covering the word's own timestamp (audio_start, else the
+         deck's `timestamp` hint);
+      2. a neighbouring sentence (the timestamp may sit just outside the clause);
+      3. a global search for the first sentence that actually contains the word,
+         for decks that carry no timing at all.
+    """
+    t = w.get("audio_start")
+    if t is None:
+        t = parse_timestamp(w.get("timestamp"))
+    if t is not None:
+        idx = sentence_at(sents, float(t))
         window = [idx] + [j for d in (1, -1, 2, -2, 3, -3) for j in [idx + d] if 0 <= idx + d < len(sents)]
-        hit = None
         for rank, j in enumerate(window):
             form = contains(sents[j]["text"], w["word"])
             if form:
-                hit = {"sent_id": j, "match": "exact" if rank == 0 else f"neighbour+{rank}", "form": form}
-                break
-        if hit is None:
-            form = contains(sents[idx]["text"], w["word"], fuzzy=False)
-            if form:
-                hit = {"sent_id": idx, "match": "exact", "form": form}
-        if hit:
-            mapped.append(dict(w, **hit))
-        else:
-            need_ai.append((w, idx, window))
+                return j, ("exact" if rank == 0 else f"neighbour+{rank}"), form
+        return None, "timestamp-no-match", None
+    # no timing at all -> global search
+    for j, s in enumerate(sents):
+        form = contains(s["text"], w["word"])
+        if form:
+            return j, "text-search", form
+    return None, "absent", None
+
+
+def main():
+    rep = Report(f"{EPISODE}_s2_word_map")
+    sents = load_json(SENTS_FILE)
+    words, deck_kind = load_deck_words(EPISODE)
+    if not sents or not words:
+        rep.check("inputs present", False, f"sentences={bool(sents)} deck_words={len(words)} ({deck_kind})")
+        rep.write()
+        return 1
+    rep.check("inputs present", True, f"{len(sents)} sentences, {len(words)} target words (deck: {deck_kind})")
+
+    mapped, need_ai, absent = [], [], []
+    for w in words:
+        sid, kind, form = locate_word(sents, w)
+        if sid is not None:
+            mapped.append(dict(w, sent_id=sid, match=kind, form=form))
+            continue
+        # nothing matched: let the AI adjudicate around the timestamp hint
+        t = w.get("audio_start")
+        if t is None:
+            t = parse_timestamp(w.get("timestamp"))
+        if t is None:
+            absent.append(w["word"])
+            continue
+        idx = sentence_at(sents, float(t))
+        window = [j for d in (0, 1, -1, 2, -2, 3, -3) for j in [idx + d] if 0 <= idx + d < len(sents)]
+        need_ai.append((w, idx, window))
 
     rep.check("words matched to a sentence by direct search", True,
               f"{len(mapped)} direct, {len(need_ai)} need AI adjudication")

@@ -1,0 +1,76 @@
+{
+  "stage": "ep03_s5_apply_verify",
+  "started": "2026-09-17 09:33:21",
+  "finished": "2026-09-17 09:33:25",
+  "ok": true,
+  "passed": 12,
+  "failed": 0,
+  "checks": [
+    {
+      "check": "inputs present",
+      "ok": true,
+      "detail": "303 sentences, 44 words, 39 translations (deck: curriculum_tiered)"
+    },
+    {
+      "check": "one sentence -> exactly one Chinese translation",
+      "ok": true,
+      "detail": "0 sentences with conflicting translations"
+    },
+    {
+      "check": "every example sentence contains its target word (matcher or AI quote)",
+      "ok": true,
+      "detail": "0 violations: []"
+    },
+    {
+      "check": "every clip covers its sentence head to tail (plus pad)",
+      "ok": true,
+      "detail": "0 violations"
+    },
+    {
+      "check": "all clips present on disk",
+      "ok": true,
+      "detail": "[]"
+    },
+    {
+      "check": "all clip durations match the declared window",
+      "ok": true,
+      "detail": "[]"
+    },
+    {
+      "check": "all frames present on disk",
+      "ok": true,
+      "detail": "[]"
+    },
+    {
+      "check": "word count unchanged",
+      "ok": true,
+      "detail": "44"
+    },
+    {
+      "check": "tier distribution preserved through the rewrite",
+      "ok": true,
+      "detail": "{'academic_philosophy': 19, 'sat_gre': 3, 'toefl_ielts': 22} -> {'academic_philosophy': 19, 'sat_gre': 3, 'toefl_ielts': 22}"
+    },
+    {
+      "check": "no duplicate words",
+      "ok": true,
+      "detail": "[]"
+    },
+    {
+      "check": "the deck copy and the audited copy agree",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "live API reachable (pre-restart)",
+      "ok": true,
+      "detail": "44 words currently served"
+    }
+  ],
+  "notes": [
+    "total clip length 555s -> 555s (median 11.8s)",
+    "0/44 words now quote a different (complete) sentence than before",
+    "data written: /var/www/harvard_justice_app/data/ep03_curriculum_final_audited.json + ['curriculum_tiered']",
+    "--deploy-check http://127.0.0.1:8765 ignored here; S7 performs the live verification after restarting the service"
+  ]
+}

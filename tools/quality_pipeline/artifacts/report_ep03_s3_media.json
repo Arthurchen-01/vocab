@@ -1,0 +1,72 @@
+{
+  "stage": "ep03_s3_media",
+  "started": "2026-09-17 09:32:30",
+  "finished": "2026-09-17 09:33:20",
+  "ok": true,
+  "passed": 11,
+  "failed": 0,
+  "checks": [
+    {
+      "check": "inputs present",
+      "ok": true,
+      "detail": "303 sentences, 44 mapped words (deck: curriculum_tiered)"
+    },
+    {
+      "check": "raw episode audio present",
+      "ok": true,
+      "detail": "/var/www/harvard_justice_app/data/raw_audio/ep03_full.mp3"
+    },
+    {
+      "check": "raw audio is long enough for every window",
+      "ok": true,
+      "detail": "audio=3307.7s, last sentence ends at 3298.9s"
+    },
+    {
+      "check": "every used sentence produced a clip",
+      "ok": true,
+      "detail": "39/39 clips; problems: []"
+    },
+    {
+      "check": "all 215 clips written",
+      "ok": true,
+      "detail": "44/44; []"
+    },
+    {
+      "check": "all 215 frames re-extracted",
+      "ok": true,
+      "detail": "44/44; []"
+    },
+    {
+      "check": "no clip file missing",
+      "ok": true,
+      "detail": "[]"
+    },
+    {
+      "check": "no suspiciously small clip",
+      "ok": true,
+      "detail": "[]"
+    },
+    {
+      "check": "clip duration matches the sentence window",
+      "ok": true,
+      "detail": "44/44 within 0.30s; []"
+    },
+    {
+      "check": "no frame file missing",
+      "ok": true,
+      "detail": "[]"
+    },
+    {
+      "check": "every card has its own pronunciation clip",
+      "ok": true,
+      "detail": "36 generated, 0 failed []"
+    }
+  ],
+  "notes": [
+    "raw video present: True (/var/www/harvard_justice_app/data/raw_video/ep03_video.mp4)",
+    "generated 36 word-pronunciation files (were missing: 36)",
+    "retired 38 orphan pronunciation files -> /root/quality_pipeline/orphans/ep03",
+    "clips whose old window did NOT match the spoken sentence: 0/44 (0%)",
+    "wrote /root/quality_pipeline/out/ep03_media_report.json"
+  ]
+}

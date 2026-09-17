@@ -260,12 +260,12 @@
       }
     ],
     "stats": {
-      "review_count": 3,
+      "review_count": 5,
       "today_seconds": 0,
-      "total_seconds": 34,
+      "total_seconds": 178,
       "status": "learning",
       "last_rating": 3,
-      "last_reviewed_at": "2026-09-17 00:54:26"
+      "last_reviewed_at": "2026-09-17 08:18:29"
     }
   },
   "shipwreck": {
@@ -563,12 +563,12 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
+      "total_seconds": 13,
       "status": "learning",
-      "last_rating": "new",
-      "last_reviewed_at": null
+      "last_rating": 2,
+      "last_reviewed_at": "2026-09-17 08:20:13"
     }
   },
   "maximize": {
@@ -586,12 +586,12 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
+      "total_seconds": 3,
       "status": "learning",
-      "last_rating": "new",
-      "last_reviewed_at": null
+      "last_rating": 4,
+      "last_reviewed_at": "2026-09-17 08:19:55"
     }
   },
   "sovereign": {
@@ -616,12 +616,12 @@
       }
     ],
     "stats": {
-      "review_count": 1,
+      "review_count": 3,
       "today_seconds": 0,
-      "total_seconds": 130,
+      "total_seconds": 159,
       "status": "learning",
-      "last_rating": 1,
-      "last_reviewed_at": "2026-09-17 04:49:32"
+      "last_rating": 2,
+      "last_reviewed_at": "2026-09-17 08:20:18"
     }
   },
   "cost-benefit analysis": {
@@ -639,12 +639,12 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
+      "total_seconds": 6,
       "status": "learning",
-      "last_rating": "new",
-      "last_reviewed_at": null
+      "last_rating": 3,
+      "last_reviewed_at": "2026-09-17 08:21:21"
     }
   },
   "actuary": {
@@ -710,12 +710,12 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
+      "total_seconds": 26,
       "status": "learning",
-      "last_rating": "new",
-      "last_reviewed_at": null
+      "last_rating": 1,
+      "last_reviewed_at": "2026-09-17 08:34:18"
     }
   },
   "depravity": {
@@ -888,15 +888,15 @@
   },
   "coercion": {
     "word": "coercion",
-    "phonetic": "/koʊˈɜːrʒn/",
+    "phonetic": "/kəʊˈɜːʃn/",
     "pos": "n.",
-    "def_cn": "强迫，胁迫，威逼",
+    "def_cn": "强制；胁迫",
     "contexts": [
       {
         "source_id": "ep03",
         "source_title": "第 03 集：自由选择权 / 谁拥有我的身体与劳动？",
-        "sentence": "Taxation backed by threat of imprisonment feels to libertarians like an intolerable form of state coercion.",
-        "trans": "在自由至上主义者看来，以监禁威胁为后盾的征税是一种令人无法容忍的国家强迫。",
+        "sentence": "And the state, the government, has no business coercing them, us, to wear seat belts by law. It's coercion, so no paternalist legislation.",
+        "trans": "而国家、政府无权通过法律强制他们、我们系安全带。这就是强制，所以不能有家长式立法。",
         "audio_url": ""
       }
     ],
@@ -1029,15 +1029,15 @@
   },
   "libertarianism": {
     "word": "libertarianism",
-    "phonetic": "/ˌlɪbərˈteriənɪzəm/",
+    "phonetic": "/ˌlɪbərˈteəriənɪzəm/",
     "pos": "n.",
-    "def_cn": "自由至上主义（主张极小政府、自由放任与绝对财产权）",
+    "def_cn": "自由至上主义",
     "contexts": [
       {
         "source_id": "ep03",
         "source_title": "第 03 集：自由选择权 / 谁拥有我的身体与劳动？",
-        "sentence": "Libertarianism insists that government should have only the power to enforce contracts and protect against violence.",
-        "trans": "自由至上主义坚持认为，政府的权力应当仅限于执行契约和防止暴力。",
+        "sentence": "The strong rights theory we turn to today is libertarianism. Libertarianism takes individual rights seriously.",
+        "trans": "我们今天要转向的强权利理论就是自由至上主义。自由至上主义认真对待个人权利。",
         "audio_url": ""
       }
     ],
@@ -1054,13 +1054,13 @@
     "word": "redistribution",
     "phonetic": "/ˌriːdɪstrɪˈbjuːʃn/",
     "pos": "n.",
-    "def_cn": "财富再分配，二次分配",
+    "def_cn": "再分配",
     "contexts": [
       {
         "source_id": "ep03",
         "source_title": "第 03 集：自由选择权 / 谁拥有我的身体与劳动？",
-        "sentence": "Under Nozick's view, coercing wealthy individuals into redistribution infringes upon basic human rights.",
-        "trans": "在诺齐克看来，强迫富人参与财富再分配，侵犯了基本人权。",
+        "sentence": "Redistribution is a kind of, if you think about it, says libertarianists, a kind of coercion.",
+        "trans": "自由至上主义者说，你仔细想想，再分配其实是一种强制。",
         "audio_url": ""
       }
     ],
@@ -1087,6 +1087,7 @@
         "audio_url": ""
       }
     ],
+    "bank_only": true,
     "stats": {
       "review_count": 0,
       "today_seconds": 0,
@@ -1110,6 +1111,7 @@
         "audio_url": ""
       }
     ],
+    "bank_only": true,
     "stats": {
       "review_count": 0,
       "today_seconds": 0,
@@ -1194,12 +1196,12 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
+      "total_seconds": 4,
       "status": "learning",
-      "last_rating": "new",
-      "last_reviewed_at": null
+      "last_rating": 2,
+      "last_reviewed_at": "2026-09-17 08:20:00"
     }
   },
   "jurisprudence": {
@@ -1224,12 +1226,12 @@
       }
     ],
     "stats": {
-      "review_count": 1,
+      "review_count": 2,
       "today_seconds": 0,
-      "total_seconds": 12739,
+      "total_seconds": 12757,
       "status": "learning",
-      "last_rating": 3,
-      "last_reviewed_at": "2026-09-17 04:27:52"
+      "last_rating": 1,
+      "last_reviewed_at": "2026-09-17 08:19:25"
     }
   },
   "human dignity": {
@@ -1399,12 +1401,12 @@
       }
     ],
     "stats": {
-      "review_count": 1,
+      "review_count": 2,
       "today_seconds": 0,
-      "total_seconds": 64,
+      "total_seconds": 103,
       "status": "learning",
-      "last_rating": 2,
-      "last_reviewed_at": "2026-09-17 00:55:30"
+      "last_rating": 3,
+      "last_reviewed_at": "2026-09-17 08:19:07"
     }
   },
   "moral philosophy": {
@@ -1422,12 +1424,12 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
+      "total_seconds": 6,
+      "status": "learning",
+      "last_rating": 3,
+      "last_reviewed_at": "2026-09-17 08:19:31"
     }
   },
   "principle": {
@@ -1445,12 +1447,12 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
+      "total_seconds": 22,
+      "status": "learning",
+      "last_rating": 3,
+      "last_reviewed_at": "2026-09-17 08:19:53"
     }
   },
   "take account of": {
@@ -1468,12 +1470,12 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
+      "total_seconds": 29,
+      "status": "learning",
+      "last_rating": 2,
+      "last_reviewed_at": "2026-09-17 08:20:47"
     }
   },
   "the greatest good for the greatest number": {
@@ -1491,12 +1493,12 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
+      "total_seconds": 6,
+      "status": "learning",
+      "last_rating": 3,
+      "last_reviewed_at": "2026-09-17 08:20:53"
     }
   },
   "legislator": {
@@ -1514,12 +1516,12 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
+      "total_seconds": 11,
+      "status": "learning",
+      "last_rating": 2,
+      "last_reviewed_at": "2026-09-17 08:21:04"
     }
   },
   "comprise": {
@@ -1537,12 +1539,12 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 2,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
+      "total_seconds": 18,
+      "status": "learning",
+      "last_rating": 3,
+      "last_reviewed_at": "2026-09-17 08:21:09"
     }
   },
   "add up": {
@@ -1560,12 +1562,12 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
+      "total_seconds": 4,
+      "status": "learning",
+      "last_rating": 3,
+      "last_reviewed_at": "2026-09-17 08:21:13"
     }
   },
   "subtract": {
@@ -1583,12 +1585,12 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
+      "total_seconds": 3,
+      "status": "learning",
+      "last_rating": 3,
+      "last_reviewed_at": "2026-09-17 08:21:16"
     }
   },
   "place a value on": {
@@ -1606,12 +1608,12 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
+      "total_seconds": 46,
+      "status": "learning",
+      "last_rating": 2,
+      "last_reviewed_at": "2026-09-17 08:22:07"
     }
   },
   "excise tax": {
@@ -1629,12 +1631,12 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 2,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
+      "total_seconds": 46,
+      "status": "learning",
+      "last_rating": 1,
+      "last_reviewed_at": "2026-09-17 08:22:24"
     }
   },
   "commission": {
@@ -1652,12 +1654,12 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 2,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
+      "total_seconds": 43,
+      "status": "learning",
+      "last_rating": 1,
+      "last_reviewed_at": "2026-09-17 08:22:47"
     }
   },
   "ledger": {
@@ -1675,12 +1677,12 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 2,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
+      "total_seconds": 36,
+      "status": "learning",
+      "last_rating": 1,
+      "last_reviewed_at": "2026-09-17 08:23:10"
     }
   },
   "derive from": {
@@ -1698,12 +1700,12 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
+      "total_seconds": 7,
+      "status": "learning",
+      "last_rating": 2,
+      "last_reviewed_at": "2026-09-17 08:23:17"
     }
   },
   "net": {
@@ -1721,12 +1723,12 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
+      "total_seconds": 8,
+      "status": "learning",
+      "last_rating": 2,
+      "last_reviewed_at": "2026-09-17 08:23:25"
     }
   },
   "prematurely": {
@@ -1744,12 +1746,12 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
+      "total_seconds": 87,
+      "status": "learning",
+      "last_rating": 1,
+      "last_reviewed_at": "2026-09-17 08:24:52"
     }
   },
   "pillory": {
@@ -1767,12 +1769,12 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 2,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
+      "total_seconds": 33,
+      "status": "learning",
+      "last_rating": 1,
+      "last_reviewed_at": "2026-09-17 08:25:08"
     }
   },
   "incorporate": {
@@ -1790,12 +1792,12 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
+      "total_seconds": 3501,
+      "status": "learning",
+      "last_rating": 2,
+      "last_reviewed_at": "2026-09-17 09:23:29"
     }
   },
   "vulnerable": {
@@ -1813,12 +1815,12 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
+      "total_seconds": 3,
+      "status": "learning",
+      "last_rating": 4,
+      "last_reviewed_at": "2026-09-17 09:23:32"
     }
   },
   "shield": {
@@ -1836,12 +1838,12 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 2,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
+      "total_seconds": 27,
+      "status": "learning",
+      "last_rating": 3,
+      "last_reviewed_at": "2026-09-17 09:23:38"
     }
   },
   "calculate": {
@@ -1866,12 +1868,12 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
+      "total_seconds": 2,
+      "status": "learning",
+      "last_rating": 4,
+      "last_reviewed_at": "2026-09-17 09:23:41"
     }
   },
   "emerge": {
@@ -1889,12 +1891,12 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
+      "total_seconds": 2,
+      "status": "learning",
+      "last_rating": 3,
+      "last_reviewed_at": "2026-09-17 09:23:43"
     }
   },
   "total cost": {
@@ -1912,12 +1914,12 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
+      "total_seconds": 2,
+      "status": "learning",
+      "last_rating": 3,
+      "last_reviewed_at": "2026-09-17 09:23:45"
     }
   },
   "benefit": {
@@ -1935,12 +1937,12 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
+      "total_seconds": 2,
+      "status": "learning",
+      "last_rating": 3,
+      "last_reviewed_at": "2026-09-17 09:23:46"
     }
   },
   "assign": {
@@ -1958,12 +1960,12 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 2,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
+      "total_seconds": 4,
+      "status": "learning",
+      "last_rating": 3,
+      "last_reviewed_at": "2026-09-17 09:23:49"
     }
   },
   "dollar value": {
@@ -2050,12 +2052,12 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
+      "total_seconds": 4,
+      "status": "learning",
+      "last_rating": 2,
+      "last_reviewed_at": "2026-09-17 08:22:38"
     }
   },
   "settlement": {
@@ -2800,12 +2802,12 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
+      "total_seconds": 23,
+      "status": "learning",
+      "last_rating": 2,
+      "last_reviewed_at": "2026-09-17 08:30:45"
     }
   },
   "excruciating": {
@@ -2823,12 +2825,12 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
+      "total_seconds": 21,
+      "status": "learning",
+      "last_rating": 2,
+      "last_reviewed_at": "2026-09-17 08:31:06"
     }
   },
   "collective": {
@@ -2869,12 +2871,12 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
+      "total_seconds": 11,
+      "status": "learning",
+      "last_rating": 1,
+      "last_reviewed_at": "2026-09-17 08:31:19"
     }
   },
   "adequately": {
@@ -3267,12 +3269,12 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
+      "total_seconds": 2,
+      "status": "learning",
+      "last_rating": 1,
+      "last_reviewed_at": "2026-09-17 08:33:01"
     }
   },
   "opposite": {
@@ -3389,12 +3391,12 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
+      "total_seconds": 12,
+      "status": "learning",
+      "last_rating": 1,
+      "last_reviewed_at": "2026-09-17 08:33:25"
     }
   },
   "impending": {
@@ -3688,12 +3690,12 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
+      "total_seconds": 4,
+      "status": "learning",
+      "last_rating": 1,
+      "last_reviewed_at": "2026-09-17 08:35:11"
     }
   },
   "provided": {
@@ -3803,12 +3805,12 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
+      "total_seconds": 30,
+      "status": "learning",
+      "last_rating": 1,
+      "last_reviewed_at": "2026-09-17 08:36:18"
     }
   },
   "moral consideration": {
@@ -3895,12 +3897,12 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
+      "total_seconds": 5,
+      "status": "learning",
+      "last_rating": 1,
+      "last_reviewed_at": "2026-09-17 08:36:25"
     }
   },
   "egalitarian": {
@@ -3915,22 +3917,15 @@
         "sentence": "Now, part of the appeal of not making any qualitative distinctions about the worth of people's preferences, part of the appeal is that it is non-judgmental and egalitarian.",
         "trans": "那么，不对人们偏好的价值作任何质的区分，这种做法的一部分吸引力就在于它不作评判、主张人人平等。",
         "audio_url": "/assets/audio/clips/ep02_egalitarian_native.mp3"
-      },
-      {
-        "source_id": "ep03",
-        "source_title": "第 03 集：自由选择权 / 谁拥有我的身体与劳动？",
-        "sentence": "Egalitarian philosophers like John Rawls insist that society must correct for unfair natural lotteries.",
-        "trans": "像约翰·罗尔斯这样的平等主义哲学家坚持认为，社会必须纠正不公平的自然彩票。",
-        "audio_url": ""
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
+      "total_seconds": 26,
+      "status": "learning",
+      "last_rating": 1,
+      "last_reviewed_at": "2026-09-17 08:36:53"
     }
   },
   "regardless of": {
@@ -4063,12 +4058,12 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
+      "total_seconds": 17,
+      "status": "learning",
+      "last_rating": 1,
+      "last_reviewed_at": "2026-09-17 08:37:16"
     }
   },
   "intrinsically": {
@@ -4178,12 +4173,12 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
+      "total_seconds": 21,
+      "status": "learning",
+      "last_rating": 1,
+      "last_reviewed_at": "2026-09-17 08:38:14"
     }
   },
   "disciple": {
@@ -4382,13 +4377,6 @@
         "sentence": "In 1859 Mill wrote a famous book On Liberty, the main point of which was the importance of defending individual rights and minority rights.",
         "trans": "1859年，密尔写了一本著名的书《论自由》，其要点在于捍卫个人权利和少数人权利的重要性。",
         "audio_url": "/assets/audio/clips/ep02_liberty_native.mp3"
-      },
-      {
-        "source_id": "ep03",
-        "source_title": "第 03 集：自由选择权 / 谁拥有我的身体与劳动？",
-        "sentence": "Libertarians argue that individual liberty must be protected above all social redistributive goals.",
-        "trans": "自由至上主义者主张，个人自由必须得到保护，其地位高于一切社会再分配目标。",
-        "audio_url": ""
       }
     ],
     "stats": {
@@ -4530,12 +4518,12 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
+      "total_seconds": 12,
+      "status": "learning",
+      "last_rating": 2,
+      "last_reviewed_at": "2026-09-17 08:40:02"
     }
   },
   "empirical": {
@@ -4553,12 +4541,12 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
+      "total_seconds": 3,
+      "status": "learning",
+      "last_rating": 2,
+      "last_reviewed_at": "2026-09-17 08:40:06"
     }
   },
   "distinguish": {
@@ -4691,12 +4679,12 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
+      "total_seconds": 4,
+      "status": "learning",
+      "last_rating": 2,
+      "last_reviewed_at": "2026-09-17 08:40:15"
     }
   },
   "moral obligation": {
@@ -4783,12 +4771,12 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
+      "total_seconds": 2,
+      "status": "learning",
+      "last_rating": 3,
+      "last_reviewed_at": "2026-09-17 08:40:20"
     }
   },
   "infinite": {
@@ -4806,12 +4794,12 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
+      "total_seconds": 27,
+      "status": "learning",
+      "last_rating": 2,
+      "last_reviewed_at": "2026-09-17 08:40:47"
     }
   },
   "faculty": {
@@ -4829,12 +4817,12 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
+      "total_seconds": 2,
+      "status": "learning",
+      "last_rating": 2,
+      "last_reviewed_at": "2026-09-17 08:40:50"
     }
   },
   "paragon": {
@@ -4852,12 +4840,12 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
+      "total_seconds": 3,
+      "status": "learning",
+      "last_rating": 1,
+      "last_reviewed_at": "2026-09-17 08:40:54"
     }
   },
   "quintessence": {
@@ -4875,12 +4863,12 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
+      "total_seconds": 25,
+      "status": "learning",
+      "last_rating": 1,
+      "last_reviewed_at": "2026-09-17 08:41:19"
     }
   },
   "contestant": {
@@ -4921,12 +4909,12 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
+      "total_seconds": 3,
+      "status": "learning",
+      "last_rating": 1,
+      "last_reviewed_at": "2026-09-17 08:41:45"
     }
   },
   "overwhelmingly": {
@@ -5013,12 +5001,12 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
+      "total_seconds": 3,
+      "status": "learning",
+      "last_rating": 2,
+      "last_reviewed_at": "2026-09-17 08:41:52"
     }
   },
   "higher experience": {
@@ -5105,12 +5093,12 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
+      "total_seconds": 21,
+      "status": "learning",
+      "last_rating": 2,
+      "last_reviewed_at": "2026-09-17 08:42:16"
     }
   },
   "cultural convention": {
@@ -5197,12 +5185,12 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
+      "total_seconds": 16,
+      "status": "learning",
+      "last_rating": 1,
+      "last_reviewed_at": "2026-09-17 08:42:35"
     }
   },
   "test": {
@@ -5335,12 +5323,12 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
+      "total_seconds": 6,
+      "status": "learning",
+      "last_rating": 2,
+      "last_reviewed_at": "2026-09-17 08:42:55"
     }
   },
   "disprove": {
@@ -5496,12 +5484,12 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
+      "total_seconds": 2,
+      "status": "learning",
+      "last_rating": 1,
+      "last_reviewed_at": "2026-09-17 08:43:53"
     }
   },
   "indolence": {
@@ -5519,12 +5507,12 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
+      "total_seconds": 7,
+      "status": "learning",
+      "last_rating": 2,
+      "last_reviewed_at": "2026-09-17 08:43:59"
     }
   },
   "sloth": {
@@ -5611,12 +5599,12 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
+      "total_seconds": 16,
+      "status": "learning",
+      "last_rating": 1,
+      "last_reviewed_at": "2026-09-17 08:44:22"
     }
   },
   "ground on": {
@@ -6002,12 +5990,12 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
+      "total_seconds": 12,
+      "status": "learning",
+      "last_rating": 1,
+      "last_reviewed_at": "2026-09-17 08:46:31"
     }
   },
   "preside": {
@@ -6071,12 +6059,12 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
+      "total_seconds": 2,
+      "status": "learning",
+      "last_rating": 1,
+      "last_reviewed_at": "2026-09-17 08:47:04"
     }
   },
   "verisimilitude": {
@@ -8881,13 +8869,6 @@
         "sentence": "Selecting the weakest boy without a fair drawing of lots seemed cruel and arbitrary.",
         "trans": "如果没有正当程序与自愿协议，随意挑选最弱小者杀害就是一种极具专断性的暴行。",
         "audio_url": "/assets/audio/clips/ep01_arbitrary_native.mp3"
-      },
-      {
-        "source_id": "ep03",
-        "source_title": "第 03 集：自由选择权 / 谁拥有我的身体与劳动？",
-        "sentence": "Critics argue that innate natural talents like Michael Jordan's basketball prowess are morally arbitrary gifts.",
-        "trans": "批评者认为，像迈克尔·乔丹的篮球天赋这类与生俱来的才能，是道德上不应得的馈赠。",
-        "audio_url": ""
       }
     ],
     "stats": {
@@ -9363,13 +9344,13 @@
     "word": "redistribute",
     "phonetic": "/ˌriːdɪˈstrɪbjuːt/",
     "pos": "v.",
-    "def_cn": "重新分配，再分配",
+    "def_cn": "再分配",
     "contexts": [
       {
         "source_id": "ep03",
         "source_title": "第 03 集：自由选择权 / 谁拥有我的身体与劳动？",
-        "sentence": "Is it morally just for the democratic state to redistribute income from the wealthy to the poor?",
-        "trans": "民主国家将收入从富人再分配给穷人，在道德上是否正当？",
+        "sentence": "And if you were a utilitarian, what would you do? What tax policy would you have? You'd redistribute in a flash, wouldn't you?",
+        "trans": "如果你是功利主义者，你会怎么做？你会有什么样的税收政策？你会立刻进行再分配，对吧？",
         "audio_url": ""
       }
     ],
@@ -9386,13 +9367,13 @@
     "word": "fundamental",
     "phonetic": "/ˌfʌndəˈmentl/",
     "pos": "adj.",
-    "def_cn": "根本的，基础的，原始的",
+    "def_cn": "基本的；根本的",
     "contexts": [
       {
         "source_id": "ep03",
         "source_title": "第 03 集：自由选择权 / 谁拥有我的身体与劳动？",
-        "sentence": "Nozick's entitlement theory is based on the fundamental philosophical premise of self-ownership.",
-        "trans": "诺齐克的资格理论建立在自我所有权这一根本的哲学前提之上。",
+        "sentence": "It's called libertarianism because it says the fundamental individual right is the right to liberty.",
+        "trans": "它之所以叫自由至上主义，是因为它主张根本的个体权利就是自由权。",
         "audio_url": ""
       }
     ],
@@ -9408,14 +9389,14 @@
   "consent": {
     "word": "consent",
     "phonetic": "/kənˈsent/",
-    "pos": "n./v.",
-    "def_cn": "同意，赞同，准许",
+    "pos": "n.",
+    "def_cn": "同意；许可",
     "contexts": [
       {
         "source_id": "ep03",
         "source_title": "第 03 集：自由选择权 / 谁拥有我的身体与劳动？",
-        "sentence": "Does democratic voting genuinely imply that the minority gave their individual consent to be taxed?",
-        "trans": "民主投票是否真的意味着少数派给出了他们个人对征税的同意？",
+        "sentence": "The second principle is: did the distribution arise from the operation of free consent, people buying and trading on the market?",
+        "trans": "第二条原则是：这种分配是否源于自由同意的运作，即人们在市场上买卖和交易？",
         "audio_url": ""
       }
     ],
@@ -9430,15 +9411,15 @@
   },
   "property": {
     "word": "property",
-    "phonetic": "/ˈprɑːpərti/",
+    "phonetic": "/ˈprɒpəti/",
     "pos": "n.",
-    "def_cn": "财产，资产，所有物",
+    "def_cn": "财产；所有权",
     "contexts": [
       {
         "source_id": "ep03",
         "source_title": "第 03 集：自由选择权 / 谁拥有我的身体与劳动？",
-        "sentence": "Locke argued that private property originates when human beings mix their physical labor with unowned land.",
-        "trans": "洛克认为，当人把自己的体力劳动与无主土地混合在一起时，私有财产就产生了。",
+        "sentence": "Now Nozick and other libertarians allow that there can be a minimal state that taxes people for the sake of what everybody needs, the national defense, police force, judicial system, to enforce contracts and property rights, but that's it.",
+        "trans": "那么诺齐克和其他自由至上主义者允许存在一个最弱意义上的国家，为了人人所需的东西——国防、警察、司法系统、执行契约和财产所有权——而向人们征税，但仅此而已。",
         "audio_url": ""
       }
     ],
@@ -9455,13 +9436,13 @@
     "word": "taxation",
     "phonetic": "/tækˈseɪʃn/",
     "pos": "n.",
-    "def_cn": "征税，课税，税收制度",
+    "def_cn": "征税；税收",
     "contexts": [
       {
         "source_id": "ep03",
         "source_title": "第 03 集：自由选择权 / 谁拥有我的身体与劳动？",
-        "sentence": "Robert Nozick boldly asserts that progressive taxation on earnings from labor is morally on a par with forced labor.",
-        "trans": "罗伯特·诺齐克大胆断言，对劳动所得征收的累进税，在道德上与强迫劳动无异。",
+        "sentence": "And the third kind of law or policy it is ruled out on the libertarian philosophy is any taxation Or other policy that serves the purpose of redistributing income or wealth from the rich to the poor.",
+        "trans": "而自由至上主义哲学所排除的第三种法律或政策，就是任何以把收入和财富从富人再分配给穷人为目的的征税或其他政策。",
         "audio_url": ""
       }
     ],
@@ -9488,6 +9469,7 @@
         "audio_url": ""
       }
     ],
+    "bank_only": true,
     "stats": {
       "review_count": 0,
       "today_seconds": 0,
@@ -9511,6 +9493,7 @@
         "audio_url": ""
       }
     ],
+    "bank_only": true,
     "stats": {
       "review_count": 0,
       "today_seconds": 0,
@@ -9534,6 +9517,7 @@
         "audio_url": ""
       }
     ],
+    "bank_only": true,
     "stats": {
       "review_count": 0,
       "today_seconds": 0,
@@ -9557,6 +9541,7 @@
         "audio_url": ""
       }
     ],
+    "bank_only": true,
     "stats": {
       "review_count": 0,
       "today_seconds": 0,
@@ -9580,6 +9565,7 @@
         "audio_url": ""
       }
     ],
+    "bank_only": true,
     "stats": {
       "review_count": 0,
       "today_seconds": 0,
@@ -9603,6 +9589,7 @@
         "audio_url": ""
       }
     ],
+    "bank_only": true,
     "stats": {
       "review_count": 0,
       "today_seconds": 0,
@@ -9626,6 +9613,7 @@
         "audio_url": ""
       }
     ],
+    "bank_only": true,
     "stats": {
       "review_count": 0,
       "today_seconds": 0,
@@ -9649,6 +9637,7 @@
         "audio_url": ""
       }
     ],
+    "bank_only": true,
     "stats": {
       "review_count": 0,
       "today_seconds": 0,
@@ -9672,6 +9661,7 @@
         "audio_url": ""
       }
     ],
+    "bank_only": true,
     "stats": {
       "review_count": 0,
       "today_seconds": 0,
@@ -9695,6 +9685,7 @@
         "audio_url": ""
       }
     ],
+    "bank_only": true,
     "stats": {
       "review_count": 0,
       "today_seconds": 0,
@@ -9718,6 +9709,7 @@
         "audio_url": ""
       }
     ],
+    "bank_only": true,
     "stats": {
       "review_count": 0,
       "today_seconds": 0,
@@ -9741,6 +9733,7 @@
         "audio_url": ""
       }
     ],
+    "bank_only": true,
     "stats": {
       "review_count": 0,
       "today_seconds": 0,
@@ -9764,6 +9757,7 @@
         "audio_url": ""
       }
     ],
+    "bank_only": true,
     "stats": {
       "review_count": 0,
       "today_seconds": 0,
@@ -9787,6 +9781,7 @@
         "audio_url": ""
       }
     ],
+    "bank_only": true,
     "stats": {
       "review_count": 0,
       "today_seconds": 0,
@@ -9810,6 +9805,7 @@
         "audio_url": ""
       }
     ],
+    "bank_only": true,
     "stats": {
       "review_count": 0,
       "today_seconds": 0,
@@ -9833,6 +9829,7 @@
         "audio_url": ""
       }
     ],
+    "bank_only": true,
     "stats": {
       "review_count": 0,
       "today_seconds": 0,
@@ -9856,6 +9853,7 @@
         "audio_url": ""
       }
     ],
+    "bank_only": true,
     "stats": {
       "review_count": 0,
       "today_seconds": 0,
@@ -9879,6 +9877,7 @@
         "audio_url": ""
       }
     ],
+    "bank_only": true,
     "stats": {
       "review_count": 0,
       "today_seconds": 0,
@@ -9902,6 +9901,7 @@
         "audio_url": ""
       }
     ],
+    "bank_only": true,
     "stats": {
       "review_count": 0,
       "today_seconds": 0,
@@ -9925,6 +9925,7 @@
         "audio_url": ""
       }
     ],
+    "bank_only": true,
     "stats": {
       "review_count": 0,
       "today_seconds": 0,
@@ -9948,6 +9949,7 @@
         "audio_url": ""
       }
     ],
+    "bank_only": true,
     "stats": {
       "review_count": 0,
       "today_seconds": 0,
@@ -9971,6 +9973,7 @@
         "audio_url": ""
       }
     ],
+    "bank_only": true,
     "stats": {
       "review_count": 0,
       "today_seconds": 0,
@@ -9994,6 +9997,7 @@
         "audio_url": ""
       }
     ],
+    "bank_only": true,
     "stats": {
       "review_count": 0,
       "today_seconds": 0,
@@ -10017,6 +10021,7 @@
         "audio_url": ""
       }
     ],
+    "bank_only": true,
     "stats": {
       "review_count": 0,
       "today_seconds": 0,
@@ -10040,6 +10045,7 @@
         "audio_url": ""
       }
     ],
+    "bank_only": true,
     "stats": {
       "review_count": 0,
       "today_seconds": 0,
@@ -10063,6 +10069,7 @@
         "audio_url": ""
       }
     ],
+    "bank_only": true,
     "stats": {
       "review_count": 0,
       "today_seconds": 0,
@@ -10086,6 +10093,7 @@
         "audio_url": ""
       }
     ],
+    "bank_only": true,
     "stats": {
       "review_count": 0,
       "today_seconds": 0,
@@ -10109,6 +10117,7 @@
         "audio_url": ""
       }
     ],
+    "bank_only": true,
     "stats": {
       "review_count": 0,
       "today_seconds": 0,
@@ -10132,6 +10141,7 @@
         "audio_url": ""
       }
     ],
+    "bank_only": true,
     "stats": {
       "review_count": 0,
       "today_seconds": 0,
@@ -10155,6 +10165,7 @@
         "audio_url": ""
       }
     ],
+    "bank_only": true,
     "stats": {
       "review_count": 0,
       "today_seconds": 0,
@@ -10178,6 +10189,7 @@
         "audio_url": ""
       }
     ],
+    "bank_only": true,
     "stats": {
       "review_count": 0,
       "today_seconds": 0,
@@ -10865,6 +10877,834 @@
         "source_title": "第 01 集：秩序井然的心灵 / 幸福与内在和谐",
         "sentence": "The cardinal virtues represent the four essential pillars supporting both an honorable life and a harmonious commonwealth.",
         "trans": "四主德代表着支撑体面生活与和谐共同体的四大支柱。",
+        "audio_url": ""
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "learning",
+      "last_rating": "new",
+      "last_reviewed_at": null
+    }
+  },
+  "libertarian": {
+    "word": "libertarian",
+    "phonetic": "/ˌlɪbərˈteəriən/",
+    "pos": "n./adj.",
+    "def_cn": "自由至上主义者；自由至上主义的",
+    "contexts": [
+      {
+        "source_id": "ep03",
+        "source_title": "第 03 集：自由选择权 / 谁拥有我的身体与劳动？",
+        "sentence": "That's all to do with the question of collective goods and the libertarian's injunction against paternalism.",
+        "trans": "这全都涉及集体物品的问题，以及自由至上主义者反对家长式作风的告诫。",
+        "audio_url": ""
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "learning",
+      "last_rating": "new",
+      "last_reviewed_at": null
+    }
+  },
+  "paternalist": {
+    "word": "paternalist",
+    "phonetic": "/pəˈtɜːnəlɪst/",
+    "pos": "adj./n.",
+    "def_cn": "家长式统治的；家长主义者",
+    "contexts": [
+      {
+        "source_id": "ep03",
+        "source_title": "第 03 集：自由选择权 / 谁拥有我的身体与劳动？",
+        "sentence": "One of them is paternalist legislation. That's passing laws that protect people from themselves.",
+        "trans": "其中之一就是家长式立法。也就是通过法律来保护人们免受自己的伤害。",
+        "audio_url": ""
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "learning",
+      "last_rating": "new",
+      "last_reviewed_at": null
+    }
+  },
+  "proprietors": {
+    "word": "proprietors",
+    "phonetic": "/prəˈpraɪətəz/",
+    "pos": "n.",
+    "def_cn": "所有者；业主",
+    "contexts": [
+      {
+        "source_id": "ep03",
+        "source_title": "第 03 集：自由选择权 / 谁拥有我的身体与劳动？",
+        "sentence": "If you want to take rights seriously, if you don't want to just regard people as collections of preferences, the fundamental moral idea to which you will be led is the idea that we are the owners or the proprietors of our own person.",
+        "trans": "如果你想认真对待权利，如果你不想仅仅把人看作偏好的集合，那么你将被引向的根本道德观念就是：我们是我们自身人身的所有者或拥有者。",
+        "audio_url": ""
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "learning",
+      "last_rating": "new",
+      "last_reviewed_at": null
+    }
+  },
+  "acquisition": {
+    "word": "acquisition",
+    "phonetic": "/ˌækwɪˈzɪʃn/",
+    "pos": "n.",
+    "def_cn": "获取；获得",
+    "contexts": [
+      {
+        "source_id": "ep03",
+        "source_title": "第 03 集：自由选择权 / 谁拥有我的身体与劳动？",
+        "sentence": "The first he calls justice in acquisition or in initial holdings.",
+        "trans": "第一条他称之为获取正义，或初始持有的正义。",
+        "audio_url": ""
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "learning",
+      "last_rating": "new",
+      "last_reviewed_at": null
+    }
+  },
+  "violation": {
+    "word": "violation",
+    "phonetic": "/ˌvaɪəˈleɪʃn/",
+    "pos": "n.",
+    "def_cn": "违反；侵犯",
+    "contexts": [
+      {
+        "source_id": "ep03",
+        "source_title": "第 03 集：自由选择权 / 谁拥有我的身体与劳动？",
+        "sentence": "Libertarians say that's also a violation of the right to liberty.",
+        "trans": "自由至上主义者说，那也侵犯了自由权。",
+        "audio_url": ""
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "learning",
+      "last_rating": "new",
+      "last_reviewed_at": null
+    }
+  },
+  "legislation": {
+    "word": "legislation",
+    "phonetic": "/ˌledʒɪsˈleɪʃn/",
+    "pos": "n.",
+    "def_cn": "立法；法规",
+    "contexts": [
+      {
+        "source_id": "ep03",
+        "source_title": "第 03 集：自由选择权 / 谁拥有我的身体与劳动？",
+        "sentence": "One of them is paternalist legislation. That's passing laws that protect people from themselves.",
+        "trans": "其中之一就是家长式立法。也就是通过法律来保护人们免受自己的伤害。",
+        "audio_url": ""
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "learning",
+      "last_rating": "new",
+      "last_reviewed_at": null
+    }
+  },
+  "theft": {
+    "word": "theft",
+    "phonetic": "/θeft/",
+    "pos": "n.",
+    "def_cn": "盗窃；偷窃",
+    "contexts": [
+      {
+        "source_id": "ep03",
+        "source_title": "第 03 集：自由选择权 / 谁拥有我的身体与劳动？",
+        "sentence": "What it amounts to is theft by the state or by the majority, if we're talking about a democracy, from people who happen to do very well and earn a lot of money.",
+        "trans": "这实际上就是国家或多数人——如果我们谈的是民主制的话——对碰巧干得非常好、赚了很多钱的人的一种盗窃。",
+        "audio_url": ""
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "learning",
+      "last_rating": "new",
+      "last_reviewed_at": null
+    }
+  },
+  "extrapolated": {
+    "word": "extrapolated",
+    "phonetic": "/ɪkˈstræpəleɪtɪd/",
+    "pos": "v.",
+    "def_cn": "推断；外推",
+    "contexts": [
+      {
+        "source_id": "ep03",
+        "source_title": "第 03 集：自由选择权 / 谁拥有我的身体与劳动？",
+        "sentence": "If you look at the argument the poor need the money more, at no point in that argument you contradict the fact that we extrapolated from agreed upon principles that people own themselves.",
+        "trans": "如果你看看“穷人更需要这笔钱”这个论点，这个论点从头到尾都没有反驳这样一个事实：我们从公认的原则中推断出，人拥有自身。",
+        "audio_url": ""
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "learning",
+      "last_rating": "new",
+      "last_reviewed_at": null
+    }
+  },
+  "hustings": {
+    "word": "hustings",
+    "phonetic": "/ˈhʌstɪŋz/",
+    "pos": "n.",
+    "def_cn": "竞选活动；演说场所",
+    "contexts": [
+      {
+        "source_id": "ep03",
+        "source_title": "第 03 集：自由选择权 / 谁拥有我的身体与劳动？",
+        "sentence": "Why can't you, we live in a democratic society with freedom of speech, why can't you take to the hustings, persuade your fellow citizens that taxation is unjust and try to get a majority?",
+        "trans": "为什么你不能——我们生活在一个有言论自由的民主社会里，为什么你不能登上竞选讲台，说服你的同胞公民税收是不公正的，并争取赢得多数支持呢？",
+        "audio_url": ""
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "learning",
+      "last_rating": "new",
+      "last_reviewed_at": null
+    }
+  },
+  "mob": {
+    "word": "mob",
+    "phonetic": "/mɒb/",
+    "pos": "n.",
+    "def_cn": "暴民；乌合之众",
+    "contexts": [
+      {
+        "source_id": "ep03",
+        "source_title": "第 03 集：自由选择权 / 谁拥有我的身体与劳动？",
+        "sentence": "Exactly, but in a democracy, aren't you for democracy? Yes, I'm for democracy, but hang on, democracy and mob rule are not the same thing. Mob rule? Mob rule. But in an open society, you have recourse.",
+        "trans": "没错，但在一个民主国家里，难道你不支持民主吗？是的，我支持民主，但等等，民主和暴民统治不是一回事。暴民统治？暴民统治。但在一个开放社会里，你有救济的途径。",
+        "audio_url": ""
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "learning",
+      "last_rating": "new",
+      "last_reviewed_at": null
+    }
+  },
+  "constitution": {
+    "word": "constitution",
+    "phonetic": "/ˌkɒnstɪˈtjuːʃn/",
+    "pos": "n.",
+    "def_cn": "宪法",
+    "contexts": [
+      {
+        "source_id": "ep03",
+        "source_title": "第 03 集：自由选择权 / 谁拥有我的身体与劳动？",
+        "sentence": "No, I just believe in a very limited form of democracy whereby we have a constitution that severely limits the scope of what decisions can be made democratically.",
+        "trans": "不，我只是信奉一种非常有限的民主形式，即我们有一部宪法，严格限制哪些决定可以通过民主方式作出。",
+        "audio_url": ""
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "learning",
+      "last_rating": "new",
+      "last_reviewed_at": null
+    }
+  },
+  "incentive": {
+    "word": "incentive",
+    "phonetic": "/ɪnˈsentɪv/",
+    "pos": "n.",
+    "def_cn": "激励；动机",
+    "contexts": [
+      {
+        "source_id": "ep03",
+        "source_title": "第 03 集：自由选择权 / 谁拥有我的身体与劳动？",
+        "sentence": "He replied, once we verified there was no danger to a member's property, we had no choice but to back off according to our rules. If we responded to all fires, he said, there would be no incentive to subscribe.",
+        "trans": "他回答说，一旦我们确认没有会员的财产面临危险，按照我们的规定，我们就别无选择，只能撤退。他说，如果我们对所有火灾都出警，那就没有付费订阅的动机了。",
+        "audio_url": ""
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "learning",
+      "last_rating": "new",
+      "last_reviewed_at": null
+    }
+  },
+  "displaced": {
+    "word": "displaced",
+    "phonetic": "/dɪsˈpleɪst/",
+    "pos": "adj.",
+    "def_cn": "流离失所的；被迫离开的",
+    "contexts": [
+      {
+        "source_id": "ep03",
+        "source_title": "第 03 集：自由选择权 / 谁拥有我的身体与劳动？",
+        "sentence": "And that's also why it's wrong to tax the rich to help the poor, even for good causes, even to help those who are displaced by the hurricane Katrina.",
+        "trans": "这也是为什么向富人征税来帮助穷人是不对的，即便出于好的目的，即便为了帮助那些因卡特里娜飓风而流离失所的人。",
+        "audio_url": ""
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "learning",
+      "last_rating": "new",
+      "last_reviewed_at": null
+    }
+  },
+  "hurricane": {
+    "word": "hurricane",
+    "phonetic": "/ˈhʌrɪkən/",
+    "pos": "n.",
+    "def_cn": "飓风",
+    "contexts": [
+      {
+        "source_id": "ep03",
+        "source_title": "第 03 集：自由选择权 / 谁拥有我的身体与劳动？",
+        "sentence": "And that's also why it's wrong to tax the rich to help the poor, even for good causes, even to help those who are displaced by the hurricane Katrina.",
+        "trans": "这也是为什么向富人征税来帮助穷人是不对的，即便出于好的目的，即便为了帮助那些因卡特里娜飓风而流离失所的人。",
+        "audio_url": ""
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "learning",
+      "last_rating": "new",
+      "last_reviewed_at": null
+    }
+  },
+  "violates": {
+    "word": "violates",
+    "phonetic": "/ˈvaɪəleɪts/",
+    "pos": "v.",
+    "def_cn": "违反；侵犯",
+    "contexts": [
+      {
+        "source_id": "ep03",
+        "source_title": "第 03 集：自由选择权 / 谁拥有我的身体与劳动？",
+        "sentence": "But that violates the fundamental principle that we belong to ourselves.",
+        "trans": "但这违反了那条基本原则：我们属于我们自己。",
+        "audio_url": ""
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "learning",
+      "last_rating": "new",
+      "last_reviewed_at": null
+    }
+  },
+  "justified": {
+    "word": "justified",
+    "phonetic": "/ˈdʒʌstɪfaɪd/",
+    "pos": "adj.",
+    "def_cn": "正当的；合理的",
+    "contexts": [
+      {
+        "source_id": "ep03",
+        "source_title": "第 03 集：自由选择权 / 谁拥有我的身体与劳动？",
+        "sentence": "He's more demanding than Joe. Joe says it is theft, maybe in an extreme case it's justified.",
+        "trans": "他比乔要求更严格。乔说这是盗窃，也许在极端情况下是正当的。",
+        "audio_url": ""
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "learning",
+      "last_rating": "new",
+      "last_reviewed_at": null
+    }
+  },
+  "morally": {
+    "word": "morally",
+    "phonetic": "/ˈmɒrəli/",
+    "pos": "adv.",
+    "def_cn": "道德上；从道德角度",
+    "contexts": [
+      {
+        "source_id": "ep03",
+        "source_title": "第 03 集：自由选择权 / 谁拥有我的身体与劳动？",
+        "sentence": "But if the state has the right to take my earnings or the fruits of my labor, isn't that morally the same as according to the state the right to claim a portion of my labor?",
+        "trans": "但如果国家有权拿走我的收入或我的劳动成果，这在道德上不就等同于赋予国家索取我一部分劳动的权利吗？",
+        "audio_url": ""
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "learning",
+      "last_rating": "new",
+      "last_reviewed_at": null
+    }
+  },
+  "equivalent": {
+    "word": "equivalent",
+    "phonetic": "/ɪˈkwɪvələnt/",
+    "pos": "adj.",
+    "def_cn": "相等的；等价的",
+    "contexts": [
+      {
+        "source_id": "ep03",
+        "source_title": "第 03 集：自由选择权 / 谁拥有我的身体与劳动？",
+        "sentence": "So taxation actually is morally equivalent to forced labor.",
+        "trans": "所以税收实际上在道德上就等同于强制劳动。",
+        "audio_url": ""
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "learning",
+      "last_rating": "new",
+      "last_reviewed_at": null
+    }
+  },
+  "slavery": {
+    "word": "slavery",
+    "phonetic": "/ˈsleɪvəri/",
+    "pos": "n.",
+    "def_cn": "奴隶制；奴役",
+    "contexts": [
+      {
+        "source_id": "ep03",
+        "source_title": "第 03 集：自由选择权 / 谁拥有我的身体与劳动？",
+        "sentence": "And what is forced labor? Forced labor, Nozick points out, it's what? It's slavery.",
+        "trans": "那么什么是强制劳动？诺齐克指出，强制劳动是什么？就是奴隶制。",
+        "audio_url": ""
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "learning",
+      "last_rating": "new",
+      "last_reviewed_at": null
+    }
+  },
+  "labor": {
+    "word": "labor",
+    "phonetic": "/ˈleɪbə/",
+    "pos": "n.",
+    "def_cn": "劳动；劳动力",
+    "contexts": [
+      {
+        "source_id": "ep03",
+        "source_title": "第 03 集：自由选择权 / 谁拥有我的身体与劳动？",
+        "sentence": "So taxation actually is morally equivalent to forced labor.",
+        "trans": "所以税收实际上在道德上就等同于强制劳动。",
+        "audio_url": ""
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "learning",
+      "last_rating": "new",
+      "last_reviewed_at": null
+    }
+  },
+  "earnings": {
+    "word": "earnings",
+    "phonetic": "/ˈɜːnɪŋz/",
+    "pos": "n.",
+    "def_cn": "收入；工资",
+    "contexts": [
+      {
+        "source_id": "ep03",
+        "source_title": "第 03 集：自由选择权 / 谁拥有我的身体与劳动？",
+        "sentence": "Nozick says, if you think about it, taxation amounts to the taking of earnings.",
+        "trans": "诺齐克说，你想想看，税收就等于是拿走收入。",
+        "audio_url": ""
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "learning",
+      "last_rating": "new",
+      "last_reviewed_at": null
+    }
+  },
+  "rights": {
+    "word": "rights",
+    "phonetic": "/raɪts/",
+    "pos": "n.",
+    "def_cn": "权利",
+    "contexts": [
+      {
+        "source_id": "ep03",
+        "source_title": "第 03 集：自由选择权 / 谁拥有我的身体与劳动？",
+        "sentence": "In the case of justice and rights, if we suspected that Mill is implicitly leaning on notions of human dignity or respect for persons that are not, strictly speaking, utilitarian.",
+        "trans": "在正义和权利的问题上，如果我们怀疑密尔实际上暗中依赖的是严格说来并非功利主义的人类尊严观念或对人的尊重。",
+        "audio_url": ""
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "learning",
+      "last_rating": "new",
+      "last_reviewed_at": null
+    }
+  },
+  "justice": {
+    "word": "justice",
+    "phonetic": "/ˈdʒʌstɪs/",
+    "pos": "n.",
+    "def_cn": "正义；公正",
+    "contexts": [
+      {
+        "source_id": "ep03",
+        "source_title": "第 03 集：自由选择权 / 谁拥有我的身体与劳动？",
+        "sentence": "Why is justice the chief part and the most binding part of our morality? Well he says because in the long run. If we do justice and if we respect rights, society as a whole will be better off in the long run.",
+        "trans": "为什么正义是我们道德中最主要、最具约束力的部分？他说，因为从长远来看，如果我们行正义、尊重权利，整个社会最终会变得更好。",
+        "audio_url": ""
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "learning",
+      "last_rating": "new",
+      "last_reviewed_at": null
+    }
+  },
+  "morality": {
+    "word": "morality",
+    "phonetic": "/məˈræləti/",
+    "pos": "n.",
+    "def_cn": "道德；道德准则",
+    "contexts": [
+      {
+        "source_id": "ep03",
+        "source_title": "第 03 集：自由选择权 / 谁拥有我的身体与劳动？",
+        "sentence": "He wants to say that individual rights are worthy of special respect. In fact he goes so far as to say that justice is the most sacred part and the most incomparably binding part of morality.",
+        "trans": "他想说的是，个人权利值得特别尊重。事实上，他甚至说正义是道德中最神圣、最具约束力的部分，其约束力无与伦比。",
+        "audio_url": ""
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "learning",
+      "last_rating": "new",
+      "last_reviewed_at": null
+    }
+  },
+  "individual": {
+    "word": "individual",
+    "phonetic": "/ˌɪndɪˈvɪdʒuəl/",
+    "pos": "n./adj.",
+    "def_cn": "个人；个体的",
+    "contexts": [
+      {
+        "source_id": "ep03",
+        "source_title": "第 03 集：自由选择权 / 谁拥有我的身体与劳动？",
+        "sentence": "Come back to that first point that he made about the property rights of the individual.",
+        "trans": "回到他提出的关于个人财产权的第一点。",
+        "audio_url": ""
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "learning",
+      "last_rating": "new",
+      "last_reviewed_at": null
+    }
+  },
+  "principles": {
+    "word": "principles",
+    "phonetic": "/ˈprɪnsəplz/",
+    "pos": "n.",
+    "def_cn": "原则；原理",
+    "contexts": [
+      {
+        "source_id": "ep03",
+        "source_title": "第 03 集：自由选择权 / 谁拥有我的身体与劳动？",
+        "sentence": "You can't just look at the end state or the result; you have to look at two principles.",
+        "trans": "你不能只看最终状态或结果；你必须考察两个原则。",
+        "audio_url": ""
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "learning",
+      "last_rating": "new",
+      "last_reviewed_at": null
+    }
+  },
+  "distribution": {
+    "word": "distribution",
+    "phonetic": "/ˌdɪstrɪˈbjuːʃn/",
+    "pos": "n.",
+    "def_cn": "分配；分布",
+    "contexts": [
+      {
+        "source_id": "ep03",
+        "source_title": "第 03 集：自由选择权 / 谁拥有我的身体与劳动？",
+        "sentence": "And just to make a concrete and to see what's at stake, consider the distribution of wealth in the United States.",
+        "trans": "为了举个具体的例子，看看这到底关乎什么，我们来考虑一下美国的财富分配。",
+        "audio_url": ""
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "learning",
+      "last_rating": "new",
+      "last_reviewed_at": null
+    }
+  },
+  "wealth": {
+    "word": "wealth",
+    "phonetic": "/welθ/",
+    "pos": "n.",
+    "def_cn": "财富",
+    "contexts": [
+      {
+        "source_id": "ep03",
+        "source_title": "第 03 集：自由选择权 / 谁拥有我的身体与劳动？",
+        "sentence": "And just to make a concrete and to see what's at stake, consider the distribution of wealth in the United States.",
+        "trans": "为了举个具体的例子，看看这到底关乎什么，我们来考虑一下美国的财富分配。",
+        "audio_url": ""
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "learning",
+      "last_rating": "new",
+      "last_reviewed_at": null
+    }
+  },
+  "income": {
+    "word": "income",
+    "phonetic": "/ˈɪnkʌm/",
+    "pos": "n.",
+    "def_cn": "收入",
+    "contexts": [
+      {
+        "source_id": "ep03",
+        "source_title": "第 03 集：自由选择权 / 谁拥有我的身体与劳动？",
+        "sentence": "And the third kind of law or policy it is ruled out on the libertarian philosophy is any taxation Or other policy that serves the purpose of redistributing income or wealth from the rich to the poor.",
+        "trans": "而自由至上主义哲学所排除的第三种法律或政策，就是任何以把收入和财富从富人再分配给穷人为目的的征税或其他政策。",
+        "audio_url": ""
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "learning",
+      "last_rating": "new",
+      "last_reviewed_at": null
+    }
+  },
+  "tax": {
+    "word": "tax",
+    "phonetic": "/tæks/",
+    "pos": "v./n.",
+    "def_cn": "征税；税",
+    "contexts": [
+      {
+        "source_id": "ep03",
+        "source_title": "第 03 集：自由选择权 / 谁拥有我的身体与劳动？",
+        "sentence": "Now most of you would say someone that wealthy, surely we can tax them.",
+        "trans": "现在你们大多数人会说，这么富有的人，我们当然可以对他征税。",
+        "audio_url": ""
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "learning",
+      "last_rating": "new",
+      "last_reviewed_at": null
+    }
+  },
+  "unjust": {
+    "word": "unjust",
+    "phonetic": "/ˌʌnˈdʒʌst/",
+    "pos": "adj.",
+    "def_cn": "不公正的；非正义的",
+    "contexts": [
+      {
+        "source_id": "ep03",
+        "source_title": "第 03 集：自由选择权 / 谁拥有我的身体与劳动？",
+        "sentence": "Well, there are three things that most modern states do that on the libertarian theory of rights are illegitimate, are unjust.",
+        "trans": "那么，有三件事是大多数现代国家都在做的，而在自由至上主义的权利理论看来，它们是不正当的，是不公正的。",
+        "audio_url": ""
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "learning",
+      "last_rating": "new",
+      "last_reviewed_at": null
+    }
+  },
+  "injustice": {
+    "word": "injustice",
+    "phonetic": "/ɪnˈdʒʌstɪs/",
+    "pos": "n.",
+    "def_cn": "不公正；非正义",
+    "contexts": [
+      {
+        "source_id": "ep03",
+        "source_title": "第 03 集：自由选择权 / 谁拥有我的身体与劳动？",
+        "sentence": "Now I think in certain circumstances, it becomes necessary to overlook injustice and perhaps condone that injustice, as in the case of the cabin boy being killed.",
+        "trans": "现在我认为在某些情况下，有必要忽视不公正，或许还要宽恕这种不公正，就像船上侍者被杀一案那样。",
+        "audio_url": ""
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "learning",
+      "last_rating": "new",
+      "last_reviewed_at": null
+    }
+  },
+  "violating": {
+    "word": "violating",
+    "phonetic": "/ˈvaɪəleɪtɪŋ/",
+    "pos": "v.",
+    "def_cn": "违反；侵犯",
+    "contexts": [
+      {
+        "source_id": "ep03",
+        "source_title": "第 03 集：自由选择权 / 谁拥有我的身体与劳动？",
+        "sentence": "Well, what about that? What if we have a case where making an exception and violating individual rights actually will make people better off in the long run? Is it all right then to use people?",
+        "trans": "那么，这又怎么说呢？如果我们遇到这样一种情况：破例侵犯个人权利实际上从长远来看会让人们过得更好，那该怎么办？那时候利用人就可以了吗？",
+        "audio_url": ""
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "learning",
+      "last_rating": "new",
+      "last_reviewed_at": null
+    }
+  },
+  "objections": {
+    "word": "objections",
+    "phonetic": "/əbˈdʒekʃnz/",
+    "pos": "n.",
+    "def_cn": "反对意见；异议",
+    "contexts": [
+      {
+        "source_id": "ep03",
+        "source_title": "第 03 集：自由选择权 / 谁拥有我的身体与劳动？",
+        "sentence": "Fully to examine these two worries or objections to Mill's defense, we need to, we need to push further.",
+        "trans": "要充分审视针对密尔辩护的这两种担忧或反对意见，我们需要，需要再深入一步。",
+        "audio_url": ""
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "learning",
+      "last_rating": "new",
+      "last_reviewed_at": null
+    }
+  },
+  "reasoning": {
+    "word": "reasoning",
+    "phonetic": "/ˈriːzənɪŋ/",
+    "pos": "n.",
+    "def_cn": "推理；论证",
+    "contexts": [
+      {
+        "source_id": "ep03",
+        "source_title": "第 03 集：自由选择权 / 谁拥有我的身体与劳动？",
+        "sentence": "So what this line of reasoning brings us to is the fundamental principle that underlies the libertarian case for rights.",
+        "trans": "所以这一推理思路把我们引向了一个根本原则，它构成了自由至上主义权利主张的基础。",
+        "audio_url": ""
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "learning",
+      "last_rating": "new",
+      "last_reviewed_at": null
+    }
+  },
+  "argument": {
+    "word": "argument",
+    "phonetic": "/ˈɑːɡjumənt/",
+    "pos": "n.",
+    "def_cn": "论点；论证",
+    "contexts": [
+      {
+        "source_id": "ep03",
+        "source_title": "第 03 集：自由选择权 / 谁拥有我的身体与劳动？",
+        "sentence": "Now, how many agree with that argument, agree with the libertarian argument that redistribution for the sake of trying to help the poor is wrong?",
+        "trans": "那么，有多少人同意这个论点，同意自由至上主义关于为了帮助穷人而进行再分配是错误的这一论点？",
         "audio_url": ""
       }
     ],
