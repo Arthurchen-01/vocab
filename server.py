@@ -310,6 +310,14 @@ def get_vocab_bank_data(username=""):
             "phonetic": w_info.get("phonetic", ""),
             "pos": w_info.get("pos", ""),
             "def_cn": w_info.get("def_cn", ""),
+            "def_en": w_info.get("def_en", ""),
+            # Which episodes actually teach this word, derived from the decks.
+            # The UI must filter on this rather than guessing from
+            # contexts[].source_id: a word kept from a since-rebuilt deck still
+            # carries its historical context, which made the bank look like it
+            # held words the episode decks did not.
+            "taught_in": w_info.get("taught_in", []),
+            "bank_only": bool(w_info.get("bank_only")),
             "contexts": contexts,
             "review_count": rev_count,
             "total_seconds": total_sec,
@@ -334,8 +342,121 @@ def get_vocab_bank_data(username=""):
         }
     }
 
+
+# ---------------------------------------------------------------------------
+# Export rendering. Pure functions: no socket, no handler state, so the whole
+# matrix of formats can be verified offline (tools/quality_pipeline/
+# export_conformance.py) instead of by clicking buttons in a browser.
+# ---------------------------------------------------------------------------
+def _export_words(words):
+    """Normalise the incoming JS objects into the shape the renderers expect."""
+    out = []
+    for w in words or []:
+        if not isinstance(w, dict):
+            continue
+        item = dict(w)
+        item.setdefault("word", "")
+        item.setdefault("phonetic", "")
+        item.setdefault("pos", "")
+        item.setdefault("def_cn", "")
+        item.setdefault("def_en", "")
+        if not item.get("sentence") and item.get("contexts"):
+            first = item["contexts"][0] or {}
+            item["sentence"] = first.get("sentence", "")
+            item["trans"] = first.get("trans", "")
+        item.setdefault("sentence", "")
+        item.setdefault("trans", "")
+        out.append(item)
+    return out
+
+
+def build_export_payload(fmt, words, title):
+    """Render one export. Returns (bytes, download_filename, mimetype)."""
+    words = _export_words(words)
+    if not words:
+        raise ValueError("待导出的词汇列表为空")
+
+    if fmt == "docx":
+        content = build_docx_bytes(
+            title="哈佛大学《公正课》(Justice) 听说精读手册",
+            subtitle=f"{title} · Michael Sandel 教授公开课 · 精编核心词汇表",
+            words=words,
+        )
+        return (content, f"{title}_Study_Guide.docx",
+                "application/vnd.openxmlformats-officedocument.wordprocessingml.document")
+
+    if fmt == "study_guide_md":
+        lines = [
+            f"# 🏛️ {title} 听说精读词表手册\n\n",
+            "> 哈佛大学《Justice》公开课 · Michael Sandel 教授\n\n",
+            "| 序号 | 单词 | 音标 | 词性与中文释义 | 英英释义 | 课堂原声例句 | 中文翻译 |\n",
+            "| :---: | :--- | :--- | :--- | :--- | :--- | :--- |\n"
+        ]
+        for i, w in enumerate(words, 1):
+            en = (w.get("def_en") or "").replace("|", "\\|")
+            lines.append(
+                f"| {i} | **{w['word']}** | `{w.get('phonetic','')}` | "
+                f"{w.get('pos','')} {w.get('def_cn','')} | {en} | "
+                f"{w.get('sentence','')} | {w.get('trans','')} |\n")
+        return ("".join(lines).encode("utf-8"), f"{title}_Study_Guide.md",
+                "text/markdown; charset=utf-8")
+
+    if fmt == "anki_csv":
+        output = io.StringIO()
+        writer = csv.writer(output)
+        writer.writerow(["Front", "Back", "Word", "Phonetic", "Definition",
+                         "EnglishDefinition", "Example", "Translation"])
+        for w in words:
+            word = w["word"]
+            cloze = re.sub(re.escape(word), "_______", w.get("sentence", ""),
+                           flags=re.IGNORECASE)
+            front = (f"<div style='font-family:sans-serif; text-align:center; padding:20px;'>"
+                     f"<h1 style='font-size:28px; color:#1e293b; margin-bottom:15px;'>{word}</h1>"
+                     f"<div style='background:#f1f5f9; padding:15px; border-radius:10px; "
+                     f"font-size:16px; color:#475569; text-align:left; font-family:serif;'>"
+                     f"{cloze}</div></div>")
+            en_block = (f"<div style='font-size:14px; color:#334155; margin-bottom:12px;'>"
+                        f"{w.get('def_en','')}</div>" if w.get("def_en") else "")
+            back = (f"<div style='font-family:sans-serif; padding:20px;'>"
+                    f"<h1 style='font-size:26px; color:#b91c1c; margin-bottom:4px;'>{word}</h1>"
+                    f"<p style='color:#64748b; font-size:14px; margin-bottom:12px;'>"
+                    f"{w.get('phonetic','')} · {w.get('pos','')}</p>"
+                    f"<div style='background:#fef2f2; border-left:4px solid #b91c1c; "
+                    f"padding:10px 15px; font-size:16px; font-weight:bold; color:#991b1b; "
+                    f"margin-bottom:8px;'>{w.get('def_cn','')}</div>{en_block}"
+                    f"<div style='background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; "
+                    f"padding:12px;'><p style='font-family:serif; font-size:15px; color:#334155; "
+                    f"margin-bottom:6px;'><b>课堂原句：</b><br>{w.get('sentence','')}</p>"
+                    f"<p style='font-size:13px; color:#64748b; margin:0;'>"
+                    f"<i>{w.get('trans','')}</i></p></div></div>")
+            writer.writerow([front, back, word, w.get("phonetic", ""),
+                             f"{w.get('pos','')} {w.get('def_cn','')}",
+                             w.get("def_en", ""), w.get("sentence", ""),
+                             w.get("trans", "")])
+        return (output.getvalue().encode("utf-8"), f"{title}_Anki.csv",
+                "text/csv; charset=utf-8")
+
+    if fmt == "eudic_quizlet":
+        lines = []
+        for w in words:
+            gloss = f"{w.get('pos','')} {w.get('def_cn','')}".strip()
+            if w.get("def_en"):
+                gloss = f"{gloss}\\n{w['def_en']}"
+            lines.append(f"{w['word']}\t{w.get('phonetic','')} {gloss}\t"
+                         f"{w.get('sentence','')} ({w.get('trans','')})")
+        return ("\n".join(lines).encode("utf-8"), f"{title}_Eudic_Quizlet.txt",
+                "text/plain; charset=utf-8")
+
+    if fmt == "words_only":
+        return ("\n".join(w["word"] for w in words).encode("utf-8"),
+                f"{title}_Words_Only.txt", "text/plain; charset=utf-8")
+
+    raise ValueError(f"未知的导出格式: {fmt}")
+
+
 class RequestHandler(http.server.SimpleHTTPRequestHandler):
     def __init__(self, *args, **kwargs):
+        self._response_started = False
         super().__init__(*args, directory=PUBLIC_DIR, **kwargs)
 
     def send_error_json(self, code, message):
@@ -346,6 +467,40 @@ class RequestHandler(http.server.SimpleHTTPRequestHandler):
         self.send_header("Access-Control-Allow-Origin", "*")
         self.end_headers()
         self.wfile.write(body)
+        self._response_started = True
+
+    def send_bytes(self, code, body, content_type, download_name=None,
+                   cache_control="no-store"):
+        """Send a complete, fully-validated response.
+
+        `http.server` encodes header lines as latin-1. A non-ASCII header value
+        therefore raises UnicodeEncodeError *after* send_response() has already
+        buffered the status line; the old export handler caught that and appended
+        a 500 to the same buffer, so the client read "HTTP/1.0 200 OK" and saved
+        an 84-byte error message as a .docx/.csv (ticket: 导出合集是 nothing).
+
+        Every header is validated before anything is written, so a failure can
+        still be reported honestly.
+        """
+        headers = [("Content-Type", content_type),
+                   ("Content-Length", str(len(body))),
+                   ("Cache-Control", cache_control),
+                   ("Access-Control-Allow-Origin", "*")]
+        if download_name:
+            headers.append(("Content-Disposition",
+                            build_content_disposition(download_name)))
+        for key, value in headers:
+            try:
+                ("%s: %s" % (key, value)).encode("latin-1")
+            except UnicodeEncodeError:
+                raise ValueError("header %s is not ASCII-safe: %r" % (key, value))
+        self.send_response(code)
+        for key, value in headers:
+            self.send_header(key, value)
+        self.end_headers()
+        self._response_started = True
+        if body:
+            self.wfile.write(body)
 
     def do_HEAD(self):
         """HEAD support for API + docs routes.
@@ -1141,10 +1296,13 @@ class RequestHandler(http.server.SimpleHTTPRequestHandler):
                 '    "phonetic": "/ˌdʒʊrɪsˈpruːdns/",'
                 '    "pos": "n.",'
                 '    "def_cn": "法理学，法律哲学",'
+                '    "def_en": "the branch of law concerned with the principles behind legal rules",'
                 '    "sentence": "In jurisprudence, the defense of necessity demands rigorous moral deliberation.",'
                 '    "trans": "在法理学中，紧急避险的抗辩需要严格的道德审议。"'
                 "  }"
                 "]"
+                "注意：def_en 是面向中国大学生的英英释义，只写英文，6-22 个单词，"
+                "贴合该词在例句中的词义，不要照抄例句。"
             )
 
             headers = {
@@ -1219,6 +1377,7 @@ class RequestHandler(http.server.SimpleHTTPRequestHandler):
                         "phonetic": w.get("phonetic", ""),
                         "pos": w.get("pos", ""),
                         "def_cn": w.get("def_cn", ""),
+                        "def_en": w.get("def_en", ""),
                         "contexts": [new_ctx],
                         "stats": {
                             "review_count": 0,
@@ -1257,79 +1416,18 @@ class RequestHandler(http.server.SimpleHTTPRequestHandler):
             fmt = req.get("format", "words_only")
             words = req.get("words", [])
             title = req.get("title", "Harvard_Justice_Vocabulary")
+            if not isinstance(words, list):
+                raise ValueError("words 必须是数组")
+            if not isinstance(title, str) or not title.strip():
+                title = "Harvard_Justice_Vocabulary"
+            # A long/odd title must never be able to break the response headers.
+            title = re.sub(r"[\r\n]+", " ", title).strip()[:120]
 
-            # 1. Word Mode (.docx)
-            if fmt == "docx":
-                docx_bytes = build_docx_bytes(
-                    title=f"哈佛大学《公正课》(Justice) 听说精读手册",
-                    subtitle=f"{title} · Michael Sandel 教授公开课 · 精编核心词汇表",
-                    words=words
-                )
-                filename = f"{title}_Study_Guide.docx"
-                mimetype = "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
-                self.send_response(200)
-                self.send_header("Content-Type", mimetype)
-                self.send_header("Content-Disposition", build_content_disposition(filename))
-                self.send_header("Content-Length", str(len(docx_bytes)))
-                self.end_headers()
-                self.wfile.write(docx_bytes)
-                return
-
-            # 2. Markdown Mode (.md)
-            elif fmt == "study_guide_md":
-                lines = [
-                    f"# 🏛️ {title} 听说精读词表手册\n\n",
-                    "> 哈佛大学《Justice》公开课 · Michael Sandel 教授\n\n",
-                    "| 序号 | 单词 | 音标 | 词性及释义 | 课堂原声例句 | 中文释义 |\n",
-                    "| :---: | :--- | :--- | :--- | :--- | :--- |\n"
-                ]
-                for i, w in enumerate(words, 1):
-                    lines.append(f"| {i} | **{w['word']}** | `{w.get('phonetic','')}` | {w.get('pos','')} {w.get('def_cn','')} | {w.get('sentence','')} | {w.get('trans','')} |\n")
-                content = "".join(lines)
-                filename = f"{title}_Study_Guide.md"
-                mimetype = "text/markdown; charset=utf-8"
-
-            # 3. Anki CSV (.csv)
-            elif fmt == "anki_csv":
-                output = io.StringIO()
-                writer = csv.writer(output)
-                writer.writerow(["Front", "Back", "Word", "Phonetic", "Definition", "Example", "Translation"])
-                for w in words:
-                    word = w["word"]
-                    cloze = re.sub(re.escape(word), "_______", w.get("sentence", ""), flags=re.IGNORECASE)
-                    front = f"<div style='font-family:sans-serif; text-align:center; padding:20px;'><h1 style='font-size:28px; color:#1e293b; margin-bottom:15px;'>{word}</h1><div style='background:#f1f5f9; padding:15px; border-radius:10px; font-size:16px; color:#475569; text-align:left; font-family:serif;'>{cloze}</div></div>"
-                    back = f"<div style='font-family:sans-serif; padding:20px;'><h1 style='font-size:26px; color:#b91c1c; margin-bottom:4px;'>{word}</h1><p style='color:#64748b; font-size:14px; margin-bottom:12px;'>{w.get('phonetic','')} · {w.get('pos','')}</p><div style='background:#fef2f2; border-left:4px solid #b91c1c; padding:10px 15px; font-size:16px; font-weight:bold; color:#991b1b; margin-bottom:16px;'>{w.get('def_cn','')}</div><div style='background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:12px;'><p style='font-family:serif; font-size:15px; color:#334155; margin-bottom:6px;'><b>课堂原句：</b><br>{w.get('sentence','')}</p><p style='font-size:13px; color:#64748b; margin:0;'><i>{w.get('trans','')}</i></p></div></div>"
-                    writer.writerow([front, back, word, w.get("phonetic",""), f"{w.get('pos','')} {w.get('def_cn','')}", w.get("sentence",""), w.get("trans","")])
-                content = output.getvalue()
-                filename = f"{title}_Anki.csv"
-                mimetype = "text/csv; charset=utf-8"
-
-            # 4. Eudic & Quizlet (.txt)
-            elif fmt == "eudic_quizlet":
-                lines = []
-                for w in words:
-                    lines.append(f"{w['word']}\t{w.get('phonetic','')} {w.get('pos','')} {w.get('def_cn','')}\t{w.get('sentence','')} ({w.get('trans','')})")
-                content = "\n".join(lines)
-                filename = f"{title}_Eudic_Quizlet.txt"
-                mimetype = "text/plain; charset=utf-8"
-
-            # 5. Pure Word List (.txt)
-            else:
-                content = "\n".join([w["word"] for w in words])
-                filename = f"{title}_Words_Only.txt"
-                mimetype = "text/plain; charset=utf-8"
-
-            self.send_response(200)
-            self.send_header("Content-Type", mimetype)
-            self.send_header("Content-Disposition", build_content_disposition(filename))
-            self.end_headers()
-            self.wfile.write(content.encode("utf-8"))
-
+            content, filename, mimetype = build_export_payload(fmt, words, title)
         except Exception as e:
-            self.send_response(500)
-            self.send_header("Content-Type", "application/json; charset=utf-8")
-            self.end_headers()
-            self.wfile.write(json.dumps({"error": f"导出处理失败: {str(e)}"}, ensure_ascii=False).encode("utf-8"))
+            self.send_error_json(400, f"导出处理失败: {str(e)}")
+            return
+        self.send_bytes(200, content, mimetype, download_name=filename)
 
 
     def handle_heartbeat_time(self, body_str):

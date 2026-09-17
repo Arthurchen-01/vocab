@@ -44,13 +44,16 @@ STAGES = [
     ("s3", "s3_cut_media.py", "re-cut clips + frames on sentence boundaries"),
     ("s4", "s4_translate.py", "context-aware translation + AI review"),
     ("s4b", "s4b_fill_deck_translations.py", "fill missing translations in the other decks"),
+    ("s4c", "s4c_english_definitions.py", "author the English definition (def_en) for every deck word"),
     ("s5", "s5_apply_and_verify.py", "apply to data files + end-to-end verification"),
     ("s6", "s6_sync_bank.py", "rebuild the master vocab bank from the episode decks"),
     ("s7", "s7_deploy_verify.py", "restart the service + live acceptance report"),
+    ("s7b", "export_conformance.py", "verify every export format over live HTTP"),
 ]
 REPORT_NAME = {"s0": "acquire", "s1": "sentences", "s0b": "deck", "s2": "word_map", "s3": "media",
-               "s4": "translation", "s4b": "deck_translations", "s5": "apply_verify",
-               "s6": "bank_sync", "s7": "deploy"}
+               "s4": "translation", "s4b": "deck_translations", "s4c": "english_definitions",
+               "s5": "apply_verify", "s6": "bank_sync", "s7": "deploy",
+               "s7b": "export"}
 
 
 def episode_from_url(url):
@@ -91,6 +94,10 @@ def stage_args(key, args, ep):
         return out
     if key in ("s7",):
         return ["--episode", ep] + (["--no-restart"] if args.no_restart else [])
+    if key == "s7b":
+        # Always probe the origin: a server-side request to the public hostname
+        # can be answered with 403 by Cloudflare's bot rules.
+        return ["--base", args.deploy_check or "http://127.0.0.1:8765"]
     return []
 
 

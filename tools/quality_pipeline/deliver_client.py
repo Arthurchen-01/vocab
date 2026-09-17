@@ -29,12 +29,19 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 REPO = os.path.dirname(os.path.dirname(HERE))
 APP = "/var/www/harvard_justice_app"
 PIPE = "/root/quality_pipeline"
-SCRIPTS = ["config.py", "ai_gate.py", "deliver.py", "s0_acquire_media.py", "s1_build_sentences.py",
-           "s2_map_words.py", "s3_cut_media.py", "s4_translate.py", "s4b_fill_deck_translations.py",
-           "s5_apply_and_verify.py", "s6_sync_bank.py", "s7_deploy_verify.py"]
-REPORT_NAME = {"s0": "acquire", "s1": "sentences", "s2": "word_map", "s3": "media",
-               "s4": "translation", "s4b": "deck_translations", "s5": "apply_verify",
-               "s6": "bank_sync", "s7": "deploy"}
+
+# Upload every stage module in this directory rather than a hand-kept list: the
+# list used to omit s0b_build_deck.py, so a fresh episode silently ran whatever
+# copy happened to be on the host (or failed outright).
+CLIENT_ONLY = {"deliver_client.py", "stage_client.py", "run_all.py"}
+SCRIPTS = sorted(f for f in os.listdir(HERE)
+                 if f.endswith(".py") and f not in CLIENT_ONLY
+                 and os.path.isfile(os.path.join(HERE, f)))
+REPORT_NAME = {"s0": "acquire", "s1": "sentences", "s0b": "deck", "s2": "word_map",
+               "s3": "media", "s4": "translation", "s4b": "deck_translations",
+               "s4c": "english_definitions", "s5": "apply_verify",
+               "s6": "bank_sync", "s6b": "bank_def_en", "s7": "deploy",
+               "s7b": "export"}
 
 
 def credentials():
@@ -44,7 +51,10 @@ def credentials():
     if not (host and pwd):
         path = os.path.join(os.path.expanduser("~"), ".vocab_deploy.json")
         if os.path.isfile(path):
-            cfg = json.load(open(path, encoding="utf-8"))
+            # utf-8-sig: PowerShell's `Set-Content -Encoding UTF8` and Notepad
+            # both write a BOM, which plain utf-8 decoding rejects.
+            with open(path, encoding="utf-8-sig") as f:
+                cfg = json.load(f)
             host = host or cfg.get("host", "")
             user = cfg.get("user", user)
             pwd = pwd or cfg.get("password", "")

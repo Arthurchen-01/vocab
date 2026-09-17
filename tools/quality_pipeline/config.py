@@ -13,6 +13,16 @@ import sys
 import time
 
 # ---------------------------------------------------------------- paths
+# Windows consoles default to a legacy code page (GBK on a Chinese install) and
+# raise UnicodeEncodeError on anything outside it - the exported Markdown alone
+# contains an emoji, which used to crash a gate while printing a *detail* string.
+# Never let logging be the thing that fails.
+for _stream in (sys.stdout, sys.stderr):
+    try:
+        _stream.reconfigure(encoding="utf-8", errors="replace")
+    except Exception:  # noqa: BLE001 - not a tty, or an exotic runtime
+        pass
+
 APP_DIR = os.environ.get("VOCAB_APP_DIR") or os.environ.get("VOCAB_REPO_DIR") or "."
 if os.path.basename(APP_DIR) != "harvard_justice_app" and os.path.isdir("harvard_justice_app"):
     APP_DIR = os.path.join(os.getcwd(), "harvard_justice_app")

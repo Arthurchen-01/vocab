@@ -1951,7 +1951,7 @@
         "pos": "n.",
         "level": "toefl_ielts",
         "def_cn": "进退两难的困境；两难命题",
-        "def_en": "",
+        "def_en": "a difficult situation in which you must choose between two unpleasant options",
         "sentence": "This famous trolley scenario creates an agonizing moral dilemma between two terrible choices.",
         "sentence_cn": "电车难题的经典场景在两个糟糕的道德抉择之间制造了一个令人痛苦的进退两难困境。",
         "cloze_sentence": "This famous trolley scenario creates an agonizing moral ___ between two terrible choices.",
@@ -1970,7 +1970,7 @@
         "pos": "n.",
         "level": "toefl_ielts",
         "def_cn": "后果，结果；重要性",
-        "def_en": "",
+        "def_en": "a result or effect that follows from an action or decision",
         "sentence": "Does the moral worth of an action depend solely on the consequence that it produces?",
         "sentence_cn": "功利主义道德推理完全取决于行动所带来的实际后果与效益。",
         "cloze_sentence": "Does the moral worth of an action depend solely on the ___ that it produces?",
@@ -1989,7 +1989,7 @@
         "pos": "n.",
         "level": "toefl_ielts",
         "def_cn": "设想的情况，案情假想，剧本",
-        "def_en": "",
+        "def_en": "an imagined situation used to explore what someone should do",
         "sentence": "Let's change the scenario slightly: you are now standing on a bridge as an onlooker.",
         "sentence_cn": "设想你身处这样一个两难场景：你正驾驶着一辆刹车失灵的失控电车疾驰向前。",
         "cloze_sentence": "Let's change the ___ slightly: you are now standing on a bridge as an onlooker.",
@@ -2008,7 +2008,7 @@
         "pos": "v.",
         "level": "toefl_ielts",
         "def_cn": "证明...是正当合理的；为...辩护",
-        "def_en": "",
+        "def_en": "to show that an action is right or reasonable",
         "sentence": "How can you justify killing one innocent person to save the lives of five others?",
         "sentence_cn": "如果牺牲一条生命能挽救五条生命，这种后果是否在道德上足以证成这一行为？",
         "cloze_sentence": "How can you ___ killing one innocent person to save the lives of five others?",
@@ -2027,7 +2027,7 @@
         "pos": "v./n.",
         "level": "toefl_ielts",
         "def_cn": "牺牲，奉献；祭品",
-        "def_en": "",
+        "def_en": "to give up something valuable for the sake of a greater benefit",
         "sentence": "Most of you felt that one life should be sacrificed if it genuinely spares five workers.",
         "sentence_cn": "是否有道德理由去牺牲一个无辜的旁观者，以换取更多人的存活？",
         "cloze_sentence": "Most of you felt that one life should be ___d if it genuinely spares five workers.",
@@ -2046,7 +2046,7 @@
         "pos": "v./adj.",
         "level": "sat_gre",
         "def_cn": "深思熟虑，商议；故意的，蓄意的",
-        "def_en": "",
+        "def_en": "to discuss and consider a moral matter carefully before deciding",
         "sentence": "We deliberate morally when our intuitive judgments clash with principled arguments.",
         "sentence_cn": "通过审慎的道德深思，我们试图厘清自己内心深处的道德直觉与普遍原则。",
         "cloze_sentence": "We ___ morally when our intuitive judgments clash with principled arguments.",
@@ -2065,7 +2065,7 @@
         "pos": "n.",
         "level": "toefl_ielts",
         "def_cn": "共识，一致意见",
-        "def_en": "",
+        "def_en": "an opinion that everyone in a group agrees with",
         "sentence": "In the first trolley case, there was an overwhelming consensus to turn the steering wheel.",
         "sentence_cn": "面对这一严峻的伦理抉择，全班同学未能达成统一共识，而是分化为激烈的两派争辩。",
         "cloze_sentence": "In the first trolley case, there was an overwhelming ___ to turn the steering wheel.",
@@ -2084,7 +2084,7 @@
         "pos": "n.",
         "level": "academic_philosophy",
         "def_cn": "陪审团裁决，判定结果",
-        "def_en": "",
+        "def_en": "a formal finding by a jury on the facts of a case, often special or partial",
         "sentence": "The jury returned a special verdict, finding the harrowing facts but leaving the legal verdict to the judges.",
         "sentence_cn": "作为本案的模拟陪审团，你们会对这几位因饥饿濒死而吃人的海难水手作出何种判决？",
         "cloze_sentence": "The jury returned a special ___, finding the harrowing facts but leaving the legal ___ to the judges.",
@@ -2103,7 +2103,7 @@
         "pos": "n.",
         "level": "sat_gre",
         "def_cn": "旁观者，局外人",
-        "def_en": "",
+        "def_en": "a person who is present at an event but does not take part in it",
         "sentence": "If you are merely an innocent bystander on a bridge, do you have any right to physically intervene?",
         "sentence_cn": "将那个站在天桥上的无辜胖子旁观者推下去挡住电车，这在道德上是绝对不可接受的。",
         "cloze_sentence": "If you are merely an innocent ___ on a bridge, do you have any right to physically intervene?",
@@ -2122,7 +2122,7 @@
         "pos": "adj.",
         "level": "toefl_ielts",
         "def_cn": "不可避免的，必然发生的",
-        "def_en": "",
+        "def_en": "certain to happen and impossible to avoid or prevent",
         "sentence": "They realized that without food or fresh water, imminent death was virtually inevitable.",
         "sentence_cn": "当电车刹车彻底失效时，一场灾难性的碰撞似乎已经不可避免。",
         "cloze_sentence": "They realized that without food or fresh water, imminent death was virtually ___.",
@@ -2141,7 +2141,7 @@
         "pos": "v.",
         "level": "toefl_ielts",
         "def_cn": "生存，幸存；比...活得长",
-        "def_en": "",
+        "def_en": "to continue to live after a dangerous event",
         "sentence": "Dudley argued that unless one was killed, none of the four shipwrecked men would survive.",
         "sentence_cn": "在茫茫大海上漂泊二十多天后，他们为了能有人生还而被迫做出了残酷的抉择。",
         "cloze_sentence": "Dudley argued that unless one was killed, none of the four shipwrecked men would ___.",
@@ -2160,7 +2160,7 @@
         "pos": "adj.",
         "level": "toefl_ielts",
         "def_cn": "激烈的，极端的，严厉的",
-        "def_en": "",
+        "def_en": "extreme in a way that shocks or disturbs people",
         "sentence": "Why does pushing the fat man feel like a far more drastic and horrifying violation of moral rights?",
         "sentence_cn": "在极端绝望的情境下，船长提议采取抽签牺牲一人的激烈极端手段。",
         "cloze_sentence": "Why does pushing the fat man feel like a far more ___ and horrifying violation of moral rights?",
@@ -2179,7 +2179,7 @@
         "pos": "adj.",
         "level": "sat_gre",
         "def_cn": "令人信服的，极有说服力的；引人入胜的",
-        "def_en": "",
+        "def_en": "strong enough to convince someone that something is true or right",
         "sentence": "Is there a compelling reason of principle that distinguishes steering from pushing?",
         "sentence_cn": "功利主义者提出了令人信服的论据：五条生命的价值在数量上显然大于一条生命。",
         "cloze_sentence": "Is there a ___ reason of principle that distinguishes steering from pushing?",
@@ -2198,7 +2198,7 @@
         "pos": "v.",
         "level": "toefl_ielts",
         "def_cn": "转移，使改道，使转向",
-        "def_en": "",
+        "def_en": "to change the direction or target of something",
         "sentence": "You simply divert the existing threat from five unsuspecting workers to one single worker.",
         "sentence_cn": "扳动道岔将电车转入侧线撞死一人以救五人，许多人本能地认为这是明智的决断。",
         "cloze_sentence": "You simply ___ the existing threat from five unsuspecting workers to one single worker.",
@@ -2217,7 +2217,7 @@
         "pos": "n.",
         "level": "toefl_ielts",
         "def_cn": "直觉，本能",
-        "def_en": "",
+        "def_en": "a natural feeling or inner drive that makes one react without conscious thought",
         "sentence": "Our immediate moral instinct recoils at the grotesque thought of pushing an innocent bystander.",
         "sentence_cn": "我们的第一道德直觉往往在面临更复杂的变体案例时发生剧烈动摇与反转。",
         "cloze_sentence": "Our immediate moral ___ recoils at the grotesque thought of pushing an innocent bystander.",
@@ -2236,7 +2236,7 @@
         "pos": "v.",
         "level": "toefl_ielts",
         "def_cn": "计算，权衡，核算",
-        "def_en": "",
+        "def_en": "to determine an amount or value by using numbers or reasoning",
         "sentence": "Utilitarians calculate overall pain and pleasure, attempting to arrive at the greatest net balance.",
         "sentence_cn": "边沁主张我们可以通过功利微积分来精确计算痛苦与快乐的总量代数和。",
         "cloze_sentence": "Utilitarians ___ overall pain and pleasure, attempting to arrive at the greatest net balance.",
@@ -2255,7 +2255,7 @@
         "pos": "adj.",
         "level": "toefl_ielts",
         "def_cn": "压倒性的，势不可挡的",
-        "def_en": "",
+        "def_en": "so great in amount or strength that it cannot be resisted",
         "sentence": "The physical suffering and thirst of the castaways became utterly overwhelming.",
         "sentence_cn": "支持扳动道岔拯救多数人的举手人数占据了压倒性的多数比例。",
         "cloze_sentence": "The physical suffering and thirst of the castaways became utterly ___.",
@@ -2274,7 +2274,7 @@
         "pos": "v.",
         "level": "toefl_ielts",
         "def_cn": "提议，建议；打算",
-        "def_en": "",
+        "def_en": "to put forward a course of action for acceptance or adoption",
         "sentence": "Captain Dudley proposed that lots should be cast to determine who should die for the rest.",
         "sentence_cn": "船长达德利在第十九天提议：我们必须抽签决定谁应该牺牲以保全其余人。",
         "cloze_sentence": "Captain Dudley ___d that lots should be cast to determine who should die for the rest.",
@@ -2293,7 +2293,7 @@
         "pos": "v.",
         "level": "toefl_ielts",
         "def_cn": "拒绝，抵制",
-        "def_en": "",
+        "def_en": "to say or show that one will not do something",
         "sentence": "Brooks refused to participate in the lottery, unwilling to assent to taking anyone's life.",
         "sentence_cn": "水手布鲁克斯最初坚决拒绝参与这场抽签，并对谋杀行为提出了强烈的良知异议。",
         "cloze_sentence": "Brooks ___d to participate in the lottery, unwilling to assent to taking anyone's life.",
@@ -2312,7 +2312,7 @@
         "pos": "adj.",
         "level": "toefl_ielts",
         "def_cn": "奇迹般的，不可思议的",
-        "def_en": "",
+        "def_en": "so surprising and lucky that it seems impossible or like magic",
         "sentence": "On the twenty-fourth day, when they were finally spotted by a passing vessel, it seemed miraculous.",
         "sentence_cn": "就在男孩被杀害后的第四天，一艘德国帆船奇迹般地出现在地平线上救起了他们。",
         "cloze_sentence": "On the twenty-fourth day, when they were finally spotted by a passing vessel, it seemed ___.",
@@ -2331,7 +2331,7 @@
         "pos": "n.",
         "level": "academic_philosophy",
         "def_cn": "功利主义，功利论（以多数人利益和幸福为衡量正义的标准）",
-        "def_en": "",
+        "def_en": "the belief that the right action is the one that produces the greatest happiness for the greatest number",
         "sentence": "Bentham's utilitarianism claims that the highest principle of morality is to maximize the general welfare.",
         "sentence_cn": "功利主义哲学的奠基人杰里米·边沁认为，道德的最高原则是最大化总体的幸福。",
         "cloze_sentence": "Bentham's ___ claims that the highest principle of morality is to maximize the general welfare.",
@@ -2350,7 +2350,7 @@
         "pos": "adj./n.",
         "level": "academic_philosophy",
         "def_cn": "后果主义的，结果论的；结果主义者",
-        "def_en": "",
+        "def_en": "relating to the view that actions are right if their outcomes are good",
         "sentence": "Consequentialist moral reasoning locates morality in the consequences of an act.",
         "sentence_cn": "结果主义道德理论主张：行为的对错完全由该行为所产生的客观后果来判定。",
         "cloze_sentence": "Consequentialist moral reasoning locates morality in the consequences of an act.",
@@ -2369,7 +2369,7 @@
         "pos": "n.",
         "level": "academic_philosophy",
         "def_cn": "有过失，有责任，可归责性",
-        "def_en": "",
+        "def_en": "the state of being deserving of blame for a wrong act",
         "sentence": "Did the extremity of their circumstances diminish their moral and legal culpability?",
         "sentence_cn": "在评估刑事法律责任时，法院必须审查被告人在极限情境下的主观罪责与过错程度。",
         "cloze_sentence": "Did the extremity of their circumstances diminish their moral and legal ___?",
@@ -2388,7 +2388,7 @@
         "pos": "v.",
         "level": "toefl_ielts",
         "def_cn": "免除（责任、过错），赦免",
-        "def_en": "",
+        "def_en": "to free someone from blame or guilt for a wrong act",
         "sentence": "Does victim consent absolve someone from the guilt of participating in taking a human life?",
         "sentence_cn": "即使海难绝境极其严酷，法官也明确裁定饥饿与自保不能免除其谋杀的法律罪责。",
         "cloze_sentence": "Does victim consent ___ someone from the guilt of participating in taking a human life?",
@@ -2407,7 +2407,7 @@
         "pos": "n.",
         "level": "sat_gre",
         "def_cn": "怀疑态度，怀疑论（对客观道德真理存在性的质疑）",
-        "def_en": "",
+        "def_en": "a doubting attitude toward the existence of objective moral truths",
         "sentence": "Moral skepticism is the temptation to conclude that there are no fixed moral truths.",
         "sentence_cn": "桑德尔教授警告大家：道德反思可能带来哲学怀疑论，让人陷入虚无的危险泥潭。",
         "cloze_sentence": "Moral ___ is the temptation to conclude that there are no fixed moral truths.",
@@ -2426,7 +2426,7 @@
         "pos": "adj.",
         "level": "sat_gre",
         "def_cn": "内在的，本质的，固有的",
-        "def_en": "",
+        "def_en": "belonging to something by its very nature, not coming from outside",
         "sentence": "Does every individual possess an intrinsic moral worth that no calculation can outweigh?",
         "sentence_cn": "康德派哲学家坚称：每个人作为理性的生命，都拥有不可剥夺的内在绝对价值与尊严。",
         "cloze_sentence": "Does every individual possess an ___ moral worth that no calculation can outweigh?",
@@ -2445,7 +2445,7 @@
         "pos": "n./adj.",
         "level": "toefl_ielts",
         "def_cn": "紧要之事务，绝对要求，诫命；迫切的",
-        "def_en": "",
+        "def_en": "a moral rule that must be obeyed without exception, no matter the consequences",
         "sentence": "For Kant, preserving the dignity of human life is a categorical imperative, not an option.",
         "sentence_cn": "康德提出了绝对命令法则：你必须永远将人当成目的本身，而绝不仅仅当成工具手段。",
         "cloze_sentence": "For Kant, preserving the dignity of human life is a categorical ___, not an option.",
@@ -2464,7 +2464,7 @@
         "pos": "adj.",
         "level": "toefl_ielts",
         "def_cn": "站不住脚的，不可辩护的",
-        "def_en": "",
+        "def_en": "impossible to justify or defend by any reasonable argument",
         "sentence": "Lord Coleridge ruled that deliberate murder remains legally indefensible regardless of hunger.",
         "sentence_cn": "未经他人自愿同意而擅自夺取其生命并食其血肉，在现代法律与伦理上是绝对站不住脚的。",
         "cloze_sentence": "Lord Coleridge ruled that deliberate murder remains legally ___ regardless of hunger.",
@@ -2483,7 +2483,7 @@
         "pos": "n.",
         "level": "toefl_ielts",
         "def_cn": "难题，复杂费解的谜题",
-        "def_en": "",
+        "def_en": "a difficult problem that is hard to solve or understand",
         "sentence": "The trolley problem is not just a clever puzzle, but a deep philosophical conundrum.",
         "sentence_cn": "这个经典的失控电车难题构成了当代道德哲学中最引人入胜的伦理两难谜题。",
         "cloze_sentence": "The trolley problem is not just a clever puzzle, but a deep philosophical ___.",
@@ -2502,7 +2502,7 @@
         "pos": "adj.",
         "level": "sat_gre",
         "def_cn": "令人反感的，令人作呕的，相悖的",
-        "def_en": "",
+        "def_en": "causing strong feelings of dislike and moral disapproval",
         "sentence": "Many citizens found the cold utilitarian cannibalism on the lifeboat utterly morally repugnant.",
         "sentence_cn": "许多人对将人推下桥挡电车的做法感到发自内心的本能厌恶与道德反感。",
         "cloze_sentence": "Many citizens found the cold utilitarian cannibalism on the lifeboat utterly morally ___.",
@@ -2521,7 +2521,7 @@
         "pos": "adj.",
         "level": "toefl_ielts",
         "def_cn": "貌似有理的，花言巧语的",
-        "def_en": "",
+        "def_en": "seeming reasonable and likely to be true",
         "sentence": "At first glance, saving five lives instead of one seems like an entirely plausible moral principle.",
         "sentence_cn": "从纯粹功利计算的角度来看，拯救多数人的生存方案听上去似乎完全合理可信。",
         "cloze_sentence": "At first glance, saving five lives instead of one seems like an entirely ___ moral principle.",
@@ -2540,7 +2540,7 @@
         "pos": "v.",
         "level": "toefl_ielts",
         "def_cn": "强迫，胁迫",
-        "def_en": "",
+        "def_en": "to force someone to do something by using threats or pressure",
         "sentence": "The law cannot coerce an innocent individual into surrendering his life for the common good.",
         "sentence_cn": "如果受害者是在受胁迫或孤立无援的状况下妥协，那绝不是真正自由意志的同意。",
         "cloze_sentence": "The law cannot ___ an innocent individual into surrendering his life for the common good.",
@@ -2559,7 +2559,7 @@
         "pos": "adj.",
         "level": "toefl_ielts",
         "def_cn": "预谋的，预先策划的",
-        "def_en": "",
+        "def_en": "planned or decided in advance",
         "sentence": "The prosecutor asserted that the killing of Richard Parker was a cold, premeditated act.",
         "sentence_cn": "检方严正指出：达德利提前准备折叠小刀并在祈祷后刺杀男孩，是典型的预谋谋杀。",
         "cloze_sentence": "The prosecutor asserted that the killing of Richard Parker was a cold, ___ act.",
@@ -2578,7 +2578,7 @@
         "pos": "adj.",
         "level": "sat_gre",
         "def_cn": "令人深恶痛绝的，令人厌恶的",
-        "def_en": "",
+        "def_en": "causing strong moral disgust and hatred",
         "sentence": "To commodify or harvest a living person's body parts feels morally abhorrent.",
         "sentence_cn": "同类相食被文明社会公认为无论出于何种动机都极其令人发指的道德禁忌。",
         "cloze_sentence": "To commodify or harvest a living person's body parts feels morally ___.",
@@ -2597,7 +2597,7 @@
         "pos": "n.",
         "level": "toefl_ielts",
         "def_cn": "匮乏，稀缺，不足",
-        "def_en": "",
+        "def_en": "a situation in which there is not enough of something people need",
         "sentence": "Under extreme conditions of physical scarcity, ordinary moral rules begin to break down.",
         "sentence_cn": "救生艇上淡水与粮食的极端匮乏，将这四名船员逼入了人间地狱般的生存绝境。",
         "cloze_sentence": "Under extreme conditions of physical ___, ordinary moral rules begin to break down.",
@@ -2616,7 +2616,7 @@
         "pos": "v.",
         "level": "toefl_ielts",
         "def_cn": "剥夺，使丧失",
-        "def_en": "",
+        "def_en": "to take away something important from someone",
         "sentence": "Did Dudley and Stephens unjustifiably deprive Parker of his fundamental right to live?",
         "sentence_cn": "任何人都没有特权去剥夺另一个无辜者的生命，哪怕是为了挽救自己的生存。",
         "cloze_sentence": "Did Dudley and Stephens unjustifiably ___ Parker of his fundamental right to live?",
@@ -2635,7 +2635,7 @@
         "pos": "adj.",
         "level": "sat_gre",
         "def_cn": "十恶不赦的，极可恶的",
-        "def_en": "",
+        "def_en": "extremely wicked or shocking",
         "sentence": "Murder is considered a heinous crime precisely because it treats a person merely as a means.",
         "sentence_cn": "起诉书将杀害衰竭孤儿水手的行径定性为极其令人发指的公海残暴罪行。",
         "cloze_sentence": "Murder is considered a ___ crime precisely because it treats a person merely as a means.",
@@ -2654,7 +2654,7 @@
         "pos": "adj.",
         "level": "academic_philosophy",
         "def_cn": "史无前例的，空前的",
-        "def_en": "",
+        "def_en": "never having happened or existed before",
         "sentence": "The judicial proceedings in Dudley and Stephens represented an unprecedented landmark in common law.",
         "sentence_cn": "这起女王诉达德利与史蒂芬斯案，在普通法系海事紧急避险历史上构成了空前的先例。",
         "cloze_sentence": "The judicial proceedings in Dudley and Stephens represented an ___ landmark in common law.",
@@ -2673,7 +2673,7 @@
         "pos": "adj.",
         "level": "sat_gre",
         "def_cn": "武断的，专断的，任意的",
-        "def_en": "",
+        "def_en": "based on personal choice or chance rather than fair rules or reason",
         "sentence": "Selecting the weakest boy without a fair drawing of lots seemed cruel and arbitrary.",
         "sentence_cn": "如果没有正当程序与自愿协议，随意挑选最弱小者杀害就是一种极具专断性的暴行。",
         "cloze_sentence": "Selecting the weakest boy without a fair drawing of lots seemed cruel and ___.",
@@ -2692,7 +2692,7 @@
         "pos": "n.",
         "level": "toefl_ielts",
         "def_cn": "格言，行为准则",
-        "def_en": "",
+        "def_en": "a personal rule or principle that guides how one acts",
         "sentence": "Can the subjective maxim of your action be elevated into a universal moral law?",
         "sentence_cn": "康德要求我们审视自己行动准则的准则：如果这一准则普遍化，世界是否会陷入矛盾？",
         "cloze_sentence": "Can the subjective ___ of your action be elevated into a universal moral law?",
@@ -2711,7 +2711,7 @@
         "pos": "phr./n.",
         "level": "academic_philosophy",
         "def_cn": "【刑法学】紧急避险原则；紧急避险抗辩（牺牲较小法益保全重大利益之抗辩）",
-        "def_en": "",
+        "def_en": "a justification in criminal law for committing an offense to avert a greater evil",
         "sentence": "The defense argued necessity: that sacrificing one saved three lives, resulting in a better overall outcome.",
         "sentence_cn": "辩护律师在法庭上全力主张紧急避险抗辩：牺牲一命以保全三命在客观上是不得已之举。",
         "cloze_sentence": "The defense argued necessity: that sacrificing one saved three lives, resulting in a better overall outcome.",
@@ -2730,7 +2730,7 @@
         "pos": "n.",
         "level": "academic_philosophy",
         "def_cn": "【伦理学】道义论，义务论（认为行为的道德对错取决于行为本身的性质而非结果）",
-        "def_en": "",
+        "def_en": "the view that certain acts are morally right or wrong in themselves, regardless of their outcomes",
         "sentence": "Deontology insists that certain actions are intrinsically wrong, regardless of the good consequences they might yield.",
         "sentence_cn": "义务论伦理学坚持认为：某些行为在本质上就是绝对错误的，不能用功利后果来开脱。",
         "cloze_sentence": "Deontology insists that certain actions are intrinsically wrong, regardless of the good consequences they might yield.",
@@ -2749,7 +2749,7 @@
         "pos": "phr./n.",
         "level": "academic_philosophy",
         "def_cn": "【海商法/海洋史】海上不成文惯例（海难绝境下抽签牺牲以求生还的历史海员习俗）",
-        "def_en": "",
+        "def_en": "an unofficial maritime practice permitting survival sacrifices during extreme distress at sea",
         "sentence": "Seamen believed in the customary unwritten 'custom of the sea' that allowed drawing lots in desperate shipwrecks.",
         "sentence_cn": "幸存的水手们声称，在遭遇海难抽签牺牲一人是古老的海上惯例与默示习俗。",
         "cloze_sentence": "Seamen believed in the customary unwritten '___' that allowed drawing lots in desperate shipwrecks.",
@@ -2768,7 +2768,7 @@
         "pos": "phr./n.",
         "level": "academic_philosophy",
         "def_cn": "【道德哲学】道德主体性，道德施动能力（能够做出道德选择并承担伦理责任的主体地位）",
-        "def_en": "",
+        "def_en": "the capacity to make moral choices and be held responsible for them",
         "sentence": "Pushing the bystander reduces him to a mere physical obstacle, completely stripping away his moral agency.",
         "sentence_cn": "真正的道德主体性要求个体能够出于理性原则自由抉择，而非任由求生兽欲驱使。",
         "cloze_sentence": "Pushing the bystander reduces him to a mere physical obstacle, completely stripping away his ___.",
@@ -2787,7 +2787,7 @@
         "pos": "phr./n.",
         "level": "academic_philosophy",
         "def_cn": "【伦理学思想实验】电车难题（菲利帕·福特与朱迪思·汤姆森提出的经典实验）",
-        "def_en": "",
+        "def_en": "a thought experiment about whether to sacrifice one person to save five others",
         "sentence": "The trolley problem was formulated by philosophers Philippa Foot and Judith Jarvis Thomson to test intuition against theory.",
         "sentence_cn": "由哲学家菲利帕·福特提出的失控电车难题，是哈佛正义课开篇最具冲击力的思维实验。",
         "cloze_sentence": "The ___ was formulated by philosophers Philippa Foot and Judith Jarvis Thomson to test intuition against theory.",
@@ -2806,7 +2806,7 @@
         "pos": "phr./n.",
         "level": "academic_philosophy",
         "def_cn": "【法理学】普通法系，判例法（以司法判例为基石建立的英美法律体系）",
-        "def_en": "",
+        "def_en": "the body of law built up from past court decisions rather than from written laws",
         "sentence": "Lord Coleridge's landmark decision firmly established in the common law that necessity cannot excuse murder.",
         "sentence_cn": "这一判决彻底奠定了英国普通法系中关于紧急避险不能免除故意杀人罪责的最高准则。",
         "cloze_sentence": "Lord Coleridge's landmark decision firmly established in the ___ that necessity cannot excuse murder.",
@@ -2825,7 +2825,7 @@
         "pos": "n.",
         "level": "academic_philosophy",
         "def_cn": "【刑法学】普通法重罪（谋杀、叛国等最严重罪行）",
-        "def_en": "",
+        "def_en": "a serious crime at common law, such as murder or treason",
         "sentence": "At common law, murder was a capital felony, punishable unconditionally by sentence of death.",
         "sentence_cn": "在维多利亚时代的英国刑法中，蓄意剥夺他人生命被定性为不可饶恕的重罪。",
         "cloze_sentence": "At common law, murder was a capital ___, punishable unconditionally by sentence of death.",
@@ -2844,7 +2844,7 @@
         "pos": "phr./n.",
         "level": "academic_philosophy",
         "def_cn": "【正义论】应报正义，报应性正义（犯罪者必须依据其罪行恶性受到对等惩治）",
-        "def_en": "",
+        "def_en": "the idea that punishment should be given because it is deserved, not for its useful results",
         "sentence": "Retributive justice demands that wrongful acts be punished appropriately, irrespective of utilitarian benefits.",
         "sentence_cn": "报应正义观主张：犯罪者必须受到与其恶行相匹配的相应报应与法律惩罚。",
         "cloze_sentence": "Retributive justice demands that wrongful acts be punished appropriately, irrespective of utilitarian benefits.",
@@ -2863,7 +2863,7 @@
         "pos": "phr./n.",
         "level": "academic_philosophy",
         "def_cn": "【法哲学】不可侵犯的权利（人因其作为人的存在而神圣不可剥夺的基本权利）",
-        "def_en": "",
+        "def_en": "basic rights that must never be taken away or overruled by any group decision",
         "sentence": "Do human beings have certain inviolable rights that no social calculus of utility can ever override?",
         "sentence_cn": "人权理论主张：每个人都享有神圣不可侵犯的基本权利，绝不能沦为他人的牺牲品。",
         "cloze_sentence": "Do human beings have certain ___ that no social calculus of utility can ever override?",
@@ -2882,7 +2882,7 @@
         "pos": "phr./n.",
         "level": "academic_philosophy",
         "def_cn": "【伦理学】道德审议（在冲突的道德原则与具体个案之间进行辩证理性反思）",
-        "def_en": "",
+        "def_en": "the process of carefully thinking about what is right and wrong in a situation",
         "sentence": "Moral deliberation involves a dialectical movement back and forth between our intuitive judgments and our general principles.",
         "sentence_cn": "置身于激烈的课堂辩论中，我们正经历着从直觉判断到普遍原则的道德审慎深思。",
         "cloze_sentence": "Moral deliberation involves a dialectical movement back and forth between our intuitive judgments and our general principles.",
@@ -2901,7 +2901,7 @@
         "pos": "phr./n.",
         "level": "academic_philosophy",
         "def_cn": "【边沁功利论】主宰人类的两大君主（痛苦与快乐：pain and pleasure）",
-        "def_en": "",
+        "def_en": "the two supreme forces of feeling that govern all human conduct",
         "sentence": "Bentham asserted that nature has placed mankind under the governance of two sovereign masters: pain and pleasure.",
         "sentence_cn": "边沁写道：大自然将人类置于两个至高无上主宰的统治之下——这就是痛苦与快乐。",
         "cloze_sentence": "Bentham asserted that nature has placed mankind under the governance of two ___: pain and pleasure.",
@@ -2920,7 +2920,7 @@
         "pos": "adj.",
         "level": "academic_philosophy",
         "def_cn": "【亚里士多德哲学】目的论的（依据事物的内在目的与本质功能 Telos 进行道德定义）",
-        "def_en": "",
+        "def_en": "explaining something by the purpose or goal it is meant to serve",
         "sentence": "Unlike consequentialism, teleological moral philosophy asks what telos or ultimate purpose the practice serves.",
         "sentence_cn": "目的论道德理论依据事物所追求的崇高目的与终极目标来界定正义与德性。",
         "cloze_sentence": "Unlike consequentialism, ___ moral philosophy asks what telos or ultimate purpose the practice serves.",
@@ -2939,7 +2939,7 @@
         "pos": "v. phr.",
         "level": "phrasal_verbs",
         "def_cn": "转弯驶入，变道驶向（支轨/新方向）",
-        "def_en": "",
+        "def_en": "to steer a vehicle onto a side track or different route",
         "sentence": "You can turn the trolley car if you want to onto this side track, killing the one but sparing the five.",
         "sentence_cn": "作为电车司机，你拥有将列车转向侧面备用轨道的物理机会，但那里站着一名工人。",
         "cloze_sentence": "You can turn the trolley car if you want to onto this side track, killing the one but sparing the five.",
@@ -2958,7 +2958,7 @@
         "pos": "v. phr.",
         "level": "phrasal_verbs",
         "def_cn": "推下，从高处推落",
-        "def_en": "",
+        "def_en": "to shove someone so that they fall from an elevated position",
         "sentence": "Now suppose you are standing on a bridge, and you could push this very fat man off the bridge to stop the trolley.",
         "sentence_cn": "在第二种情境中，你必须亲手将那个大块头从天桥上推下去才能阻止电车滑行。",
         "cloze_sentence": "Now suppose you are standing on a bridge, and you could push this very fat man off the bridge to stop the trolley.",
@@ -2977,7 +2977,7 @@
         "pos": "v. phr.",
         "level": "phrasal_verbs",
         "def_cn": "依赖于，以...为根本准则",
-        "def_en": "",
+        "def_en": "to depend on something as a basis for action or belief",
         "sentence": "Categorical moral reasoning locates morality in certain duties and rights, relying on principles regardless of the consequences.",
         "sentence_cn": "功利主义者在评估公共政策时，过度依赖将一切价值折算为单一货币或效用单位。",
         "cloze_sentence": "Categorical moral reasoning locates morality in certain duties and rights, relying on principles regardless of the consequences.",
@@ -2996,7 +2996,7 @@
         "pos": "v. phr.",
         "level": "phrasal_verbs",
         "def_cn": "导致，引向（某种困境或消极状态）",
-        "def_en": "",
+        "def_en": "to cause something to happen or result in a situation",
         "sentence": "Skeptical philosophy often leads to moral paralysis, where people simply give up searching for justice.",
         "sentence_cn": "无节制地坚持绝对主义可能导致道德僵化，而无原则的功利权衡又可能导致暴政。",
         "cloze_sentence": "Skeptical philosophy often leads to moral paralysis, where people simply give up searching for justice.",
@@ -3015,7 +3015,7 @@
         "pos": "v. phr.",
         "level": "phrasal_verbs",
         "def_cn": "被流放漂泊，沦为海难幸存者",
-        "def_en": "",
+        "def_en": "to abandon someone on a desolate shore or in a drifting boat",
         "sentence": "The four crew members were cast away on an open lifeboat sixteen hundred miles from the Cape of Good Hope.",
         "sentence_cn": "四名遭遇海难的水手被孤零零地抛弃在南大西洋茫茫汪洋之中的一条狭小救生艇上。",
         "cloze_sentence": "The four crew members were ___ on an open lifeboat sixteen hundred miles from the Cape of Good Hope.",
@@ -3034,7 +3034,7 @@
         "pos": "v. phr.",
         "level": "phrasal_verbs",
         "def_cn": "诉诸于，采取（极端或非常规手段）",
-        "def_en": "",
+        "def_en": "to do something extreme or unpleasant because no other option is available",
         "sentence": "Did the captain and the mate resort to cannibalism out of sheer biological necessity, or was it cold-blooded murder?",
         "sentence_cn": "在淡水和粮食全部耗尽之后，他们最终诉诸了极端而残忍的极端同类相食手段。",
         "cloze_sentence": "Did the captain and the mate ___ cannibalism out of sheer biological necessity, or was it cold-blooded murder?",
@@ -3053,7 +3053,7 @@
         "pos": "v. phr.",
         "level": "phrasal_verbs",
         "def_cn": "落在...头上，降临于（抽签厄运）",
-        "def_en": "",
+        "def_en": "to be assigned to someone by chance, especially as an unlucky fate",
         "sentence": "Dudley proposed that they should cast lots, so that the sacrifice should fall upon one person to save the rest.",
         "sentence_cn": "如果不采取任何抽签措施，不幸的厄运最终必然会降临到最虚弱的孤儿男仆头上。",
         "cloze_sentence": "Dudley proposed that they should cast lots, so that the sacrifice should ___ one person to save the rest.",
@@ -3072,7 +3072,7 @@
         "pos": "v. phr.",
         "level": "phrasal_verbs",
         "def_cn": "出庭受审，接受司法审判",
-        "def_en": "",
+        "def_en": "to be brought before a court to answer a criminal charge",
         "sentence": "Upon being rescued and brought back to England, Dudley and Stephens were arrested and made to stand trial for murder.",
         "sentence_cn": "幸存的水手在回到英国法尔茅斯港口后随即被捕，并作为故意谋杀犯站在法庭受审。",
         "cloze_sentence": "Upon being rescued and brought back to England, Dudley and Stephens were arrested and made to ___ for murder.",
@@ -3091,7 +3091,7 @@
         "pos": "v. phr.",
         "level": "phrasal_verbs",
         "def_cn": "同意，允许（受害者程序性同意）",
-        "def_en": "",
+        "def_en": "to agree to something or allow it to happen",
         "sentence": "Does the lack of consent to a lottery make the killing categorically wrong, even if it produced the greater good?",
         "sentence_cn": "问题的核心在于：理查德·帕克生前是否曾真正自愿同意参与这场牺牲生命的抽签。",
         "cloze_sentence": "Does the lack of ___ a lottery make the killing categorically wrong, even if it produced the greater good?",
@@ -3136,7 +3136,8 @@
         "sentence_id": 1,
         "sentence_start": 32.85,
         "sentence_end": 45.97,
-        "clip_match": "exact"
+        "clip_match": "exact",
+        "def_en": "the practice of eating the flesh of one's own species"
       },
       {
         "word": "utilitarian",
@@ -3160,7 +3161,8 @@
         "sentence_id": 2,
         "sentence_start": 45.97,
         "sentence_end": 62.06,
-        "clip_match": "exact"
+        "clip_match": "exact",
+        "def_en": "based on the idea that the best action brings the greatest good to the most people"
       },
       {
         "word": "jurisprudence",
@@ -3184,7 +3186,8 @@
         "sentence_id": 4,
         "sentence_start": 75.06,
         "sentence_end": 82.17,
-        "clip_match": "neighbour+1"
+        "clip_match": "neighbour+1",
+        "def_en": "the study of law and the principles behind legal systems"
       },
       {
         "word": "moral philosophy",
@@ -3208,7 +3211,8 @@
         "sentence_id": 4,
         "sentence_start": 75.06,
         "sentence_end": 82.17,
-        "clip_match": "neighbour+1"
+        "clip_match": "neighbour+1",
+        "def_en": "the study of what is right and wrong and how we should live"
       },
       {
         "word": "principle",
@@ -3232,7 +3236,8 @@
         "sentence_id": 6,
         "sentence_start": 92.87,
         "sentence_end": 116.42,
-        "clip_match": "neighbour+3"
+        "clip_match": "neighbour+3",
+        "def_en": "a basic rule or belief that guides action or explains how something works"
       },
       {
         "word": "maximize",
@@ -3256,7 +3261,8 @@
         "sentence_id": 6,
         "sentence_start": 92.87,
         "sentence_end": 116.42,
-        "clip_match": "exact"
+        "clip_match": "exact",
+        "def_en": "to make something as large or as great as possible"
       },
       {
         "word": "general welfare",
@@ -3280,7 +3286,8 @@
         "sentence_id": 6,
         "sentence_start": 92.87,
         "sentence_end": 116.42,
-        "clip_match": "exact"
+        "clip_match": "exact",
+        "def_en": "the collective good and prosperity of a community as a whole"
       },
       {
         "word": "utility",
@@ -3304,7 +3311,8 @@
         "sentence_id": 6,
         "sentence_start": 92.87,
         "sentence_end": 116.42,
-        "clip_match": "exact"
+        "clip_match": "exact",
+        "def_en": "the amount of happiness or benefit produced by an action"
       },
       {
         "word": "sovereign",
@@ -3328,7 +3336,8 @@
         "sentence_id": 7,
         "sentence_start": 116.42,
         "sentence_end": 129.009,
-        "clip_match": "neighbour+1"
+        "clip_match": "neighbour+1",
+        "def_en": "possessing supreme or ultimate power; acting independently"
       },
       {
         "word": "take account of",
@@ -3352,7 +3361,8 @@
         "sentence_id": 7,
         "sentence_start": 116.42,
         "sentence_end": 129.009,
-        "clip_match": "neighbour+1"
+        "clip_match": "neighbour+1",
+        "def_en": "to consider something when making a judgment"
       },
       {
         "word": "the greatest good for the greatest number",
@@ -3376,7 +3386,8 @@
         "sentence_id": 8,
         "sentence_start": 129.009,
         "sentence_end": 139.449,
-        "clip_match": "exact"
+        "clip_match": "exact",
+        "def_en": "the idea that the best action brings the most benefit to the largest number of people"
       },
       {
         "word": "legislator",
@@ -3400,7 +3411,8 @@
         "sentence_id": 10,
         "sentence_start": 149.479,
         "sentence_end": 156.569,
-        "clip_match": "exact"
+        "clip_match": "exact",
+        "def_en": "a person who makes laws, especially for a country or state"
       },
       {
         "word": "comprise",
@@ -3424,7 +3436,8 @@
         "sentence_id": 11,
         "sentence_start": 156.569,
         "sentence_end": 165.309,
-        "clip_match": "neighbour+1"
+        "clip_match": "neighbour+1",
+        "def_en": "to form or make up a whole by combining different parts or members"
       },
       {
         "word": "add up",
@@ -3448,7 +3461,8 @@
         "sentence_id": 13,
         "sentence_start": 173.37,
         "sentence_end": 188.829,
-        "clip_match": "neighbour+1"
+        "clip_match": "neighbour+1",
+        "def_en": "to combine several amounts to find the total"
       },
       {
         "word": "subtract",
@@ -3472,7 +3486,8 @@
         "sentence_id": 13,
         "sentence_start": 173.37,
         "sentence_end": 188.829,
-        "clip_match": "exact"
+        "clip_match": "exact",
+        "def_en": "to take one amount away from another"
       },
       {
         "word": "cost-benefit analysis",
@@ -3496,7 +3511,8 @@
         "sentence_id": 17,
         "sentence_start": 211.15,
         "sentence_end": 223.729,
-        "clip_match": "neighbour+3"
+        "clip_match": "neighbour+3",
+        "def_en": "a way of deciding by comparing the costs and benefits of an action"
       },
       {
         "word": "place a value on",
@@ -3520,7 +3536,8 @@
         "sentence_id": 18,
         "sentence_start": 223.729,
         "sentence_end": 236.539,
-        "clip_match": "ai_adjudicated"
+        "clip_match": "ai_adjudicated",
+        "def_en": "to decide how much something is worth"
       },
       {
         "word": "excise tax",
@@ -3544,7 +3561,8 @@
         "sentence_id": 19,
         "sentence_start": 236.539,
         "sentence_end": 243.37,
-        "clip_match": "neighbour+1"
+        "clip_match": "neighbour+1",
+        "def_en": "a tax charged on specific goods such as alcohol, tobacco, or fuel"
       },
       {
         "word": "commission",
@@ -3568,7 +3586,8 @@
         "sentence_id": 20,
         "sentence_start": 243.37,
         "sentence_end": 252.509,
-        "clip_match": "exact"
+        "clip_match": "exact",
+        "def_en": "to formally arrange for someone to carry out a study or produce a report"
       },
       {
         "word": "ledger",
@@ -3592,7 +3611,8 @@
         "sentence_id": 23,
         "sentence_start": 287.239,
         "sentence_end": 295.379,
-        "clip_match": "neighbour+1"
+        "clip_match": "neighbour+1",
+        "def_en": "a book or record where accounts or transactions are written"
       },
       {
         "word": "derive from",
@@ -3616,7 +3636,8 @@
         "sentence_id": 24,
         "sentence_start": 295.379,
         "sentence_end": 309.53,
-        "clip_match": "exact"
+        "clip_match": "exact",
+        "def_en": "to get something from a particular source"
       },
       {
         "word": "net",
@@ -3640,7 +3661,8 @@
         "sentence_id": 26,
         "sentence_start": 319.679,
         "sentence_end": 336.449,
-        "clip_match": "exact"
+        "clip_match": "exact",
+        "def_en": "remaining after all costs or amounts have been taken away"
       },
       {
         "word": "prematurely",
@@ -3664,7 +3686,8 @@
         "sentence_id": 27,
         "sentence_start": 336.449,
         "sentence_end": 352.569,
-        "clip_match": "exact"
+        "clip_match": "exact",
+        "def_en": "before the usual or expected time"
       },
       {
         "word": "pillory",
@@ -3688,7 +3711,8 @@
         "sentence_id": 29,
         "sentence_start": 363.389,
         "sentence_end": 370.99,
-        "clip_match": "neighbour+1"
+        "clip_match": "neighbour+1",
+        "def_en": "to publicly mock and humiliate someone, especially in order to make them appear ridiculous"
       },
       {
         "word": "incorporate",
@@ -3712,7 +3736,8 @@
         "sentence_id": 30,
         "sentence_start": 370.99,
         "sentence_end": 385.599,
-        "clip_match": "neighbour+1"
+        "clip_match": "neighbour+1",
+        "def_en": "to include something as part of a larger whole or system"
       },
       {
         "word": "vulnerable",
@@ -3736,7 +3761,8 @@
         "sentence_id": 36,
         "sentence_start": 434.349,
         "sentence_end": 447.719,
-        "clip_match": "exact"
+        "clip_match": "exact",
+        "def_en": "easily harmed or attacked because of being weak or not protected"
       },
       {
         "word": "shield",
@@ -3760,7 +3786,8 @@
         "sentence_id": 37,
         "sentence_start": 447.719,
         "sentence_end": 460.49,
-        "clip_match": "exact"
+        "clip_match": "exact",
+        "def_en": "a protective cover placed around something to stop damage"
       },
       {
         "word": "calculate",
@@ -3784,7 +3811,8 @@
         "sentence_id": 38,
         "sentence_start": 460.49,
         "sentence_end": 475.689,
-        "clip_match": "neighbour+1"
+        "clip_match": "neighbour+1",
+        "def_en": "to determine an amount or value by using numbers or reasoning"
       },
       {
         "word": "emerge",
@@ -3808,7 +3836,8 @@
         "sentence_id": 39,
         "sentence_start": 475.689,
         "sentence_end": 497.37,
-        "clip_match": "exact"
+        "clip_match": "exact",
+        "def_en": "to become known or come out after being hidden or unclear"
       },
       {
         "word": "total cost",
@@ -3832,7 +3861,8 @@
         "sentence_id": 39,
         "sentence_start": 475.689,
         "sentence_end": 497.37,
-        "clip_match": "exact"
+        "clip_match": "exact",
+        "def_en": "the whole amount of money needed for all parts of something"
       },
       {
         "word": "benefit",
@@ -3856,7 +3886,8 @@
         "sentence_id": 39,
         "sentence_start": 475.689,
         "sentence_end": 497.37,
-        "clip_match": "exact"
+        "clip_match": "exact",
+        "def_en": "an advantage or profit obtained from an action or situation"
       },
       {
         "word": "assign",
@@ -3880,7 +3911,8 @@
         "sentence_id": 41,
         "sentence_start": 503.3,
         "sentence_end": 528.06,
-        "clip_match": "exact"
+        "clip_match": "exact",
+        "def_en": "to give a particular value or amount to something"
       },
       {
         "word": "dollar value",
@@ -3904,7 +3936,8 @@
         "sentence_id": 41,
         "sentence_start": 503.3,
         "sentence_end": 528.06,
-        "clip_match": "exact"
+        "clip_match": "exact",
+        "def_en": "the amount of money that something is considered to be worth"
       },
       {
         "word": "replacement cost",
@@ -3928,7 +3961,8 @@
         "sentence_id": 41,
         "sentence_start": 503.3,
         "sentence_end": 528.06,
-        "clip_match": "exact"
+        "clip_match": "exact",
+        "def_en": "the amount of money needed to buy a new item to replace one that is lost or destroyed"
       },
       {
         "word": "memo",
@@ -3952,7 +3986,8 @@
         "sentence_id": 44,
         "sentence_start": 538.14,
         "sentence_end": 555.95,
-        "clip_match": "neighbour+1"
+        "clip_match": "neighbour+1",
+        "def_en": "a short written message or record used within an organization"
       },
       {
         "word": "appall",
@@ -3976,7 +4011,8 @@
         "sentence_id": 44,
         "sentence_start": 538.14,
         "sentence_end": 555.95,
-        "clip_match": "neighbour+1"
+        "clip_match": "neighbour+1",
+        "def_en": "to shock someone deeply and make them feel horror or disgust"
       },
       {
         "word": "settlement",
@@ -4000,7 +4036,8 @@
         "sentence_id": 44,
         "sentence_start": 538.14,
         "sentence_end": 555.95,
-        "clip_match": "neighbour+1"
+        "clip_match": "neighbour+1",
+        "def_en": "an amount of money paid to end a legal disagreement"
       },
       {
         "word": "counter example",
@@ -4024,7 +4061,8 @@
         "sentence_id": 45,
         "sentence_start": 555.95,
         "sentence_end": 567.32,
-        "clip_match": "neighbour+1"
+        "clip_match": "neighbour+1",
+        "def_en": "an example that shows a general rule or idea is not always true"
       },
       {
         "word": "defend",
@@ -4048,7 +4086,8 @@
         "sentence_id": 46,
         "sentence_start": 567.32,
         "sentence_end": 575.32,
-        "clip_match": "neighbour+1"
+        "clip_match": "neighbour+1",
+        "def_en": "to argue in support of something against criticism"
       },
       {
         "word": "calculus",
@@ -4072,7 +4111,8 @@
         "sentence_id": 47,
         "sentence_start": 575.32,
         "sentence_end": 587.41,
-        "clip_match": "exact"
+        "clip_match": "exact",
+        "def_en": "a method or system of calculation, especially one used to weigh benefits and harms"
       },
       {
         "word": "take into account",
@@ -4096,7 +4136,8 @@
         "sentence_id": 48,
         "sentence_start": 587.41,
         "sentence_end": 600.58,
-        "clip_match": "neighbour+1"
+        "clip_match": "neighbour+1",
+        "def_en": "to consider something when making a decision or judgment"
       },
       {
         "word": "emotional loss",
@@ -4120,7 +4161,8 @@
         "sentence_id": 48,
         "sentence_start": 587.41,
         "sentence_end": 600.58,
-        "clip_match": "neighbour+1"
+        "clip_match": "neighbour+1",
+        "def_en": "the sadness and suffering caused by any significant emotional harm or deprivation"
       },
       {
         "word": "accurate",
@@ -4144,7 +4186,8 @@
         "sentence_id": 51,
         "sentence_start": 610.48,
         "sentence_end": 627.29,
-        "clip_match": "neighbour+1"
+        "clip_match": "neighbour+1",
+        "def_en": "correct and exact in every detail"
       },
       {
         "word": "apply to",
@@ -4168,7 +4211,8 @@
         "sentence_id": 52,
         "sentence_start": 627.29,
         "sentence_end": 636.2,
-        "clip_match": "neighbour+1"
+        "clip_match": "neighbour+1",
+        "def_en": "to be relevant to or used in a particular situation or subject"
       },
       {
         "word": "monetarily",
@@ -4192,7 +4236,8 @@
         "sentence_id": 52,
         "sentence_start": 627.29,
         "sentence_end": 636.2,
-        "clip_match": "exact"
+        "clip_match": "exact",
+        "def_en": "in terms of money or as an amount of money"
       },
       {
         "word": "adjust for inflation",
@@ -4216,7 +4261,8 @@
         "sentence_id": 54,
         "sentence_start": 644.51,
         "sentence_end": 667.64,
-        "clip_match": "neighbour+1"
+        "clip_match": "neighbour+1",
+        "def_en": "to change a money amount to reflect changes in prices over time"
       },
       {
         "word": "allow for",
@@ -4240,7 +4286,8 @@
         "sentence_id": 57,
         "sentence_start": 675.41,
         "sentence_end": 679.64,
-        "clip_match": "neighbour+1"
+        "clip_match": "neighbour+1",
+        "def_en": "to take something into account when making a decision or calculation"
       },
       {
         "word": "put a number on",
@@ -4264,7 +4311,8 @@
         "sentence_id": 61,
         "sentence_start": 701.06,
         "sentence_end": 719.87,
-        "clip_match": "ai_adjudicated"
+        "clip_match": "ai_adjudicated",
+        "def_en": "to assign a specific numerical value to something"
       },
       {
         "word": "profitable",
@@ -4288,7 +4336,8 @@
         "sentence_id": 63,
         "sentence_start": 729.81,
         "sentence_end": 738.949,
-        "clip_match": "neighbour+1"
+        "clip_match": "neighbour+1",
+        "def_en": "able to make money or gain a financial benefit"
       },
       {
         "word": "sacrifice",
@@ -4312,7 +4361,8 @@
         "sentence_id": 65,
         "sentence_start": 743.139,
         "sentence_end": 751.87,
-        "clip_match": "exact"
+        "clip_match": "exact",
+        "def_en": "to give up something valuable for the sake of a greater benefit"
       },
       {
         "word": "put some value on",
@@ -4336,7 +4386,8 @@
         "sentence_id": 69,
         "sentence_start": 782.12,
         "sentence_end": 799.05,
-        "clip_match": "exact"
+        "clip_match": "exact",
+        "def_en": "to assign a certain worth or importance to something"
       },
       {
         "word": "monetary",
@@ -4360,7 +4411,8 @@
         "sentence_id": 71,
         "sentence_start": 810.37,
         "sentence_end": 817.59,
-        "clip_match": "neighbour+1"
+        "clip_match": "neighbour+1",
+        "def_en": "relating to money or amounts of money"
       },
       {
         "word": "derive maximum utility",
@@ -4384,7 +4436,8 @@
         "sentence_id": 72,
         "sentence_start": 817.59,
         "sentence_end": 839.2,
-        "clip_match": "neighbour+1"
+        "clip_match": "neighbour+1",
+        "def_en": "to get the greatest amount of benefit or satisfaction from something"
       },
       {
         "word": "outright",
@@ -4408,7 +4461,8 @@
         "sentence_id": 72,
         "sentence_start": 817.59,
         "sentence_end": 839.2,
-        "clip_match": "exact"
+        "clip_match": "exact",
+        "def_en": "complete and without any doubt or limitation"
       },
       {
         "word": "arbitrarily",
@@ -4432,7 +4486,8 @@
         "sentence_id": 74,
         "sentence_start": 852.87,
         "sentence_end": 863.61,
-        "clip_match": "exact"
+        "clip_match": "exact",
+        "def_en": "in a way based on personal choice rather than rules or reason"
       },
       {
         "word": "take under advisement",
@@ -4456,7 +4511,8 @@
         "sentence_id": 75,
         "sentence_start": 863.61,
         "sentence_end": 864.79,
-        "clip_match": "ai_adjudicated"
+        "clip_match": "ai_adjudicated",
+        "def_en": "to delay a decision on something while considering it further"
       },
       {
         "word": "hunch",
@@ -4480,7 +4536,8 @@
         "sentence_id": 77,
         "sentence_start": 877.07,
         "sentence_end": 880.35,
-        "clip_match": "neighbour+5"
+        "clip_match": "neighbour+5",
+        "def_en": "a feeling or guess about something based on instinct rather than proof"
       },
       {
         "word": "controversy",
@@ -4504,7 +4561,8 @@
         "sentence_id": 82,
         "sentence_start": 895.11,
         "sentence_end": 906.77,
-        "clip_match": "neighbour+3"
+        "clip_match": "neighbour+3",
+        "def_en": "public disagreement or argument about something many people have different opinions on"
       },
       {
         "word": "place a dollar value on",
@@ -4528,7 +4586,8 @@
         "sentence_id": 82,
         "sentence_start": 895.11,
         "sentence_end": 906.77,
-        "clip_match": "ai_adjudicated"
+        "clip_match": "ai_adjudicated",
+        "def_en": "to assign a specific monetary worth to something for comparison or calculation"
       },
       {
         "word": "objection",
@@ -4552,7 +4611,8 @@
         "sentence_id": 83,
         "sentence_start": 906.77,
         "sentence_end": 926.83,
-        "clip_match": "neighbour+1"
+        "clip_match": "neighbour+1",
+        "def_en": "a reason someone gives for disagreeing with an idea or plan"
       },
       {
         "word": "the common good",
@@ -4576,7 +4636,8 @@
         "sentence_id": 85,
         "sentence_start": 939.75,
         "sentence_end": 948.48,
-        "clip_match": "neighbour+1"
+        "clip_match": "neighbour+1",
+        "def_en": "the shared benefit and well-being of all members of a community"
       },
       {
         "word": "minority",
@@ -4600,7 +4661,8 @@
         "sentence_id": 88,
         "sentence_start": 959.56,
         "sentence_end": 971.65,
-        "clip_match": "neighbour+3"
+        "clip_match": "neighbour+3",
+        "def_en": "the smaller number or part, especially a number that is less than half the total"
       },
       {
         "word": "have a say",
@@ -4624,7 +4686,8 @@
         "sentence_id": 90,
         "sentence_start": 978.07,
         "sentence_end": 985.84,
-        "clip_match": "ai_adjudicated"
+        "clip_match": "ai_adjudicated",
+        "def_en": "to have the right or chance to influence a decision"
       },
       {
         "word": "outweigh",
@@ -4648,7 +4711,8 @@
         "sentence_id": 94,
         "sentence_start": 1001.69,
         "sentence_end": 1015.67,
-        "clip_match": "neighbour+1"
+        "clip_match": "neighbour+1",
+        "def_en": "to be greater in importance or influence than something else"
       },
       {
         "word": "preference",
@@ -4672,7 +4736,8 @@
         "sentence_id": 96,
         "sentence_start": 1028.84,
         "sentence_end": 1037.699,
-        "clip_match": "neighbour+1"
+        "clip_match": "neighbour+1",
+        "def_en": "a greater liking for one thing over another"
       },
       {
         "word": "weigh",
@@ -4696,7 +4761,8 @@
         "sentence_id": 96,
         "sentence_start": 1028.84,
         "sentence_end": 1037.699,
-        "clip_match": "neighbour+1"
+        "clip_match": "neighbour+1",
+        "def_en": "to be considered or included in a decision or judgment"
       },
       {
         "word": "violate",
@@ -4720,7 +4786,8 @@
         "sentence_id": 97,
         "sentence_start": 1037.699,
         "sentence_end": 1049.73,
-        "clip_match": "exact"
+        "clip_match": "exact",
+        "def_en": "to fail to comply with a rule, principle, or right"
       },
       {
         "word": "trade off",
@@ -4744,7 +4811,8 @@
         "sentence_id": 101,
         "sentence_start": 1083.29,
         "sentence_end": 1096.52,
-        "clip_match": "neighbour+1"
+        "clip_match": "neighbour+1",
+        "def_en": "to give up something valuable in order to gain something else"
       },
       {
         "word": "excruciating",
@@ -4768,7 +4836,8 @@
         "sentence_id": 104,
         "sentence_start": 1109.51,
         "sentence_end": 1125.77,
-        "clip_match": "exact"
+        "clip_match": "exact",
+        "def_en": "extremely painful in a way that is very hard to bear"
       },
       {
         "word": "collective",
@@ -4792,7 +4861,8 @@
         "sentence_id": 104,
         "sentence_start": 1109.51,
         "sentence_end": 1125.77,
-        "clip_match": "exact"
+        "clip_match": "exact",
+        "def_en": "shared by or belonging to all members of a group"
       },
       {
         "word": "delirious",
@@ -4816,7 +4886,8 @@
         "sentence_id": 107,
         "sentence_start": 1154.68,
         "sentence_end": 1168.6,
-        "clip_match": "neighbour+3"
+        "clip_match": "neighbour+3",
+        "def_en": "extremely happy and excited in an uncontrolled way"
       },
       {
         "word": "adequately",
@@ -4840,7 +4911,8 @@
         "sentence_id": 108,
         "sentence_start": 1168.6,
         "sentence_end": 1182.5,
-        "clip_match": "neighbour+1"
+        "clip_match": "neighbour+1",
+        "def_en": "in a way that is good enough or satisfactory"
       },
       {
         "word": "aggregate",
@@ -4864,7 +4936,8 @@
         "sentence_id": 109,
         "sentence_start": 1182.5,
         "sentence_end": 1193.07,
-        "clip_match": "exact"
+        "clip_match": "exact",
+        "def_en": "to combine separate amounts or preferences into a single total"
       },
       {
         "word": "uniform",
@@ -4888,7 +4961,8 @@
         "sentence_id": 112,
         "sentence_start": 1215.85,
         "sentence_end": 1228.909,
-        "clip_match": "neighbour+1"
+        "clip_match": "neighbour+1",
+        "def_en": "not varying in form or character across different cases"
       },
       {
         "word": "conduct a survey",
@@ -4912,7 +4986,8 @@
         "sentence_id": 113,
         "sentence_start": 1228.909,
         "sentence_end": 1237.61,
-        "clip_match": "ai_adjudicated"
+        "clip_match": "ai_adjudicated",
+        "def_en": "to collect information by asking a group of people a set of questions"
       },
       {
         "word": "keep track",
@@ -4936,7 +5011,8 @@
         "sentence_id": 114,
         "sentence_start": 1237.61,
         "sentence_end": 1249.9,
-        "clip_match": "ai_adjudicated"
+        "clip_match": "ai_adjudicated",
+        "def_en": "to record or follow information over time"
       },
       {
         "word": "stray",
@@ -4960,7 +5036,8 @@
         "sentence_id": 119,
         "sentence_start": 1279.43,
         "sentence_end": 1284.48,
-        "clip_match": "neighbour+3"
+        "clip_match": "neighbour+3",
+        "def_en": "having no home and living on the streets"
       },
       {
         "word": "suppose",
@@ -4984,7 +5061,8 @@
         "sentence_id": 120,
         "sentence_start": 1284.48,
         "sentence_end": 1292.9,
-        "clip_match": "neighbour+1"
+        "clip_match": "neighbour+1",
+        "def_en": "to think or believe something is probably true"
       },
       {
         "word": "expensive",
@@ -5008,7 +5086,8 @@
         "sentence_id": 120,
         "sentence_start": 1284.48,
         "sentence_end": 1292.9,
-        "clip_match": "neighbour+2"
+        "clip_match": "neighbour+2",
+        "def_en": "costing a lot of money or requiring a high price"
       },
       {
         "word": "next most",
@@ -5032,7 +5111,8 @@
         "sentence_id": 124,
         "sentence_start": 1317.34,
         "sentence_end": 1323.14,
-        "clip_match": "exact"
+        "clip_match": "exact",
+        "def_en": "ranking immediately below the highest in a specified quality or degree"
       },
       {
         "word": "least expensive",
@@ -5056,7 +5136,8 @@
         "sentence_id": 130,
         "sentence_start": 1343.42,
         "sentence_end": 1348.01,
-        "clip_match": "neighbour+3"
+        "clip_match": "neighbour+3",
+        "def_en": "costing the smallest amount of money"
       },
       {
         "word": "depression",
@@ -5080,7 +5161,8 @@
         "sentence_id": 133,
         "sentence_start": 1351.3,
         "sentence_end": 1359.6,
-        "clip_match": "neighbour+5"
+        "clip_match": "neighbour+5",
+        "def_en": "a period of severe economic decline with high unemployment and falling prices"
       },
       {
         "word": "measurable",
@@ -5104,7 +5186,8 @@
         "sentence_id": 135,
         "sentence_start": 1368.46,
         "sentence_end": 1374.6,
-        "clip_match": "neighbour+1"
+        "clip_match": "neighbour+1",
+        "def_en": "able to be measured or expressed as an amount"
       },
       {
         "word": "satisfaction",
@@ -5128,7 +5211,8 @@
         "sentence_id": 135,
         "sentence_start": 1368.46,
         "sentence_end": 1374.6,
-        "clip_match": "neighbour+1"
+        "clip_match": "neighbour+1",
+        "def_en": "the fulfillment of a desire or need"
       },
       {
         "word": "appetite",
@@ -5152,7 +5236,8 @@
         "sentence_id": 136,
         "sentence_start": 1374.6,
         "sentence_end": 1384.29,
-        "clip_match": "exact"
+        "clip_match": "exact",
+        "def_en": "a strong natural desire, especially for food, pleasure, or satisfaction"
       },
       {
         "word": "craving",
@@ -5176,7 +5261,8 @@
         "sentence_id": 136,
         "sentence_start": 1374.6,
         "sentence_end": 1384.29,
-        "clip_match": "exact"
+        "clip_match": "exact",
+        "def_en": "a strong desire for something"
       },
       {
         "word": "gratification",
@@ -5200,7 +5286,8 @@
         "sentence_id": 136,
         "sentence_start": 1374.6,
         "sentence_end": 1384.29,
-        "clip_match": "exact"
+        "clip_match": "exact",
+        "def_en": "the act of satisfying a desire or appetite"
       },
       {
         "word": "capture",
@@ -5224,7 +5311,8 @@
         "sentence_id": 139,
         "sentence_start": 1395.99,
         "sentence_end": 1408.39,
-        "clip_match": "neighbour+1"
+        "clip_match": "neighbour+1",
+        "def_en": "to express or represent something accurately in a particular form"
       },
       {
         "word": "preposterous",
@@ -5248,7 +5336,8 @@
         "sentence_id": 140,
         "sentence_start": 1408.39,
         "sentence_end": 1417.22,
-        "clip_match": "neighbour+1"
+        "clip_match": "neighbour+1",
+        "def_en": "completely unreasonable or ridiculous"
       },
       {
         "word": "opposite",
@@ -5272,7 +5361,8 @@
         "sentence_id": 140,
         "sentence_start": 1408.39,
         "sentence_end": 1417.22,
-        "clip_match": "neighbour+1"
+        "clip_match": "neighbour+1",
+        "def_en": "a thing that is completely different from another thing"
       },
       {
         "word": "cherish",
@@ -5296,7 +5386,8 @@
         "sentence_id": 142,
         "sentence_start": 1424.18,
         "sentence_end": 1434.28,
-        "clip_match": "neighbour+1"
+        "clip_match": "neighbour+1",
+        "def_en": "to love and value someone or something very much"
       },
       {
         "word": "consequence",
@@ -5320,7 +5411,8 @@
         "sentence_id": 143,
         "sentence_start": 1434.28,
         "sentence_end": 1449.18,
-        "clip_match": "neighbour+3"
+        "clip_match": "neighbour+3",
+        "def_en": "a result or effect that follows from an action or decision"
       },
       {
         "word": "concern oneself with",
@@ -5344,7 +5436,8 @@
         "sentence_id": 151,
         "sentence_start": 1508.38,
         "sentence_end": 1525.48,
-        "clip_match": "ai_adjudicated"
+        "clip_match": "ai_adjudicated",
+        "def_en": "to give one's attention to or deal with a particular subject"
       },
       {
         "word": "apprehend",
@@ -5368,7 +5461,8 @@
         "sentence_id": 153,
         "sentence_start": 1533.61,
         "sentence_end": 1541.35,
-        "clip_match": "neighbour+3"
+        "clip_match": "neighbour+3",
+        "def_en": "to catch and arrest someone suspected of a crime"
       },
       {
         "word": "impending",
@@ -5392,7 +5486,8 @@
         "sentence_id": 154,
         "sentence_start": 1541.35,
         "sentence_end": 1552.2,
-        "clip_match": "neighbour+1"
+        "clip_match": "neighbour+1",
+        "def_en": "about to happen very soon, especially something dangerous or threatening"
       },
       {
         "word": "categorical",
@@ -5416,7 +5511,8 @@
         "sentence_id": 157,
         "sentence_start": 1563.06,
         "sentence_end": 1574.55,
-        "clip_match": "neighbour+3"
+        "clip_match": "neighbour+3",
+        "def_en": "unambiguously explicit and direct; (in Kantian philosophy) absolute and unconditional"
       },
       {
         "word": "commensurable",
@@ -5440,7 +5536,8 @@
         "sentence_id": 160,
         "sentence_start": 1599.97,
         "sentence_end": 1617.58,
-        "clip_match": "exact"
+        "clip_match": "exact",
+        "def_en": "able to be measured or judged by the same standard as something else"
       },
       {
         "word": "translate into",
@@ -5464,7 +5561,8 @@
         "sentence_id": 162,
         "sentence_start": 1627.24,
         "sentence_end": 1640.159,
-        "clip_match": "ai_adjudicated"
+        "clip_match": "ai_adjudicated",
+        "def_en": "to be changed into another form or expressed in different terms"
       },
       {
         "word": "without loss",
@@ -5488,7 +5586,8 @@
         "sentence_id": 162,
         "sentence_start": 1627.24,
         "sentence_end": 1640.159,
-        "clip_match": "neighbour+1"
+        "clip_match": "neighbour+1",
+        "def_en": "in a way that keeps the original meaning or value unchanged"
       },
       {
         "word": "graduate student",
@@ -5512,7 +5611,8 @@
         "sentence_id": 163,
         "sentence_start": 1640.159,
         "sentence_end": 1649.8,
-        "clip_match": "exact"
+        "clip_match": "exact",
+        "def_en": "a student who has finished a first degree and is studying for a higher one"
       },
       {
         "word": "enforce",
@@ -5536,7 +5636,8 @@
         "sentence_id": 165,
         "sentence_start": 1657.47,
         "sentence_end": 1671.03,
-        "clip_match": "neighbour+1"
+        "clip_match": "neighbour+1",
+        "def_en": "to make people obey a rule or law by punishing those who do not"
       },
       {
         "word": "traditionalist",
@@ -5560,7 +5661,8 @@
         "sentence_id": 167,
         "sentence_start": 1683.84,
         "sentence_end": 1692.82,
-        "clip_match": "neighbour+1"
+        "clip_match": "neighbour+1",
+        "def_en": "a person who prefers old customs and opposes change"
       },
       {
         "word": "conventional",
@@ -5584,7 +5686,8 @@
         "sentence_id": 167,
         "sentence_start": 1683.84,
         "sentence_end": 1692.82,
-        "clip_match": "exact"
+        "clip_match": "exact",
+        "def_en": "based on what is usually done or accepted by most people"
       },
       {
         "word": "embarrassed",
@@ -5608,7 +5711,8 @@
         "sentence_id": 168,
         "sentence_start": 1692.82,
         "sentence_end": 1700.0,
-        "clip_match": "neighbour+1"
+        "clip_match": "neighbour+1",
+        "def_en": "unwilling to say or do something because it makes you feel awkward"
       },
       {
         "word": "overnight",
@@ -5632,7 +5736,8 @@
         "sentence_id": 170,
         "sentence_start": 1706.12,
         "sentence_end": 1711.68,
-        "clip_match": "neighbour+1"
+        "clip_match": "neighbour+1",
+        "def_en": "for the duration of a night"
       },
       {
         "word": "use up",
@@ -5656,7 +5761,8 @@
         "sentence_id": 171,
         "sentence_start": 1711.68,
         "sentence_end": 1719.429,
-        "clip_match": "neighbour+3"
+        "clip_match": "neighbour+3",
+        "def_en": "to consume all of something until none is left"
       },
       {
         "word": "compromise",
@@ -5680,7 +5786,8 @@
         "sentence_id": 173,
         "sentence_start": 1726.78,
         "sentence_end": 1732.25,
-        "clip_match": "neighbour+1"
+        "clip_match": "neighbour+1",
+        "def_en": "an agreement in which each side gives up some of what it wants"
       },
       {
         "word": "maximum",
@@ -5704,7 +5811,8 @@
         "sentence_id": 174,
         "sentence_start": 1732.25,
         "sentence_end": 1740.28,
-        "clip_match": "neighbour+3"
+        "clip_match": "neighbour+3",
+        "def_en": "the largest number or amount that is allowed or possible"
       },
       {
         "word": "defray",
@@ -5728,7 +5836,8 @@
         "sentence_id": 176,
         "sentence_start": 1745.94,
         "sentence_end": 1755.34,
-        "clip_match": "neighbour+1"
+        "clip_match": "neighbour+1",
+        "def_en": "to pay money to cover the cost of something"
       },
       {
         "word": "provided",
@@ -5752,7 +5861,8 @@
         "sentence_id": 176,
         "sentence_start": 1745.94,
         "sentence_end": 1755.34,
-        "clip_match": "neighbour+1"
+        "clip_match": "neighbour+1",
+        "def_en": "on the condition that something happens or is true"
       },
       {
         "word": "headline",
@@ -5776,7 +5886,8 @@
         "sentence_id": 177,
         "sentence_start": 1755.34,
         "sentence_end": 1763.08,
-        "clip_match": "neighbour+1"
+        "clip_match": "neighbour+1",
+        "def_en": "the title of a major news story printed in large letters"
       },
       {
         "word": "illustration",
@@ -5800,7 +5911,8 @@
         "sentence_id": 178,
         "sentence_start": 1769.5,
         "sentence_end": 1784.2,
-        "clip_match": "exact"
+        "clip_match": "exact",
+        "def_en": "a specific example that helps explain a general idea or difficulty"
       },
       {
         "word": "uniformity",
@@ -5824,7 +5936,8 @@
         "sentence_id": 180,
         "sentence_start": 1792.68,
         "sentence_end": 1812.22,
-        "clip_match": "neighbour+1"
+        "clip_match": "neighbour+1",
+        "def_en": "the state of being the same in form or standard"
       },
       {
         "word": "commensurability",
@@ -5848,7 +5961,8 @@
         "sentence_id": 180,
         "sentence_start": 1792.68,
         "sentence_end": 1812.22,
-        "clip_match": "exact"
+        "clip_match": "exact",
+        "def_en": "the quality of being measurable by the same standard as something else"
       },
       {
         "word": "moral consideration",
@@ -5872,7 +5986,8 @@
         "sentence_id": 180,
         "sentence_start": 1792.68,
         "sentence_end": 1812.22,
-        "clip_match": "exact"
+        "clip_match": "exact",
+        "def_en": "a factor that should be taken into account when judging right and wrong"
       },
       {
         "word": "assess",
@@ -5896,7 +6011,8 @@
         "sentence_id": 182,
         "sentence_start": 1819.69,
         "sentence_end": 1832.65,
-        "clip_match": "exact"
+        "clip_match": "exact",
+        "def_en": "to carefully examine and measure the nature or value of something"
       },
       {
         "word": "higher pleasures",
@@ -5920,7 +6036,8 @@
         "sentence_id": 183,
         "sentence_start": 1832.65,
         "sentence_end": 1841.76,
-        "clip_match": "neighbour+1"
+        "clip_match": "neighbour+1",
+        "def_en": "intellectual or spiritual enjoyments considered superior to physical gratification"
       },
       {
         "word": "qualitative distinction",
@@ -5944,7 +6061,8 @@
         "sentence_id": 184,
         "sentence_start": 1841.76,
         "sentence_end": 1855.25,
-        "clip_match": "neighbour+1"
+        "clip_match": "neighbour+1",
+        "def_en": "a difference in kind or worth, not just in amount"
       },
       {
         "word": "egalitarian",
@@ -5968,7 +6086,8 @@
         "sentence_id": 184,
         "sentence_start": 1841.76,
         "sentence_end": 1855.25,
-        "clip_match": "neighbour+1"
+        "clip_match": "neighbour+1",
+        "def_en": "believing that all people deserve equal rights and treatment"
       },
       {
         "word": "regardless of",
@@ -5992,7 +6111,8 @@
         "sentence_id": 185,
         "sentence_start": 1855.25,
         "sentence_end": 1878.27,
-        "clip_match": "exact"
+        "clip_match": "exact",
+        "def_en": "in spite of or without considering a particular fact or situation"
       },
       {
         "word": "intensity",
@@ -6016,7 +6136,8 @@
         "sentence_id": 185,
         "sentence_start": 1855.25,
         "sentence_end": 1878.27,
-        "clip_match": "exact"
+        "clip_match": "exact",
+        "def_en": "the strength or force of a feeling such as pleasure or pain"
       },
       {
         "word": "duration",
@@ -6040,7 +6161,8 @@
         "sentence_id": 185,
         "sentence_start": 1855.25,
         "sentence_end": 1878.27,
-        "clip_match": "exact"
+        "clip_match": "exact",
+        "def_en": "the length of time that something continues or lasts"
       },
       {
         "word": "quantity",
@@ -6064,7 +6186,8 @@
         "sentence_id": 187,
         "sentence_start": 1889.38,
         "sentence_end": 1899.519,
-        "clip_match": "neighbour+1"
+        "clip_match": "neighbour+1",
+        "def_en": "the amount or number of something"
       },
       {
         "word": "intuition",
@@ -6088,7 +6211,8 @@
         "sentence_id": 190,
         "sentence_start": 1908.85,
         "sentence_end": 1923.85,
-        "clip_match": "neighbour+3"
+        "clip_match": "neighbour+3",
+        "def_en": "a direct feeling or belief about what is true without conscious reasoning"
       },
       {
         "word": "presumption",
@@ -6112,7 +6236,8 @@
         "sentence_id": 190,
         "sentence_start": 1908.85,
         "sentence_end": 1923.85,
-        "clip_match": "exact"
+        "clip_match": "exact",
+        "def_en": "the act of assuming something to be true without proof or good reason"
       },
       {
         "word": "intrinsically",
@@ -6136,7 +6261,8 @@
         "sentence_id": 190,
         "sentence_start": 1908.85,
         "sentence_end": 1923.85,
-        "clip_match": "exact"
+        "clip_match": "exact",
+        "def_en": "in a way that belongs to the basic nature of a thing"
       },
       {
         "word": "dispense with",
@@ -6160,7 +6286,8 @@
         "sentence_id": 194,
         "sentence_start": 1951.57,
         "sentence_end": 1973.89,
-        "clip_match": "neighbour+1"
+        "clip_match": "neighbour+1",
+        "def_en": "to get rid of or do without something completely"
       },
       {
         "word": "spectacle",
@@ -6184,7 +6311,8 @@
         "sentence_id": 196,
         "sentence_start": 1984.49,
         "sentence_end": 1993.48,
-        "clip_match": "neighbour+1"
+        "clip_match": "neighbour+1",
+        "def_en": "a violent or shocking public display that people watch"
       },
       {
         "word": "degrading",
@@ -6208,7 +6336,8 @@
         "sentence_id": 197,
         "sentence_start": 1993.48,
         "sentence_end": 2013.77,
-        "clip_match": "neighbour+3"
+        "clip_match": "neighbour+3",
+        "def_en": "causing a loss of dignity or respect"
       },
       {
         "word": "valorize",
@@ -6232,7 +6361,8 @@
         "sentence_id": 197,
         "sentence_start": 1993.48,
         "sentence_end": 2013.77,
-        "clip_match": "exact"
+        "clip_match": "exact",
+        "def_en": "to treat something as valuable or worthy of consideration"
       },
       {
         "word": "disciple",
@@ -6256,7 +6386,8 @@
         "sentence_id": 201,
         "sentence_start": 2048.76,
         "sentence_end": 2054.079,
-        "clip_match": "neighbour+3"
+        "clip_match": "neighbour+3",
+        "def_en": "a person who follows and learns from a teacher or leader"
       },
       {
         "word": "prodigy",
@@ -6280,7 +6411,8 @@
         "sentence_id": 203,
         "sentence_start": 2060.329,
         "sentence_end": 2063.569,
-        "clip_match": "exact"
+        "clip_match": "exact",
+        "def_en": "a young person with exceptional talent or ability"
       },
       {
         "word": "nervous breakdown",
@@ -6304,7 +6436,8 @@
         "sentence_id": 206,
         "sentence_start": 2073.659,
         "sentence_end": 2079.129,
-        "clip_match": "exact"
+        "clip_match": "exact",
+        "def_en": "a serious mental illness that stops someone from living normally"
       },
       {
         "word": "humanize",
@@ -6328,7 +6461,8 @@
         "sentence_id": 210,
         "sentence_start": 2092.659,
         "sentence_end": 2101.72,
-        "clip_match": "neighbour+1"
+        "clip_match": "neighbour+1",
+        "def_en": "to make something more considerate of people's real needs and feelings"
       },
       {
         "word": "utilitarian calculus",
@@ -6352,7 +6486,8 @@
         "sentence_id": 211,
         "sentence_start": 2101.72,
         "sentence_end": 2117.429,
-        "clip_match": "exact"
+        "clip_match": "exact",
+        "def_en": "a method of weighing pleasures and pains to measure the greatest happiness"
       },
       {
         "word": "accommodate",
@@ -6376,7 +6511,8 @@
         "sentence_id": 211,
         "sentence_start": 2101.72,
         "sentence_end": 2117.429,
-        "clip_match": "exact"
+        "clip_match": "exact",
+        "def_en": "to adjust or adapt something so it includes or fits new needs"
       },
       {
         "word": "humanitarian",
@@ -6400,7 +6536,8 @@
         "sentence_id": 211,
         "sentence_start": 2101.72,
         "sentence_end": 2117.429,
-        "clip_match": "exact"
+        "clip_match": "exact",
+        "def_en": "showing concern for the welfare and suffering of other people"
       },
       {
         "word": "address",
@@ -6424,7 +6561,8 @@
         "sentence_id": 212,
         "sentence_start": 2117.429,
         "sentence_end": 2126.439,
-        "clip_match": "exact"
+        "clip_match": "exact",
+        "def_en": "to deal with or discuss a problem or issue"
       },
       {
         "word": "liberty",
@@ -6448,7 +6586,8 @@
         "sentence_id": 213,
         "sentence_start": 2126.439,
         "sentence_end": 2136.38,
-        "clip_match": "exact"
+        "clip_match": "exact",
+        "def_en": "the freedom to live as one chooses without being controlled by others"
       },
       {
         "word": "minority rights",
@@ -6472,7 +6611,8 @@
         "sentence_id": 213,
         "sentence_start": 2126.439,
         "sentence_end": 2136.38,
-        "clip_match": "exact"
+        "clip_match": "exact",
+        "def_en": "the basic freedoms and fair treatment that belong to groups smaller in number"
       },
       {
         "word": "utilitarianism",
@@ -6496,7 +6636,8 @@
         "sentence_id": 214,
         "sentence_start": 2136.38,
         "sentence_end": 2145.099,
-        "clip_match": "exact"
+        "clip_match": "exact",
+        "def_en": "the belief that the right action is the one that produces the greatest happiness for the greatest number"
       },
       {
         "word": "premise",
@@ -6520,7 +6661,8 @@
         "sentence_id": 216,
         "sentence_start": 2150.769,
         "sentence_end": 2155.279,
-        "clip_match": "neighbour+3"
+        "clip_match": "neighbour+3",
+        "def_en": "a statement assumed to be true as a basis for reasoning"
       },
       {
         "word": "affirm",
@@ -6544,7 +6686,8 @@
         "sentence_id": 216,
         "sentence_start": 2150.769,
         "sentence_end": 2155.279,
-        "clip_match": "neighbour+3"
+        "clip_match": "neighbour+3",
+        "def_en": "to state or show that something is true or correct"
       },
       {
         "word": "explicitly",
@@ -6568,7 +6711,8 @@
         "sentence_id": 217,
         "sentence_start": 2155.279,
         "sentence_end": 2165.929,
-        "clip_match": "exact"
+        "clip_match": "exact",
+        "def_en": "in a clear and direct way that leaves no doubt about what is meant"
       },
       {
         "word": "desirable",
@@ -6592,7 +6736,8 @@
         "sentence_id": 217,
         "sentence_start": 2155.279,
         "sentence_end": 2165.929,
-        "clip_match": "exact"
+        "clip_match": "exact",
+        "def_en": "worth having or wanting because it is good or useful"
       },
       {
         "word": "de facto",
@@ -6616,7 +6761,8 @@
         "sentence_id": 218,
         "sentence_start": 2165.929,
         "sentence_end": 2175.619,
-        "clip_match": "exact"
+        "clip_match": "exact",
+        "def_en": "existing in actual fact, whether or not officially recognized"
       },
       {
         "word": "empirical",
@@ -6640,7 +6786,8 @@
         "sentence_id": 218,
         "sentence_start": 2165.929,
         "sentence_end": 2175.619,
-        "clip_match": "exact"
+        "clip_match": "exact",
+        "def_en": "based on real experience or observation rather than ideas or theory"
       },
       {
         "word": "distinguish",
@@ -6664,7 +6811,8 @@
         "sentence_id": 220,
         "sentence_start": 2178.979,
         "sentence_end": 2188.97,
-        "clip_match": "neighbour+1"
+        "clip_match": "neighbour+1",
+        "def_en": "to recognize a difference between two things"
       },
       {
         "word": "qualitatively",
@@ -6688,7 +6836,8 @@
         "sentence_id": 222,
         "sentence_start": 2196.559,
         "sentence_end": 2208.859,
-        "clip_match": "exact"
+        "clip_match": "exact",
+        "def_en": "in a way that concerns the kind or worth of something, not its amount"
       },
       {
         "word": "base",
@@ -6712,7 +6861,8 @@
         "sentence_id": 222,
         "sentence_start": 2196.559,
         "sentence_end": 2208.859,
-        "clip_match": "exact"
+        "clip_match": "exact",
+        "def_en": "low in moral quality and not deserving respect"
       },
       {
         "word": "unworthy",
@@ -6736,7 +6886,8 @@
         "sentence_id": 222,
         "sentence_start": 2196.559,
         "sentence_end": 2208.859,
-        "clip_match": "exact"
+        "clip_match": "exact",
+        "def_en": "of low quality and not deserving serious attention or respect"
       },
       {
         "word": "decided",
@@ -6760,7 +6911,8 @@
         "sentence_id": 227,
         "sentence_start": 2257.199,
         "sentence_end": 2266.219,
-        "clip_match": "exact"
+        "clip_match": "exact",
+        "def_en": "clear and strong, leaving no doubt"
       },
       {
         "word": "irrespective of",
@@ -6784,7 +6936,8 @@
         "sentence_id": 228,
         "sentence_start": 2266.219,
         "sentence_end": 2277.529,
-        "clip_match": "neighbour+1"
+        "clip_match": "neighbour+1",
+        "def_en": "without being affected or influenced by something"
       },
       {
         "word": "moral obligation",
@@ -6808,7 +6961,8 @@
         "sentence_id": 228,
         "sentence_start": 2266.219,
         "sentence_end": 2277.529,
-        "clip_match": "neighbour+1"
+        "clip_match": "neighbour+1",
+        "def_en": "a duty to act in a certain way because it is morally right"
       },
       {
         "word": "succeed",
@@ -6832,7 +6986,8 @@
         "sentence_id": 229,
         "sentence_start": 2277.529,
         "sentence_end": 2283.489,
-        "clip_match": "exact"
+        "clip_match": "exact",
+        "def_en": "to achieve the result that was intended"
       },
       {
         "word": "claim",
@@ -6856,7 +7011,8 @@
         "sentence_id": 233,
         "sentence_start": 2300.829,
         "sentence_end": 2324.889,
-        "clip_match": "neighbour+1"
+        "clip_match": "neighbour+1",
+        "def_en": "a statement that something is true, made without proof"
       },
       {
         "word": "excerpt",
@@ -6880,7 +7036,8 @@
         "sentence_id": 233,
         "sentence_start": 2300.829,
         "sentence_end": 2324.889,
-        "clip_match": "exact"
+        "clip_match": "exact",
+        "def_en": "a short piece taken from a longer work such as a book, speech, or film"
       },
       {
         "word": "infinite",
@@ -6904,7 +7061,8 @@
         "sentence_id": 235,
         "sentence_start": 2338.259,
         "sentence_end": 2358.349,
-        "clip_match": "exact"
+        "clip_match": "exact",
+        "def_en": "without any limit in size, amount, or degree"
       },
       {
         "word": "faculty",
@@ -6928,7 +7086,8 @@
         "sentence_id": 235,
         "sentence_start": 2338.259,
         "sentence_end": 2358.349,
-        "clip_match": "exact"
+        "clip_match": "exact",
+        "def_en": "a natural power of the mind, such as reason or imagination"
       },
       {
         "word": "paragon",
@@ -6952,7 +7111,8 @@
         "sentence_id": 235,
         "sentence_start": 2338.259,
         "sentence_end": 2358.349,
-        "clip_match": "exact"
+        "clip_match": "exact",
+        "def_en": "a perfect example of a kind or quality"
       },
       {
         "word": "quintessence",
@@ -6976,7 +7136,8 @@
         "sentence_id": 236,
         "sentence_start": 2358.349,
         "sentence_end": 2371.689,
-        "clip_match": "neighbour+1"
+        "clip_match": "neighbour+1",
+        "def_en": "the purest and most perfect example of something"
       },
       {
         "word": "contestant",
@@ -7000,7 +7161,8 @@
         "sentence_id": 237,
         "sentence_start": 2383.309,
         "sentence_end": 2409.289,
-        "clip_match": "exact"
+        "clip_match": "exact",
+        "def_en": "a person who takes part in a competition to win something"
       },
       {
         "word": "stunt",
@@ -7024,7 +7186,8 @@
         "sentence_id": 237,
         "sentence_start": 2383.309,
         "sentence_end": 2409.289,
-        "clip_match": "exact"
+        "clip_match": "exact",
+        "def_en": "a dangerous action done to entertain people"
       },
       {
         "word": "overwhelmingly",
@@ -7048,7 +7211,8 @@
         "sentence_id": 247,
         "sentence_start": 2482.369,
         "sentence_end": 2499.409,
-        "clip_match": "exact"
+        "clip_match": "exact",
+        "def_en": "by a very large majority of people"
       },
       {
         "word": "noble",
@@ -7072,7 +7236,8 @@
         "sentence_id": 253,
         "sentence_start": 2524.709,
         "sentence_end": 2530.92,
-        "clip_match": "neighbour+3"
+        "clip_match": "neighbour+3",
+        "def_en": "having or showing fine personal qualities and high moral aims"
       },
       {
         "word": "pleasurable",
@@ -7096,7 +7261,8 @@
         "sentence_id": 254,
         "sentence_start": 2530.92,
         "sentence_end": 2541.729,
-        "clip_match": "neighbour+5"
+        "clip_match": "neighbour+5",
+        "def_en": "giving pleasure or enjoyment"
       },
       {
         "word": "Benthamite",
@@ -7120,7 +7286,8 @@
         "sentence_id": 255,
         "sentence_start": 2541.729,
         "sentence_end": 2553.88,
-        "clip_match": "neighbour+1"
+        "clip_match": "neighbour+1",
+        "def_en": "a person who supports the idea that actions are right if they bring the greatest happiness to the greatest number"
       },
       {
         "word": "higher experience",
@@ -7144,7 +7311,8 @@
         "sentence_id": 257,
         "sentence_start": 2557.329,
         "sentence_end": 2567.42,
-        "clip_match": "neighbour+3"
+        "clip_match": "neighbour+3",
+        "def_en": "a refined enjoyment valued above ordinary pleasures for engaging the intellect"
       },
       {
         "word": "entertaining",
@@ -7168,7 +7336,8 @@
         "sentence_id": 262,
         "sentence_start": 2588.739,
         "sentence_end": 2594.16,
-        "clip_match": "neighbour+1"
+        "clip_match": "neighbour+1",
+        "def_en": "fun and enjoyable to watch or experience"
       },
       {
         "word": "analyze",
@@ -7192,7 +7361,8 @@
         "sentence_id": 263,
         "sentence_start": 2594.16,
         "sentence_end": 2603.15,
-        "clip_match": "exact"
+        "clip_match": "exact",
+        "def_en": "to examine something carefully in order to understand its parts or meaning"
       },
       {
         "word": "blind faith",
@@ -7216,7 +7386,8 @@
         "sentence_id": 265,
         "sentence_start": 2605.859,
         "sentence_end": 2624.049,
-        "clip_match": "exact"
+        "clip_match": "exact",
+        "def_en": "belief without doubt or evidence, often because of what others say"
       },
       {
         "word": "cultural convention",
@@ -7240,7 +7411,8 @@
         "sentence_id": 268,
         "sentence_start": 2638.349,
         "sentence_end": 2652.319,
-        "clip_match": "exact"
+        "clip_match": "exact",
+        "def_en": "a customary way of thinking or behaving that a community generally follows"
       },
       {
         "word": "the latter",
@@ -7264,7 +7436,8 @@
         "sentence_id": 270,
         "sentence_start": 2663.049,
         "sentence_end": 2673.8,
-        "clip_match": "neighbour+1"
+        "clip_match": "neighbour+1",
+        "def_en": "the last one or ones of a set just mentioned"
       },
       {
         "word": "derive pleasure from",
@@ -7288,7 +7461,8 @@
         "sentence_id": 271,
         "sentence_start": 2673.8,
         "sentence_end": 2684.869,
-        "clip_match": "ai_adjudicated"
+        "clip_match": "ai_adjudicated",
+        "def_en": "to get enjoyment or satisfaction from something"
       },
       {
         "word": "branch out",
@@ -7312,7 +7486,8 @@
         "sentence_id": 271,
         "sentence_start": 2673.8,
         "sentence_end": 2684.869,
-        "clip_match": "neighbour+1"
+        "clip_match": "neighbour+1",
+        "def_en": "to expand one's interests or activities into new areas"
       },
       {
         "word": "test",
@@ -7336,7 +7511,8 @@
         "sentence_id": 274,
         "sentence_start": 2706.599,
         "sentence_end": 2712.149,
-        "clip_match": "neighbour+1"
+        "clip_match": "neighbour+1",
+        "def_en": "a standard or method used to judge whether something is right or good"
       },
       {
         "word": "higher pleasure",
@@ -7360,7 +7536,8 @@
         "sentence_id": 275,
         "sentence_start": 2712.149,
         "sentence_end": 2721.509,
-        "clip_match": "neighbour+3"
+        "clip_match": "neighbour+3",
+        "def_en": "intellectual or spiritual enjoyment valued above mere physical gratification"
       },
       {
         "word": "stimulate",
@@ -7384,7 +7561,8 @@
         "sentence_id": 278,
         "sentence_start": 2728.769,
         "sentence_end": 2738.369,
-        "clip_match": "neighbour+3"
+        "clip_match": "neighbour+3",
+        "def_en": "to make a part of the body or brain more active"
       },
       {
         "word": "intense pleasure",
@@ -7408,7 +7586,8 @@
         "sentence_id": 278,
         "sentence_start": 2728.769,
         "sentence_end": 2738.369,
-        "clip_match": "neighbour+3"
+        "clip_match": "neighbour+3",
+        "def_en": "a very strong feeling of enjoyment or delight"
       },
       {
         "word": "lower pleasure",
@@ -7432,7 +7611,8 @@
         "sentence_id": 280,
         "sentence_start": 2742.179,
         "sentence_end": 2752.69,
-        "clip_match": "neighbour+1"
+        "clip_match": "neighbour+1",
+        "def_en": "sensory or bodily gratification, as opposed to intellectual or moral enjoyment"
       },
       {
         "word": "momentary",
@@ -7456,7 +7636,8 @@
         "sentence_id": 282,
         "sentence_start": 2761.969,
         "sentence_end": 2774.93,
-        "clip_match": "exact"
+        "clip_match": "exact",
+        "def_en": "lasting for only a very short time"
       },
       {
         "word": "disprove",
@@ -7480,7 +7661,8 @@
         "sentence_id": 287,
         "sentence_start": 2800.739,
         "sentence_end": 2811.099,
-        "clip_match": "neighbour+1"
+        "clip_match": "neighbour+1",
+        "def_en": "to show that something is false or wrong"
       },
       {
         "word": "adequate",
@@ -7504,7 +7686,8 @@
         "sentence_id": 288,
         "sentence_start": 2811.099,
         "sentence_end": 2822.649,
-        "clip_match": "neighbour+3"
+        "clip_match": "neighbour+3",
+        "def_en": "good enough or satisfactory for a particular purpose"
       },
       {
         "word": "utilitarian framework",
@@ -7528,7 +7711,8 @@
         "sentence_id": 288,
         "sentence_start": 2811.099,
         "sentence_end": 2822.649,
-        "clip_match": "exact"
+        "clip_match": "exact",
+        "def_en": "a theoretical system judging actions by their contribution to overall happiness"
       },
       {
         "word": "objective",
@@ -7552,7 +7736,8 @@
         "sentence_id": 289,
         "sentence_start": 2825.879,
         "sentence_end": 2841.38,
-        "clip_match": "exact"
+        "clip_match": "exact",
+        "def_en": "based on facts and not influenced by personal feelings"
       },
       {
         "word": "cultivation",
@@ -7576,7 +7761,8 @@
         "sentence_id": 291,
         "sentence_start": 2847.319,
         "sentence_end": 2857.799,
-        "clip_match": "neighbour+1"
+        "clip_match": "neighbour+1",
+        "def_en": "the act of developing or improving one's mind, skills, or qualities through education and training"
       },
       {
         "word": "couch potato",
@@ -7600,7 +7786,8 @@
         "sentence_id": 296,
         "sentence_start": 2908.719,
         "sentence_end": 2926.309,
-        "clip_match": "neighbour+3"
+        "clip_match": "neighbour+3",
+        "def_en": "a person who sits a lot and watches TV instead of being active"
       },
       {
         "word": "succumb to",
@@ -7624,7 +7811,8 @@
         "sentence_id": 296,
         "sentence_start": 2908.719,
         "sentence_end": 2926.309,
-        "clip_match": "exact"
+        "clip_match": "exact",
+        "def_en": "to stop resisting and give in to a strong desire"
       },
       {
         "word": "indolence",
@@ -7648,7 +7836,8 @@
         "sentence_id": 297,
         "sentence_start": 2926.309,
         "sentence_end": 2943.19,
-        "clip_match": "neighbour+1"
+        "clip_match": "neighbour+1",
+        "def_en": "the habit of avoiding effort because one prefers to be lazy"
       },
       {
         "word": "sloth",
@@ -7672,7 +7861,8 @@
         "sentence_id": 297,
         "sentence_start": 2926.309,
         "sentence_end": 2943.19,
-        "clip_match": "exact"
+        "clip_match": "exact",
+        "def_en": "the habit of being lazy and avoiding effort"
       },
       {
         "word": "gaze",
@@ -7696,7 +7886,8 @@
         "sentence_id": 297,
         "sentence_start": 2926.309,
         "sentence_end": 2943.19,
-        "clip_match": "exact"
+        "clip_match": "exact",
+        "def_en": "to look steadily at something for a long time"
       },
       {
         "word": "dispute",
@@ -7720,7 +7911,8 @@
         "sentence_id": 301,
         "sentence_start": 2967.859,
         "sentence_end": 2979.719,
-        "clip_match": "neighbour+3"
+        "clip_match": "neighbour+3",
+        "def_en": "to question whether something is true or right"
       },
       {
         "word": "pretension",
@@ -7744,7 +7936,8 @@
         "sentence_id": 301,
         "sentence_start": 2967.859,
         "sentence_end": 2979.719,
-        "clip_match": "neighbour+3"
+        "clip_match": "neighbour+3",
+        "def_en": "a claim to have a certain quality or importance that may not be deserved"
       },
       {
         "word": "ground on",
@@ -7768,7 +7961,8 @@
         "sentence_id": 301,
         "sentence_start": 2967.859,
         "sentence_end": 2979.719,
-        "clip_match": "exact"
+        "clip_match": "exact",
+        "def_en": "founded or based on a particular principle or reason"
       },
       {
         "word": "incomparable",
@@ -7792,7 +7986,8 @@
         "sentence_id": 302,
         "sentence_start": 2979.719,
         "sentence_end": 2994.599,
-        "clip_match": "ai_adjudicated"
+        "clip_match": "ai_adjudicated",
+        "def_en": "in a way that is far beyond comparison with others"
       },
       {
         "word": "sacred",
@@ -7816,7 +8011,8 @@
         "sentence_id": 302,
         "sentence_start": 2979.719,
         "sentence_end": 2994.599,
-        "clip_match": "exact"
+        "clip_match": "exact",
+        "def_en": "deserving deep respect and never to be violated or treated lightly"
       },
       {
         "word": "binding",
@@ -7840,7 +8036,8 @@
         "sentence_id": 302,
         "sentence_start": 2979.719,
         "sentence_end": 2994.599,
-        "clip_match": "exact"
+        "clip_match": "exact",
+        "def_en": "having the power to require obedience or to be morally obligatory"
       },
       {
         "word": "privileged",
@@ -7864,7 +8061,8 @@
         "sentence_id": 303,
         "sentence_start": 2994.599,
         "sentence_end": 3005.31,
-        "clip_match": "exact"
+        "clip_match": "exact",
+        "def_en": "given special advantage or priority over other things"
       },
       {
         "word": "depart from",
@@ -7888,7 +8086,8 @@
         "sentence_id": 303,
         "sentence_start": 2994.599,
         "sentence_end": 3005.31,
-        "clip_match": "exact"
+        "clip_match": "exact",
+        "def_en": "to move away from or differ from a standard or assumption"
       },
       {
         "word": "collectively",
@@ -7912,7 +8111,8 @@
         "sentence_id": 304,
         "sentence_start": 3005.31,
         "sentence_end": 3023.2,
-        "clip_match": "neighbour+1"
+        "clip_match": "neighbour+1",
+        "def_en": "considered as a whole group rather than as individuals"
       },
       {
         "word": "paramount",
@@ -7936,7 +8136,8 @@
         "sentence_id": 304,
         "sentence_start": 3005.31,
         "sentence_end": 3023.2,
-        "clip_match": "neighbour+1"
+        "clip_match": "neighbour+1",
+        "def_en": "more important than anything else"
       },
       {
         "word": "obligation",
@@ -7960,7 +8161,8 @@
         "sentence_id": 304,
         "sentence_start": 3005.31,
         "sentence_end": 3023.2,
-        "clip_match": "neighbour+1"
+        "clip_match": "neighbour+1",
+        "def_en": "a moral duty to do something because it is right"
       },
       {
         "word": "trade off against",
@@ -7984,7 +8186,8 @@
         "sentence_id": 305,
         "sentence_start": 3023.2,
         "sentence_end": 3030.89,
-        "clip_match": "neighbour+1"
+        "clip_match": "neighbour+1",
+        "def_en": "to balance one thing against another, accepting a loss to gain an advantage"
       },
       {
         "word": "in the long run",
@@ -8008,7 +8211,8 @@
         "sentence_id": 308,
         "sentence_start": 3047.699,
         "sentence_end": 3055.949,
-        "clip_match": "neighbour+3"
+        "clip_match": "neighbour+3",
+        "def_en": "after a long period of time has passed, considered as a whole"
       },
       {
         "word": "progressive",
@@ -8032,7 +8236,8 @@
         "sentence_id": 307,
         "sentence_start": 3037.929,
         "sentence_end": 3047.699,
-        "clip_match": "neighbour+1"
+        "clip_match": "neighbour+1",
+        "def_en": "developing or improving over time toward a better state"
       },
       {
         "word": "better off",
@@ -8056,7 +8261,8 @@
         "sentence_id": 308,
         "sentence_start": 3047.699,
         "sentence_end": 3055.949,
-        "clip_match": "exact"
+        "clip_match": "exact",
+        "def_en": "in a more favorable or improved condition, especially with more money or advantages"
       },
       {
         "word": "convincing",
@@ -8080,7 +8286,8 @@
         "sentence_id": 309,
         "sentence_start": 3055.949,
         "sentence_end": 3078.479,
-        "clip_match": "exact"
+        "clip_match": "exact",
+        "def_en": "able to make you believe that something is true or right"
       },
       {
         "word": "account for",
@@ -8104,7 +8311,8 @@
         "sentence_id": 310,
         "sentence_start": 3078.479,
         "sentence_end": 3100.409,
-        "clip_match": "exact"
+        "clip_match": "exact",
+        "def_en": "to explain or give a reason for something"
       },
       {
         "word": "doctrine",
@@ -8128,7 +8336,8 @@
         "sentence_id": 311,
         "sentence_start": 3100.409,
         "sentence_end": 3118.729,
-        "clip_match": "neighbour+1"
+        "clip_match": "neighbour+1",
+        "def_en": "a set of beliefs taught as a system of thought"
       },
       {
         "word": "embalm",
@@ -8152,7 +8361,8 @@
         "sentence_id": 312,
         "sentence_start": 3118.729,
         "sentence_end": 3134.989,
-        "clip_match": "exact"
+        "clip_match": "exact",
+        "def_en": "to treat a dead body with chemicals to stop it from decaying"
       },
       {
         "word": "preside",
@@ -8176,7 +8386,8 @@
         "sentence_id": 312,
         "sentence_start": 3118.729,
         "sentence_end": 3134.989,
-        "clip_match": "exact"
+        "clip_match": "exact",
+        "def_en": "to be present in a place in a displayed or preserved form"
       },
       {
         "word": "address oneself to",
@@ -8200,7 +8411,8 @@
         "sentence_id": 313,
         "sentence_start": 3134.989,
         "sentence_end": 3142.339,
-        "clip_match": "ai_adjudicated"
+        "clip_match": "ai_adjudicated",
+        "def_en": "to turn one's attention to and deal with a particular subject"
       },
       {
         "word": "anatomy",
@@ -8224,7 +8436,8 @@
         "sentence_id": 314,
         "sentence_start": 3142.339,
         "sentence_end": 3153.519,
-        "clip_match": "exact"
+        "clip_match": "exact",
+        "def_en": "the scientific study of the structure of the human or animal body"
       },
       {
         "word": "verisimilitude",
@@ -8248,7 +8461,8 @@
         "sentence_id": 319,
         "sentence_start": 3186.91,
         "sentence_end": 3194.979,
-        "clip_match": "exact"
+        "clip_match": "exact",
+        "def_en": "the quality of seeming real or true"
       },
       {
         "word": "adhere to",
@@ -8272,7 +8486,8 @@
         "sentence_id": 323,
         "sentence_start": 3220.659,
         "sentence_end": 3235.4,
-        "clip_match": "exact"
+        "clip_match": "exact",
+        "def_en": "to act in accordance with a rule, belief, or principle"
       }
     ]
   },
@@ -8305,7 +8520,8 @@
         "why": "本课核心政治哲学术语，指主张个人自由权优先于国家干预的理论立场。",
         "clip_match": "neighbour+1",
         "scene_img": "/assets/scenes/ep03/frame_libertarian.jpg",
-        "scene_desc": "哈佛《公正》课堂现场 · 时间戳 [31:40]"
+        "scene_desc": "哈佛《公正》课堂现场 · 时间戳 [31:40]",
+        "def_en": "a person who believes that individual freedom should be protected from government interference"
       },
       {
         "word": "libertarianism",
@@ -8328,7 +8544,8 @@
         "why": "本课讨论的核心政治哲学流派名称，理解整节课论证的前提。",
         "clip_match": "neighbour+1",
         "scene_img": "/assets/scenes/ep03/frame_libertarianism.jpg",
-        "scene_desc": "哈佛《公正》课堂现场 · 时间戳 [06:21]"
+        "scene_desc": "哈佛《公正》课堂现场 · 时间戳 [06:21]",
+        "def_en": "the belief that individual rights and freedoms should be protected from government interference"
       },
       {
         "word": "coercion",
@@ -8351,7 +8568,8 @@
         "why": "自由至上主义反对国家干预的核心理由，是论证的关键概念。",
         "clip_match": "neighbour+1",
         "scene_img": "/assets/scenes/ep03/frame_coercion.jpg",
-        "scene_desc": "哈佛《公正》课堂现场 · 时间戳 [08:27]"
+        "scene_desc": "哈佛《公正》课堂现场 · 时间戳 [08:27]",
+        "def_en": "the act of forcing someone to do something by law or threat"
       },
       {
         "word": "redistribution",
@@ -8374,7 +8592,8 @@
         "why": "政治哲学中关于财富分配的核心议题，本课争论的焦点。",
         "clip_match": "neighbour+1",
         "scene_img": "/assets/scenes/ep03/frame_redistribution.jpg",
-        "scene_desc": "哈佛《公正》课堂现场 · 时间戳 [10:07]"
+        "scene_desc": "哈佛《公正》课堂现场 · 时间戳 [10:07]",
+        "def_en": "the act of moving money or resources from one group to another"
       },
       {
         "word": "paternalist",
@@ -8397,7 +8616,8 @@
         "why": "描述以保护他人为由干预其自由的法律或政策，是自由至上主义批判的对象。",
         "clip_match": "neighbour+1",
         "scene_img": "/assets/scenes/ep03/frame_paternalist.jpg",
-        "scene_desc": "哈佛《公正》课堂现场 · 时间戳 [08:06]"
+        "scene_desc": "哈佛《公正》课堂现场 · 时间戳 [08:06]",
+        "def_en": "relating to a system where authorities decide what is best for people"
       },
       {
         "word": "proprietors",
@@ -8420,7 +8640,8 @@
         "why": "在论证中用于表达“我们是自身的所有者”，是学术性较强的词汇。",
         "clip_match": "neighbour+1",
         "scene_img": "/assets/scenes/ep03/frame_proprietors.jpg",
-        "scene_desc": "哈佛《公正》课堂现场 · 时间戳 [25:10]"
+        "scene_desc": "哈佛《公正》课堂现场 · 时间戳 [25:10]",
+        "def_en": "people who have legal ownership of themselves or their own person"
       },
       {
         "word": "acquisition",
@@ -8443,7 +8664,8 @@
         "why": "诺齐克正义原则中的“获取正义”，是学术讨论中的关键术语。",
         "clip_match": "neighbour+1",
         "scene_img": "/assets/scenes/ep03/frame_acquisition.jpg",
-        "scene_desc": "哈佛《公正》课堂现场 · 时间戳 [12:09]"
+        "scene_desc": "哈佛《公正》课堂现场 · 时间戳 [12:09]",
+        "def_en": "the act of getting or obtaining something"
       },
       {
         "word": "violation",
@@ -8466,7 +8688,8 @@
         "why": "常用于描述对权利或法律的侵犯，是论证中的高频学术词。",
         "clip_match": "neighbour+1",
         "scene_img": "/assets/scenes/ep03/frame_violation.jpg",
-        "scene_desc": "哈佛《公正》课堂现场 · 时间戳 [09:03]"
+        "scene_desc": "哈佛《公正》课堂现场 · 时间戳 [09:03]",
+        "def_en": "an action that breaks a law or someone's rights"
       },
       {
         "word": "legislation",
@@ -8489,7 +8712,8 @@
         "why": "政治哲学讨论中涉及法律制定的核心词汇。",
         "clip_match": "neighbour+1",
         "scene_img": "/assets/scenes/ep03/frame_legislation.jpg",
-        "scene_desc": "哈佛《公正》课堂现场 · 时间戳 [08:06]"
+        "scene_desc": "哈佛《公正》课堂现场 · 时间戳 [08:06]",
+        "def_en": "laws enacted by a government or other governing body"
       },
       {
         "word": "taxation",
@@ -8512,7 +8736,8 @@
         "why": "本课争论的核心政策工具，是理解再分配争议的关键词。",
         "clip_match": "neighbour+1",
         "scene_img": "/assets/scenes/ep03/frame_taxation.jpg",
-        "scene_desc": "哈佛《公正》课堂现场 · 时间戳 [09:45]"
+        "scene_desc": "哈佛《公正》课堂现场 · 时间戳 [09:45]",
+        "def_en": "the system of requiring people to pay money to the government"
       },
       {
         "word": "theft",
@@ -8535,7 +8760,8 @@
         "why": "自由至上主义者将税收称为“盗窃”，是论证中的关键比喻。",
         "clip_match": "neighbour+1",
         "scene_img": "/assets/scenes/ep03/frame_theft.jpg",
-        "scene_desc": "哈佛《公正》课堂现场 · 时间戳 [10:15]"
+        "scene_desc": "哈佛《公正》课堂现场 · 时间戳 [10:15]",
+        "def_en": "the act of taking money or property from someone without their permission"
       },
       {
         "word": "consent",
@@ -8558,7 +8784,8 @@
         "why": "自由至上主义中“自由同意”是交易正义的条件，是重要概念。",
         "clip_match": "neighbour+1",
         "scene_img": "/assets/scenes/ep03/frame_consent.jpg",
-        "scene_desc": "哈佛《公正》课堂现场 · 时间戳 [12:44]"
+        "scene_desc": "哈佛《公正》课堂现场 · 时间戳 [12:44]",
+        "def_en": "the act of agreeing freely to something or giving permission"
       },
       {
         "word": "extrapolated",
@@ -8581,7 +8808,8 @@
         "why": "学术论证中表示从已知原则推导出结论，是高级词汇。",
         "clip_match": "neighbour+1",
         "scene_img": "/assets/scenes/ep03/frame_extrapolated.jpg",
-        "scene_desc": "哈佛《公正》课堂现场 · 时间戳 [36:42]"
+        "scene_desc": "哈佛《公正》课堂现场 · 时间戳 [36:42]",
+        "def_en": "inferred or extended from known facts or agreed principles to unknown cases"
       },
       {
         "word": "hustings",
@@ -8604,7 +8832,8 @@
         "why": "政治学术语，指竞选活动，是低频但有用的词汇。",
         "clip_match": "neighbour+1",
         "scene_img": "/assets/scenes/ep03/frame_hustings.jpg",
-        "scene_desc": "哈佛《公正》课堂现场 · 时间戳 [41:30]"
+        "scene_desc": "哈佛《公正》课堂现场 · 时间戳 [41:30]",
+        "def_en": "the activity of making speeches and campaigning to win people's votes"
       },
       {
         "word": "mob",
@@ -8627,7 +8856,8 @@
         "why": "在讨论民主与暴民统治的区别时出现，是政治哲学关键词。",
         "clip_match": "neighbour+1",
         "scene_img": "/assets/scenes/ep03/frame_mob.jpg",
-        "scene_desc": "哈佛《公正》课堂现场 · 时间戳 [40:18]"
+        "scene_desc": "哈佛《公正》课堂现场 · 时间戳 [40:18]",
+        "def_en": "a large disorderly crowd that may become violent and out of control"
       },
       {
         "word": "constitution",
@@ -8650,7 +8880,8 @@
         "why": "政治哲学中限制民主决策的根本大法，是核心概念。",
         "clip_match": "neighbour+1",
         "scene_img": "/assets/scenes/ep03/frame_constitution.jpg",
-        "scene_desc": "哈佛《公正》课堂现场 · 时间戳 [42:00]"
+        "scene_desc": "哈佛《公正》课堂现场 · 时间戳 [42:00]",
+        "def_en": "a set of basic laws that limit and organize how a country is governed"
       },
       {
         "word": "incentive",
@@ -8673,7 +8904,8 @@
         "why": "在讨论私人消防公司时出现，是经济学与政策分析常用词。",
         "clip_match": "neighbour+1",
         "scene_img": "/assets/scenes/ep03/frame_incentive.jpg",
-        "scene_desc": "哈佛《公正》课堂现场 · 时间戳 [30:59]"
+        "scene_desc": "哈佛《公正》课堂现场 · 时间戳 [30:59]",
+        "def_en": "a reason or reward that makes someone want to act in a certain way"
       },
       {
         "word": "displaced",
@@ -8696,7 +8928,8 @@
         "why": "在讨论卡特里娜飓风灾民时出现，是描述社会问题的常用词。",
         "clip_match": "neighbour+1",
         "scene_img": "/assets/scenes/ep03/frame_displaced.jpg",
-        "scene_desc": "哈佛《公正》课堂现场 · 时间戳 [26:04]"
+        "scene_desc": "哈佛《公正》课堂现场 · 时间戳 [26:04]",
+        "def_en": "forced to leave home because of a disaster"
       },
       {
         "word": "hurricane",
@@ -8719,7 +8952,8 @@
         "why": "在案例中出现，是自然灾害相关词汇，影响听力理解。",
         "clip_match": "neighbour+1",
         "scene_img": "/assets/scenes/ep03/frame_hurricane.jpg",
-        "scene_desc": "哈佛《公正》课堂现场 · 时间戳 [26:04]"
+        "scene_desc": "哈佛《公正》课堂现场 · 时间戳 [26:04]",
+        "def_en": "a violent tropical storm with very strong winds and heavy rain"
       },
       {
         "word": "violates",
@@ -8742,7 +8976,8 @@
         "why": "动词形式，用于描述对自我所有权原则的侵犯，是论证常用词。",
         "clip_match": "neighbour+1",
         "scene_img": "/assets/scenes/ep03/frame_violates.jpg",
-        "scene_desc": "哈佛《公正》课堂现场 · 时间戳 [33:16]"
+        "scene_desc": "哈佛《公正》课堂现场 · 时间戳 [33:16]",
+        "def_en": "to break a rule or principle that should be followed"
       },
       {
         "word": "justified",
@@ -8765,7 +9000,8 @@
         "why": "在讨论极端情况下偷窃是否正当时出现，是道德哲学核心词。",
         "clip_match": "neighbour+1",
         "scene_img": "/assets/scenes/ep03/frame_justified.jpg",
-        "scene_desc": "哈佛《公正》课堂现场 · 时间戳 [21:53]"
+        "scene_desc": "哈佛《公正》课堂现场 · 时间戳 [21:53]",
+        "def_en": "able to be shown as right or acceptable in a particular situation"
       },
       {
         "word": "morally",
@@ -8788,7 +9024,8 @@
         "why": "用于修饰道德判断，是伦理讨论中的高频副词。",
         "clip_match": "neighbour+1",
         "scene_img": "/assets/scenes/ep03/frame_morally.jpg",
-        "scene_desc": "哈佛《公正》课堂现场 · 时间戳 [22:39]"
+        "scene_desc": "哈佛《公正》课堂现场 · 时间戳 [22:39]",
+        "def_en": "in a way that relates to right and wrong behavior"
       },
       {
         "word": "equivalent",
@@ -8811,7 +9048,8 @@
         "why": "在论证税收与强制劳动道德等价时出现，是学术比较常用词。",
         "clip_match": "neighbour+1",
         "scene_img": "/assets/scenes/ep03/frame_equivalent.jpg",
-        "scene_desc": "哈佛《公正》课堂现场 · 时间戳 [23:00]"
+        "scene_desc": "哈佛《公正》课堂现场 · 时间戳 [23:00]",
+        "def_en": "equal in value, meaning, or effect to something else"
       },
       {
         "word": "slavery",
@@ -8834,7 +9072,8 @@
         "why": "在论证税收等同于强制劳动进而等同于奴役时出现，是核心概念。",
         "clip_match": "neighbour+1",
         "scene_img": "/assets/scenes/ep03/frame_slavery.jpg",
-        "scene_desc": "哈佛《公正》课堂现场 · 时间戳 [24:06]"
+        "scene_desc": "哈佛《公正》课堂现场 · 时间戳 [24:06]",
+        "def_en": "the system of owning people and forcing them to work without pay"
       },
       {
         "word": "labor",
@@ -8857,7 +9096,8 @@
         "why": "在讨论劳动成果与税收的关系时出现，是政治经济学核心词。",
         "clip_match": "exact",
         "scene_img": "/assets/scenes/ep03/frame_labor.jpg",
-        "scene_desc": "哈佛《公正》课堂现场 · 时间戳 [23:00]"
+        "scene_desc": "哈佛《公正》课堂现场 · 时间戳 [23:00]",
+        "def_en": "work, especially physical effort done by people"
       },
       {
         "word": "earnings",
@@ -8880,7 +9120,8 @@
         "why": "在讨论税收是对收入的索取时出现，是经济学术语。",
         "clip_match": "exact",
         "scene_img": "/assets/scenes/ep03/frame_earnings.jpg",
-        "scene_desc": "哈佛《公正》课堂现场 · 时间戳 [22:17]"
+        "scene_desc": "哈佛《公正》课堂现场 · 时间戳 [22:17]",
+        "def_en": "the money that a person receives from working or from investments"
       },
       {
         "word": "property",
@@ -8903,7 +9144,8 @@
         "why": "自由至上主义中财产权是核心权利，是政治哲学关键词。",
         "clip_match": "exact",
         "scene_img": "/assets/scenes/ep03/frame_property.jpg",
-        "scene_desc": "哈佛《公正》课堂现场 · 时间戳 [10:33]"
+        "scene_desc": "哈佛《公正》课堂现场 · 时间戳 [10:33]",
+        "def_en": "things owned by someone, such as land, buildings, or possessions"
       },
       {
         "word": "rights",
@@ -8926,7 +9168,8 @@
         "why": "本课核心概念，指个人拥有的不可侵犯的权利。",
         "clip_match": "exact",
         "scene_img": "/assets/scenes/ep03/frame_rights.jpg",
-        "scene_desc": "哈佛《公正》课堂现场 · 时间戳 [04:59]"
+        "scene_desc": "哈佛《公正》课堂现场 · 时间戳 [04:59]",
+        "def_en": "the moral or legal claims that a person is entitled to make"
       },
       {
         "word": "justice",
@@ -8949,7 +9192,8 @@
         "why": "课程主题，在密尔和诺齐克的理论中都是核心概念。",
         "clip_match": "neighbour+1",
         "scene_img": "/assets/scenes/ep03/frame_justice.jpg",
-        "scene_desc": "哈佛《公正》课堂现场 · 时间戳 [02:24]"
+        "scene_desc": "哈佛《公正》课堂现场 · 时间戳 [02:24]",
+        "def_en": "fair treatment of people according to what is right and deserved"
       },
       {
         "word": "morality",
@@ -8972,7 +9216,8 @@
         "why": "在讨论正义是道德的一部分时出现，是伦理学核心词。",
         "clip_match": "neighbour+1",
         "scene_img": "/assets/scenes/ep03/frame_morality.jpg",
-        "scene_desc": "哈佛《公正》课堂现场 · 时间戳 [01:59]"
+        "scene_desc": "哈佛《公正》课堂现场 · 时间戳 [01:59]",
+        "def_en": "the set of principles about what is right and wrong in people's actions"
       },
       {
         "word": "individual",
@@ -8995,7 +9240,8 @@
         "why": "在强调个人权利优先于集体时出现，是政治哲学核心词。",
         "clip_match": "exact",
         "scene_img": "/assets/scenes/ep03/frame_individual.jpg",
-        "scene_desc": "哈佛《公正》课堂现场 · 时间戳 [38:53]"
+        "scene_desc": "哈佛《公正》课堂现场 · 时间戳 [38:53]",
+        "def_en": "a single human being, considered separately from any group or society"
       },
       {
         "word": "fundamental",
@@ -9018,7 +9264,8 @@
         "why": "用于修饰权利或原则，是学术论证中表示基础性的常用词。",
         "clip_match": "neighbour+1",
         "scene_img": "/assets/scenes/ep03/frame_fundamental.jpg",
-        "scene_desc": "哈佛《公正》课堂现场 · 时间戳 [06:33]"
+        "scene_desc": "哈佛《公正》课堂现场 · 时间戳 [06:33]",
+        "def_en": "basic and most important, forming the foundation of something"
       },
       {
         "word": "principles",
@@ -9041,7 +9288,8 @@
         "why": "在诺齐克的正义原则中，指获取正义和转让正义两条原则。",
         "clip_match": "neighbour+1",
         "scene_img": "/assets/scenes/ep03/frame_principles.jpg",
-        "scene_desc": "哈佛《公正》课堂现场 · 时间戳 [12:02]"
+        "scene_desc": "哈佛《公正》课堂现场 · 时间戳 [12:02]",
+        "def_en": "basic rules or standards used to judge what is right or wrong"
       },
       {
         "word": "distribution",
@@ -9064,7 +9312,8 @@
         "why": "在讨论财富分配时出现，是经济学与政治哲学常用词。",
         "clip_match": "neighbour+1",
         "scene_img": "/assets/scenes/ep03/frame_distribution.jpg",
-        "scene_desc": "哈佛《公正》课堂现场 · 时间戳 [11:10]"
+        "scene_desc": "哈佛《公正》课堂现场 · 时间戳 [11:10]",
+        "def_en": "the way wealth or resources are shared among people"
       },
       {
         "word": "wealth",
@@ -9087,7 +9336,8 @@
         "why": "在讨论财富分配时出现，是经济学术语。",
         "clip_match": "neighbour+1",
         "scene_img": "/assets/scenes/ep03/frame_wealth.jpg",
-        "scene_desc": "哈佛《公正》课堂现场 · 时间戳 [11:10]"
+        "scene_desc": "哈佛《公正》课堂现场 · 时间戳 [11:10]",
+        "def_en": "the total amount of money and property owned by a person or group"
       },
       {
         "word": "income",
@@ -9110,7 +9360,8 @@
         "why": "在讨论再分配时出现，是经济学术语。",
         "clip_match": "neighbour+1",
         "scene_img": "/assets/scenes/ep03/frame_income.jpg",
-        "scene_desc": "哈佛《公正》课堂现场 · 时间戳 [09:45]"
+        "scene_desc": "哈佛《公正》课堂现场 · 时间戳 [09:45]",
+        "def_en": "the money a person regularly receives from work or investments"
       },
       {
         "word": "tax",
@@ -9133,7 +9384,8 @@
         "why": "本课核心政策工具，是讨论再分配的关键词。",
         "clip_match": "exact",
         "scene_img": "/assets/scenes/ep03/frame_tax.jpg",
-        "scene_desc": "哈佛《公正》课堂现场 · 时间戳 [15:37]"
+        "scene_desc": "哈佛《公正》课堂现场 · 时间戳 [15:37]",
+        "def_en": "to make a person or company pay a charge to the government"
       },
       {
         "word": "redistribute",
@@ -9156,7 +9408,8 @@
         "why": "动词形式，用于描述税收政策的目标，是核心论证词。",
         "clip_match": "neighbour+1",
         "scene_img": "/assets/scenes/ep03/frame_redistribute.jpg",
-        "scene_desc": "哈佛《公正》课堂现场 · 时间戳 [16:01]"
+        "scene_desc": "哈佛《公正》课堂现场 · 时间戳 [16:01]",
+        "def_en": "to move money or resources from one group to another"
       },
       {
         "word": "unjust",
@@ -9179,7 +9432,8 @@
         "why": "用于描述自由至上主义认为不合法的政策，是核心评价词。",
         "clip_match": "neighbour+1",
         "scene_img": "/assets/scenes/ep03/frame_unjust.jpg",
-        "scene_desc": "哈佛《公正》课堂现场 · 时间戳 [07:51]"
+        "scene_desc": "哈佛《公正》课堂现场 · 时间戳 [07:51]",
+        "def_en": "not fair or right according to moral principles"
       },
       {
         "word": "injustice",
@@ -9202,7 +9456,8 @@
         "why": "在讨论是否容忍不公正时出现，是伦理学核心词。",
         "clip_match": "neighbour+1",
         "scene_img": "/assets/scenes/ep03/frame_injustice.jpg",
-        "scene_desc": "哈佛《公正》课堂现场 · 时间戳 [19:26]"
+        "scene_desc": "哈佛《公正》课堂现场 · 时间戳 [19:26]",
+        "def_en": "a situation in which someone is treated unfairly or denied what they deserve"
       },
       {
         "word": "violating",
@@ -9225,7 +9480,8 @@
         "why": "现在分词形式，用于描述侵犯权利的行为，是论证常用词。",
         "clip_match": "neighbour+1",
         "scene_img": "/assets/scenes/ep03/frame_violating.jpg",
-        "scene_desc": "哈佛《公正》课堂现场 · 时间戳 [02:43]"
+        "scene_desc": "哈佛《公正》课堂现场 · 时间戳 [02:43]",
+        "def_en": "breaking a law or failing to respect someone's rights"
       },
       {
         "word": "objections",
@@ -9248,7 +9504,8 @@
         "why": "在学术讨论中表示对论证的质疑，是论证结构关键词。",
         "clip_match": "neighbour+1",
         "scene_img": "/assets/scenes/ep03/frame_objections.jpg",
-        "scene_desc": "哈佛《公正》课堂现场 · 时间戳 [04:24]"
+        "scene_desc": "哈佛《公正》课堂现场 · 时间戳 [04:24]",
+        "def_en": "reasons people give for disagreeing with an idea or plan"
       },
       {
         "word": "reasoning",
@@ -9271,7 +9528,8 @@
         "why": "指逻辑推理过程，是学术论证的核心概念。",
         "clip_match": "neighbour+1",
         "scene_img": "/assets/scenes/ep03/frame_reasoning.jpg",
-        "scene_desc": "哈佛《公正》课堂现场 · 时间戳 [24:49]"
+        "scene_desc": "哈佛《公正》课堂现场 · 时间戳 [24:49]",
+        "def_en": "the process of thinking logically to reach a conclusion"
       },
       {
         "word": "argument",
@@ -9294,7 +9552,8 @@
         "why": "指自由至上主义的论证，是学术讨论的基本单位。",
         "clip_match": "neighbour+1",
         "scene_img": "/assets/scenes/ep03/frame_argument.jpg",
-        "scene_desc": "哈佛《公正》课堂现场 · 时间戳 [17:57]"
+        "scene_desc": "哈佛《公正》课堂现场 · 时间戳 [17:57]",
+        "def_en": "a set of reasons given to support or oppose an idea"
       }
     ]
   },
@@ -9318,7 +9577,8 @@
         "speaker": "Prof. Tamar Gendler",
         "scene_img": "/assets/scenes/cover_yale_philosophy.jpg",
         "scene_desc": "耶鲁大讲堂：理想国心灵秩序开篇",
-        "sentence_cn": "柏拉图认为，灵魂中的正义是一种内在心灵和谐的状态。"
+        "sentence_cn": "柏拉图认为，灵魂中的正义是一种内在心灵和谐的状态。",
+        "def_en": "a state of peaceful agreement among different parts"
       },
       {
         "word": "rational",
@@ -9332,7 +9592,8 @@
         "speaker": "Prof. Tamar Gendler",
         "scene_img": "/assets/scenes/cover_yale_philosophy.jpg",
         "scene_desc": "理性统摄心灵模型",
-        "sentence_cn": "我们心灵中的理性部分追求真理、智慧与真正的理解。"
+        "sentence_cn": "我们心灵中的理性部分追求真理、智慧与真正的理解。",
+        "def_en": "based on clear thought and logic rather than emotion"
       },
       {
         "word": "conflict",
@@ -9346,7 +9607,8 @@
         "speaker": "Prof. Tamar Gendler",
         "scene_img": "/assets/scenes/cover_yale_philosophy.jpg",
         "scene_desc": "内在心理矛盾与拉扯",
-        "sentence_cn": "当我们的理性反思与身体欲望发生冲突时，我们就会体验到剧烈的内心冲突。"
+        "sentence_cn": "当我们的理性反思与身体欲望发生冲突时，我们就会体验到剧烈的内心冲突。",
+        "def_en": "a serious disagreement or struggle between opposing forces or desires"
       },
       {
         "word": "virtue",
@@ -9360,7 +9622,8 @@
         "speaker": "Prof. Tamar Gendler",
         "scene_img": "/assets/scenes/cover_yale_philosophy.jpg",
         "scene_desc": "亚里士多德习惯论与德性养成",
-        "sentence_cn": "在亚里士多德看来，道德德性是通过经常性的习惯养成和刻意的练习获得的。"
+        "sentence_cn": "在亚里士多德看来，道德德性是通过经常性的习惯养成和刻意的练习获得的。",
+        "def_en": "a good quality in a person's character shown by doing what is right"
       },
       {
         "word": "reflection",
@@ -9374,7 +9637,8 @@
         "speaker": "Prof. Tamar Gendler",
         "scene_img": "/assets/scenes/cover_yale_philosophy.jpg",
         "scene_desc": "直觉冲动与理性反思的间隙",
-        "sentence_cn": "哲学反思让我们能够在付诸行动之前，批判性地审视自己的冲动。"
+        "sentence_cn": "哲学反思让我们能够在付诸行动之前，批判性地审视自己的冲动。",
+        "def_en": "the act of thinking carefully and deeply about one's own beliefs and actions"
       },
       {
         "word": "proportion",
@@ -9388,7 +9652,8 @@
         "speaker": "Prof. Tamar Gendler",
         "scene_img": "/assets/scenes/cover_yale_philosophy.jpg",
         "scene_desc": "黄金分割比例与内心平静",
-        "sentence_cn": "一个秩序良好的灵魂使其三个组成部分保持恰当的比例。"
+        "sentence_cn": "一个秩序良好的灵魂使其三个组成部分保持恰当的比例。",
+        "def_en": "a balanced relationship among the parts of something, each having its proper size or amount"
       },
       {
         "word": "flourish",
@@ -9402,7 +9667,8 @@
         "speaker": "Prof. Tamar Gendler",
         "scene_img": "/assets/scenes/cover_yale_philosophy.jpg",
         "scene_desc": "亚里士多德‘繁盛幸福’概念辨析",
-        "sentence_cn": "如果人的理性能力被低级的欲望所奴役，人类就无法真正繁盛生活。"
+        "sentence_cn": "如果人的理性能力被低级的欲望所奴役，人类就无法真正繁盛生活。",
+        "def_en": "to grow and develop fully in a healthy and successful way"
       },
       {
         "word": "instinct",
@@ -9416,7 +9682,8 @@
         "speaker": "Prof. Tamar Gendler",
         "scene_img": "/assets/scenes/cover_yale_philosophy.jpg",
         "scene_desc": "卡尼曼双系统认知理论对照",
-        "sentence_cn": "认知心理学揭示，我们原始的本能往往比有意识的推理反应得更快。"
+        "sentence_cn": "认知心理学揭示，我们原始的本能往往比有意识的推理反应得更快。",
+        "def_en": "a natural feeling or inner drive that makes one react without conscious thought"
       },
       {
         "word": "discipline",
@@ -9430,7 +9697,8 @@
         "speaker": "Prof. Tamar Gendler",
         "scene_img": "/assets/scenes/cover_yale_philosophy.jpg",
         "scene_desc": "心智纪律与欲望控制",
-        "sentence_cn": "培养节制需要精神上的自律和稳定的认知调节。"
+        "sentence_cn": "培养节制需要精神上的自律和稳定的认知调节。",
+        "def_en": "the ability to control your own behavior and make yourself work or act in a controlled way"
       },
       {
         "word": "perspective",
@@ -9444,7 +9712,8 @@
         "speaker": "Prof. Tamar Gendler",
         "scene_img": "/assets/scenes/cover_yale_philosophy.jpg",
         "scene_desc": "古代哲学与前沿脑科学交汇",
-        "sentence_cn": "古代哲学为现代认知科学提供了一个深刻的视角。"
+        "sentence_cn": "古代哲学为现代认知科学提供了一个深刻的视角。",
+        "def_en": "a particular way of thinking about or understanding something"
       },
       {
         "word": "eudaimonia",
@@ -9458,7 +9727,8 @@
         "speaker": "Prof. Tamar Gendler",
         "scene_img": "/assets/scenes/cover_yale_philosophy.jpg",
         "scene_desc": "至善论与快乐论的本质分野",
-        "sentence_cn": "亚里士多德将至善幸福定义为灵魂依照完满德性而进行的活动。"
+        "sentence_cn": "亚里士多德将至善幸福定义为灵魂依照完满德性而进行的活动。",
+        "def_en": "the state of living a full and good life by realizing one's true potential through virtuous action"
       },
       {
         "word": "temperance",
@@ -9472,7 +9742,8 @@
         "speaker": "Prof. Tamar Gendler",
         "scene_img": "/assets/scenes/cover_yale_philosophy.jpg",
         "scene_desc": "柏拉图四主德之节制篇",
-        "sentence_cn": "在柏拉图的《理想国》中，节制是理性、激情与欲望之间的和谐一致。"
+        "sentence_cn": "在柏拉图的《理想国》中，节制是理性、激情与欲望之间的和谐一致。",
+        "def_en": "the quality of controlling one's desires and acting with self-restraint"
       },
       {
         "word": "appetite",
@@ -9486,7 +9757,8 @@
         "speaker": "Prof. Tamar Gendler",
         "scene_img": "/assets/scenes/cover_yale_philosophy.jpg",
         "scene_desc": "欲望控制模型",
-        "sentence_cn": "理性必须支配人类灵魂中较为低下的欲望，才能维持心理的平衡。"
+        "sentence_cn": "理性必须支配人类灵魂中较为低下的欲望，才能维持心理的平衡。",
+        "def_en": "a strong natural desire, especially for food, pleasure, or satisfaction"
       },
       {
         "word": "cognitive",
@@ -9500,7 +9772,8 @@
         "speaker": "Prof. Tamar Gendler",
         "scene_img": "/assets/scenes/cover_yale_philosophy.jpg",
         "scene_desc": "认知心理学双进程模型",
-        "sentence_cn": "现代认知科学证实，道德判断既依赖直觉式的启发式过程，也依赖深思熟虑的反思。"
+        "sentence_cn": "现代认知科学证实，道德判断既依赖直觉式的启发式过程，也依赖深思熟虑的反思。",
+        "def_en": "relating to thinking, understanding, and mental processes"
       },
       {
         "word": "tripartite",
@@ -9514,7 +9787,8 @@
         "speaker": "Prof. Tamar Gendler",
         "scene_img": "/assets/scenes/cover_yale_philosophy.jpg",
         "scene_desc": "灵魂三分说结构图解",
-        "sentence_cn": "柏拉图提出了著名的人类灵魂三分法：理性、激情与欲望。"
+        "sentence_cn": "柏拉图提出了著名的人类灵魂三分法：理性、激情与欲望。",
+        "def_en": "having three distinct parts or divisions"
       },
       {
         "word": "charioteer",
@@ -9528,7 +9802,8 @@
         "speaker": "Prof. Tamar Gendler",
         "scene_img": "/assets/scenes/cover_yale_philosophy.jpg",
         "scene_desc": "双马战车寓言解析",
-        "sentence_cn": "在《斐德罗篇》中，苏格拉底将灵魂比作一位驾驭着两匹天性冲突的带翼骏马的御者。"
+        "sentence_cn": "在《斐德罗篇》中，苏格拉底将灵魂比作一位驾驭着两匹天性冲突的带翼骏马的御者。",
+        "def_en": "a person who drives a horse-drawn vehicle used in ancient races and battles"
       },
       {
         "word": "akrasia",
@@ -9542,7 +9817,8 @@
         "speaker": "Prof. Tamar Gendler",
         "scene_img": "/assets/scenes/cover_yale_philosophy.jpg",
         "scene_desc": "意志软弱与欲望诱惑",
-        "sentence_cn": "古代哲学中的无自制力问题，探究的是我们为什么会违背自己更好的道德判断而行动。"
+        "sentence_cn": "古代哲学中的无自制力问题，探究的是我们为什么会违背自己更好的道德判断而行动。",
+        "def_en": "the state of acting against what one knows is best"
       },
       {
         "word": "contemplation",
@@ -9556,7 +9832,8 @@
         "speaker": "Prof. Tamar Gendler",
         "scene_img": "/assets/scenes/cover_yale_philosophy.jpg",
         "scene_desc": "沉思生活（Theoria）",
-        "sentence_cn": "亚里士多德得出结论：幸福的最高形式存在于哲学沉思之中。"
+        "sentence_cn": "亚里士多德得出结论：幸福的最高形式存在于哲学沉思之中。",
+        "def_en": "the activity of thinking deeply and quietly about important things"
       },
       {
         "word": "hedonism",
@@ -9570,7 +9847,8 @@
         "speaker": "Prof. Tamar Gendler",
         "scene_img": "/assets/scenes/cover_yale_philosophy.jpg",
         "scene_desc": "享乐与德性的截然不同",
-        "sentence_cn": "苏格拉底将真正的美德与只追求当下感官满足的粗陋享乐主义相对照。"
+        "sentence_cn": "苏格拉底将真正的美德与只追求当下感官满足的粗陋享乐主义相对照。",
+        "def_en": "the belief that pleasure is the only good in life"
       },
       {
         "word": "stoicism",
@@ -9584,7 +9862,8 @@
         "speaker": "Prof. Tamar Gendler",
         "scene_img": "/assets/scenes/cover_yale_philosophy.jpg",
         "scene_desc": "爱比克泰德与斯多葛智慧",
-        "sentence_cn": "斯多葛哲学教导我们，内心的平静来自分清哪些事在我们掌控之中、哪些不在。"
+        "sentence_cn": "斯多葛哲学教导我们，内心的平静来自分清哪些事在我们掌控之中、哪些不在。",
+        "def_en": "the belief that we should stay calm and accept what we cannot control"
       },
       {
         "word": "equilibrium",
@@ -9598,7 +9877,8 @@
         "speaker": "Prof. Tamar Gendler",
         "scene_img": "/assets/scenes/cover_yale_philosophy.jpg",
         "scene_desc": "身心平衡的理想境界",
-        "sentence_cn": "当理性引导我们的情感激情而不强行压制它们时，健康的心灵便达到动态平衡。"
+        "sentence_cn": "当理性引导我们的情感激情而不强行压制它们时，健康的心灵便达到动态平衡。",
+        "def_en": "a state of balance in which different forces or feelings are equal"
       },
       {
         "word": "cardinal",
@@ -9612,7 +9892,8 @@
         "speaker": "Prof. Tamar Gendler",
         "scene_img": "/assets/scenes/cover_yale_philosophy.jpg",
         "scene_desc": "古典四主德图解",
-        "sentence_cn": "智慧、勇敢、节制和正义构成了古典希腊思想中的四大主要德性。"
+        "sentence_cn": "智慧、勇敢、节制和正义构成了古典希腊思想中的四大主要德性。",
+        "def_en": "most important or fundamental among a set of things"
       },
       {
         "word": "tripartite theory of soul",
@@ -9626,7 +9907,8 @@
         "speaker": "Prof. Tamar Gendler",
         "scene_img": "/assets/scenes/cover_yale_philosophy.jpg",
         "scene_desc": "理想国城邦与心灵同构说",
-        "sentence_cn": "柏拉图的灵魂三分说对应着他理想城邦中的三个阶层：哲学王、护卫者与生产者。"
+        "sentence_cn": "柏拉图的灵魂三分说对应着他理想城邦中的三个阶层：哲学王、护卫者与生产者。",
+        "def_en": "the idea that the soul has three separate parts: reason, spirit, and desire"
       },
       {
         "word": "allegory of the chariot",
@@ -9640,7 +9922,8 @@
         "speaker": "Prof. Tamar Gendler",
         "scene_img": "/assets/scenes/cover_yale_philosophy.jpg",
         "scene_desc": "费德鲁斯战车画卷",
-        "sentence_cn": "在战车寓言中，御者必须驾驭一匹高贵的白马和一匹桀骜不驯的黑马，朝着天国前行。"
+        "sentence_cn": "在战车寓言中，御者必须驾驭一匹高贵的白马和一匹桀骜不驯的黑马，朝着天国前行。",
+        "def_en": "a picture-story in which a driver controls two horses, one good and one wild, to show how reason guides the soul"
       },
       {
         "word": "Platonic justice",
@@ -9654,7 +9937,8 @@
         "speaker": "Prof. Tamar Gendler",
         "scene_img": "/assets/scenes/cover_yale_philosophy.jpg",
         "scene_desc": "各司其职的正义定义",
-        "sentence_cn": "柏拉图式的正义被界定为：灵魂的每一部分各司其职，互不越俎代庖。"
+        "sentence_cn": "柏拉图式的正义被界定为：灵魂的每一部分各司其职，互不越俎代庖。",
+        "def_en": "the state of a soul where each part does its own job without interfering with others"
       },
       {
         "word": "Aristotelian virtue ethics",
@@ -9668,7 +9952,8 @@
         "speaker": "Prof. Tamar Gendler",
         "scene_img": "/assets/scenes/cover_yale_philosophy.jpg",
         "scene_desc": "德性伦理学总纲",
-        "sentence_cn": "亚里士多德德性伦理学关注的是道德行为者的品格，而非对严格功利主义规则的遵守。"
+        "sentence_cn": "亚里士多德德性伦理学关注的是道德行为者的品格，而非对严格功利主义规则的遵守。",
+        "def_en": "an ethical theory emphasizing good character and practical wisdom over rigid moral rules"
       },
       {
         "word": "doctrine of the mean",
@@ -9682,7 +9967,8 @@
         "speaker": "Prof. Tamar Gendler",
         "scene_img": "/assets/scenes/cover_yale_philosophy.jpg",
         "scene_desc": "过犹不及与适度之美",
-        "sentence_cn": "亚里士多德的中庸之道把德性定义为介于过度与不及这两种对立恶习之间的黄金中道。"
+        "sentence_cn": "亚里士多德的中庸之道把德性定义为介于过度与不及这两种对立恶习之间的黄金中道。",
+        "def_en": "the idea that virtue lies at the balanced middle point between two opposite extremes"
       },
       {
         "word": "eudaimonic flourishing",
@@ -9696,7 +9982,8 @@
         "speaker": "Prof. Tamar Gendler",
         "scene_img": "/assets/scenes/cover_yale_philosophy.jpg",
         "scene_desc": "至善生活内在图景",
-        "sentence_cn": "德性幸福与短暂的享乐快感有着根本区别，因为它要求道德操守和高尚的行为。"
+        "sentence_cn": "德性幸福与短暂的享乐快感有着根本区别，因为它要求道德操守和高尚的行为。",
+        "def_en": "a life of true human flourishing achieved by fully developing one's potential through moral virtue and noble deeds"
       },
       {
         "word": "dual-process cognition",
@@ -9710,7 +9997,8 @@
         "speaker": "Prof. Tamar Gendler",
         "scene_img": "/assets/scenes/cover_yale_philosophy.jpg",
         "scene_desc": "现代神经科学映射",
-        "sentence_cn": "行为心理学中的双进程认知模型，与柏拉图关于心灵能力相互冲突的古老直觉高度吻合。"
+        "sentence_cn": "行为心理学中的双进程认知模型，与柏拉图关于心灵能力相互冲突的古老直觉高度吻合。",
+        "def_en": "the theory that the mind uses two separate systems, one fast and intuitive, the other slow and deliberate"
       },
       {
         "word": "cognitive reappraisal",
@@ -9724,7 +10012,8 @@
         "speaker": "Prof. Tamar Gendler",
         "scene_img": "/assets/scenes/cover_yale_philosophy.jpg",
         "scene_desc": "情绪调节与理性自律机制",
-        "sentence_cn": "认知重评让理性智识能够在强烈情绪反应导致不理性行为之前对其加以调节。"
+        "sentence_cn": "认知重评让理性智识能够在强烈情绪反应导致不理性行为之前对其加以调节。",
+        "def_en": "the mental process of changing how you interpret a situation to control your emotional response"
       },
       {
         "word": "moral intuitionism",
@@ -9738,7 +10027,8 @@
         "speaker": "Prof. Tamar Gendler",
         "scene_img": "/assets/scenes/cover_yale_philosophy.jpg",
         "scene_desc": "直觉自明性讨论",
-        "sentence_cn": "道德直觉主义认为，根本性的道德真理无需形式证明，就能被我们的理智直觉直接把握。"
+        "sentence_cn": "道德直觉主义认为，根本性的道德真理无需形式证明，就能被我们的理智直觉直接把握。",
+        "def_en": "the view that basic moral truths are known directly by intuition"
       },
       {
         "word": "cardinal virtues",
@@ -9752,7 +10042,8 @@
         "speaker": "Prof. Tamar Gendler",
         "scene_img": "/assets/scenes/cover_yale_philosophy.jpg",
         "scene_desc": "古希腊伦理大厦四大立柱",
-        "sentence_cn": "四主德代表着支撑体面生活与和谐共同体的四大支柱。"
+        "sentence_cn": "四主德代表着支撑体面生活与和谐共同体的四大支柱。",
+        "def_en": "the four most important qualities of good character in ancient Greek ethics"
       }
     ]
   }

@@ -679,6 +679,12 @@
                 </p>
               </div>
 
+              <!-- English Definition (learner's dictionary style) -->
+              <div id="focus-back-def-en-wrap" class="bg-slate-50 border-l-4 border-slate-400 p-4 rounded-r-2xl space-y-1 hidden">
+                <div class="text-[11px] font-bold text-slate-500 uppercase tracking-wider">English Definition：</div>
+                <p id="focus-back-def-en" class="text-sm sm:text-base text-slate-700 leading-relaxed"></p>
+              </div>
+
               <!-- Full Spoken Sentence AND Authentic Chinese Translation -->
               <div class="bg-amber-50/60 border border-amber-200 rounded-2xl p-4 sm:p-5 space-y-3">
                 <div class="flex justify-between items-center text-xs font-bold text-amber-950">
@@ -2152,6 +2158,15 @@ https://traffic.megaphone.fm/SAM8705727348.mp3"></textarea>
       document.getElementById('focus-back-pos').innerText = w.pos || 'n.';
       document.getElementById('focus-back-def').innerText = w.def_cn || '暂无详细释义';
 
+      // English definition (def_en) - learners get the target-language gloss
+      const enDefWrap = document.getElementById('focus-back-def-en-wrap');
+      const enDefEl = document.getElementById('focus-back-def-en');
+      if (enDefWrap && enDefEl) {
+        const enDef = (w.def_en || '').trim();
+        enDefEl.innerText = enDef;
+        enDefWrap.classList.toggle('hidden', !enDef);
+      }
+
       // Full spoken sentence & Chinese translation
       const backSentenceEl = document.getElementById('focus-back-sentence');
       if (backSentenceEl) backSentenceEl.innerText = `"${w.sentence || ''}"`;
@@ -2852,23 +2867,35 @@ https://traffic.megaphone.fm/SAM8705727348.mp3"></textarea>
 
         // Episode / Course Multi-Dimensional Filter
         if (app.vocabEpisodeFilter && app.vocabEpisodeFilter !== 'all') {
-          const matchEp = (w.contexts || []).some(c => {
-            const sid = (c.source_id || '').toLowerCase();
-            const stitle = (c.source_title || '').toLowerCase();
-            if (app.vocabEpisodeFilter === 'ep01') return sid === 'ep01' || stitle.includes('01') || stitle.includes('杀人的道德侧面');
-            if (app.vocabEpisodeFilter === 'ep02') return sid === 'ep02' || stitle.includes('02') || stitle.includes('生命定价');
-            if (app.vocabEpisodeFilter === 'ep03') return sid === 'ep03' || stitle.includes('03') || stitle.includes('自由选择权');
-            if (app.vocabEpisodeFilter === 'yale_ep01') return sid === 'yale_ep01' || stitle.includes('耶鲁') || stitle.includes('秩序井然');
-            if (app.vocabEpisodeFilter === 'custom') return sid.startsWith('custom') || stitle.includes('bilibili') || stitle.includes('罗翔');
-            return sid === app.vocabEpisodeFilter;
-          });
+          // Prefer the server-derived `taught_in`. The bank also keeps words from
+          // decks that have since been rebuilt, and those stale entries still
+          // carry a context naming the old episode - filtering on source_id
+          // therefore showed words the episode no longer teaches.
+          let matchEp;
+          if (Array.isArray(w.taught_in)) {
+            matchEp = app.vocabEpisodeFilter === 'custom'
+              ? w.taught_in.some(id => (id || '').startsWith('custom'))
+              : w.taught_in.includes(app.vocabEpisodeFilter);
+          } else {
+            matchEp = (w.contexts || []).some(c => {
+              const sid = (c.source_id || '').toLowerCase();
+              const stitle = (c.source_title || '').toLowerCase();
+              if (app.vocabEpisodeFilter === 'ep01') return sid === 'ep01' || stitle.includes('01') || stitle.includes('杀人的道德侧面');
+              if (app.vocabEpisodeFilter === 'ep02') return sid === 'ep02' || stitle.includes('02') || stitle.includes('生命定价');
+              if (app.vocabEpisodeFilter === 'ep03') return sid === 'ep03' || stitle.includes('03') || stitle.includes('自由选择权');
+              if (app.vocabEpisodeFilter === 'yale_ep01') return sid === 'yale_ep01' || stitle.includes('耶鲁') || stitle.includes('秩序井然');
+              if (app.vocabEpisodeFilter === 'custom') return sid.startsWith('custom') || stitle.includes('bilibili') || stitle.includes('罗翔');
+              return sid === app.vocabEpisodeFilter;
+            });
+          }
           if (!matchEp) return false;
         }
 
         if (app.vocabSearchQuery) {
           const matchWord = w.word.toLowerCase().includes(app.vocabSearchQuery);
           const matchDef = (w.def_cn || '').toLowerCase().includes(app.vocabSearchQuery);
-          if (!matchWord && !matchDef) return false;
+          const matchDefEn = (w.def_en || '').toLowerCase().includes(app.vocabSearchQuery);
+          if (!matchWord && !matchDef && !matchDefEn) return false;
         }
         return true;
       });
@@ -2903,6 +2930,13 @@ https://traffic.megaphone.fm/SAM8705727348.mp3"></textarea>
           `<span class="px-2 py-0.5 rounded-md bg-indigo-100 text-indigo-800 font-bold text-[10px] border border-indigo-200">🌟 多语境汇聚 (${contexts.length}个出处)</span>` : 
           '';
 
+        // A word the bank still carries from a deck that has since been rebuilt.
+        // It is kept (someone may already have studied it) but it is not part of
+        // any current episode deck, so it must not masquerade as episode vocabulary.
+        const historyTag = w.bank_only ?
+          '<span class="px-2 py-0.5 rounded-md bg-amber-100 text-amber-900 font-bold text-[10px] border border-amber-200" title="该词来自已被替换的早期词表，Current 分集词表已不含此词">📜 历史词（未编入现有分集）</span>' :
+          '';
+
         const contextsHtml = contexts.map(c => `
           <div class="bg-slate-50/80 rounded-xl p-3 border border-slate-200/80 space-y-1">
             <div class="flex justify-between items-center text-[11px]">
@@ -2928,6 +2962,7 @@ https://traffic.megaphone.fm/SAM8705727348.mp3"></textarea>
                 <span class="font-mono text-xs text-slate-500">${w.phonetic || ''}</span>
                 <span class="text-xs font-bold text-rose-800 bg-rose-50 px-2 py-0.2 rounded border border-rose-200">${w.pos || 'n.'}</span>
                 ${multiTag}
+                ${historyTag}
               </div>
               <div class="flex items-center gap-2">
                 ${statusBadge}
@@ -2938,6 +2973,11 @@ https://traffic.megaphone.fm/SAM8705727348.mp3"></textarea>
             <div class="text-xs text-slate-700 font-semibold bg-rose-50/40 p-2.5 rounded-xl border-l-3 border-rose-800">
               ${w.def_cn || ''}
             </div>
+
+            ${w.def_en ? `
+            <div class="text-xs text-slate-600 leading-relaxed bg-slate-50 p-2.5 rounded-xl border-l-3 border-slate-400">
+              <span class="font-bold text-slate-500">EN</span> ${w.def_en}
+            </div>` : ''}
 
             <div class="space-y-2 pt-1">
               <div class="text-[11px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1">
@@ -3124,13 +3164,27 @@ To resolve this moral dilemma, students must cultivate rigorous deliberation and
           headers: {'Content-Type': 'application/json'},
           body: JSON.stringify({ format: format, words: words, title: title })
         });
-        if (!res.ok) {
-          const errData = await res.json().catch(() => ({}));
-          throw new Error(errData.error || `导出服务异常 (HTTP ${res.status})`);
-        }
+        const ctype = (res.headers.get('content-type') || '').toLowerCase();
         const blob = await res.blob();
-        if (blob.size < 500 && format === 'docx') {
-          throw new Error("导出的 Word 文档体积极小，可能已损坏，请重试！");
+        // A handler that fails after send_response() still ships "200 OK" with an
+        // error body, so neither res.ok nor the size is enough on its own.
+        if (!res.ok || ctype.includes('application/json')) {
+          let msg = `导出服务异常 (HTTP ${res.status})`;
+          try {
+            const parsed = JSON.parse(await blob.text());
+            if (parsed && parsed.error) msg = parsed.error;
+          } catch (_) { /* body was not JSON after all */ }
+          throw new Error(msg);
+        }
+        if (format === 'docx') {
+          const magic = new Uint8Array(await blob.slice(0, 4).arrayBuffer());
+          const isZip = magic[0] === 0x50 && magic[1] === 0x4B && magic[2] === 0x03 && magic[3] === 0x04;
+          if (!isZip || blob.size < 500) {
+            throw new Error("导出的 Word 文档已损坏（服务端返回的不是有效的 .docx），请重试或反馈！");
+          }
+        }
+        if (blob.size < 16) {
+          throw new Error("导出的文件为空，请重试或反馈！");
         }
         const ext = format === 'docx' ? 'docx' : (format === 'study_guide_md' ? 'md' : (format === 'anki_csv' ? 'csv' : 'txt'));
         const a = document.createElement('a');

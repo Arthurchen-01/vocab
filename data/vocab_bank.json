@@ -34,7 +34,13 @@
       "status": "consolidating",
       "last_rating": "good",
       "last_reviewed_at": "2026-09-16 12:09:46"
-    }
+    },
+    "taught_in": [
+      "custom_1789528228",
+      "ep01",
+      "ep02"
+    ],
+    "def_en": "the belief that the right action is the one that produces the greatest happiness for the greatest number"
   },
   "consequentialist": {
     "word": "consequentialist",
@@ -64,7 +70,12 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "custom_1789528228",
+      "ep01"
+    ],
+    "def_en": "relating to the view that actions are right if their outcomes are good"
   },
   "categorical": {
     "word": "categorical",
@@ -94,7 +105,12 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01",
+      "ep02"
+    ],
+    "def_en": "unambiguously explicit and direct; (in Kantian philosophy) absolute and unconditional"
   },
   "trolley": {
     "word": "trolley",
@@ -118,7 +134,9 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "def_en": "a vehicle that runs on rails along a track and carries passengers",
+    "taught_in": []
   },
   "sidetrack": {
     "word": "sidetrack",
@@ -142,7 +160,9 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "def_en": "a short railway track that branches off from the main line",
+    "taught_in": []
   },
   "conundrum": {
     "word": "conundrum",
@@ -165,7 +185,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "a difficult problem that is hard to solve or understand"
   },
   "dilemma": {
     "word": "dilemma",
@@ -188,7 +212,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "a difficult situation in which you must choose between two unpleasant options"
   },
   "onlooker": {
     "word": "onlooker",
@@ -212,7 +240,9 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "def_en": "a person who watches an event without taking part",
+    "taught_in": []
   },
   "deliberation": {
     "word": "deliberation",
@@ -236,7 +266,9 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "def_en": "the process of carefully thinking about and discussing something before making a decision",
+    "taught_in": []
   },
   "cannibalism": {
     "word": "cannibalism",
@@ -266,7 +298,12 @@
       "status": "learning",
       "last_rating": 3,
       "last_reviewed_at": "2026-09-17 08:18:29"
-    }
+    },
+    "taught_in": [
+      "ep01",
+      "ep02"
+    ],
+    "def_en": "the practice of eating the flesh of one's own species"
   },
   "shipwreck": {
     "word": "shipwreck",
@@ -290,7 +327,9 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "def_en": "the sinking or destruction of a ship at sea",
+    "taught_in": []
   },
   "cabin boy": {
     "word": "cabin boy",
@@ -314,7 +353,9 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "def_en": "a young boy employed on a ship to do cleaning and other simple tasks",
+    "taught_in": []
   },
   "castaway": {
     "word": "castaway",
@@ -338,7 +379,9 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "def_en": "a person who is left alone on a ship or island after a disaster",
+    "taught_in": []
   },
   "ration": {
     "word": "ration",
@@ -362,7 +405,9 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "def_en": "to limit the amount of something each person is allowed to have",
+    "taught_in": []
   },
   "subsist": {
     "word": "subsist",
@@ -385,7 +430,11 @@
       "status": "learning",
       "last_rating": 1,
       "last_reviewed_at": "2026-09-17 04:53:28"
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "maintain or support oneself, especially at a minimal level"
   },
   "lottery": {
     "word": "lottery",
@@ -408,7 +457,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "a process or procedure whose outcome is governed by chance, such as drawing lots"
   },
   "heinous": {
     "word": "heinous",
@@ -431,7 +484,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "extremely wicked or shocking"
   },
   "necessity": {
     "word": "necessity",
@@ -454,7 +511,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "the state of being indispensable; in criminal law, a defense of justifiable action under extreme crisis"
   },
   "culpability": {
     "word": "culpability",
@@ -477,7 +538,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "the state of being deserving of blame for a wrong act"
   },
   "absolve": {
     "word": "absolve",
@@ -500,7 +565,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "to free someone from blame or guilt for a wrong act"
   },
   "skepticism": {
     "word": "skepticism",
@@ -523,7 +592,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "a doubting attitude toward the existence of objective moral truths"
   },
   "intrinsic": {
     "word": "intrinsic",
@@ -546,7 +619,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "belonging to something by its very nature, not coming from outside"
   },
   "utility": {
     "word": "utility",
@@ -569,7 +646,11 @@
       "status": "learning",
       "last_rating": 2,
       "last_reviewed_at": "2026-09-17 08:20:13"
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "the amount of happiness or benefit produced by an action"
   },
   "maximize": {
     "word": "maximize",
@@ -592,7 +673,11 @@
       "status": "learning",
       "last_rating": 4,
       "last_reviewed_at": "2026-09-17 08:19:55"
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "to make something as large or as great as possible"
   },
   "sovereign": {
     "word": "sovereign",
@@ -622,7 +707,12 @@
       "status": "learning",
       "last_rating": 2,
       "last_reviewed_at": "2026-09-17 08:20:18"
-    }
+    },
+    "taught_in": [
+      "ep01",
+      "ep02"
+    ],
+    "def_en": "possessing supreme or ultimate power; acting independently"
   },
   "cost-benefit analysis": {
     "word": "cost-benefit analysis",
@@ -645,7 +735,11 @@
       "status": "learning",
       "last_rating": 3,
       "last_reviewed_at": "2026-09-17 08:21:21"
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "a way of deciding by comparing the costs and benefits of an action"
   },
   "actuary": {
     "word": "actuary",
@@ -669,7 +763,9 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "def_en": "a person whose job is to calculate risks and costs for insurance companies",
+    "taught_in": []
   },
   "incommensurability": {
     "word": "incommensurability",
@@ -693,7 +789,9 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "def_en": "the state of being impossible to measure or compare using a common standard",
+    "taught_in": []
   },
   "commensurable": {
     "word": "commensurable",
@@ -716,7 +814,11 @@
       "status": "learning",
       "last_rating": 1,
       "last_reviewed_at": "2026-09-17 08:34:18"
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "able to be measured or judged by the same standard as something else"
   },
   "depravity": {
     "word": "depravity",
@@ -740,7 +842,9 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "def_en": "the state of being morally corrupt or wicked",
+    "taught_in": []
   },
   "gladiator": {
     "word": "gladiator",
@@ -764,7 +868,9 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "def_en": "a person in ancient Rome trained to fight others to the death for public entertainment",
+    "taught_in": []
   },
   "degrade": {
     "word": "degrade",
@@ -788,7 +894,9 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "def_en": "to lower the worth or dignity of something, making it seem less respectable",
+    "taught_in": []
   },
   "qualitative": {
     "word": "qualitative",
@@ -812,7 +920,9 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "def_en": "relating to the kind or nature of something rather than its amount",
+    "taught_in": []
   },
   "quantitative": {
     "word": "quantitative",
@@ -836,7 +946,9 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "def_en": "relating to the amount or number of something rather than its kind",
+    "taught_in": []
   },
   "tyranny": {
     "word": "tyranny",
@@ -860,7 +972,9 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "def_en": "the cruel and unjust use of power by a group over individuals",
+    "taught_in": []
   },
   "dissent": {
     "word": "dissent",
@@ -884,7 +998,9 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "def_en": "the act of disagreeing with or opposing an official or widely accepted opinion",
+    "taught_in": []
   },
   "coercion": {
     "word": "coercion",
@@ -907,7 +1023,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep03"
+    ],
+    "def_en": "the act of forcing someone to do something by law or threat"
   },
   "indignity": {
     "word": "indignity",
@@ -931,7 +1051,9 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "def_en": "a situation or treatment that makes someone feel ashamed or less worthy of respect",
+    "taught_in": []
   },
   "gratification": {
     "word": "gratification",
@@ -948,13 +1070,17 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
+      "total_seconds": 3,
       "status": "learning",
-      "last_rating": "new",
-      "last_reviewed_at": null
-    }
+      "last_rating": 3,
+      "last_reviewed_at": "2026-09-17 10:57:22"
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "the act of satisfying a desire or appetite"
   },
   "repugnant": {
     "word": "repugnant",
@@ -977,7 +1103,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "causing strong feelings of dislike and moral disapproval"
   },
   "counterbalance": {
     "word": "counterbalance",
@@ -1001,7 +1131,9 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "def_en": "to have an equal and opposite effect that cancels out or offsets something else",
+    "taught_in": []
   },
   "surplus": {
     "word": "surplus",
@@ -1025,7 +1157,9 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "def_en": "the amount by which one quantity is greater than another",
+    "taught_in": []
   },
   "libertarianism": {
     "word": "libertarianism",
@@ -1048,7 +1182,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep03"
+    ],
+    "def_en": "the belief that individual rights and freedoms should be protected from government interference"
   },
   "redistribution": {
     "word": "redistribution",
@@ -1071,7 +1209,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep03"
+    ],
+    "def_en": "the act of moving money or resources from one group to another"
   },
   "paternalism": {
     "word": "paternalism",
@@ -1095,7 +1237,9 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "def_en": "the practice of limiting people's freedom for their own good, as a parent does for a child",
+    "taught_in": []
   },
   "self-ownership": {
     "word": "self-ownership",
@@ -1119,7 +1263,9 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "def_en": "the idea that each person owns their own body, abilities, and labor",
+    "taught_in": []
   },
   "deontological ethics": {
     "word": "deontological ethics",
@@ -1142,7 +1288,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "custom_1789528228"
+    ],
+    "def_en": "ethical theory that judges actions by inherent rightness rather than by their consequences"
   },
   "principle of utility": {
     "word": "principle of utility",
@@ -1172,7 +1322,12 @@
       "status": "learning",
       "last_rating": 2,
       "last_reviewed_at": "2026-09-17 04:50:42"
-    }
+    },
+    "taught_in": [
+      "custom_1789528228",
+      "ep01"
+    ],
+    "def_en": "the fundamental utilitarian doctrine that actions are right insofar as they promote the greatest happiness for the greatest number"
   },
   "general welfare": {
     "word": "general welfare",
@@ -1202,7 +1357,12 @@
       "status": "learning",
       "last_rating": 2,
       "last_reviewed_at": "2026-09-17 08:20:00"
-    }
+    },
+    "taught_in": [
+      "custom_1789528228",
+      "ep02"
+    ],
+    "def_en": "the collective good and prosperity of a community as a whole"
   },
   "jurisprudence": {
     "word": "jurisprudence",
@@ -1232,7 +1392,12 @@
       "status": "learning",
       "last_rating": 1,
       "last_reviewed_at": "2026-09-17 08:19:25"
-    }
+    },
+    "taught_in": [
+      "custom_1789528228",
+      "ep02"
+    ],
+    "def_en": "the study of law and the principles behind legal systems"
   },
   "human dignity": {
     "word": "human dignity",
@@ -1255,7 +1420,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "custom_1789528228"
+    ],
+    "def_en": "the worth each person has simply by being human and which must never be violated"
   },
   "defense of necessity": {
     "word": "defense of necessity",
@@ -1285,7 +1454,12 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "custom_1789528228",
+      "ep01"
+    ],
+    "def_en": "a justification in criminal law for committing an offense to avert a greater evil"
   },
   "criminal law": {
     "word": "criminal law",
@@ -1308,7 +1482,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "custom_1789528228"
+    ],
+    "def_en": "the area of law dealing with crimes and their punishment"
   },
   "legal culpability": {
     "word": "legal culpability",
@@ -1331,7 +1509,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "custom_1789528228"
+    ],
+    "def_en": "the degree to which someone is responsible for a crime under the law"
   },
   "moral deliberation": {
     "word": "moral deliberation",
@@ -1361,7 +1543,12 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "custom_1789528228",
+      "ep01"
+    ],
+    "def_en": "the process of carefully thinking about what is right and wrong in a situation"
   },
   "moral skepticism": {
     "word": "moral skepticism",
@@ -1384,7 +1571,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "custom_1789528228"
+    ],
+    "def_en": "the view that we cannot know or there are no objective moral truths"
   },
   "utilitarian": {
     "word": "utilitarian",
@@ -1407,7 +1598,11 @@
       "status": "learning",
       "last_rating": 3,
       "last_reviewed_at": "2026-09-17 08:19:07"
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "based on the idea that the best action brings the greatest good to the most people"
   },
   "moral philosophy": {
     "word": "moral philosophy",
@@ -1430,7 +1625,11 @@
       "status": "learning",
       "last_rating": 3,
       "last_reviewed_at": "2026-09-17 08:19:31"
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "the study of what is right and wrong and how we should live"
   },
   "principle": {
     "word": "principle",
@@ -1453,7 +1652,11 @@
       "status": "learning",
       "last_rating": 3,
       "last_reviewed_at": "2026-09-17 08:19:53"
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "a basic rule or belief that guides action or explains how something works"
   },
   "take account of": {
     "word": "take account of",
@@ -1476,7 +1679,11 @@
       "status": "learning",
       "last_rating": 2,
       "last_reviewed_at": "2026-09-17 08:20:47"
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "to consider something when making a judgment"
   },
   "the greatest good for the greatest number": {
     "word": "the greatest good for the greatest number",
@@ -1499,7 +1706,11 @@
       "status": "learning",
       "last_rating": 3,
       "last_reviewed_at": "2026-09-17 08:20:53"
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "the idea that the best action brings the most benefit to the largest number of people"
   },
   "legislator": {
     "word": "legislator",
@@ -1522,7 +1733,11 @@
       "status": "learning",
       "last_rating": 2,
       "last_reviewed_at": "2026-09-17 08:21:04"
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "a person who makes laws, especially for a country or state"
   },
   "comprise": {
     "word": "comprise",
@@ -1545,7 +1760,11 @@
       "status": "learning",
       "last_rating": 3,
       "last_reviewed_at": "2026-09-17 08:21:09"
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "to form or make up a whole by combining different parts or members"
   },
   "add up": {
     "word": "add up",
@@ -1568,7 +1787,11 @@
       "status": "learning",
       "last_rating": 3,
       "last_reviewed_at": "2026-09-17 08:21:13"
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "to combine several amounts to find the total"
   },
   "subtract": {
     "word": "subtract",
@@ -1591,7 +1814,11 @@
       "status": "learning",
       "last_rating": 3,
       "last_reviewed_at": "2026-09-17 08:21:16"
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "to take one amount away from another"
   },
   "place a value on": {
     "word": "place a value on",
@@ -1614,7 +1841,11 @@
       "status": "learning",
       "last_rating": 2,
       "last_reviewed_at": "2026-09-17 08:22:07"
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "to decide how much something is worth"
   },
   "excise tax": {
     "word": "excise tax",
@@ -1637,7 +1868,11 @@
       "status": "learning",
       "last_rating": 1,
       "last_reviewed_at": "2026-09-17 08:22:24"
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "a tax charged on specific goods such as alcohol, tobacco, or fuel"
   },
   "commission": {
     "word": "commission",
@@ -1660,7 +1895,11 @@
       "status": "learning",
       "last_rating": 1,
       "last_reviewed_at": "2026-09-17 08:22:47"
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "to formally arrange for someone to carry out a study or produce a report"
   },
   "ledger": {
     "word": "ledger",
@@ -1683,7 +1922,11 @@
       "status": "learning",
       "last_rating": 1,
       "last_reviewed_at": "2026-09-17 08:23:10"
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "a book or record where accounts or transactions are written"
   },
   "derive from": {
     "word": "derive from",
@@ -1706,7 +1949,11 @@
       "status": "learning",
       "last_rating": 2,
       "last_reviewed_at": "2026-09-17 08:23:17"
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "to get something from a particular source"
   },
   "net": {
     "word": "net",
@@ -1729,7 +1976,11 @@
       "status": "learning",
       "last_rating": 2,
       "last_reviewed_at": "2026-09-17 08:23:25"
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "remaining after all costs or amounts have been taken away"
   },
   "prematurely": {
     "word": "prematurely",
@@ -1752,7 +2003,11 @@
       "status": "learning",
       "last_rating": 1,
       "last_reviewed_at": "2026-09-17 08:24:52"
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "before the usual or expected time"
   },
   "pillory": {
     "word": "pillory",
@@ -1775,7 +2030,11 @@
       "status": "learning",
       "last_rating": 1,
       "last_reviewed_at": "2026-09-17 08:25:08"
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "to publicly mock and humiliate someone, especially in order to make them appear ridiculous"
   },
   "incorporate": {
     "word": "incorporate",
@@ -1798,7 +2057,11 @@
       "status": "learning",
       "last_rating": 2,
       "last_reviewed_at": "2026-09-17 09:23:29"
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "to include something as part of a larger whole or system"
   },
   "vulnerable": {
     "word": "vulnerable",
@@ -1821,7 +2084,11 @@
       "status": "learning",
       "last_rating": 4,
       "last_reviewed_at": "2026-09-17 09:23:32"
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "easily harmed or attacked because of being weak or not protected"
   },
   "shield": {
     "word": "shield",
@@ -1844,7 +2111,11 @@
       "status": "learning",
       "last_rating": 3,
       "last_reviewed_at": "2026-09-17 09:23:38"
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "a protective cover placed around something to stop damage"
   },
   "calculate": {
     "word": "calculate",
@@ -1874,7 +2145,12 @@
       "status": "learning",
       "last_rating": 4,
       "last_reviewed_at": "2026-09-17 09:23:41"
-    }
+    },
+    "taught_in": [
+      "ep01",
+      "ep02"
+    ],
+    "def_en": "to determine an amount or value by using numbers or reasoning"
   },
   "emerge": {
     "word": "emerge",
@@ -1897,7 +2173,11 @@
       "status": "learning",
       "last_rating": 3,
       "last_reviewed_at": "2026-09-17 09:23:43"
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "to become known or come out after being hidden or unclear"
   },
   "total cost": {
     "word": "total cost",
@@ -1920,7 +2200,11 @@
       "status": "learning",
       "last_rating": 3,
       "last_reviewed_at": "2026-09-17 09:23:45"
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "the whole amount of money needed for all parts of something"
   },
   "benefit": {
     "word": "benefit",
@@ -1943,7 +2227,11 @@
       "status": "learning",
       "last_rating": 3,
       "last_reviewed_at": "2026-09-17 09:23:46"
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "an advantage or profit obtained from an action or situation"
   },
   "assign": {
     "word": "assign",
@@ -1966,7 +2254,11 @@
       "status": "learning",
       "last_rating": 3,
       "last_reviewed_at": "2026-09-17 09:23:49"
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "to give a particular value or amount to something"
   },
   "dollar value": {
     "word": "dollar value",
@@ -1983,13 +2275,17 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
-    }
+      "total_seconds": 3963,
+      "status": "learning",
+      "last_rating": 3,
+      "last_reviewed_at": "2026-09-17 10:29:52"
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "the amount of money that something is considered to be worth"
   },
   "replacement cost": {
     "word": "replacement cost",
@@ -2006,13 +2302,17 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
-    }
+      "total_seconds": 119,
+      "status": "learning",
+      "last_rating": 2,
+      "last_reviewed_at": "2026-09-17 10:31:52"
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "the amount of money needed to buy a new item to replace one that is lost or destroyed"
   },
   "memo": {
     "word": "memo",
@@ -2029,13 +2329,17 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
-    }
+      "total_seconds": 14,
+      "status": "learning",
+      "last_rating": 2,
+      "last_reviewed_at": "2026-09-17 10:32:05"
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "a short written message or record used within an organization"
   },
   "appall": {
     "word": "appall",
@@ -2052,13 +2356,17 @@
       }
     ],
     "stats": {
-      "review_count": 1,
+      "review_count": 2,
       "today_seconds": 0,
-      "total_seconds": 4,
+      "total_seconds": 42,
       "status": "learning",
-      "last_rating": 2,
-      "last_reviewed_at": "2026-09-17 08:22:38"
-    }
+      "last_rating": 1,
+      "last_reviewed_at": "2026-09-17 10:32:43"
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "to shock someone deeply and make them feel horror or disgust"
   },
   "settlement": {
     "word": "settlement",
@@ -2075,13 +2383,17 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
-    }
+      "total_seconds": 7,
+      "status": "learning",
+      "last_rating": 2,
+      "last_reviewed_at": "2026-09-17 10:32:50"
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "an amount of money paid to end a legal disagreement"
   },
   "counter example": {
     "word": "counter example",
@@ -2098,13 +2410,17 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
-    }
+      "total_seconds": 9,
+      "status": "learning",
+      "last_rating": 1,
+      "last_reviewed_at": "2026-09-17 10:33:00"
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "an example that shows a general rule or idea is not always true"
   },
   "defend": {
     "word": "defend",
@@ -2121,13 +2437,17 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
-    }
+      "total_seconds": 6,
+      "status": "learning",
+      "last_rating": 3,
+      "last_reviewed_at": "2026-09-17 10:33:05"
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "to argue in support of something against criticism"
   },
   "calculus": {
     "word": "calculus",
@@ -2144,13 +2464,17 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
-    }
+      "total_seconds": 3,
+      "status": "learning",
+      "last_rating": 3,
+      "last_reviewed_at": "2026-09-17 10:33:08"
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "a method or system of calculation, especially one used to weigh benefits and harms"
   },
   "take into account": {
     "word": "take into account",
@@ -2167,13 +2491,17 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
-    }
+      "total_seconds": 484,
+      "status": "learning",
+      "last_rating": 3,
+      "last_reviewed_at": "2026-09-17 10:41:12"
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "to consider something when making a decision or judgment"
   },
   "emotional loss": {
     "word": "emotional loss",
@@ -2190,13 +2518,17 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
-    }
+      "total_seconds": 30,
+      "status": "learning",
+      "last_rating": 2,
+      "last_reviewed_at": "2026-09-17 10:41:43"
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "the sadness and suffering caused by any significant emotional harm or deprivation"
   },
   "accurate": {
     "word": "accurate",
@@ -2213,13 +2545,17 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
-    }
+      "total_seconds": 4,
+      "status": "learning",
+      "last_rating": 4,
+      "last_reviewed_at": "2026-09-17 10:41:46"
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "correct and exact in every detail"
   },
   "apply to": {
     "word": "apply to",
@@ -2236,13 +2572,17 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
-    }
+      "total_seconds": 10,
+      "status": "learning",
+      "last_rating": 3,
+      "last_reviewed_at": "2026-09-17 10:41:56"
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "to be relevant to or used in a particular situation or subject"
   },
   "monetarily": {
     "word": "monetarily",
@@ -2259,13 +2599,17 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
-    }
+      "total_seconds": 14,
+      "status": "learning",
+      "last_rating": 2,
+      "last_reviewed_at": "2026-09-17 10:42:10"
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "in terms of money or as an amount of money"
   },
   "adjust for inflation": {
     "word": "adjust for inflation",
@@ -2282,13 +2626,17 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
-    }
+      "total_seconds": 31,
+      "status": "learning",
+      "last_rating": 1,
+      "last_reviewed_at": "2026-09-17 10:42:42"
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "to change a money amount to reflect changes in prices over time"
   },
   "allow for": {
     "word": "allow for",
@@ -2305,13 +2653,17 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
-    }
+      "total_seconds": 151,
+      "status": "learning",
+      "last_rating": 1,
+      "last_reviewed_at": "2026-09-17 10:45:13"
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "to take something into account when making a decision or calculation"
   },
   "put a number on": {
     "word": "put a number on",
@@ -2328,13 +2680,17 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
-    }
+      "total_seconds": 9,
+      "status": "learning",
+      "last_rating": 2,
+      "last_reviewed_at": "2026-09-17 10:45:22"
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "to assign a specific numerical value to something"
   },
   "profitable": {
     "word": "profitable",
@@ -2351,13 +2707,17 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
-    }
+      "total_seconds": 17,
+      "status": "learning",
+      "last_rating": 2,
+      "last_reviewed_at": "2026-09-17 10:45:39"
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "able to make money or gain a financial benefit"
   },
   "sacrifice": {
     "word": "sacrifice",
@@ -2381,13 +2741,18 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
-    }
+      "total_seconds": 15,
+      "status": "learning",
+      "last_rating": 4,
+      "last_reviewed_at": "2026-09-17 10:45:55"
+    },
+    "taught_in": [
+      "ep01",
+      "ep02"
+    ],
+    "def_en": "to give up something valuable for the sake of a greater benefit"
   },
   "put some value on": {
     "word": "put some value on",
@@ -2404,13 +2769,17 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
-    }
+      "total_seconds": 6,
+      "status": "learning",
+      "last_rating": 3,
+      "last_reviewed_at": "2026-09-17 10:46:00"
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "to assign a certain worth or importance to something"
   },
   "monetary": {
     "word": "monetary",
@@ -2427,13 +2796,17 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
-    }
+      "total_seconds": 102,
+      "status": "learning",
+      "last_rating": 2,
+      "last_reviewed_at": "2026-09-17 10:47:43"
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "relating to money or amounts of money"
   },
   "derive maximum utility": {
     "word": "derive maximum utility",
@@ -2450,13 +2823,17 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
-    }
+      "total_seconds": 14,
+      "status": "learning",
+      "last_rating": 2,
+      "last_reviewed_at": "2026-09-17 10:47:57"
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "to get the greatest amount of benefit or satisfaction from something"
   },
   "outright": {
     "word": "outright",
@@ -2473,13 +2850,17 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
-    }
+      "total_seconds": 58,
+      "status": "learning",
+      "last_rating": 2,
+      "last_reviewed_at": "2026-09-17 10:48:56"
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "complete and without any doubt or limitation"
   },
   "arbitrarily": {
     "word": "arbitrarily",
@@ -2496,13 +2877,17 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
-    }
+      "total_seconds": 14,
+      "status": "learning",
+      "last_rating": 2,
+      "last_reviewed_at": "2026-09-17 10:49:08"
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "in a way based on personal choice rather than rules or reason"
   },
   "take under advisement": {
     "word": "take under advisement",
@@ -2519,13 +2904,17 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
-    }
+      "total_seconds": 8,
+      "status": "learning",
+      "last_rating": 2,
+      "last_reviewed_at": "2026-09-17 10:49:17"
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "to delay a decision on something while considering it further"
   },
   "hunch": {
     "word": "hunch",
@@ -2542,13 +2931,17 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
-    }
+      "total_seconds": 8,
+      "status": "learning",
+      "last_rating": 2,
+      "last_reviewed_at": "2026-09-17 10:49:24"
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "a feeling or guess about something based on instinct rather than proof"
   },
   "controversy": {
     "word": "controversy",
@@ -2565,13 +2958,17 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
-    }
+      "total_seconds": 20,
+      "status": "learning",
+      "last_rating": 2,
+      "last_reviewed_at": "2026-09-17 10:49:44"
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "public disagreement or argument about something many people have different opinions on"
   },
   "place a dollar value on": {
     "word": "place a dollar value on",
@@ -2588,13 +2985,17 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
-    }
+      "total_seconds": 10,
+      "status": "learning",
+      "last_rating": 2,
+      "last_reviewed_at": "2026-09-17 10:49:54"
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "to assign a specific monetary worth to something for comparison or calculation"
   },
   "objection": {
     "word": "objection",
@@ -2611,13 +3012,17 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
-    }
+      "total_seconds": 69,
+      "status": "learning",
+      "last_rating": 2,
+      "last_reviewed_at": "2026-09-17 10:51:03"
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "a reason someone gives for disagreeing with an idea or plan"
   },
   "the common good": {
     "word": "the common good",
@@ -2634,13 +3039,17 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
-    }
+      "total_seconds": 19,
+      "status": "learning",
+      "last_rating": 1,
+      "last_reviewed_at": "2026-09-17 10:51:22"
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "the shared benefit and well-being of all members of a community"
   },
   "minority": {
     "word": "minority",
@@ -2664,13 +3073,18 @@
       }
     ],
     "stats": {
-      "review_count": 1,
+      "review_count": 2,
       "today_seconds": 0,
-      "total_seconds": 3,
+      "total_seconds": 6,
       "status": "learning",
       "last_rating": 4,
-      "last_reviewed_at": "2026-09-17 04:22:34"
-    }
+      "last_reviewed_at": "2026-09-17 10:51:25"
+    },
+    "taught_in": [
+      "ep01",
+      "ep02"
+    ],
+    "def_en": "the smaller number or part, especially a number that is less than half the total"
   },
   "have a say": {
     "word": "have a say",
@@ -2687,13 +3101,17 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
-    }
+      "total_seconds": 28,
+      "status": "learning",
+      "last_rating": 1,
+      "last_reviewed_at": "2026-09-17 10:51:52"
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "to have the right or chance to influence a decision"
   },
   "outweigh": {
     "word": "outweigh",
@@ -2710,13 +3128,17 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
-    }
+      "total_seconds": 19,
+      "status": "learning",
+      "last_rating": 2,
+      "last_reviewed_at": "2026-09-17 10:52:11"
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "to be greater in importance or influence than something else"
   },
   "preference": {
     "word": "preference",
@@ -2733,13 +3155,17 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
-    }
+      "total_seconds": 6,
+      "status": "learning",
+      "last_rating": 3,
+      "last_reviewed_at": "2026-09-17 10:52:17"
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "a greater liking for one thing over another"
   },
   "weigh": {
     "word": "weigh",
@@ -2756,13 +3182,17 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
-    }
+      "total_seconds": 7,
+      "status": "learning",
+      "last_rating": 2,
+      "last_reviewed_at": "2026-09-17 10:52:24"
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "to be considered or included in a decision or judgment"
   },
   "violate": {
     "word": "violate",
@@ -2779,13 +3209,17 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
-    }
+      "total_seconds": 17,
+      "status": "learning",
+      "last_rating": 2,
+      "last_reviewed_at": "2026-09-17 10:52:42"
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "to fail to comply with a rule, principle, or right"
   },
   "trade off": {
     "word": "trade off",
@@ -2802,13 +3236,17 @@
       }
     ],
     "stats": {
-      "review_count": 1,
+      "review_count": 2,
       "today_seconds": 0,
-      "total_seconds": 23,
+      "total_seconds": 51,
       "status": "learning",
       "last_rating": 2,
-      "last_reviewed_at": "2026-09-17 08:30:45"
-    }
+      "last_reviewed_at": "2026-09-17 10:53:09"
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "to give up something valuable in order to gain something else"
   },
   "excruciating": {
     "word": "excruciating",
@@ -2825,13 +3263,17 @@
       }
     ],
     "stats": {
-      "review_count": 1,
+      "review_count": 2,
       "today_seconds": 0,
-      "total_seconds": 21,
+      "total_seconds": 71,
       "status": "learning",
       "last_rating": 2,
-      "last_reviewed_at": "2026-09-17 08:31:06"
-    }
+      "last_reviewed_at": "2026-09-17 10:53:59"
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "extremely painful in a way that is very hard to bear"
   },
   "collective": {
     "word": "collective",
@@ -2848,13 +3290,17 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
-    }
+      "total_seconds": 14,
+      "status": "learning",
+      "last_rating": 2,
+      "last_reviewed_at": "2026-09-17 10:54:14"
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "shared by or belonging to all members of a group"
   },
   "delirious": {
     "word": "delirious",
@@ -2871,13 +3317,17 @@
       }
     ],
     "stats": {
-      "review_count": 1,
+      "review_count": 2,
       "today_seconds": 0,
-      "total_seconds": 11,
+      "total_seconds": 61,
       "status": "learning",
       "last_rating": 1,
-      "last_reviewed_at": "2026-09-17 08:31:19"
-    }
+      "last_reviewed_at": "2026-09-17 10:55:04"
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "extremely happy and excited in an uncontrolled way"
   },
   "adequately": {
     "word": "adequately",
@@ -2894,13 +3344,17 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
-    }
+      "total_seconds": 50,
+      "status": "learning",
+      "last_rating": 2,
+      "last_reviewed_at": "2026-09-17 10:55:53"
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "in a way that is good enough or satisfactory"
   },
   "aggregate": {
     "word": "aggregate",
@@ -2917,13 +3371,17 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
-    }
+      "total_seconds": 19,
+      "status": "learning",
+      "last_rating": 2,
+      "last_reviewed_at": "2026-09-17 10:56:12"
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "to combine separate amounts or preferences into a single total"
   },
   "uniform": {
     "word": "uniform",
@@ -2940,13 +3398,17 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
-    }
+      "total_seconds": 5,
+      "status": "learning",
+      "last_rating": 2,
+      "last_reviewed_at": "2026-09-17 10:56:17"
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "not varying in form or character across different cases"
   },
   "conduct a survey": {
     "word": "conduct a survey",
@@ -2963,13 +3425,17 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
-    }
+      "total_seconds": 4,
+      "status": "learning",
+      "last_rating": 3,
+      "last_reviewed_at": "2026-09-17 10:56:22"
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "to collect information by asking a group of people a set of questions"
   },
   "keep track": {
     "word": "keep track",
@@ -2986,13 +3452,17 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
-    }
+      "total_seconds": 3,
+      "status": "learning",
+      "last_rating": 3,
+      "last_reviewed_at": "2026-09-17 10:56:25"
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "to record or follow information over time"
   },
   "stray": {
     "word": "stray",
@@ -3009,13 +3479,17 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
-    }
+      "total_seconds": 29,
+      "status": "learning",
+      "last_rating": 3,
+      "last_reviewed_at": "2026-09-17 10:56:54"
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "having no home and living on the streets"
   },
   "suppose": {
     "word": "suppose",
@@ -3032,13 +3506,17 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
-    }
+      "total_seconds": 2,
+      "status": "learning",
+      "last_rating": 3,
+      "last_reviewed_at": "2026-09-17 10:56:56"
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "to think or believe something is probably true"
   },
   "expensive": {
     "word": "expensive",
@@ -3055,13 +3533,17 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
-    }
+      "total_seconds": 3,
+      "status": "learning",
+      "last_rating": 3,
+      "last_reviewed_at": "2026-09-17 10:56:59"
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "costing a lot of money or requiring a high price"
   },
   "next most": {
     "word": "next most",
@@ -3078,13 +3560,17 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
-    }
+      "total_seconds": 3,
+      "status": "learning",
+      "last_rating": 3,
+      "last_reviewed_at": "2026-09-17 10:57:02"
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "ranking immediately below the highest in a specified quality or degree"
   },
   "least expensive": {
     "word": "least expensive",
@@ -3101,13 +3587,17 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
-    }
+      "total_seconds": 2,
+      "status": "learning",
+      "last_rating": 3,
+      "last_reviewed_at": "2026-09-17 10:57:04"
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "costing the smallest amount of money"
   },
   "depression": {
     "word": "depression",
@@ -3124,13 +3614,17 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
-    }
+      "total_seconds": 3,
+      "status": "learning",
+      "last_rating": 3,
+      "last_reviewed_at": "2026-09-17 10:57:07"
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "a period of severe economic decline with high unemployment and falling prices"
   },
   "measurable": {
     "word": "measurable",
@@ -3147,13 +3641,17 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
-    }
+      "total_seconds": 4,
+      "status": "learning",
+      "last_rating": 3,
+      "last_reviewed_at": "2026-09-17 10:57:11"
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "able to be measured or expressed as an amount"
   },
   "satisfaction": {
     "word": "satisfaction",
@@ -3170,13 +3668,17 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
-    }
+      "total_seconds": 2,
+      "status": "learning",
+      "last_rating": 3,
+      "last_reviewed_at": "2026-09-17 10:57:13"
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "the fulfillment of a desire or need"
   },
   "appetite": {
     "word": "appetite",
@@ -3200,13 +3702,18 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
-    }
+      "total_seconds": 2,
+      "status": "learning",
+      "last_rating": 3,
+      "last_reviewed_at": "2026-09-17 10:57:15"
+    },
+    "taught_in": [
+      "ep02",
+      "yale_ep01"
+    ],
+    "def_en": "a strong natural desire, especially for food, pleasure, or satisfaction"
   },
   "craving": {
     "word": "craving",
@@ -3223,13 +3730,17 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
-    }
+      "total_seconds": 3,
+      "status": "learning",
+      "last_rating": 2,
+      "last_reviewed_at": "2026-09-17 10:57:18"
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "a strong desire for something"
   },
   "capture": {
     "word": "capture",
@@ -3246,13 +3757,17 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
-    }
+      "total_seconds": 2,
+      "status": "learning",
+      "last_rating": 3,
+      "last_reviewed_at": "2026-09-17 10:57:23"
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "to express or represent something accurately in a particular form"
   },
   "preposterous": {
     "word": "preposterous",
@@ -3269,13 +3784,17 @@
       }
     ],
     "stats": {
-      "review_count": 1,
+      "review_count": 2,
       "today_seconds": 0,
-      "total_seconds": 2,
+      "total_seconds": 6,
       "status": "learning",
-      "last_rating": 1,
-      "last_reviewed_at": "2026-09-17 08:33:01"
-    }
+      "last_rating": 3,
+      "last_reviewed_at": "2026-09-17 10:57:27"
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "completely unreasonable or ridiculous"
   },
   "opposite": {
     "word": "opposite",
@@ -3292,13 +3811,17 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
-    }
+      "total_seconds": 2,
+      "status": "learning",
+      "last_rating": 3,
+      "last_reviewed_at": "2026-09-17 10:57:29"
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "a thing that is completely different from another thing"
   },
   "cherish": {
     "word": "cherish",
@@ -3315,13 +3838,17 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 1,
       "today_seconds": 0,
-      "total_seconds": 0,
-      "status": "new",
-      "last_rating": "none",
-      "last_reviewed_at": null
-    }
+      "total_seconds": 2,
+      "status": "learning",
+      "last_rating": 3,
+      "last_reviewed_at": "2026-09-17 10:57:31"
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "to love and value someone or something very much"
   },
   "consequence": {
     "word": "consequence",
@@ -3351,7 +3878,12 @@
       "status": "new",
       "last_rating": "none",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01",
+      "ep02"
+    ],
+    "def_en": "a result or effect that follows from an action or decision"
   },
   "concern oneself with": {
     "word": "concern oneself with",
@@ -3374,7 +3906,11 @@
       "status": "new",
       "last_rating": "none",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "to give one's attention to or deal with a particular subject"
   },
   "apprehend": {
     "word": "apprehend",
@@ -3397,7 +3933,11 @@
       "status": "learning",
       "last_rating": 1,
       "last_reviewed_at": "2026-09-17 08:33:25"
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "to catch and arrest someone suspected of a crime"
   },
   "impending": {
     "word": "impending",
@@ -3420,7 +3960,11 @@
       "status": "new",
       "last_rating": "none",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "about to happen very soon, especially something dangerous or threatening"
   },
   "translate into": {
     "word": "translate into",
@@ -3443,7 +3987,11 @@
       "status": "new",
       "last_rating": "none",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "to be changed into another form or expressed in different terms"
   },
   "without loss": {
     "word": "without loss",
@@ -3466,7 +4014,11 @@
       "status": "new",
       "last_rating": "none",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "in a way that keeps the original meaning or value unchanged"
   },
   "graduate student": {
     "word": "graduate student",
@@ -3489,7 +4041,11 @@
       "status": "new",
       "last_rating": "none",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "a student who has finished a first degree and is studying for a higher one"
   },
   "enforce": {
     "word": "enforce",
@@ -3512,7 +4068,11 @@
       "status": "new",
       "last_rating": "none",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "to make people obey a rule or law by punishing those who do not"
   },
   "traditionalist": {
     "word": "traditionalist",
@@ -3535,7 +4095,11 @@
       "status": "new",
       "last_rating": "none",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "a person who prefers old customs and opposes change"
   },
   "conventional": {
     "word": "conventional",
@@ -3558,7 +4122,11 @@
       "status": "new",
       "last_rating": "none",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "based on what is usually done or accepted by most people"
   },
   "embarrassed": {
     "word": "embarrassed",
@@ -3581,7 +4149,11 @@
       "status": "new",
       "last_rating": "none",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "unwilling to say or do something because it makes you feel awkward"
   },
   "overnight": {
     "word": "overnight",
@@ -3604,7 +4176,11 @@
       "status": "new",
       "last_rating": "none",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "for the duration of a night"
   },
   "use up": {
     "word": "use up",
@@ -3627,7 +4203,11 @@
       "status": "new",
       "last_rating": "none",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "to consume all of something until none is left"
   },
   "compromise": {
     "word": "compromise",
@@ -3650,7 +4230,11 @@
       "status": "new",
       "last_rating": "none",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "an agreement in which each side gives up some of what it wants"
   },
   "maximum": {
     "word": "maximum",
@@ -3673,7 +4257,11 @@
       "status": "new",
       "last_rating": "none",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "the largest number or amount that is allowed or possible"
   },
   "defray": {
     "word": "defray",
@@ -3696,7 +4284,11 @@
       "status": "learning",
       "last_rating": 1,
       "last_reviewed_at": "2026-09-17 08:35:11"
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "to pay money to cover the cost of something"
   },
   "provided": {
     "word": "provided",
@@ -3719,7 +4311,11 @@
       "status": "new",
       "last_rating": "none",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "on the condition that something happens or is true"
   },
   "headline": {
     "word": "headline",
@@ -3742,7 +4338,11 @@
       "status": "new",
       "last_rating": "none",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "the title of a major news story printed in large letters"
   },
   "illustration": {
     "word": "illustration",
@@ -3765,7 +4365,11 @@
       "status": "new",
       "last_rating": "none",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "a specific example that helps explain a general idea or difficulty"
   },
   "uniformity": {
     "word": "uniformity",
@@ -3788,7 +4392,11 @@
       "status": "new",
       "last_rating": "none",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "the state of being the same in form or standard"
   },
   "commensurability": {
     "word": "commensurability",
@@ -3811,7 +4419,11 @@
       "status": "learning",
       "last_rating": 1,
       "last_reviewed_at": "2026-09-17 08:36:18"
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "the quality of being measurable by the same standard as something else"
   },
   "moral consideration": {
     "word": "moral consideration",
@@ -3834,7 +4446,11 @@
       "status": "new",
       "last_rating": "none",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "a factor that should be taken into account when judging right and wrong"
   },
   "assess": {
     "word": "assess",
@@ -3857,7 +4473,11 @@
       "status": "new",
       "last_rating": "none",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "to carefully examine and measure the nature or value of something"
   },
   "higher pleasures": {
     "word": "higher pleasures",
@@ -3880,7 +4500,11 @@
       "status": "new",
       "last_rating": "none",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "intellectual or spiritual enjoyments considered superior to physical gratification"
   },
   "qualitative distinction": {
     "word": "qualitative distinction",
@@ -3903,7 +4527,11 @@
       "status": "learning",
       "last_rating": 1,
       "last_reviewed_at": "2026-09-17 08:36:25"
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "a difference in kind or worth, not just in amount"
   },
   "egalitarian": {
     "word": "egalitarian",
@@ -3926,7 +4554,11 @@
       "status": "learning",
       "last_rating": 1,
       "last_reviewed_at": "2026-09-17 08:36:53"
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "believing that all people deserve equal rights and treatment"
   },
   "regardless of": {
     "word": "regardless of",
@@ -3949,7 +4581,11 @@
       "status": "new",
       "last_rating": "none",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "in spite of or without considering a particular fact or situation"
   },
   "intensity": {
     "word": "intensity",
@@ -3972,7 +4608,11 @@
       "status": "new",
       "last_rating": "none",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "the strength or force of a feeling such as pleasure or pain"
   },
   "duration": {
     "word": "duration",
@@ -3995,7 +4635,11 @@
       "status": "new",
       "last_rating": "none",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "the length of time that something continues or lasts"
   },
   "quantity": {
     "word": "quantity",
@@ -4018,7 +4662,11 @@
       "status": "new",
       "last_rating": "none",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "the amount or number of something"
   },
   "intuition": {
     "word": "intuition",
@@ -4041,7 +4689,11 @@
       "status": "new",
       "last_rating": "none",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "a direct feeling or belief about what is true without conscious reasoning"
   },
   "presumption": {
     "word": "presumption",
@@ -4064,7 +4716,11 @@
       "status": "learning",
       "last_rating": 1,
       "last_reviewed_at": "2026-09-17 08:37:16"
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "the act of assuming something to be true without proof or good reason"
   },
   "intrinsically": {
     "word": "intrinsically",
@@ -4087,7 +4743,11 @@
       "status": "new",
       "last_rating": "none",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "in a way that belongs to the basic nature of a thing"
   },
   "dispense with": {
     "word": "dispense with",
@@ -4110,7 +4770,11 @@
       "status": "new",
       "last_rating": "none",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "to get rid of or do without something completely"
   },
   "spectacle": {
     "word": "spectacle",
@@ -4133,7 +4797,11 @@
       "status": "new",
       "last_rating": "none",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "a violent or shocking public display that people watch"
   },
   "degrading": {
     "word": "degrading",
@@ -4156,7 +4824,11 @@
       "status": "new",
       "last_rating": "none",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "causing a loss of dignity or respect"
   },
   "valorize": {
     "word": "valorize",
@@ -4179,7 +4851,11 @@
       "status": "learning",
       "last_rating": 1,
       "last_reviewed_at": "2026-09-17 08:38:14"
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "to treat something as valuable or worthy of consideration"
   },
   "disciple": {
     "word": "disciple",
@@ -4202,7 +4878,11 @@
       "status": "new",
       "last_rating": "none",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "a person who follows and learns from a teacher or leader"
   },
   "prodigy": {
     "word": "prodigy",
@@ -4225,7 +4905,11 @@
       "status": "new",
       "last_rating": "none",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "a young person with exceptional talent or ability"
   },
   "nervous breakdown": {
     "word": "nervous breakdown",
@@ -4248,7 +4932,11 @@
       "status": "new",
       "last_rating": "none",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "a serious mental illness that stops someone from living normally"
   },
   "humanize": {
     "word": "humanize",
@@ -4271,7 +4959,11 @@
       "status": "new",
       "last_rating": "none",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "to make something more considerate of people's real needs and feelings"
   },
   "utilitarian calculus": {
     "word": "utilitarian calculus",
@@ -4294,7 +4986,11 @@
       "status": "new",
       "last_rating": "none",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "a method of weighing pleasures and pains to measure the greatest happiness"
   },
   "accommodate": {
     "word": "accommodate",
@@ -4317,7 +5013,11 @@
       "status": "new",
       "last_rating": "none",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "to adjust or adapt something so it includes or fits new needs"
   },
   "humanitarian": {
     "word": "humanitarian",
@@ -4340,7 +5040,11 @@
       "status": "new",
       "last_rating": "none",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "showing concern for the welfare and suffering of other people"
   },
   "address": {
     "word": "address",
@@ -4363,7 +5067,11 @@
       "status": "new",
       "last_rating": "none",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "to deal with or discuss a problem or issue"
   },
   "liberty": {
     "word": "liberty",
@@ -4386,7 +5094,11 @@
       "status": "new",
       "last_rating": "none",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "the freedom to live as one chooses without being controlled by others"
   },
   "minority rights": {
     "word": "minority rights",
@@ -4409,7 +5121,11 @@
       "status": "new",
       "last_rating": "none",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "the basic freedoms and fair treatment that belong to groups smaller in number"
   },
   "premise": {
     "word": "premise",
@@ -4432,7 +5148,11 @@
       "status": "new",
       "last_rating": "none",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "a statement assumed to be true as a basis for reasoning"
   },
   "affirm": {
     "word": "affirm",
@@ -4455,7 +5175,11 @@
       "status": "new",
       "last_rating": "none",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "to state or show that something is true or correct"
   },
   "explicitly": {
     "word": "explicitly",
@@ -4478,7 +5202,11 @@
       "status": "new",
       "last_rating": "none",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "in a clear and direct way that leaves no doubt about what is meant"
   },
   "desirable": {
     "word": "desirable",
@@ -4501,7 +5229,11 @@
       "status": "new",
       "last_rating": "none",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "worth having or wanting because it is good or useful"
   },
   "de facto": {
     "word": "de facto",
@@ -4524,7 +5256,11 @@
       "status": "learning",
       "last_rating": 2,
       "last_reviewed_at": "2026-09-17 08:40:02"
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "existing in actual fact, whether or not officially recognized"
   },
   "empirical": {
     "word": "empirical",
@@ -4547,7 +5283,11 @@
       "status": "learning",
       "last_rating": 2,
       "last_reviewed_at": "2026-09-17 08:40:06"
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "based on real experience or observation rather than ideas or theory"
   },
   "distinguish": {
     "word": "distinguish",
@@ -4570,7 +5310,11 @@
       "status": "new",
       "last_rating": "none",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "to recognize a difference between two things"
   },
   "qualitatively": {
     "word": "qualitatively",
@@ -4593,7 +5337,11 @@
       "status": "new",
       "last_rating": "none",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "in a way that concerns the kind or worth of something, not its amount"
   },
   "base": {
     "word": "base",
@@ -4616,7 +5364,11 @@
       "status": "new",
       "last_rating": "none",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "low in moral quality and not deserving respect"
   },
   "unworthy": {
     "word": "unworthy",
@@ -4639,7 +5391,11 @@
       "status": "new",
       "last_rating": "none",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "of low quality and not deserving serious attention or respect"
   },
   "decided": {
     "word": "decided",
@@ -4662,7 +5418,11 @@
       "status": "new",
       "last_rating": "none",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "clear and strong, leaving no doubt"
   },
   "irrespective of": {
     "word": "irrespective of",
@@ -4685,7 +5445,11 @@
       "status": "learning",
       "last_rating": 2,
       "last_reviewed_at": "2026-09-17 08:40:15"
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "without being affected or influenced by something"
   },
   "moral obligation": {
     "word": "moral obligation",
@@ -4708,7 +5472,11 @@
       "status": "new",
       "last_rating": "none",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "a duty to act in a certain way because it is morally right"
   },
   "succeed": {
     "word": "succeed",
@@ -4731,7 +5499,11 @@
       "status": "new",
       "last_rating": "none",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "to achieve the result that was intended"
   },
   "claim": {
     "word": "claim",
@@ -4754,7 +5526,11 @@
       "status": "new",
       "last_rating": "none",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "a statement that something is true, made without proof"
   },
   "excerpt": {
     "word": "excerpt",
@@ -4777,7 +5553,11 @@
       "status": "learning",
       "last_rating": 3,
       "last_reviewed_at": "2026-09-17 08:40:20"
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "a short piece taken from a longer work such as a book, speech, or film"
   },
   "infinite": {
     "word": "infinite",
@@ -4800,7 +5580,11 @@
       "status": "learning",
       "last_rating": 2,
       "last_reviewed_at": "2026-09-17 08:40:47"
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "without any limit in size, amount, or degree"
   },
   "faculty": {
     "word": "faculty",
@@ -4823,7 +5607,11 @@
       "status": "learning",
       "last_rating": 2,
       "last_reviewed_at": "2026-09-17 08:40:50"
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "a natural power of the mind, such as reason or imagination"
   },
   "paragon": {
     "word": "paragon",
@@ -4846,7 +5634,11 @@
       "status": "learning",
       "last_rating": 1,
       "last_reviewed_at": "2026-09-17 08:40:54"
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "a perfect example of a kind or quality"
   },
   "quintessence": {
     "word": "quintessence",
@@ -4869,7 +5661,11 @@
       "status": "learning",
       "last_rating": 1,
       "last_reviewed_at": "2026-09-17 08:41:19"
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "the purest and most perfect example of something"
   },
   "contestant": {
     "word": "contestant",
@@ -4892,7 +5688,11 @@
       "status": "new",
       "last_rating": "none",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "a person who takes part in a competition to win something"
   },
   "stunt": {
     "word": "stunt",
@@ -4915,7 +5715,11 @@
       "status": "learning",
       "last_rating": 1,
       "last_reviewed_at": "2026-09-17 08:41:45"
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "a dangerous action done to entertain people"
   },
   "overwhelmingly": {
     "word": "overwhelmingly",
@@ -4938,7 +5742,11 @@
       "status": "new",
       "last_rating": "none",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "by a very large majority of people"
   },
   "noble": {
     "word": "noble",
@@ -4961,7 +5769,11 @@
       "status": "new",
       "last_rating": "none",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "having or showing fine personal qualities and high moral aims"
   },
   "pleasurable": {
     "word": "pleasurable",
@@ -4984,7 +5796,11 @@
       "status": "new",
       "last_rating": "none",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "giving pleasure or enjoyment"
   },
   "benthamite": {
     "word": "Benthamite",
@@ -5007,7 +5823,11 @@
       "status": "learning",
       "last_rating": 2,
       "last_reviewed_at": "2026-09-17 08:41:52"
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "a person who supports the idea that actions are right if they bring the greatest happiness to the greatest number"
   },
   "higher experience": {
     "word": "higher experience",
@@ -5030,7 +5850,11 @@
       "status": "new",
       "last_rating": "none",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "a refined enjoyment valued above ordinary pleasures for engaging the intellect"
   },
   "entertaining": {
     "word": "entertaining",
@@ -5053,7 +5877,11 @@
       "status": "new",
       "last_rating": "none",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "fun and enjoyable to watch or experience"
   },
   "analyze": {
     "word": "analyze",
@@ -5076,7 +5904,11 @@
       "status": "new",
       "last_rating": "none",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "to examine something carefully in order to understand its parts or meaning"
   },
   "blind faith": {
     "word": "blind faith",
@@ -5099,7 +5931,11 @@
       "status": "learning",
       "last_rating": 2,
       "last_reviewed_at": "2026-09-17 08:42:16"
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "belief without doubt or evidence, often because of what others say"
   },
   "cultural convention": {
     "word": "cultural convention",
@@ -5122,7 +5958,11 @@
       "status": "new",
       "last_rating": "none",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "a customary way of thinking or behaving that a community generally follows"
   },
   "the latter": {
     "word": "the latter",
@@ -5145,7 +5985,11 @@
       "status": "new",
       "last_rating": "none",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "the last one or ones of a set just mentioned"
   },
   "derive pleasure from": {
     "word": "derive pleasure from",
@@ -5168,7 +6012,11 @@
       "status": "new",
       "last_rating": "none",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "to get enjoyment or satisfaction from something"
   },
   "branch out": {
     "word": "branch out",
@@ -5191,7 +6039,11 @@
       "status": "learning",
       "last_rating": 1,
       "last_reviewed_at": "2026-09-17 08:42:35"
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "to expand one's interests or activities into new areas"
   },
   "test": {
     "word": "test",
@@ -5214,7 +6066,11 @@
       "status": "new",
       "last_rating": "none",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "a standard or method used to judge whether something is right or good"
   },
   "higher pleasure": {
     "word": "higher pleasure",
@@ -5237,7 +6093,11 @@
       "status": "new",
       "last_rating": "none",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "intellectual or spiritual enjoyment valued above mere physical gratification"
   },
   "stimulate": {
     "word": "stimulate",
@@ -5260,7 +6120,11 @@
       "status": "new",
       "last_rating": "none",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "to make a part of the body or brain more active"
   },
   "intense pleasure": {
     "word": "intense pleasure",
@@ -5283,7 +6147,11 @@
       "status": "new",
       "last_rating": "none",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "a very strong feeling of enjoyment or delight"
   },
   "lower pleasure": {
     "word": "lower pleasure",
@@ -5306,7 +6174,11 @@
       "status": "new",
       "last_rating": "none",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "sensory or bodily gratification, as opposed to intellectual or moral enjoyment"
   },
   "momentary": {
     "word": "momentary",
@@ -5329,7 +6201,11 @@
       "status": "learning",
       "last_rating": 2,
       "last_reviewed_at": "2026-09-17 08:42:55"
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "lasting for only a very short time"
   },
   "disprove": {
     "word": "disprove",
@@ -5352,7 +6228,11 @@
       "status": "new",
       "last_rating": "none",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "to show that something is false or wrong"
   },
   "adequate": {
     "word": "adequate",
@@ -5375,7 +6255,11 @@
       "status": "new",
       "last_rating": "none",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "good enough or satisfactory for a particular purpose"
   },
   "utilitarian framework": {
     "word": "utilitarian framework",
@@ -5398,7 +6282,11 @@
       "status": "new",
       "last_rating": "none",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "a theoretical system judging actions by their contribution to overall happiness"
   },
   "objective": {
     "word": "objective",
@@ -5421,7 +6309,11 @@
       "status": "new",
       "last_rating": "none",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "based on facts and not influenced by personal feelings"
   },
   "cultivation": {
     "word": "cultivation",
@@ -5444,7 +6336,11 @@
       "status": "new",
       "last_rating": "none",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "the act of developing or improving one's mind, skills, or qualities through education and training"
   },
   "couch potato": {
     "word": "couch potato",
@@ -5467,7 +6363,11 @@
       "status": "new",
       "last_rating": "none",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "a person who sits a lot and watches TV instead of being active"
   },
   "succumb to": {
     "word": "succumb to",
@@ -5490,7 +6390,11 @@
       "status": "learning",
       "last_rating": 1,
       "last_reviewed_at": "2026-09-17 08:43:53"
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "to stop resisting and give in to a strong desire"
   },
   "indolence": {
     "word": "indolence",
@@ -5513,7 +6417,11 @@
       "status": "learning",
       "last_rating": 2,
       "last_reviewed_at": "2026-09-17 08:43:59"
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "the habit of avoiding effort because one prefers to be lazy"
   },
   "sloth": {
     "word": "sloth",
@@ -5536,7 +6444,11 @@
       "status": "new",
       "last_rating": "none",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "the habit of being lazy and avoiding effort"
   },
   "gaze": {
     "word": "gaze",
@@ -5559,7 +6471,11 @@
       "status": "new",
       "last_rating": "none",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "to look steadily at something for a long time"
   },
   "dispute": {
     "word": "dispute",
@@ -5582,7 +6498,11 @@
       "status": "new",
       "last_rating": "none",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "to question whether something is true or right"
   },
   "pretension": {
     "word": "pretension",
@@ -5605,7 +6525,11 @@
       "status": "learning",
       "last_rating": 1,
       "last_reviewed_at": "2026-09-17 08:44:22"
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "a claim to have a certain quality or importance that may not be deserved"
   },
   "ground on": {
     "word": "ground on",
@@ -5628,7 +6552,11 @@
       "status": "new",
       "last_rating": "none",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "founded or based on a particular principle or reason"
   },
   "incomparable": {
     "word": "incomparable",
@@ -5651,7 +6579,11 @@
       "status": "new",
       "last_rating": "none",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "in a way that is far beyond comparison with others"
   },
   "sacred": {
     "word": "sacred",
@@ -5674,7 +6606,11 @@
       "status": "new",
       "last_rating": "none",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "deserving deep respect and never to be violated or treated lightly"
   },
   "binding": {
     "word": "binding",
@@ -5697,7 +6633,11 @@
       "status": "new",
       "last_rating": "none",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "having the power to require obedience or to be morally obligatory"
   },
   "privileged": {
     "word": "privileged",
@@ -5720,7 +6660,11 @@
       "status": "new",
       "last_rating": "none",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "given special advantage or priority over other things"
   },
   "depart from": {
     "word": "depart from",
@@ -5743,7 +6687,11 @@
       "status": "new",
       "last_rating": "none",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "to move away from or differ from a standard or assumption"
   },
   "collectively": {
     "word": "collectively",
@@ -5766,7 +6714,11 @@
       "status": "new",
       "last_rating": "none",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "considered as a whole group rather than as individuals"
   },
   "paramount": {
     "word": "paramount",
@@ -5789,7 +6741,11 @@
       "status": "new",
       "last_rating": "none",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "more important than anything else"
   },
   "obligation": {
     "word": "obligation",
@@ -5812,7 +6768,11 @@
       "status": "new",
       "last_rating": "none",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "a moral duty to do something because it is right"
   },
   "trade off against": {
     "word": "trade off against",
@@ -5835,7 +6795,11 @@
       "status": "new",
       "last_rating": "none",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "to balance one thing against another, accepting a loss to gain an advantage"
   },
   "in the long run": {
     "word": "in the long run",
@@ -5858,7 +6822,11 @@
       "status": "new",
       "last_rating": "none",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "after a long period of time has passed, considered as a whole"
   },
   "progressive": {
     "word": "progressive",
@@ -5881,7 +6849,11 @@
       "status": "new",
       "last_rating": "none",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "developing or improving over time toward a better state"
   },
   "better off": {
     "word": "better off",
@@ -5904,7 +6876,11 @@
       "status": "new",
       "last_rating": "none",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "in a more favorable or improved condition, especially with more money or advantages"
   },
   "convincing": {
     "word": "convincing",
@@ -5927,7 +6903,11 @@
       "status": "new",
       "last_rating": "none",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "able to make you believe that something is true or right"
   },
   "account for": {
     "word": "account for",
@@ -5950,7 +6930,11 @@
       "status": "new",
       "last_rating": "none",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "to explain or give a reason for something"
   },
   "doctrine": {
     "word": "doctrine",
@@ -5973,7 +6957,11 @@
       "status": "new",
       "last_rating": "none",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "a set of beliefs taught as a system of thought"
   },
   "embalm": {
     "word": "embalm",
@@ -5996,7 +6984,11 @@
       "status": "learning",
       "last_rating": 1,
       "last_reviewed_at": "2026-09-17 08:46:31"
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "to treat a dead body with chemicals to stop it from decaying"
   },
   "preside": {
     "word": "preside",
@@ -6019,7 +7011,11 @@
       "status": "new",
       "last_rating": "none",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "to be present in a place in a displayed or preserved form"
   },
   "address oneself to": {
     "word": "address oneself to",
@@ -6042,7 +7038,11 @@
       "status": "new",
       "last_rating": "none",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "to turn one's attention to and deal with a particular subject"
   },
   "anatomy": {
     "word": "anatomy",
@@ -6065,7 +7065,11 @@
       "status": "learning",
       "last_rating": 1,
       "last_reviewed_at": "2026-09-17 08:47:04"
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "the scientific study of the structure of the human or animal body"
   },
   "verisimilitude": {
     "word": "verisimilitude",
@@ -6088,7 +7092,11 @@
       "status": "new",
       "last_rating": "none",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "the quality of seeming real or true"
   },
   "adhere to": {
     "word": "adhere to",
@@ -6111,7 +7119,11 @@
       "status": "new",
       "last_rating": "none",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep02"
+    ],
+    "def_en": "to act in accordance with a rule, belief, or principle"
   },
   "hurdling": {
     "word": "hurdling",
@@ -6134,7 +7146,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "moving rapidly and uncontrollably forward, as a vehicle rushing down a track"
   },
   "desperate": {
     "word": "desperate",
@@ -6157,7 +7173,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "feeling or showing a hopeless sense that a situation is so bad as to be impossible to deal with"
   },
   "helpless": {
     "word": "helpless",
@@ -6180,7 +7200,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "unable to defend oneself or to act without help; powerless"
   },
   "side track": {
     "word": "side track",
@@ -6203,7 +7227,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "a secondary railway track branching off from a main line"
   },
   "sparing": {
     "word": "sparing",
@@ -6226,7 +7254,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "refraining from harming or killing; saving from death or destruction"
   },
   "poll": {
     "word": "poll",
@@ -6249,7 +7281,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "the process of voting in an election or a survey of opinions"
   },
   "handful": {
     "word": "handful",
@@ -6272,7 +7308,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "a small number of people or things"
   },
   "vast majority": {
     "word": "vast majority",
@@ -6295,7 +7335,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "the much greater part of a group; most people"
   },
   "investigate": {
     "word": "investigate",
@@ -6318,7 +7362,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "to carry out research or study into a subject in order to discover facts"
   },
   "volunteer": {
     "word": "volunteer",
@@ -6341,7 +7389,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "to offer or give something without being asked or forced"
   },
   "tragic": {
     "word": "tragic",
@@ -6364,7 +7416,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "causing or characterized by extreme distress or sorrow; very sad"
   },
   "mentality": {
     "word": "mentality",
@@ -6387,7 +7443,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "the characteristic attitude of mind or way of thinking of a person or group"
   },
   "moderate": {
     "word": "moderate",
@@ -6410,7 +7470,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "average in amount, intensity, quality, or degree; not extreme"
   },
   "genocide": {
     "word": "genocide",
@@ -6433,7 +7497,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "the deliberate killing of a large number of people from a particular nation or ethnic group with the aim of destroying that nation or group"
   },
   "totalitarianism": {
     "word": "totalitarianism",
@@ -6456,7 +7524,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "a system of government that is centralized and dictatorial and requires complete subservience to the state"
   },
   "wipe out": {
     "word": "wipe out",
@@ -6479,7 +7551,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "to destroy or eliminate something or someone completely"
   },
   "horror": {
     "word": "horror",
@@ -6502,7 +7578,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "an intense feeling of fear, shock, or disgust; a horrifying event"
   },
   "presumably": {
     "word": "presumably",
@@ -6525,7 +7605,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "used to convey that what is asserted is very likely though not known for certain"
   },
   "trap door": {
     "word": "trap door",
@@ -6548,7 +7632,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "a hinged door in a floor or ceiling that can be opened to let someone or something fall through"
   },
   "emergency room": {
     "word": "emergency room",
@@ -6571,7 +7659,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "the part of a hospital where people with urgent medical needs are treated"
   },
   "wreck": {
     "word": "wreck",
@@ -6594,7 +7686,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "the destruction or remains of a vehicle after a crash"
   },
   "sustain": {
     "word": "sustain",
@@ -6617,7 +7713,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "to suffer or undergo (an injury or damage)"
   },
   "restore": {
     "word": "restore",
@@ -6640,7 +7740,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "to bring back to a former or healthy condition"
   },
   "transplant": {
     "word": "transplant",
@@ -6663,7 +7767,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "the surgical operation of moving an organ from one body to another"
   },
   "moderation": {
     "word": "moderation",
@@ -6686,7 +7794,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "the avoidance of excess or extremes, especially in one's behavior or political opinions"
   },
   "organ": {
     "word": "organ",
@@ -6709,7 +7821,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "a part of the body that performs a specific function, such as the heart or liver"
   },
   "donor": {
     "word": "donor",
@@ -6732,7 +7848,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "a person who provides blood, an organ, or tissue for medical use"
   },
   "checkup": {
     "word": "checkup",
@@ -6755,7 +7875,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "a medical examination to check a person's health"
   },
   "come back": {
     "word": "come back",
@@ -6778,7 +7902,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "to return to a place or to resume a discussion"
   },
   "look after": {
     "word": "look after",
@@ -6801,7 +7929,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "to take care of someone or something"
   },
   "come in": {
     "word": "come in",
@@ -6824,7 +7956,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "to enter a place, especially for a visit or appointment"
   },
   "yank out": {
     "word": "yank out",
@@ -6847,7 +7983,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "to pull something out with a sudden, forceful movement"
   },
   "speak up": {
     "word": "speak up",
@@ -6870,7 +8010,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "to speak louder or to express one's opinion openly"
   },
   "alternate": {
     "word": "alternate",
@@ -6893,7 +8037,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "existing as an alternative; different from the usual or original"
   },
   "step back": {
     "word": "step back",
@@ -6916,7 +8064,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "to withdraw temporarily from a situation in order to consider it more objectively"
   },
   "unfold": {
     "word": "unfold",
@@ -6939,7 +8091,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "to develop or be revealed gradually"
   },
   "affirmative action": {
     "word": "affirmative action",
@@ -6962,7 +8118,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "a policy favoring members of disadvantaged groups to counteract historical discrimination, a contested topic in political philosophy"
   },
   "conscription": {
     "word": "conscription",
@@ -6985,7 +8145,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "compulsory enlistment for military service"
   },
   "enliven": {
     "word": "enliven",
@@ -7008,7 +8172,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "to make something more interesting, lively, or animated"
   },
   "at stake": {
     "word": "at stake",
@@ -7031,7 +8199,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "at risk; in a position where something important could be lost or gained"
   },
   "illuminate": {
     "word": "illuminate",
@@ -7054,7 +8226,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "to make something clear or easier to understand; to enlighten"
   },
   "issue a warning": {
     "word": "issue a warning",
@@ -7077,7 +8253,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "to formally give notice of a danger or risk"
   },
   "self-knowledge": {
     "word": "self-knowledge",
@@ -7100,7 +8280,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "understanding of oneself, one's character, feelings, and motives"
   },
   "unsettle": {
     "word": "unsettle",
@@ -7123,7 +8307,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "to make someone feel anxious, uneasy, or disturbed; to disrupt"
   },
   "confront": {
     "word": "confront",
@@ -7146,7 +8334,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "to face someone or something in a challenging or hostile way; to bring face to face with"
   },
   "irony": {
     "word": "irony",
@@ -7169,7 +8361,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "a situation that seems contrary to what one expects, often with a humorous or paradoxical effect"
   },
   "consist in": {
     "word": "consist in",
@@ -7192,7 +8388,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "to have as an essential feature or basis; to lie in"
   },
   "unquestioned": {
     "word": "unquestioned",
@@ -7215,7 +8415,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "accepted without doubt or challenge; not questioned"
   },
   "hypothetical": {
     "word": "hypothetical",
@@ -7238,7 +8442,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "an imagined scenario or proposition used to test ideas, especially in moral reasoning"
   },
   "sober": {
     "word": "sober",
@@ -7261,7 +8469,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "serious, solemn, and free from frivolity"
   },
   "estrange": {
     "word": "estrange",
@@ -7284,7 +8496,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "to cause someone to feel separated or alienated from something familiar"
   },
   "provoke": {
     "word": "provoke",
@@ -7307,7 +8523,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "to stimulate or incite a reaction, thought, or feeling"
   },
   "unsettling": {
     "word": "unsettling",
@@ -7330,7 +8550,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "causing anxiety, unease, or a disturbance of one's composure"
   },
   "riveting": {
     "word": "riveting",
@@ -7353,7 +8577,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "completely engrossing; holding one's attention intensely"
   },
   "jury": {
     "word": "jury",
@@ -7376,7 +8604,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "a body of people sworn to give a verdict in a legal case on the basis of evidence submitted to them in court"
   },
   "founder": {
     "word": "founder",
@@ -7399,7 +8631,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "(of a ship) to fill with water and sink"
   },
   "first mate": {
     "word": "first mate",
@@ -7422,7 +8658,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "the officer second in command to the captain on a merchant ship"
   },
   "orphan": {
     "word": "orphan",
@@ -7445,7 +8685,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "a child whose parents are dead"
   },
   "voyage": {
     "word": "voyage",
@@ -7468,7 +8712,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "a long journey involving travel by sea or in space"
   },
   "go down": {
     "word": "go down",
@@ -7491,7 +8739,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "(of a ship) sink into the sea"
   },
   "avert": {
     "word": "avert",
@@ -7514,7 +8766,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "turn away (one's eyes or thoughts); prevent or ward off"
   },
   "jugular vein": {
     "word": "jugular vein",
@@ -7537,7 +8793,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "any of several large veins in the neck that drain blood from the head"
   },
   "conscientious objection": {
     "word": "conscientious objection",
@@ -7560,7 +8820,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "a refusal to participate in an action based on moral or religious grounds"
   },
   "gruesome": {
     "word": "gruesome",
@@ -7583,7 +8847,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "causing repulsion or horror; grisly"
   },
   "feed on": {
     "word": "feed on",
@@ -7606,7 +8874,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "to eat a particular food or derive nourishment from something"
   },
   "euphemism": {
     "word": "euphemism",
@@ -7629,7 +8901,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "a mild or indirect word substituted for one considered too harsh or blunt"
   },
   "sway": {
     "word": "sway",
@@ -7652,7 +8928,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "persuade (someone) to agree to something or change their opinion"
   },
   "morally permissible": {
     "word": "morally permissible",
@@ -7675,7 +8955,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "permitted or acceptable according to principles of morality; not morally wrong"
   },
   "exonerate": {
     "word": "exonerate",
@@ -7698,7 +8982,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "absolve (someone) from blame for a fault or wrongdoing, especially after consideration of the case"
   },
   "reprehensible": {
     "word": "reprehensible",
@@ -7721,7 +9009,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "deserving censure or condemnation"
   },
   "legally accountable": {
     "word": "legally accountable",
@@ -7744,7 +9036,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "required or expected to justify actions or decisions under the law; subject to legal liability"
   },
   "martyr": {
     "word": "martyr",
@@ -7767,7 +9063,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "a person who is killed or sacrifices themselves for the sake of principle"
   },
   "morally justified": {
     "word": "morally justified",
@@ -7790,7 +9090,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "having a valid moral basis or justification"
   },
   "coerced": {
     "word": "coerced",
@@ -7813,7 +9117,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "persuaded or forced to do something under threat or pressure"
   },
   "agency": {
     "word": "agency",
@@ -7836,7 +9144,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "the capacity of an individual to act independently and make free choices"
   },
   "in vain": {
     "word": "in vain",
@@ -7859,7 +9171,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "without success or a result; uselessly"
   },
   "pick off": {
     "word": "pick off",
@@ -7882,7 +9198,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "shoot or target people or things one by one"
   },
   "moral logic": {
     "word": "moral logic",
@@ -7905,7 +9225,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "the reasoning and principles underlying moral judgments and decisions"
   },
   "stand up": {
     "word": "stand up",
@@ -7928,7 +9252,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "remain valid, defend oneself, or rise to speak in debate"
   },
   "objectionable": {
     "word": "objectionable",
@@ -7951,7 +9279,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "arousing distaste or opposition; unpleasant or offensive"
   },
   "permissible": {
     "word": "permissible",
@@ -7974,7 +9306,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "permitted; allowed by rules or principles"
   },
   "precedent": {
     "word": "precedent",
@@ -7997,7 +9333,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "an earlier event or action that is regarded as an example in subsequent similar circumstances"
   },
   "grotesque": {
     "word": "grotesque",
@@ -8020,7 +9360,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "comically or repulsively ugly or distorted; shocking and inappropriate"
   },
   "due process": {
     "word": "due process",
@@ -8043,7 +9387,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "fair treatment through the normal judicial system, especially as a citizen's entitlement"
   },
   "forewarning": {
     "word": "forewarning",
@@ -8066,7 +9414,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "an advance warning of something"
   },
   "verbal contract": {
     "word": "verbal contract",
@@ -8089,7 +9441,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "a contract that is spoken and agreed upon orally rather than written"
   },
   "remorse": {
     "word": "remorse",
@@ -8112,7 +9468,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "deep regret or guilt for a wrong committed"
   },
   "throw the book at": {
     "word": "throw the book at",
@@ -8135,7 +9495,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "charge or punish someone as severely as possible"
   },
   "categorical stance": {
     "word": "categorical stance",
@@ -8158,7 +9522,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "an unconditional moral position holding certain acts inherently wrong regardless of outcome"
   },
   "dependents": {
     "word": "dependents",
@@ -8181,7 +9549,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "persons who rely on another, especially a family member, for financial support"
   },
   "sympathized": {
     "word": "sympathized",
@@ -8204,7 +9576,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "felt or expressed sympathy for someone"
   },
   "criminalizing": {
     "word": "criminalizing",
@@ -8227,7 +9603,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "making an activity illegal or treating someone as a criminal"
   },
   "pop quiz": {
     "word": "pop quiz",
@@ -8250,7 +9630,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "a short, surprise test given to a class without prior notice"
   },
   "funding": {
     "word": "funding",
@@ -8273,7 +9657,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "money provided, especially by an organization or government, for a particular purpose"
   },
   "scenario": {
     "word": "scenario",
@@ -8296,7 +9684,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "an imagined situation used to explore what someone should do"
   },
   "justify": {
     "word": "justify",
@@ -8319,7 +9711,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "to show that an action is right or reasonable"
   },
   "deliberate": {
     "word": "deliberate",
@@ -8342,7 +9738,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "to discuss and consider a moral matter carefully before deciding"
   },
   "consensus": {
     "word": "consensus",
@@ -8365,7 +9765,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "an opinion that everyone in a group agrees with"
   },
   "verdict": {
     "word": "verdict",
@@ -8388,7 +9792,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "a formal finding by a jury on the facts of a case, often special or partial"
   },
   "bystander": {
     "word": "bystander",
@@ -8411,7 +9819,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "a person who is present at an event but does not take part in it"
   },
   "inevitable": {
     "word": "inevitable",
@@ -8434,7 +9846,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "certain to happen and impossible to avoid or prevent"
   },
   "survive": {
     "word": "survive",
@@ -8457,7 +9873,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "to continue to live after a dangerous event"
   },
   "drastic": {
     "word": "drastic",
@@ -8480,7 +9900,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "extreme in a way that shocks or disturbs people"
   },
   "compelling": {
     "word": "compelling",
@@ -8503,7 +9927,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "strong enough to convince someone that something is true or right"
   },
   "divert": {
     "word": "divert",
@@ -8526,7 +9954,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "to change the direction or target of something"
   },
   "instinct": {
     "word": "instinct",
@@ -8556,7 +9988,12 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01",
+      "yale_ep01"
+    ],
+    "def_en": "a natural feeling or inner drive that makes one react without conscious thought"
   },
   "overwhelming": {
     "word": "overwhelming",
@@ -8579,7 +10016,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "so great in amount or strength that it cannot be resisted"
   },
   "propose": {
     "word": "propose",
@@ -8602,7 +10043,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "to put forward a course of action for acceptance or adoption"
   },
   "refuse": {
     "word": "refuse",
@@ -8625,7 +10070,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "to say or show that one will not do something"
   },
   "miraculous": {
     "word": "miraculous",
@@ -8648,7 +10097,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "so surprising and lucky that it seems impossible or like magic"
   },
   "imperative": {
     "word": "imperative",
@@ -8671,7 +10124,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "a moral rule that must be obeyed without exception, no matter the consequences"
   },
   "indefensible": {
     "word": "indefensible",
@@ -8694,7 +10151,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "impossible to justify or defend by any reasonable argument"
   },
   "plausible": {
     "word": "plausible",
@@ -8717,7 +10178,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "seeming reasonable and likely to be true"
   },
   "coerce": {
     "word": "coerce",
@@ -8740,7 +10205,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "to force someone to do something by using threats or pressure"
   },
   "premeditated": {
     "word": "premeditated",
@@ -8763,7 +10232,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "planned or decided in advance"
   },
   "abhorrent": {
     "word": "abhorrent",
@@ -8786,7 +10259,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "causing strong moral disgust and hatred"
   },
   "scarcity": {
     "word": "scarcity",
@@ -8809,7 +10286,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "a situation in which there is not enough of something people need"
   },
   "deprive": {
     "word": "deprive",
@@ -8832,7 +10313,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "to take away something important from someone"
   },
   "unprecedented": {
     "word": "unprecedented",
@@ -8855,7 +10340,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "never having happened or existed before"
   },
   "arbitrary": {
     "word": "arbitrary",
@@ -8878,7 +10367,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "based on personal choice or chance rather than fair rules or reason"
   },
   "maxim": {
     "word": "maxim",
@@ -8901,7 +10394,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "a personal rule or principle that guides how one acts"
   },
   "deontology": {
     "word": "deontology",
@@ -8924,7 +10421,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "the view that certain acts are morally right or wrong in themselves, regardless of their outcomes"
   },
   "custom of the sea": {
     "word": "custom of the sea",
@@ -8947,7 +10448,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "an unofficial maritime practice permitting survival sacrifices during extreme distress at sea"
   },
   "moral agency": {
     "word": "moral agency",
@@ -8970,7 +10475,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "the capacity to make moral choices and be held responsible for them"
   },
   "trolley problem": {
     "word": "trolley problem",
@@ -8993,7 +10502,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "a thought experiment about whether to sacrifice one person to save five others"
   },
   "common law": {
     "word": "common law",
@@ -9016,7 +10529,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "the body of law built up from past court decisions rather than from written laws"
   },
   "felony": {
     "word": "felony",
@@ -9039,7 +10556,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "a serious crime at common law, such as murder or treason"
   },
   "retributive justice": {
     "word": "retributive justice",
@@ -9062,7 +10583,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "the idea that punishment should be given because it is deserved, not for its useful results"
   },
   "inviolable rights": {
     "word": "inviolable rights",
@@ -9085,7 +10610,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "basic rights that must never be taken away or overruled by any group decision"
   },
   "sovereign masters": {
     "word": "sovereign masters",
@@ -9108,7 +10637,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "the two supreme forces of feeling that govern all human conduct"
   },
   "teleological": {
     "word": "teleological",
@@ -9131,7 +10664,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "explaining something by the purpose or goal it is meant to serve"
   },
   "turn onto": {
     "word": "turn onto",
@@ -9154,7 +10691,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "to steer a vehicle onto a side track or different route"
   },
   "push off": {
     "word": "push off",
@@ -9177,7 +10718,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "to shove someone so that they fall from an elevated position"
   },
   "rely on": {
     "word": "rely on",
@@ -9200,7 +10745,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "to depend on something as a basis for action or belief"
   },
   "lead to": {
     "word": "lead to",
@@ -9223,7 +10772,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "to cause something to happen or result in a situation"
   },
   "cast away": {
     "word": "cast away",
@@ -9246,7 +10799,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "to abandon someone on a desolate shore or in a drifting boat"
   },
   "resort to": {
     "word": "resort to",
@@ -9269,7 +10826,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "to do something extreme or unpleasant because no other option is available"
   },
   "fall upon": {
     "word": "fall upon",
@@ -9292,7 +10853,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "to be assigned to someone by chance, especially as an unlucky fate"
   },
   "stand trial": {
     "word": "stand trial",
@@ -9315,7 +10880,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "to be brought before a court to answer a criminal charge"
   },
   "consent to": {
     "word": "consent to",
@@ -9338,7 +10907,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep01"
+    ],
+    "def_en": "to agree to something or allow it to happen"
   },
   "redistribute": {
     "word": "redistribute",
@@ -9361,7 +10934,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep03"
+    ],
+    "def_en": "to move money or resources from one group to another"
   },
   "fundamental": {
     "word": "fundamental",
@@ -9384,7 +10961,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep03"
+    ],
+    "def_en": "basic and most important, forming the foundation of something"
   },
   "consent": {
     "word": "consent",
@@ -9407,7 +10988,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep03"
+    ],
+    "def_en": "the act of agreeing freely to something or giving permission"
   },
   "property": {
     "word": "property",
@@ -9430,7 +11015,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep03"
+    ],
+    "def_en": "things owned by someone, such as land, buildings, or possessions"
   },
   "taxation": {
     "word": "taxation",
@@ -9453,7 +11042,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep03"
+    ],
+    "def_en": "the system of requiring people to pay money to the government"
   },
   "voluntary": {
     "word": "voluntary",
@@ -9477,7 +11070,9 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "def_en": "done by choice and without being forced",
+    "taught_in": []
   },
   "entitled": {
     "word": "entitled",
@@ -9501,7 +11096,9 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "def_en": "having a right to something because it is deserved or owed",
+    "taught_in": []
   },
   "regulate": {
     "word": "regulate",
@@ -9525,7 +11122,9 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "def_en": "to control an activity by making rules for how it must be done",
+    "taught_in": []
   },
   "welfare": {
     "word": "welfare",
@@ -9549,7 +11148,9 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "def_en": "the health and happiness of people, or government aid for those in need",
+    "taught_in": []
   },
   "ownership": {
     "word": "ownership",
@@ -9573,7 +11174,9 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "def_en": "the state of legally possessing something as one's own property",
+    "taught_in": []
   },
   "appropriation": {
     "word": "appropriation",
@@ -9597,7 +11200,9 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "def_en": "the act of taking something for one's own use, often without permission",
+    "taught_in": []
   },
   "entitlement": {
     "word": "entitlement",
@@ -9621,7 +11226,9 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "def_en": "the state of having a right to something, often based on what one deserves",
+    "taught_in": []
   },
   "inviolability": {
     "word": "inviolability",
@@ -9645,7 +11252,9 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "def_en": "the state of being impossible to violate or take away",
+    "taught_in": []
   },
   "compulsory": {
     "word": "compulsory",
@@ -9669,7 +11278,9 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "def_en": "required by law or a rule and must be done",
+    "taught_in": []
   },
   "expropriate": {
     "word": "expropriate",
@@ -9693,7 +11304,9 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "def_en": "to take private property from someone, especially by a government, without their consent",
+    "taught_in": []
   },
   "coercive": {
     "word": "coercive",
@@ -9717,7 +11330,9 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "def_en": "using force or threats to make someone do something they do not want to do",
+    "taught_in": []
   },
   "sovereignty": {
     "word": "sovereignty",
@@ -9741,7 +11356,9 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "def_en": "the right and power to govern oneself without outside control",
+    "taught_in": []
   },
   "redistributive": {
     "word": "redistributive",
@@ -9765,7 +11382,9 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "def_en": "taking money from some people through taxes and giving it to others",
+    "taught_in": []
   },
   "minimal state": {
     "word": "minimal state",
@@ -9789,7 +11408,9 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "def_en": "a government whose only roles are protecting people from force and enforcing contracts",
+    "taught_in": []
   },
   "lockean proviso": {
     "word": "Lockean proviso",
@@ -9813,7 +11434,9 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "def_en": "the condition that taking common resources is fair only if enough and as good is left for others",
+    "taught_in": []
   },
   "nozickean entitlement theory": {
     "word": "Nozickean entitlement theory",
@@ -9837,7 +11460,9 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "def_en": "the view that a distribution is just if it arises from fair acquisition, fair transfer, and correction of past wrongs",
+    "taught_in": []
   },
   "distributive justice": {
     "word": "distributive justice",
@@ -9861,7 +11486,9 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "def_en": "the fair allocation of resources, wealth, and opportunities among members of a society",
+    "taught_in": []
   },
   "taxation as forced labor": {
     "word": "taxation as forced labor",
@@ -9885,7 +11512,9 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "def_en": "the treatment of taxes as a form of compulsory labor",
+    "taught_in": []
   },
   "natural rights": {
     "word": "natural rights",
@@ -9909,7 +11538,9 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "def_en": "rights to life, freedom, and property that exist before any government or law",
+    "taught_in": []
   },
   "moral self-ownership": {
     "word": "moral self-ownership",
@@ -9933,7 +11564,9 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "def_en": "the idea that each person has full moral authority over their own body and life",
+    "taught_in": []
   },
   "free market libertarianism": {
     "word": "free market libertarianism",
@@ -9957,7 +11590,9 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "def_en": "the belief that free markets with minimal government interference best protect individual freedom",
+    "taught_in": []
   },
   "paternalist legislation": {
     "word": "paternalist legislation",
@@ -9981,7 +11616,9 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "def_en": "a law that restricts personal choices to protect people from harming themselves",
+    "taught_in": []
   },
   "patterned principles of justice": {
     "word": "patterned principles of justice",
@@ -10005,7 +11642,9 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "def_en": "a rule for distributing goods according to a fixed formula such as equality or merit",
+    "taught_in": []
   },
   "infringe upon": {
     "word": "infringe upon",
@@ -10029,7 +11668,9 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "def_en": "to limit or violate someone's rights or freedom without permission",
+    "taught_in": []
   },
   "stem from": {
     "word": "stem from",
@@ -10053,7 +11694,9 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "def_en": "to come from or be caused by a particular source",
+    "taught_in": []
   },
   "part with": {
     "word": "part with",
@@ -10077,7 +11720,9 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "def_en": "to give up or let go of something valuable that one owns",
+    "taught_in": []
   },
   "coerce into": {
     "word": "coerce into",
@@ -10101,7 +11746,9 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "def_en": "to force someone to do something by using threats or power",
+    "taught_in": []
   },
   "fall back on": {
     "word": "fall back on",
@@ -10125,7 +11772,9 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "def_en": "to rely on something as a last resort when other options fail",
+    "taught_in": []
   },
   "amount to": {
     "word": "amount to",
@@ -10149,7 +11798,9 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "def_en": "to be the same as something in effect or meaning",
+    "taught_in": []
   },
   "lay claim to": {
     "word": "lay claim to",
@@ -10173,7 +11824,9 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "def_en": "to assert a right to own or control something",
+    "taught_in": []
   },
   "give up": {
     "word": "give up",
@@ -10197,7 +11850,9 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "def_en": "to surrender or relinquish something, such as control or a right",
+    "taught_in": []
   },
   "harmony": {
     "word": "harmony",
@@ -10220,7 +11875,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "yale_ep01"
+    ],
+    "def_en": "a state of peaceful agreement among different parts"
   },
   "rational": {
     "word": "rational",
@@ -10243,7 +11902,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "yale_ep01"
+    ],
+    "def_en": "based on clear thought and logic rather than emotion"
   },
   "conflict": {
     "word": "conflict",
@@ -10266,7 +11929,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "yale_ep01"
+    ],
+    "def_en": "a serious disagreement or struggle between opposing forces or desires"
   },
   "virtue": {
     "word": "virtue",
@@ -10289,7 +11956,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "yale_ep01"
+    ],
+    "def_en": "a good quality in a person's character shown by doing what is right"
   },
   "reflection": {
     "word": "reflection",
@@ -10312,7 +11983,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "yale_ep01"
+    ],
+    "def_en": "the act of thinking carefully and deeply about one's own beliefs and actions"
   },
   "proportion": {
     "word": "proportion",
@@ -10335,7 +12010,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "yale_ep01"
+    ],
+    "def_en": "a balanced relationship among the parts of something, each having its proper size or amount"
   },
   "flourish": {
     "word": "flourish",
@@ -10358,7 +12037,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "yale_ep01"
+    ],
+    "def_en": "to grow and develop fully in a healthy and successful way"
   },
   "discipline": {
     "word": "discipline",
@@ -10381,7 +12064,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "yale_ep01"
+    ],
+    "def_en": "the ability to control your own behavior and make yourself work or act in a controlled way"
   },
   "perspective": {
     "word": "perspective",
@@ -10404,7 +12091,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "yale_ep01"
+    ],
+    "def_en": "a particular way of thinking about or understanding something"
   },
   "eudaimonia": {
     "word": "eudaimonia",
@@ -10427,7 +12118,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "yale_ep01"
+    ],
+    "def_en": "the state of living a full and good life by realizing one's true potential through virtuous action"
   },
   "temperance": {
     "word": "temperance",
@@ -10450,7 +12145,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "yale_ep01"
+    ],
+    "def_en": "the quality of controlling one's desires and acting with self-restraint"
   },
   "cognitive": {
     "word": "cognitive",
@@ -10473,7 +12172,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "yale_ep01"
+    ],
+    "def_en": "relating to thinking, understanding, and mental processes"
   },
   "tripartite": {
     "word": "tripartite",
@@ -10496,7 +12199,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "yale_ep01"
+    ],
+    "def_en": "having three distinct parts or divisions"
   },
   "charioteer": {
     "word": "charioteer",
@@ -10519,7 +12226,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "yale_ep01"
+    ],
+    "def_en": "a person who drives a horse-drawn vehicle used in ancient races and battles"
   },
   "akrasia": {
     "word": "akrasia",
@@ -10542,7 +12253,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "yale_ep01"
+    ],
+    "def_en": "the state of acting against what one knows is best"
   },
   "contemplation": {
     "word": "contemplation",
@@ -10565,7 +12280,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "yale_ep01"
+    ],
+    "def_en": "the activity of thinking deeply and quietly about important things"
   },
   "hedonism": {
     "word": "hedonism",
@@ -10588,7 +12307,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "yale_ep01"
+    ],
+    "def_en": "the belief that pleasure is the only good in life"
   },
   "stoicism": {
     "word": "stoicism",
@@ -10611,7 +12334,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "yale_ep01"
+    ],
+    "def_en": "the belief that we should stay calm and accept what we cannot control"
   },
   "equilibrium": {
     "word": "equilibrium",
@@ -10634,7 +12361,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "yale_ep01"
+    ],
+    "def_en": "a state of balance in which different forces or feelings are equal"
   },
   "cardinal": {
     "word": "cardinal",
@@ -10657,7 +12388,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "yale_ep01"
+    ],
+    "def_en": "most important or fundamental among a set of things"
   },
   "tripartite theory of soul": {
     "word": "tripartite theory of soul",
@@ -10680,7 +12415,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "yale_ep01"
+    ],
+    "def_en": "the idea that the soul has three separate parts: reason, spirit, and desire"
   },
   "allegory of the chariot": {
     "word": "allegory of the chariot",
@@ -10703,7 +12442,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "yale_ep01"
+    ],
+    "def_en": "a picture-story in which a driver controls two horses, one good and one wild, to show how reason guides the soul"
   },
   "platonic justice": {
     "word": "Platonic justice",
@@ -10726,7 +12469,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "yale_ep01"
+    ],
+    "def_en": "the state of a soul where each part does its own job without interfering with others"
   },
   "aristotelian virtue ethics": {
     "word": "Aristotelian virtue ethics",
@@ -10749,7 +12496,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "yale_ep01"
+    ],
+    "def_en": "an ethical theory emphasizing good character and practical wisdom over rigid moral rules"
   },
   "doctrine of the mean": {
     "word": "doctrine of the mean",
@@ -10772,7 +12523,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "yale_ep01"
+    ],
+    "def_en": "the idea that virtue lies at the balanced middle point between two opposite extremes"
   },
   "eudaimonic flourishing": {
     "word": "eudaimonic flourishing",
@@ -10795,7 +12550,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "yale_ep01"
+    ],
+    "def_en": "a life of true human flourishing achieved by fully developing one's potential through moral virtue and noble deeds"
   },
   "dual-process cognition": {
     "word": "dual-process cognition",
@@ -10818,7 +12577,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "yale_ep01"
+    ],
+    "def_en": "the theory that the mind uses two separate systems, one fast and intuitive, the other slow and deliberate"
   },
   "cognitive reappraisal": {
     "word": "cognitive reappraisal",
@@ -10841,7 +12604,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "yale_ep01"
+    ],
+    "def_en": "the mental process of changing how you interpret a situation to control your emotional response"
   },
   "moral intuitionism": {
     "word": "moral intuitionism",
@@ -10864,7 +12631,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "yale_ep01"
+    ],
+    "def_en": "the view that basic moral truths are known directly by intuition"
   },
   "cardinal virtues": {
     "word": "cardinal virtues",
@@ -10887,7 +12658,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "yale_ep01"
+    ],
+    "def_en": "the four most important qualities of good character in ancient Greek ethics"
   },
   "libertarian": {
     "word": "libertarian",
@@ -10910,7 +12685,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep03"
+    ],
+    "def_en": "a person who believes that individual freedom should be protected from government interference"
   },
   "paternalist": {
     "word": "paternalist",
@@ -10933,7 +12712,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep03"
+    ],
+    "def_en": "relating to a system where authorities decide what is best for people"
   },
   "proprietors": {
     "word": "proprietors",
@@ -10956,7 +12739,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep03"
+    ],
+    "def_en": "people who have legal ownership of themselves or their own person"
   },
   "acquisition": {
     "word": "acquisition",
@@ -10979,7 +12766,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep03"
+    ],
+    "def_en": "the act of getting or obtaining something"
   },
   "violation": {
     "word": "violation",
@@ -11002,7 +12793,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep03"
+    ],
+    "def_en": "an action that breaks a law or someone's rights"
   },
   "legislation": {
     "word": "legislation",
@@ -11025,7 +12820,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep03"
+    ],
+    "def_en": "laws enacted by a government or other governing body"
   },
   "theft": {
     "word": "theft",
@@ -11048,7 +12847,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep03"
+    ],
+    "def_en": "the act of taking money or property from someone without their permission"
   },
   "extrapolated": {
     "word": "extrapolated",
@@ -11071,7 +12874,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep03"
+    ],
+    "def_en": "inferred or extended from known facts or agreed principles to unknown cases"
   },
   "hustings": {
     "word": "hustings",
@@ -11094,7 +12901,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep03"
+    ],
+    "def_en": "the activity of making speeches and campaigning to win people's votes"
   },
   "mob": {
     "word": "mob",
@@ -11117,7 +12928,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep03"
+    ],
+    "def_en": "a large disorderly crowd that may become violent and out of control"
   },
   "constitution": {
     "word": "constitution",
@@ -11140,7 +12955,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep03"
+    ],
+    "def_en": "a set of basic laws that limit and organize how a country is governed"
   },
   "incentive": {
     "word": "incentive",
@@ -11163,7 +12982,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep03"
+    ],
+    "def_en": "a reason or reward that makes someone want to act in a certain way"
   },
   "displaced": {
     "word": "displaced",
@@ -11186,7 +13009,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep03"
+    ],
+    "def_en": "forced to leave home because of a disaster"
   },
   "hurricane": {
     "word": "hurricane",
@@ -11209,7 +13036,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep03"
+    ],
+    "def_en": "a violent tropical storm with very strong winds and heavy rain"
   },
   "violates": {
     "word": "violates",
@@ -11232,7 +13063,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep03"
+    ],
+    "def_en": "to break a rule or principle that should be followed"
   },
   "justified": {
     "word": "justified",
@@ -11255,7 +13090,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep03"
+    ],
+    "def_en": "able to be shown as right or acceptable in a particular situation"
   },
   "morally": {
     "word": "morally",
@@ -11278,7 +13117,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep03"
+    ],
+    "def_en": "in a way that relates to right and wrong behavior"
   },
   "equivalent": {
     "word": "equivalent",
@@ -11301,7 +13144,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep03"
+    ],
+    "def_en": "equal in value, meaning, or effect to something else"
   },
   "slavery": {
     "word": "slavery",
@@ -11324,7 +13171,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep03"
+    ],
+    "def_en": "the system of owning people and forcing them to work without pay"
   },
   "labor": {
     "word": "labor",
@@ -11347,7 +13198,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep03"
+    ],
+    "def_en": "work, especially physical effort done by people"
   },
   "earnings": {
     "word": "earnings",
@@ -11370,7 +13225,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep03"
+    ],
+    "def_en": "the money that a person receives from working or from investments"
   },
   "rights": {
     "word": "rights",
@@ -11393,7 +13252,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep03"
+    ],
+    "def_en": "the moral or legal claims that a person is entitled to make"
   },
   "justice": {
     "word": "justice",
@@ -11416,7 +13279,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep03"
+    ],
+    "def_en": "fair treatment of people according to what is right and deserved"
   },
   "morality": {
     "word": "morality",
@@ -11439,7 +13306,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep03"
+    ],
+    "def_en": "the set of principles about what is right and wrong in people's actions"
   },
   "individual": {
     "word": "individual",
@@ -11462,7 +13333,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep03"
+    ],
+    "def_en": "a single human being, considered separately from any group or society"
   },
   "principles": {
     "word": "principles",
@@ -11485,7 +13360,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep03"
+    ],
+    "def_en": "basic rules or standards used to judge what is right or wrong"
   },
   "distribution": {
     "word": "distribution",
@@ -11508,7 +13387,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep03"
+    ],
+    "def_en": "the way wealth or resources are shared among people"
   },
   "wealth": {
     "word": "wealth",
@@ -11531,7 +13414,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep03"
+    ],
+    "def_en": "the total amount of money and property owned by a person or group"
   },
   "income": {
     "word": "income",
@@ -11554,7 +13441,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep03"
+    ],
+    "def_en": "the money a person regularly receives from work or investments"
   },
   "tax": {
     "word": "tax",
@@ -11577,7 +13468,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep03"
+    ],
+    "def_en": "to make a person or company pay a charge to the government"
   },
   "unjust": {
     "word": "unjust",
@@ -11600,7 +13495,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep03"
+    ],
+    "def_en": "not fair or right according to moral principles"
   },
   "injustice": {
     "word": "injustice",
@@ -11623,7 +13522,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep03"
+    ],
+    "def_en": "a situation in which someone is treated unfairly or denied what they deserve"
   },
   "violating": {
     "word": "violating",
@@ -11646,7 +13549,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep03"
+    ],
+    "def_en": "breaking a law or failing to respect someone's rights"
   },
   "objections": {
     "word": "objections",
@@ -11669,7 +13576,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep03"
+    ],
+    "def_en": "reasons people give for disagreeing with an idea or plan"
   },
   "reasoning": {
     "word": "reasoning",
@@ -11692,7 +13603,11 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep03"
+    ],
+    "def_en": "the process of thinking logically to reach a conclusion"
   },
   "argument": {
     "word": "argument",
@@ -11715,6 +13630,10 @@
       "status": "learning",
       "last_rating": "new",
       "last_reviewed_at": null
-    }
+    },
+    "taught_in": [
+      "ep03"
+    ],
+    "def_en": "a set of reasons given to support or oppose an idea"
   }
 }
