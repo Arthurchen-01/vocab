@@ -30,6 +30,15 @@ REPO = os.path.dirname(os.path.dirname(HERE))
 APP = "/var/www/harvard_justice_app"
 PIPE = "/root/quality_pipeline"
 
+# A Windows console defaults to a legacy code page; stage output can contain any
+# character the product renders (the Markdown export starts with an emoji), so
+# printing a log line must never be what fails.
+for _stream in (sys.stdout, sys.stderr):
+    try:
+        _stream.reconfigure(encoding="utf-8", errors="replace")
+    except Exception:  # noqa: BLE001
+        pass
+
 # Upload every stage module in this directory rather than a hand-kept list: the
 # list used to omit s0b_build_deck.py, so a fresh episode silently ran whatever
 # copy happened to be on the host (or failed outright).

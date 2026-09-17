@@ -24,6 +24,13 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 REPO = os.path.dirname(os.path.dirname(HERE))
 APP = "/var/www/harvard_justice_app"
 BACKUP_ROOT = "/root/deploy_backup"
+
+# Never let console encoding decide whether a deploy succeeds.
+for _stream in (sys.stdout, sys.stderr):
+    try:
+        _stream.reconfigure(encoding="utf-8", errors="replace")
+    except Exception:  # noqa: BLE001
+        pass
 DEFAULT_FILES = ["server.py", "docx_generator.py", "public/index.html"]
 PROBES = ["/api/health", "/api/preset/ep01", "/api/preset/ep02", "/api/preset/ep03",
           "/api/vocab-bank", "/api/collections", "/api/collection/harvard_justice"]

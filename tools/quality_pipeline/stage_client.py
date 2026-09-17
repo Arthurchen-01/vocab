@@ -26,6 +26,15 @@ REPO = os.path.dirname(os.path.dirname(HERE))
 APP = "/var/www/harvard_justice_app"
 PIPE = "/root/quality_pipeline"
 
+# Stage output can contain anything the product renders (the Markdown export
+# starts with an emoji). A Windows console defaults to a legacy code page and
+# would raise UnicodeEncodeError while simply printing a log line.
+for _stream in (sys.stdout, sys.stderr):
+    try:
+        _stream.reconfigure(encoding="utf-8", errors="replace")
+    except Exception:  # noqa: BLE001
+        pass
+
 # Everything a stage might import, so the server always runs the current code.
 # Discovered rather than listed: a hand-kept list once omitted s0b_build_deck.py.
 CLIENT_ONLY = {"deliver_client.py", "stage_client.py", "run_all.py"}
