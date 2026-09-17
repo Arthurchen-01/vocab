@@ -3,7 +3,8 @@
 
 > **适用对象**：独立第三方审查 AI（如 Claude 3.5 Sonnet / GPT-4o / DeepSeek-V3 / 人工技术审计专家）  
 > **审计范围**：系统架构、RESTful API、数据守恒律、多模态资产完整性、前端 DOM 渲染、内核进程守护与 GitHub 仓库一致性。  
-> **生产发布版本**：`v2.5.1-ep02-audit-remediated` (Commit: `822818a`)  
+> **生产发布版本**：`v2.5.1-ep02-audit-remediated`（审计修复推送于 2026-09-17）
+> **版本基准取法**：请以仓库 `main` 分支 **HEAD** 为准（GitHub 页面或 `git ls-remote`），避免卷宗内写死提交号而失效  
 > **公网运行基线**：[https://vocab.samuraiguan.cloud](https://vocab.samuraiguan.cloud)  
 > **开源代码仓库**：[https://github.com/Arthurchen-01/vocab](https://github.com/Arthurchen-01/vocab)
 
@@ -269,7 +270,7 @@ VmRSS:      40344 kB
 | **5. 跨剧集语境归一 (Context 2)** | 是否在全景词库呈现第二集例句对比 | `GET /api/vocab-bank` 中 8 个多语境词项 | **PASS (通过)** |
 | **6. 全键盘交互与性能** | 1234 按键与翻转是否零延迟响应 | Playwright 测试与 `v5_04` 截图（2/215卡片） | **PASS (通过)** |
 | **7. 生产部署与服务守护** | Systemd 守护与 Nginx 反代是否正常 | `PPid=1`, `active (running)`, HTTPS 访问正常 | **PASS (通过)** |
-| **8. GitHub 源码归档** | 是否 push 包含全部提交记录 | [Arthurchen-01/vocab](https://github.com/Arthurchen-01/vocab) (commit: `822818a`) | **PASS (通过)** |
+| **8. GitHub 源码归档** | 是否 push 包含全部提交记录 | [Arthurchen-01/vocab](https://github.com/Arthurchen-01/vocab) `main` 分支 HEAD | **PASS (通过)** |
 
 ---
 
@@ -282,7 +283,7 @@ VmRSS:      40344 kB
 
 【被审计系统信息】：
 1. 生产在线环境：https://vocab.samuraiguan.cloud
-2. 开源仓库地址：https://github.com/Arthurchen-01/vocab (跟踪分支 main, 最新提交 commit: 822818a)
+2. 开源仓库地址：https://github.com/Arthurchen-01/vocab (跟踪分支 main，以 HEAD 最新提交为准)
 3. 官方接口文档：https://vocab.samuraiguan.cloud/docs
 4. 本次审计核心目标：哈佛大学公开课《公正》第二集【给生命标价 / 如何衡量快乐】（Episode 02）端到端 6 步工程流水线交付成果
 
@@ -300,7 +301,8 @@ VmRSS:      40344 kB
 
 ## 11. 修复记录（Remediation Log）
 
-> 本轮修复提交：`822818a`（`fix(security+correctness): repair Ep02 audit defects found in third-party bug hunt`）。
+> 本轮修复提交：`main` 分支 2026-09-17 的修复提交
+> （`fix(security+correctness): repair Ep02 audit defects found in third-party bug hunt`，提交号请以 GitHub HEAD 为准）。
 > 生产机备份：`/root/deploy_backup_20260917_113432`（改动前的 server.py 与全部数据文件）。
 > 上线后复验：**45 项探针 43 项通过，其余 2 项经溯源确认为 Cloudflare 边缘缓存与探测抖动，源站文件系统实测 645/645 资产齐备**。
 
