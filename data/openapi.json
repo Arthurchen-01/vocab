@@ -521,6 +521,11 @@
                       "video"
                     ],
                     "default": "audio"
+                  },
+                  "auto_expand_collections": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "遇到B站单个视频若属于多P/合集，是否自动展开全部集数"
                   }
                 }
               }
@@ -530,6 +535,39 @@
         "responses": {
           "200": {
             "description": "解析结果清单，包含流媒体直达下载链接与备用容灾等级"
+          }
+        }
+      }
+    },
+    "/api/bilibili/detect-collection": {
+      "post": {
+        "tags": [
+          "Media & Audio"
+        ],
+        "summary": "单个B站链接智能合集识别与全分集展开 (Detect Bilibili Collection)",
+        "description": "自动探测单视频是否属于多P/UGC合集，并解析展开全部集数元数据与独立链接。",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "url": {
+                    "type": "string",
+                    "description": "B站视频链接或 BV 号"
+                  }
+                },
+                "required": [
+                  "url"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "合集元数据及全部集数列表"
           }
         }
       }

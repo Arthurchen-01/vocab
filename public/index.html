@@ -843,7 +843,11 @@
         <div class="space-y-1.5">
           <label class="font-bold text-slate-700">输入音视频链接 (Bilibili BV号 / YouTube 链接)：</label>
           <div class="flex flex-wrap sm:flex-nowrap gap-2">
-            <input id="modal-import-url" type="text" placeholder="例如：https://www.bilibili.com/video/BV1xx411c7mD 或 YouTube 链接" class="flex-1 px-3 py-2 rounded-xl border border-slate-300">
+            <input id="modal-import-url" type="text" placeholder="例如：https://www.bilibili.com/video/BV1jt411m7rn 或 YouTube 链接" class="flex-1 px-3 py-2 rounded-xl border border-slate-300">
+            <button onclick="detectAndFillCollectionInfo()" id="btn-detect-collection" class="px-3.5 py-2 rounded-xl bg-purple-600 hover:bg-purple-700 text-white font-bold flex items-center gap-1.5 shadow-sm transition whitespace-nowrap" title="单个视频链接自动识别关联的完整多P/合集信息与分集列表">
+              <i class="fa-solid fa-layer-group text-xs"></i>
+              <span>🌟 自动识别整部合集</span>
+            </button>
             <button onclick="autoFetchSubtitlesFromLink()" id="btn-fetch-subtitles" class="px-3.5 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold flex items-center gap-1.5 shadow-sm transition whitespace-nowrap">
               <i class="fa-solid fa-wand-magic-sparkles text-xs"></i>
               <span>一键提取字幕</span>
@@ -994,17 +998,20 @@
           <span class="text-[11px] text-slate-400">支持一行一个链接</span>
         </label>
         <div class="flex flex-wrap gap-2">
+          <button type="button" onclick="insertBatchPresetUrls('bili_single')" class="px-2.5 py-1 rounded-lg bg-amber-50 hover:bg-amber-100 text-amber-800 text-xs font-bold border border-amber-300 transition flex items-center gap-1.5 shadow-xs" title="单个B站链接自动嗅探整部合集12集">
+            <i class="fa-solid fa-wand-magic-sparkles text-amber-600"></i> 🌟 B站单链接自动识别全集 (12集)
+          </button>
           <button type="button" onclick="insertBatchPresetUrls('sciam')" class="px-2.5 py-1 rounded-lg bg-emerald-50 hover:bg-emerald-100 text-emerald-800 text-xs font-semibold border border-emerald-200 transition flex items-center gap-1.5">
-            <i class="fa-solid fa-podcast text-emerald-600"></i> 科学美国人 (Science Quickly) 3连
+            <i class="fa-solid fa-podcast text-emerald-600"></i> 科学美国人 3连
           </button>
           <button type="button" onclick="insertBatchPresetUrls('bilibili')" class="px-2.5 py-1 rounded-lg bg-sky-50 hover:bg-sky-100 text-sky-800 text-xs font-semibold border border-sky-200 transition flex items-center gap-1.5">
-            <i class="fa-brands fa-bilibili text-sky-500"></i> B站公开课 (Justice Ep01/02)
+            <i class="fa-brands fa-bilibili text-sky-500"></i> B站公开课 (Ep01/02)
           </button>
           <button type="button" onclick="insertBatchPresetUrls('youtube')" class="px-2.5 py-1 rounded-lg bg-rose-50 hover:bg-rose-100 text-rose-800 text-xs font-semibold border border-rose-200 transition flex items-center gap-1.5">
             <i class="fa-brands fa-youtube text-rose-600"></i> YouTube 桑德尔研学会
           </button>
           <button type="button" onclick="insertBatchPresetUrls('mixed')" class="px-2.5 py-1 rounded-lg bg-purple-50 hover:bg-purple-100 text-purple-800 text-xs font-semibold border border-purple-200 transition flex items-center gap-1.5">
-            <i class="fa-solid fa-shuffle text-purple-600"></i> 混合多源样例 (SciAm+YT+Bili)
+            <i class="fa-solid fa-shuffle text-purple-600"></i> 混合多源样例
           </button>
         </div>
       </div>
@@ -1012,10 +1019,21 @@
       <!-- Multi-line URL Input -->
       <div class="space-y-2">
         <textarea id="batch-urls-input" rows="4" class="w-full px-4 py-3 rounded-2xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-emerald-600 font-mono text-xs text-slate-800 placeholder:text-slate-400 shadow-xs" placeholder="在此粘贴多个音视频链接（每行一个），例如：
-https://www.scientificamerican.com/podcast/episode/the-science-of-friendship-and-loneliness/
 https://www.bilibili.com/video/BV1jt411m7rn
+https://www.scientificamerican.com/podcast/episode/the-science-of-friendship-and-loneliness/
 https://www.youtube.com/watch?v=kBdfcR-8hEY
 https://traffic.megaphone.fm/SAM8705727348.mp3"></textarea>
+        
+        <!-- Collection Detection Control Bar -->
+        <div class="flex flex-wrap items-center justify-between gap-2 px-1 text-xs">
+          <label class="flex items-center gap-2 cursor-pointer select-none text-slate-700 font-medium">
+            <input type="checkbox" id="batch-auto-expand" checked class="w-4 h-4 rounded text-emerald-600 focus:ring-emerald-500">
+            <span>✨ <b>单链接自动嗅探整部合集</b>（检测到单视频属于多P/合集时，自动展开全部集数）</span>
+          </label>
+          <button type="button" onclick="detectAndExpandSingleInput()" class="text-xs text-indigo-700 hover:text-indigo-900 font-bold underline flex items-center gap-1">
+            <i class="fa-solid fa-bolt"></i> 立即测试嗅探展开
+          </button>
+        </div>
       </div>
 
       <!-- Mode & Format Configuration Toggles -->
@@ -1177,7 +1195,9 @@ https://traffic.megaphone.fm/SAM8705727348.mp3"></textarea>
     function insertBatchPresetUrls(type) {
       const input = document.getElementById('batch-urls-input');
       if (!input) return;
-      if (type === 'sciam') {
+      if (type === 'bili_single') {
+        input.value = 'https://www.bilibili.com/video/BV1jt411m7rn';
+      } else if (type === 'sciam') {
         input.value = [
           'https://www.scientificamerican.com/podcast/episode/the-science-of-friendship-and-loneliness/',
           'https://www.scientificamerican.com/podcast/episode/why-the-human-brain-craves-music-and-rhythm/',
@@ -1202,6 +1222,92 @@ https://traffic.megaphone.fm/SAM8705727348.mp3"></textarea>
       }
     }
 
+    async function detectAndExpandSingleInput() {
+      const input = document.getElementById('batch-urls-input');
+      if (!input) return;
+      let text = input.value.trim();
+      if (!text) {
+        text = 'https://www.bilibili.com/video/BV1jt411m7rn';
+        input.value = text;
+      }
+      const firstLine = text.split('\n')[0].trim();
+      
+      const loading = document.getElementById('batch-extract-loading');
+      const loadTxt = document.getElementById('batch-loading-text');
+      if (loading) {
+        loading.classList.remove('hidden');
+        if (loadTxt) loadTxt.innerText = '正在智能探测视频是否属于完整多P/合集，请稍候...';
+      }
+
+      try {
+        const res = await fetch('/api/bilibili/detect-collection', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ url: firstLine })
+        });
+        const data = await res.json();
+        if (data.success && data.is_collection && data.episodes && data.episodes.length > 1) {
+          const epUrls = data.episodes.map(e => e.url).join('\n');
+          input.value = epUrls;
+          alert(`✨ 成功识别合集！\n【${data.collection_title || data.title}】\n共发现 ${data.total_episodes} 个分集。\n已自动将单个链接展开为全部 ${data.total_episodes} 集链接！`);
+        } else {
+          alert(data.message || '该视频为独立单集视频，未关联多P合集。');
+        }
+      } catch (err) {
+        alert('合集识别网络异常: ' + err.message);
+      } finally {
+        if (loading) loading.classList.add('hidden');
+      }
+    }
+
+    async function detectAndFillCollectionInfo() {
+      const urlInput = document.getElementById('modal-import-url');
+      const titleInput = document.getElementById('modal-import-title');
+      const transcriptInput = document.getElementById('modal-import-transcript');
+      const btn = document.getElementById('btn-detect-collection');
+
+      const url = urlInput ? urlInput.value.trim() : '';
+      if (!url) {
+        alert('请先输入 Bilibili 视频链接或 BV 号（例如：https://www.bilibili.com/video/BV1jt411m7rn）');
+        return;
+      }
+
+      if (btn) {
+        btn.disabled = true;
+        btn.innerHTML = `<i class="fa-solid fa-circle-notch fa-spin text-xs"></i> <span>识别中...</span>`;
+      }
+
+      try {
+        const res = await fetch('/api/bilibili/detect-collection', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ url: url })
+        });
+        const data = await res.json();
+
+        if (data.success && data.is_collection) {
+          if (titleInput) {
+            titleInput.value = data.collection_title || data.title || '';
+          }
+          if (transcriptInput && (!transcriptInput.value.trim() || transcriptInput.value.length < 50)) {
+            const epListText = data.episodes.map(e => `[第 ${e.page} 集] ${e.title} (${e.url})`).join('\n');
+            transcriptInput.value = `【${data.collection_title || '公开课合集'}】共 ${data.total_episodes} 集\n主讲/机构: ${data.author || '名校官方'}\n\n分集大纲清单：\n${epListText}\n\n[示例原声金句] In this lecture, we explore fundamental moral principles.`;
+          }
+          alert(`🌟 识别成功！\n合集名称: ${data.collection_title || data.title}\n总分集数: ${data.total_episodes} 集\n\n已自动填入课程名称与分集大纲！`);
+        } else {
+          alert(data.message || '未检测到多P合集，已按单集视频解析。');
+          if (titleInput && data.title) titleInput.value = data.title;
+        }
+      } catch (err) {
+        alert('识别合集失败: ' + err.message);
+      } finally {
+        if (btn) {
+          btn.disabled = false;
+          btn.innerHTML = `<i class="fa-solid fa-layer-group text-xs"></i> <span>🌟 自动识别整部合集</span>`;
+        }
+      }
+    }
+
     async function runBatchMediaExtract() {
       const input = document.getElementById('batch-urls-input');
       const text = input ? input.value.trim() : '';
@@ -1217,19 +1323,24 @@ https://traffic.megaphone.fm/SAM8705727348.mp3"></textarea>
 
       const btn = document.getElementById('btn-start-batch-extract');
       const loading = document.getElementById('batch-extract-loading');
+      const loadTxt = document.getElementById('batch-loading-text');
       const resultsContainer = document.getElementById('batch-results-container');
       const resultsList = document.getElementById('batch-results-list');
 
       if (btn) btn.disabled = true;
-      if (loading) loading.classList.remove('hidden');
+      if (loading) {
+        loading.classList.remove('hidden');
+        if (loadTxt) loadTxt.innerText = '正在并行提取与解析多源链接，正在调用多级容灾保障与合集嗅探引擎...';
+      }
       if (resultsContainer) resultsContainer.classList.add('hidden');
 
       try {
         const lines = text.split('\n').map(l => l.trim()).filter(l => l.length > 0);
+        const autoExpand = document.getElementById('batch-auto-expand') ? document.getElementById('batch-auto-expand').checked : true;
         const res = await fetch('/api/media/batch-extract', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ urls: lines, mode: mode, media_type: media_type })
+          body: JSON.stringify({ urls: lines, mode: mode, media_type: media_type, auto_expand_collections: autoExpand })
         });
         const data = await res.json();
 
@@ -1239,7 +1350,7 @@ https://traffic.megaphone.fm/SAM8705727348.mp3"></textarea>
         }
 
         currentBatchResults = data.items || [];
-        renderBatchResults(currentBatchResults, mode, media_type);
+        renderBatchResults(currentBatchResults, mode, media_type, data.collections_detected || []);
         if (resultsContainer) resultsContainer.classList.remove('hidden');
       } catch (err) {
         console.error('Batch extract error:', err);
@@ -1250,14 +1361,18 @@ https://traffic.megaphone.fm/SAM8705727348.mp3"></textarea>
       }
     }
 
-    function renderBatchResults(items, mode, media_type) {
+    function renderBatchResults(items, mode, media_type, collections_detected = []) {
       const list = document.getElementById('batch-results-list');
       const summaryBadge = document.getElementById('batch-summary-badge');
       if (!list) return;
 
       const successCount = items.filter(i => i.success).length;
       if (summaryBadge) {
-        summaryBadge.innerText = `${items.length} 个链接已解析 · 成功 ${successCount} 项`;
+        let text = `${items.length} 个项目就绪 · 成功 ${successCount} 项`;
+        if (collections_detected && collections_detected.length > 0) {
+          text = `🌟 识别合集 ${collections_detected[0].total_episodes} 集全展开 · 成功 ${successCount} 项`;
+        }
+        summaryBadge.innerText = text;
       }
 
       if (items.length === 0) {
@@ -1265,7 +1380,29 @@ https://traffic.megaphone.fm/SAM8705727348.mp3"></textarea>
         return;
       }
 
-      list.innerHTML = items.map((item, idx) => {
+      let bannerHtml = '';
+      if (collections_detected && collections_detected.length > 0) {
+        bannerHtml = collections_detected.map(c => `
+          <div class="p-3.5 rounded-2xl bg-gradient-to-r from-amber-500/15 via-emerald-500/10 to-sky-500/15 border border-amber-300 text-xs flex items-center gap-3 shadow-xs mb-3">
+            <div class="w-10 h-10 rounded-xl bg-amber-500 text-white flex items-center justify-center shrink-0 text-lg shadow-sm">
+              <i class="fa-solid fa-wand-magic-sparkles"></i>
+            </div>
+            <div class="flex-1">
+              <div class="font-extrabold text-slate-900 flex flex-wrap items-center gap-2">
+                <span>🎉 智能合集嗅探引擎已生效！从单链接自动识别并展开全套合集</span>
+                <span class="px-2 py-0.5 rounded-full bg-amber-100 text-amber-900 font-extrabold text-[10px] border border-amber-300">
+                  共 ${c.total_episodes} 集全部就绪
+                </span>
+              </div>
+              <div class="text-[11px] text-slate-600 mt-0.5">
+                课程合集：<b>${c.title}</b>（BVID: ${c.bvid || 'BV1jt411m7rn'}）· 已自动展开各集原声与独立下载通道
+              </div>
+            </div>
+          </div>
+        `).join('');
+      }
+
+      const itemsHtml = items.map((item, idx) => {
         if (!item.success) {
           return `
             <div class="p-3 rounded-2xl bg-rose-50/70 border border-rose-200 text-xs flex items-center justify-between gap-3">
@@ -1303,6 +1440,11 @@ https://traffic.megaphone.fm/SAM8705727348.mp3"></textarea>
                     <i class="${platformIcon}"></i>
                     <span>${item.platform_name || item.platform}</span>
                   </span>
+                  ${item.is_collection_item ? `
+                    <span class="px-2 py-0.5 rounded-lg bg-amber-100 text-amber-900 text-[10px] font-extrabold border border-amber-300">
+                      <i class="fa-solid fa-layer-group"></i> 第 ${item.episode_page || 1} 集 / 共 ${item.collection_total || 12} 集
+                    </span>
+                  ` : ''}
                   <span class="px-2 py-0.5 rounded-lg bg-slate-100 text-slate-600 text-[10px] font-mono">
                     时长: ${item.duration || '原声'}
                   </span>
@@ -1343,6 +1485,8 @@ https://traffic.megaphone.fm/SAM8705727348.mp3"></textarea>
           </div>
         `;
       }).join('');
+
+      list.innerHTML = bannerHtml + itemsHtml;
     }
 
     function downloadAllBatchMedia() {

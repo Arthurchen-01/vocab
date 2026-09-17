@@ -436,6 +436,42 @@ curl -X GET "https://vocab.samuraiguan.cloud/api/collections" -H "Accept: applic
   - **智能协议穿透**: 对 B 站自动注入 `Referer: https://www.bilibili.com/` 突破 403 跨域防护；对 YouTube 自动调用 `yt-dlp` 提取直链。
 - **响应流**: `Content-Type: audio/mpeg` 或 `video/mp4`，附带 `Content-Disposition: attachment`。
 
+### 9.4 B站单视频智能嗅探整部合集接口 (Bilibili Collection Detection API)
+- **接口路径**: `POST /api/bilibili/detect-collection`
+- **设计初衷**: 解决用户仅复制单个视频链接（如 `BV1jt411m7rn` 或带 `?p=1`），系统能够全自动识别其属于哪部系列课或多P视频，并一键展开全集列表（如哈佛正义论全12集）。
+- **请求体 (JSON)**:
+```json
+{
+  "url": "https://www.bilibili.com/video/BV1jt411m7rn"
+}
+```
+- **核心响应体示例 (200 OK)**:
+```json
+{
+  "success": true,
+  "is_collection": true,
+  "bvid": "BV1jt411m7rn",
+  "collection_title": "【哈佛公开课】公正：该如何做是好？（全12集·精校双语字幕）",
+  "collection_type": "multi_page",
+  "total_episodes": 12,
+  "author": "Harvard University / Michael Sandel",
+  "episodes": [
+    {
+      "page": 1,
+      "title": "Episode 01: The Moral Side of Murder / The Enron Case",
+      "url": "https://www.bilibili.com/video/BV1jt411m7rn?p=1",
+      "duration": "55:00"
+    },
+    {
+      "page": 2,
+      "title": "Episode 02: Putting a Price on Life / How to Measure Pleasure",
+      "url": "https://www.bilibili.com/video/BV1jt411m7rn?p=2",
+      "duration": "55:00"
+    }
+  ]
+}
+```
+
 ---
 
 ## 10. DeepSeek / Claude 智能体提炼代理接口 (AI Services API)

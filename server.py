@@ -625,6 +625,8 @@ class RequestHandler(http.server.SimpleHTTPRequestHandler):
             self.handle_import_link(body)
         elif clean_path == "/api/media/batch-extract":
             self.handle_batch_media_extract(body)
+        elif clean_path == "/api/bilibili/detect-collection":
+            self.handle_detect_bilibili_collection(body)
         elif clean_path == "/api/test-connection":
             self.handle_test_connection(body)
         elif clean_path == "/api/ai-extract":
@@ -1369,9 +1371,10 @@ class RequestHandler(http.server.SimpleHTTPRequestHandler):
             raw_urls = req.get("urls", [])
             mode = req.get("mode", "media")
             media_type = req.get("media_type", "audio")
+            auto_expand = req.get("auto_expand_collections", True)
 
             from downloader import batch_resolve_media
-            result = batch_resolve_media(raw_urls, mode=mode, media_type=media_type)
+            result = batch_resolve_media(raw_urls, mode=mode, media_type=media_type, auto_expand_collections=auto_expand)
 
             self.send_response(200)
             self.send_header("Content-Type", "application/json; charset=utf-8")
@@ -1384,6 +1387,29 @@ class RequestHandler(http.server.SimpleHTTPRequestHandler):
             self.send_header("Access-Control-Allow-Origin", "*")
             self.end_headers()
             self.wfile.write(json.dumps({"success": False, "error": f"批量解析异常: {str(e)}"}).encode("utf-8"))
+
+    def handle_detect_bilibili_collection(self, body_str):
+        try:
+            req = json.loads(body_str) if body_str else {}
+            url = req.get("url", "").strip()
+            if not url:
+                self.send_error_json(400, "缺少 url 参数")
+                return
+
+            from downloader import detect_bilibili_collection
+            result = detect_bilibili_collection(url)
+
+            self.send_response(200)
+            self.send_header("Content-Type", "application/json; charset=utf-8")
+            self.send_header("Access-Control-Allow-Origin", "*")
+            self.end_headers()
+            self.wfile.write(json.dumps(result, ensure_ascii=False).encode("utf-8"))
+        except Exception as e:
+            self.send_response(500)
+            self.send_header("Content-Type", "application/json; charset=utf-8")
+            self.send_header("Access-Control-Allow-Origin", "*")
+            self.end_headers()
+            self.wfile.write(json.dumps({"success": False, "error": f"探测合集异常: {str(e)}"}).encode("utf-8"))
 
     def handle_media_stream_download(self):
         try:
