@@ -593,7 +593,9 @@ class RequestHandler(http.server.SimpleHTTPRequestHandler):
 
     def do_POST(self):
         # Reject absurd bodies outright instead of buffering them.
-        MAX_BODY_BYTES = 12 * 1024 * 1024  # 12 MB (single feedback screenshot)
+        # 24 MB covers a full-size screenshot data URL (the client does not
+        # downscale before upload) while still bounding abuse.
+        MAX_BODY_BYTES = 24 * 1024 * 1024
         try:
             content_length = int(self.headers.get("Content-Length", 0))
         except (TypeError, ValueError):
@@ -1363,16 +1365,18 @@ class RequestHandler(http.server.SimpleHTTPRequestHandler):
             current_page = req.get("current_page", "主页").strip()
             image_base64 = req.get("image_base64", "").strip()
 
-            if not text:
-                self.send_error_json(400, "反馈内容不能为空。")
+            # The UI allows a screenshot-only report, so require text OR screenshot.
+            if not text and not image_base64:
+                self.send_error_json(400, "反馈内容与截图至少提供一项。")
                 return
             if len(text) > 5000 or len(category) > 60 or len(user_email) > 200 or len(current_page) > 300:
                 self.send_error_json(400, "反馈内容过长。")
                 return
             # Unauthenticated screenshot upload: cap it, otherwise the endpoint is
-            # a trivial disk-exhaustion vector.
-            if len(image_base64) > 8 * 1024 * 1024:
-                self.send_error_json(413, "截图过大（上限约 6MB）。")
+            # a trivial disk-exhaustion vector. 16 MB of base64 ~= a 12 MB image,
+            # comfortably above any realistic screenshot.
+            if len(image_base64) > 16 * 1024 * 1024:
+                self.send_error_json(413, "截图过大（上限约 12MB）。")
                 return
 
             feedback_id = f"fb_{time.strftime('%Y%m%d_%H%M%S')}_{os.urandom(3).hex()}"
@@ -1383,8 +1387,8 @@ class RequestHandler(http.server.SimpleHTTPRequestHandler):
                     if "," in image_base64:
                         image_base64 = image_base64.split(",", 1)[1]
                     img_bytes = base64.b64decode(image_base64)
-                    if len(img_bytes) > 6 * 1024 * 1024:
-                        self.send_error_json(413, "截图过大（上限 6MB）。")
+                    if len(img_bytes) > 12 * 1024 * 1024:
+                        self.send_error_json(413, "截图过大（上限 12MB）。")
                         return
                     img_filename = f"{feedback_id}.png"
                     full_img_path = os.path.join(FEEDBACK_IMG_DIR, img_filename)
