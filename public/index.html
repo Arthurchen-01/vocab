@@ -436,31 +436,48 @@
     <section id="view-focused-study" class="max-w-5xl mx-auto px-4 sm:px-6 py-6 space-y-6 hidden w-full flex-1 flex flex-col justify-between">
       
       <!-- Focused Topbar (Clean and isolated) -->
-      <div class="bg-white rounded-2xl p-4 border border-slate-200/90 shadow-xs flex flex-wrap items-center justify-between gap-4">
-        <!-- Back button to return to collection -->
-        <button onclick="exitFocusedStudy()" class="px-3 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold flex items-center gap-1.5 transition">
-          <i class="fa-solid fa-arrow-left"></i>
-          <span>退出专注模式 (Exit to Episodes)</span>
-        </button>
+      <div class="bg-white rounded-2xl p-4 border border-slate-200/90 shadow-xs flex flex-wrap items-center justify-between gap-3">
+        <!-- Left: Exit & Previous/Next Navigation -->
+        <div class="flex items-center gap-2">
+          <button onclick="exitFocusedStudy()" class="px-3 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold flex items-center gap-1.5 transition" title="返回课程分集列表">
+            <i class="fa-solid fa-arrow-left"></i>
+            <span class="hidden sm:inline">退出专注模式</span>
+            <span class="sm:hidden">退出</span>
+          </button>
+          <button onclick="prevFocusCard()" id="topbar-prev-btn" class="px-3 py-1.5 rounded-xl bg-rose-50 hover:bg-rose-100 text-rose-900 border border-rose-200 text-xs font-bold flex items-center gap-1 shadow-2xs transition" title="返回上一个词汇 (快捷键: ← 或 P 键)">
+            <i class="fa-solid fa-chevron-left"></i>
+            <span>上一词 (←)</span>
+          </button>
+          <button onclick="nextFocusCard()" id="topbar-next-btn" class="px-3 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold flex items-center gap-1 transition" title="前进下一个词汇 (快捷键: → 或 N 键)">
+            <span>下一词 (→)</span>
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+        </div>
 
-        <!-- Episode & Progress -->
-        <div class="flex items-center gap-3 text-center">
-          <span id="focus-ep-title" class="font-extrabold text-sm sm:text-base text-slate-900 line-clamp-1">
+        <!-- Center: Episode Title & Progress & Studied Words Drawer Button -->
+        <div class="flex flex-wrap items-center gap-2.5 text-center justify-center">
+          <span id="focus-ep-title" class="font-extrabold text-xs sm:text-sm text-slate-900 line-clamp-1 max-w-[180px] sm:max-w-xs">
             Episode 01: The Moral Side of Murder
           </span>
           <div class="px-2.5 py-0.5 rounded-lg bg-rose-50 border border-rose-200 text-rose-900 font-mono text-xs font-bold">
             <span id="focus-card-current">1</span> / <span id="focus-card-total">22</span>
           </div>
+          <!-- Studied Words Drawer Button -->
+          <button onclick="openStudiedWordsModal()" id="btn-open-studied-words" class="px-2.5 py-1 rounded-xl bg-indigo-50 hover:bg-indigo-100 text-indigo-900 border border-indigo-200 text-xs font-bold flex items-center gap-1.5 shadow-2xs transition" title="点击查看本轮已经学过的所有词汇并可直接跳转复习">
+            <i class="fa-solid fa-list-check text-indigo-600"></i>
+            <span>已学清单 (<b id="focus-studied-count">0</b>)</span>
+          </button>
         </div>
 
-        <!-- Card Timer & Session Info -->
-        <div class="flex items-center gap-3 text-xs text-slate-500">
-          <span id="focus-card-timer" class="font-mono font-bold text-slate-700 bg-slate-100 px-2 py-1 rounded-lg">用时: 0s</span>
-          <div class="hidden sm:flex items-center gap-1 text-[11px] text-slate-400">
-            <span>[空格] 翻转</span>
-            <span>·</span>
-            <span>[方向键] 切换</span>
-          </div>
+        <!-- Right: Quick Add Custom/Missing Word & Card Timer -->
+        <div class="flex items-center gap-2">
+          <!-- Quick Add Word (for words like moderate) -->
+          <button onclick="openQuickAddWordModal()" class="px-2.5 py-1.5 rounded-xl bg-amber-50 hover:bg-amber-100 text-amber-900 border border-amber-300 text-xs font-bold flex items-center gap-1.5 shadow-2xs transition" title="搜索或添加本集想学的其他生词（如 moderate 等）">
+            <i class="fa-solid fa-magnifying-glass-plus text-amber-700"></i>
+            <span class="hidden sm:inline">想学其他词? (如 moderate)</span>
+            <span class="sm:hidden">+查词 (如 moderate)</span>
+          </button>
+          <span id="focus-card-timer" class="font-mono font-bold text-slate-700 bg-slate-100 px-2 py-1 rounded-lg text-xs">用时: 0s</span>
         </div>
       </div>
 
@@ -584,11 +601,19 @@
               </div>
             </div>
 
-            <!-- Flip Action Bar -->
-            <div class="pt-2 flex justify-center">
-              <button onclick="flipFocusCard()" class="px-8 py-3 rounded-2xl bg-slate-900 hover:bg-black text-white text-xs font-bold flex items-center gap-2.5 shadow-md transition hover:-translate-y-0.5">
+            <!-- Flip Action Bar with Previous/Next Navigation -->
+            <div class="pt-2 flex items-center justify-center gap-3">
+              <button onclick="event.stopPropagation(); prevFocusCard()" class="px-4 py-3 rounded-2xl bg-slate-100 hover:bg-rose-100 text-slate-700 hover:text-rose-900 text-xs font-bold flex items-center gap-1.5 transition border border-slate-200" title="返回上一个词汇 (快捷键: ← 或 P 键)">
+                <i class="fa-solid fa-chevron-left"></i>
+                <span>上一词</span>
+              </button>
+              <button onclick="flipFocusCard()" class="flex-1 max-w-md px-8 py-3 rounded-2xl bg-slate-900 hover:bg-black text-white text-xs font-bold flex items-center justify-center gap-2.5 shadow-md transition hover:-translate-y-0.5">
                 <i class="fa-solid fa-rotate text-xs"></i>
                 <span>翻开卡片查看哲学释义与原文翻译 (空格键)</span>
+              </button>
+              <button onclick="event.stopPropagation(); nextFocusCard()" class="px-4 py-3 rounded-2xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold flex items-center gap-1.5 transition border border-slate-200" title="前进下一个词汇 (快捷键: → 或 N 键)">
+                <span>下一词</span>
+                <i class="fa-solid fa-chevron-right"></i>
               </button>
             </div>
           </div>
@@ -675,7 +700,13 @@
             <!-- Back Footer: 4-Level Anki Rating Buttons with 1/2/3/4 Badges -->
             <div class="pt-3 border-t border-slate-100 space-y-2.5">
               <div class="flex justify-between items-center text-xs text-slate-500">
-                <span class="font-bold text-slate-700">记忆自评（键盘直接按数字键 1 / 2 / 3 / 4）：</span>
+                <div class="flex items-center gap-2">
+                  <button onclick="event.stopPropagation(); prevFocusCard()" class="px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-rose-50 text-slate-700 hover:text-rose-900 border border-slate-200 text-xs font-bold flex items-center gap-1 transition" title="返回上一个词汇 (快捷键: ← 或 P 键)">
+                    <i class="fa-solid fa-chevron-left"></i>
+                    <span>上一词</span>
+                  </button>
+                  <span class="font-bold text-slate-700">记忆自评（键盘按 1 / 2 / 3 / 4）：</span>
+                </div>
                 <button onclick="flipFocusCard()" class="text-rose-900 hover:underline font-bold text-xs">
                   &larr; 翻回正面 (空格键)
                 </button>
@@ -2008,6 +2039,24 @@ https://traffic.megaphone.fm/SAM8705727348.mp3"></textarea>
       document.getElementById('focus-card-current').innerText = app.focusCardIndex + 1;
       document.getElementById('focus-card-total').innerText = words.length;
 
+      // Automatically register into session studied words
+      if (!app.studiedWords) app.studiedWords = new Map();
+      app.studiedWords.set((w.word || '').toLowerCase(), {
+        index: app.focusCardIndex,
+        word: w.word,
+        phonetic: w.phonetic || '',
+        pos: w.pos || 'n.',
+        level: w.level || 'toefl_ielts',
+        level_name: w.level_name || getLevelDisplayName(w.level || 'toefl_ielts'),
+        def_cn: w.def_cn || '暂无详细释义',
+        sentence: w.sentence || '',
+        sentence_cn: w.sentence_cn || w.trans || '',
+        timestamp: w.timestamp || '[01:21]',
+        speaker: w.speaker || 'Prof. Michael Sandel'
+      });
+      const studiedBadge = document.getElementById('focus-studied-count');
+      if (studiedBadge) studiedBadge.innerText = app.studiedWords.size;
+
       // Front Face Population
       document.getElementById('focus-word').innerText = w.word;
       document.getElementById('focus-phonetic').innerText = w.phonetic || '';
@@ -2158,6 +2207,281 @@ https://traffic.megaphone.fm/SAM8705727348.mp3"></textarea>
       nextFocusCard();
     }
 
+    // ==============================================================
+    // STUDIED WORDS DRAWER & QUICK ADD WORD CONTROLLERS             //
+    // ==============================================================
+    function openStudiedWordsModal() {
+      const modal = document.getElementById('modal-studied-words');
+      if (!modal) return;
+      modal.classList.remove('hidden');
+      const epBadge = document.getElementById('studied-modal-ep-title');
+      if (epBadge && app.activeEpisodeData) {
+        epBadge.innerText = app.activeEpisodeData.cn_title || app.activeEpisodeData.title || 'Episode 01';
+      }
+      renderStudiedWordsList();
+    }
+
+    function closeStudiedWordsModal() {
+      const modal = document.getElementById('modal-studied-words');
+      if (modal) modal.classList.add('hidden');
+    }
+
+    function renderStudiedWordsList() {
+      const listEl = document.getElementById('studied-words-list');
+      const countEl = document.getElementById('studied-modal-count');
+      if (!listEl) return;
+
+      const wordsMap = app.studiedWords || new Map();
+      if (countEl) countEl.innerText = wordsMap.size;
+
+      if (wordsMap.size === 0) {
+        listEl.innerHTML = `
+          <div class="p-8 text-center text-slate-400 space-y-2 border-2 border-dashed border-slate-200 rounded-2xl">
+            <i class="fa-solid fa-clock-rotate-left text-3xl text-slate-300"></i>
+            <p class="text-xs font-medium">您在本轮专注研学中尚未浏览词汇。</p>
+            <p class="text-[11px] text-slate-400">在卡片正面翻转或评级后，浏览过的词汇将自动实时记录在此！</p>
+          </div>
+        `;
+        return;
+      }
+
+      const activeWords = app.filteredWords || (app.activeEpisodeData ? app.activeEpisodeData.words : []);
+      const items = Array.from(wordsMap.values()).reverse(); // most recently studied first
+
+      listEl.innerHTML = items.map(item => {
+        const idxInDeck = activeWords.findIndex(w => (w.word || '').toLowerCase() === item.word.toLowerCase());
+        const isCurrent = idxInDeck === app.focusCardIndex;
+        const currentHighlight = isCurrent ? 'border-rose-400 bg-rose-50/40 shadow-xs' : 'border-slate-200 bg-white hover:border-slate-300';
+
+        return `
+          <div class="p-3.5 rounded-2xl border ${currentHighlight} transition space-y-2">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <div class="flex flex-wrap items-baseline gap-2">
+                <span class="font-extrabold text-base text-rose-950 font-mono">${item.word}</span>
+                <span class="text-xs font-mono text-slate-400">${item.phonetic}</span>
+                <span class="text-[10px] font-bold text-rose-800 bg-rose-50 px-1.5 py-0.5 rounded border border-rose-200">${item.pos}</span>
+                <span class="text-[10px] font-mono text-slate-500 bg-slate-100 px-1.5 py-0.5 rounded border border-slate-200">⏱️ ${item.timestamp}</span>
+              </div>
+              <button onclick="jumpToStudiedCard('${item.word.replace(/'/g, "\\'")}')" class="px-3 py-1.5 rounded-xl ${isCurrent ? 'bg-rose-900 text-white' : 'bg-rose-50 hover:bg-rose-100 text-rose-900 border border-rose-200'} text-xs font-bold flex items-center gap-1.5 transition">
+                <i class="fa-solid ${isCurrent ? 'fa-check' : 'fa-arrow-turn-down'} text-xs"></i>
+                <span>${isCurrent ? '当前正在学习' : '返回该词复习'}</span>
+              </button>
+            </div>
+            <div class="text-xs font-bold text-slate-800">
+              ${item.def_cn}
+            </div>
+            ${item.sentence ? `
+              <div class="text-[11px] text-slate-600 font-serif line-clamp-1 italic">
+                "${item.sentence}"
+              </div>
+            ` : ''}
+          </div>
+        `;
+      }).join('');
+    }
+
+    function jumpToStudiedCard(wordStr) {
+      const activeWords = app.filteredWords || (app.activeEpisodeData ? app.activeEpisodeData.words : []);
+      if (!activeWords || activeWords.length === 0) return;
+      const targetIdx = activeWords.findIndex(w => (w.word || '').toLowerCase() === (wordStr || '').toLowerCase());
+      if (targetIdx !== -1) {
+        app.focusCardIndex = targetIdx;
+        renderFocusCard();
+        closeStudiedWordsModal();
+        closeQuickAddWordModal();
+      } else {
+        alert(`未在当前练习范围中找到词汇: ${wordStr}`);
+      }
+    }
+
+    function openQuickAddWordModal() {
+      const modal = document.getElementById('modal-quick-add-word');
+      if (!modal) return;
+      modal.classList.remove('hidden');
+      const input = document.getElementById('quick-add-input');
+      if (input) {
+        input.value = '';
+        setTimeout(() => input.focus(), 100);
+      }
+      document.getElementById('quick-add-results').innerHTML = `
+        <div class="p-8 text-center text-slate-400 space-y-2 border-2 border-dashed border-slate-200 rounded-2xl">
+          <i class="fa-solid fa-spell-check text-3xl text-slate-300"></i>
+          <p class="text-xs font-medium">输入单词或点击上方推荐标签，实时检索当前公开课全本字幕并可一键收录！</p>
+        </div>
+      `;
+    }
+
+    function closeQuickAddWordModal() {
+      const modal = document.getElementById('modal-quick-add-word');
+      if (modal) modal.classList.add('hidden');
+    }
+
+    function setQuickAddInput(w) {
+      const input = document.getElementById('quick-add-input');
+      if (input) {
+        input.value = w;
+        searchTranscriptForWord();
+      }
+    }
+
+    async function searchTranscriptForWord() {
+      const input = document.getElementById('quick-add-input');
+      const query = (input ? input.value : '').trim();
+      if (!query) return;
+
+      const resBox = document.getElementById('quick-add-results');
+      if (!resBox) return;
+
+      resBox.innerHTML = `
+        <div class="p-8 text-center text-slate-500 space-y-2">
+          <i class="fa-solid fa-circle-notch fa-spin text-2xl text-rose-900"></i>
+          <p class="text-xs font-bold">正在检索公开课字幕与词条信息: [${query}] ...</p>
+        </div>
+      `;
+
+      try {
+        const epId = app.activeEpisodeId || 'ep01';
+        const resp = await fetch(`/api/transcript/search?query=${encodeURIComponent(query)}&episode_id=${epId}`);
+        const data = await resp.json();
+
+        if (!data.success) {
+          resBox.innerHTML = `<div class="p-4 bg-red-50 text-red-700 text-xs rounded-xl font-bold">查询异常: ${data.error}</div>`;
+          return;
+        }
+
+        const activeWords = app.filteredWords || (app.activeEpisodeData ? app.activeEpisodeData.words : []);
+        const alreadyInDeck = activeWords.some(w => (w.word || '').toLowerCase() === query.toLowerCase());
+
+        let html = '';
+
+        // Dict Match Card
+        if (data.dict_match) {
+          const dm = data.dict_match;
+          html += `
+            <div class="p-4 rounded-2xl bg-rose-50/60 border border-rose-200 space-y-2">
+              <div class="flex items-center justify-between">
+                <div class="flex items-baseline gap-2">
+                  <span class="font-extrabold text-lg text-rose-950 font-mono">${dm.word}</span>
+                  <span class="text-xs font-mono text-slate-500">${dm.phonetic || ''}</span>
+                  <span class="text-[10px] font-bold text-rose-800 bg-rose-100 px-1.5 py-0.5 rounded">${dm.pos || 'adj.'}</span>
+                </div>
+                ${alreadyInDeck ? `
+                  <button onclick="jumpToStudiedCard('${dm.word.replace(/'/g, "\\'")}')" class="px-3 py-1.5 rounded-xl bg-rose-900 hover:bg-rose-950 text-white text-xs font-bold flex items-center gap-1.5 transition">
+                    <i class="fa-solid fa-book-open text-xs"></i>
+                    <span>已在卡片库 · 直接跳转学习</span>
+                  </button>
+                ` : `
+                  <button onclick="submitQuickAddWord('${dm.word.replace(/'/g, "\\'")}', '${(dm.timestamp || '').replace(/'/g, "\\'")}', '${(dm.sentence || '').replace(/'/g, "\\'")}', '${(dm.def_cn || '').replace(/'/g, "\\'")}')" class="px-3.5 py-1.5 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-bold flex items-center gap-1.5 shadow-xs transition">
+                    <i class="fa-solid fa-plus text-xs"></i>
+                    <span>一键加入本轮卡片库并开练</span>
+                  </button>
+                `}
+              </div>
+              <div class="text-xs font-bold text-slate-800">
+                释义：${dm.def_cn || '暂无释义'}
+              </div>
+            </div>
+          `;
+        }
+
+        // Subtitle Occurrences
+        if (data.hits && data.hits.length > 0) {
+          html += `
+            <div class="space-y-1.5 pt-1">
+              <div class="text-xs font-bold text-slate-700 flex items-center gap-1.5">
+                <i class="fa-solid fa-video text-rose-800"></i>
+                <span>哈佛课堂原声字幕中找到 ${data.hits.length} 处出处句：</span>
+              </div>
+          `;
+          data.hits.forEach((h, hIdx) => {
+            const escaped = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+            const highlighted = h.sentence.replace(new RegExp(`(${escaped})`, 'gi'), '<mark class="bg-amber-200 text-amber-950 font-bold px-1 rounded">$1</mark>');
+            html += `
+              <div class="p-3 rounded-xl border border-slate-200 bg-white hover:border-amber-300 transition space-y-1 text-xs">
+                <div class="flex items-center justify-between text-[11px] text-slate-400">
+                  <span class="font-mono font-bold text-slate-700">⏱️ ${h.timestamp} · ${h.speaker}</span>
+                  ${!alreadyInDeck ? `
+                    <button onclick="submitQuickAddWord('${query.replace(/'/g, "\\'")}', '${h.timestamp.replace(/'/g, "\\'")}', '${h.sentence.replace(/'/g, "\\'")}', '')" class="px-2 py-0.5 rounded bg-amber-50 hover:bg-amber-100 border border-amber-300 text-amber-900 font-bold text-[10px] transition">
+                      以本句为原声加入卡片
+                    </button>
+                  ` : ''}
+                </div>
+                <div class="text-slate-800 leading-relaxed font-serif">
+                  "${highlighted}"
+                </div>
+              </div>
+            `;
+          });
+          html += `</div>`;
+        } else if (!data.dict_match) {
+          html += `
+            <div class="p-6 text-center text-slate-400 space-y-2 border border-slate-200 rounded-2xl">
+              <p class="text-xs">未在公开课字幕中找到单词 [${query}] 的精确匹配。</p>
+              <button onclick="submitQuickAddWord('${query.replace(/'/g, "\\'")}', '[10:00]', '', '')" class="px-4 py-2 rounded-xl bg-slate-900 hover:bg-black text-white text-xs font-bold transition">
+                仍将 [${query}] 作为自定义生词收录学习
+              </button>
+            </div>
+          `;
+        }
+
+        resBox.innerHTML = html;
+      } catch (err) {
+        resBox.innerHTML = `<div class="p-4 bg-red-50 text-red-700 text-xs rounded-xl font-bold">搜索网络请求失败: ${err.message}</div>`;
+      }
+    }
+
+    async function submitQuickAddWord(wordStr, timestampStr, sentenceStr, defCnStr) {
+      try {
+        const epId = app.activeEpisodeId || 'ep01';
+        const payload = {
+          episode_id: epId,
+          word: wordStr,
+          timestamp: timestampStr || '[10:18]',
+          sentence: sentenceStr || '',
+          def_cn: defCnStr || ''
+        };
+
+        const resp = await fetch('/api/custom-word/add', {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify(payload)
+        });
+        const data = await resp.json();
+
+        if (data.success && data.word_data) {
+          const newEntry = data.word_data;
+          if (!app.activeEpisodeData.words) app.activeEpisodeData.words = [];
+
+          const existingIdx = app.activeEpisodeData.words.findIndex(w => (w.word || '').toLowerCase() === newEntry.word.toLowerCase());
+          if (existingIdx === -1) {
+            app.activeEpisodeData.words.push(newEntry);
+          } else {
+            app.activeEpisodeData.words[existingIdx] = newEntry;
+          }
+
+          if (app.filteredWords) {
+            const fIdx = app.filteredWords.findIndex(w => (w.word || '').toLowerCase() === newEntry.word.toLowerCase());
+            if (fIdx === -1) {
+              app.filteredWords.push(newEntry);
+            } else {
+              app.filteredWords[fIdx] = newEntry;
+            }
+          }
+
+          const targetIdx = (app.filteredWords || app.activeEpisodeData.words).findIndex(w => (w.word || '').toLowerCase() === newEntry.word.toLowerCase());
+          app.focusCardIndex = targetIdx !== -1 ? targetIdx : (app.filteredWords || app.activeEpisodeData.words).length - 1;
+
+          renderFocusCard();
+          closeQuickAddWordModal();
+          alert(`🎉 恭喜！词汇 [${newEntry.word}] 已成功加入本集研学卡片库，已为您直接呈现该卡片！`);
+        } else {
+          alert(`添加生词失败: ${data.error || '未知错误'}`);
+        }
+      } catch (e) {
+        alert(`添加生词请求异常: ${e.message}`);
+      }
+    }
+
     // Keyboard bindings in focused study mode
     window.addEventListener('keydown', (e) => {
       if (app.currentRoute !== 'focused-study') return;
@@ -2175,13 +2499,23 @@ https://traffic.megaphone.fm/SAM8705727348.mp3"></textarea>
       } else if (e.code === 'ArrowRight' || e.code === 'KeyN') {
         e.preventDefault();
         nextFocusCard();
-      } else if (e.code === 'ArrowLeft' || e.code === 'KeyP') {
+      } else if (e.code === 'ArrowLeft' || e.code === 'KeyP' || e.code === 'Backspace') {
         e.preventDefault();
         prevFocusCard();
       } else if (e.code === 'KeyR') {
         e.preventDefault();
         playFocusNativeAudio();
       } else if (e.code === 'Escape') {
+        const studiedModal = document.getElementById('modal-studied-words');
+        if (studiedModal && !studiedModal.classList.contains('hidden')) {
+          closeStudiedWordsModal();
+          return;
+        }
+        const quickAddModal = document.getElementById('modal-quick-add-word');
+        if (quickAddModal && !quickAddModal.classList.contains('hidden')) {
+          closeQuickAddWordModal();
+          return;
+        }
         exitFocusedStudy();
       }
     });
@@ -3051,7 +3385,120 @@ To resolve this moral dilemma, students must cultivate rigorous deliberation and
     </button>
   </div>
 
-    <!-- ==================== PRE-STUDY LAUNCHER MODAL ==================== -->
+  <!-- ==================== STUDIED WORDS DRAWER / MODAL ==================== -->
+  <div id="modal-studied-words" class="fixed inset-0 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center z-50 p-4 hidden">
+    <div class="bg-white rounded-3xl max-w-2xl w-full p-6 shadow-2xl border border-slate-200/90 space-y-5 animate-in fade-in zoom-in-95 duration-150 max-h-[90vh] flex flex-col">
+      <!-- Modal Header -->
+      <div class="flex items-start justify-between border-b border-slate-100 pb-4">
+        <div class="space-y-1">
+          <div class="flex items-center gap-2">
+            <span class="px-2.5 py-0.5 rounded-md text-[10px] font-extrabold uppercase tracking-wider bg-indigo-50 text-indigo-900 border border-indigo-200">
+              📋 已学词汇归卷
+            </span>
+            <span class="text-xs text-slate-400 font-mono" id="studied-modal-ep-title">Episode 01</span>
+          </div>
+          <h3 class="text-lg font-black text-slate-900 leading-snug">
+            本轮研学已学词汇清单 (<span id="studied-modal-count" class="text-rose-900">0</span> 词)
+          </h3>
+          <p class="text-xs text-slate-500">
+            点击任意词汇右侧的 “返回该词复习” 按钮，即可瞬间将卡片跳转回该词，无缝衔接记忆自评！
+          </p>
+        </div>
+        <button onclick="closeStudiedWordsModal()" class="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-500 hover:text-slate-900 flex items-center justify-center transition">
+          <i class="fa-solid fa-xmark text-sm"></i>
+        </button>
+      </div>
+
+      <!-- Modal Body (Scrollable List) -->
+      <div id="studied-words-list" class="flex-1 overflow-y-auto space-y-3 pr-1 py-1 min-h-[260px]">
+        <!-- Dynamic content rendered by renderStudiedWordsList() -->
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+        <span class="font-mono text-[11px]">按 [ESC] 退出清单</span>
+        <button onclick="closeStudiedWordsModal()" class="px-5 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold transition">
+          关闭清单
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== QUICK SEARCH & ADD WORD MODAL (e.g. moderate) ==================== -->
+  <div id="modal-quick-add-word" class="fixed inset-0 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center z-50 p-4 hidden">
+    <div class="bg-white rounded-3xl max-w-2xl w-full p-6 shadow-2xl border border-slate-200/90 space-y-5 animate-in fade-in zoom-in-95 duration-150 max-h-[90vh] flex flex-col">
+      <!-- Modal Header -->
+      <div class="flex items-start justify-between border-b border-slate-100 pb-4">
+        <div class="space-y-1">
+          <div class="flex items-center gap-2">
+            <span class="px-2.5 py-0.5 rounded-md text-[10px] font-extrabold uppercase tracking-wider bg-amber-50 text-amber-900 border border-amber-300">
+              🔍 课堂字幕原声搜词 · 动态增补卡片
+            </span>
+            <span class="text-xs text-slate-400 font-mono">Instant Search & Intake</span>
+          </div>
+          <h3 class="text-lg font-black text-slate-900 leading-snug">
+            想学其他词？（如同学提到的 moderate）
+          </h3>
+          <p class="text-xs text-slate-500">
+            哈佛公开课全本字幕检索：输入你想查的词，自动定位桑德尔教授现场原声出处句并一键收录进卡片！
+          </p>
+        </div>
+        <button onclick="closeQuickAddWordModal()" class="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-500 hover:text-slate-900 flex items-center justify-center transition">
+          <i class="fa-solid fa-xmark text-sm"></i>
+        </button>
+      </div>
+
+      <!-- Quick Preset Tag Chips -->
+      <div class="flex flex-wrap items-center gap-2">
+        <span class="text-xs font-bold text-slate-500">🔥 伙伴常问推荐词：</span>
+        <button onclick="setQuickAddInput('moderate')" class="px-2.5 py-1 rounded-lg bg-amber-50 hover:bg-amber-100 border border-amber-300 text-amber-900 font-mono text-xs font-bold transition">
+          moderate (适度的/中度伤情)
+        </button>
+        <button onclick="setQuickAddInput('moderation')" class="px-2.5 py-1 rounded-lg bg-amber-50 hover:bg-amber-100 border border-amber-300 text-amber-900 font-mono text-xs font-bold transition">
+          moderation (节制/适度)
+        </button>
+        <button onclick="setQuickAddInput('utilitarian')" class="px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-slate-200 border border-slate-200 text-slate-700 font-mono text-xs font-bold transition">
+          utilitarian (功利主义的)
+        </button>
+        <button onclick="setQuickAddInput('triage')" class="px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-slate-200 border border-slate-200 text-slate-700 font-mono text-xs font-bold transition">
+          triage (检伤分类)
+        </button>
+        <button onclick="setQuickAddInput('sovereign')" class="px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-slate-200 border border-slate-200 text-slate-700 font-mono text-xs font-bold transition">
+          sovereign (至高无上的/统治者)
+        </button>
+      </div>
+
+      <!-- Search Input Bar -->
+      <div class="flex items-center gap-2">
+        <div class="relative flex-1">
+          <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3.5 text-slate-400 text-sm"></i>
+          <input id="quick-add-input" type="text" placeholder="输入你想检索或学习的任意英文单词 (按回车直接搜索)..." class="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-300 focus:border-rose-800 focus:outline-none text-sm font-medium text-slate-800" onkeydown="if(event.key==='Enter') searchTranscriptForWord()">
+        </div>
+        <button onclick="searchTranscriptForWord()" id="quick-add-search-btn" class="px-5 py-2.5 rounded-xl bg-rose-900 hover:bg-rose-950 text-white font-bold text-xs flex items-center gap-2 transition shadow-xs">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <span>检索原声字幕</span>
+        </button>
+      </div>
+
+      <!-- Search Results Area -->
+      <div id="quick-add-results" class="flex-1 overflow-y-auto space-y-3 pr-1 py-1 min-h-[220px]">
+        <div class="p-8 text-center text-slate-400 space-y-2 border-2 border-dashed border-slate-200 rounded-2xl">
+          <i class="fa-solid fa-spell-check text-3xl text-slate-300"></i>
+          <p class="text-xs font-medium">输入单词或点击上方推荐标签，实时检索当前公开课全本字幕并可一键收录！</p>
+        </div>
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+        <span class="font-mono text-[11px]">按 [ESC] 退出搜词</span>
+        <button onclick="closeQuickAddWordModal()" class="px-5 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold transition">
+          关闭
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== PRE-STUDY LAUNCHER MODAL ==================== -->
   <div id="pre-study-modal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center z-50 p-4 hidden">
     <div class="bg-white rounded-3xl max-w-xl w-full p-6 shadow-2xl border border-slate-200/90 space-y-5 animate-in fade-in zoom-in-95 duration-150">
       <!-- Modal Header -->

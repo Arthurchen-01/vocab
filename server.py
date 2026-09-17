@@ -384,6 +384,14 @@ class RequestHandler(http.server.SimpleHTTPRequestHandler):
     def do_GET(self):
         clean_path = self.path.split('?')[0].split('#')[0]
 
+        if clean_path in ['/api/health', '/health']:
+            self.send_response(200)
+            self.send_header("Content-Type", "application/json; charset=utf-8")
+            self.send_header("Access-Control-Allow-Origin", "*")
+            self.end_headers()
+            self.wfile.write(json.dumps({"status": "ok", "service": "Harvard Justice AI Studio"}, ensure_ascii=False).encode("utf-8"))
+            return
+
         # 0. API Documentation and OpenAPI Spec
         if clean_path in ['/docs', '/api-docs', '/docs/']:
             docs_file = os.path.join(PUBLIC_DIR, "docs.html")
@@ -500,6 +508,10 @@ class RequestHandler(http.server.SimpleHTTPRequestHandler):
             self.send_header("Content-Type", "application/json; charset=utf-8")
             self.end_headers()
             self.wfile.write(json.dumps(data, ensure_ascii=False).encode("utf-8"))
+            return
+
+        elif clean_path == "/api/transcript/search":
+            self.handle_transcript_search()
             return
 
         elif clean_path in ["/api/presets", "/api/episodes"]:
@@ -627,6 +639,8 @@ class RequestHandler(http.server.SimpleHTTPRequestHandler):
             self.handle_batch_media_extract(body)
         elif clean_path == "/api/bilibili/detect-collection":
             self.handle_detect_bilibili_collection(body)
+        elif clean_path == "/api/custom-word/add":
+            self.handle_add_custom_word(body)
         elif clean_path == "/api/test-connection":
             self.handle_test_connection(body)
         elif clean_path == "/api/ai-extract":
@@ -1505,6 +1519,141 @@ class RequestHandler(http.server.SimpleHTTPRequestHandler):
                 return
         except Exception as e:
             self.send_error_json(500, f"下载服务内部异常: {str(e)}")
+
+    def handle_transcript_search(self):
+        try:
+            params = parse_query_params(self.path)
+            query = params.get("query", "").strip()
+            ep_id = params.get("episode_id", "ep01").strip().lower()
+
+            if not query:
+                self.send_error_json(400, "缺少 query 参数")
+                return
+
+            transcript_file = os.path.join(DATA_DIR, "transcripts", f"{ep_id}_transcript.json")
+            if not os.path.exists(transcript_file):
+                transcript_file = os.path.join(DATA_DIR, "transcripts", "ep01_transcript.json")
+
+            hits = []
+            if os.path.exists(transcript_file):
+                with open(transcript_file, "r", encoding="utf-8") as f:
+                    data = json.load(f)
+
+                pattern = re.compile(rf"\b{re.escape(query)}\b", re.IGNORECASE)
+                for item in data:
+                    text = item.get("text", "") or item.get("sentence", "")
+                    if pattern.search(text):
+                        start_sec = float(item.get("start", 0))
+                        mins = int(start_sec // 60)
+                        secs = int(start_sec % 60)
+                        ts = f"[{mins:02d}:{secs:02d}]"
+                        hits.append({
+                            "sentence": text.replace("\n", " ").strip(),
+                            "start": start_sec,
+                            "timestamp": ts,
+                            "speaker": item.get("speaker", "Prof. Michael Sandel")
+                        })
+                        if len(hits) >= 10:
+                            break
+
+            all_eps = get_all_episodes()
+            dict_match = None
+            for eid, ep_content in all_eps.items():
+                for w in ep_content.get("words", []):
+                    if w.get("word", "").lower() == query.lower():
+                        dict_match = w
+                        break
+                if dict_match:
+                    break
+
+            res = {
+                "success": True,
+                "query": query,
+                "episode_id": ep_id,
+                "total_hits": len(hits),
+                "hits": hits,
+                "dict_match": dict_match
+            }
+            self.send_response(200)
+            self.send_header("Content-Type", "application/json; charset=utf-8")
+            self.send_header("Access-Control-Allow-Origin", "*")
+            self.end_headers()
+            self.wfile.write(json.dumps(res, ensure_ascii=False).encode("utf-8"))
+        except Exception as e:
+            self.send_response(500)
+            self.send_header("Content-Type", "application/json; charset=utf-8")
+            self.send_header("Access-Control-Allow-Origin", "*")
+            self.end_headers()
+            self.wfile.write(json.dumps({"success": False, "error": str(e)}).encode("utf-8"))
+
+    def handle_add_custom_word(self, body_str):
+        try:
+            req = json.loads(body_str) if body_str else {}
+            ep_id = req.get("episode_id", "ep01").strip().lower()
+            word = req.get("word", "").strip()
+            if not word:
+                self.send_error_json(400, "缺少 word 参数")
+                return
+
+            def_cn = req.get("def_cn", "").strip() or "暂无释义"
+            phonetic = req.get("phonetic", "").strip() or "/--/"
+            pos = req.get("pos", "n.").strip()
+            level = req.get("level", "toefl_ielts").strip()
+            sentence = req.get("sentence", "").strip() or f"In this lecture, the concept of {word} plays an important philosophical role."
+            sentence_cn = req.get("sentence_cn", "").strip() or f"在本堂课中，{word} 的概念扮演了重要的哲学角色。"
+            speaker = req.get("speaker", "Prof. Michael Sandel").strip()
+            timestamp = req.get("timestamp", "[10:00]").strip()
+            audio_start = float(req.get("audio_start", 600.0))
+
+            new_entry = {
+                "word": word,
+                "phonetic": phonetic,
+                "pos": pos,
+                "level": level,
+                "def_cn": def_cn,
+                "def_en": req.get("def_en", ""),
+                "sentence": sentence,
+                "sentence_cn": sentence_cn,
+                "cloze_sentence": sentence.replace(word, "___").replace(word.capitalize(), "___"),
+                "speaker": speaker,
+                "timestamp": timestamp,
+                "audio_start": audio_start,
+                "audio_duration": 6.0,
+                "audio_url": f"/assets/audio/custom_{word.lower()}.mp3",
+                "native_clip_url": f"/assets/audio/clips/custom_{word.lower()}_native.mp3",
+                "scene_img": "/assets/scenes/scene_theatre.jpg",
+                "scene_desc": f"哈佛 Sanders 剧院授课实景 · 时间戳 {timestamp}",
+                "is_custom_added": True
+            }
+
+            global EPISODE_DATA
+            if ep_id in EPISODE_DATA:
+                existing_idx = None
+                for idx, ew in enumerate(EPISODE_DATA[ep_id].get("words", [])):
+                    if ew.get("word", "").lower() == word.lower():
+                        existing_idx = idx
+                        break
+                if existing_idx is None:
+                    EPISODE_DATA[ep_id]["words"].append(new_entry)
+                    try:
+                        with open(CURRICULUM_FILE, "w", encoding="utf-8") as f:
+                            json.dump(EPISODE_DATA, f, ensure_ascii=False, indent=2)
+                    except Exception as pe:
+                        print(f"[WARN] Failed to persist new word: {pe}")
+                else:
+                    new_entry = EPISODE_DATA[ep_id]["words"][existing_idx]
+
+            self.send_response(200)
+            self.send_header("Content-Type", "application/json; charset=utf-8")
+            self.send_header("Access-Control-Allow-Origin", "*")
+            self.end_headers()
+            self.wfile.write(json.dumps({"success": True, "word_data": new_entry}, ensure_ascii=False).encode("utf-8"))
+        except Exception as e:
+            self.send_response(500)
+            self.send_header("Content-Type", "application/json; charset=utf-8")
+            self.send_header("Access-Control-Allow-Origin", "*")
+            self.end_headers()
+            self.wfile.write(json.dumps({"success": False, "error": str(e)}).encode("utf-8"))
 
     def handle_feedback(self, body_str):
         try:
