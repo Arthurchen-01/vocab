@@ -277,12 +277,12 @@
       }
     ],
     "stats": {
-      "review_count": 0,
+      "review_count": 2,
       "today_seconds": 0,
-      "total_seconds": 0,
+      "total_seconds": 8,
       "status": "learning",
-      "last_rating": "new",
-      "last_reviewed_at": null
+      "last_rating": 3,
+      "last_reviewed_at": "2026-09-17 00:16:00"
     }
   },
   "shipwreck": {
