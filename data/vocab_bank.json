@@ -15,9 +15,9 @@
       {
         "source_id": "ep02",
         "source_title": "第 02 集：生命定价与快乐计量",
-        "sentence": "The central challenge to utilitarianism is whether it respects individual rights or merely aggregates preferences.",
-        "trans": "对功利主义的核心挑战在于它是否尊重个人权利，还是仅仅将所有偏好相加。",
-        "audio_url": "/assets/audio/ep02_utilitarianism_ctx2.mp3"
+        "sentence": "Utilitarianism. It makes it clear that utility is the only standard of morality in his view so he's not challenging Bentham's premise, he's affirming it.",
+        "trans": "功利主义。它清楚地表明，在他看来，效用是道德的唯一标准，因此他并非在挑战边沁的前提，而是在肯定它。",
+        "audio_url": "/assets/audio/clips/ep02_utilitarianism_native.mp3"
       },
       {
         "source_id": "bilibili_justice_review",
@@ -92,6 +92,13 @@
         "sentence": "Categorical moral reasoning locates morality in certain duties and rights, regardless of the consequences.",
         "trans": "绝对主义道德推理将道德定位在某些职责和权利中，无论其后果如何。",
         "audio_url": "/assets/audio/ep01_categorical.mp3"
+      },
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "would it be just to torture the suspect to get the information or do you say no there is a categorical moral duty of respect for individual rights",
+        "trans": "还是你会说不，存在一种绝对尊重个人权利的道德义务？",
+        "audio_url": "/assets/audio/clips/ep02_categorical_native.mp3"
       }
     ],
     "stats": {
@@ -260,6 +267,13 @@
         "sentence": "In the 19th-century legal case of Dudley and Stephens, the crew members resorted to cannibalism to stay alive.",
         "trans": "在19世纪达德利和斯蒂芬斯案的司法审判中，船员们为了活命诉诸了同类相食。",
         "audio_url": "/assets/audio/ep01_cannibalism.mp3"
+      },
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "the case of the Queen verses Dudley and Stephens the lifeboat case, the case of cannibalism at sea and with the arguments about the lifeboat",
+        "trans": "以及关于海上食人案的争论",
+        "audio_url": "/assets/audio/clips/ep02_cannibalism_native.mp3"
       }
     ],
     "stats": {
@@ -556,9 +570,9 @@
       {
         "source_id": "ep02",
         "source_title": "第 02 集：生命定价的逻辑 / 如何衡量高级与低级快乐",
-        "sentence": "By 'utility' Bentham meant whatever produces pleasure or happiness, and prevents pain or suffering.",
-        "trans": "边沁所指的‘效用’，是指任何能产生快乐或幸福，并防止痛苦或苦难的事物。",
-        "audio_url": "/assets/audio/ep02_utility.mp3"
+        "sentence": "utility Bentham arrives at this principle by the following line of reasoning we're all governed by pain and pleasure they are our sovereign masters and so any moral system has to take account of them.",
+        "trans": "一言以蔽之：使效用最大化",
+        "audio_url": "/assets/audio/clips/ep02_utility_native.mp3"
       }
     ],
     "stats": {
@@ -579,9 +593,9 @@
       {
         "source_id": "ep02",
         "source_title": "第 02 集：生命定价的逻辑 / 如何衡量高级与低级快乐",
-        "sentence": "The right thing to do, the just thing to do, is to maximize utility.",
-        "trans": "正确的、正义的做法，就是使效用最大化。",
-        "audio_url": "/assets/audio/ep02_maximize.mp3"
+        "sentence": "is to maximize the general welfare or the collective happiness or the overall balance of pleasure over pain in a phrase maximize",
+        "trans": "就是使总体福利、集体幸福或快乐减去痛苦后的总体平衡最大化",
+        "audio_url": "/assets/audio/clips/ep02_maximize_native.mp3"
       }
     ],
     "stats": {
@@ -602,9 +616,9 @@
       {
         "source_id": "ep02",
         "source_title": "第 02 集：生命定价的逻辑 / 如何衡量高级与低级快乐",
-        "sentence": "Nature has placed mankind under the governance of two sovereign masters, pain and pleasure.",
-        "trans": "大自然把人类置于两位至高无上的主宰之下：痛苦与快乐。",
-        "audio_url": "/assets/audio/ep02_sovereign.mp3"
+        "sentence": "utility Bentham arrives at this principle by the following line of reasoning we're all governed by pain and pleasure they are our sovereign masters and so any moral system has to take account of them.",
+        "trans": "我们都被痛苦和快乐所支配，它们是我们的至高主宰",
+        "audio_url": "/assets/audio/clips/ep02_sovereign_native.mp3"
       },
       {
         "source_id": "ep03",
@@ -632,9 +646,9 @@
       {
         "source_id": "ep02",
         "source_title": "第 02 集：生命定价的逻辑 / 如何衡量高级与低级快乐",
-        "sentence": "The tobacco company Philip Morris did a cost-benefit analysis of smoking in the Czech Republic.",
-        "trans": "烟草巨头菲利普莫里斯公司在捷克做了一项关于吸烟的成本效益分析。",
-        "audio_url": "/assets/audio/ep02_cost_benefit_analysis.mp3"
+        "sentence": "that's what it means to maximize utility now, today I want to see whether you agree or disagree with it, and it often goes, this utilitarian logic, under the name of cost-benefit analysis",
+        "trans": "这种功利主义逻辑常常以'成本效益分析'的名义出现",
+        "audio_url": "/assets/audio/clips/ep02_cost_benefit_analysis_native.mp3"
       }
     ],
     "stats": {
@@ -701,9 +715,9 @@
       {
         "source_id": "ep02",
         "source_title": "第 02 集：生命定价的逻辑 / 如何衡量高级与低级快乐",
-        "sentence": "Bentham believed all moral goods are commensurable on a single scale of pleasure and pain.",
-        "trans": "边沁认为所有道德善恶都可以统一放到痛苦与快乐这同一个尺度上来通约衡量。",
-        "audio_url": "/assets/audio/ep02_commensurable.mp3"
+        "sentence": "it questioned whether it's possible to translate all values into a single uniform measure of value it asks in other words whether all values are commensurable let me give you one other",
+        "trans": "它追问的是，所有价值是否都是可通约的",
+        "audio_url": "/assets/audio/clips/ep02_commensurable_native.mp3"
       }
     ],
     "stats": {
@@ -931,9 +945,9 @@
       {
         "source_id": "ep02",
         "source_title": "第 02 集：生命定价的逻辑 / 如何衡量高级与低级快乐",
-        "sentence": "Immediate gratification from watching 'The Simpsons' might feel stronger than reading Shakespeare, but which is truly higher?",
-        "trans": "看《辛普森一家》获得的即时满足感可能比读莎士比亚更强烈，但究竟哪一种才是真正更高阶的呢？",
-        "audio_url": "/assets/audio/ep02_gratification.mp3"
+        "sentence": "of appetites cravings desires and their gratifications so does the life of human beings though the appetites and desires are more complicated but what about",
+        "trans": "狗、猫或鸡的生活由食欲、渴望、欲望及其满足构成",
+        "audio_url": "/assets/audio/clips/ep02_gratification_native.mp3"
       }
     ],
     "stats": {
@@ -1164,6 +1178,13 @@
         "sentence": "Jeremy Bentham formulated the principle of utility, arguing that all morality should aim to maximize the general welfare.",
         "trans": "杰里米·边沁提出了功利原则，主张一切道德都应以最大化普遍福祉为目标。",
         "audio_url": "/assets/audio/custom_1789528228_general_welfare.mp3"
+      },
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "is to maximize the general welfare or the collective happiness or the overall balance of pleasure over pain in a phrase maximize",
+        "trans": "就是使总体福利、集体幸福或快乐减去痛苦后的总体平衡最大化",
+        "audio_url": "/assets/audio/clips/ep02_general_welfare_native.mp3"
       }
     ],
     "stats": {
@@ -1187,6 +1208,13 @@
         "sentence": "However, in jurisprudence, critics argue that purely consequentialist reasoning fails to respect human dignity.",
         "trans": "然而，在法理学中，批评者认为纯粹后果主义的推理未能尊重人的尊严。",
         "audio_url": "/assets/audio/custom_1789528228_jurisprudence.mp3"
+      },
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "he went to Oxford, at fifteen he went to law school he was admitted to the bar at age nineteen but he never practiced law, instead he devoted his life to jurisprudence and moral philosophy.",
+        "trans": "他毕生致力于法学与道德哲学的研究",
+        "audio_url": "/assets/audio/clips/ep02_jurisprudence_native.mp3"
       }
     ],
     "stats": {
@@ -1333,6 +1361,4698 @@
       "total_seconds": 0,
       "status": "learning",
       "last_rating": "new",
+      "last_reviewed_at": null
+    }
+  },
+  "utilitarian": {
+    "word": "utilitarian",
+    "phonetic": "/ˌjuːtɪlɪˈteriən/",
+    "pos": "adj.",
+    "def_cn": "功利主义的，功利论的",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "in mind the arguments for and against what Dudley and Stephens did in mind, let's turn back to the philosophy the utilitarian philosophy of Jeremy Bentham Bentham was born in England in 1748, at the age of twelve",
+        "trans": "让我们回到杰里米·边沁的功利主义哲学",
+        "audio_url": "/assets/audio/clips/ep02_utilitarian_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "moral philosophy": {
+    "word": "moral philosophy",
+    "phonetic": "/ˈmɒrəl fəˈlɒsəfi/",
+    "pos": "n.",
+    "def_cn": "道德哲学，伦理学",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "he went to Oxford, at fifteen he went to law school he was admitted to the bar at age nineteen but he never practiced law, instead he devoted his life to jurisprudence and moral philosophy.",
+        "trans": "他毕生致力于法学与道德哲学的研究",
+        "audio_url": "/assets/audio/clips/ep02_moral_philosophy_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "principle": {
+    "word": "principle",
+    "phonetic": "/ˈprɪnsəpl/",
+    "pos": "n.",
+    "def_cn": "原则，原理",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "last time we began to consider Bentham's version of utilitarianism the main idea is simply stated and it's this, the highest principle of morality whether personal or political morality",
+        "trans": "道德的最高原则，无论是个人道德还是政治道德",
+        "audio_url": "/assets/audio/clips/ep02_principle_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "take account of": {
+    "word": "take account of",
+    "phonetic": "/teɪk əˈkaʊnt ɒv/",
+    "pos": "phrase",
+    "def_cn": "考虑到，顾及",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "utility Bentham arrives at this principle by the following line of reasoning we're all governed by pain and pleasure they are our sovereign masters and so any moral system has to take account of them.",
+        "trans": "因此任何道德体系都必须将它们纳入考量",
+        "audio_url": "/assets/audio/clips/ep02_take_account_of_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "the greatest good for the greatest number": {
+    "word": "the greatest good for the greatest number",
+    "phonetic": "/ðə ˈɡreɪtɪst ɡʊd fɔːr ðə ˈɡreɪtɪst ˈnʌmbər/",
+    "pos": "phrase",
+    "def_cn": "最大多数人的最大幸福（功利主义核心原则）",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "How best to take account? By maximizing and this leads to the principle of the greatest good for the greatest number what exactly should we maximize?",
+        "trans": "这就引出了'最大多数人的最大幸福'原则",
+        "audio_url": "/assets/audio/clips/ep02_the_greatest_good_for_the_greatest_number_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "legislator": {
+    "word": "legislator",
+    "phonetic": "/ˈledʒɪsleɪtər/",
+    "pos": "n.",
+    "def_cn": "立法者，立法委员",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "Maximizing utility is a principal not only for individuals but also for communities and for legislators what after all is a community Bentham asks, it's the sum of the individuals who comprise it",
+        "trans": "使效用最大化不仅是个人原则，也是社区和立法者的原则",
+        "audio_url": "/assets/audio/clips/ep02_legislator_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "comprise": {
+    "word": "comprise",
+    "phonetic": "/kəmˈpraɪz/",
+    "pos": "v.",
+    "def_cn": "由……组成，包含",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "Maximizing utility is a principal not only for individuals but also for communities and for legislators what after all is a community Bentham asks, it's the sum of the individuals who comprise it",
+        "trans": "它不就是组成它的个体之总和吗",
+        "audio_url": "/assets/audio/clips/ep02_comprise_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "add up": {
+    "word": "add up",
+    "phonetic": "/æd ʌp/",
+    "pos": "phrase",
+    "def_cn": "把……加起来，合计",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "and that's why in deciding the best policy, in deciding what the law should be, in deciding what's just, citizens and legislators should ask themselves the question if we add up, all of the benefits of this policy",
+        "trans": "公民和立法者应当问自己：如果我们把这项政策的所有好处加起来",
+        "audio_url": "/assets/audio/clips/ep02_add_up_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "subtract": {
+    "word": "subtract",
+    "phonetic": "/səbˈtrækt/",
+    "pos": "v.",
+    "def_cn": "减去，扣除",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "and subtract all of the costs, the right thing to do is the one that maximizes the balance of happiness over suffering.",
+        "trans": "再减去所有的成本，正确的做法就是使幸福超过痛苦的余额最大化",
+        "audio_url": "/assets/audio/clips/ep02_subtract_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "place a value on": {
+    "word": "place a value on",
+    "phonetic": "/pleɪs ə ˈvæljuː ɒn/",
+    "pos": "phrase",
+    "def_cn": "给……定价，为……赋值",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "which is used by companies and by governments all the time and what it involves is placing a value usually a dollar value to stand for utility",
+        "trans": "它所涉及的是给各种提案的成本和收益赋予一个价值，通常是以美元价值来代表效用",
+        "audio_url": "/assets/audio/clips/ep02_place_a_value_on_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "excise tax": {
+    "word": "excise tax",
+    "phonetic": "/ˈeksaɪz tæks/",
+    "pos": "n.",
+    "def_cn": "消费税，货物税",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "on the costs and the benefits of various proposals. recently in the Czech Republic there was a proposal to increases the excise tax on smoking Philip Morris,",
+        "trans": "最近捷克共和国有一项提高烟草消费税的提案",
+        "audio_url": "/assets/audio/clips/ep02_excise_tax_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "commission": {
+    "word": "commission",
+    "phonetic": "/kəˈmɪʃn/",
+    "pos": "v.",
+    "def_cn": "委托，委任（进行某项研究等）",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "the tobacco company, does huge business in the Czech Republic. They commissioned a study of cost-benefit analysis of smoking in the Czech Republic and what their cost benefit",
+        "trans": "他们委托进行了一项关于捷克共和国吸烟情况的成本效益分析研究",
+        "audio_url": "/assets/audio/clips/ep02_commission_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "ledger": {
+    "word": "ledger",
+    "phonetic": "/ˈledʒər/",
+    "pos": "n.",
+    "def_cn": "账簿，分类账",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "diseases on the other hand there were positive effects and those were added up on the other side of the ledger the positive effects included, for the most part, various tax revenues that the government",
+        "trans": "这些正面效应被加在账簿的另一边",
+        "audio_url": "/assets/audio/clips/ep02_ledger_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "derive from": {
+    "word": "derive from",
+    "phonetic": "/dɪˈraɪv frɒm/",
+    "pos": "phrase",
+    "def_cn": "从……中获得，源于",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "derives from the sale of cigarette products but it also included health care savings to the government when people die early pensions savings, you don't have to pay pensions for as long, and also savings in housing costs for the elderly",
+        "trans": "政府从香烟产品的销售中获得的各种税收收入",
+        "audio_url": "/assets/audio/clips/ep02_derive_from_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "net": {
+    "word": "net",
+    "phonetic": "/net/",
+    "pos": "adj.",
+    "def_cn": "净的，纯的（扣除后的）",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "and when all of the costs and benefits were added up the Philip Morris study found that there is a net public finance gain in the Czech Republic of a hundred and forty seven million dollars",
+        "trans": "菲利普·莫里斯的研究发现，捷克共和国的公共财政净收益为1.47亿美元",
+        "audio_url": "/assets/audio/clips/ep02_net_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "prematurely": {
+    "word": "prematurely",
+    "phonetic": "/ˌpreməˈtʃʊərli/",
+    "pos": "adv.",
+    "def_cn": "过早地，提前地",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "and given the savings in housing and health care and pension costs the government enjoys the saving of savings of over twelve hundred dollars for each person who dies prematurely due to smoking.",
+        "trans": "对于每个因吸烟而过早死亡的人，政府可节省超过1200美元",
+        "audio_url": "/assets/audio/clips/ep02_prematurely_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "pillory": {
+    "word": "pillory",
+    "phonetic": "/ˈpɪləri/",
+    "pos": "v.",
+    "def_cn": "公开抨击，使受公众嘲笑",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "cost-benefit analysis now, those among you who are defenders utilitarianism may think that this is a unfair test Philip Morris was pilloried in the press and they issued an apology for this heartless",
+        "trans": "菲利普·莫里斯遭到了媒体的公开抨击，并为这一冷酷的计算发表了道歉",
+        "audio_url": "/assets/audio/clips/ep02_pillory_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "incorporate": {
+    "word": "incorporate",
+    "phonetic": "/ɪnˈkɔːpəreɪt/",
+    "pos": "v.",
+    "def_cn": "纳入，包含，合并",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "calculation you may say that what's missing here is something that the utilitarian can be easily incorporate mainly the value to the person and to the families of those who die",
+        "trans": "你可能会说，这里缺失的是功利主义者可以轻易纳入的东西",
+        "audio_url": "/assets/audio/clips/ep02_incorporate_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "vulnerable": {
+    "word": "vulnerable",
+    "phonetic": "/ˈvʌlnərəbl/",
+    "pos": "adj.",
+    "def_cn": "脆弱的，易受损害的",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "victims of these injuries took Ford to court to sue and in the court case it turned out that Ford had long since known about the vulnerable fuel tank and had done a cost-benefit analysis to determine whether it would be worth it",
+        "trans": "法庭案件审理中发现，福特公司早就知道油箱存在脆弱隐患",
+        "audio_url": "/assets/audio/clips/ep02_vulnerable_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "shield": {
+    "word": "shield",
+    "phonetic": "/ʃiːld/",
+    "pos": "n.",
+    "def_cn": "防护罩，保护装置",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "to put in a special shield that would protect the fuel tank and prevent it from exploding.",
+        "trans": "是否值得安装一个特殊的防护罩来保护油箱、防止其爆炸",
+        "audio_url": "/assets/audio/clips/ep02_shield_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "calculate": {
+    "word": "calculate",
+    "phonetic": "/ˈkælkjuleɪt/",
+    "pos": "v.",
+    "def_cn": "计算，估算",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "They did a cost benefit analysis the cost per part to increase the safety of the Pinto, they calculated at eleven dollars per part",
+        "trans": "他们做了一项成本效益分析，将提高Pinto车安全性的每件成本计算为十一美元",
+        "audio_url": "/assets/audio/clips/ep02_calculate_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "emerge": {
+    "word": "emerge",
+    "phonetic": "/ɪˈmɜːdʒ/",
+    "pos": "v.",
+    "def_cn": "出现，显露",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "and here's, this was the cost benefit analysis that emerged in the trial, eleven dollars per part at 12.5 million cars and trucks",
+        "trans": "这就是审判中浮现出来的成本效益分析：每件十一美元，乘以1250万辆汽车和卡车",
+        "audio_url": "/assets/audio/clips/ep02_emerge_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "total cost": {
+    "word": "total cost",
+    "phonetic": "/ˈtəʊtl kɒst/",
+    "pos": "n.",
+    "def_cn": "总成本",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "came to a total cost of 137 million dollars to improve the safety but then they calculated the benefits of spending all this money on a safer car and they counted 180 deaths",
+        "trans": "总计成本达到1.37亿美元来提升安全性，但随后他们计算了花这些钱在更安全汽车上的收益",
+        "audio_url": "/assets/audio/clips/ep02_total_cost_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "benefit": {
+    "word": "benefit",
+    "phonetic": "/ˈbenɪfɪt/",
+    "pos": "n.",
+    "def_cn": "收益，好处",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "came to a total cost of 137 million dollars to improve the safety but then they calculated the benefits of spending all this money on a safer car and they counted 180 deaths",
+        "trans": "总计成本达到1.37亿美元来提升安全性，但随后他们计算了花这些钱在更安全汽车上的收益",
+        "audio_url": "/assets/audio/clips/ep02_benefit_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "assign": {
+    "word": "assign",
+    "phonetic": "/əˈsaɪn/",
+    "pos": "v.",
+    "def_cn": "分配，赋予（价值）",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "and they assigned a dollar value 200 thousand dollars per death 180 injuries 67 thousand and then the cost to repair the replacement cost for two thousand vehicles that would be destroyed without the",
+        "trans": "他们给每例死亡分配了20万美元的金钱价值，180例受伤6.7万美元，然后是两千辆将被毁车辆的修理或更换成本",
+        "audio_url": "/assets/audio/clips/ep02_assign_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "dollar value": {
+    "word": "dollar value",
+    "phonetic": "/ˈdɒlə ˈvæljuː/",
+    "pos": "n.",
+    "def_cn": "美元价值，金钱价值",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "and they assigned a dollar value 200 thousand dollars per death 180 injuries 67 thousand and then the cost to repair the replacement cost for two thousand vehicles that would be destroyed without the",
+        "trans": "他们给每例死亡分配了20万美元的金钱价值，180例受伤6.7万美元，然后是两千辆将被毁车辆的修理或更换成本",
+        "audio_url": "/assets/audio/clips/ep02_dollar_value_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "replacement cost": {
+    "word": "replacement cost",
+    "phonetic": "/rɪˈpleɪsmənt kɒst/",
+    "pos": "n.",
+    "def_cn": "重置成本，更换成本",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "safety device 700 dollars per vehicle, so the benefits turned out to be only 49.5 million, and so they didn't install the device",
+        "trans": "安全装置每辆车700美元，所以收益结果只有4950万美元，因此他们没有安装该装置",
+        "audio_url": "/assets/audio/clips/ep02_replacement_cost_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "memo": {
+    "word": "memo",
+    "phonetic": "/ˈmeməʊ/",
+    "pos": "n.",
+    "def_cn": "备忘录",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "needless to say when this memo of the Ford Motor Company's cost-benefit analysis came out in the trial it appalled the jurors who awarded a huge settlement",
+        "trans": "不用说，当福特汽车公司这份成本效益分析备忘录在审判中曝光时，它令陪审员们震惊，他们裁定了巨额赔偿",
+        "audio_url": "/assets/audio/clips/ep02_memo_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "appall": {
+    "word": "appall",
+    "phonetic": "/əˈpɔːl/",
+    "pos": "v.",
+    "def_cn": "使震惊，使惊骇",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "needless to say when this memo of the Ford Motor Company's cost-benefit analysis came out in the trial it appalled the jurors who awarded a huge settlement",
+        "trans": "不用说，当福特汽车公司这份成本效益分析备忘录在审判中曝光时，它令陪审员们震惊，他们裁定了巨额赔偿",
+        "audio_url": "/assets/audio/clips/ep02_appall_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "settlement": {
+    "word": "settlement",
+    "phonetic": "/ˈsetlmənt/",
+    "pos": "n.",
+    "def_cn": "和解，赔偿协议",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "needless to say when this memo of the Ford Motor Company's cost-benefit analysis came out in the trial it appalled the jurors who awarded a huge settlement",
+        "trans": "不用说，当福特汽车公司这份成本效益分析备忘录在审判中曝光时，它令陪审员们震惊，他们裁定了巨额赔偿",
+        "audio_url": "/assets/audio/clips/ep02_settlement_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "counter example": {
+    "word": "counter example",
+    "phonetic": "/ˈkaʊntər ɪɡˈzɑːmpl/",
+    "pos": "n.",
+    "def_cn": "反例",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "is this a counter example to the utilitarian idea of calculating because Ford included a measure of the value life.",
+        "trans": "这是对功利主义计算理念的一个反例吗？因为福特纳入了对生命价值的衡量",
+        "audio_url": "/assets/audio/clips/ep02_counter_example_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "defend": {
+    "word": "defend",
+    "phonetic": "/dɪˈfend/",
+    "pos": "v.",
+    "def_cn": "为……辩护，捍卫",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "Now who here wants to defend cost-benefit analysis from this apparent counter example who has a defense?",
+        "trans": "现在在座有谁想从这个明显的反例中为成本效益分析辩护？谁有辩护理由？",
+        "audio_url": "/assets/audio/clips/ep02_defend_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "calculus": {
+    "word": "calculus",
+    "phonetic": "/ˈkælkjələs/",
+    "pos": "n.",
+    "def_cn": "计算体系，微积分",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "or do you think it's completely destroys the whole utilitarian calculus?",
+        "trans": "还是你认为它完全摧毁了整个功利主义计算体系？",
+        "audio_url": "/assets/audio/clips/ep02_calculus_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "take into account": {
+    "word": "take into account",
+    "phonetic": "/teɪk ˈɪntə əˈkaʊnt/",
+    "pos": "phrase",
+    "def_cn": "考虑到，把……纳入考量",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "I think that once again they've made the same mistake the previous case did that they've assigned a dollar value to human life and once again they failed to take into account things like suffering and emotional losses of families, I mean families lost earnings but they also lost a loved one and that",
+        "trans": "我认为他们又一次犯了和之前案例相同的错误，给人类生命赋予了金钱价值，而且他们再次未能考虑到诸如痛苦和家庭情感损失等因素",
+        "audio_url": "/assets/audio/clips/ep02_take_into_account_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "emotional loss": {
+    "word": "emotional loss",
+    "phonetic": "/ɪˈməʊʃənl lɒs/",
+    "pos": "n.",
+    "def_cn": "情感损失",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "I think that once again they've made the same mistake the previous case did that they've assigned a dollar value to human life and once again they failed to take into account things like suffering and emotional losses of families, I mean families lost earnings but they also lost a loved one and that",
+        "trans": "我认为他们又一次犯了和之前案例相同的错误，给人类生命赋予了金钱价值，而且他们再次未能考虑到诸如痛苦和家庭情感损失等因素",
+        "audio_url": "/assets/audio/clips/ep02_emotional_loss_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "accurate": {
+    "word": "accurate",
+    "phonetic": "/ˈækjərət/",
+    "pos": "adj.",
+    "def_cn": "准确的，精确的",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "so if two hundred thousand, Julie, is too too low a figure because it doesn't include the loss of a loved one, and the loss of those years of life, what would be, what do you think would be a more accurate number?",
+        "trans": "那么如果20万，朱莉，是一个太低的数字，因为它没有包括失去亲人的损失和那些生命岁月的损失，你认为什么才是更准确的数字？",
+        "audio_url": "/assets/audio/clips/ep02_accurate_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "apply to": {
+    "word": "apply to",
+    "phonetic": "/əˈplaɪ tuː/",
+    "pos": "phrase",
+    "def_cn": "适用于，应用于",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "I don't believe I could give a number I think that this sort of analysis shouldn't be applied to issues of human life.",
+        "trans": "我不认为我能给出一个数字，我认为这种分析不应该被应用于人类生命的问题上",
+        "audio_url": "/assets/audio/clips/ep02_apply_to_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "monetarily": {
+    "word": "monetarily",
+    "phonetic": "/ˈmʌnɪterəli/",
+    "pos": "adv.",
+    "def_cn": "在金钱方面，以货币形式",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "I think it can't be used monetarily so they didn't just put to low a number, Julie says, they were wrong to try to put any number at all.",
+        "trans": "我认为它不能被用于金钱衡量，所以他们不仅仅是把数字定得太低，朱莉说，他们根本就不该试图给出任何数字",
+        "audio_url": "/assets/audio/clips/ep02_monetarily_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "adjust for inflation": {
+    "word": "adjust for inflation",
+    "phonetic": "/əˈdʒʌst fɔːr ɪnˈfleɪʃn/",
+    "pos": "phrase",
+    "def_cn": "根据通货膨胀进行调整",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "all right let's hear someone who you have to adjust for inflation all right",
+        "trans": "好吧，让我们听听必须根据通货膨胀进行调整的那位",
+        "audio_url": "/assets/audio/clips/ep02_adjust_for_inflation_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "allow for": {
+    "word": "allow for",
+    "phonetic": "/əˈlaʊ fɔːr/",
+    "pos": "phrase",
+    "def_cn": "考虑到，顾及",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "Voicheck Voicheck says we have to allow for inflation we should be more generous then would you be satisfied that this is the right way of thinking about the question?",
+        "trans": "沃伊切克说我们必须考虑到通货膨胀，我们应该更慷慨一些，那么你会满意这是思考这个问题的正确方式吗？",
+        "audio_url": "/assets/audio/clips/ep02_allow_for_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "put a number on": {
+    "word": "put a number on",
+    "phonetic": "/pʊt ə ˈnʌmbər ɒn/",
+    "pos": "phrase",
+    "def_cn": "给……标价，给……定数字",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "on a human life. all right so Voicheck says and here he disagrees with Julie Julie says we can't put a number of human life for the purpose of a cost-benefit analysis, Voicheck says we have to",
+        "trans": "朱莉说我们不能为了成本效益分析的目的给人类生命标价，沃伊切克说我们必须这样做",
+        "audio_url": "/assets/audio/clips/ep02_put_a_number_on_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "profitable": {
+    "word": "profitable",
+    "phonetic": "/ˈprɒfɪtəbl/",
+    "pos": "adj.",
+    "def_cn": "有利可图的，盈利的",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "I think that if ford and other car companies didn't use cost-benefit analysis they'd eventually go out of business because they wouldn't be able to be profitable and millions of people wouldn't be able to use their cars to get to jobs, to put food on the table to feed their children so I think that if cost-benefit analysis isn't employed",
+        "trans": "我认为如果福特和其他汽车公司不使用成本效益分析，它们最终会倒闭，因为它们无法盈利，数百万人将无法使用汽车去上班、养家糊口、喂养孩子",
+        "audio_url": "/assets/audio/clips/ep02_profitable_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "sacrifice": {
+    "word": "sacrifice",
+    "phonetic": "/ˈsækrɪfaɪs/",
+    "pos": "v.",
+    "def_cn": "牺牲",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "the greater good is sacrificed in this case. Alright let me ask, what's your name?",
+        "trans": "在这种情况下，更大的善被牺牲了",
+        "audio_url": "/assets/audio/clips/ep02_sacrifice_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "put some value on": {
+    "word": "put some value on",
+    "phonetic": "/pʊt sʌm ˈvæljuː ɒn/",
+    "pos": "phrase",
+    "def_cn": "给……赋予价值",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "found that if you look at the benefits of the cell phone use and you put some value on the life, it comes out about the same because of the enormous economic benefit of enabling people to take advantage",
+        "trans": "发现如果你看看使用手机的收益，并给生命赋予一定价值，结果大致相当，因为让人们能够利用时间的巨大经济收益",
+        "audio_url": "/assets/audio/clips/ep02_put_some_value_on_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "monetary": {
+    "word": "monetary",
+    "phonetic": "/ˈmʌnɪtri/",
+    "pos": "adj.",
+    "def_cn": "货币的，金钱的",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "of their time, not waste time, be able to make deals and talk to friends and so on while they're driving doesn't that suggest that it's a mistake to try to put monetary figures on questions of human life?",
+        "trans": "这难道不表明试图给人类生命问题赋予金钱数字是一个错误吗？",
+        "audio_url": "/assets/audio/clips/ep02_monetary_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "derive maximum utility": {
+    "word": "derive maximum utility",
+    "phonetic": "/dɪˈraɪv ˈmæksɪməm juːˈtɪləti/",
+    "pos": "phrase",
+    "def_cn": "获得最大效用",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "well I think that if the great majority of people tried to derive maximum utility out of a service like using cell phones and the convenience that cell phones provide that sacrifice is necessary for",
+        "trans": "我认为如果绝大多数人试图从使用手机这样的服务中获得最大效用，以及手机提供的便利，那么这种牺牲对于满足感的产生是必要的",
+        "audio_url": "/assets/audio/clips/ep02_derive_maximum_utility_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "outright": {
+    "word": "outright",
+    "phonetic": "/ˈaʊtraɪt/",
+    "pos": "adj.",
+    "def_cn": "完全的，彻底的",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "satisfaction to occur. You're an outright utilitarian. In, yes okay.",
+        "trans": "你是一个彻头彻尾的功利主义者。是的，好吧",
+        "audio_url": "/assets/audio/clips/ep02_outright_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "arbitrarily": {
+    "word": "arbitrarily",
+    "phonetic": "/ˌɑːbɪˈtrerəli/",
+    "pos": "adv.",
+    "def_cn": "任意地，武断地",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "arbitrarily calculate a figure, I mean right now I think that you want to take it under advisement.",
+        "trans": "我不想武断地计算一个数字，我的意思是现在我认为你想把它留待考虑",
+        "audio_url": "/assets/audio/clips/ep02_arbitrarily_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "take under advisement": {
+    "word": "take under advisement",
+    "phonetic": "/teɪk ˈʌndər ədˈvaɪzmənt/",
+    "pos": "phrase",
+    "def_cn": "留待考虑，慎重斟酌",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "arbitrarily calculate a figure, I mean right now I think that you want to take it under advisement.",
+        "trans": "我不想武断地计算一个数字，我的意思是现在我认为你想把它留待考虑",
+        "audio_url": "/assets/audio/clips/ep02_take_under_advisement_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "hunch": {
+    "word": "hunch",
+    "phonetic": "/hʌntʃ/",
+    "pos": "n.",
+    "def_cn": "直觉，预感",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "yeah I'll take it under advisement. but what roughly speaking would it be? you've got 23 hundred deaths you've got to assign a dollar value to know whether you want to prevent those deaths by banning the use of cell phones in cars so what would you're hunch be?",
+        "trans": "那么你的直觉会是多少？",
+        "audio_url": "/assets/audio/clips/ep02_hunch_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "controversy": {
+    "word": "controversy",
+    "phonetic": "/ˈkɒntrəvɜːsi/",
+    "pos": "n.",
+    "def_cn": "争议，争论",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "a million.?! Alright that's good, thank you So these are some of the controversies that arise these days from cost-benefit analysis especially",
+        "trans": "这些就是如今由成本效益分析引发的一些争议",
+        "audio_url": "/assets/audio/clips/ep02_controversy_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "place a dollar value on": {
+    "word": "place a dollar value on",
+    "phonetic": "/pleɪs ə ˈdɒlə ˈvæljuː ɒn/",
+    "pos": "phrase",
+    "def_cn": "给……标上美元价值，给……定价",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "those that involve placing a dollar value on everything to be added up.",
+        "trans": "尤其是那些涉及给一切事物标上美元价值以便加总的做法",
+        "audio_url": "/assets/audio/clips/ep02_place_a_dollar_value_on_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "objection": {
+    "word": "objection",
+    "phonetic": "/əbˈdʒekʃn/",
+    "pos": "n.",
+    "def_cn": "反对意见，异议",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "well now I want to turn to your objections, to your objections not necessarily to cost benefit analysis specifically, because that's just one version of the utilitarian logic in practice today,",
+        "trans": "现在我想转向你们的反对意见",
+        "audio_url": "/assets/audio/clips/ep02_objection_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "the common good": {
+    "word": "the common good",
+    "phonetic": "/ðə ˈkɒmən ɡʊd/",
+    "pos": "n.",
+    "def_cn": "共同利益，公共善",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "How many disagree with the utilitarian approach to law and to the common good?",
+        "trans": "有多少人不同意功利主义对法律和共同利益的处理方式？",
+        "audio_url": "/assets/audio/clips/ep02_the_common_good_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "minority": {
+    "word": "minority",
+    "phonetic": "/maɪˈnɒrəti/",
+    "pos": "n.",
+    "def_cn": "少数派，少数群体",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "so let's hear from the critics my main issue with it is that I feel like you can't say that just because someone's in the minority what they want and need is less valuable than someone who's in the majority",
+        "trans": "我觉得你不能说仅仅因为某人属于少数派，他们想要和需要的东西就不如多数派的人有价值",
+        "audio_url": "/assets/audio/clips/ep02_minority_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "have a say": {
+    "word": "have a say",
+    "phonetic": "/hæv ə seɪ/",
+    "pos": "phrase",
+    "def_cn": "有发言权，有决定权",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "so I guess I have an issue with the idea that the greatest good for the greatest number is okay because there is still what about people who are in the lesser number, like it's not fair to them they didn't have a say in where they wanted to be.",
+        "trans": "这对他们不公平，他们对自己想处于什么位置没有发言权",
+        "audio_url": "/assets/audio/clips/ep02_have_a_say_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "outweigh": {
+    "word": "outweigh",
+    "phonetic": "/ˌaʊtˈweɪ/",
+    "pos": "v.",
+    "def_cn": "超过，比……更重要",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "she said that the minorities value less, I don't think that's the case because individually the minorities value is just the same as the individual in the majority it's just that the numbers outweigh the minority and I mean at a certain point you have to make a decision",
+        "trans": "只是数量上多数派压过了少数派",
+        "audio_url": "/assets/audio/clips/ep02_outweigh_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "preference": {
+    "word": "preference",
+    "phonetic": "/ˈprefrəns/",
+    "pos": "n.",
+    "def_cn": "偏好，倾向",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "What do you say to Youngda? Youngda says you just have to add up people's preferences and those in the minority do have their preferences weighed.",
+        "trans": "Youngda说，你只需把人们的偏好加总起来，少数派的偏好也被计算在内",
+        "audio_url": "/assets/audio/clips/ep02_preference_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "weigh": {
+    "word": "weigh",
+    "phonetic": "/weɪ/",
+    "pos": "v.",
+    "def_cn": "权衡，被计入考量",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "What do you say to Youngda? Youngda says you just have to add up people's preferences and those in the minority do have their preferences weighed.",
+        "trans": "Youngda说，你只需把人们的偏好加总起来，少数派的偏好也被计算在内",
+        "audio_url": "/assets/audio/clips/ep02_weigh_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "violate": {
+    "word": "violate",
+    "phonetic": "/ˈvaɪəleɪt/",
+    "pos": "v.",
+    "def_cn": "侵犯，违反",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "can you give an example of the kind of thing you're worried about when you say you're worried about utilitarianism violating the concern or respect due the minority?",
+        "trans": "当你担心功利主义侵犯了对少数派应有的关切或尊重时，你能举个例子吗？",
+        "audio_url": "/assets/audio/clips/ep02_violate_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "trade off": {
+    "word": "trade off",
+    "phonetic": "/treɪd ɒf/",
+    "pos": "phrase",
+    "def_cn": "权衡取舍，以……换取",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "so there may be a certain rights that the minority members have that the individual has that shouldn't be traded off for the sake of utility?",
+        "trans": "少数派成员和个人拥有某些权利，不应为了效用而被牺牲掉？",
+        "audio_url": "/assets/audio/clips/ep02_trade_off_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "excruciating": {
+    "word": "excruciating",
+    "phonetic": "/ɪkˈskruːʃieɪtɪŋ/",
+    "pos": "adj.",
+    "def_cn": "极度痛苦的，难以忍受的",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "yes, the Christian thrown to the lion suffers enormous excruciating pain, but look at the collective ecstasy of the Romans.",
+        "trans": "是的，被扔给狮子的基督徒遭受着巨大的、难以忍受的痛苦",
+        "audio_url": "/assets/audio/clips/ep02_excruciating_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "collective": {
+    "word": "collective",
+    "phonetic": "/kəˈlektɪv/",
+    "pos": "adj.",
+    "def_cn": "集体的，共同的",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "yes, the Christian thrown to the lion suffers enormous excruciating pain, but look at the collective ecstasy of the Romans.",
+        "trans": "但看看罗马人集体的狂喜",
+        "audio_url": "/assets/audio/clips/ep02_collective_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "delirious": {
+    "word": "delirious",
+    "phonetic": "/dɪˈlɪriəs/",
+    "pos": "adj.",
+    "def_cn": "极度兴奋的，狂喜的",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "I don't think any policy maker would say the pain of one person, the suffering of one person is much much, in comparison to the happiness gained no but you have to admit that if there were enough Romans delirious with happiness,",
+        "trans": "但你必须承认，如果有足够多的罗马人狂喜不已",
+        "audio_url": "/assets/audio/clips/ep02_delirious_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "adequately": {
+    "word": "adequately",
+    "phonetic": "/ˈædɪkwətli/",
+    "pos": "adv.",
+    "def_cn": "充分地，足够地",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "so we really have here two different objections to utilitarianism one has to do with whether utilitarianism adequately respects individual rights or minority rights and the other has to do",
+        "trans": "一个关乎功利主义是否充分尊重个人权利或少数派权利",
+        "audio_url": "/assets/audio/clips/ep02_adequately_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "aggregate": {
+    "word": "aggregate",
+    "phonetic": "/ˈæɡrɪɡeɪt/",
+    "pos": "v.",
+    "def_cn": "聚合，加总",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "with the whole idea of aggregating utility for preferences or values is it possible to aggregate all values to translate them into dollar terms?",
+        "trans": "另一个则关乎将效用、偏好或价值加总起来的整个理念",
+        "audio_url": "/assets/audio/clips/ep02_aggregate_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "uniform": {
+    "word": "uniform",
+    "phonetic": "/ˈjuːnɪfɔːm/",
+    "pos": "adj.",
+    "def_cn": "统一的，一致的",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "what utilitarianism assumes, that it is possible to translate all goods, all values, all human concerns into a single uniform measure and he did this",
+        "trans": "即有可能将所有物品、所有价值、所有人类关切转化为一种单一统一的衡量标准",
+        "audio_url": "/assets/audio/clips/ep02_uniform_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "conduct a survey": {
+    "word": "conduct a survey",
+    "phonetic": "/kənˈdʌkt ə ˈsɜːveɪ/",
+    "pos": "phrase",
+    "def_cn": "进行一项调查",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "by conducting a survey of the young recipients of relief, this was in the 1930's and he asked them, he gave them a list of unpleasant experiences and he asked them how much would you have to be paid to undergo",
+        "trans": "他通过对救济金年轻领取者进行一项调查来做到这一点",
+        "audio_url": "/assets/audio/clips/ep02_conduct_a_survey_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "keep track": {
+    "word": "keep track",
+    "phonetic": "/kiːp træk/",
+    "pos": "phrase",
+    "def_cn": "记录，追踪",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "the following experiences and he kept track for example how much would you have to be paid to have one upper front tooth pulled out or how much would you have to be paid to have one little one tow cut off?",
+        "trans": "他记录了以下这些经历，比如你得被付多少钱才愿意拔掉一颗上门牙",
+        "audio_url": "/assets/audio/clips/ep02_keep_track_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "stray": {
+    "word": "stray",
+    "phonetic": "/streɪ/",
+    "pos": "adj.",
+    "def_cn": "走失的，流浪的",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "or eat a live earth worm, six inches long or to live the rest of your life on a farm in Kansas or to choke a stray cat to death with your bare hands",
+        "trans": "或者用赤手空拳掐死一只流浪猫",
+        "audio_url": "/assets/audio/clips/ep02_stray_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "suppose": {
+    "word": "suppose",
+    "phonetic": "/səˈpoʊz/",
+    "pos": "v.",
+    "def_cn": "猜想，认为",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "now what do you suppose what do you suppose was the most expensive item on that list Kansas?",
+        "trans": "那么你们猜猜，那份清单上最贵的一项是什么？堪萨斯？",
+        "audio_url": "/assets/audio/clips/ep02_suppose_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "expensive": {
+    "word": "expensive",
+    "phonetic": "/ɪkˈspensɪv/",
+    "pos": "adj.",
+    "def_cn": "昂贵的，代价高的",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "You're right it was Kansas for a Kansas people said they'd have to pay them they have to be paid three hundred thousand dollars what do you think",
+        "trans": "没错，就是堪萨斯，人们说他们得被付三十万美元才愿意",
+        "audio_url": "/assets/audio/clips/ep02_expensive_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "next most": {
+    "word": "next most",
+    "phonetic": "/nekst moʊst/",
+    "pos": "phrase",
+    "def_cn": "次最……的，第二……的",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "what do you think was the next most expensive? not the cat not the tooth not the toe the worm!",
+        "trans": "你们觉得第二贵的是什么？不是猫，不是牙齿，不是脚趾，是虫子！",
+        "audio_url": "/assets/audio/clips/ep02_next_most_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "least expensive": {
+    "word": "least expensive",
+    "phonetic": "/liːst ɪkˈspensɪv/",
+    "pos": "phrase",
+    "def_cn": "最便宜的，代价最低的",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "people said you'd have to pay them a hundred thousand dollars to eat the worm what do you think was the least expensive item?",
+        "trans": "你们觉得最便宜的一项是什么？",
+        "audio_url": "/assets/audio/clips/ep02_least_expensive_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "depression": {
+    "word": "depression",
+    "phonetic": "/dɪˈpreʃn/",
+    "pos": "n.",
+    "def_cn": "（经济）大萧条",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "not the cat the tooth during the depression people were willing to have their tooth pulled for only forty five hundred dollars now here's what Thorndike",
+        "trans": "不是猫，不是牙齿——大萧条时期，人们只愿意为拔牙接受四千五百美元",
+        "audio_url": "/assets/audio/clips/ep02_depression_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "measurable": {
+    "word": "measurable",
+    "phonetic": "/ˈmeʒərəbl/",
+    "pos": "adj.",
+    "def_cn": "可衡量的，可测量的",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "concluded from his study any want or satisfaction which exists, exists in some amount and is therefore measurable the life of a dog or a cat or a chicken consists",
+        "trans": "桑代克从他的研究中得出结论：任何欲望或满足，只要存在，就存在于某种量之中，因此是可衡量的",
+        "audio_url": "/assets/audio/clips/ep02_measurable_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "satisfaction": {
+    "word": "satisfaction",
+    "phonetic": "/ˌsætɪsˈfækʃn/",
+    "pos": "n.",
+    "def_cn": "满足，满意",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "concluded from his study any want or satisfaction which exists, exists in some amount and is therefore measurable the life of a dog or a cat or a chicken consists",
+        "trans": "桑代克从他的研究中得出结论：任何欲望或满足，只要存在，就存在于某种量之中，因此是可衡量的",
+        "audio_url": "/assets/audio/clips/ep02_satisfaction_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "appetite": {
+    "word": "appetite",
+    "phonetic": "/ˈæpɪtaɪt/",
+    "pos": "n.",
+    "def_cn": "欲望，食欲",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "of appetites cravings desires and their gratifications so does the life of human beings though the appetites and desires are more complicated but what about",
+        "trans": "狗、猫或鸡的生活由食欲、渴望、欲望及其满足构成",
+        "audio_url": "/assets/audio/clips/ep02_appetite_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "craving": {
+    "word": "craving",
+    "phonetic": "/ˈkreɪvɪŋ/",
+    "pos": "n.",
+    "def_cn": "渴望，强烈的欲望",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "of appetites cravings desires and their gratifications so does the life of human beings though the appetites and desires are more complicated but what about",
+        "trans": "狗、猫或鸡的生活由食欲、渴望、欲望及其满足构成",
+        "audio_url": "/assets/audio/clips/ep02_craving_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "capture": {
+    "word": "capture",
+    "phonetic": "/ˈkæptʃər/",
+    "pos": "v.",
+    "def_cn": "捕捉，把握，体现",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "Thorndike's study? does it support Bentham's idea that all goods all values can be captured according to a single uniform measure of value",
+        "trans": "桑代克的研究是否支持边沁的观点，即所有善、所有价值都可以按照单一统一的衡量标准来把握？",
+        "audio_url": "/assets/audio/clips/ep02_capture_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "preposterous": {
+    "word": "preposterous",
+    "phonetic": "/prɪˈpɑːstərəs/",
+    "pos": "adj.",
+    "def_cn": "荒谬的，荒唐的",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "or does the preposterous character of those different items on the list suggest the opposite conclusion that may be whether we're talking about life or Kansas or the worm",
+        "trans": "还是说，清单上那些截然不同项目的荒谬性质暗示了相反的结论？",
+        "audio_url": "/assets/audio/clips/ep02_preposterous_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "opposite": {
+    "word": "opposite",
+    "phonetic": "/ˈɑːpəzɪt/",
+    "pos": "adj.",
+    "def_cn": "相反的，对立的",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "or does the preposterous character of those different items on the list suggest the opposite conclusion that may be whether we're talking about life or Kansas or the worm",
+        "trans": "还是说，清单上那些截然不同项目的荒谬性质暗示了相反的结论？",
+        "audio_url": "/assets/audio/clips/ep02_opposite_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "cherish": {
+    "word": "cherish",
+    "phonetic": "/ˈtʃerɪʃ/",
+    "pos": "v.",
+    "def_cn": "珍视，珍爱",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "maybe the things we value and cherish can't be captured according to a single uniform measure of value and if they can't what are the consequences for the utilitarian theory",
+        "trans": "也许我们所珍视和珍爱的事物无法按照单一统一的衡量标准来把握",
+        "audio_url": "/assets/audio/clips/ep02_cherish_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "consequence": {
+    "word": "consequence",
+    "phonetic": "/ˈkɑːnsɪkwens/",
+    "pos": "n.",
+    "def_cn": "后果，结果",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "maybe the things we value and cherish can't be captured according to a single uniform measure of value and if they can't what are the consequences for the utilitarian theory",
+        "trans": "如果它们不能被这样把握，那么对功利主义道德理论来说会有什么后果？",
+        "audio_url": "/assets/audio/clips/ep02_consequence_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "concern oneself with": {
+    "word": "concern oneself with",
+    "phonetic": "/kənˈsɜːrn wʌnˈself wɪð/",
+    "pos": "phrase",
+    "def_cn": "关注，涉及",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "people raised two objections in the discussion we had the first was the objection, the claim that utilitarianism, by concerning itself",
+        "trans": "第一个反对意见是，功利主义由于关注最大多数人的最大幸福，未能充分尊重个人权利",
+        "audio_url": "/assets/audio/clips/ep02_concern_oneself_with_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "apprehend": {
+    "word": "apprehend",
+    "phonetic": "/ˌæprɪˈhend/",
+    "pos": "v.",
+    "def_cn": "逮捕，抓获",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "today we have debates about torture and terrorism suppose a suspected terrorists was apprehended on September tenth",
+        "trans": "假设一名恐怖嫌疑人于9月10日被抓获",
+        "audio_url": "/assets/audio/clips/ep02_apprehend_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "impending": {
+    "word": "impending",
+    "phonetic": "/ɪmˈpendɪŋ/",
+    "pos": "adj.",
+    "def_cn": "即将发生的，迫在眉睫的",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "and you had reason to believe that the suspect had crucial information about an impending terrorist attack that would kill over three thousand people and you couldn't extract the information",
+        "trans": "你有理由相信该嫌疑人掌握关于一场即将发生的恐怖袭击的关键信息，该袭击将导致三千多人死亡",
+        "audio_url": "/assets/audio/clips/ep02_impending_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "translate into": {
+    "word": "translate into",
+    "phonetic": "/trænsˈleɪt ˈɪntuː/",
+    "pos": "phrase",
+    "def_cn": "转化为，翻译成",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "it questioned whether it's possible to translate all values into a single uniform measure of value it asks in other words whether all values are commensurable let me give you one other",
+        "trans": "它追问的是，是否可能将所有价值转化为单一统一的衡量标准",
+        "audio_url": "/assets/audio/clips/ep02_translate_into_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "without loss": {
+    "word": "without loss",
+    "phonetic": "/wɪˈðaʊt lɔːs/",
+    "pos": "phrase",
+    "def_cn": "无损失地，无损地",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "example of an experience, this actually is a true story, it comes from personal experience that raises a question at least about whether all values can be translated without loss into utilitarian terms",
+        "trans": "这至少提出了一个问题：是否所有价值都能无损失地转化为功利主义术语",
+        "audio_url": "/assets/audio/clips/ep02_without_loss_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "graduate student": {
+    "word": "graduate student",
+    "phonetic": "/ˈɡrædʒuət ˈstuːdnt/",
+    "pos": "n.",
+    "def_cn": "研究生",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "some years ago when I was a graduate student I was at Oxford in England and they had men’s and women's colleges they weren't yet mixed and the women's colleges had rules against overnight male guests",
+        "trans": "几年前我还是研究生时，我在英国牛津",
+        "audio_url": "/assets/audio/clips/ep02_graduate_student_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "enforce": {
+    "word": "enforce",
+    "phonetic": "/ɪnˈfɔːrs/",
+    "pos": "v.",
+    "def_cn": "执行，实施",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "by the nineteen seventies these rules were rarely enforced and easily violated, or so I was told, by the late nineteen seventies when I was there, pressure grew to relax these rules and it became",
+        "trans": "到二十世纪七十年代，这些规定很少被执行，也很容易被违反",
+        "audio_url": "/assets/audio/clips/ep02_enforce_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "traditionalist": {
+    "word": "traditionalist",
+    "phonetic": "/trəˈdɪʃənəlɪst/",
+    "pos": "n.",
+    "def_cn": "传统主义者，守旧派",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "the subject of debate among the faculty at St. Anne's College which was one of these all women colleges the older women on the faculty we're traditionalists they were opposed to change",
+        "trans": "圣安妮学院教职员工中的年长女性是传统主义者，她们反对变革",
+        "audio_url": "/assets/audio/clips/ep02_traditionalist_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "conventional": {
+    "word": "conventional",
+    "phonetic": "/kənˈvenʃənl/",
+    "pos": "adj.",
+    "def_cn": "传统的，常规的",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "on conventional moral grounds but times had changed and they were embarrassed to give the true grounds of their objection and so the translated their arguments into utilitarian terms",
+        "trans": "出于传统道德理由，但时代已经变了，她们不好意思说出反对的真实理由",
+        "audio_url": "/assets/audio/clips/ep02_conventional_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "embarrassed": {
+    "word": "embarrassed",
+    "phonetic": "/ɪmˈbærəst/",
+    "pos": "adj.",
+    "def_cn": "尴尬的，难堪的",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "on conventional moral grounds but times had changed and they were embarrassed to give the true grounds of their objection and so the translated their arguments into utilitarian terms",
+        "trans": "出于传统道德理由，但时代已经变了，她们不好意思说出反对的真实理由",
+        "audio_url": "/assets/audio/clips/ep02_embarrassed_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "overnight": {
+    "word": "overnight",
+    "phonetic": "/ˌoʊvərˈnaɪt/",
+    "pos": "adj.",
+    "def_cn": "过夜的，留宿的",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "if men stay overnight, they argued, the costs to the college will increase. how you might wonder well they'll want to take baths, and that will use up hot water they said furthermore they argued",
+        "trans": "他们辩称，如果男性留宿过夜，学院的成本将会增加",
+        "audio_url": "/assets/audio/clips/ep02_overnight_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "use up": {
+    "word": "use up",
+    "phonetic": "/juːz ʌp/",
+    "pos": "phrasal v.",
+    "def_cn": "用完，耗尽",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "if men stay overnight, they argued, the costs to the college will increase. how you might wonder well they'll want to take baths, and that will use up hot water they said furthermore they argued",
+        "trans": "他们说，她们会想洗澡，那会耗尽热水",
+        "audio_url": "/assets/audio/clips/ep02_use_up_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "compromise": {
+    "word": "compromise",
+    "phonetic": "/ˈkɑːmprəmaɪz/",
+    "pos": "n.",
+    "def_cn": "妥协，折中方案",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "we'll have to replace the mattresses more often the reformers met these arguments by adopting the following compromise each woman could have a maximum of three overnight male guest each week",
+        "trans": "改革者们通过采纳以下折中方案来回应这些论点",
+        "audio_url": "/assets/audio/clips/ep02_compromise_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "maximum": {
+    "word": "maximum",
+    "phonetic": "/ˈmæksɪməm/",
+    "pos": "n.",
+    "def_cn": "最大值，最大限度",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "we'll have to replace the mattresses more often the reformers met these arguments by adopting the following compromise each woman could have a maximum of three overnight male guest each week",
+        "trans": "每位女性每周最多可接待三位男性留宿客人",
+        "audio_url": "/assets/audio/clips/ep02_maximum_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "defray": {
+    "word": "defray",
+    "phonetic": "/dɪˈfreɪ/",
+    "pos": "v.",
+    "def_cn": "支付，偿付（费用）",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "they didn't say whether it had to be the same one, or three different provided and this is the compromise provided the guest paid fifty pence to defray the cost to the college",
+        "trans": "前提是客人支付五十便士以偿付学院的成本",
+        "audio_url": "/assets/audio/clips/ep02_defray_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "provided": {
+    "word": "provided",
+    "phonetic": "/prəˈvaɪdɪd/",
+    "pos": "conj.",
+    "def_cn": "条件是，假如",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "they didn't say whether it had to be the same one, or three different provided and this is the compromise provided the guest paid fifty pence to defray the cost to the college",
+        "trans": "前提是客人支付五十便士以偿付学院的成本",
+        "audio_url": "/assets/audio/clips/ep02_provided_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "headline": {
+    "word": "headline",
+    "phonetic": "/ˈhedlaɪn/",
+    "pos": "n.",
+    "def_cn": "头条新闻，标题",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "the next day the national headline in the national newspaper read St. Anne's girls, fifty pence a night another",
+        "trans": "第二天全国报纸的头条新闻写道：圣安妮学院的女生，五十便士一晚",
+        "audio_url": "/assets/audio/clips/ep02_headline_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "illustration": {
+    "word": "illustration",
+    "phonetic": "/ˌɪləˈstreɪʃn/",
+    "pos": "n.",
+    "def_cn": "例证，说明",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "illustration of the difficulty of translating all values in this case a certain idea of virtue into utilitarian terms so that's all to illustrate",
+        "trans": "这是另一个例证，说明将所有价值——在此例中即某种美德观念——转化为功利主义术语的困难",
+        "audio_url": "/assets/audio/clips/ep02_illustration_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "uniformity": {
+    "word": "uniformity",
+    "phonetic": "/ˌjuːnɪˈfɔːrməti/",
+    "pos": "n.",
+    "def_cn": "统一性，一致性",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "the second objection to utilitarianism, at least the part of that objection that questions rather the utilitarianism is right to assume that we can assume the uniformity of",
+        "trans": "对功利主义的第二个反对意见，至少是其中质疑功利主义是否有权假定我们可以假定价值之统一性的那部分",
+        "audio_url": "/assets/audio/clips/ep02_uniformity_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "commensurability": {
+    "word": "commensurability",
+    "phonetic": "/kəˌmenʃərəˈbɪləti/",
+    "pos": "n.",
+    "def_cn": "可通约性，可公度性",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "value, the commensurability of values and translate all moral considerations into dollars or money.",
+        "trans": "价值的可通约性，以及将所有道德考量转化为美元或金钱",
+        "audio_url": "/assets/audio/clips/ep02_commensurability_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "moral consideration": {
+    "word": "moral consideration",
+    "phonetic": "/ˈmɔːrəl kənˌsɪdəˈreɪʃn/",
+    "pos": "n. phrase",
+    "def_cn": "道德考量",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "value, the commensurability of values and translate all moral considerations into dollars or money.",
+        "trans": "价值的可通约性，以及将所有道德考量转化为美元或金钱",
+        "audio_url": "/assets/audio/clips/ep02_moral_consideration_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "assess": {
+    "word": "assess",
+    "phonetic": "/əˈses/",
+    "pos": "v.",
+    "def_cn": "评估，评定",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "without assessing whether they're good preferences or bad preferences shouldn't we distinguish between higher pleasures and lower pleasures.",
+        "trans": "而不去评估它们是好的偏好还是坏的偏好",
+        "audio_url": "/assets/audio/clips/ep02_assess_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "higher pleasures": {
+    "word": "higher pleasures",
+    "phonetic": "/ˈhaɪər ˈpleʒərz/",
+    "pos": "n. phrase",
+    "def_cn": "高级快乐（密尔功利主义核心概念）",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "without assessing whether they're good preferences or bad preferences shouldn't we distinguish between higher pleasures and lower pleasures.",
+        "trans": "我们难道不应该区分高级快乐与低级快乐吗",
+        "audio_url": "/assets/audio/clips/ep02_higher_pleasures_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "qualitative distinction": {
+    "word": "qualitative distinction",
+    "phonetic": "/ˈkwɑːlɪteɪtɪv dɪˈstɪŋkʃn/",
+    "pos": "n. phrase",
+    "def_cn": "质的区分，定性区别",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "Now, part of the appeal of not making any qualitative distinctions about the worth of people's preferences, part of the appeal is that it is non-judgmental and egalitarian the Benthamite utilitarian says",
+        "trans": "不对人们偏好的价值做任何质的区分，其部分吸引力在于它是非评判性的和平等主义的",
+        "audio_url": "/assets/audio/clips/ep02_qualitative_distinction_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "egalitarian": {
+    "word": "egalitarian",
+    "phonetic": "/ɪˌɡælɪˈteriən/",
+    "pos": "adj.",
+    "def_cn": "平等主义的，主张人人平等的",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "Now, part of the appeal of not making any qualitative distinctions about the worth of people's preferences, part of the appeal is that it is non-judgmental and egalitarian the Benthamite utilitarian says",
+        "trans": "不对人们偏好的价值做任何质的区分，其部分吸引力在于它是非评判性的和平等主义的",
+        "audio_url": "/assets/audio/clips/ep02_egalitarian_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "regardless of": {
+    "word": "regardless of",
+    "phonetic": "/rɪˈɡɑːrdləs əv/",
+    "pos": "phrase",
+    "def_cn": "不管，无论",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "everybody's preferences count and they count regardless of what people want regardless of what makes it different people happy. For Bentham, all that matters you'll remember",
+        "trans": "每个人的偏好都算数，无论人们想要什么，无论是什么让不同的人快乐",
+        "audio_url": "/assets/audio/clips/ep02_regardless_of_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "intensity": {
+    "word": "intensity",
+    "phonetic": "/ɪnˈtensəti/",
+    "pos": "n.",
+    "def_cn": "强度，烈度",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "are the intensity and the duration of a pleasure or pain the so-called higher pleasures or nobler virtues are simply those, according to Bentham that produce stronger, longer, pleasure",
+        "trans": "对边沁而言，唯一重要的是快乐的强度和持续时间",
+        "audio_url": "/assets/audio/clips/ep02_intensity_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "duration": {
+    "word": "duration",
+    "phonetic": "/duˈreɪʃn/",
+    "pos": "n.",
+    "def_cn": "持续时间，时长",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "are the intensity and the duration of a pleasure or pain the so-called higher pleasures or nobler virtues are simply those, according to Bentham that produce stronger, longer, pleasure",
+        "trans": "对边沁而言，唯一重要的是快乐的强度和持续时间",
+        "audio_url": "/assets/audio/clips/ep02_duration_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "quantity": {
+    "word": "quantity",
+    "phonetic": "/ˈkwɑːntəti/",
+    "pos": "n.",
+    "def_cn": "数量，量",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "yet a famous phrase to express this idea the quantity of pleasure being equal pushpin is as good as poetry.",
+        "trans": "有一句名言表达了这一观点：在快乐的数量相等的情况下，图钉游戏和诗歌一样好",
+        "audio_url": "/assets/audio/clips/ep02_quantity_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "intuition": {
+    "word": "intuition",
+    "phonetic": "/ˌɪntuˈɪʃn/",
+    "pos": "n.",
+    "def_cn": "直觉，直观",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "What was pushpin? It was some kind of a child's game like to tidily winks pushpin is as good as poetry Bentham said and lying behind this idea I think is the claim the intuition",
+        "trans": "我认为，这一观点背后隐藏的主张或直觉是",
+        "audio_url": "/assets/audio/clips/ep02_intuition_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "presumption": {
+    "word": "presumption",
+    "phonetic": "/prɪˈzʌmpʃn/",
+    "pos": "n.",
+    "def_cn": "冒昧，妄断；假定",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "that it's a presumption to judge whose pleasures are intrinsically higher or worthier or better and there is something attractive in this refusal to judge, after all some people like",
+        "trans": "判断谁的快乐本质上更高级、更有价值或更好，这是一种妄断",
+        "audio_url": "/assets/audio/clips/ep02_presumption_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "intrinsically": {
+    "word": "intrinsically",
+    "phonetic": "/ɪnˈtrɪnzɪkli/",
+    "pos": "adv.",
+    "def_cn": "本质上，内在地",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "that it's a presumption to judge whose pleasures are intrinsically higher or worthier or better and there is something attractive in this refusal to judge, after all some people like",
+        "trans": "判断谁的快乐本质上更高级、更有价值或更好，这是一种妄断",
+        "audio_url": "/assets/audio/clips/ep02_intrinsically_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "dispense with": {
+    "word": "dispense with",
+    "phonetic": "/dɪˈspens wɪð/",
+    "pos": "phrasal v.",
+    "def_cn": "摒弃，免除，无需",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "But, is that right? this refusal to make qualitative distinctions can we altogether dispense with the idea that certain things we take pleasure in are",
+        "trans": "这种拒绝做出质的区分的态度——我们能否完全摒弃某些我们从中获得快乐的事物比另一些更好或更有价值的观念",
+        "audio_url": "/assets/audio/clips/ep02_dispense_with_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "spectacle": {
+    "word": "spectacle",
+    "phonetic": "/ˈspektəkl/",
+    "pos": "n.",
+    "def_cn": "场面，奇观；景象",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "another way of objecting to what's going on there is that the pleasure that the Romans take in this bloody spectacle should that pleasure which is a base, kind of corrupt",
+        "trans": "另一种反对那里所发生之事的方式是：罗马人从这种血腥场面中获得的快乐",
+        "audio_url": "/assets/audio/clips/ep02_spectacle_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "degrading": {
+    "word": "degrading",
+    "phonetic": "/dɪˈɡreɪdɪŋ/",
+    "pos": "adj.",
+    "def_cn": "有辱人格的，堕落的",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "another way of objecting to what's going on there is that the pleasure that the Romans take in this bloody spectacle should that pleasure which is a base, kind of corrupt",
+        "trans": "那种快乐是一种卑劣的、腐败的、有辱人格的快乐",
+        "audio_url": "/assets/audio/clips/ep02_degrading_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "valorize": {
+    "word": "valorize",
+    "phonetic": "/ˈvæləraɪz/",
+    "pos": "v.",
+    "def_cn": "赋予价值，褒扬",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "degrading pleasure, should that even be valorized or weighed in deciding what the the general welfare is?",
+        "trans": "那种快乐是否甚至应该被赋予价值或纳入对普遍福利的考量之中",
+        "audio_url": "/assets/audio/clips/ep02_valorize_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "disciple": {
+    "word": "disciple",
+    "phonetic": "/dɪˈsaɪpl/",
+    "pos": "n.",
+    "def_cn": "门徒，追随者",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "John Stuart Mill was born in 1806 his father James Mill was a disciple of Bentham’s and James Mills set about giving his son John Stuart Mill a model education",
+        "trans": "他的父亲詹姆斯·密尔是边沁的门徒",
+        "audio_url": "/assets/audio/clips/ep02_disciple_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "prodigy": {
+    "word": "prodigy",
+    "phonetic": "/ˈprɑːdədʒi/",
+    "pos": "n.",
+    "def_cn": "神童，天才",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "he was a child prodigy John Stuart Mill the knew Latin, sorry, Greek at the age of three, Latin at eight and at age ten he wrote a history of Roman law.",
+        "trans": "他是个神童，约翰·斯图尔特·密尔三岁就懂希腊语，八岁懂拉丁语",
+        "audio_url": "/assets/audio/clips/ep02_prodigy_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "nervous breakdown": {
+    "word": "nervous breakdown",
+    "phonetic": "/ˈnɜːrvəs ˈbreɪkdaʊn/",
+    "pos": "n. phrase",
+    "def_cn": "精神崩溃",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "At age twenty he had a nervous breakdown this left him in a depression for five years but at age twenty five what helped lift him out of this depression is that he met Harriet Taylor",
+        "trans": "二十岁时他经历了一次精神崩溃，这使他陷入抑郁长达五年",
+        "audio_url": "/assets/audio/clips/ep02_nervous_breakdown_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "humanize": {
+    "word": "humanize",
+    "phonetic": "/ˈhjuːmənaɪz/",
+    "pos": "v.",
+    "def_cn": "使人性化，赋予人道色彩",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "she in no doubt married him, they lived happily ever after and it was under her influence the John Stuart Mill try to humanize utilitarianism what Mill tried to do was to see",
+        "trans": "正是在她的影响下，约翰·斯图尔特·密尔试图使功利主义人性化",
+        "audio_url": "/assets/audio/clips/ep02_humanize_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "utilitarian calculus": {
+    "word": "utilitarian calculus",
+    "phonetic": "/ˌjuːtɪlɪˈteriən ˈkælkjələs/",
+    "pos": "n. phrase",
+    "def_cn": "功利主义计算（边沁的快乐微积分）",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "whether the utilitarian calculus could be enlarged and modified to accommodate humanitarian concerns like the concern to respect individual rights",
+        "trans": "密尔试图做的是看看功利主义计算能否被扩展和修改，以容纳人道主义关切",
+        "audio_url": "/assets/audio/clips/ep02_utilitarian_calculus_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "accommodate": {
+    "word": "accommodate",
+    "phonetic": "/əˈkɑːmədeɪt/",
+    "pos": "v.",
+    "def_cn": "容纳，顾及，适应",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "whether the utilitarian calculus could be enlarged and modified to accommodate humanitarian concerns like the concern to respect individual rights",
+        "trans": "密尔试图做的是看看功利主义计算能否被扩展和修改，以容纳人道主义关切",
+        "audio_url": "/assets/audio/clips/ep02_accommodate_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "humanitarian": {
+    "word": "humanitarian",
+    "phonetic": "/hjuːˌmænɪˈteriən/",
+    "pos": "adj.",
+    "def_cn": "人道主义的，博爱的",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "whether the utilitarian calculus could be enlarged and modified to accommodate humanitarian concerns like the concern to respect individual rights",
+        "trans": "密尔试图做的是看看功利主义计算能否被扩展和修改，以容纳人道主义关切",
+        "audio_url": "/assets/audio/clips/ep02_humanitarian_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "address": {
+    "word": "address",
+    "phonetic": "/əˈdres/",
+    "pos": "v.",
+    "def_cn": "处理，应对，探讨",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "and also to address the distinction between higher and lower pleasures.",
+        "trans": "并且处理高级快乐与低级快乐之间的区分",
+        "audio_url": "/assets/audio/clips/ep02_address_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "liberty": {
+    "word": "liberty",
+    "phonetic": "/ˈlɪbərti/",
+    "pos": "n.",
+    "def_cn": "自由，自主",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "In 1859 Mill wrote a famous book on liberty the main point of which was the importance of defending individual rights and minority rights and in 1861 toward the end of his life he wrote the book we read is part of this course",
+        "trans": "1859年密尔写了一本关于自由的著名著作，其要点是捍卫个人权利和少数人权利的重要性",
+        "audio_url": "/assets/audio/clips/ep02_liberty_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "minority rights": {
+    "word": "minority rights",
+    "phonetic": "/maɪˈnɔːrəti raɪts/",
+    "pos": "n. phrase",
+    "def_cn": "少数人权利",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "In 1859 Mill wrote a famous book on liberty the main point of which was the importance of defending individual rights and minority rights and in 1861 toward the end of his life he wrote the book we read is part of this course",
+        "trans": "1859年密尔写了一本关于自由的著名著作，其要点是捍卫个人权利和少数人权利的重要性",
+        "audio_url": "/assets/audio/clips/ep02_minority_rights_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "premise": {
+    "word": "premise",
+    "phonetic": "/ˈpremɪs/",
+    "pos": "n.",
+    "def_cn": "前提；假定",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "Utilitarianism. It makes it clear that utility is the only standard of morality in his view so he's not challenging Bentham's premise, he's affirming it.",
+        "trans": "功利主义。它清楚地表明，在他看来，效用是道德的唯一标准，因此他并非在挑战边沁的前提，而是在肯定它。",
+        "audio_url": "/assets/audio/clips/ep02_premise_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "affirm": {
+    "word": "affirm",
+    "phonetic": "/əˈfɜːrm/",
+    "pos": "v.",
+    "def_cn": "肯定；断言；证实",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "Utilitarianism. It makes it clear that utility is the only standard of morality in his view so he's not challenging Bentham's premise, he's affirming it.",
+        "trans": "功利主义。它清楚地表明，在他看来，效用是道德的唯一标准，因此他并非在挑战边沁的前提，而是在肯定它。",
+        "audio_url": "/assets/audio/clips/ep02_affirm_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "explicitly": {
+    "word": "explicitly",
+    "phonetic": "/ɪkˈsplɪsɪtli/",
+    "pos": "adv.",
+    "def_cn": "明确地；直截了当地",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "he says very explicitly the sole evidence, it is possible to produce that anything is desirable is that people actually do desire it.",
+        "trans": "他非常明确地说，唯一能够提供的证据，证明某事物是可欲的，就是人们实际上确实欲求它。",
+        "audio_url": "/assets/audio/clips/ep02_explicitly_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "desirable": {
+    "word": "desirable",
+    "phonetic": "/dɪˈzaɪərəbl/",
+    "pos": "adj.",
+    "def_cn": "值得拥有的；可取的；可欲的",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "he says very explicitly the sole evidence, it is possible to produce that anything is desirable is that people actually do desire it.",
+        "trans": "他非常明确地说，唯一能够提供的证据，证明某事物是可欲的，就是人们实际上确实欲求它。",
+        "audio_url": "/assets/audio/clips/ep02_desirable_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "de facto": {
+    "word": "de facto",
+    "phonetic": "/ˌdeɪ ˈfæktoʊ/",
+    "pos": "adj.",
+    "def_cn": "实际上的；事实上的",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "so he stays with the idea that our de facto actual empirical desires are the only basis for moral judgment.",
+        "trans": "因此他坚持这样一个观点：我们事实上实际的、经验性的欲望，是道德判断的唯一基础。",
+        "audio_url": "/assets/audio/clips/ep02_de_facto_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "empirical": {
+    "word": "empirical",
+    "phonetic": "/ɪmˈpɪrɪkl/",
+    "pos": "adj.",
+    "def_cn": "经验主义的；以经验为依据的",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "so he stays with the idea that our de facto actual empirical desires are the only basis for moral judgment.",
+        "trans": "因此他坚持这样一个观点：我们事实上实际的、经验性的欲望，是道德判断的唯一基础。",
+        "audio_url": "/assets/audio/clips/ep02_empirical_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "distinguish": {
+    "word": "distinguish",
+    "phonetic": "/dɪˈstɪŋɡwɪʃ/",
+    "pos": "v.",
+    "def_cn": "区分；辨别；使有别于",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "but then page eight also in chapter two, he argues that it is possible for a utilitarian to distinguish higher from lower pleasures.",
+        "trans": "但接着在第二章第八页，他论证说，功利主义者有可能区分高级快乐与低级快乐。",
+        "audio_url": "/assets/audio/clips/ep02_distinguish_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "qualitatively": {
+    "word": "qualitatively",
+    "phonetic": "/ˈkwɑːlɪteɪtɪvli/",
+    "pos": "adv.",
+    "def_cn": "定性地；从质量上",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "How can a utilitarian distinguish qualitatively higher pleasures from lesser ones, base ones, unworthy ones?",
+        "trans": "功利主义者如何能从质上区分高级快乐与较低级的、卑下的、不值得的快乐呢？",
+        "audio_url": "/assets/audio/clips/ep02_qualitatively_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "base": {
+    "word": "base",
+    "phonetic": "/beɪs/",
+    "pos": "adj.",
+    "def_cn": "卑下的；低劣的；不道德的",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "How can a utilitarian distinguish qualitatively higher pleasures from lesser ones, base ones, unworthy ones?",
+        "trans": "功利主义者如何能从质上区分高级快乐与较低级的、卑下的、不值得的快乐呢？",
+        "audio_url": "/assets/audio/clips/ep02_base_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "unworthy": {
+    "word": "unworthy",
+    "phonetic": "/ʌnˈwɜːrði/",
+    "pos": "adj.",
+    "def_cn": "不值得的；不配的；卑劣的",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "How can a utilitarian distinguish qualitatively higher pleasures from lesser ones, base ones, unworthy ones?",
+        "trans": "功利主义者如何能从质上区分高级快乐与较低级的、卑下的、不值得的快乐呢？",
+        "audio_url": "/assets/audio/clips/ep02_unworthy_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "decided": {
+    "word": "decided",
+    "phonetic": "/dɪˈsaɪdɪd/",
+    "pos": "adj.",
+    "def_cn": "明显的；明确的；坚决的",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "of both give a decided preference, irrespective of any feeling of moral obligation to prefer it, in other words no outside, no independent standard, then that is the more desirable pleasure.",
+        "trans": "在两种快乐中，如果有一种是几乎所有体验过两者的人都给予明确偏好的，且不论是否有任何道德义务感去偏好它——换言之，没有外在的、独立的标准——那么它就是更可欲的快乐。",
+        "audio_url": "/assets/audio/clips/ep02_decided_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "irrespective of": {
+    "word": "irrespective of",
+    "phonetic": "/ˌɪrɪˈspektɪv əv/",
+    "pos": "phrase",
+    "def_cn": "不论；不顾；与……无关",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "of both give a decided preference, irrespective of any feeling of moral obligation to prefer it, in other words no outside, no independent standard, then that is the more desirable pleasure.",
+        "trans": "在两种快乐中，如果有一种是几乎所有体验过两者的人都给予明确偏好的，且不论是否有任何道德义务感去偏好它——换言之，没有外在的、独立的标准——那么它就是更可欲的快乐。",
+        "audio_url": "/assets/audio/clips/ep02_irrespective_of_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "moral obligation": {
+    "word": "moral obligation",
+    "phonetic": "/ˈmɔːrəl ˌɑːblɪˈɡeɪʃn/",
+    "pos": "n.",
+    "def_cn": "道德义务；道义责任",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "of both give a decided preference, irrespective of any feeling of moral obligation to prefer it, in other words no outside, no independent standard, then that is the more desirable pleasure.",
+        "trans": "在两种快乐中，如果有一种是几乎所有体验过两者的人都给予明确偏好的，且不论是否有任何道德义务感去偏好它——换言之，没有外在的、独立的标准——那么它就是更可欲的快乐。",
+        "audio_url": "/assets/audio/clips/ep02_moral_obligation_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "succeed": {
+    "word": "succeed",
+    "phonetic": "/səkˈsiːd/",
+    "pos": "v.",
+    "def_cn": "成功；奏效；达到目的",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "what do people think about that argument. does that does it succeeded? how many think that it does succeed?",
+        "trans": "大家对这个论证怎么看？它成功了吗？有多少人认为它确实成功了？",
+        "audio_url": "/assets/audio/clips/ep02_succeed_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "claim": {
+    "word": "claim",
+    "phonetic": "/kleɪm/",
+    "pos": "n.",
+    "def_cn": "主张；断言；声称",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "I want to hear your reasons. but before we give the reasons let's do an experiment of Mills' claim.",
+        "trans": "我想听听你们的理由。但在给出理由之前，让我们对密尔的主张做一个实验。",
+        "audio_url": "/assets/audio/clips/ep02_claim_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "excerpt": {
+    "word": "excerpt",
+    "phonetic": "/ˈeksɜːrpt/",
+    "pos": "n.",
+    "def_cn": "摘录；选段；节选",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "In order to do this experiment we're going to look that three short excerpts of popular entertainment the first one is a Hamlet soliloquy",
+        "trans": "为了做这个实验，我们要看三段流行娱乐的短片，第一段是《哈姆雷特》的一段独白。",
+        "audio_url": "/assets/audio/clips/ep02_excerpt_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "infinite": {
+    "word": "infinite",
+    "phonetic": "/ˈɪnfɪnət/",
+    "pos": "adj.",
+    "def_cn": "无限的；无穷的；极大的",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "'what a piece of work is a man how noble in reason how infinite in faculties in form and moving, how express and admirable in action how like an angel. In apprehension, how like a god",
+        "trans": "人类是一件多么了不起的杰作！理性多么高贵！才能多么无限！形体和举止多么 express 和令人钦佩！行动多么像天使！领悟多么像神！",
+        "audio_url": "/assets/audio/clips/ep02_infinite_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "faculty": {
+    "word": "faculty",
+    "phonetic": "/ˈfæklti/",
+    "pos": "n.",
+    "def_cn": "才能；官能；能力",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "'what a piece of work is a man how noble in reason how infinite in faculties in form and moving, how express and admirable in action how like an angel. In apprehension, how like a god",
+        "trans": "人类是一件多么了不起的杰作！理性多么高贵！才能多么无限！形体和举止多么 express 和令人钦佩！行动多么像天使！领悟多么像神！",
+        "audio_url": "/assets/audio/clips/ep02_faculty_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "paragon": {
+    "word": "paragon",
+    "phonetic": "/ˈpærəɡɑːn/",
+    "pos": "n.",
+    "def_cn": "典范；完人；完美的榜样",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "the beauty of the world the paragon of animals and yet, to me what is this quintessence of dust?",
+        "trans": "宇宙的精华！万物的灵长！可是在我看来，这泥土塑造的精华又算得了什么？",
+        "audio_url": "/assets/audio/clips/ep02_paragon_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "quintessence": {
+    "word": "quintessence",
+    "phonetic": "/kwɪnˈtesns/",
+    "pos": "n.",
+    "def_cn": "精华；典范；第五元素",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "the beauty of the world the paragon of animals and yet, to me what is this quintessence of dust?",
+        "trans": "宇宙的精华！万物的灵长！可是在我看来，这泥土塑造的精华又算得了什么？",
+        "audio_url": "/assets/audio/clips/ep02_quintessence_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "contestant": {
+    "word": "contestant",
+    "phonetic": "/kənˈtestənt/",
+    "pos": "n.",
+    "def_cn": "参赛者；竞争者",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "Imagine a world where your greatest fears become reality each show, six contestants from around the country battle each other in three extreme stunts. these stunts are designed to challenge these contestants both physically and mentally",
+        "trans": "想象一个你的最大恐惧每期都变成现实的世界，来自全国各地的六名参赛者在三个极限特技中相互较量。这些特技旨在从身体和心理两方面挑战这些参赛者。",
+        "audio_url": "/assets/audio/clips/ep02_contestant_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "stunt": {
+    "word": "stunt",
+    "phonetic": "/stʌnt/",
+    "pos": "n.",
+    "def_cn": "特技；惊险动作；噱头",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "Imagine a world where your greatest fears become reality each show, six contestants from around the country battle each other in three extreme stunts. these stunts are designed to challenge these contestants both physically and mentally",
+        "trans": "想象一个你的最大恐惧每期都变成现实的世界，来自全国各地的六名参赛者在三个极限特技中相互较量。这些特技旨在从身体和心理两方面挑战这些参赛者。",
+        "audio_url": "/assets/audio/clips/ep02_stunt_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "overwhelmingly": {
+    "word": "overwhelmingly",
+    "phonetic": "/ˌoʊvərˈwelmɪŋli/",
+    "pos": "adv.",
+    "def_cn": "压倒性地；绝大多数地",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "people overwhelmingly like the Simpsons better than Shakespeare. alright, now let's take the other part of the poll which is the highest",
+        "trans": "人们压倒性地更喜欢《辛普森一家》而不是莎士比亚。好，现在让我们看民调的另一个部分，也就是最高的……",
+        "audio_url": "/assets/audio/clips/ep02_overwhelmingly_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "noble": {
+    "word": "noble",
+    "phonetic": "/ˈnoʊbl/",
+    "pos": "adj.",
+    "def_cn": "高尚的，崇高的",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "alright go ahead you can say it. I found that one the most entertaining I know but which do you think was the worthiest, the noblest experience, I know you find it the most anything if something is good just because it is pleasurable what is the matter if you have some kind of",
+        "trans": "但你们认为哪一种是最有价值、最高尚的体验？",
+        "audio_url": "/assets/audio/clips/ep02_noble_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "pleasurable": {
+    "word": "pleasurable",
+    "phonetic": "/ˈpleʒərəbl/",
+    "pos": "adj.",
+    "def_cn": "令人愉快的，快乐的",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "alright go ahead you can say it. I found that one the most entertaining I know but which do you think was the worthiest, the noblest experience, I know you find it the most anything if something is good just because it is pleasurable what is the matter if you have some kind of",
+        "trans": "如果某件事仅仅因为令人愉快就是好的，那又有什么关系呢？",
+        "audio_url": "/assets/audio/clips/ep02_pleasurable_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "benthamite": {
+    "word": "Benthamite",
+    "phonetic": "/ˈbenθəmaɪt/",
+    "pos": "n.",
+    "def_cn": "边沁主义者，功利主义追随者",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "abstract idea of whether it is good by someone else's sense or not. Alright so you come down on the straight Benthamite's side whose to judge and why should we judge apart from just registering and aggregating de facto preferences, alright fair enough.",
+        "trans": "所以你站到了纯粹的边沁主义那一边。",
+        "audio_url": "/assets/audio/clips/ep02_benthamite_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "higher experience": {
+    "word": "higher experience",
+    "phonetic": "/ˈhaɪər ɪkˈspɪriəns/",
+    "pos": "n.",
+    "def_cn": "高级体验，更高层次的体验（密尔功利主义概念）",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "what's your name? Nate? okay fair enough Alright so how many think that the Simpson's is actually apart from liking is actually the higher experience higher than Shakespeare.",
+        "trans": "有多少人认为《辛普森一家》实际上——撇开喜欢不谈——实际上是比莎士比亚更高层次的体验？",
+        "audio_url": "/assets/audio/clips/ep02_higher_experience_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "entertaining": {
+    "word": "entertaining",
+    "phonetic": "/ˌentərˈteɪnɪŋ/",
+    "pos": "adj.",
+    "def_cn": "娱乐性的，有趣的",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "but who preferred watching the Simpsons Like I guess just sitting and watching the Simpsons, it's entertaining because the make jokes, they make us laugh but someone has to tell us that Shakespeare was this great writer we had to be taught how to read him, how to",
+        "trans": "它很有娱乐性，因为他们讲笑话，让我们发笑。",
+        "audio_url": "/assets/audio/clips/ep02_entertaining_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "analyze": {
+    "word": "analyze",
+    "phonetic": "/ˈænəlaɪz/",
+    "pos": "v.",
+    "def_cn": "分析，解析",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "understand him, we had to be taught how to take in Rembrandt, how to analyze a painting. well how do, what's your name? Aneesha.",
+        "trans": "我们得被教会如何欣赏伦勃朗，如何分析一幅画。",
+        "audio_url": "/assets/audio/clips/ep02_analyze_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "blind faith": {
+    "word": "blind faith",
+    "phonetic": "/blaɪnd feɪθ/",
+    "pos": "n.",
+    "def_cn": "盲目信仰，不加质疑的信任",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "Aneesha, when you say someone told you that Shakespeare's better are you accepting it on blind faith you voted that Shakespeare's higher only because the culture tells you that our teachers tell you that or do you",
+        "trans": "你说有人告诉你莎士比亚更好，你是盲目接受的吗？",
+        "audio_url": "/assets/audio/clips/ep02_blind_faith_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "cultural convention": {
+    "word": "cultural convention",
+    "phonetic": "/ˈkʌltʃərəl kənˈvenʃn/",
+    "pos": "n.",
+    "def_cn": "文化习俗，文化惯例",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "to be, you're suggesting a kind of cultural convention and pressure. We're told what books, what works of art are great. who else?",
+        "trans": "你是在暗示一种文化惯例和压力。",
+        "audio_url": "/assets/audio/clips/ep02_cultural_convention_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "the latter": {
+    "word": "the latter",
+    "phonetic": "/ðə ˈlætər/",
+    "pos": "pron.",
+    "def_cn": "后者（指前文提到的两个事物中的第二个）",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "although I enjoyed watching the Simpsons more in this particular moment in Justice, if I were to spend the rest of my life considering the three different video clips shown I would not want to spend that remainder of my life considering",
+        "trans": "我不想把余生用来思考后两个片段。",
+        "audio_url": "/assets/audio/clips/ep02_the_latter_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "derive pleasure from": {
+    "word": "derive pleasure from",
+    "phonetic": "/dɪˈraɪv ˈpleʒər frəm/",
+    "pos": "phrase",
+    "def_cn": "从……中获得快乐",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "the latter two clips. I think I would derive more pleasure from being able to branch out in my own mind sort of considering more deep pleasures, more deep thoughts.",
+        "trans": "我想我能从在脑海中拓展、思考更深层的快乐和更深层的思想中获得更多乐趣。",
+        "audio_url": "/assets/audio/clips/ep02_derive_pleasure_from_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "branch out": {
+    "word": "branch out",
+    "phonetic": "/bræntʃ aʊt/",
+    "pos": "phrase",
+    "def_cn": "拓展，扩展（兴趣、活动范围等）",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "the latter two clips. I think I would derive more pleasure from being able to branch out in my own mind sort of considering more deep pleasures, more deep thoughts.",
+        "trans": "我想我能从在脑海中拓展、思考更深层的快乐和更深层的思想中获得更多乐趣。",
+        "audio_url": "/assets/audio/clips/ep02_branch_out_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "test": {
+    "word": "test",
+    "phonetic": "/test/",
+    "pos": "n.",
+    "def_cn": "检验标准，判断准则",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "you would prefer Shakespeare what do you conclude from that about John Stuart Mill's test but the test of a higher pleasure is whether",
+        "trans": "关于约翰·斯图尔特·密尔的标准，你能得出什么结论？",
+        "audio_url": "/assets/audio/clips/ep02_test_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "higher pleasure": {
+    "word": "higher pleasure",
+    "phonetic": "/ˈhaɪər ˈpleʒər/",
+    "pos": "n.",
+    "def_cn": "高级快乐（密尔功利主义中区别于低级快乐的精神性快乐）",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "you would prefer Shakespeare what do you conclude from that about John Stuart Mill's test but the test of a higher pleasure is whether",
+        "trans": "高级快乐的检验标准是：体验过两者的人是否更偏好它。",
+        "audio_url": "/assets/audio/clips/ep02_higher_pleasure_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "stimulate": {
+    "word": "stimulate",
+    "phonetic": "/ˈstɪmjuleɪt/",
+    "pos": "v.",
+    "def_cn": "刺激，激发",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "in biology in neuro biology last year we were told of a rat who was tested a particular center in the brain where the rat was able to stimulate its brain and cause itself intense pleasure repeatedly the rat did not eat or drink until it died",
+        "trans": "去年在神经生物学课上，我们听说有一只老鼠被测试了大脑中某个特定区域，老鼠能够刺激自己的大脑并反复产生强烈的快感。",
+        "audio_url": "/assets/audio/clips/ep02_stimulate_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "intense pleasure": {
+    "word": "intense pleasure",
+    "phonetic": "/ɪnˈtens ˈpleʒər/",
+    "pos": "n.",
+    "def_cn": "强烈的快感，极度快乐",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "in biology in neuro biology last year we were told of a rat who was tested a particular center in the brain where the rat was able to stimulate its brain and cause itself intense pleasure repeatedly the rat did not eat or drink until it died",
+        "trans": "老鼠能够刺激自己的大脑并反复产生强烈的快感。",
+        "audio_url": "/assets/audio/clips/ep02_intense_pleasure_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "lower pleasure": {
+    "word": "lower pleasure",
+    "phonetic": "/ˈloʊər ˈpleʒər/",
+    "pos": "n.",
+    "def_cn": "低级快乐（密尔功利主义中区别于高级快乐的感官性快乐）",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "so the rat was clearly experiencing intense pleasure now if you asked me right now if I'd rather experience intense pleasure or have a full lifetime of higher pleasure, I would consider intense pleasure to be lower pleasure, right",
+        "trans": "我会认为强烈的快感是低级快乐，对吧？",
+        "audio_url": "/assets/audio/clips/ep02_lower_pleasure_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "momentary": {
+    "word": "momentary",
+    "phonetic": "/ˈmoʊmənteri/",
+    "pos": "adj.",
+    "def_cn": "短暂的，瞬间的",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "that they would rather be a human with higher pleasure that rat with intense pleasure for a momentary period of time so now in answer to your question, right, I think this proves that, or I won't say proves",
+        "trans": "他们宁愿做一个拥有高级快乐的人，也不愿做一只在短暂时间内拥有强烈快感的老鼠。",
+        "audio_url": "/assets/audio/clips/ep02_momentary_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "disprove": {
+    "word": "disprove",
+    "phonetic": "/dɪsˈpruːv/",
+    "pos": "v.",
+    "def_cn": "证明……不成立，反驳",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "I do. all right is there anyone who disagrees with Joe who thinks that our experiment disproves Mills' test shows that that's not an adequate way that you can't distinguish higher pleasures within the utilitarian",
+        "trans": "有没有人不同意乔的观点，认为我们的实验反驳了密尔的检验标准？",
+        "audio_url": "/assets/audio/clips/ep02_disprove_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "adequate": {
+    "word": "adequate",
+    "phonetic": "/ˈædɪkwət/",
+    "pos": "adj.",
+    "def_cn": "充分的，足够的，适当的",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "I do. all right is there anyone who disagrees with Joe who thinks that our experiment disproves Mills' test shows that that's not an adequate way that you can't distinguish higher pleasures within the utilitarian",
+        "trans": "表明那不是一种充分的方式，你无法在功利主义框架内区分高级快乐。",
+        "audio_url": "/assets/audio/clips/ep02_adequate_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "utilitarian framework": {
+    "word": "utilitarian framework",
+    "phonetic": "/ˌjuːtɪlɪˈteriən ˈfreɪmwɜːrk/",
+    "pos": "n.",
+    "def_cn": "功利主义框架（以最大幸福原则为核心的理论体系）",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "framework. If whatever is good is truly just whatever people prefer it's truly relative and there's",
+        "trans": "你无法在功利主义框架内区分高级快乐。",
+        "audio_url": "/assets/audio/clips/ep02_utilitarian_framework_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "objective": {
+    "word": "objective",
+    "phonetic": "/əbˈdʒektɪv/",
+    "pos": "adj.",
+    "def_cn": "客观的，不带主观偏见的",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "no objective definition then there will be some society where people prefer Simpsons more anyone can appreciate the Simpsons, but I think it does take education to appreciate Shakespeare Alright, you're saying it takes education to appreciate higher",
+        "trans": "如果一切好的东西真的只是人们所偏好的，那它真的是相对的，没有客观的定义。",
+        "audio_url": "/assets/audio/clips/ep02_objective_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "cultivation": {
+    "word": "cultivation",
+    "phonetic": "/ˌkʌltɪˈveɪʃn/",
+    "pos": "n.",
+    "def_cn": "培养，修养，陶冶",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "true thing Mill's point is that the higher pleasures do require cultivation and appreciation and education he doesn't dispute that but once having been cultivated",
+        "trans": "密尔的观点是，高级快乐确实需要培养、鉴赏和教育。",
+        "audio_url": "/assets/audio/clips/ep02_cultivation_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "couch potato": {
+    "word": "couch potato",
+    "phonetic": "/kaʊtʃ pəˈteɪtoʊ/",
+    "pos": "n.",
+    "def_cn": "沙发土豆（指整天坐着看电视、懒散不运动的人）",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "so here you have an attempt to distinguish higher from lower pleasures so going to an art museum or being a couch potato, swilling beer watching television at home",
+        "trans": "所以这里有一种区分高级快乐和低级快乐的尝试——去美术馆还是当个沙发土豆，在家里灌着啤酒看电视。",
+        "audio_url": "/assets/audio/clips/ep02_couch_potato_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "succumb to": {
+    "word": "succumb to",
+    "phonetic": "/səˈkʌm tuː/",
+    "pos": "phrase",
+    "def_cn": "屈服于，抵挡不住（诱惑等）",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "sometimes Mill agrees we might succumb to the temptation to do the latter, to be couch potatoes, but even when we do that out of indolence",
+        "trans": "密尔同意，有时我们可能会屈服于诱惑去做后者，当沙发土豆。",
+        "audio_url": "/assets/audio/clips/ep02_succumb_to_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "indolence": {
+    "word": "indolence",
+    "phonetic": "/ˈɪndələns/",
+    "pos": "n.",
+    "def_cn": "懒惰，怠惰",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "sometimes Mill agrees we might succumb to the temptation to do the latter, to be couch potatoes, but even when we do that out of indolence",
+        "trans": "但即使我们出于懒惰和怠惰那样做了，我们知道在博物馆凝视伦勃朗所获得的快乐实际上是更高的。",
+        "audio_url": "/assets/audio/clips/ep02_indolence_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "sloth": {
+    "word": "sloth",
+    "phonetic": "/sloʊθ/",
+    "pos": "n.",
+    "def_cn": "懒散，怠惰（七宗罪之一）",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "and sloth, we know that the pleasure we get gazing at Rembrandts in the museum is actually higher, because we've experienced both.",
+        "trans": "但即使我们出于懒惰和怠惰那样做了，我们知道在博物馆凝视伦勃朗所获得的快乐实际上是更高的。",
+        "audio_url": "/assets/audio/clips/ep02_sloth_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "gaze": {
+    "word": "gaze",
+    "phonetic": "/ɡeɪz/",
+    "pos": "v.",
+    "def_cn": "凝视，注视",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "And is a higher pressure gazing at Rembrandts because of engages our higher human faculties what about Mill's attempt to reply to the objection about individual rights?",
+        "trans": "而且是一种更高的愉悦在凝视伦勃朗的画作，因为它调动了我们更高层次的人类官能。那么密尔是如何尝试回应关于个人权利的异议的呢？",
+        "audio_url": "/assets/audio/clips/ep02_gaze_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "dispute": {
+    "word": "dispute",
+    "phonetic": "/dɪˈspjuːt/",
+    "pos": "v.",
+    "def_cn": "对……提出质疑，争论",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "In a way he uses the same kind of argument and this comes out in chapter five he says while I dispute the pretensions of any theory which sets up an imaginary standard",
+        "trans": "在某种程度上他使用了同一种论证方式，这在第五章中有所体现。他说，我虽然质疑任何理论所提出的、建立在非功利基础上的虚构正义标准的种种主张。",
+        "audio_url": "/assets/audio/clips/ep02_dispute_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "pretension": {
+    "word": "pretension",
+    "phonetic": "/prɪˈtenʃn/",
+    "pos": "n.",
+    "def_cn": "主张，自命；虚饰的要求",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "In a way he uses the same kind of argument and this comes out in chapter five he says while I dispute the pretensions of any theory which sets up an imaginary standard",
+        "trans": "在某种程度上他使用了同一种论证方式，这在第五章中有所体现。他说，我虽然质疑任何理论所提出的、建立在非功利基础上的虚构正义标准的种种主张。",
+        "audio_url": "/assets/audio/clips/ep02_pretension_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "ground on": {
+    "word": "ground on",
+    "phonetic": "/ɡraʊnd ɒn/",
+    "pos": "phrase",
+    "def_cn": "以……为基础，建立在……之上",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "of justice not grounded on utility, but still he considers justice grounded on utility to be what he calls the chief part",
+        "trans": "但他仍然认为建立在功利基础上的正义是他所称的……",
+        "audio_url": "/assets/audio/clips/ep02_ground_on_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "incomparable": {
+    "word": "incomparable",
+    "phonetic": "/ɪnˈkɒmprəbl/",
+    "pos": "adj.",
+    "def_cn": "无可比拟的，无与伦比的",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "and incomparably the most sacred and binding part of all morality.",
+        "trans": "而且是所有道德中无可比拟地最为神圣、最具约束力的部分。",
+        "audio_url": "/assets/audio/clips/ep02_incomparable_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "sacred": {
+    "word": "sacred",
+    "phonetic": "/ˈseɪkrɪd/",
+    "pos": "adj.",
+    "def_cn": "神圣的，不可侵犯的",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "and incomparably the most sacred and binding part of all morality.",
+        "trans": "而且是所有道德中无可比拟地最为神圣、最具约束力的部分。",
+        "audio_url": "/assets/audio/clips/ep02_sacred_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "binding": {
+    "word": "binding",
+    "phonetic": "/ˈbaɪndɪŋ/",
+    "pos": "adj.",
+    "def_cn": "有约束力的，必须遵守的",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "and incomparably the most sacred and binding part of all morality.",
+        "trans": "而且是所有道德中无可比拟地最为神圣、最具约束力的部分。",
+        "audio_url": "/assets/audio/clips/ep02_binding_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "privileged": {
+    "word": "privileged",
+    "phonetic": "/ˈprɪvəlɪdʒd/",
+    "pos": "adj.",
+    "def_cn": "享有特权的，被优先对待的",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "so justice is higher individual rights are privileged but not for reasons that depart from utilitarian assumptions.",
+        "trans": "所以正义是更高的，个人权利是被优先保障的，但其理由并未偏离功利主义的假设。",
+        "audio_url": "/assets/audio/clips/ep02_privileged_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "depart from": {
+    "word": "depart from",
+    "phonetic": "/dɪˈpɑːt frəm/",
+    "pos": "phrase",
+    "def_cn": "偏离，背离",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "so justice is higher individual rights are privileged but not for reasons that depart from utilitarian assumptions.",
+        "trans": "所以正义是更高的，个人权利是被优先保障的，但其理由并未偏离功利主义的假设。",
+        "audio_url": "/assets/audio/clips/ep02_depart_from_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "collectively": {
+    "word": "collectively",
+    "phonetic": "/kəˈlektɪvli/",
+    "pos": "adv.",
+    "def_cn": "集体地，从整体上",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "Justice is a name for certain moral requirements which, regarded collectively stand higher in the scale of social utility and are therefore of more paramount obligation",
+        "trans": "正义是某些道德要求的名称，这些要求从整体上看在社会功利的天平上占据更高的位置，因此具有更为至高无上的义务。",
+        "audio_url": "/assets/audio/clips/ep02_collectively_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "paramount": {
+    "word": "paramount",
+    "phonetic": "/ˈpærəmaʊnt/",
+    "pos": "adj.",
+    "def_cn": "至高无上的，最重要的",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "Justice is a name for certain moral requirements which, regarded collectively stand higher in the scale of social utility and are therefore of more paramount obligation",
+        "trans": "正义是某些道德要求的名称，这些要求从整体上看在社会功利的天平上占据更高的位置，因此具有更为至高无上的义务。",
+        "audio_url": "/assets/audio/clips/ep02_paramount_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "obligation": {
+    "word": "obligation",
+    "phonetic": "/ˌɒblɪˈɡeɪʃn/",
+    "pos": "n.",
+    "def_cn": "义务，责任",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "Justice is a name for certain moral requirements which, regarded collectively stand higher in the scale of social utility and are therefore of more paramount obligation",
+        "trans": "正义是某些道德要求的名称，这些要求从整体上看在社会功利的天平上占据更高的位置，因此具有更为至高无上的义务。",
+        "audio_url": "/assets/audio/clips/ep02_obligation_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "trade off against": {
+    "word": "trade off against",
+    "phonetic": "/treɪd ɒf əˈɡenst/",
+    "pos": "phrase",
+    "def_cn": "以……为代价进行权衡取舍",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "than any others so justice is sacred, it's prior, it's privileged, it isn't something that can easily be traded off against lesser things but the reason is ultimately Mills Claims",
+        "trans": "所以正义是神圣的，它是优先的，是被特权保护的，它不是那种可以轻易与次要事物进行权衡取舍的东西，但其理由归根结底是密尔所主张的。",
+        "audio_url": "/assets/audio/clips/ep02_trade_off_against_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "in the long run": {
+    "word": "in the long run",
+    "phonetic": "/ɪn ðə lɒŋ rʌn/",
+    "pos": "phrase",
+    "def_cn": "从长远来看，最终",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "a utilitarian reason once you consider the long run interests of humankind, of all of us, as progressive beings.",
+        "trans": "一个功利主义的理由——一旦你考虑到人类整体的长远利益，考虑到我们所有人作为不断进步的存在者的利益。",
+        "audio_url": "/assets/audio/clips/ep02_in_the_long_run_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "progressive": {
+    "word": "progressive",
+    "phonetic": "/prəˈɡresɪv/",
+    "pos": "adj.",
+    "def_cn": "进步的，不断发展的",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "a utilitarian reason once you consider the long run interests of humankind, of all of us, as progressive beings.",
+        "trans": "一个功利主义的理由——一旦你考虑到人类整体的长远利益，考虑到我们所有人作为不断进步的存在者的利益。",
+        "audio_url": "/assets/audio/clips/ep02_progressive_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "better off": {
+    "word": "better off",
+    "phonetic": "/ˌbetər ˈɒf/",
+    "pos": "phrase",
+    "def_cn": "境况更好，更为富裕",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "If we do justice and if we respect rights society as a whole will be better off in the long run.",
+        "trans": "如果我们伸张正义，如果我们尊重权利，整个社会从长远来看将会变得更好。",
+        "audio_url": "/assets/audio/clips/ep02_better_off_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "convincing": {
+    "word": "convincing",
+    "phonetic": "/kənˈvɪnsɪŋ/",
+    "pos": "adj.",
+    "def_cn": "有说服力的，令人信服的",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "Well is that convincing? Or is Mill actually, without admitting it, stepping outside utilitarian considerations in arguing for qualitatively higher",
+        "trans": "那么这有说服力吗？还是说密尔实际上在未承认的情况下，已经走出了功利主义的考量范围，来论证质上更高的愉悦以及神圣或特别重要的个人权利？",
+        "audio_url": "/assets/audio/clips/ep02_convincing_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "account for": {
+    "word": "account for",
+    "phonetic": "/əˈkaʊnt fɔː/",
+    "pos": "phrase",
+    "def_cn": "解释，说明……的理由",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "we haven't fully answered that question because to answer that question in the case of rights and justice will require that we explore other ways, non utilitarian ways",
+        "trans": "我们还没有完全回答那个问题，因为在权利和正义的问题上回答它，需要我们探索其他方式——非功利主义的方式来解释权利的基础，然后追问这些方式是否成功。",
+        "audio_url": "/assets/audio/clips/ep02_account_for_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "doctrine": {
+    "word": "doctrine",
+    "phonetic": "/ˈdɒktrɪn/",
+    "pos": "n.",
+    "def_cn": "学说，教义，主义",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "of accounting for the basis or rights and then asking whether they succeed as for Jeremy Bentham, who launched utilitarianism as a doctrine",
+        "trans": "至于杰里米·边沁，他在道德和法律哲学中开创了功利主义作为一种学说。边沁于1832年去世，享年八十五岁，但如果你去伦敦，你至今仍能实实在在地拜访他。",
+        "audio_url": "/assets/audio/clips/ep02_doctrine_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "embalm": {
+    "word": "embalm",
+    "phonetic": "/ɪmˈbɑːm/",
+    "pos": "v.",
+    "def_cn": "对（尸体）进行防腐处理",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "he provided in his will that his body be preserved, embalmed and displayed in the university of London where he still presides in a glass case with a wax head",
+        "trans": "他在遗嘱中规定，他的遗体应被保存、防腐处理并陈列在伦敦大学，在那里他至今仍端坐在一个玻璃柜中，带着一个蜡制的头颅。",
+        "audio_url": "/assets/audio/clips/ep02_embalm_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "preside": {
+    "word": "preside",
+    "phonetic": "/prɪˈzaɪd/",
+    "pos": "v.",
+    "def_cn": "主持，坐镇；居于主导地位",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "he provided in his will that his body be preserved, embalmed and displayed in the university of London where he still presides in a glass case with a wax head",
+        "trans": "他在遗嘱中规定，他的遗体应被保存、防腐处理并陈列在伦敦大学，在那里他至今仍端坐在一个玻璃柜中，带着一个蜡制的头颅。",
+        "audio_url": "/assets/audio/clips/ep02_preside_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "address oneself to": {
+    "word": "address oneself to",
+    "phonetic": "/əˈdres wʌnˈself tuː/",
+    "pos": "phrase",
+    "def_cn": "着手处理，致力于探讨",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "dressed in his actual clothing. you see before he died, Bentham addressed himself to a question consistent with his philosophy, of what use could a dead man be to the living one use, he said, would be to make one's corpse available",
+        "trans": "你看，在去世之前，边沁着手探讨了一个与他的哲学相一致的问题：一个死人能对活人有什么用处？",
+        "audio_url": "/assets/audio/clips/ep02_address_oneself_to_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "anatomy": {
+    "word": "anatomy",
+    "phonetic": "/əˈnætəmi/",
+    "pos": "n.",
+    "def_cn": "解剖学；解剖",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "for the study of anatomy in the case of great philosophers, however, better yet to preserve one's physical presence in order to inspire future generations of thinkers.",
+        "trans": "一种用处，他说，就是让自己的尸体可供解剖学研究之用。然而对于伟大的哲学家来说，更好的做法是保存自己的肉身存在，以激励后世的思想者。",
+        "audio_url": "/assets/audio/clips/ep02_anatomy_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "verisimilitude": {
+    "word": "verisimilitude",
+    "phonetic": "/ˌverɪsɪˈmɪlɪtjuːd/",
+    "pos": "n.",
+    "def_cn": "逼真，貌似真实",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "and at the bottom for verisimilitude you can actually see his actual had on a plate you see it?",
+        "trans": "而在底部，为了达到逼真的效果，你实际上可以看到他真正的头颅放在一个盘子上，你看到了吗？",
+        "audio_url": "/assets/audio/clips/ep02_verisimilitude_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
+      "last_reviewed_at": null
+    }
+  },
+  "adhere to": {
+    "word": "adhere to",
+    "phonetic": "/ədˈhɪə tuː/",
+    "pos": "phrase",
+    "def_cn": "坚持，遵守，忠于",
+    "contexts": [
+      {
+        "source_id": "ep02",
+        "source_title": "第 02 集：给生命标价 / 如何衡量快乐",
+        "sentence": "here is a philosopher in life and in death who adhered to the principles of his philosophy. we'll continue with rights next time.",
+        "trans": "这是一位在生前和死后都坚守自己哲学原则的哲学家。我们下次将继续讨论权利。",
+        "audio_url": "/assets/audio/clips/ep02_adhere_to_native.mp3"
+      }
+    ],
+    "stats": {
+      "review_count": 0,
+      "today_seconds": 0,
+      "total_seconds": 0,
+      "status": "new",
+      "last_rating": "none",
       "last_reviewed_at": null
     }
   }
