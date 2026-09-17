@@ -11,7 +11,9 @@ Features:
 
 import http.server
 import socketserver
+import threading
 import json
+import urllib.parse
 import urllib.request
 import urllib.error
 import os
@@ -41,13 +43,38 @@ STUDY_FILE = os.path.join(DATA_DIR, "study_records.json")
 VOCAB_BANK_FILE = os.path.join(DATA_DIR, "vocab_bank.json")
 CUSTOM_EPISODES_FILE = os.path.join(DATA_DIR, "custom_episodes.json")
 
+# ---------------------------------------------------------------------------
+# Secrets. NEVER hard-code credentials here: this repository is public.
+# Resolution order:
+#   1) environment variable DEEPSEEK_API_KEY  (preferred, set in the systemd unit)
+#   2) data/secret_config.json -> {"deepseek_api_key": "sk-..."}  (untracked)
+# The data/ directory is not served over HTTP (verified: /data/* -> 404).
+# ---------------------------------------------------------------------------
+SECRET_FILE = os.path.join(DATA_DIR, "secret_config.json")
+
+def load_server_api_key():
+    key = (os.environ.get("DEEPSEEK_API_KEY") or "").strip()
+    if key:
+        return key
+    try:
+        with open(SECRET_FILE, "r", encoding="utf-8") as f:
+            return (json.load(f).get("deepseek_api_key") or "").strip()
+    except Exception:
+        return ""
+
 # Default DeepSeek Configuration
 DEFAULT_CONFIG = {
     "provider": "deepseek",
     "api_base": "https://api.deepseek.com",
-    "api_key": "sk-0ff6375d1846471dbcf06859f59e2b68",
+    "api_key": load_server_api_key(),
     "model": "deepseek-chat"
 }
+
+# Only these hosts may ever be contacted with a server API key or as an AI proxy.
+ALLOWED_AI_HOSTS = {"api.deepseek.com", "api.openai.com", "api.anthropic.com"}
+
+# Serialises JSON read-modify-write cycles now that the server is threaded.
+_WRITE_LOCK = threading.RLock()
 
 # Ensure data storage files exist
 def init_db():
@@ -76,8 +103,9 @@ def load_vocab_bank():
         return {}
 
 def save_vocab_bank(bank):
-    with open(VOCAB_BANK_FILE, "w", encoding="utf-8") as f:
-        json.dump(bank, f, ensure_ascii=False, indent=2)
+    with _WRITE_LOCK:
+        with open(VOCAB_BANK_FILE, "w", encoding="utf-8") as f:
+            json.dump(bank, f, ensure_ascii=False, indent=2)
 
 def load_custom_episodes():
     try:
@@ -87,8 +115,9 @@ def load_custom_episodes():
         return {}
 
 def save_custom_episodes(episodes):
-    with open(CUSTOM_EPISODES_FILE, "w", encoding="utf-8") as f:
-        json.dump(episodes, f, ensure_ascii=False, indent=2)
+    with _WRITE_LOCK:
+        with open(CUSTOM_EPISODES_FILE, "w", encoding="utf-8") as f:
+            json.dump(episodes, f, ensure_ascii=False, indent=2)
 
 def synthesize_audio_sync(text, filepath, voice="en-US-ChristopherNeural"):
     """Synthesizes neural speech using edge-tts."""
@@ -110,8 +139,9 @@ def load_users():
         return {}
 
 def save_users(users):
-    with open(USERS_FILE, "w", encoding="utf-8") as f:
-        json.dump(users, f, ensure_ascii=False, indent=2)
+    with _WRITE_LOCK:
+        with open(USERS_FILE, "w", encoding="utf-8") as f:
+            json.dump(users, f, ensure_ascii=False, indent=2)
 
 def load_study_records():
     try:
@@ -121,8 +151,19 @@ def load_study_records():
         return {}
 
 def save_study_records(records):
-    with open(STUDY_FILE, "w", encoding="utf-8") as f:
-        json.dump(records, f, ensure_ascii=False, indent=2)
+    with _WRITE_LOCK:
+        with open(STUDY_FILE, "w", encoding="utf-8") as f:
+            json.dump(records, f, ensure_ascii=False, indent=2)
+
+def parse_query_params(path):
+    """Safe query-string parser. Tolerates '=' inside values (e.g. ?username=a=b)."""
+    query = path.split("?", 1)[1] if "?" in path else ""
+    params = {}
+    for pair in query.split("&"):
+        if "=" in pair:
+            k, v = pair.split("=", 1)
+            params[urllib.parse.unquote_plus(k)] = urllib.parse.unquote_plus(v)
+    return params
 
 def hash_pw(pw):
     return hashlib.sha256(pw.encode("utf-8")).hexdigest()
@@ -281,6 +322,58 @@ class RequestHandler(http.server.SimpleHTTPRequestHandler):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, directory=PUBLIC_DIR, **kwargs)
 
+    def send_error_json(self, code, message):
+        body = json.dumps({"error": message}, ensure_ascii=False).encode("utf-8")
+        self.send_response(code)
+        self.send_header("Content-Type", "application/json; charset=utf-8")
+        self.send_header("Content-Length", str(len(body)))
+        self.send_header("Access-Control-Allow-Origin", "*")
+        self.end_headers()
+        self.wfile.write(body)
+
+    def do_HEAD(self):
+        """HEAD support for API + docs routes.
+
+        SimpleHTTPRequestHandler only knows how to HEAD static files, so
+        `curl -I` against any /api/* route used to answer 404 and made the
+        whole API look missing. We run the GET logic against a recording sink
+        and then replay only the status line + headers, discarding the body.
+        (Swapping self.wfile for a discarding sink is NOT enough: end_headers()
+        writes the header block through self.wfile as well.)
+        """
+        clean_path = self.path.split('?')[0].split('#')[0]
+        if not (clean_path.startswith("/api/") or clean_path in ('/docs', '/docs/', '/api-docs')):
+            return super().do_HEAD()
+
+        class _HeadRecorder:
+            def __init__(self):
+                self.buf = bytearray()
+                self.headers_done = False
+
+            def write(self, data):
+                if not self.headers_done:
+                    self.buf += data
+                    if b"\r\n\r\n" in self.buf:
+                        self.headers_done = True
+                return len(data)
+
+            def flush(self):
+                return None
+
+        recorder = _HeadRecorder()
+        real_wfile = self.wfile
+        try:
+            self.wfile = recorder
+            self.do_GET()
+        finally:
+            self.wfile = real_wfile
+
+        head, sep, _body = bytes(recorder.buf).partition(b"\r\n\r\n")
+        if sep:
+            self.wfile.write(head + sep)
+        else:
+            self.send_error(500, "HEAD probe produced no response headers")
+
     def do_OPTIONS(self):
         self.send_response(200)
         self.send_header("Access-Control-Allow-Origin", "*")
@@ -338,7 +431,7 @@ class RequestHandler(http.server.SimpleHTTPRequestHandler):
                 self.wfile.write(html_bytes)
                 return
         # 0. Collections API
-        if self.path == "/api/collections":
+        if clean_path == "/api/collections":
             custom_eps = load_custom_episodes()
             cols = []
             for c_id, c in COLLECTIONS_DATA.items():
@@ -359,9 +452,12 @@ class RequestHandler(http.server.SimpleHTTPRequestHandler):
             self.wfile.write(json.dumps(cols, ensure_ascii=False).encode("utf-8"))
             return
 
-        elif self.path.startswith("/api/collection/"):
-            cid = self.path.split("/")[-1].lower()
-            col = COLLECTIONS_DATA.get(cid, COLLECTIONS_DATA["harvard_justice"])
+        elif clean_path.startswith("/api/collection/"):
+            cid = clean_path.rstrip("/").split("/")[-1].lower()
+            if cid not in COLLECTIONS_DATA:
+                self.send_error_json(404, f"合集不存在: {cid}")
+                return
+            col = COLLECTIONS_DATA[cid]
             c_copy = dict(col)
             all_eps = get_all_episodes()
             if cid == "custom_imports":
@@ -382,7 +478,7 @@ class RequestHandler(http.server.SimpleHTTPRequestHandler):
             return
 
         # 1. Series and Course List
-        if self.path == "/api/series":
+        if clean_path == "/api/series":
             self.send_response(200)
             self.send_header("Content-Type", "application/json; charset=utf-8")
             self.end_headers()
@@ -390,17 +486,23 @@ class RequestHandler(http.server.SimpleHTTPRequestHandler):
             return
         
         # 2. Episode details
-        elif self.path.startswith("/api/preset/") or self.path.startswith("/api/episode/"):
-            ep_id = self.path.split("/")[-1].lower()
+        elif clean_path.startswith("/api/preset/") or clean_path.startswith("/api/episode/"):
+            # NOTE: must use clean_path -- self.path still carries "?query" and a
+            # trailing "/", which previously produced a bogus id and silently
+            # served Episode 01 for ANY querystring/trailing-slash request.
+            ep_id = clean_path.rstrip("/").split("/")[-1].lower()
             all_eps = get_all_episodes()
-            data = all_eps.get(ep_id, all_eps.get("ep01", EPISODE_DATA["ep01"]))
+            if ep_id not in all_eps:
+                self.send_error_json(404, f"剧集不存在: {ep_id}")
+                return
+            data = all_eps[ep_id]
             self.send_response(200)
             self.send_header("Content-Type", "application/json; charset=utf-8")
             self.end_headers()
             self.wfile.write(json.dumps(data, ensure_ascii=False).encode("utf-8"))
             return
 
-        elif self.path in ["/api/presets", "/api/episodes"]:
+        elif clean_path in ["/api/presets", "/api/episodes"]:
             all_eps = get_all_episodes()
             summary = [
                 {
@@ -421,9 +523,8 @@ class RequestHandler(http.server.SimpleHTTPRequestHandler):
             return
 
         # 2.5 Master Vocabulary Bank
-        elif self.path.startswith("/api/vocab-bank"):
-            query = self.path.split("?")[-1] if "?" in self.path else ""
-            params = dict(qc.split("=") for qc in query.split("&") if "=" in qc)
+        elif clean_path.startswith("/api/vocab-bank"):
+            params = parse_query_params(self.path)
             username = params.get("username", "").strip()
             data = get_vocab_bank_data(username)
             self.send_response(200)
@@ -433,13 +534,14 @@ class RequestHandler(http.server.SimpleHTTPRequestHandler):
             return
 
         # 2.6 Dynamic Neural TTS Audio Streamer
-        elif self.path.startswith("/api/audio/tts"):
-            query = self.path.split("?")[-1] if "?" in self.path else ""
-            params = dict(urllib.parse.unquote_plus(qc).split("=", 1) for qc in query.split("&") if "=" in qc)
+        elif clean_path.startswith("/api/audio/tts"):
+            params = parse_query_params(self.path)
             text_to_speak = params.get("text", "").strip()
             if not text_to_speak:
-                self.send_response(400)
-                self.end_headers()
+                self.send_error_json(400, "缺少 text 参数")
+                return
+            if len(text_to_speak) > 600:
+                self.send_error_json(400, "text 过长（最多 600 字符）")
                 return
             h = hashlib.md5(text_to_speak.encode("utf-8")).hexdigest()[:12]
             cache_name = f"tts_{h}.mp3"
@@ -462,9 +564,8 @@ class RequestHandler(http.server.SimpleHTTPRequestHandler):
                 return
 
         # 3. User study stats
-        elif self.path.startswith("/api/user/stats"):
-            query = self.path.split("?")[-1] if "?" in self.path else ""
-            params = dict(qc.split("=") for qc in query.split("&") if "=" in qc)
+        elif clean_path.startswith("/api/user/stats"):
+            params = parse_query_params(self.path)
             username = params.get("username", "").strip()
 
             records = load_study_records()
@@ -491,37 +592,46 @@ class RequestHandler(http.server.SimpleHTTPRequestHandler):
         return super().do_GET()
 
     def do_POST(self):
-        content_length = int(self.headers.get("Content-Length", 0))
-        body = self.rfile.read(content_length).decode("utf-8")
-        
+        # Reject absurd bodies outright instead of buffering them.
+        MAX_BODY_BYTES = 12 * 1024 * 1024  # 12 MB (single feedback screenshot)
+        try:
+            content_length = int(self.headers.get("Content-Length", 0))
+        except (TypeError, ValueError):
+            content_length = 0
+        if content_length < 0 or content_length > MAX_BODY_BYTES:
+            self.send_error_json(413, "请求体过大或长度非法")
+            return
+        body = self.rfile.read(content_length).decode("utf-8", "replace")
+
+        clean_path = self.path.split('?')[0].split('#')[0]
+
         # Auth and Core Endpoints
-        if self.path == "/api/auth/register":
+        if clean_path == "/api/auth/register":
             self.handle_register(body)
-        elif self.path == "/api/auth/login":
+        elif clean_path == "/api/auth/login":
             self.handle_login(body)
-        elif self.path == "/api/user/record":
+        elif clean_path == "/api/user/record":
             self.handle_study_record(body)
-        elif self.path == "/api/vocab-bank/record":
+        elif clean_path == "/api/vocab-bank/record":
             self.handle_vocab_bank_record(body)
-        elif self.path == "/api/import/link":
+        elif clean_path == "/api/import/link":
             self.handle_import_link(body)
-        elif self.path == "/api/test-connection":
+        elif clean_path == "/api/test-connection":
             self.handle_test_connection(body)
-        elif self.path == "/api/ai-extract":
+        elif clean_path == "/api/ai-extract":
             self.handle_ai_extract(body)
-        elif self.path == "/api/export":
+        elif clean_path == "/api/export":
             self.handle_export(body)
-        elif self.path == "/api/video/fetch-subtitles":
+        elif clean_path == "/api/video/fetch-subtitles":
             self.handle_video_subtitles(body)
-        elif self.path == "/api/feedback":
+        elif clean_path == "/api/feedback":
             self.handle_feedback(body)
-        elif self.path == "/api/user/heartbeat-time":
+        elif clean_path == "/api/user/heartbeat-time":
             self.handle_heartbeat_time(body)
-        elif self.path == "/api/collection/add":
+        elif clean_path == "/api/collection/add":
             self.handle_add_collection(body)
         else:
-            self.send_response(404)
-            self.end_headers()
+            self.send_error_json(404, f"未知接口: {clean_path}")
 
     def handle_register(self, body_str):
         try:
@@ -683,11 +793,18 @@ class RequestHandler(http.server.SimpleHTTPRequestHandler):
             req = json.loads(body_str)
             provider = req.get("provider", "deepseek").lower()
             api_base = req.get("api_base", "https://api.deepseek.com").rstrip("/")
-            api_key = req.get("api_key", DEFAULT_CONFIG["api_key"]).strip()
+            # Same rule as /api/ai-extract: never lend the server key to an
+            # anonymous caller, and never POST to a caller-chosen host (SSRF).
+            api_key = req.get("api_key", "").strip()
             model = req.get("model", "deepseek-chat").strip()
 
+            parsed_base = urllib.parse.urlparse(api_base)
+            if parsed_base.scheme != "https" or parsed_base.hostname not in ALLOWED_AI_HOSTS:
+                self.send_error_json(400, f"api_base 不被允许: {api_base}（仅支持 {sorted(ALLOWED_AI_HOSTS)} 的 https 地址）")
+                return
             if not api_key:
-                api_key = DEFAULT_CONFIG["api_key"]
+                self.send_error_json(400, "请提供您自己的 API Key")
+                return
 
             if provider == "anthropic":
                 endpoint = f"{api_base}/v1/messages" if not api_base.endswith("/v1") else f"{api_base}/messages"
@@ -731,10 +848,30 @@ class RequestHandler(http.server.SimpleHTTPRequestHandler):
             req = json.loads(body_str)
             provider = req.get("provider", "deepseek").lower()
             api_base = req.get("api_base", "https://api.deepseek.com").rstrip("/")
-            api_key = req.get("api_key", "").strip() or DEFAULT_CONFIG["api_key"]
+            # The caller must bring their own key. Falling back to the server key
+            # turned this endpoint into an unauthenticated proxy that let anyone
+            # spend the project's DeepSeek credits.
+            api_key = req.get("api_key", "").strip()
             model = req.get("model", "deepseek-chat").strip()
             transcript = req.get("transcript", "").strip()
             count = req.get("count", 20)
+
+            # Caller-controlled api_base was an SSRF hole (the server would POST
+            # to any URL supplied, including internal/metadata addresses).
+            parsed_base = urllib.parse.urlparse(api_base)
+            if parsed_base.scheme != "https" or parsed_base.hostname not in ALLOWED_AI_HOSTS:
+                self.send_error_json(400, f"api_base 不被允许: {api_base}（仅支持 {sorted(ALLOWED_AI_HOSTS)} 的 https 地址）")
+                return
+            if not api_key:
+                self.send_error_json(400, "请提供您自己的 API Key（服务端不再代为支付调用额度）")
+                return
+            if not transcript:
+                self.send_error_json(400, "transcript 不能为空")
+                return
+            try:
+                count = max(1, min(int(count), 60))
+            except (TypeError, ValueError):
+                count = 20
 
             system_prompt = (
                 "你是一位专精学术英语、道德哲学与法理学的权威语言学教授。"
@@ -888,6 +1025,22 @@ class RequestHandler(http.server.SimpleHTTPRequestHandler):
             url = req.get("url", "").strip()
             custom_title = req.get("title", "").strip()
             raw_transcript = req.get("transcript", "").strip()
+
+            # An empty body used to be accepted and silently produced a real
+            # episode from a built-in sample transcript (13 TTS files + 13 new
+            # vocab-bank entries per call, unauthenticated -> unbounded growth).
+            if not url and not raw_transcript:
+                self.send_error_json(400, "请至少提供 url 或 transcript，不能创建空导入。")
+                return
+            if len(raw_transcript) > 200000:
+                self.send_error_json(413, "transcript 过长（最多 200000 字符）。")
+                return
+            if custom_title and len(custom_title) > 200:
+                self.send_error_json(400, "标题过长（最多 200 字符）。")
+                return
+            if not DEFAULT_CONFIG["api_key"]:
+                self.send_error_json(503, "服务端未配置 DeepSeek API Key，无法执行 AI 词汇抽取。")
+                return
             
             video_meta = {
                 "title": custom_title or "网络精选公开课 / 研讨音视频",
@@ -1209,7 +1362,19 @@ class RequestHandler(http.server.SimpleHTTPRequestHandler):
             user_email = req.get("user_email", "").strip()
             current_page = req.get("current_page", "主页").strip()
             image_base64 = req.get("image_base64", "").strip()
-            
+
+            if not text:
+                self.send_error_json(400, "反馈内容不能为空。")
+                return
+            if len(text) > 5000 or len(category) > 60 or len(user_email) > 200 or len(current_page) > 300:
+                self.send_error_json(400, "反馈内容过长。")
+                return
+            # Unauthenticated screenshot upload: cap it, otherwise the endpoint is
+            # a trivial disk-exhaustion vector.
+            if len(image_base64) > 8 * 1024 * 1024:
+                self.send_error_json(413, "截图过大（上限约 6MB）。")
+                return
+
             feedback_id = f"fb_{time.strftime('%Y%m%d_%H%M%S')}_{os.urandom(3).hex()}"
             saved_img_url = ""
             
@@ -1218,6 +1383,9 @@ class RequestHandler(http.server.SimpleHTTPRequestHandler):
                     if "," in image_base64:
                         image_base64 = image_base64.split(",", 1)[1]
                     img_bytes = base64.b64decode(image_base64)
+                    if len(img_bytes) > 6 * 1024 * 1024:
+                        self.send_error_json(413, "截图过大（上限 6MB）。")
+                        return
                     img_filename = f"{feedback_id}.png"
                     full_img_path = os.path.join(FEEDBACK_IMG_DIR, img_filename)
                     with open(full_img_path, "wb") as f_img:
@@ -1226,29 +1394,30 @@ class RequestHandler(http.server.SimpleHTTPRequestHandler):
                 except Exception as img_err:
                     print(f"[WARN] Error saving feedback screenshot: {img_err}")
 
-            records = []
-            if os.path.exists(FEEDBACK_FILE):
-                try:
-                    with open(FEEDBACK_FILE, "r", encoding="utf-8") as f:
-                        records = json.load(f)
-                except:
-                    records = []
-            
-            entry = {
-                "id": feedback_id,
-                "timestamp": time.strftime("%Y-%m-%d %H:%M:%S"),
-                "category": category,
-                "text": text,
-                "user_email": user_email,
-                "current_page": current_page,
-                "has_screenshot": bool(saved_img_url),
-                "screenshot_url": saved_img_url,
-                "target_developer_email": "billychen0726@gmail.com",
-                "dispatch_status": "QUEUED_AND_RECORDED"
-            }
-            records.append(entry)
-            with open(FEEDBACK_FILE, "w", encoding="utf-8") as f:
-                json.dump(records, f, ensure_ascii=False, indent=2)
+            with _WRITE_LOCK:
+                records = []
+                if os.path.exists(FEEDBACK_FILE):
+                    try:
+                        with open(FEEDBACK_FILE, "r", encoding="utf-8") as f:
+                            records = json.load(f)
+                    except:
+                        records = []
+
+                entry = {
+                    "id": feedback_id,
+                    "timestamp": time.strftime("%Y-%m-%d %H:%M:%S"),
+                    "category": category,
+                    "text": text,
+                    "user_email": user_email,
+                    "current_page": current_page,
+                    "has_screenshot": bool(saved_img_url),
+                    "screenshot_url": saved_img_url,
+                    "target_developer_email": "billychen0726@gmail.com",
+                    "dispatch_status": "RECORDED_LOCALLY_NOT_EMAILED"
+                }
+                records.append(entry)
+                with open(FEEDBACK_FILE, "w", encoding="utf-8") as f:
+                    json.dump(records, f, ensure_ascii=False, indent=2)
 
             self.send_response(200)
             self.send_header("Content-Type", "application/json; charset=utf-8")
@@ -1256,7 +1425,7 @@ class RequestHandler(http.server.SimpleHTTPRequestHandler):
             self.wfile.write(json.dumps({
                 "success": True,
                 "feedback_id": feedback_id,
-                "message": "您的反馈意见与现场截图已成功提交并进入分发队列，将同步至开发者邮箱 billychen0726@gmail.com！",
+                "message": "您的反馈意见与现场截图已成功记录，开发者将在后台查看。",
                 "target_email": "billychen0726@gmail.com"
             }, ensure_ascii=False).encode("utf-8"))
         except Exception as e:
@@ -1264,16 +1433,14 @@ class RequestHandler(http.server.SimpleHTTPRequestHandler):
             self.end_headers()
             self.wfile.write(json.dumps({"error": str(e)}, ensure_ascii=False).encode("utf-8"))
 
-if __name__ == "__main__":
-    os.makedirs(PUBLIC_DIR, exist_ok=True)
-    sys.stdout.reconfigure(encoding='utf-8')
-    with socketserver.TCPServer(("", PORT), RequestHandler) as httpd:
-        print(f"[READY] Harvard Justice AI Vocabulary Studio running at http://localhost:{PORT}")
-        httpd.serve_forever()
-
-
-
     def handle_add_collection(self, body_str):
+        """Creates a user-defined collection.
+
+        NOTE: this method previously lived *inside* the `if __name__ == "__main__"`
+        block, after httpd.serve_forever() -- i.e. it was unreachable and
+        RequestHandler had no such attribute, so POST /api/collection/add always
+        raised AttributeError and nginx answered 502.
+        """
         try:
             req = json.loads(body_str)
             cid = req.get("id", "").strip().lower()
@@ -1285,25 +1452,32 @@ if __name__ == "__main__":
             cover_scene = req.get("cover_scene", "/assets/scenes/scene_theatre.jpg").strip()
 
             if not cid or not title:
-                self.send_response(400)
-                self.send_header("Content-Type", "application/json; charset=utf-8")
-                self.send_header("Access-Control-Allow-Origin", "*")
-                self.end_headers()
-                self.wfile.write(json.dumps({"error": "合集 ID 和名称不能为空！"}, ensure_ascii=False).encode("utf-8"))
+                self.send_error_json(400, "合集 ID 和名称不能为空！")
+                return
+            if not re.fullmatch(r"[a-z0-9_\-]{2,64}", cid):
+                self.send_error_json(400, "合集 ID 仅允许 2-64 位小写字母、数字、下划线或连字符！")
+                return
+            if cid in COLLECTIONS_DATA:
+                self.send_error_json(409, f"合集 ID 已存在: {cid}")
+                return
+            if len(title) > 120 or len(desc) > 1000:
+                self.send_error_json(400, "名称或描述过长！")
                 return
 
-            COLLECTIONS_DATA[cid] = {
-                "id": cid,
-                "title": title,
-                "en_title": en_title,
-                "university": university,
-                "instructor": instructor,
-                "cover_scene": cover_scene,
-                "badge": "自定义精选 · 持续扩充",
-                "total_episodes": 0,
-                "desc": desc,
-                "episodes": []
-            }
+            with _WRITE_LOCK:
+                COLLECTIONS_DATA[cid] = {
+                    "id": cid,
+                    "title": title,
+                    "en_title": en_title[:200],
+                    "university": university[:120],
+                    "instructor": instructor[:120],
+                    "cover_scene": cover_scene,
+                    "badge": "自定义精选 · 持续扩充",
+                    "total_episodes": 0,
+                    "desc": desc,
+                    "episodes": []
+                }
+                created = dict(COLLECTIONS_DATA[cid])
 
             self.send_response(200)
             self.send_header("Content-Type", "application/json; charset=utf-8")
@@ -1312,11 +1486,31 @@ if __name__ == "__main__":
             self.wfile.write(json.dumps({
                 "success": True,
                 "message": f"合集《{title}》创建成功！",
-                "collection": COLLECTIONS_DATA[cid]
+                "collection": created
             }, ensure_ascii=False).encode("utf-8"))
         except Exception as e:
-            self.send_response(500)
-            self.send_header("Content-Type", "application/json; charset=utf-8")
-            self.send_header("Access-Control-Allow-Origin", "*")
-            self.end_headers()
-            self.wfile.write(json.dumps({"error": str(e)}).encode("utf-8"))
+            self.send_error_json(500, str(e))
+
+
+class ThreadingHTTPServer(socketserver.ThreadingMixIn, http.server.HTTPServer):
+    """Concurrent HTTP server.
+
+    The service used to run on a single-threaded socketserver.TCPServer with a
+    listen backlog of 5, so one synchronous edge-tts synthesis blocked every
+    other request (measured: a single /api/import/link call stalled the whole
+    API for ~6s, and /api/vocab-bank timed out at 21s).
+    """
+    daemon_threads = True
+    allow_reuse_address = True
+    request_queue_size = 128
+
+
+if __name__ == "__main__":
+    os.makedirs(PUBLIC_DIR, exist_ok=True)
+    sys.stdout.reconfigure(encoding='utf-8')
+    if not DEFAULT_CONFIG["api_key"]:
+        print("[WARN] No DEEPSEEK_API_KEY configured; server-side AI import will fail "
+              "(set it in the systemd unit or data/secret_config.json).")
+    with ThreadingHTTPServer(("", PORT), RequestHandler) as httpd:
+        print(f"[READY] Harvard Justice AI Vocabulary Studio running at http://localhost:{PORT}")
+        httpd.serve_forever()

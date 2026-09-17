@@ -22,6 +22,11 @@ data/users.json
 data/study_records.json
 data/custom_episodes.json
 
+# Secrets - NEVER commit credentials (see load_server_api_key() in server.py)
+data/secret_config.json
+*.pem
+*.key
+
 # OS and IDE caches
 .DS_Store
 Thumbs.db

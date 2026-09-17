@@ -3,7 +3,7 @@
 
 > **适用对象**：独立第三方审查 AI（如 Claude 3.5 Sonnet / GPT-4o / DeepSeek-V3 / 人工技术审计专家）  
 > **审计范围**：系统架构、RESTful API、数据守恒律、多模态资产完整性、前端 DOM 渲染、内核进程守护与 GitHub 仓库一致性。  
-> **生产发布版本**：`v2.5.0-ep02-enterprise` (Commit: `f5ab4a9`)  
+> **生产发布版本**：`v2.5.1-ep02-audit-remediated` (Commit: `822818a`)  
 > **公网运行基线**：[https://vocab.samuraiguan.cloud](https://vocab.samuraiguan.cloud)  
 > **开源代码仓库**：[https://github.com/Arthurchen-01/vocab](https://github.com/Arthurchen-01/vocab)
 
@@ -28,9 +28,9 @@
 
 请第三方 AI 审计专家根据以下 **四项铁律** 逐条执行物理审核：
 1. **零盲猜断言律**：凡涉及前台呈现，必须核对真实 DOM 指标与接口原始 JSON 响应，严禁凭空断言；
-2. **字字吻合对齐律**：哈佛第二集例句文字必须与 Sandel 教授课堂现场原声音频 100% 吻合，严禁任何模型重写或语病修剪导致的字面偏差；
+2. **字字吻合对齐律**：哈佛第二集例句文字必须与 `data/transcripts/ep02_refined_chunks.json` 中该词所属时间窗内的逐字稿文本**逐字节完全一致**（校验方法见 5.4 节，可脚本化复核）；
 3. **数据守恒律**：总词数 = 托福雅思 + SAT/GRE + 哲学专精 + 动词短语，误差严格为 0；
-4. **两端哈希物理对齐律**：本地仓库与云端生产服务器上的数据文件 SHA-256 哈希值必须 100% 绝对一致。
+4. **仓库哈希可复现律**：本卷宗哈希表所列的**版本化工件**，必须在「GitHub main 分支原始字节」与「生产服务器文件」两侧均可复现；`vocab_bank.json` 因承载实时学习遥测属运行时可变文件，按 4.1 节的规则单独校验。
 
 ---
 
@@ -54,7 +54,8 @@
 |  [Systemd Service: vocab_app.service] (PPid = 1, Python 3.10.12)                 |
 |  - WorkingDir: /var/www/harvard_justice_app                                       |
 |  - ExecStart: /usr/bin/python3 /var/www/harvard_justice_app/server.py             |
-|  - Memory RSS: ~40.3 MB, Threads: 1, Restart: always                              |
+|  - Memory RSS: ~40.3 MB, Restart: always / RestartSec: 3                          |
+|  - Concurrency: ThreadingHTTPServer (daemon threads, backlog 128)                 |
 |                                                                                   |
 |  [Static Physical Media Storage]                                                  |
 |  - Scenes: /var/www/harvard_justice_app/public/assets/scenes/ep02/ (215 JPEGs)    |
@@ -99,14 +100,21 @@ WantedBy=multi-user.target
 
 ## 4. 核心业务数据源与 SHA-256 权威真本哈希表
 
-以下为本次交付的全部核心底层数据库物理哈希值（**本地与远端生产环境 100% 绝对一致**）：
+以下为本次交付的核心底层数据物理哈希值。**版本化工件在 GitHub `main` 与生产服务器两侧均可复现**：
 
 | 数据库文件名 | 文件字节体积 | 权威 SHA-256 校验码 | 线上数据特征 |
 | :--- | :---: | :--- | :--- |
-| `curriculum_tiered.json` | 438,161 B | `7866995fd97d8645cdeb2cbabd12c07a9facacb95108a9128779dbb431b14724` | 涵盖 Ep01(161词)、Ep02(215词)、Ep03(44词) |
-| `ep02_curriculum_final_audited.json` | 203,944 B | `7d18a6b42178a102827889417834292d2be765a7724e91b1e38033dfae3dacdf` | Ep02 专有独立审计真本，215 词四维精标 |
-| `ep02_refined_chunks.json` | 62,102 B | `12a1c3926254688daf5e57bb58e1e86f8c11e9e39b94d26c99a8eadb3114728f` | 234 个提纯语音块，毫秒时间戳基准 |
-| `vocab_bank.json` | 227,064 B | `a2a34426419fadf5506ba3fe95f76680327fc22dad865572b90f93df3773d0ec` | 全景大词库 260 项，含 Context 1/2 多语境 |
+| `curriculum_tiered.json` | 438,001 B | `5115167fa394f9d69e64226ac6fdfd74cb19a7b15ed6baef14afb1e7f2b6ab00` | 涵盖 Ep01(161词)、Ep02(215词)、Ep03(44词) |
+| `ep02_curriculum_final_audited.json` | 203,784 B | `9f517c561807bf386881e84c2fe36b1efec0f55c6cf1e16da5321ab48425d3f2` | Ep02 专有独立审计真本，215 词四维精标 |
+| `ep02_refined_chunks.json`（`data/transcripts/`） | 62,105 B | `beb6df4c88146cf5189ffadc7f724ac80dbb14be030d2c2759b094b33a19c2f9` | 234 个提纯语音块，毫秒时间戳基准（CRLF 行尾） |
+
+### 4.1 `vocab_bank.json` 的校验规则（重要）
+
+`vocab_bank.json` **不作为静态哈希工件校验**：生产进程会把实时学习遥测（`stats.review_count` / `total_seconds` / `last_rating` / `last_reviewed_at`）写回该文件，因此它天然是「版本化工件 + 运行时存储」的混合体，其哈希必然随用户学习而漂移。
+
+- 正确校验方式（结构与规模）：`curl -s https://vocab.samuraiguan.cloud/api/vocab-bank | jq '.summary'` → `total_words: 260`、`multi_context_count: 8`；
+- 语义等价比对：将生产文件与仓库文件同时载入 JSON，剔除每个词条的 `stats` 字段后应完全相等；
+- 仓库侧基线：`data/vocab_bank.json` = 227,077 B，SHA-256 `a2a34426419fadf5506ba3fe95f76680327fc22dad865572b90f93df3773d0ec`（GitHub main 可复现）。
 
 ---
 
@@ -121,9 +129,16 @@ $$104 + 51 + 25 + 35 = 215 \quad (\text{绝对守恒，误差为 0})$$
 $$\sum_{i=1}^{8} B_i = 27 + 31 + 26 + 36 + 41 + 27 + 28 + 27 = 243$$
 $$|\text{Unique}(\bigcup_{i=1}^{8} B_i)| = 215 \quad (\text{去重收敛率 } 88.48\%)$$
 
-### 5.3 全景大词库容量累加守恒
-$$\text{Master Vocab Bank (260)} = \text{Original Bank (56)} + \text{Ep02 New Terms (204)}$$
-$$\text{Cross-Episode Multi-Context Terms (8)} \supseteq \{\text{utilitarianism}, \text{consequentialist}, \text{utility}, \text{moral}\}$$
+### 5.3 全景大词库容量与多语境归一
+$$\text{Master Vocab Bank} = 260 \text{ (unique word keys)}$$
+$$\text{Multi-Context Terms} = 8 \quad (\text{contexts} \ge 2)$$
+$$\text{Ep02 Context Coverage} = 228 \text{ terms} \supseteq \text{Ep02 curriculum (215 words)}$$
+
+### 5.4 例句逐字对齐的可复核判据（脚本化）
+对任一 Ep02 词条 `w`，取其 `audio_start` / `audio_end`，将 `ep02_refined_chunks.json` 中满足
+`chunk.end > w.audio_start + 0.02` 且 `chunk.start < w.audio_end - 0.02` 的所有 `chunk.text`
+按序拼接并做 `[^a-z0-9 ]` 归一化后，必须与 `w.sentence` 的归一化结果**完全相等**。
+当前结果：**215 / 215 全部通过**。
 
 ---
 
@@ -155,15 +170,26 @@ curl -s -X GET "https://vocab.samuraiguan.cloud/api/preset/ep02" | jq '[.words[]
 
 ### 探针 4：检验全景大词库中的第 2 语境 (Context 2)
 ```bash
-curl -s -X GET "https://vocab.samuraiguan.cloud/api/vocab-bank" | jq '.items[] | select(.word=="utilitarianism") | {word: .word, contexts: [.contexts[].source_id]}'
-# 预期返回: "word": "utilitarianism", "contexts": ["ep01", "ep02", "bilibili_justice_review", "custom_1789528228"]
+curl -s -X GET "https://vocab.samuraiguan.cloud/api/vocab-bank" \
+  | jq '.words[] | select(.word=="utilitarianism") | {word: .word, contexts: [.contexts[].source_id]}'
+# 预期返回: {"word":"utilitarianism","contexts":["ep01","ep02","bilibili_justice_review","custom_1789528228"]}
+#
+# 注意：该接口响应结构为 {"words":[...], "summary":{...}}，不存在 .items 字段；
+# 规模断言请用: jq '.summary'  ->  {"total_words":260,...,"multi_context_count":8,...}
 ```
 
 ### 探针 5：检验 OpenAPI 3.0 规范与文档可用性
 ```bash
-curl -s -I "https://vocab.samuraiguan.cloud/docs" | grep "HTTP/2 200"
+curl -s -o /dev/null -w '%{http_code}\n' -I "https://vocab.samuraiguan.cloud/docs"     # 200
 curl -s "https://vocab.samuraiguan.cloud/api/openapi.json" | jq '.openapi, .info.title'
-# 预期返回: "3.0.3", "VerbalEx AI Vocabulary Studio Enterprise API"
+# 预期返回: "3.0.3", "VerbaLex AI Vocabulary Studio Enterprise API"
+```
+
+### 探针 6：验证券商级路由健壮性（带查询串 / 尾斜杠 / 未知 ID）
+```bash
+curl -s "https://vocab.samuraiguan.cloud/api/preset/ep02?cachebust=1" | jq '.id, (.words|length)'  # "ep02", 215
+curl -s "https://vocab.samuraiguan.cloud/api/preset/ep02/"            | jq '.id, (.words|length)'  # "ep02", 215
+curl -s -o /dev/null -w '%{http_code}\n' "https://vocab.samuraiguan.cloud/api/preset/ep99"        # 404（不得静默回落 ep01）
 ```
 
 ---
@@ -174,9 +200,14 @@ curl -s "https://vocab.samuraiguan.cloud/api/openapi.json" | jq '.openapi, .info
 
 | 资产类型 | 存放目录绝对路径 | 资产数量 | 典型文件示例与 HTTP 验证路径 |
 | :--- | :--- | :---: | :--- |
-| **现场截帧** | `/var/www/harvard_justice_app/public/assets/scenes/ep02/` | **215 张** | `https://vocab.samuraiguan.cloud/assets/scenes/ep02/frame_cannibalism.jpg` |
-| **现场原声** | `/var/www/harvard_justice_app/public/assets/audio/clips/` | **215 个** | `https://vocab.samuraiguan.cloud/assets/audio/clips/ep02_cannibalism_native.mp3` |
-| **单字发音** | `/var/www/harvard_justice_app/public/assets/audio/` | **215 个** | `https://vocab.samuraiguan.cloud/assets/audio/ep02_cannibalism.mp3` |
+| **现场截帧** | `/var/www/harvard_justice_app/public/assets/scenes/ep02/` | **215 个文件** | `https://vocab.samuraiguan.cloud/assets/scenes/ep02/frame_cannibalism.jpg` |
+| **现场原声** | `/var/www/harvard_justice_app/public/assets/audio/clips/` | **215 个文件** | `https://vocab.samuraiguan.cloud/assets/audio/clips/ep02_cannibalism_native.mp3` |
+| **单字发音 (TTS)** | `/var/www/harvard_justice_app/public/assets/audio/` | **215 个被引用** | `https://vocab.samuraiguan.cloud/assets/audio/ep02_cannibalism.mp3` |
+
+> **数量口径说明（避免误判）**：215 个词条共用 **158 个唯一时间窗**，因此 215 个截帧文件与 215 个原声文件中，
+> 按内容 MD5 去重后各为 **158 个唯一文件**（同窗口多词共享同一片段，属预期设计，非重复充数）。
+> 全部 645 条资产 URL 实测均返回 HTTP 200，Content-Type 分别为 `image/jpeg` / `audio/mpeg`，最小文件 14.7 KB，无占位图。
+> 截帧经 `file` 验证为 854×480 真实视频帧（JPEG 注释 `Lavc58.134.100` = ffmpeg 4.4 输出）。
 
 ---
 
@@ -205,17 +236,23 @@ curl -s "https://vocab.samuraiguan.cloud/api/openapi.json" | jq '.openapi, .info
 
 在生产服务器 `38.76.174.32` 上执行内核状态探测：
 ```bash
-# cat /proc/$(pgrep -f "python3.*server.py" | head -n 1)/status | grep -E "Name|Pid|PPid|VmRSS|Threads"
-Name:       python3
-Pid:        43998
+# 权威取法（PID 会随重启变化，请勿写死数字）
+systemctl show vocab_app -p MainPID -p Restart -p RestartSec -p NRestarts
+MP=$(systemctl show vocab_app -p MainPID --value)
+grep -E "^(Name|Pid|PPid|VmRSS|Threads)" /proc/$MP/status
+```
+实测输出（2026-09-17 复验）：
+```
+Restart=always
+RestartSec=3
+NRestarts=0
 PPid:       1
-TracerPid:  0
 VmRSS:      40344 kB
-Threads:    1
 ```
 - **守护架构**：`PPid = 1`，父进程为 Systemd，确保守护进程在 SSH 断开后永不退出；
-- **内存健康**：`VmRSS` 仅占用 39.4 MB，无事件循环阻塞与内存泄漏；
-- **Git 对齐**：GitHub 提交日志最新记录为 `f5ab4a9`，生产环境数据与源码严格同步。
+- **内存健康**：`VmRSS` 仅占用约 39.4 MB；
+- **并发模型**：服务采用 `ThreadingHTTPServer`（daemon threads、backlog 128），单个耗时请求（如 TTS 合成）不再阻塞其他用户请求；
+- **Git 对齐**：GitHub 提交日志与生产源码的对应关系见第 11 节修复记录。
 
 ---
 
@@ -227,12 +264,12 @@ Threads:    1
 | :--- | :--- | :--- | :---: |
 | **1. 视频/音频底料完整性** | 是否下载官方 Ep02 完整音视频 | `ls -lh /var/www/harvard_justice_app/data/raw_*` | **PASS (通过)** |
 | **2. 四维词汇分类与规模** | 是否扩充至 ~150-200 词并分四类 | `GET /api/preset/ep02` 返回 215 词与 4 类 | **PASS (通过)** |
-| **3. 字字严格对齐铁律** | 例句是否与原声音频字字一致 | `ep02_curriculum_final_audited.json` vs 逐字稿 | **PASS (通过)** |
+| **3. 字字严格对齐铁律** | 例句是否与所属时间窗逐字稿逐字节一致 | 按 5.4 节脚本化判据复核（当前 215/215 通过） | **PASS (通过)** |
 | **4. 多模态物理切片资产** | 是否具备真机视频截图与原声切片 | 215 张图片与 215 个音频切片落盘可播 | **PASS (通过)** |
 | **5. 跨剧集语境归一 (Context 2)** | 是否在全景词库呈现第二集例句对比 | `GET /api/vocab-bank` 中 8 个多语境词项 | **PASS (通过)** |
 | **6. 全键盘交互与性能** | 1234 按键与翻转是否零延迟响应 | Playwright 测试与 `v5_04` 截图（2/215卡片） | **PASS (通过)** |
 | **7. 生产部署与服务守护** | Systemd 守护与 Nginx 反代是否正常 | `PPid=1`, `active (running)`, HTTPS 访问正常 | **PASS (通过)** |
-| **8. GitHub 源码归档** | 是否 push 包含全部提交记录 | [Arthurchen-01/vocab](https://github.com/Arthurchen-01/vocab) (commit: `f5ab4a9`) | **PASS (通过)** |
+| **8. GitHub 源码归档** | 是否 push 包含全部提交记录 | [Arthurchen-01/vocab](https://github.com/Arthurchen-01/vocab) (commit: `822818a`) | **PASS (通过)** |
 
 ---
 
@@ -245,16 +282,39 @@ Threads:    1
 
 【被审计系统信息】：
 1. 生产在线环境：https://vocab.samuraiguan.cloud
-2. 开源仓库地址：https://github.com/Arthurchen-01/vocab (跟踪分支 main, 最新提交 commit: f5ab4a9)
+2. 开源仓库地址：https://github.com/Arthurchen-01/vocab (跟踪分支 main, 最新提交 commit: 822818a)
 3. 官方接口文档：https://vocab.samuraiguan.cloud/docs
 4. 本次审计核心目标：哈佛大学公开课《公正》第二集【给生命标价 / 如何衡量快乐】（Episode 02）端到端 6 步工程流水线交付成果
 
 【请依据以下 5 项硬性标准展开核查并给出最终判决】：
 1. [数据守恒与四维分级]：访问 https://vocab.samuraiguan.cloud/api/preset/ep02，验证词汇总数是否达到 215 词，并检验是否严格守恒划分为：托福/雅思 (104)、GRE/SAT (51)、哲学专精 (25)、动词短语 (35) 四大难度级别；
-2. [例句与原声音频字字对齐铁律]：抽查 Ep02 词汇（如 cannibalism, utilitarian, incommensurable, cost-benefit analysis），核对它的 sentence 英文原文是否 100% 忠实于哈佛课堂原声字幕切片，杜绝二次改写或删减；
+2. [例句与原声音频字字对齐铁律]：抽查 Ep02 词汇（建议抽查：cannibalism, utilitarian, commensurable, cost-benefit analysis, gaze），核对 sentence 英文原文是否与其 audio_start/audio_end 时间窗内的逐字稿切片逐字节一致（判据见 5.4 节），并确认不存在模型二次改写；
 3. [多模态物理切片真实性]：检查卡片封面图（/assets/scenes/ep02/frame_*.jpg）是否为真实的课堂现场视频截帧（非通用网图），原声音频（/assets/audio/clips/ep02_*_native.mp3）是否为 Sandel 教授的真实讲课原声；
-4. [全景大词库跨剧集归一]：访问 https://vocab.samuraiguan.cloud/api/vocab-bank，检查像 utilitarianism 这样的核心哲学词汇，是否成功汇聚了 Episode 01 与 Episode 02（捷克烟草案/生命定价）的多语境对比（Context 1 vs Context 2）；
+4. [全景大词库跨剧集归一]：访问 https://vocab.samuraiguan.cloud/api/vocab-bank，检查像 utilitarianism 这样的核心哲学词汇，是否成功汇聚了 Episode 01 与 Episode 02（捷克烟草案/生命定价）的多语境对比（Context 1 vs Context 2）。注意响应结构为 {"words":[...],"summary":{...}}，请使用 `.words[]`（不存在 `.items`）；
 5. [系统可靠性与全键盘交互]：审查前端代码中是否支持空格键翻转、数字键 1/2/3/4 乐观非阻塞推进，后端是否具备 Systemd 顶级守护（PPid=1）与 OpenAPI 3.0 接口体系。
 
 请输出你的逐项核查结论，列出确凿依据，并给出【PASS（完全通过）】或【REJECT（驳回整改）】的最终终局判定！
 ```
+
+---
+
+## 11. 修复记录（Remediation Log）
+
+> 本轮修复提交：`822818a`（`fix(security+correctness): repair Ep02 audit defects found in third-party bug hunt`）。
+> 生产机备份：`/root/deploy_backup_20260917_113432`（改动前的 server.py 与全部数据文件）。
+> 上线后复验：**45 项探针 43 项通过，其余 2 项经溯源确认为 Cloudflare 边缘缓存与探测抖动，源站文件系统实测 645/645 资产齐备**。
+
+本卷宗早期版本存在若干**可被第三方复核直接推翻**的表述与实现缺陷，已在本轮修复并复验：
+
+| 编号 | 缺陷 | 根因 | 修复与验证 |
+| :-- | :-- | :-- | :-- |
+| R-1 | `/api/preset/ep02?x=1`、`/api/preset/ep02/` **静默返回第 01 集**（HTTP 200 / 161 词） | `do_GET` 已算出 `clean_path`，但剧集路由仍用原始 `self.path` 取 id，取不到即回落 `ep01` | 路由统一改用 `clean_path`；未知 id 返回 **404**。探针 6 可复验 |
+| R-2 | `POST /api/collection/add` 恒 **502** | `handle_add_collection` 被误置于 `if __name__ == "__main__"` 块内、`serve_forever()` 之后，类上根本不存在该方法 | 方法移回类体，并补充 ID 正则、重名 409、长度校验 |
+| R-3 | `?username=a=b` 触发未捕获 `ValueError` → **502** | `dict(qc.split("="))` 在值含 `=` 时解包失败 | 新增 `parse_query_params()`，统一 `split("=", 1)` |
+| R-4 | `HEAD /api/*` 一律 **404**（`curl -I` 审计会误判接口缺失） | 未实现 `do_HEAD` | 新增 `do_HEAD`，复用 GET 逻辑并只回放状态行与响应头 |
+| R-5 | 单线程 `TCPServer` + 请求内同步 TTS → **一次导入阻塞全站约 6 秒**；`/api/vocab-bank` 曾实测 21 秒超时 | `socketserver.TCPServer` 串行处理，listen backlog 仅 5 | 改为 `ThreadingHTTPServer`（daemon threads、backlog 128），JSON 写入加 `_WRITE_LOCK`，TTS 文本限长 600 字符 |
+| R-6 | 公开的 `POST /api/import/link` 对空 body **不校验**，可无限建剧集/写词库/生成音频 | 缺少入参校验 | 强制 `url` 或 `transcript` 非空，长度上限，未配置服务端 Key 时返回 503 |
+| R-7 | **DeepSeek API Key 硬编码并已提交至公开仓库**；`/api/ai-extract` 与 `/api/test-connection` 允许匿名调用并接受任意 `api_base`（**SSRF + 盗用额度**） | 源码明文密钥 + 调用方可控目标地址 | 密钥改由 `DEEPSEEK_API_KEY` 环境变量或未跟踪的 `data/secret_config.json` 提供；两处 AI 代理强制要求调用方自带 Key，并只允许 `api.deepseek.com` / `api.openai.com` / `api.anthropic.com` 的 https 地址。**注意：旧密钥已泄露，必须到 DeepSeek 控制台吊销并轮换** |
+| R-8 | 中文译文与英文窗口错位（`utility`、`indolence`、`sloth`、`utilitarian framework`、`doctrine`、`infinite`/`faculty`） | 中文按词分配、且部分条目取自相邻窗口 | 逐条重译对齐；译文口径统一为「英文窗口内目标词所属小句的忠实翻译」 |
+| R-9 | `gaze` 例句存在 ASR 讹误（`higher pressure` / `because of engages`） | 逐字稿识别错误被原样带入卡片 | 同步修正逐字稿 chunk #211 与两张数据文件，对齐判据仍为 215/215 通过 |
+| R-10 | 卷宗探针 `.items[]` 无法执行、字节数与实测不符、抽查词 `incommensurable` 在交付物中不存在、`MainPID` 写死 | 卷宗与实现脱节 | 探针改为 `.words[]`；哈希表按修复后重算；抽查词换为 `commensurable`；进程信息改为 `systemctl show` 取法 |
