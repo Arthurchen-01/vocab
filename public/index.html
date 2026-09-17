@@ -469,8 +469,14 @@
           </button>
         </div>
 
-        <!-- Right: Quick Add Custom/Missing Word & Card Timer -->
+        <!-- Right: Export Guide, Quick Add Custom/Missing Word & Card Timer -->
         <div class="flex items-center gap-2">
+          <!-- Export Current Episode Guide -->
+          <button onclick="exportCurrentEpisodeGuide('docx')" class="px-2.5 py-1.5 rounded-xl bg-rose-50 hover:bg-rose-100 text-rose-900 border border-rose-200 text-xs font-bold flex items-center gap-1.5 shadow-2xs transition" title="导出本集独立精读手册 (.docx)">
+            <i class="fa-solid fa-file-word text-rose-800"></i>
+            <span class="hidden sm:inline">导出本集手册 (.docx)</span>
+            <span class="sm:hidden">手册</span>
+          </button>
           <!-- Quick Add Word (for words like moderate) -->
           <button onclick="openQuickAddWordModal()" class="px-2.5 py-1.5 rounded-xl bg-amber-50 hover:bg-amber-100 text-amber-900 border border-amber-300 text-xs font-bold flex items-center gap-1.5 shadow-2xs transition" title="搜索或添加本集想学的其他生词（如 moderate 等）">
             <i class="fa-solid fa-magnifying-glass-plus text-amber-700"></i>
@@ -822,6 +828,53 @@
           </div>
         </div>
 
+        <!-- Cross-Episode Deduplication & Multi-Context Transparency Callout -->
+        <div class="bg-gradient-to-r from-indigo-50/80 via-rose-50/40 to-slate-50 border border-indigo-100 rounded-2xl p-4 text-xs text-slate-700 flex items-start gap-3 shadow-2xs">
+          <div class="w-7 h-7 rounded-xl bg-indigo-600 text-white flex items-center justify-center shrink-0 text-xs shadow-xs">
+            <i class="fa-solid fa-layer-group"></i>
+          </div>
+          <div class="space-y-1 flex-1">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <span class="font-extrabold text-slate-900 text-xs flex items-center gap-1.5">
+                <span>词库去重与多语境聚合透明机制</span>
+                <span class="px-2 py-0.2 rounded-md bg-indigo-100 text-indigo-800 font-bold text-[10px]">主键归一</span>
+              </span>
+              <span class="text-[11px] font-mono text-slate-500" id="vb-filter-current-stats">全量收录 466 个学术词汇</span>
+            </div>
+            <p class="text-[11px] text-slate-600 leading-relaxed">
+              全景词库采用<b>“单词为主键”</b>的自动聚合算法。跨分集出现的重复词（如 <code class="bg-white px-1 py-0.5 rounded border border-slate-200 text-rose-900 font-bold">utilitarianism</code>、<code class="bg-white px-1 py-0.5 rounded border border-slate-200 text-rose-900 font-bold">dilemma</code>、<code class="bg-white px-1 py-0.5 rounded border border-slate-200 text-rose-900 font-bold">sovereign</code>）已自动合并并汇聚各集原声例句。在下方点击<b>【哈佛 Ep03 (44)】</b>可一键单独查看第 3 集全部 44 个核心学术词汇！
+            </p>
+          </div>
+        </div>
+
+        <!-- Course & Episode Multi-Dimensional Filter Bar -->
+        <div class="bg-slate-50/90 rounded-2xl p-3 border border-slate-200/80 flex flex-wrap items-center justify-between gap-2 text-xs">
+          <div class="flex items-center gap-2 font-bold text-slate-800">
+            <i class="fa-solid fa-graduation-cap text-rose-800"></i>
+            <span>分集快速过滤：</span>
+          </div>
+          <div class="flex flex-wrap items-center gap-1.5" id="vb-episode-filter-bar">
+            <button onclick="filterVocabBankByEpisode('all')" class="vb-ep-filter-btn px-3 py-1 rounded-xl text-xs font-bold bg-slate-900 text-white shadow-xs" data-ep="all">
+              全量总库 (466)
+            </button>
+            <button onclick="filterVocabBankByEpisode('ep01')" class="vb-ep-filter-btn px-3 py-1 rounded-xl text-xs font-semibold bg-white text-slate-700 border border-slate-200 hover:bg-slate-50" data-ep="ep01">
+              哈佛 Ep01 (163)
+            </button>
+            <button onclick="filterVocabBankByEpisode('ep02')" class="vb-ep-filter-btn px-3 py-1 rounded-xl text-xs font-semibold bg-white text-slate-700 border border-slate-200 hover:bg-slate-50" data-ep="ep02">
+              哈佛 Ep02 (215)
+            </button>
+            <button onclick="filterVocabBankByEpisode('ep03')" class="vb-ep-filter-btn px-3 py-1 rounded-xl text-xs font-semibold bg-white text-slate-700 border border-slate-200 hover:bg-slate-50" data-ep="ep03">
+              哈佛 Ep03 (44)
+            </button>
+            <button onclick="filterVocabBankByEpisode('yale_ep01')" class="vb-ep-filter-btn px-3 py-1 rounded-xl text-xs font-semibold bg-white text-slate-700 border border-slate-200 hover:bg-slate-50" data-ep="yale_ep01">
+              耶鲁 Ep01 (32)
+            </button>
+            <button onclick="filterVocabBankByEpisode('custom')" class="vb-ep-filter-btn px-3 py-1 rounded-xl text-xs font-semibold bg-white text-slate-700 border border-slate-200 hover:bg-slate-50" data-ep="custom">
+              B站/自定义 (5)
+            </button>
+          </div>
+        </div>
+
         <!-- Filter & Search Controls -->
         <div class="flex flex-col sm:flex-row items-center justify-between gap-3 pt-2">
           <div class="flex flex-wrap items-center gap-1.5 w-full sm:w-auto">
@@ -1044,6 +1097,22 @@
           <button type="button" onclick="insertBatchPresetUrls('mixed')" class="px-2.5 py-1 rounded-lg bg-purple-50 hover:bg-purple-100 text-purple-800 text-xs font-semibold border border-purple-200 transition flex items-center gap-1.5">
             <i class="fa-solid fa-shuffle text-purple-600"></i> 混合多源样例
           </button>
+        </div>
+      </div>
+
+      <!-- Bilibili Multi-P Extraction Guidance Card -->
+      <div class="p-3.5 rounded-2xl bg-gradient-to-r from-amber-50 via-amber-50/60 to-orange-50 border border-amber-300 text-xs text-amber-950 flex items-start gap-3 shadow-2xs">
+        <div class="w-8 h-8 rounded-xl bg-amber-500 text-white flex items-center justify-center shrink-0 text-sm shadow-xs">
+          <i class="fa-brands fa-bilibili"></i>
+        </div>
+        <div class="space-y-0.5 flex-1">
+          <div class="flex items-center gap-2">
+            <span class="font-extrabold text-amber-950 text-xs">💡 B站合集使用指南：无需手动逐集复制链接！</span>
+            <span class="px-2 py-0.2 rounded-md bg-amber-200 text-amber-900 font-bold text-[10px]">智能嗅探</span>
+          </div>
+          <p class="text-[11px] text-amber-900 leading-relaxed">
+            B站多P合集<b>只需粘贴合集中【任意一集的链接或 BV 号】</b>（例如 <code class="bg-white/80 px-1 py-0.5 rounded border border-amber-300 text-amber-950 font-mono text-[10px]">BV1jt411m7rn</code>），系统将自动识别并展开该合集的所有分集（如全部 12 集）进行批量解析与流式原声下载！
+          </p>
         </div>
       </div>
 
@@ -1754,6 +1823,10 @@ https://traffic.megaphone.fm/SAM8705727348.mp3"></textarea>
       } else {
         navigateRoute('landing', null, pushHistory);
       }
+
+      if (window.location.search.includes('modal=batch')) {
+        setTimeout(() => { if (typeof openBatchMediaModal === 'function') openBatchMediaModal(); }, 200);
+      }
     }
 
     // Main Router with HTML5 History PushState
@@ -1956,7 +2029,11 @@ https://traffic.megaphone.fm/SAM8705727348.mp3"></textarea>
 
           <div class="pt-3 border-t border-slate-100 flex items-center justify-between gap-2 flex-wrap">
             <span class="text-xs font-mono text-rose-800 font-bold">${ep.words ? ep.words.length : 0} 词汇/词组</span>
-            <div class="flex items-center gap-2">
+            <div class="flex items-center gap-1.5">
+              <button onclick="exportEpisodeGuide('${ep.id}', 'docx')" class="px-2.5 py-2 rounded-xl bg-white hover:bg-rose-50 border border-slate-200 hover:border-rose-300 text-rose-900 text-xs font-bold transition flex items-center gap-1 shadow-2xs" title="导出本集独立词汇手册 (.docx)">
+                <i class="fa-solid fa-file-word text-rose-800 text-[11px]"></i>
+                <span>手册</span>
+              </button>
               <button onclick="startFocusedStudy('${ep.id}', 'all')" class="px-3 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold transition flex items-center gap-1.5" title="一键默认加载全量词汇">
                 <i class="fa-solid fa-bolt text-amber-600 text-[10px]"></i>
                 <span>默认直开</span>
@@ -2747,6 +2824,18 @@ https://traffic.megaphone.fm/SAM8705727348.mp3"></textarea>
       renderVocabBankList();
     }
 
+    function filterVocabBankByEpisode(epFilter) {
+      app.vocabEpisodeFilter = epFilter;
+      document.querySelectorAll('.vb-ep-filter-btn').forEach(b => {
+        if (b.dataset.ep === epFilter) {
+          b.className = "vb-ep-filter-btn px-3 py-1 rounded-xl text-xs font-bold bg-slate-900 text-white shadow-xs";
+        } else {
+          b.className = "vb-ep-filter-btn px-3 py-1 rounded-xl text-xs font-semibold bg-white text-slate-700 border border-slate-200 hover:bg-slate-50";
+        }
+      });
+      renderVocabBankList();
+    }
+
     function searchVocabBank() {
       app.vocabSearchQuery = (document.getElementById('vb-search-input').value || '').trim().toLowerCase();
       renderVocabBankList();
@@ -2761,6 +2850,21 @@ https://traffic.megaphone.fm/SAM8705727348.mp3"></textarea>
         if (app.vocabFilter === 'mastered' && w.status !== 'mastered') return false;
         if (app.vocabFilter === 'learning' && w.status === 'mastered') return false;
 
+        // Episode / Course Multi-Dimensional Filter
+        if (app.vocabEpisodeFilter && app.vocabEpisodeFilter !== 'all') {
+          const matchEp = (w.contexts || []).some(c => {
+            const sid = (c.source_id || '').toLowerCase();
+            const stitle = (c.source_title || '').toLowerCase();
+            if (app.vocabEpisodeFilter === 'ep01') return sid === 'ep01' || stitle.includes('01') || stitle.includes('杀人的道德侧面');
+            if (app.vocabEpisodeFilter === 'ep02') return sid === 'ep02' || stitle.includes('02') || stitle.includes('生命定价');
+            if (app.vocabEpisodeFilter === 'ep03') return sid === 'ep03' || stitle.includes('03') || stitle.includes('自由选择权');
+            if (app.vocabEpisodeFilter === 'yale_ep01') return sid === 'yale_ep01' || stitle.includes('耶鲁') || stitle.includes('秩序井然');
+            if (app.vocabEpisodeFilter === 'custom') return sid.startsWith('custom') || stitle.includes('bilibili') || stitle.includes('罗翔');
+            return sid === app.vocabEpisodeFilter;
+          });
+          if (!matchEp) return false;
+        }
+
         if (app.vocabSearchQuery) {
           const matchWord = w.word.toLowerCase().includes(app.vocabSearchQuery);
           const matchDef = (w.def_cn || '').toLowerCase().includes(app.vocabSearchQuery);
@@ -2768,6 +2872,15 @@ https://traffic.megaphone.fm/SAM8705727348.mp3"></textarea>
         }
         return true;
       });
+
+      const statsSpan = document.getElementById('vb-filter-current-stats');
+      if (statsSpan) {
+        if (app.vocabEpisodeFilter && app.vocabEpisodeFilter !== 'all') {
+          statsSpan.innerText = `当前分集筛选：共计 ${filtered.length} 个学术词汇`;
+        } else {
+          statsSpan.innerText = `全量收录 ${app.vocabBankWords.length} 个学术词汇`;
+        }
+      }
 
       if (filtered.length === 0) {
         container.innerHTML = `
@@ -2909,12 +3022,25 @@ To resolve this moral dilemma, students must cultivate rigorous deliberation and
     // EXPORT FUNCTIONS                                              //
     // ==============================================================
     async function exportCollectionGuide(format) {
-      if (!app.activeCollectionData) return;
+      if (!app.activeCollectionData) {
+        alert("未找到当前合集数据！");
+        return;
+      }
       let words = [];
+      const seen = new Set();
       (app.activeCollectionData.episode_details || []).forEach(ep => {
-        if (ep.words) words.push(...ep.words);
+        (ep.words || []).forEach(w => {
+          if (!seen.has(w.word.toLowerCase())) {
+            seen.add(w.word.toLowerCase());
+            words.push(w);
+          }
+        });
       });
-      downloadExport(format, words, app.activeCollectionData.title);
+      if (!words.length) {
+        alert("合集内未发现词汇数据！");
+        return;
+      }
+      await downloadExport(format, words, `${app.activeCollectionData.title}_合集精读手册`);
     }
 
     async function exportVocabBank(format) {
@@ -2922,17 +3048,90 @@ To resolve this moral dilemma, students must cultivate rigorous deliberation and
         alert("词汇库为空！");
         return;
       }
-      downloadExport(format, app.vocabBankWords, "Harvard_Justice_Universal_Vocab_Bank");
+      let wordsToExport = app.vocabBankWords;
+      let title = "Harvard_Justice_Universal_Vocab_Bank";
+      if (app.vocabEpisodeFilter && app.vocabEpisodeFilter !== 'all') {
+        const epMap = {
+          'ep01': '哈佛大学《公正》第01集精读手册',
+          'ep02': '哈佛大学《公正》第02集精读手册',
+          'ep03': '哈佛大学《公正》第03集精读手册',
+          'yale_ep01': '耶鲁公开课《哲学导论》第01集精读手册',
+          'custom': 'B站法理研讨课及自定义精读手册'
+        };
+        title = epMap[app.vocabEpisodeFilter] || `Vocab_Bank_${app.vocabEpisodeFilter}`;
+        wordsToExport = app.vocabBankWords.filter(w => {
+          return (w.contexts || []).some(c => {
+            const sid = (c.source_id || '').toLowerCase();
+            const stitle = (c.source_title || '').toLowerCase();
+            if (app.vocabEpisodeFilter === 'ep01') return sid === 'ep01' || stitle.includes('01') || stitle.includes('杀人的道德侧面');
+            if (app.vocabEpisodeFilter === 'ep02') return sid === 'ep02' || stitle.includes('02') || stitle.includes('生命定价');
+            if (app.vocabEpisodeFilter === 'ep03') return sid === 'ep03' || stitle.includes('03') || stitle.includes('自由选择权');
+            if (app.vocabEpisodeFilter === 'yale_ep01') return sid === 'yale_ep01' || stitle.includes('耶鲁') || stitle.includes('秩序井然');
+            if (app.vocabEpisodeFilter === 'custom') return sid.startsWith('custom') || stitle.includes('bilibili') || stitle.includes('罗翔');
+            return sid === app.vocabEpisodeFilter;
+          });
+        });
+      }
+      await downloadExport(format, wordsToExport, title);
+    }
+
+    async function exportEpisodeGuide(episodeId, format = 'docx') {
+      try {
+        let epWords = [];
+        let epTitle = episodeId;
+        if (app.activeCollectionData && app.activeCollectionData.episode_details) {
+          const found = app.activeCollectionData.episode_details.find(e => e.id === episodeId);
+          if (found && found.words && found.words.length > 0) {
+            epWords = found.words;
+            epTitle = found.title || episodeId;
+          }
+        }
+        if (!epWords.length) {
+          const res = await fetch(`/api/preset/${episodeId}`);
+          if (res.ok) {
+            const data = await res.json();
+            epWords = data.words || [];
+            epTitle = data.title || episodeId;
+          }
+        }
+        if (!epWords.length) {
+          alert("未获取到该分集词汇列表！");
+          return;
+        }
+        await downloadExport(format, epWords, `${epTitle}_精读手册`);
+      } catch (e) {
+        alert("导出分集手册失败: " + e.message);
+      }
+    }
+
+    async function exportCurrentEpisodeGuide(format = 'docx') {
+      if (!app.activeEpisodeData || !app.activeEpisodeData.words || !app.activeEpisodeData.words.length) {
+        alert("当前未加载有效的分集词汇！");
+        return;
+      }
+      const title = app.activeEpisodeData.title || "Episode_Study_Guide";
+      await downloadExport(format, app.activeEpisodeData.words, `${title}_精读手册`);
     }
 
     async function downloadExport(format, words, title) {
+      if (!words || !words.length) {
+        alert("待导出的词汇列表为空！");
+        return;
+      }
       try {
         const res = await fetch('/api/export', {
           method: 'POST',
           headers: {'Content-Type': 'application/json'},
           body: JSON.stringify({ format: format, words: words, title: title })
         });
+        if (!res.ok) {
+          const errData = await res.json().catch(() => ({}));
+          throw new Error(errData.error || `导出服务异常 (HTTP ${res.status})`);
+        }
         const blob = await res.blob();
+        if (blob.size < 500 && format === 'docx') {
+          throw new Error("导出的 Word 文档体积极小，可能已损坏，请重试！");
+        }
         const ext = format === 'docx' ? 'docx' : (format === 'study_guide_md' ? 'md' : (format === 'anki_csv' ? 'csv' : 'txt'));
         const a = document.createElement('a');
         a.href = URL.createObjectURL(blob);

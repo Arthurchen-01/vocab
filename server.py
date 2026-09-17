@@ -26,7 +26,10 @@ import hashlib
 import base64
 import asyncio
 from datetime import date
-import edge_tts
+try:
+    import edge_tts
+except ImportError:
+    edge_tts = None
 from docx_generator import build_docx_bytes
 
 PORT = int(sys.argv[1]) if len(sys.argv) > 1 else int(os.environ.get("PORT", 8765))
@@ -42,6 +45,19 @@ USERS_FILE = os.path.join(DATA_DIR, "users.json")
 STUDY_FILE = os.path.join(DATA_DIR, "study_records.json")
 VOCAB_BANK_FILE = os.path.join(DATA_DIR, "vocab_bank.json")
 CUSTOM_EPISODES_FILE = os.path.join(DATA_DIR, "custom_episodes.json")
+
+def build_content_disposition(filename):
+    """
+    Builds an RFC 5987 / RFC 6266 compliant Content-Disposition header value.
+    Provides strict ASCII-safe filename fallback and UTF-8 encoded filename* to avoid
+    Latin-1 encoding crashes in Python http.server.
+    """
+    ascii_safe = re.sub(r'[^a-zA-Z0-9\.\-_]', '_', filename)
+    ascii_safe = re.sub(r'_+', '_', ascii_safe).strip('_')
+    if not ascii_safe or ascii_safe in ('.docx', '.md', '.csv', '.txt'):
+        ascii_safe = "study_guide.docx"
+    utf8_quoted = urllib.parse.quote(filename, encoding='utf-8')
+    return f'attachment; filename="{ascii_safe}"; filename*=UTF-8\'\'{utf8_quoted}'
 
 # ---------------------------------------------------------------------------
 # Secrets. NEVER hard-code credentials here: this repository is public.
@@ -1253,7 +1269,7 @@ class RequestHandler(http.server.SimpleHTTPRequestHandler):
                 mimetype = "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
                 self.send_response(200)
                 self.send_header("Content-Type", mimetype)
-                self.send_header("Content-Disposition", f'attachment; filename="{filename}"')
+                self.send_header("Content-Disposition", build_content_disposition(filename))
                 self.send_header("Content-Length", str(len(docx_bytes)))
                 self.end_headers()
                 self.wfile.write(docx_bytes)
@@ -1305,14 +1321,15 @@ class RequestHandler(http.server.SimpleHTTPRequestHandler):
 
             self.send_response(200)
             self.send_header("Content-Type", mimetype)
-            self.send_header("Content-Disposition", f'attachment; filename="{filename}"')
+            self.send_header("Content-Disposition", build_content_disposition(filename))
             self.end_headers()
             self.wfile.write(content.encode("utf-8"))
 
         except Exception as e:
             self.send_response(500)
+            self.send_header("Content-Type", "application/json; charset=utf-8")
             self.end_headers()
-            self.wfile.write(str(e).encode("utf-8"))
+            self.wfile.write(json.dumps({"error": f"导出处理失败: {str(e)}"}, ensure_ascii=False).encode("utf-8"))
 
 
     def handle_heartbeat_time(self, body_str):
