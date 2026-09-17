@@ -36,6 +36,10 @@ for _d in (WORK_DIR, OUT_DIR, CACHE_DIR, REPORT_DIR, BACKUP_DIR):
 
 EPISODE = os.environ.get("VOCAB_EP", "ep02")
 
+# Stable deck order used when rebuilding the master vocabulary bank (S6).
+CURRICULUM_KEYS_ORDER = [k for k in (os.environ.get("VOCAB_DECK_ORDER") or
+                                     "ep01,ep02,ep03,yale_ep01").split(",") if k]
+
 # ---------------------------------------------------------------- AI gateway
 AI_BASE = os.environ.get("VOCAB_AI_BASE", "https://api.deepseek.com")
 AI_MODEL = os.environ.get("VOCAB_AI_MODEL", "deepseek-chat")

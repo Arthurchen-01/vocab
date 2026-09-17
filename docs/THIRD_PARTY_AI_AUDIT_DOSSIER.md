@@ -115,11 +115,13 @@ WantedBy=multi-user.target
 
 ### 4.1 `vocab_bank.json` 的校验规则（重要）
 
-`vocab_bank.json` **不作为静态哈希工件校验**：生产进程会把实时学习遥测（`stats.review_count` / `total_seconds` / `last_rating` / `last_reviewed_at`）写回该文件，因此它天然是「版本化工件 + 运行时存储」的混合体，其哈希必然随用户学习而漂移。
+`vocab_bank.json` **是派生文件**：由 S6（`tools/quality_pipeline/s6_sync_bank.py`）从各分集卡组（`curriculum_tiered.json` + `custom_episodes.json`）**重建**，不是手工维护的平行副本。重建时保留全部 SRS 进度（`review_count` / `total_seconds` / `status` 只增不减）。
 
-- 正确校验方式（结构与规模）：`curl -s https://vocab.samuraiguan.cloud/api/vocab-bank | jq '.summary'` → `total_words: 260`、`multi_context_count: 8`；
-- 语义等价比对：将生产文件与仓库文件同时载入 JSON，剔除每个词条的 `stats` 字段后应完全相等；
-- 仓库侧基线：`data/vocab_bank.json` = 227,077 B，SHA-256 `a2a34426419fadf5506ba3fe95f76680327fc22dad865572b90f93df3773d0ec`（GitHub main 可复现）。
+- 正确校验方式（结构与规模）：`curl -s https://vocab.samuraiguan.cloud/api/vocab-bank | jq '.summary'` → `total_words: 466`、`multi_context_count: 19`；
+- **一致性断言（关键）**：对任意 `(词, 分集)` 组合，词库 `contexts[].sentence` / `trans` 必须与该分集卡片里的 `sentence` / `sentence_cn` **逐字相同**（当前抽查 422 组，**0 处不一致**）；
+- 覆盖断言：`ep01 163/163`、`ep02 215/215`、`ep03 44/44`、`yale_ep01 32/32`、`custom 12/12`；
+- 生产与仓库的差异仅来自运行时遥测（`stats` 字段）；仓库侧基线：`data/vocab_bank.json` = 411,258 B，SHA-256 `0f58e947f48c891fe63b5728a66811e3060e12c39b52de2b8d51e29326fc6c51`。
+- 其中 20 个条目标记 `bank_only: true`：它们在词库中已存在但当前不属于任何分集卡组（例如 `trolley` / `actuary` / `castaway`），保留是为了不丢失学习者已有的复习进度。
 
 ---
 
@@ -135,9 +137,9 @@ $$\sum_{i=1}^{8} B_i = 27 + 31 + 26 + 36 + 41 + 27 + 28 + 27 = 243$$
 $$|\text{Unique}(\bigcup_{i=1}^{8} B_i)| = 215 \quad (\text{去重收敛率 } 88.48\%)$$
 
 ### 5.3 全景大词库容量与多语境归一
-$$\text{Master Vocab Bank} = 260 \text{ (unique word keys)}$$
-$$\text{Multi-Context Terms} = 8 \quad (\text{contexts} \ge 2)$$
-$$\text{Ep02 Context Coverage} = 228 \text{ terms} \supseteq \text{Ep02 curriculum (215 words)}$$
+$$\text{Master Vocab Bank} = 466 \text{ (unique word keys)} = \bigcup \text{(all decks)} + 20 \text{ bank-only}$$
+$$\text{Multi-Context Terms} = 19 \quad (\text{contexts} \ge 2)$$
+$$\text{Deck coverage} = 163/163 + 215/215 + 44/44 + 32/32 + 12/12 \quad (\text{缺失 0})$$
 
 ### 5.4 例句完整性判据（可脚本化复核）
 旧版本把 ASR **任意分段组**当作例句，导致切片两头都被截断（实测 215 条中 **190 条（88%）**的旧窗口与真实句子边界不符）。
@@ -185,7 +187,7 @@ curl -s -X GET "https://vocab.samuraiguan.cloud/api/vocab-bank" \
 # 预期返回: {"word":"utilitarianism","contexts":["ep01","ep02","bilibili_justice_review","custom_1789528228"]}
 #
 # 注意：该接口响应结构为 {"words":[...], "summary":{...}}，不存在 .items 字段；
-# 规模断言请用: jq '.summary'  ->  {"total_words":260,...,"multi_context_count":8,...}
+# 规模断言请用: jq '.summary'  ->  {"total_words":466,...,"multi_context_count":19,...}
 ```
 
 ### 探针 5：检验 OpenAPI 3.0 规范与文档可用性
@@ -275,7 +277,7 @@ VmRSS:      40344 kB
 | **2. 四维词汇分类与规模** | 是否扩充至 ~150-200 词并分四类 | `GET /api/preset/ep02` 返回 215 词与 4 类 | **PASS (通过)** |
 | **3. 例句完整性铁律** | 例句是否为完整句子、切片是否头尾覆盖整句 | 按 5.4 节四条判据复核（当前 215/215 通过） | **PASS (通过)** |
 | **4. 多模态物理切片资产** | 是否具备真机视频截图与原声切片 | 215 张图片与 215 个音频切片落盘可播 | **PASS (通过)** |
-| **5. 跨剧集语境归一 (Context 2)** | 是否在全景词库呈现第二集例句对比 | `GET /api/vocab-bank` 中 8 个多语境词项 | **PASS (通过)** |
+| **5. 跨剧集语境归一 (Context 2)** | 是否在全景词库呈现第二集例句对比，且与分集卡片逐字一致 | `GET /api/vocab-bank` 中 19 个多语境词项；银行↔卡片文本 0 处不一致 | **PASS (通过)** |
 | **6. 全键盘交互与性能** | 1234 按键与翻转是否零延迟响应 | Playwright 测试与 `v5_04` 截图（2/215卡片） | **PASS (通过)** |
 | **7. 生产部署与服务守护** | Systemd 守护与 Nginx 反代是否正常 | `PPid=1`, `active (running)`, HTTPS 访问正常 | **PASS (通过)** |
 | **8. GitHub 源码归档** | 是否 push 包含全部提交记录 | [Arthurchen-01/vocab](https://github.com/Arthurchen-01/vocab) `main` 分支 HEAD | **PASS (通过)** |
@@ -340,6 +342,8 @@ VmRSS:      40344 kB
 | 原声切片截头去尾 | **190 / 215（88%）** 旧窗口与真实句子边界不符 | 切片边界取自 ASR 任意分段组（1–8 段，均长 13.7 s） |
 | 英文例句断句错误 | 1092 段中仅 13.9% 带句末标点 | 直接把逐字稿分段拼接当句子 |
 | 中文翻译机械、缺上下文 | 同一句英文在不同卡片上最多 3 种译文 | 按「词」分配译文，未做整句翻译 |
+| **总词库与分集词表对不上** | 词库 260 词 vs 分集并集 446 词：Ep01 仅 23/163、Ep03 仅 7/44、Yale 仅 1/32；且 224/245 条可比对例句、245/245 条译文与卡片**不一致** | 词库是手工维护的**平行副本**：既没有随分集扩充而更新，又自存了一份例句/译文，永不与卡片同步 |
+| Ep03/Yale/自定义导入卡片显示「暂无中文翻译」 | 88 个词条的 `sentence_cn` 为空 | 这些分集从未跑过翻译流程 |
 
 ### 12.2 流水线与门禁
 
@@ -350,6 +354,8 @@ VmRSS:      40344 kB
 | S3 | 按句子边界重切原声 + 重取截帧 | — | `ffprobe` 时长一致（±0.30 s）、文件齐备、帧有效 |
 | S4 | 153 句**整句**中文翻译（带前后文语境） | 翻译 + 审校（只打标）+ 单句重译 | 一句一译、无英文残留、无短译占位 |
 | S5 | 写回两份数据文件 + 端到端验证 | — | 11 项断言（含「同一句只能有一个译文」） |
+| S4b | 补齐其它分集缺失的中文翻译（Ep03/Yale/自定义导入共 88 词） | 翻译 + 审校 + 单句重译 | 无空译文、无占位短译 |
+| S6 | **从分集卡组重建全景大词库** | — | 覆盖 0 缺失、银行↔卡片文本逐字一致、SRS 进度只增不减、词典条目不丢失 |
 
 - AI 只被允许输出**段序号区间**，时间戳永远来自原始 ASR 分段，AI 无法凭空造时间。
 - 每次 AI 调用按内容哈希缓存，重跑可复现；门禁报告见 `tools/quality_pipeline/artifacts/`。

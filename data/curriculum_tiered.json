@@ -8295,7 +8295,8 @@
         "timestamp": "[02:10]",
         "speaker": "Prof. Michael Sandel",
         "scene_img": "/assets/scenes/scene_libertarian.jpg",
-        "scene_desc": "桑德斯大剧院：自由至上主义黑板大纲"
+        "scene_desc": "桑德斯大剧院：自由至上主义黑板大纲",
+        "sentence_cn": "自由至上主义者主张，个人自由必须得到保护，其地位高于一切社会再分配目标。"
       },
       {
         "word": "redistribute",
@@ -8308,7 +8309,8 @@
         "timestamp": "[05:40]",
         "speaker": "Prof. Michael Sandel",
         "scene_img": "/assets/scenes/scene_libertarian.jpg",
-        "scene_desc": "累进税制与财富再分配论辩"
+        "scene_desc": "累进税制与财富再分配论辩",
+        "sentence_cn": "民主国家将收入从富人再分配给穷人，在道德上是否正当？"
       },
       {
         "word": "fundamental",
@@ -8321,7 +8323,8 @@
         "timestamp": "[07:15]",
         "speaker": "Prof. Michael Sandel",
         "scene_img": "/assets/scenes/scene_libertarian.jpg",
-        "scene_desc": "诺齐克核心前提剖析"
+        "scene_desc": "诺齐克核心前提剖析",
+        "sentence_cn": "诺齐克的资格理论建立在自我所有权这一根本的哲学前提之上。"
       },
       {
         "word": "coercion",
@@ -8334,7 +8337,8 @@
         "timestamp": "[09:20]",
         "speaker": "Student David",
         "scene_img": "/assets/scenes/scene_libertarian.jpg",
-        "scene_desc": "学生发言：税收是否属于胁迫"
+        "scene_desc": "学生发言：税收是否属于胁迫",
+        "sentence_cn": "在自由至上主义者看来，以监禁威胁为后盾的征税是一种令人无法容忍的国家强迫。"
       },
       {
         "word": "consent",
@@ -8347,7 +8351,8 @@
         "timestamp": "[12:30]",
         "speaker": "Prof. Michael Sandel",
         "scene_img": "/assets/scenes/scene_libertarian.jpg",
-        "scene_desc": "默示同意与明确同意之辩"
+        "scene_desc": "默示同意与明确同意之辩",
+        "sentence_cn": "民主投票是否真的意味着少数派给出了他们个人对征税的同意？"
       },
       {
         "word": "property",
@@ -8360,7 +8365,8 @@
         "timestamp": "[15:10]",
         "speaker": "Prof. Michael Sandel",
         "scene_img": "/assets/scenes/scene_libertarian.jpg",
-        "scene_desc": "约翰·洛克《政府论》劳动财产论"
+        "scene_desc": "约翰·洛克《政府论》劳动财产论",
+        "sentence_cn": "洛克认为，当人把自己的体力劳动与无主土地混合在一起时，私有财产就产生了。"
       },
       {
         "word": "taxation",
@@ -8373,7 +8379,8 @@
         "timestamp": "[18:40]",
         "speaker": "Prof. Michael Sandel",
         "scene_img": "/assets/scenes/scene_libertarian.jpg",
-        "scene_desc": "税收等同强迫劳动连续推理板书"
+        "scene_desc": "税收等同强迫劳动连续推理板书",
+        "sentence_cn": "罗伯特·诺齐克大胆断言，对劳动所得征收的累进税，在道德上与强迫劳动无异。"
       },
       {
         "word": "voluntary",
@@ -8386,7 +8393,8 @@
         "timestamp": "[21:15]",
         "speaker": "Student Sarah",
         "scene_img": "/assets/scenes/scene_libertarian.jpg",
-        "scene_desc": "学生讨论自愿市场交易"
+        "scene_desc": "学生讨论自愿市场交易",
+        "sentence_cn": "自由市场的拥护者坚持认为，所有商品和服务的交换都必须是完全自愿的。"
       },
       {
         "word": "entitled",
@@ -8399,7 +8407,8 @@
         "timestamp": "[24:50]",
         "speaker": "Prof. Michael Sandel",
         "scene_img": "/assets/scenes/scene_libertarian.jpg",
-        "scene_desc": "正义资格三原则阐释"
+        "scene_desc": "正义资格三原则阐释",
+        "sentence_cn": "如果你的原始财富是正当获得的，你就完全有权利享有你所拥有的一切财产。"
       },
       {
         "word": "regulate",
@@ -8412,7 +8421,8 @@
         "timestamp": "[27:10]",
         "speaker": "Prof. Michael Sandel",
         "scene_img": "/assets/scenes/scene_libertarian.jpg",
-        "scene_desc": "劳工法规与契约自由冲突"
+        "scene_desc": "劳工法规与契约自由冲突",
+        "sentence_cn": "国家是否有权管制最低工资和最高工时？"
       },
       {
         "word": "welfare",
@@ -8425,7 +8435,8 @@
         "timestamp": "[30:20]",
         "speaker": "Prof. Michael Sandel",
         "scene_img": "/assets/scenes/scene_libertarian.jpg",
-        "scene_desc": "福利国家模式反思"
+        "scene_desc": "福利国家模式反思",
+        "sentence_cn": "最弱意义上的国家不能正当地向富裕公民征税，以资助公共福利安全网。"
       },
       {
         "word": "ownership",
@@ -8438,7 +8449,8 @@
         "timestamp": "[33:15]",
         "speaker": "Prof. Michael Sandel",
         "scene_img": "/assets/scenes/scene_libertarian.jpg",
-        "scene_desc": "自我所有权的反向哲学推导"
+        "scene_desc": "自我所有权的反向哲学推导",
+        "sentence_cn": "如果你拒绝自我所有权，你就必须承认社会把你的一部分当作集体资源来拥有。"
       },
       {
         "word": "libertarianism",
@@ -8451,7 +8463,8 @@
         "timestamp": "[01:30]",
         "speaker": "Prof. Michael Sandel",
         "scene_img": "/assets/scenes/scene_libertarian.jpg",
-        "scene_desc": "自由至上主义政治哲学纲领"
+        "scene_desc": "自由至上主义政治哲学纲领",
+        "sentence_cn": "自由至上主义坚持认为，政府的权力应当仅限于执行契约和防止暴力。"
       },
       {
         "word": "paternalism",
@@ -8464,7 +8477,8 @@
         "timestamp": "[03:45]",
         "speaker": "Prof. Michael Sandel",
         "scene_img": "/assets/scenes/scene_libertarian.jpg",
-        "scene_desc": "头盔法与家长式国家批判"
+        "scene_desc": "头盔法与家长式国家批判",
+        "sentence_cn": "自由至上主义者强烈反对家长式统治的法律，比如强制系安全带和强制戴摩托车头盔的法规。"
       },
       {
         "word": "self-ownership",
@@ -8477,7 +8491,8 @@
         "timestamp": "[06:50]",
         "speaker": "Prof. Michael Sandel",
         "scene_img": "/assets/scenes/scene_libertarian.jpg",
-        "scene_desc": "自我所有权推导链条"
+        "scene_desc": "自我所有权推导链条",
+        "sentence_cn": "自由至上主义论证的道德关键，在于自我所有权这一根本前提。"
       },
       {
         "word": "redistribution",
@@ -8490,7 +8505,8 @@
         "timestamp": "[10:15]",
         "speaker": "Prof. Michael Sandel",
         "scene_img": "/assets/scenes/scene_libertarian.jpg",
-        "scene_desc": "再分配正义 vs 交换正义"
+        "scene_desc": "再分配正义 vs 交换正义",
+        "sentence_cn": "在诺齐克看来，强迫富人参与财富再分配，侵犯了基本人权。"
       },
       {
         "word": "appropriation",
@@ -8503,7 +8519,8 @@
         "timestamp": "[16:20]",
         "speaker": "Prof. Michael Sandel",
         "scene_img": "/assets/scenes/scene_libertarian.jpg",
-        "scene_desc": "初次占有（Initial Appropriation）的伦理限制"
+        "scene_desc": "初次占有（Initial Appropriation）的伦理限制",
+        "sentence_cn": "洛克对无主自然资源的初始占有施加了严格的道德限制。"
       },
       {
         "word": "entitlement",
@@ -8516,7 +8533,8 @@
         "timestamp": "[23:30]",
         "speaker": "Prof. Michael Sandel",
         "scene_img": "/assets/scenes/scene_libertarian.jpg",
-        "scene_desc": "历史原则 vs 模式化原则"
+        "scene_desc": "历史原则 vs 模式化原则",
+        "sentence_cn": "诺齐克的资格正义理论所追问的，不是分配是否平等，而是分配是否具有历史性。"
       },
       {
         "word": "inviolability",
@@ -8529,7 +8547,8 @@
         "timestamp": "[08:10]",
         "speaker": "Prof. Michael Sandel",
         "scene_img": "/assets/scenes/scene_libertarian.jpg",
-        "scene_desc": "契约自由的至高神圣性"
+        "scene_desc": "契约自由的至高神圣性",
+        "sentence_cn": "自由至上主义者宣称，由各方自愿达成的私人契约具有神圣不可侵犯性。"
       },
       {
         "word": "arbitrary",
@@ -8542,7 +8561,8 @@
         "timestamp": "[14:40]",
         "speaker": "Student David",
         "scene_img": "/assets/scenes/scene_libertarian.jpg",
-        "scene_desc": "乔丹打篮球赚大钱思想实验"
+        "scene_desc": "乔丹打篮球赚大钱思想实验",
+        "sentence_cn": "批评者认为，像迈克尔·乔丹的篮球天赋这类与生俱来的才能，是道德上不应得的馈赠。"
       },
       {
         "word": "compulsory",
@@ -8555,7 +8575,8 @@
         "timestamp": "[19:25]",
         "speaker": "Prof. Michael Sandel",
         "scene_img": "/assets/scenes/scene_libertarian.jpg",
-        "scene_desc": "志愿兵役制 vs 强制征兵之辩"
+        "scene_desc": "志愿兵役制 vs 强制征兵之辩",
+        "sentence_cn": "强制兵役或征兵，在纯粹自由至上主义者看来，是一种国家强加的奴役。"
       },
       {
         "word": "expropriate",
@@ -8568,7 +8589,8 @@
         "timestamp": "[22:05]",
         "speaker": "Prof. Michael Sandel",
         "scene_img": "/assets/scenes/scene_libertarian.jpg",
-        "scene_desc": "国家征用权边界"
+        "scene_desc": "国家征用权边界",
+        "sentence_cn": "政府不能仅仅为了资助受欢迎的公共项目就征用私人收入。"
       },
       {
         "word": "coercive",
@@ -8581,7 +8603,8 @@
         "timestamp": "[26:30]",
         "speaker": "Prof. Michael Sandel",
         "scene_img": "/assets/scenes/scene_libertarian.jpg",
-        "scene_desc": "诺齐克反税收推论"
+        "scene_desc": "诺齐克反税收推论",
+        "sentence_cn": "征税与专制统治者强制的胁迫劳动，是否有根本区别？"
       },
       {
         "word": "sovereignty",
@@ -8594,7 +8617,8 @@
         "timestamp": "[29:15]",
         "speaker": "Prof. Michael Sandel",
         "scene_img": "/assets/scenes/scene_libertarian.jpg",
-        "scene_desc": "人体器官买卖与身体主权极端案"
+        "scene_desc": "人体器官买卖与身体主权极端案",
+        "sentence_cn": "个人对自身身体的主权意味着，经本人同意的成年人应当有权出售自己的肾脏。"
       },
       {
         "word": "egalitarian",
@@ -8607,7 +8631,8 @@
         "timestamp": "[31:40]",
         "speaker": "Prof. Michael Sandel",
         "scene_img": "/assets/scenes/scene_libertarian.jpg",
-        "scene_desc": "罗尔斯平等主义与诺齐克自由主义决战"
+        "scene_desc": "罗尔斯平等主义与诺齐克自由主义决战",
+        "sentence_cn": "像约翰·罗尔斯这样的平等主义哲学家坚持认为，社会必须纠正不公平的自然彩票。"
       },
       {
         "word": "redistributive",
@@ -8620,7 +8645,8 @@
         "timestamp": "[34:50]",
         "speaker": "Prof. Michael Sandel",
         "scene_img": "/assets/scenes/scene_libertarian.jpg",
-        "scene_desc": "将他人当成手段的再分配批判"
+        "scene_desc": "将他人当成手段的再分配批判",
+        "sentence_cn": "再分配性质的征税侵犯了自由，因为它把一些人的时间和努力当作供他人使用的资源。"
       },
       {
         "word": "minimal state",
@@ -8633,7 +8659,8 @@
         "timestamp": "[04:20]",
         "speaker": "Prof. Michael Sandel",
         "scene_img": "/assets/scenes/scene_libertarian.jpg",
-        "scene_desc": "罗伯特·诺齐克《无政府、国家与乌托邦》守夜人模型"
+        "scene_desc": "罗伯特·诺齐克《无政府、国家与乌托邦》守夜人模型",
+        "sentence_cn": "诺齐克得出结论：只有一种极小国家——其功能仅限于执行契约和防止暴力——在道德上才是正当的。"
       },
       {
         "word": "Lockean proviso",
@@ -8646,7 +8673,8 @@
         "timestamp": "[17:05]",
         "speaker": "Prof. Michael Sandel",
         "scene_img": "/assets/scenes/scene_libertarian.jpg",
-        "scene_desc": "洛克财产权理论核心限制条款"
+        "scene_desc": "洛克财产权理论核心限制条款",
+        "sentence_cn": "洛克式但书坚持，一个人只有在为他人留下足够多且同样好的共有资源时，才可以占有财产。"
       },
       {
         "word": "Nozickean entitlement theory",
@@ -8659,7 +8687,8 @@
         "timestamp": "[25:15]",
         "speaker": "Prof. Michael Sandel",
         "scene_img": "/assets/scenes/scene_libertarian.jpg",
-        "scene_desc": "诺齐克正义三原则完整结构"
+        "scene_desc": "诺齐克正义三原则完整结构",
+        "sentence_cn": "诺齐克的资格理论包含三条原则：获取的正义、转让的正义，以及对过去不正义的矫正。"
       },
       {
         "word": "distributive justice",
@@ -8672,7 +8701,8 @@
         "timestamp": "[11:00]",
         "speaker": "Prof. Michael Sandel",
         "scene_img": "/assets/scenes/scene_libertarian.jpg",
-        "scene_desc": "分配正义的两大对立世界观"
+        "scene_desc": "分配正义的两大对立世界观",
+        "sentence_cn": "分配正义究竟是符合某种理想模式的问题，还是尊重历史上自愿契约的问题？"
       },
       {
         "word": "taxation as forced labor",
@@ -8685,7 +8715,8 @@
         "timestamp": "[20:10]",
         "speaker": "Prof. Michael Sandel",
         "scene_img": "/assets/scenes/scene_libertarian.jpg",
-        "scene_desc": "从征税到奴役的经典三段论板书"
+        "scene_desc": "从征税到奴役的经典三段论板书",
+        "sentence_cn": "诺齐克构建了一条演绎链条：拿走我的收入，就是拿走我的时间；拿走我的时间，就是强迫我为你劳动。"
       },
       {
         "word": "natural rights",
@@ -8698,7 +8729,8 @@
         "timestamp": "[13:45]",
         "speaker": "Prof. Michael Sandel",
         "scene_img": "/assets/scenes/scene_libertarian.jpg",
-        "scene_desc": "自然法与自然权利渊源"
+        "scene_desc": "自然法与自然权利渊源",
+        "sentence_cn": "洛克假定，在自然状态下，人已经享有上帝赋予的生命、自由与财产等自然权利。"
       },
       {
         "word": "moral self-ownership",
@@ -8711,7 +8743,8 @@
         "timestamp": "[07:30]",
         "speaker": "Prof. Michael Sandel",
         "scene_img": "/assets/scenes/scene_libertarian.jpg",
-        "scene_desc": "自我所有权与利维坦的冲突"
+        "scene_desc": "自我所有权与利维坦的冲突",
+        "sentence_cn": "如果我不拥有道德自我所有权，那么我最终就是主权国家的一件财产。"
       },
       {
         "word": "free market libertarianism",
@@ -8724,7 +8757,8 @@
         "timestamp": "[02:40]",
         "speaker": "Prof. Michael Sandel",
         "scene_img": "/assets/scenes/scene_libertarian.jpg",
-        "scene_desc": "弗里德曼《资本主义与自由》引述"
+        "scene_desc": "弗里德曼《资本主义与自由》引述",
+        "sentence_cn": "米尔顿·弗里德曼主张自由市场自由至上主义，认为职业执照制度限制了人们的自愿选择。"
       },
       {
         "word": "paternalist legislation",
@@ -8737,7 +8771,8 @@
         "timestamp": "[05:10]",
         "speaker": "Prof. Michael Sandel",
         "scene_img": "/assets/scenes/scene_libertarian.jpg",
-        "scene_desc": "立法干预边界辩论"
+        "scene_desc": "立法干预边界辩论",
+        "sentence_cn": "自由至上主义者批评家长主义立法，认为它是对个人道德自主权的不正当侵犯。"
       },
       {
         "word": "patterned principles of justice",
@@ -8750,7 +8785,8 @@
         "timestamp": "[28:30]",
         "speaker": "Prof. Michael Sandel",
         "scene_img": "/assets/scenes/scene_libertarian.jpg",
-        "scene_desc": "威尔特·张伯伦思想实验：自由颠覆模式"
+        "scene_desc": "威尔特·张伯伦思想实验：自由颠覆模式",
+        "sentence_cn": "诺齐克表明，自由会打乱模式：任何模式化的正义原则都要求持续不断地干涉人们的生活。"
       },
       {
         "word": "infringe upon",
@@ -8763,7 +8799,8 @@
         "timestamp": "[12:30]",
         "speaker": "Prof. Michael Sandel",
         "scene_img": "/assets/scenes/scene_libertarian.jpg",
-        "scene_desc": "自由至上主义论调：国家税收即强迫劳动"
+        "scene_desc": "自由至上主义论调：国家税收即强迫劳动",
+        "sentence_cn": "自由至上主义者认为，再分配性质的税收侵犯了基本的自由权利。"
       },
       {
         "word": "stem from",
@@ -8776,7 +8813,8 @@
         "timestamp": "[18:45]",
         "speaker": "Prof. Michael Sandel",
         "scene_img": "/assets/scenes/scene_libertarian.jpg",
-        "scene_desc": "诺齐克哲学：自我拥有权派生财产权"
+        "scene_desc": "诺齐克哲学：自我拥有权派生财产权",
+        "sentence_cn": "我们所有正当的经济权利都源自自我所有权这一根本原则。"
       },
       {
         "word": "part with",
@@ -8789,7 +8827,8 @@
         "timestamp": "[24:10]",
         "speaker": "Prof. Michael Sandel",
         "scene_img": "/assets/scenes/scene_libertarian.jpg",
-        "scene_desc": "乔丹天赋收益假想案：再分配正义争锋"
+        "scene_desc": "乔丹天赋收益假想案：再分配正义争锋",
+        "sentence_cn": "国家凭什么强迫迈克尔·乔丹放弃他凭借篮球天赋赚来的数百万美元？"
       },
       {
         "word": "coerce into",
@@ -8802,7 +8841,8 @@
         "timestamp": "[31:20]",
         "speaker": "Prof. Michael Sandel",
         "scene_img": "/assets/scenes/scene_libertarian.jpg",
-        "scene_desc": "税收等同奴役推理链条剖析"
+        "scene_desc": "税收等同奴役推理链条剖析",
+        "sentence_cn": "对劳动所得征税，就像强迫个人为国家从事无偿劳役。"
       },
       {
         "word": "fall back on",
@@ -8815,7 +8855,8 @@
         "timestamp": "[45:10]",
         "speaker": "Prof. Michael Sandel",
         "scene_img": "/assets/scenes/scene_libertarian.jpg",
-        "scene_desc": "自我占有论作为自由至上主义最后防线"
+        "scene_desc": "自我占有论作为自由至上主义最后防线",
+        "sentence_cn": "当在严重不平等问题上受到质疑时，自由至上主义者总是退而求助于自我占有这一不可动摇的原则。"
       },
       {
         "word": "amount to",
@@ -8828,7 +8869,8 @@
         "timestamp": "[36:50]",
         "speaker": "Prof. Michael Sandel",
         "scene_img": "/assets/scenes/scene_libertarian.jpg",
-        "scene_desc": "收入占比与部分人身所有权的法理等价性"
+        "scene_desc": "收入占比与部分人身所有权的法理等价性",
+        "sentence_cn": "如果政府拿走我收入的30%，那不就等同于拥有我30%的时间和人身吗？"
       },
       {
         "word": "lay claim to",
@@ -8841,7 +8883,8 @@
         "timestamp": "[52:00]",
         "speaker": "Prof. Michael Sandel",
         "scene_img": "/assets/scenes/scene_libertarian.jpg",
-        "scene_desc": "强行征用器官思想实验：功利主义荒谬极限"
+        "scene_desc": "强行征用器官思想实验：功利主义荒谬极限",
+        "sentence_cn": "社会能不能正当地要求一个健康人捐出他多余的肾脏，来救一个肾衰竭濒死的人？"
       },
       {
         "word": "give up",
@@ -8854,7 +8897,8 @@
         "timestamp": "[27:03]",
         "speaker": "Sanders Student",
         "scene_img": "/assets/scenes/scene_theatre.jpg",
-        "scene_desc": "社会契约与集体公共产品代价的辩驳"
+        "scene_desc": "社会契约与集体公共产品代价的辩驳",
+        "sentence_cn": "持反对意见的人则认为，当你生活在一个有组织的社会中时，你就放弃了对自身收入的绝对控制权。"
       }
     ]
   },
@@ -8877,7 +8921,8 @@
         "timestamp": "[03:15]",
         "speaker": "Prof. Tamar Gendler",
         "scene_img": "/assets/scenes/cover_yale_philosophy.jpg",
-        "scene_desc": "耶鲁大讲堂：理想国心灵秩序开篇"
+        "scene_desc": "耶鲁大讲堂：理想国心灵秩序开篇",
+        "sentence_cn": "柏拉图认为，灵魂中的正义是一种内在心灵和谐的状态。"
       },
       {
         "word": "rational",
@@ -8890,7 +8935,8 @@
         "timestamp": "[06:20]",
         "speaker": "Prof. Tamar Gendler",
         "scene_img": "/assets/scenes/cover_yale_philosophy.jpg",
-        "scene_desc": "理性统摄心灵模型"
+        "scene_desc": "理性统摄心灵模型",
+        "sentence_cn": "我们心灵中的理性部分追求真理、智慧与真正的理解。"
       },
       {
         "word": "conflict",
@@ -8903,7 +8949,8 @@
         "timestamp": "[09:40]",
         "speaker": "Prof. Tamar Gendler",
         "scene_img": "/assets/scenes/cover_yale_philosophy.jpg",
-        "scene_desc": "内在心理矛盾与拉扯"
+        "scene_desc": "内在心理矛盾与拉扯",
+        "sentence_cn": "当我们的理性反思与身体欲望发生冲突时，我们就会体验到剧烈的内心冲突。"
       },
       {
         "word": "virtue",
@@ -8916,7 +8963,8 @@
         "timestamp": "[14:10]",
         "speaker": "Prof. Tamar Gendler",
         "scene_img": "/assets/scenes/cover_yale_philosophy.jpg",
-        "scene_desc": "亚里士多德习惯论与德性养成"
+        "scene_desc": "亚里士多德习惯论与德性养成",
+        "sentence_cn": "在亚里士多德看来，道德德性是通过经常性的习惯养成和刻意的练习获得的。"
       },
       {
         "word": "reflection",
@@ -8929,7 +8977,8 @@
         "timestamp": "[17:30]",
         "speaker": "Prof. Tamar Gendler",
         "scene_img": "/assets/scenes/cover_yale_philosophy.jpg",
-        "scene_desc": "直觉冲动与理性反思的间隙"
+        "scene_desc": "直觉冲动与理性反思的间隙",
+        "sentence_cn": "哲学反思让我们能够在付诸行动之前，批判性地审视自己的冲动。"
       },
       {
         "word": "proportion",
@@ -8942,7 +8991,8 @@
         "timestamp": "[21:00]",
         "speaker": "Prof. Tamar Gendler",
         "scene_img": "/assets/scenes/cover_yale_philosophy.jpg",
-        "scene_desc": "黄金分割比例与内心平静"
+        "scene_desc": "黄金分割比例与内心平静",
+        "sentence_cn": "一个秩序良好的灵魂使其三个组成部分保持恰当的比例。"
       },
       {
         "word": "flourish",
@@ -8955,7 +9005,8 @@
         "timestamp": "[25:15]",
         "speaker": "Prof. Tamar Gendler",
         "scene_img": "/assets/scenes/cover_yale_philosophy.jpg",
-        "scene_desc": "亚里士多德‘繁盛幸福’概念辨析"
+        "scene_desc": "亚里士多德‘繁盛幸福’概念辨析",
+        "sentence_cn": "如果人的理性能力被低级的欲望所奴役，人类就无法真正繁盛生活。"
       },
       {
         "word": "instinct",
@@ -8968,7 +9019,8 @@
         "timestamp": "[29:40]",
         "speaker": "Prof. Tamar Gendler",
         "scene_img": "/assets/scenes/cover_yale_philosophy.jpg",
-        "scene_desc": "卡尼曼双系统认知理论对照"
+        "scene_desc": "卡尼曼双系统认知理论对照",
+        "sentence_cn": "认知心理学揭示，我们原始的本能往往比有意识的推理反应得更快。"
       },
       {
         "word": "discipline",
@@ -8981,7 +9033,8 @@
         "timestamp": "[34:10]",
         "speaker": "Prof. Tamar Gendler",
         "scene_img": "/assets/scenes/cover_yale_philosophy.jpg",
-        "scene_desc": "心智纪律与欲望控制"
+        "scene_desc": "心智纪律与欲望控制",
+        "sentence_cn": "培养节制需要精神上的自律和稳定的认知调节。"
       },
       {
         "word": "perspective",
@@ -8994,7 +9047,8 @@
         "timestamp": "[38:20]",
         "speaker": "Prof. Tamar Gendler",
         "scene_img": "/assets/scenes/cover_yale_philosophy.jpg",
-        "scene_desc": "古代哲学与前沿脑科学交汇"
+        "scene_desc": "古代哲学与前沿脑科学交汇",
+        "sentence_cn": "古代哲学为现代认知科学提供了一个深刻的视角。"
       },
       {
         "word": "eudaimonia",
@@ -9007,7 +9061,8 @@
         "timestamp": "[02:10]",
         "speaker": "Prof. Tamar Gendler",
         "scene_img": "/assets/scenes/cover_yale_philosophy.jpg",
-        "scene_desc": "至善论与快乐论的本质分野"
+        "scene_desc": "至善论与快乐论的本质分野",
+        "sentence_cn": "亚里士多德将至善幸福定义为灵魂依照完满德性而进行的活动。"
       },
       {
         "word": "temperance",
@@ -9020,7 +9075,8 @@
         "timestamp": "[05:30]",
         "speaker": "Prof. Tamar Gendler",
         "scene_img": "/assets/scenes/cover_yale_philosophy.jpg",
-        "scene_desc": "柏拉图四主德之节制篇"
+        "scene_desc": "柏拉图四主德之节制篇",
+        "sentence_cn": "在柏拉图的《理想国》中，节制是理性、激情与欲望之间的和谐一致。"
       },
       {
         "word": "appetite",
@@ -9033,7 +9089,8 @@
         "timestamp": "[08:15]",
         "speaker": "Prof. Tamar Gendler",
         "scene_img": "/assets/scenes/cover_yale_philosophy.jpg",
-        "scene_desc": "欲望控制模型"
+        "scene_desc": "欲望控制模型",
+        "sentence_cn": "理性必须支配人类灵魂中较为低下的欲望，才能维持心理的平衡。"
       },
       {
         "word": "cognitive",
@@ -9046,7 +9103,8 @@
         "timestamp": "[11:45]",
         "speaker": "Prof. Tamar Gendler",
         "scene_img": "/assets/scenes/cover_yale_philosophy.jpg",
-        "scene_desc": "认知心理学双进程模型"
+        "scene_desc": "认知心理学双进程模型",
+        "sentence_cn": "现代认知科学证实，道德判断既依赖直觉式的启发式过程，也依赖深思熟虑的反思。"
       },
       {
         "word": "tripartite",
@@ -9059,7 +9117,8 @@
         "timestamp": "[04:00]",
         "speaker": "Prof. Tamar Gendler",
         "scene_img": "/assets/scenes/cover_yale_philosophy.jpg",
-        "scene_desc": "灵魂三分说结构图解"
+        "scene_desc": "灵魂三分说结构图解",
+        "sentence_cn": "柏拉图提出了著名的人类灵魂三分法：理性、激情与欲望。"
       },
       {
         "word": "charioteer",
@@ -9072,7 +9131,8 @@
         "timestamp": "[15:50]",
         "speaker": "Prof. Tamar Gendler",
         "scene_img": "/assets/scenes/cover_yale_philosophy.jpg",
-        "scene_desc": "双马战车寓言解析"
+        "scene_desc": "双马战车寓言解析",
+        "sentence_cn": "在《斐德罗篇》中，苏格拉底将灵魂比作一位驾驭着两匹天性冲突的带翼骏马的御者。"
       },
       {
         "word": "akrasia",
@@ -9085,7 +9145,8 @@
         "timestamp": "[19:10]",
         "speaker": "Prof. Tamar Gendler",
         "scene_img": "/assets/scenes/cover_yale_philosophy.jpg",
-        "scene_desc": "意志软弱与欲望诱惑"
+        "scene_desc": "意志软弱与欲望诱惑",
+        "sentence_cn": "古代哲学中的无自制力问题，探究的是我们为什么会违背自己更好的道德判断而行动。"
       },
       {
         "word": "contemplation",
@@ -9098,7 +9159,8 @@
         "timestamp": "[27:30]",
         "speaker": "Prof. Tamar Gendler",
         "scene_img": "/assets/scenes/cover_yale_philosophy.jpg",
-        "scene_desc": "沉思生活（Theoria）"
+        "scene_desc": "沉思生活（Theoria）",
+        "sentence_cn": "亚里士多德得出结论：幸福的最高形式存在于哲学沉思之中。"
       },
       {
         "word": "hedonism",
@@ -9111,7 +9173,8 @@
         "timestamp": "[23:45]",
         "speaker": "Prof. Tamar Gendler",
         "scene_img": "/assets/scenes/cover_yale_philosophy.jpg",
-        "scene_desc": "享乐与德性的截然不同"
+        "scene_desc": "享乐与德性的截然不同",
+        "sentence_cn": "苏格拉底将真正的美德与只追求当下感官满足的粗陋享乐主义相对照。"
       },
       {
         "word": "stoicism",
@@ -9124,7 +9187,8 @@
         "timestamp": "[31:20]",
         "speaker": "Prof. Tamar Gendler",
         "scene_img": "/assets/scenes/cover_yale_philosophy.jpg",
-        "scene_desc": "爱比克泰德与斯多葛智慧"
+        "scene_desc": "爱比克泰德与斯多葛智慧",
+        "sentence_cn": "斯多葛哲学教导我们，内心的平静来自分清哪些事在我们掌控之中、哪些不在。"
       },
       {
         "word": "equilibrium",
@@ -9137,7 +9201,8 @@
         "timestamp": "[36:00]",
         "speaker": "Prof. Tamar Gendler",
         "scene_img": "/assets/scenes/cover_yale_philosophy.jpg",
-        "scene_desc": "身心平衡的理想境界"
+        "scene_desc": "身心平衡的理想境界",
+        "sentence_cn": "当理性引导我们的情感激情而不强行压制它们时，健康的心灵便达到动态平衡。"
       },
       {
         "word": "cardinal",
@@ -9150,7 +9215,8 @@
         "timestamp": "[07:05]",
         "speaker": "Prof. Tamar Gendler",
         "scene_img": "/assets/scenes/cover_yale_philosophy.jpg",
-        "scene_desc": "古典四主德图解"
+        "scene_desc": "古典四主德图解",
+        "sentence_cn": "智慧、勇敢、节制和正义构成了古典希腊思想中的四大主要德性。"
       },
       {
         "word": "tripartite theory of soul",
@@ -9163,7 +9229,8 @@
         "timestamp": "[04:45]",
         "speaker": "Prof. Tamar Gendler",
         "scene_img": "/assets/scenes/cover_yale_philosophy.jpg",
-        "scene_desc": "理想国城邦与心灵同构说"
+        "scene_desc": "理想国城邦与心灵同构说",
+        "sentence_cn": "柏拉图的灵魂三分说对应着他理想城邦中的三个阶层：哲学王、护卫者与生产者。"
       },
       {
         "word": "allegory of the chariot",
@@ -9176,7 +9243,8 @@
         "timestamp": "[16:25]",
         "speaker": "Prof. Tamar Gendler",
         "scene_img": "/assets/scenes/cover_yale_philosophy.jpg",
-        "scene_desc": "费德鲁斯战车画卷"
+        "scene_desc": "费德鲁斯战车画卷",
+        "sentence_cn": "在战车寓言中，御者必须驾驭一匹高贵的白马和一匹桀骜不驯的黑马，朝着天国前行。"
       },
       {
         "word": "Platonic justice",
@@ -9189,7 +9257,8 @@
         "timestamp": "[13:15]",
         "speaker": "Prof. Tamar Gendler",
         "scene_img": "/assets/scenes/cover_yale_philosophy.jpg",
-        "scene_desc": "各司其职的正义定义"
+        "scene_desc": "各司其职的正义定义",
+        "sentence_cn": "柏拉图式的正义被界定为：灵魂的每一部分各司其职，互不越俎代庖。"
       },
       {
         "word": "Aristotelian virtue ethics",
@@ -9202,7 +9271,8 @@
         "timestamp": "[14:40]",
         "speaker": "Prof. Tamar Gendler",
         "scene_img": "/assets/scenes/cover_yale_philosophy.jpg",
-        "scene_desc": "德性伦理学总纲"
+        "scene_desc": "德性伦理学总纲",
+        "sentence_cn": "亚里士多德德性伦理学关注的是道德行为者的品格，而非对严格功利主义规则的遵守。"
       },
       {
         "word": "doctrine of the mean",
@@ -9215,7 +9285,8 @@
         "timestamp": "[22:30]",
         "speaker": "Prof. Tamar Gendler",
         "scene_img": "/assets/scenes/cover_yale_philosophy.jpg",
-        "scene_desc": "过犹不及与适度之美"
+        "scene_desc": "过犹不及与适度之美",
+        "sentence_cn": "亚里士多德的中庸之道把德性定义为介于过度与不及这两种对立恶习之间的黄金中道。"
       },
       {
         "word": "eudaimonic flourishing",
@@ -9228,7 +9299,8 @@
         "timestamp": "[26:00]",
         "speaker": "Prof. Tamar Gendler",
         "scene_img": "/assets/scenes/cover_yale_philosophy.jpg",
-        "scene_desc": "至善生活内在图景"
+        "scene_desc": "至善生活内在图景",
+        "sentence_cn": "德性幸福与短暂的享乐快感有着根本区别，因为它要求道德操守和高尚的行为。"
       },
       {
         "word": "dual-process cognition",
@@ -9241,7 +9313,8 @@
         "timestamp": "[30:15]",
         "speaker": "Prof. Tamar Gendler",
         "scene_img": "/assets/scenes/cover_yale_philosophy.jpg",
-        "scene_desc": "现代神经科学映射"
+        "scene_desc": "现代神经科学映射",
+        "sentence_cn": "行为心理学中的双进程认知模型，与柏拉图关于心灵能力相互冲突的古老直觉高度吻合。"
       },
       {
         "word": "cognitive reappraisal",
@@ -9254,7 +9327,8 @@
         "timestamp": "[35:10]",
         "speaker": "Prof. Tamar Gendler",
         "scene_img": "/assets/scenes/cover_yale_philosophy.jpg",
-        "scene_desc": "情绪调节与理性自律机制"
+        "scene_desc": "情绪调节与理性自律机制",
+        "sentence_cn": "认知重评让理性智识能够在强烈情绪反应导致不理性行为之前对其加以调节。"
       },
       {
         "word": "moral intuitionism",
@@ -9267,7 +9341,8 @@
         "timestamp": "[32:50]",
         "speaker": "Prof. Tamar Gendler",
         "scene_img": "/assets/scenes/cover_yale_philosophy.jpg",
-        "scene_desc": "直觉自明性讨论"
+        "scene_desc": "直觉自明性讨论",
+        "sentence_cn": "道德直觉主义认为，根本性的道德真理无需形式证明，就能被我们的理智直觉直接把握。"
       },
       {
         "word": "cardinal virtues",
@@ -9280,7 +9355,8 @@
         "timestamp": "[07:45]",
         "speaker": "Prof. Tamar Gendler",
         "scene_img": "/assets/scenes/cover_yale_philosophy.jpg",
-        "scene_desc": "古希腊伦理大厦四大立柱"
+        "scene_desc": "古希腊伦理大厦四大立柱",
+        "sentence_cn": "四主德代表着支撑体面生活与和谐共同体的四大支柱。"
       }
     ]
   }

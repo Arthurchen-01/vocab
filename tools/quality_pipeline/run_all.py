@@ -26,7 +26,9 @@ STAGES = [
     ("s2", "s2_map_words.py", "bind every target word to its sentence"),
     ("s3", "s3_cut_media.py", "re-cut clips + frames on sentence boundaries"),
     ("s4", "s4_translate.py", "context-aware translation + AI review"),
+    ("s4b", "s4b_fill_deck_translations.py", "fill missing translations in the other decks"),
     ("s5", "s5_apply_and_verify.py", "apply to data files + end-to-end verification"),
+    ("s6", "s6_sync_bank.py", "rebuild the master vocab bank from the episode decks"),
 ]
 
 
@@ -69,10 +71,12 @@ def main():
 
     summary = {"episode": EPISODE, "work_dir": WORK_DIR, "results": results}
     for key, _script, _d in STAGES:
-        p = os.path.join(REPORT_DIR, f"{EPISODE}_{key}_" + {"s1": "sentences", "s2": "word_map",
-                                                            "s3": "media", "s4": "translation",
-                                                            "s5": "apply_verify"}[key] + ".json")
-        summary.setdefault("reports", {})[key] = json.load(open(p, encoding="utf-8")) if os.path.exists(p) else None
+        base = os.path.join(REPORT_DIR, f"{EPISODE}_{key}_" + {"s1": "sentences", "s2": "word_map",
+                                                              "s3": "media", "s4": "translation",
+                                                              "s4b": "deck_translations",
+                                                              "s5": "apply_verify",
+                                                              "s6": "bank_sync"}[key] + ".json")
+        summary.setdefault("reports", {})[key] = json.load(open(base, encoding="utf-8")) if os.path.exists(base) else None
     save_json(os.path.join(OUT_DIR, f"{EPISODE}_pipeline_summary.json"), summary)
 
     log("\n" + "=" * 78)
