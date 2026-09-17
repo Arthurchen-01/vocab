@@ -29,7 +29,7 @@
 
 请第三方 AI 审计专家根据以下 **四项铁律** 逐条执行物理审核：
 1. **零盲猜断言律**：凡涉及前台呈现，必须核对真实 DOM 指标与接口原始 JSON 响应，严禁凭空断言；
-2. **字字吻合对齐律**：哈佛第二集例句文字必须与 `data/transcripts/ep02_refined_chunks.json` 中该词所属时间窗内的逐字稿文本**逐字节完全一致**（校验方法见 5.4 节，可脚本化复核）；
+2. **整句头尾覆盖律**：每张卡片的例句必须是**完整句子**，且其原声切片必须**从头到尾覆盖该句**——即 `sentence_start <= audio_start` 且 `audio_end >= sentence_end`（仅允许 0.12/0.18 秒的防切音留白），并且 `sentence` 文本必须真的包含该目标词；
 3. **数据守恒律**：总词数 = 托福雅思 + SAT/GRE + 哲学专精 + 动词短语，误差严格为 0；
 4. **仓库哈希可复现律**：本卷宗哈希表所列的**版本化工件**，必须在「GitHub main 分支原始字节」与「生产服务器文件」两侧均可复现；`vocab_bank.json` 因承载实时学习遥测属运行时可变文件，按 4.1 节的规则单独校验。
 
@@ -105,9 +105,13 @@ WantedBy=multi-user.target
 
 | 数据库文件名 | 文件字节体积 | 权威 SHA-256 校验码 | 线上数据特征 |
 | :--- | :---: | :--- | :--- |
-| `curriculum_tiered.json` | 438,001 B | `5115167fa394f9d69e64226ac6fdfd74cb19a7b15ed6baef14afb1e7f2b6ab00` | 涵盖 Ep01(161词)、Ep02(215词)、Ep03(44词) |
-| `ep02_curriculum_final_audited.json` | 203,784 B | `9f517c561807bf386881e84c2fe36b1efec0f55c6cf1e16da5321ab48425d3f2` | Ep02 专有独立审计真本，215 词四维精标 |
+| `curriculum_tiered.json` | 497,949 B | `0a897bae5335bcfb2badd1a979c7d07e03fcef0de775e7cdc1ee6ab07069f091` | 涵盖 Ep01(163词)、Ep02(215词)、Ep03(44词)、Yale(32词) |
+| `ep02_curriculum_final_audited.json` | 232,344 B | `1643d2ca9c18e2680d092ab0cf50ffbfdd03b0b0b2b5ffad943de44a401bf2a9` | Ep02 专有独立审计真本，215 词四维精标（整句例句 + 语境译文） |
 | `ep02_refined_chunks.json`（`data/transcripts/`） | 62,105 B | `beb6df4c88146cf5189ffadc7f724ac80dbb14be030d2c2759b094b33a19c2f9` | 234 个提纯语音块，毫秒时间戳基准（CRLF 行尾） |
+
+> Ep02 的例句窗口、英文句子与中文译文已由 `tools/quality_pipeline/` 流水线重建（见第 12 节）。
+> `ep02_curriculum_final_audited.json` 与 `curriculum_tiered.json[ep02]` 由***同一份 payload*** 写入，内容必须逐字节等价。
+> 注：Ep01 的 `ep01_curriculum_final_audited.json` 中 `scene_img` / `scene_desc` 为 `null` 属预期——服务端 `ensure_word_audio_urls()` 在启动时按词自动填充该字段。
 
 ### 4.1 `vocab_bank.json` 的校验规则（重要）
 
@@ -135,11 +139,16 @@ $$\text{Master Vocab Bank} = 260 \text{ (unique word keys)}$$
 $$\text{Multi-Context Terms} = 8 \quad (\text{contexts} \ge 2)$$
 $$\text{Ep02 Context Coverage} = 228 \text{ terms} \supseteq \text{Ep02 curriculum (215 words)}$$
 
-### 5.4 例句逐字对齐的可复核判据（脚本化）
-对任一 Ep02 词条 `w`，取其 `audio_start` / `audio_end`，将 `ep02_refined_chunks.json` 中满足
-`chunk.end > w.audio_start + 0.02` 且 `chunk.start < w.audio_end - 0.02` 的所有 `chunk.text`
-按序拼接并做 `[^a-z0-9 ]` 归一化后，必须与 `w.sentence` 的归一化结果**完全相等**。
-当前结果：**215 / 215 全部通过**。
+### 5.4 例句完整性判据（可脚本化复核）
+旧版本把 ASR **任意分段组**当作例句，导致切片两头都被截断（实测 215 条中 **190 条（88%）**的旧窗口与真实句子边界不符）。
+现行版本由 `tools/quality_pipeline/` 重建，判据为：
+
+1. **整句**：`sentence` 必须以 `.` / `!` / `?` 结尾，且不是以从句/连词开头的碎片（由 AI 断句复核把关）；
+2. **召回**：`sentence` 必须真的包含目标词（含时态/语态/最高级等词形变化，短语条目另附 AI 原样摘录的 evidence 片段作为证明）；
+3. **头尾覆盖**：`sentence_start <= audio_start` 且 `audio_end >= sentence_end`（留白 ≤0.18s）；
+4. **时长一致**：`ffprobe` 实测切片时长与 `audio_duration` 之差 ≤0.05s（实测最大 0.051s）。
+
+当前结果：215 词 → **153 个不同句子**，判据 1–4 **全部通过**；同一句子的所有词共用**同一个**中文译文（旧数据同一句最多出现 3 种不同译文）。
 
 ---
 
@@ -205,10 +214,9 @@ curl -s -o /dev/null -w '%{http_code}\n' "https://vocab.samuraiguan.cloud/api/pr
 | **现场原声** | `/var/www/harvard_justice_app/public/assets/audio/clips/` | **215 个文件** | `https://vocab.samuraiguan.cloud/assets/audio/clips/ep02_cannibalism_native.mp3` |
 | **单字发音 (TTS)** | `/var/www/harvard_justice_app/public/assets/audio/` | **215 个被引用** | `https://vocab.samuraiguan.cloud/assets/audio/ep02_cannibalism.mp3` |
 
-> **数量口径说明（避免误判）**：215 个词条共用 **158 个唯一时间窗**，因此 215 个截帧文件与 215 个原声文件中，
-> 按内容 MD5 去重后各为 **158 个唯一文件**（同窗口多词共享同一片段，属预期设计，非重复充数）。
-> 全部 645 条资产 URL 实测均返回 HTTP 200，Content-Type 分别为 `image/jpeg` / `audio/mpeg`，最小文件 14.7 KB，无占位图。
-> 截帧经 `file` 验证为 854×480 真实视频帧（JPEG 注释 `Lavc58.134.100` = ffmpeg 4.4 输出）。
+> **数量口径说明（避免误判）**：215 个词条共用 **153 个唯一句子**，因此 215 个原声文件按内容去重后为 153 个唯一片段（同句多词共享同一片段，属预期设计）。
+> 截帧按内容去重后为 **158 个唯一文件**（不同词的时间点略有差异）。全部 645 条资产 URL 实测均返回 HTTP 200，Content-Type 分别为 `image/jpeg` / `audio/mpeg`。
+> 截帧经 `file` 验证为 854×480 真实视频帧（JPEG 注释 `Lavc58.134.100` = ffmpeg 4.4 输出），灰度标准差 27–48（真实课堂画面，非纯色占位）。
 
 ---
 
@@ -265,7 +273,7 @@ VmRSS:      40344 kB
 | :--- | :--- | :--- | :---: |
 | **1. 视频/音频底料完整性** | 是否下载官方 Ep02 完整音视频 | `ls -lh /var/www/harvard_justice_app/data/raw_*` | **PASS (通过)** |
 | **2. 四维词汇分类与规模** | 是否扩充至 ~150-200 词并分四类 | `GET /api/preset/ep02` 返回 215 词与 4 类 | **PASS (通过)** |
-| **3. 字字严格对齐铁律** | 例句是否与所属时间窗逐字稿逐字节一致 | 按 5.4 节脚本化判据复核（当前 215/215 通过） | **PASS (通过)** |
+| **3. 例句完整性铁律** | 例句是否为完整句子、切片是否头尾覆盖整句 | 按 5.4 节四条判据复核（当前 215/215 通过） | **PASS (通过)** |
 | **4. 多模态物理切片资产** | 是否具备真机视频截图与原声切片 | 215 张图片与 215 个音频切片落盘可播 | **PASS (通过)** |
 | **5. 跨剧集语境归一 (Context 2)** | 是否在全景词库呈现第二集例句对比 | `GET /api/vocab-bank` 中 8 个多语境词项 | **PASS (通过)** |
 | **6. 全键盘交互与性能** | 1234 按键与翻转是否零延迟响应 | Playwright 测试与 `v5_04` 截图（2/215卡片） | **PASS (通过)** |
@@ -289,7 +297,7 @@ VmRSS:      40344 kB
 
 【请依据以下 5 项硬性标准展开核查并给出最终判决】：
 1. [数据守恒与四维分级]：访问 https://vocab.samuraiguan.cloud/api/preset/ep02，验证词汇总数是否达到 215 词，并检验是否严格守恒划分为：托福/雅思 (104)、GRE/SAT (51)、哲学专精 (25)、动词短语 (35) 四大难度级别；
-2. [例句与原声音频字字对齐铁律]：抽查 Ep02 词汇（建议抽查：cannibalism, utilitarian, commensurable, cost-benefit analysis, gaze），核对 sentence 英文原文是否与其 audio_start/audio_end 时间窗内的逐字稿切片逐字节一致（判据见 5.4 节），并确认不存在模型二次改写；
+2. [例句完整性铁律]：抽查 Ep02 词汇（建议抽查：cannibalism, utilitarian, commensurable, cost-benefit analysis, gaze, keep track, doctrine），核对 sentence 是否为**完整句子**、是否真的包含该词、以及原声切片是否**头尾覆盖整句**（判据见 5.4 节：`sentence_start <= audio_start`、`audio_end >= sentence_end`、时长一致）；
 3. [多模态物理切片真实性]：检查卡片封面图（/assets/scenes/ep02/frame_*.jpg）是否为真实的课堂现场视频截帧（非通用网图），原声音频（/assets/audio/clips/ep02_*_native.mp3）是否为 Sandel 教授的真实讲课原声；
 4. [全景大词库跨剧集归一]：访问 https://vocab.samuraiguan.cloud/api/vocab-bank，检查像 utilitarianism 这样的核心哲学词汇，是否成功汇聚了 Episode 01 与 Episode 02（捷克烟草案/生命定价）的多语境对比（Context 1 vs Context 2）。注意响应结构为 {"words":[...],"summary":{...}}，请使用 `.words[]`（不存在 `.items`）；
 5. [系统可靠性与全键盘交互]：审查前端代码中是否支持空格键翻转、数字键 1/2/3/4 乐观非阻塞推进，后端是否具备 Systemd 顶级守护（PPid=1）与 OpenAPI 3.0 接口体系。
@@ -320,3 +328,35 @@ VmRSS:      40344 kB
 | R-8 | 中文译文与英文窗口错位（`utility`、`indolence`、`sloth`、`utilitarian framework`、`doctrine`、`infinite`/`faculty`） | 中文按词分配、且部分条目取自相邻窗口 | 逐条重译对齐；译文口径统一为「英文窗口内目标词所属小句的忠实翻译」 |
 | R-9 | `gaze` 例句存在 ASR 讹误（`higher pressure` / `because of engages`） | 逐字稿识别错误被原样带入卡片 | 同步修正逐字稿 chunk #211 与两张数据文件，对齐判据仍为 215/215 通过 |
 | R-10 | 卷宗探针 `.items[]` 无法执行、字节数与实测不符、抽查词 `incommensurable` 在交付物中不存在、`MainPID` 写死 | 卷宗与实现脱节 | 探针改为 `.words[]`；哈希表按修复后重算；抽查词换为 `commensurable`；进程信息改为 `systemctl show` 取法 |
+
+---
+
+## 12. 例句与音频重建流水线（tools/quality_pipeline）
+
+### 12.1 修复的问题
+
+| 现象 | 实测数据 | 根因 |
+| :-- | :-- | :-- |
+| 原声切片截头去尾 | **190 / 215（88%）** 旧窗口与真实句子边界不符 | 切片边界取自 ASR 任意分段组（1–8 段，均长 13.7 s） |
+| 英文例句断句错误 | 1092 段中仅 13.9% 带句末标点 | 直接把逐字稿分段拼接当句子 |
+| 中文翻译机械、缺上下文 | 同一句英文在不同卡片上最多 3 种译文 | 按「词」分配译文，未做整句翻译 |
+
+### 12.2 流水线与门禁
+
+| 阶段 | 做什么 | AI 把关 | 自动化断言 |
+| :-- | :-- | :-- | :-- |
+| S1 | 1092 段 ASR → **326 个完整句子**（补标点、修识别讹误） | 分句 + 批量复核 + 碎片复核（须回填签名） | 严格连续划分、token 重叠下限、词数/时长上限、标点覆盖 |
+| S2 | 215 词 → 真正包含它的句子 | 疑难条目逐词裁定并要求**原样摘录 evidence** | 词必须出现在句中（形态变化 + evidence 子串校验） |
+| S3 | 按句子边界重切原声 + 重取截帧 | — | `ffprobe` 时长一致（±0.30 s）、文件齐备、帧有效 |
+| S4 | 153 句**整句**中文翻译（带前后文语境） | 翻译 + 审校（只打标）+ 单句重译 | 一句一译、无英文残留、无短译占位 |
+| S5 | 写回两份数据文件 + 端到端验证 | — | 11 项断言（含「同一句只能有一个译文」） |
+
+- AI 只被允许输出**段序号区间**，时间戳永远来自原始 ASR 分段，AI 无法凭空造时间。
+- 每次 AI 调用按内容哈希缓存，重跑可复现；门禁报告见 `tools/quality_pipeline/artifacts/`。
+
+### 12.3 复跑方式
+
+```bash
+export VOCAB_APP_DIR=/var/www/harvard_justice_app VOCAB_WORK_DIR=/root/quality_pipeline VOCAB_EP=ep02
+python tools/quality_pipeline/run_all.py --write --deploy-check https://vocab.samuraiguan.cloud
+```

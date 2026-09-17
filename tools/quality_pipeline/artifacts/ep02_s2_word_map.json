@@ -1,0 +1,46 @@
+{
+  "stage": "ep02_s2_word_map",
+  "started": "2026-09-17 14:31:33",
+  "finished": "2026-09-17 14:31:38",
+  "ok": true,
+  "passed": 6,
+  "failed": 0,
+  "checks": [
+    {
+      "check": "inputs present",
+      "ok": true,
+      "detail": "326 sentences, 215 target words"
+    },
+    {
+      "check": "words matched to a sentence by direct search",
+      "ok": true,
+      "detail": "203 direct, 12 need AI adjudication"
+    },
+    {
+      "check": "every target word resolved to a sentence",
+      "ok": true,
+      "detail": "215/215 mapped; unresolved: []"
+    },
+    {
+      "check": "every mapped sentence really contains its target word (matcher or AI quote)",
+      "ok": true,
+      "detail": "0 mismatches: []"
+    },
+    {
+      "check": "all clip windows are usable (0.8s..40s)",
+      "ok": true,
+      "detail": "min=1.2s max=26.0s"
+    },
+    {
+      "check": "all referenced sentence ids exist",
+      "ok": true,
+      "detail": ""
+    }
+  ],
+  "notes": [
+    "215 words -> 153 distinct sentences (shared examples are expected)",
+    "match breakdown: exact=94, neighbour=109, ai=12",
+    "wrote C:\\Users\\s990uma\\.gemini\\antigravity\\scratch\\bug_audit\\quality_work\\out\\ep02_word_map.json",
+    "AI usage: {\"calls\": 764, \"cached\": 668, \"prompt_tokens\": 586153, \"completion_tokens\": 151691}"
+  ]
+}

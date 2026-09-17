@@ -1,0 +1,65 @@
+{
+  "stage": "ep02_s3_media",
+  "started": "2026-09-17 05:35:08",
+  "finished": "2026-09-17 05:38:09",
+  "ok": true,
+  "passed": 10,
+  "failed": 0,
+  "checks": [
+    {
+      "check": "inputs present",
+      "ok": true,
+      "detail": "326 sentences, 215 mapped words"
+    },
+    {
+      "check": "raw episode audio present",
+      "ok": true,
+      "detail": "/var/www/harvard_justice_app/data/raw_audio/ep02_full.mp3"
+    },
+    {
+      "check": "raw audio is long enough for every window",
+      "ok": true,
+      "detail": "audio=3309.6s, last sentence ends at 3295.2s"
+    },
+    {
+      "check": "every used sentence produced a clip",
+      "ok": true,
+      "detail": "153/153 clips; problems: []"
+    },
+    {
+      "check": "all 215 clips written",
+      "ok": true,
+      "detail": "215/215; []"
+    },
+    {
+      "check": "all 215 frames re-extracted",
+      "ok": true,
+      "detail": "215/215; []"
+    },
+    {
+      "check": "no clip file missing",
+      "ok": true,
+      "detail": "[]"
+    },
+    {
+      "check": "no suspiciously small clip",
+      "ok": true,
+      "detail": "[]"
+    },
+    {
+      "check": "clip duration matches the sentence window",
+      "ok": true,
+      "detail": "215/215 within 0.30s; []"
+    },
+    {
+      "check": "no frame file missing",
+      "ok": true,
+      "detail": "[]"
+    }
+  ],
+  "notes": [
+    "raw video present: True (/var/www/harvard_justice_app/data/raw_video/ep02_video.mp4)",
+    "clips whose old window did NOT match the spoken sentence: 190/215 (88%)",
+    "wrote /root/quality_pipeline/out/ep02_media_report.json"
+  ]
+}

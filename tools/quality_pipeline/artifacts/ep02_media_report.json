@@ -1,0 +1,336 @@
+{
+  "episode": "ep02",
+  "clips_cut": 153,
+  "words": 215,
+  "raw_audio": "/var/www/harvard_justice_app/data/raw_audio/ep02_full.mp3",
+  "pad_head": 0.12,
+  "pad_tail": 0.18,
+  "old_window_mismatch_count": 190,
+  "old_window_mismatch_examples": [
+    {
+      "word": "cannibalism",
+      "old": [
+        35.29,
+        49.37
+      ],
+      "new": [
+        32.85,
+        45.97
+      ],
+      "head_gap_s": -2.44,
+      "tail_gap_s": -3.4
+    },
+    {
+      "word": "utilitarian",
+      "old": [
+        49.37,
+        66.13
+      ],
+      "new": [
+        45.97,
+        62.06
+      ],
+      "head_gap_s": -3.4,
+      "tail_gap_s": -4.07
+    },
+    {
+      "word": "jurisprudence",
+      "old": [
+        66.13,
+        82.17
+      ],
+      "new": [
+        75.06,
+        82.17
+      ],
+      "head_gap_s": 8.93,
+      "tail_gap_s": 0.0
+    },
+    {
+      "word": "moral philosophy",
+      "old": [
+        66.13,
+        82.17
+      ],
+      "new": [
+        75.06,
+        82.17
+      ],
+      "head_gap_s": 8.93,
+      "tail_gap_s": 0.0
+    },
+    {
+      "word": "principle",
+      "old": [
+        82.17,
+        98.91
+      ],
+      "new": [
+        92.87,
+        116.42
+      ],
+      "head_gap_s": 10.7,
+      "tail_gap_s": 17.51
+    },
+    {
+      "word": "maximize",
+      "old": [
+        98.91,
+        113.21
+      ],
+      "new": [
+        92.87,
+        116.42
+      ],
+      "head_gap_s": -6.04,
+      "tail_gap_s": 3.21
+    },
+    {
+      "word": "general welfare",
+      "old": [
+        98.91,
+        113.21
+      ],
+      "new": [
+        92.87,
+        116.42
+      ],
+      "head_gap_s": -6.04,
+      "tail_gap_s": 3.21
+    },
+    {
+      "word": "utility",
+      "old": [
+        113.21,
+        129.01
+      ],
+      "new": [
+        92.87,
+        116.42
+      ],
+      "head_gap_s": -20.34,
+      "tail_gap_s": -12.59
+    },
+    {
+      "word": "sovereign",
+      "old": [
+        113.21,
+        129.01
+      ],
+      "new": [
+        116.42,
+        129.01
+      ],
+      "head_gap_s": 3.21,
+      "tail_gap_s": -0.0
+    },
+    {
+      "word": "take account of",
+      "old": [
+        113.21,
+        129.01
+      ],
+      "new": [
+        116.42,
+        129.01
+      ],
+      "head_gap_s": 3.21,
+      "tail_gap_s": -0.0
+    },
+    {
+      "word": "the greatest good for the greatest number",
+      "old": [
+        129.01,
+        143.03
+      ],
+      "new": [
+        129.01,
+        139.45
+      ],
+      "head_gap_s": -0.0,
+      "tail_gap_s": -3.58
+    },
+    {
+      "word": "legislator",
+      "old": [
+        149.48,
+        165.31
+      ],
+      "new": [
+        149.48,
+        156.57
+      ],
+      "head_gap_s": -0.0,
+      "tail_gap_s": -8.74
+    },
+    {
+      "word": "comprise",
+      "old": [
+        149.48,
+        165.31
+      ],
+      "new": [
+        156.57,
+        165.31
+      ],
+      "head_gap_s": 7.09,
+      "tail_gap_s": -0.0
+    },
+    {
+      "word": "add up",
+      "old": [
+        165.31,
+        183.87
+      ],
+      "new": [
+        173.37,
+        188.83
+      ],
+      "head_gap_s": 8.06,
+      "tail_gap_s": 4.96
+    },
+    {
+      "word": "subtract",
+      "old": [
+        183.87,
+        200.87
+      ],
+      "new": [
+        173.37,
+        188.83
+      ],
+      "head_gap_s": -10.5,
+      "tail_gap_s": -12.04
+    },
+    {
+      "word": "cost-benefit analysis",
+      "old": [
+        200.87,
+        216.65
+      ],
+      "new": [
+        211.15,
+        223.73
+      ],
+      "head_gap_s": 10.28,
+      "tail_gap_s": 7.08
+    },
+    {
+      "word": "place a value on",
+      "old": [
+        216.65,
+        230.79
+      ],
+      "new": [
+        223.73,
+        236.54
+      ],
+      "head_gap_s": 7.08,
+      "tail_gap_s": 5.75
+    },
+    {
+      "word": "excise tax",
+      "old": [
+        230.79,
+        245.09
+      ],
+      "new": [
+        236.54,
+        243.37
+      ],
+      "head_gap_s": 5.75,
+      "tail_gap_s": -1.72
+    },
+    {
+      "word": "commission",
+      "old": [
+        245.09,
+        260.9
+      ],
+      "new": [
+        243.37,
+        252.51
+      ],
+      "head_gap_s": -1.72,
+      "tail_gap_s": -8.39
+    },
+    {
+      "word": "ledger",
+      "old": [
+        285.04,
+        301.96
+      ],
+      "new": [
+        287.24,
+        295.38
+      ],
+      "head_gap_s": 2.2,
+      "tail_gap_s": -6.58
+    },
+    {
+      "word": "derive from",
+      "old": [
+        301.96,
+        319.68
+      ],
+      "new": [
+        295.38,
+        309.53
+      ],
+      "head_gap_s": -6.58,
+      "tail_gap_s": -10.15
+    },
+    {
+      "word": "pillory",
+      "old": [
+        352.57,
+        369.13
+      ],
+      "new": [
+        363.39,
+        370.99
+      ],
+      "head_gap_s": 10.82,
+      "tail_gap_s": 1.86
+    },
+    {
+      "word": "incorporate",
+      "old": [
+        369.13,
+        383.43
+      ],
+      "new": [
+        370.99,
+        385.6
+      ],
+      "head_gap_s": 1.86,
+      "tail_gap_s": 2.17
+    },
+    {
+      "word": "vulnerable",
+      "old": [
+        434.35,
+        453.6
+      ],
+      "new": [
+        434.35,
+        447.72
+      ],
+      "head_gap_s": -0.0,
+      "tail_gap_s": -5.88
+    },
+    {
+      "word": "shield",
+      "old": [
+        453.6,
+        460.49
+      ],
+      "new": [
+        447.72,
+        460.49
+      ],
+      "head_gap_s": -5.88,
+      "tail_gap_s": 0.0
+    }
+  ]
+}

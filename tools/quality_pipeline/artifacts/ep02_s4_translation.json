@@ -1,0 +1,47 @@
+{
+  "stage": "ep02_s4_translation",
+  "started": "2026-09-17 14:31:38",
+  "finished": "2026-09-17 14:35:05",
+  "ok": true,
+  "passed": 6,
+  "failed": 0,
+  "checks": [
+    {
+      "check": "inputs present",
+      "ok": true,
+      "detail": "326 sentences, 153 need translation"
+    },
+    {
+      "check": "first-pass translations produced for every sentence",
+      "ok": true,
+      "detail": "153/153; failed: []"
+    },
+    {
+      "check": "all used sentences have a translation",
+      "ok": true,
+      "detail": "153/153"
+    },
+    {
+      "check": "no long English residue inside Chinese",
+      "ok": true,
+      "detail": "1 sentences contain Latin runs (proper nouns allowed): [(96, ['Youngda', 'Youngda'])]"
+    },
+    {
+      "check": "no stub translations",
+      "ok": true,
+      "detail": "[]"
+    },
+    {
+      "check": "no empty translations",
+      "ok": true,
+      "detail": "[]"
+    }
+  ],
+  "notes": [
+    "AI review flagged 57 of 153 translations",
+    "re-translated 57 flagged sentences individually",
+    "153 sentences serve 215 words; every word on a sentence now shows the SAME translation (old data had up to 3 different ones)",
+    "wrote C:\\Users\\s990uma\\.gemini\\antigravity\\scratch\\bug_audit\\quality_work\\out\\ep02_translations.json",
+    "AI usage: {\"calls\": 873, \"cached\": 668, \"prompt_tokens\": 673924, \"completion_tokens\": 166326}"
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "stage": "ep02_s5_apply_verify",
+  "started": "2026-09-17 05:39:20",
+  "finished": "2026-09-17 05:39:41",
+  "ok": true,
+  "passed": 11,
+  "failed": 0,
+  "checks": [
+    {
+      "check": "inputs present",
+      "ok": true,
+      "detail": "326 sentences, 215 words, 153 translations"
+    },
+    {
+      "check": "one sentence -> exactly one Chinese translation",
+      "ok": true,
+      "detail": "0 sentences with conflicting translations"
+    },
+    {
+      "check": "every example sentence contains its target word (matcher or AI quote)",
+      "ok": true,
+      "detail": "0 violations: []"
+    },
+    {
+      "check": "every clip covers its sentence head to tail (plus pad)",
+      "ok": true,
+      "detail": "0 violations"
+    },
+    {
+      "check": "all clips present on disk",
+      "ok": true,
+      "detail": "[]"
+    },
+    {
+      "check": "all clip durations match the declared window",
+      "ok": true,
+      "detail": "[]"
+    },
+    {
+      "check": "all frames present on disk",
+      "ok": true,
+      "detail": "[]"
+    },
+    {
+      "check": "word count unchanged",
+      "ok": true,
+      "detail": "215"
+    },
+    {
+      "check": "tier distribution unchanged (104/51/25/35)",
+      "ok": true,
+      "detail": "{'toefl_ielts': 104, 'academic_philosophy': 25, 'sat_gre': 51, 'phrasal_verbs': 35}"
+    },
+    {
+      "check": "no duplicate words",
+      "ok": true,
+      "detail": "[]"
+    },
+    {
+      "check": "the two Ep02 copies are byte-identical in content",
+      "ok": true,
+      "detail": ""
+    }
+  ],
+  "notes": [
+    "total clip length 3089s -> 2838s (median 12.3s)",
+    "209/215 words now quote a different (complete) sentence than before",
+    "data written: /var/www/harvard_justice_app/data/ep02_curriculum_final_audited.json and curriculum_tiered.json[ep02]"
+  ]
+}
