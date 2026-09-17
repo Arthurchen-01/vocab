@@ -1572,42 +1572,49 @@
     }
 
     function nextFocusCard() {
+      const words = app.filteredWords || (app.activeEpisodeData ? app.activeEpisodeData.words : []);
+      if (!words || words.length === 0) return;
       app.focusCardIndex++;
+      if (app.focusCardIndex >= words.length) app.focusCardIndex = 0;
       renderFocusCard();
     }
 
     function prevFocusCard() {
+      const words = app.filteredWords || (app.activeEpisodeData ? app.activeEpisodeData.words : []);
+      if (!words || words.length === 0) return;
       app.focusCardIndex--;
+      if (app.focusCardIndex < 0) app.focusCardIndex = words.length - 1;
       renderFocusCard();
     }
 
     async function submitFocusRating(rating) {
       if (!app.activeEpisodeData) return;
-      const w = app.activeEpisodeData.words[app.focusCardIndex];
+      const words = app.filteredWords || (app.activeEpisodeData ? app.activeEpisodeData.words : []);
+      if (!words || words.length === 0) return;
+      const w = words[app.focusCardIndex] || app.activeEpisodeData.words[app.focusCardIndex];
       const dur = Math.max(1, Math.round((Date.now() - app.focusCardStartTime) / 1000));
 
       const payload = {
-        username: app.currentUser,
+        username: app.currentUser || 'guest',
         word: w.word,
         duration_seconds: dur,
         rating: rating,
         episode_id: app.activeEpisodeId
       };
 
-      try {
-        await fetch('/api/user/record', {
-          method: 'POST',
-          headers: {'Content-Type': 'application/json'},
-          body: JSON.stringify(payload)
-        });
-        await fetch('/api/vocab-bank/record', {
-          method: 'POST',
-          headers: {'Content-Type': 'application/json'},
-          body: JSON.stringify(payload)
-        });
-      } catch (e) {
-        console.error("Error submitting focus rating:", e);
-      }
+      // Non-blocking optimistic logging
+      fetch('/api/user/record', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(payload)
+      }).catch(e => console.error("Error submitting user record:", e));
+
+      fetch('/api/vocab-bank/record', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(payload)
+      }).catch(e => console.error("Error submitting vocab-bank record:", e));
+
       nextFocusCard();
     }
 
@@ -2261,6 +2268,8 @@ To resolve this moral dilemma, students must cultivate rigorous deliberation and
 
       if (level === 'all') {
         app.filteredWords = app.activeEpisodeData.words;
+      } else if (level === 'sat_gre' || level === 'gre_sat') {
+        app.filteredWords = app.activeEpisodeData.words.filter(w => w.level === 'sat_gre' || w.level === 'gre_sat');
       } else {
         app.filteredWords = app.activeEpisodeData.words.filter(w => (w.level || 'toefl_ielts') === level);
       }
@@ -2282,7 +2291,7 @@ To resolve this moral dilemma, students must cultivate rigorous deliberation and
 
       const all = app.activeEpisodeData.words || [];
       const toefl = all.filter(w => (w.level || 'toefl_ielts') === 'toefl_ielts');
-      const gre = all.filter(w => w.level === 'gre_sat');
+      const gre = all.filter(w => w.level === 'sat_gre' || w.level === 'gre_sat');
       const acad = all.filter(w => w.level === 'academic_philosophy');
       const phrasal = all.filter(w => w.level === 'phrasal_verbs');
 
@@ -2291,6 +2300,8 @@ To resolve this moral dilemma, students must cultivate rigorous deliberation and
         return `px-3 py-1.5 rounded-xl text-xs font-bold bg-slate-50 text-slate-700 hover:bg-slate-100 border border-slate-200 transition`;
       };
 
+      const isGreActive = app.activeLevelFilter === 'sat_gre' || app.activeLevelFilter === 'gre_sat';
+
       container.innerHTML = `
         <button onclick="setFocusLevelFilter('all')" class="${btnCls(app.activeLevelFilter === 'all', 'bg-slate-900')}">
           全部 (${all.length})
@@ -2298,7 +2309,7 @@ To resolve this moral dilemma, students must cultivate rigorous deliberation and
         <button onclick="setFocusLevelFilter('toefl_ielts')" class="${btnCls(app.activeLevelFilter === 'toefl_ielts', 'bg-blue-700')}">
           📘 托福/雅思 (${toefl.length})
         </button>
-        <button onclick="setFocusLevelFilter('gre_sat')" class="${btnCls(app.activeLevelFilter === 'gre_sat', 'bg-purple-700')}">
+        <button onclick="setFocusLevelFilter('sat_gre')" class="${btnCls(isGreActive, 'bg-purple-700')}">
           ⚡ GRE/SAT (${gre.length})
         </button>
         <button onclick="setFocusLevelFilter('academic_philosophy')" class="${btnCls(app.activeLevelFilter === 'academic_philosophy', 'bg-amber-700')}">
