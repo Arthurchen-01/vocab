@@ -30,6 +30,7 @@ import json
 import os
 import re
 import sys
+import time
 import urllib.error
 import urllib.request
 import zipfile
@@ -64,16 +65,26 @@ class Headers(dict):
         return super().get(str(key).lower(), default)
 
 
-def http(method, url, payload=None, timeout=300):
+def http(method, url, payload=None, timeout=300, attempts=3):
+    """One HTTP call, retried; a network failure becomes a readable failed check
+    instead of a traceback that hides the rest of the result."""
     data = json.dumps(payload).encode("utf-8") if payload is not None else None
-    req = urllib.request.Request(url, data=data, method=method,
-                                 headers={"Content-Type": "application/json",
-                                          "User-Agent": "export-conformance"})
-    try:
-        with urllib.request.urlopen(req, timeout=timeout) as r:
-            return r.status, Headers(r.headers), r.read()
-    except urllib.error.HTTPError as e:
-        return e.code, Headers(e.headers), e.read()
+    last = None
+    for attempt in range(attempts):
+        req = urllib.request.Request(url, data=data, method=method,
+                                     headers={"Content-Type": "application/json",
+                                              "User-Agent": "export-conformance"})
+        try:
+            with urllib.request.urlopen(req, timeout=timeout) as r:
+                return r.status, Headers(r.headers), r.read()
+        except urllib.error.HTTPError as e:
+            return e.code, Headers(e.headers), e.read()
+        except Exception as exc:  # noqa: BLE001 - timeouts, resets, DNS
+            last = exc
+            if attempt + 1 < attempts:
+                time.sleep(5 * (attempt + 1))
+    return (0, Headers({}),
+            ("network error after %d attempts: %s" % (attempts, last)).encode("utf-8"))
 
 
 def word_sources(base, episodes):
