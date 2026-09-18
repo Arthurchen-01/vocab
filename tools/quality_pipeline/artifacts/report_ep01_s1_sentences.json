@@ -1,0 +1,84 @@
+{
+  "stage": "ep01_s1_sentences",
+  "started": "2026-09-18 02:08:29",
+  "finished": "2026-09-18 02:12:21",
+  "ok": true,
+  "passed": 10,
+  "failed": 0,
+  "checks": [
+    {
+      "check": "raw transcript present",
+      "ok": true,
+      "detail": "1142 segments"
+    },
+    {
+      "check": "AI boundary pass returned a valid partition",
+      "ok": true,
+      "detail": "318 sentences"
+    },
+    {
+      "check": "AI review pass executed",
+      "ok": true,
+      "detail": "26 issues reported"
+    },
+    {
+      "check": "partition complete after all AI passes",
+      "ok": true,
+      "detail": "326 sentences covering segments 0..1141"
+    },
+    {
+      "check": "no AI rewriting of the lecture text (token overlap floor)",
+      "ok": true,
+      "detail": "all within tolerance"
+    },
+    {
+      "check": "every sentence ends with terminal punctuation",
+      "ok": true,
+      "detail": "0 left: []"
+    },
+    {
+      "check": "sentence word cap respected",
+      "ok": true,
+      "detail": "[]"
+    },
+    {
+      "check": "sentence duration cap respected",
+      "ok": true,
+      "detail": "[]"
+    },
+    {
+      "check": "timeline monotonic and non-overlapping",
+      "ok": true,
+      "detail": "n=326 median=9.2s p90=16.2s max=23.7s"
+    },
+    {
+      "check": "every sentence has a usable audio span (>=0.8s)",
+      "ok": true,
+      "detail": "[]"
+    }
+  ],
+  "notes": [
+    "polish: 245/318 rewritten, 2 raw fallbacks",
+    "ASR repairs: 11 flagged -> 11 applied and validated",
+    "review merges: 14 -> 318 to 309 sentences",
+    "fragment pass 1: 167 candidates -> 31 merges, 12 punctuated, 124 kept",
+    "split round 1: 27 overlong -> 71 parts",
+    "split round 2: 5 overlong -> 13 parts",
+    "split pass: nothing over the caps after 2 round(s)",
+    "cycle 1: split produced 84 parts, re-polished 79, 0 fallbacks",
+    "fragment pass 2: 167 candidates -> 33 merges, 10 punctuated, 124 kept",
+    "split round 1: 17 overlong -> 43 parts",
+    "split pass: nothing over the caps after 1 round(s)",
+    "cycle 2: split produced 43 parts, re-polished 37, 1 fallbacks",
+    "fragment pass 3: 149 candidates -> 16 merges, 20 punctuated, 113 kept",
+    "split round 1: 12 overlong -> 24 parts",
+    "split pass: nothing over the caps after 1 round(s)",
+    "cycle 3: split produced 24 parts, re-polished 22, 0 fallbacks",
+    "segmentation hit the cycle cap (3) without a fixpoint",
+    "cosmetic/punctuation sweep applied to 21 sentences",
+    "76 sentences start with a conjunction (normal for spoken lecture; AI fragment pass reviewed them)",
+    "2 sentences under 4 words (kept as real interjections): [189, 317]",
+    "wrote /root/quality_pipeline/out/ep01_sentences.json (326 sentences)",
+    "AI usage: {\"calls\": 817, \"cached\": 263, \"prompt_tokens\": 748179, \"completion_tokens\": 178264}"
+  ]
+}

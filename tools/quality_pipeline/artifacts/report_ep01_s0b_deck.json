@@ -1,0 +1,60 @@
+{
+  "stage": "ep01_s0b_deck",
+  "started": "2026-09-18 02:45:29",
+  "finished": "2026-09-18 02:45:29",
+  "ok": true,
+  "passed": 8,
+  "failed": 0,
+  "checks": [
+    {
+      "check": "sentences available (run S1 first)",
+      "ok": true,
+      "detail": "326 sentences"
+    },
+    {
+      "check": "candidate vocabulary built",
+      "ok": true,
+      "detail": "388 candidates after excluding 299 words owned by other lecture decks (exam decks do not exclude)"
+    },
+    {
+      "check": "AI selection is a subset of the transcript vocabulary",
+      "ok": true,
+      "detail": "180 words chosen across 5 lecture window(s)"
+    },
+    {
+      "check": "every chosen word really occurs in the lecture",
+      "ok": true,
+      "detail": "0: []"
+    },
+    {
+      "check": "rebuilt deck is grounded (>=90% of words occur)",
+      "ok": true,
+      "detail": "117/117"
+    },
+    {
+      "check": "every example sentence contains its word",
+      "ok": true,
+      "detail": "0: []"
+    },
+    {
+      "check": "no duplicate words",
+      "ok": true,
+      "detail": "[]"
+    },
+    {
+      "check": "all example spans are usable (0.8s..40s)",
+      "ok": true,
+      "detail": "min=2.9s max=21.3s"
+    }
+  ],
+  "notes": [
+    "repaired 2 sentence pointers deterministically (model mis-pointed)",
+    "kept 37 words the candidate filter had skipped but which really occur in this lecture: ['totalitarianism', 'endorsed', 'reconciling', 'presumably', 'emergency', 'controversies', 'equality', 'inequality']",
+    "dropped 63 picks: ['principle (already taught by another lecture deck)', 'minority (already taught by another lecture deck)', 'justice (already taught by another lecture deck)', 'provided (already taught by another lecture deck)', 'consequentialist (already taught by another lecture deck)', 'categorical (already taught by another lecture deck)', 'utilitarianism (already taught by another lecture deck)', 'doctrine (already taught by another lecture deck)']",
+    "117 usable words remain (requested 163)",
+    "tier mix: {'toefl_ielts': 35, 'academic_philosophy': 49, 'sat_gre': 33}",
+    "previous deck archived (80 words) -> data/_retired/ep01_previous_deck.json",
+    "deck written: 117 words into curriculum_tiered.json[ep01]",
+    "AI usage: {\"calls\": 1103, \"cached\": 289, \"prompt_tokens\": 1001334, \"completion_tokens\": 260384}"
+  ]
+}

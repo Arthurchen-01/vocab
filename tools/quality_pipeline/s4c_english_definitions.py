@@ -483,7 +483,8 @@ def main():
                             if (doc[key].get("def_en") or "").strip() != defs[key]:
                                 written += 1
                             doc[key]["def_en"] = defs[key]
-                            doc[key]["def_en_source"] = "ai"
+                            if key in todo:
+                                doc[key]["def_en_source"] = "ai"
                     continue
                 words = doc if isinstance(doc, list) else doc[ep_id]["words"]
                 for w in words:
@@ -492,9 +493,12 @@ def main():
                         if (w.get("def_en") or "").strip() != defs[k]:
                             written += 1
                         w["def_en"] = defs[k]
-                        # Marks the house style, so the strict gate applies only
-                        # to text this stage wrote.
-                        w["def_en_source"] = "ai"
+                        # Only label entries THIS run authored. `defs` also holds
+                        # the definitions that were already there, so marking
+                        # everything "ai" made imported dictionary prose look
+                        # self-written and the strict gate then failed it.
+                        if k in todo:
+                            w["def_en_source"] = "ai"
             save_json(path, doc)
         # `written` counts deck SLOTS, not unique headwords: a word that already
         # had a definition in Ep01 still had to be filled in wherever another
@@ -515,21 +519,34 @@ def main():
     rep.check("no deck word is left without an English definition", not empty,
               f"{len(empty)}: {empty[:6]}")
 
-    bad, lenient = [], 0
+    # Strictly validate what THIS run wrote. Everything else was authored by an
+    # earlier pass or imported from a dictionary, where long, bracket-heavy prose
+    # is normal - reporting it as a gate failure would be the gate mistaking
+    # "not our house style" for "wrong".
+    authored_now = set(todo)
+    bad, others, off_style = [], 0, []
     for ep, p, _ in decks2:
         for w in p.get("words", []):
-            authored_here = (w.get("def_en_source") or "") == "ai"
+            key = (w.get("word") or "").strip().lower()
             reason = check_definition(w.get("word", ""), w.get("def_en"),
                                       [w.get("sentence") or ""],
-                                      strict=authored_here)
+                                      strict=(key in authored_now))
             if reason:
                 bad.append(f"{ep}:{w.get('word')} ({reason})")
-            elif not authored_here:
-                lenient += 1
-    rep.check("every definition this stage authored passes the strict gate", not bad,
-              f"{len(bad)}: {bad[:6]}" if bad else "all authored definitions conform")
-    rep.note(f"{lenient} imported / pre-existing definitions were checked with the "
-             f"lenient rules (dictionary prose is longer and may use brackets)")
+            elif key in authored_now:
+                continue
+            else:
+                others += 1
+                if check_definition(w.get("word", ""), w.get("def_en"),
+                                    [w.get("sentence") or ""], strict=True):
+                    off_style.append(f"{w.get('word')}")
+    rep.check("every definition this run authored passes the strict gate", not bad,
+              f"{len(bad)}: {bad[:6]}" if bad else
+              f"{len(authored_now)} authored this run, all conform")
+    rep.note(f"{others} pre-existing / imported definitions were validated leniently")
+    if off_style:
+        rep.note(f"{len(off_style)} of them would not meet the learner-dictionary house "
+                 f"style (dictionary prose is longer / uses brackets): {off_style[:8]}")
 
     conflicts = {}
     for ep, p, _ in decks2:

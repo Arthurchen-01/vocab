@@ -37,9 +37,14 @@ from config import (DATA_DIR, OUT_DIR, Report, load_deck_words, load_json,  # no
 from ai_gate import ask_json, usage  # noqa: E402
 
 TIERED = os.path.join(DATA_DIR, "curriculum_tiered.json")
+CUSTOM_EPISODES = os.path.join(DATA_DIR, "custom_episodes.json")
+EXAM_DECKS = os.path.join(DATA_DIR, "exam_decks.json")
 SENTS_TMPL = os.path.join(OUT_DIR, "{ep}_sentences.json")
 RETIRED = os.path.join(DATA_DIR, "_retired")
 COUNT = 45
+# Words requested per AI call. A single call for a 163-word deck overflowed the
+# output budget and came back truncated mid-JSON, failing the stage.
+SELECT_BATCH = 40
 
 FUNCTION_WORDS = set("""
 a an the and or but if then than that this these those there here when where which who whom whose why how
@@ -148,68 +153,116 @@ def main():
         rep.note(f"existing deck is NOT grounded in the lecture "
                  f"({hit}/{len(old_words)} words occur) -> rebuilding from the transcript")
 
+    # Words already owned by ANOTHER LECTURE deck are excluded so two episodes do
+    # not teach the same word twice. Exam decks (exam_*) are deliberately NOT
+    # counted as owners: they are dictionary imports, so excluding their 3000
+    # words removed 290 words that genuinely occur in this lecture - including
+    # "justice" and "principle" from the Justice lecture itself. The bank merges
+    # both anyway, and `taught_in` records every deck a word belongs to.
     other_decks = set()
     tiered = load_json(TIERED) or {}
     for k, payload in tiered.items():
         if k != ep:
             other_decks.update(w["word"].lower() for w in payload.get("words", []))
-
+    for k, payload in (load_json(CUSTOM_EPISODES) or {}).items():
+        other_decks.update(w["word"].lower() for w in payload.get("words", []))
+    lecture_owners = len(other_decks)
     cands = candidates_from_transcript(sents, exclude=other_decks)
-    rep.check("candidate vocabulary built", len(cands) >= args.count,
-              f"{len(cands)} candidates already excluding {len(other_decks)} words used by other decks")
+    rep.check("candidate vocabulary built", len(cands) >= min(args.count, 60),
+              f"{len(cands)} candidates after excluding {lecture_owners} words owned "
+              f"by other lecture decks (exam decks do not exclude)")
 
-    listing = ", ".join(f"{w}({c})" for w, c in cands[:900])
-    sent_listing = "\n".join(f"{i}|{s['text']}" for i, s in enumerate(sents))
-    user = (f"候选词表（词(出现次数)）：\n{listing}\n\n"
-            f"候选句子（句id|英文）：\n{sent_listing}\n\n"
-            f"请挑选 {args.count + 12} 个最有教学价值的词条"
-            f"（我会剔除已属于其它剧集或重复的条目，最终保留约 {args.count} 个）。")
+    # Selecting 163 words in ONE response does not fit the output budget: the
+    # model's JSON was being truncated mid-object ("level_na) and the stage
+    # failed. Ask for a share of the words per slice of the lecture instead -
+    # which also spreads the deck across the whole episode rather than letting
+    # the model cluster everything in the first ten minutes.
+    windows = max(1, (args.count + SELECT_BATCH - 1) // SELECT_BATCH)
+    per_window = args.count // windows + 4
+    picks = []
+    for wi in range(windows):
+        lo = wi * len(sents) // windows
+        hi = (wi + 1) * len(sents) // windows
+        win_sents = sents[lo:hi]
+        win_text = " ".join(s["text"].lower() for s in win_sents)
+        win_cands = [(w, c) for w, c in cands
+                     if re.search(r"\b" + re.escape(w) + r"\b", win_text)]
+        if not win_cands:
+            continue
+        listing = ", ".join(f"{w}({c})" for w, c in win_cands[:400])
+        sent_listing = "\n".join(f"{lo + i}|{s['text']}" for i, s in enumerate(win_sents))
+        user = (f"候选词表（词(出现次数)）：\n{listing}\n\n"
+                f"候选句子（句id|英文，句 id 是全局编号）：\n{sent_listing}\n\n"
+                f"请挑选 {per_window} 个最有教学价值的词条，sentence_id 必须使用上面给出的全局句 id。")
 
-    def validate(o):
-        """Only structural checks here.
+        def validate(o, per_window=per_window):
+            """Only structural checks here.
 
-        Picks that fall outside the candidate list, repeat a word, or point at the
-        wrong sentence are repaired or dropped deterministically afterwards - failing
-        the whole stage for those would be brittle (the model naturally reaches for
-        words other decks already own). What must never happen is shipping a word
-        that does not occur, and that is enforced by the post-filter + final gate.
-        """
-        if not isinstance(o, dict) or not isinstance(o.get("words"), list):
-            return 'expected {"words":[...]}'
-        ws = o["words"]
-        if len(ws) < max(10, args.count // 2):
-            return f"only {len(ws)} words returned, need about {args.count}"
-        for w in ws:
-            name = (w.get("word") or "").strip().lower()
-            if not name:
-                return "every entry needs a word"
-            if w.get("tier") not in TIER_NAMES:
-                return f"{name}: tier must be one of {list(TIER_NAMES)}"
-            if not (w.get("def_cn") or "").strip():
-                return f"{name}: def_cn is required"
-        return None
+            Picks that fall outside the candidate list, repeat a word, or point at the
+            wrong sentence are repaired or dropped deterministically afterwards - failing
+            the whole stage for those would be brittle (the model naturally reaches for
+            words other decks already own). What must never happen is shipping a word
+            that does not occur, and that is enforced by the post-filter + final gate.
+            """
+            if not isinstance(o, dict) or not isinstance(o.get("words"), list):
+                return 'expected {"words":[...]}'
+            ws = o["words"]
+            if len(ws) < max(6, per_window // 2):
+                return f"only {len(ws)} words returned, need about {per_window}"
+            for w in ws:
+                name = (w.get("word") or "").strip().lower()
+                if not name:
+                    return "every entry needs a word"
+                if w.get("tier") not in TIER_NAMES:
+                    return f"{name}: tier must be one of {list(TIER_NAMES)}"
+                if not (w.get("def_cn") or "").strip():
+                    return f"{name}: def_cn is required"
+            return None
 
-    obj = ask_json(SELECT_SYSTEM, user, tag=f"{ep}_s0b_select",
-                   validate=validate, max_tokens=8000, temperature=0.2)
-    picks = obj["words"]
-    rep.check("AI selection is a subset of the transcript vocabulary", True, f"{len(picks)} words chosen")
+        try:
+            obj = ask_json(SELECT_SYSTEM, user, tag=f"{ep}_s0b_select_w{wi:02d}",
+                           validate=validate, max_tokens=8000, temperature=0.2)
+        except RuntimeError as e:
+            log("    window %d/%d selection failed: %s", wi + 1, windows, str(e)[:140])
+            rep.note(f"window {wi + 1}/{windows} produced no usable selection")
+            continue
+        picks.extend(obj["words"])
+    rep.check("AI selection is a subset of the transcript vocabulary", bool(picks),
+              f"{len(picks)} words chosen across {windows} lecture window(s)")
+    if not picks:
+        rep.check("the model produced at least one usable selection", False,
+                  "every window failed")
+        return 1
 
     # The model often mis-points at the sentence (and occasionally at the metadata):
     # wherever the correct answer is computable, repair it deterministically instead
-    # of failing the stage. Only a word that never occurs is dropped.
-    repaired, dropped = 0, []
+    # of failing the stage.
+    #
+    # The candidate list is a HINT, not a whitelist. A word the model proposed is
+    # perfectly usable when it really occurs in this lecture and is not owned by
+    # another lecture deck - rejecting it merely because our frequency/length
+    # filter left it out of the list threw away 100 good picks (principle,
+    # totalitarianism, endorsed ...) and shrank the deck to half its size.
+    repaired, dropped, rescued = 0, [], []
     allowed = {w for w, _ in cands}
     seen = set()
     cleaned = []
     for p in picks:
         name = p.get("word", "").strip()
         key = name.lower()
-        if key not in allowed:
-            dropped.append(name + " (not in this episode's vocabulary)")
-            continue
         if key in seen:
             dropped.append(name + " (duplicate)")
             continue
+        if key not in allowed:
+            occurs = sentence_index_for(sents, key) is not None
+            owned = key in other_decks
+            if not occurs:
+                dropped.append(name + " (never occurs in this lecture)")
+                continue
+            if owned:
+                dropped.append(name + " (already taught by another lecture deck)")
+                continue
+            rescued.append(name)
         seen.add(key)
         sid = p.get("sentence_id")
         ok = isinstance(sid, int) and 0 <= sid < len(sents) and \
@@ -225,9 +278,12 @@ def main():
     picks = cleaned[:args.count]
     if repaired:
         rep.note(f"repaired {repaired} sentence pointers deterministically (model mis-pointed)")
+    if rescued:
+        rep.note(f"kept {len(rescued)} words the candidate filter had skipped but which "
+                 f"really occur in this lecture: {rescued[:8]}")
     if dropped:
         rep.note(f"dropped {len(dropped)} picks: {dropped[:8]}")
-        rep.note(f"{len(picks)} usable words remain (requested {args.count})")
+    rep.note(f"{len(picks)} usable words remain (requested {args.count})")
 
     # ---- build the deck -------------------------------------------------
     title = args.title or (tiered.get(ep, {}) or {}).get("title") or ep

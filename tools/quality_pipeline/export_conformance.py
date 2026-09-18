@@ -124,6 +124,25 @@ def word_sources(base, episodes):
 
 def check_text_payload(rep, tag, fmt, text, words):
     low = text.lower()
+    if fmt == "anki_csv":
+        # Compare against the PARSED field values. A definition containing a quote
+        # is CSV-escaped to "" in the file, so a raw substring search reports those
+        # words as missing even though Anki imports the file perfectly.
+        import csv as _csv
+        import io as _io
+        try:
+            rows = list(_csv.reader(_io.StringIO(text)))
+        except Exception:  # noqa: BLE001
+            rows = []
+        if rows:
+            header = rows[0]
+            fields = []
+            for col in ("EnglishDefinition", "Definition", "Back", "Word"):
+                if col in header:
+                    i = header.index(col)
+                    fields += [r[i] for r in rows[1:] if len(r) > i]
+            if fields:
+                low = "\n".join(fields).lower()
     missing = [w["word"] for w in words if (w.get("word") or "").lower() not in low]
     rep.check("%s: every word present in the %s payload" % (tag, fmt),
               not missing, "%d missing e.g. %s" % (len(missing), missing[:4]))

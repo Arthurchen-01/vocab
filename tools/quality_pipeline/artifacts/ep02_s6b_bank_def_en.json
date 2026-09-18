@@ -1,7 +1,7 @@
 {
   "stage": "ep02_s6b_bank_def_en",
-  "started": "2026-09-17 12:11:36",
-  "finished": "2026-09-17 12:11:36",
+  "started": "2026-09-18 01:58:40",
+  "finished": "2026-09-18 01:58:40",
   "ok": true,
   "passed": 9,
   "failed": 0,
@@ -9,42 +9,42 @@
     {
       "check": "master bank readable",
       "ok": true,
-      "detail": "502 entries, 449 deck headwords"
+      "detail": "3480 entries, 3429 deck headwords"
     },
     {
       "check": "no deck headword is missing from the master bank",
       "ok": true,
-      "detail": "all 449 deck headwords are present"
+      "detail": "all 3429 deck headwords are present"
     },
     {
       "check": "every bank entry carries a def_en after the sync",
       "ok": true,
-      "detail": "502 entries, 449 filled"
+      "detail": "3480 entries, 0 filled"
     },
     {
       "check": "bank entry set is unchanged (no add, no remove)",
       "ok": true,
-      "detail": "502 -> 502"
+      "detail": "3480 -> 3480"
     },
     {
       "check": "only def_en / taught_in / bank_only were modified",
       "ok": true,
-      "detail": "changed: ['def_en', 'taught_in']"
+      "detail": "changed: ['taught_in']"
     },
     {
       "check": "taught_in matches the decks for every entry",
       "ok": true,
-      "detail": "449 attributed, 53 historical"
+      "detail": "3429 attributed, 51 historical"
     },
     {
       "check": "written bank has def_en on every entry",
       "ok": true,
-      "detail": "502/502"
+      "detail": "3480/3480"
     },
     {
       "check": "written bank still has every key",
       "ok": true,
-      "detail": "502 entries"
+      "detail": "3480 entries"
     },
     {
       "check": "written bank def_en is identical to the decks",
@@ -53,11 +53,11 @@
     }
   ],
   "notes": [
-    "53 bank-only words (kept, marked bank_only): ['actuary', 'amount to', 'appropriation', 'cabin boy', 'castaway', 'coerce into', 'coercive', 'compulsory']",
-    "53 entries are taught by no current deck (retired decks only): ['trolley', 'sidetrack', 'onlooker', 'deliberation', 'shipwreck', 'cabin boy', 'castaway', 'ration']",
-    "their historical contexts claim these episodes: {'ep01': 8, 'ep02': 12, 'ep03': 33} (shown only under '全部' now)",
-    "16 words are reused across episodes and kept as ONE entry with one context per episode: ['utilitarianism', 'consequentialist', 'categorical', 'cannibalism', 'sovereign', 'principle of utility']",
-    "449 bank entries had no def_en before this stage: ['abhorrent', 'absolve', 'accommodate', 'account for', 'accurate', 'acquisition']",
-    "449 bank entries disagreed with the decks (449 corrected, 449 had no definition at all)"
+    "51 bank-only words (kept, marked bank_only): ['actuary', 'amount to', 'appropriation', 'cabin boy', 'castaway', 'coerce into', 'coercive', 'compulsory']",
+    "51 entries are taught by no current deck (retired decks only): ['trolley', 'sidetrack', 'deliberation', 'shipwreck', 'cabin boy', 'castaway', 'ration', 'actuary']",
+    "their historical contexts claim these episodes: {'ep01': 7, 'ep02': 11, 'ep03': 33} (shown only under '全部' now)",
+    "36 words are reused across episodes and kept as ONE entry with one context per episode: ['utilitarianism', 'consequentialist', 'categorical', 'cannibalism', 'sovereign', 'principle of utility']",
+    "0 bank entries had no def_en before this stage: []",
+    "0 bank entries disagreed with the decks (0 corrected, 0 had no definition at all)"
   ]
 }
