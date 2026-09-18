@@ -32,7 +32,23 @@ except ImportError:
     edge_tts = None
 from docx_generator import build_docx_bytes
 
-PORT = int(sys.argv[1]) if len(sys.argv) > 1 else int(os.environ.get("PORT", 8765))
+def _resolve_port():
+    """argv[1] wins only when it is a bare port number.
+
+    This used to be `int(sys.argv[1])`, so launching the app through any wrapper
+    that passes its own flags (a smoke-test harness, a process manager) crashed
+    at import time with `ValueError: invalid literal for int(): '--port'`.
+    """
+    candidates = [sys.argv[1] if len(sys.argv) > 1 else "",
+                  os.environ.get("PORT", "")]
+    for candidate in candidates:
+        candidate = (candidate or "").strip()
+        if candidate.isdigit():
+            return int(candidate)
+    return 8765
+
+
+PORT = _resolve_port()
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 PUBLIC_DIR = os.path.join(BASE_DIR, "public")
 DATA_DIR = os.path.join(BASE_DIR, "data")
@@ -217,6 +233,20 @@ COLLECTIONS_DATA = {
         "desc": "探讨功利主义、自由至上主义与康德道德绝对论的经典哲学名篇，哈佛大学最负盛名的思辨殿堂。",
         "episodes": ["ep01", "ep02", "ep03"]
     },
+    "exam_vocabulary": {
+        "id": "exam_vocabulary",
+        "title": "考试与学术词汇（托福 / 雅思 / GRE / 考研 / 学术词组）",
+        "en_title": "Exam & Academic Vocabulary (TOEFL / IELTS / GRE / Postgraduate / Phrases)",
+        "university": "Open Lexical Data",
+        "instructor": "ECDICT (MIT) · Tatoeba (CC-BY 2.0 FR)",
+        "cover_scene": "/assets/scenes/scene_theatre.jpg",
+        "badge": "真实词表导入 · 含词组与固定搭配",
+        "total_episodes": 5,
+        "desc": "由开源词典数据 ECDICT（MIT 许可）按考试标签筛选导入：托福、雅思、GRE、考研核心词汇，"
+                "以及单独整理的真实学术词组与固定搭配表（600 条，全部为多词单位）。"
+                "词条不是 AI 生成的，来源与许可见 docs/THIRD_PARTY_DATA.md。",
+        "episodes": ["exam_toefl", "exam_ielts", "exam_gre", "exam_ky", "exam_phrases"]
+    },
     "yale_philosophy": {
         "id": "yale_philosophy",
         "title": "耶鲁大学《哲学与人性科学》(Human Nature)",
@@ -256,11 +286,29 @@ def load_curriculum_tiered():
 
 EPISODE_DATA = load_curriculum_tiered()
 
+EXAM_DECKS_FILE = os.path.join(DATA_DIR, "exam_decks.json")
+
+def load_exam_decks():
+    """Exam word decks imported from open lexical data (see docs/THIRD_PARTY_DATA.md).
+
+    Kept in their own file so the lecture decks stay untouched: these are real
+    dictionary entries, not transcriptions of a lecture, and they carry no audio
+    clips.  Audio for them is synthesised per word like any custom entry.
+    """
+    if not os.path.exists(EXAM_DECKS_FILE):
+        return {}
+    try:
+        with open(EXAM_DECKS_FILE, "r", encoding="utf-8") as f:
+            return json.load(f) or {}
+    except Exception as e:
+        print(f"[WARN] Failed to load exam_decks.json: {e}")
+        return {}
+
 def ensure_word_audio_urls():
     global EPISODE_DATA
     if not EPISODE_DATA:
         EPISODE_DATA = load_curriculum_tiered()
-    for ep_id, ep in EPISODE_DATA.items():
+    for ep_id, ep in list(EPISODE_DATA.items()) + list(load_exam_decks().items()):
         for w in ep.get("words", []):
             safe = re.sub(r'[^a-zA-Z0-9_]', '_', w['word'].lower()).strip('_')
             w['audio_url'] = f"/assets/audio/{ep_id}_{safe}.mp3"
@@ -272,8 +320,8 @@ ensure_word_audio_urls()
 
 def get_all_episodes():
     eps = dict(EPISODE_DATA)
-    custom = load_custom_episodes()
-    eps.update(custom)
+    eps.update(load_custom_episodes())
+    eps.update(load_exam_decks())
     return eps
 
 def get_vocab_bank_data(username=""):
@@ -1276,14 +1324,42 @@ class RequestHandler(http.server.SimpleHTTPRequestHandler):
                     if not custom_title:
                         video_meta["title"] = f"YouTube 哲学精读 ({vid})"
 
+            # Fetch the link's REAL transcript before doing anything else. This
+            # route never used to fetch anything: it fell back to a paragraph of
+            # invented philosophy prose and extracted "core vocabulary" from it,
+            # so every link-only import produced an episode whose example
+            # sentences were never spoken in the video.
+            if not raw_transcript and url:
+                try:
+                    from downloader import auto_fetch_subtitles_and_meta
+                    fetched = auto_fetch_subtitles_and_meta(url) or {}
+                except Exception as fetch_err:
+                    print(f"[WARN] transcript fetch failed: {fetch_err}")
+                    fetched = {}
+                if fetched.get("has_subtitles") and (fetched.get("transcript") or "").strip():
+                    raw_transcript = fetched["transcript"].strip()
+                    if not custom_title and fetched.get("title"):
+                        video_meta["title"] = fetched["title"]
+                    if fetched.get("author"):
+                        video_meta["author"] = fetched["author"]
+                    if fetched.get("cover"):
+                        video_meta["cover"] = fetched["cover"]
+                    if fetched.get("duration"):
+                        video_meta["duration"] = fetched["duration"]
+                    if fetched.get("platform"):
+                        video_meta["platform"] = fetched["platform"]
+                    if fetched.get("video_id"):
+                        video_meta["video_id"] = fetched["video_id"]
+
             if not raw_transcript:
-                raw_transcript = (
-                    "In our seminar today, we address the fundamental conflict between utilitarian maximization and deontological rights. "
-                    "When Jeremy Bentham formulated the principle of utility, critics immediately raised the objection of individual dignity. "
-                    "Can a just society sacrifice a minority for the aggregate happiness of the majority? "
-                    "Furthermore, in jurisprudence, the defense of necessity and the problem of legal culpability demand rigorous moral deliberation. "
-                    "As we examine these philosophical conundrums, we must distinguish between qualitative and quantitative pleasures."
-                )
+                # No real subtitles is a dead end, not an invitation to invent
+                # them. Say so and tell the user how to proceed.
+                self.send_error_json(
+                    422,
+                    "未能从该链接获取到真实字幕/逐字稿，因此没有可用于提炼词汇的原文。"
+                    "请：① 改用带字幕的来源（B 站 CC 字幕 / YouTube 字幕）；"
+                    "② 或把 SRT/VTT/DownSub 文稿粘贴到下方文本框后重新导入。")
+                return
 
             # Call DeepSeek AI to extract words
             system_prompt = (

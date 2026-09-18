@@ -1,0 +1,1741 @@
+{
+  "stage": "s7b_local",
+  "started": "2026-09-18 00:35:01",
+  "finished": "2026-09-18 00:35:03",
+  "ok": true,
+  "passed": 346,
+  "failed": 0,
+  "checks": [
+    {
+      "check": "word sources reachable over HTTP",
+      "ok": true,
+      "detail": "episode:ep01=163, episode:ep02=215, episode:ep03=44, episode:yale_ep01=32, collection:harvard_justice=414, collection:yale_philosophy=32, collection:custom_imports=12, vocab-bank=502"
+    },
+    {
+      "check": "episode:ep01/docx: HTTP 200",
+      "ok": true,
+      "detail": "status=200"
+    },
+    {
+      "check": "episode:ep01/docx: Content-Type is application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "ok": true,
+      "detail": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    },
+    {
+      "check": "episode:ep01/docx: Content-Disposition has an ASCII filename and filename*",
+      "ok": true,
+      "detail": "attachment; filename=\"ep01_Study_Guide.docx\"; filename*=UTF-8''ep01_%E7%B2%BE%E8%AF%BB%E6%89%8B%E5%86%8C_Study"
+    },
+    {
+      "check": "episode:ep01/docx: response headers are latin-1 safe",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "episode:ep01/docx: body is not empty",
+      "ok": true,
+      "detail": "40209 bytes"
+    },
+    {
+      "check": "episode:ep01/docx: body is really a zip package",
+      "ok": true,
+      "detail": "magic=b'PK\\x03\\x04\\x14\\x00\\x00\\x00'"
+    },
+    {
+      "check": "episode:ep01/docx: Content-Length matches the body",
+      "ok": true,
+      "detail": "40209 vs 40209"
+    },
+    {
+      "check": "episode:ep01/docx: embedded .docx passes the package gate",
+      "ok": true,
+      "detail": "0/30 checks failed"
+    },
+    {
+      "check": "episode:ep01/study_guide_md: HTTP 200",
+      "ok": true,
+      "detail": "status=200"
+    },
+    {
+      "check": "episode:ep01/study_guide_md: Content-Type is text/markdown",
+      "ok": true,
+      "detail": "text/markdown; charset=utf-8"
+    },
+    {
+      "check": "episode:ep01/study_guide_md: Content-Disposition has an ASCII filename and filename*",
+      "ok": true,
+      "detail": "attachment; filename=\"ep01_Study_Guide.md\"; filename*=UTF-8''ep01_%E7%B2%BE%E8%AF%BB%E6%89%8B%E5%86%8C_Study_G"
+    },
+    {
+      "check": "episode:ep01/study_guide_md: response headers are latin-1 safe",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "episode:ep01/study_guide_md: body is not empty",
+      "ok": true,
+      "detail": "48993 bytes"
+    },
+    {
+      "check": "episode:ep01/study_guide_md: body is valid UTF-8 text",
+      "ok": true,
+      "detail": "42995 chars"
+    },
+    {
+      "check": "episode:ep01/study_guide_md: body is not an error message",
+      "ok": true,
+      "detail": "# 🏛️ ep01_精读手册 听说精读词表手册\n\n> 哈佛大学《Justice》公开课 · Michael Sandel 教授\n\n| 序号 | 单词 | 音标 | 词性与中文释义 | 英英释义 | 课堂原声例句 | 中文翻译 |\n| :--"
+    },
+    {
+      "check": "episode:ep01/study_guide_md: every word present in the study_guide_md payload",
+      "ok": true,
+      "detail": "0 missing e.g. []"
+    },
+    {
+      "check": "episode:ep01/study_guide_md: English definitions (163) present in study_guide_md",
+      "ok": true,
+      "detail": "0 missing e.g. []"
+    },
+    {
+      "check": "episode:ep01/anki_csv: HTTP 200",
+      "ok": true,
+      "detail": "status=200"
+    },
+    {
+      "check": "episode:ep01/anki_csv: Content-Type is text/csv",
+      "ok": true,
+      "detail": "text/csv; charset=utf-8"
+    },
+    {
+      "check": "episode:ep01/anki_csv: Content-Disposition has an ASCII filename and filename*",
+      "ok": true,
+      "detail": "attachment; filename=\"ep01_Anki.csv\"; filename*=UTF-8''ep01_%E7%B2%BE%E8%AF%BB%E6%89%8B%E5%86%8C_Anki.csv"
+    },
+    {
+      "check": "episode:ep01/anki_csv: response headers are latin-1 safe",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "episode:ep01/anki_csv: body is not empty",
+      "ok": true,
+      "detail": "269255 bytes"
+    },
+    {
+      "check": "episode:ep01/anki_csv: body is valid UTF-8 text",
+      "ok": true,
+      "detail": "255676 chars"
+    },
+    {
+      "check": "episode:ep01/anki_csv: body is not an error message",
+      "ok": true,
+      "detail": "Front,Back,Word,Phonetic,Definition,EnglishDefinition,Example,Translation\r\n\"<div style='font-family:sans-serif; text-ali"
+    },
+    {
+      "check": "episode:ep01/anki_csv: every word present in the anki_csv payload",
+      "ok": true,
+      "detail": "0 missing e.g. []"
+    },
+    {
+      "check": "episode:ep01/anki_csv: English definitions (163) present in anki_csv",
+      "ok": true,
+      "detail": "0 missing e.g. []"
+    },
+    {
+      "check": "episode:ep01/eudic_quizlet: HTTP 200",
+      "ok": true,
+      "detail": "status=200"
+    },
+    {
+      "check": "episode:ep01/eudic_quizlet: Content-Type is text/plain",
+      "ok": true,
+      "detail": "text/plain; charset=utf-8"
+    },
+    {
+      "check": "episode:ep01/eudic_quizlet: Content-Disposition has an ASCII filename and filename*",
+      "ok": true,
+      "detail": "attachment; filename=\"ep01_Eudic_Quizlet.txt\"; filename*=UTF-8''ep01_%E7%B2%BE%E8%AF%BB%E6%89%8B%E5%86%8C_Eudi"
+    },
+    {
+      "check": "episode:ep01/eudic_quizlet: response headers are latin-1 safe",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "episode:ep01/eudic_quizlet: body is not empty",
+      "ok": true,
+      "detail": "45078 bytes"
+    },
+    {
+      "check": "episode:ep01/eudic_quizlet: body is valid UTF-8 text",
+      "ok": true,
+      "detail": "39186 chars"
+    },
+    {
+      "check": "episode:ep01/eudic_quizlet: body is not an error message",
+      "ok": true,
+      "detail": "hurdling\t/ˈhɜːrdlɪŋ/ v. (present participle) 疾驰、飞驰（形容失控电车高速冲下轨道）\\nmoving rapidly and uncontrollably forward, as a vehicl"
+    },
+    {
+      "check": "episode:ep01/eudic_quizlet: every word present in the eudic_quizlet payload",
+      "ok": true,
+      "detail": "0 missing e.g. []"
+    },
+    {
+      "check": "episode:ep01/eudic_quizlet: English definitions (163) present in eudic_quizlet",
+      "ok": true,
+      "detail": "0 missing e.g. []"
+    },
+    {
+      "check": "episode:ep01/words_only: HTTP 200",
+      "ok": true,
+      "detail": "status=200"
+    },
+    {
+      "check": "episode:ep01/words_only: Content-Type is text/plain",
+      "ok": true,
+      "detail": "text/plain; charset=utf-8"
+    },
+    {
+      "check": "episode:ep01/words_only: Content-Disposition has an ASCII filename and filename*",
+      "ok": true,
+      "detail": "attachment; filename=\"ep01_Words_Only.txt\"; filename*=UTF-8''ep01_%E7%B2%BE%E8%AF%BB%E6%89%8B%E5%86%8C_Words_O"
+    },
+    {
+      "check": "episode:ep01/words_only: response headers are latin-1 safe",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "episode:ep01/words_only: body is not empty",
+      "ok": true,
+      "detail": "1743 bytes"
+    },
+    {
+      "check": "episode:ep01/words_only: body is valid UTF-8 text",
+      "ok": true,
+      "detail": "1743 chars"
+    },
+    {
+      "check": "episode:ep01/words_only: body is not an error message",
+      "ok": true,
+      "detail": "hurdling\ndesperate\nhelpless\nside track\nsparing\npoll\nhandful\nvast majority\ninvestigate\nvolunteer\ntragic\nminority\nmentalit"
+    },
+    {
+      "check": "episode:ep01/words_only: every word present in the words_only payload",
+      "ok": true,
+      "detail": "0 missing e.g. []"
+    },
+    {
+      "check": "episode:ep02/docx: HTTP 200",
+      "ok": true,
+      "detail": "status=200"
+    },
+    {
+      "check": "episode:ep02/docx: Content-Type is application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "ok": true,
+      "detail": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    },
+    {
+      "check": "episode:ep02/docx: Content-Disposition has an ASCII filename and filename*",
+      "ok": true,
+      "detail": "attachment; filename=\"ep02_Study_Guide.docx\"; filename*=UTF-8''ep02_%E7%B2%BE%E8%AF%BB%E6%89%8B%E5%86%8C_Study"
+    },
+    {
+      "check": "episode:ep02/docx: response headers are latin-1 safe",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "episode:ep02/docx: body is not empty",
+      "ok": true,
+      "detail": "45135 bytes"
+    },
+    {
+      "check": "episode:ep02/docx: body is really a zip package",
+      "ok": true,
+      "detail": "magic=b'PK\\x03\\x04\\x14\\x00\\x00\\x00'"
+    },
+    {
+      "check": "episode:ep02/docx: Content-Length matches the body",
+      "ok": true,
+      "detail": "45135 vs 45135"
+    },
+    {
+      "check": "episode:ep02/docx: embedded .docx passes the package gate",
+      "ok": true,
+      "detail": "0/30 checks failed"
+    },
+    {
+      "check": "episode:ep02/study_guide_md: HTTP 200",
+      "ok": true,
+      "detail": "status=200"
+    },
+    {
+      "check": "episode:ep02/study_guide_md: Content-Type is text/markdown",
+      "ok": true,
+      "detail": "text/markdown; charset=utf-8"
+    },
+    {
+      "check": "episode:ep02/study_guide_md: Content-Disposition has an ASCII filename and filename*",
+      "ok": true,
+      "detail": "attachment; filename=\"ep02_Study_Guide.md\"; filename*=UTF-8''ep02_%E7%B2%BE%E8%AF%BB%E6%89%8B%E5%86%8C_Study_G"
+    },
+    {
+      "check": "episode:ep02/study_guide_md: response headers are latin-1 safe",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "episode:ep02/study_guide_md: body is not empty",
+      "ok": true,
+      "detail": "63386 bytes"
+    },
+    {
+      "check": "episode:ep02/study_guide_md: body is valid UTF-8 text",
+      "ok": true,
+      "detail": "58542 chars"
+    },
+    {
+      "check": "episode:ep02/study_guide_md: body is not an error message",
+      "ok": true,
+      "detail": "# 🏛️ ep02_精读手册 听说精读词表手册\n\n> 哈佛大学《Justice》公开课 · Michael Sandel 教授\n\n| 序号 | 单词 | 音标 | 词性与中文释义 | 英英释义 | 课堂原声例句 | 中文翻译 |\n| :--"
+    },
+    {
+      "check": "episode:ep02/study_guide_md: every word present in the study_guide_md payload",
+      "ok": true,
+      "detail": "0 missing e.g. []"
+    },
+    {
+      "check": "episode:ep02/study_guide_md: English definitions (215) present in study_guide_md",
+      "ok": true,
+      "detail": "0 missing e.g. []"
+    },
+    {
+      "check": "episode:ep02/anki_csv: HTTP 200",
+      "ok": true,
+      "detail": "status=200"
+    },
+    {
+      "check": "episode:ep02/anki_csv: Content-Type is text/csv",
+      "ok": true,
+      "detail": "text/csv; charset=utf-8"
+    },
+    {
+      "check": "episode:ep02/anki_csv: Content-Disposition has an ASCII filename and filename*",
+      "ok": true,
+      "detail": "attachment; filename=\"ep02_Anki.csv\"; filename*=UTF-8''ep02_%E7%B2%BE%E8%AF%BB%E6%89%8B%E5%86%8C_Anki.csv"
+    },
+    {
+      "check": "episode:ep02/anki_csv: response headers are latin-1 safe",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "episode:ep02/anki_csv: body is not empty",
+      "ok": true,
+      "detail": "358121 bytes"
+    },
+    {
+      "check": "episode:ep02/anki_csv: body is valid UTF-8 text",
+      "ok": true,
+      "detail": "346280 chars"
+    },
+    {
+      "check": "episode:ep02/anki_csv: body is not an error message",
+      "ok": true,
+      "detail": "Front,Back,Word,Phonetic,Definition,EnglishDefinition,Example,Translation\r\n\"<div style='font-family:sans-serif; text-ali"
+    },
+    {
+      "check": "episode:ep02/anki_csv: every word present in the anki_csv payload",
+      "ok": true,
+      "detail": "0 missing e.g. []"
+    },
+    {
+      "check": "episode:ep02/anki_csv: English definitions (215) present in anki_csv",
+      "ok": true,
+      "detail": "0 missing e.g. []"
+    },
+    {
+      "check": "episode:ep02/eudic_quizlet: HTTP 200",
+      "ok": true,
+      "detail": "status=200"
+    },
+    {
+      "check": "episode:ep02/eudic_quizlet: Content-Type is text/plain",
+      "ok": true,
+      "detail": "text/plain; charset=utf-8"
+    },
+    {
+      "check": "episode:ep02/eudic_quizlet: Content-Disposition has an ASCII filename and filename*",
+      "ok": true,
+      "detail": "attachment; filename=\"ep02_Eudic_Quizlet.txt\"; filename*=UTF-8''ep02_%E7%B2%BE%E8%AF%BB%E6%89%8B%E5%86%8C_Eudi"
+    },
+    {
+      "check": "episode:ep02/eudic_quizlet: response headers are latin-1 safe",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "episode:ep02/eudic_quizlet: body is not empty",
+      "ok": true,
+      "detail": "58275 bytes"
+    },
+    {
+      "check": "episode:ep02/eudic_quizlet: body is valid UTF-8 text",
+      "ok": true,
+      "detail": "53537 chars"
+    },
+    {
+      "check": "episode:ep02/eudic_quizlet: body is not an error message",
+      "ok": true,
+      "detail": "cannibalism\t/ˈkænɪbəlɪzəm/ n. 食人；同类相食\\nthe practice of eating the flesh of one's own species\tLast time we argued about t"
+    },
+    {
+      "check": "episode:ep02/eudic_quizlet: every word present in the eudic_quizlet payload",
+      "ok": true,
+      "detail": "0 missing e.g. []"
+    },
+    {
+      "check": "episode:ep02/eudic_quizlet: English definitions (215) present in eudic_quizlet",
+      "ok": true,
+      "detail": "0 missing e.g. []"
+    },
+    {
+      "check": "episode:ep02/words_only: HTTP 200",
+      "ok": true,
+      "detail": "status=200"
+    },
+    {
+      "check": "episode:ep02/words_only: Content-Type is text/plain",
+      "ok": true,
+      "detail": "text/plain; charset=utf-8"
+    },
+    {
+      "check": "episode:ep02/words_only: Content-Disposition has an ASCII filename and filename*",
+      "ok": true,
+      "detail": "attachment; filename=\"ep02_Words_Only.txt\"; filename*=UTF-8''ep02_%E7%B2%BE%E8%AF%BB%E6%89%8B%E5%86%8C_Words_O"
+    },
+    {
+      "check": "episode:ep02/words_only: response headers are latin-1 safe",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "episode:ep02/words_only: body is not empty",
+      "ok": true,
+      "detail": "2496 bytes"
+    },
+    {
+      "check": "episode:ep02/words_only: body is valid UTF-8 text",
+      "ok": true,
+      "detail": "2496 chars"
+    },
+    {
+      "check": "episode:ep02/words_only: body is not an error message",
+      "ok": true,
+      "detail": "cannibalism\nutilitarian\njurisprudence\nmoral philosophy\nprinciple\nmaximize\ngeneral welfare\nutility\nsovereign\ntake account"
+    },
+    {
+      "check": "episode:ep02/words_only: every word present in the words_only payload",
+      "ok": true,
+      "detail": "0 missing e.g. []"
+    },
+    {
+      "check": "episode:ep03/docx: HTTP 200",
+      "ok": true,
+      "detail": "status=200"
+    },
+    {
+      "check": "episode:ep03/docx: Content-Type is application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "ok": true,
+      "detail": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    },
+    {
+      "check": "episode:ep03/docx: Content-Disposition has an ASCII filename and filename*",
+      "ok": true,
+      "detail": "attachment; filename=\"ep03_Study_Guide.docx\"; filename*=UTF-8''ep03_%E7%B2%BE%E8%AF%BB%E6%89%8B%E5%86%8C_Study"
+    },
+    {
+      "check": "episode:ep03/docx: response headers are latin-1 safe",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "episode:ep03/docx: body is not empty",
+      "ok": true,
+      "detail": "15395 bytes"
+    },
+    {
+      "check": "episode:ep03/docx: body is really a zip package",
+      "ok": true,
+      "detail": "magic=b'PK\\x03\\x04\\x14\\x00\\x00\\x00'"
+    },
+    {
+      "check": "episode:ep03/docx: Content-Length matches the body",
+      "ok": true,
+      "detail": "15395 vs 15395"
+    },
+    {
+      "check": "episode:ep03/docx: embedded .docx passes the package gate",
+      "ok": true,
+      "detail": "0/30 checks failed"
+    },
+    {
+      "check": "episode:ep03/study_guide_md: HTTP 200",
+      "ok": true,
+      "detail": "status=200"
+    },
+    {
+      "check": "episode:ep03/study_guide_md: Content-Type is text/markdown",
+      "ok": true,
+      "detail": "text/markdown; charset=utf-8"
+    },
+    {
+      "check": "episode:ep03/study_guide_md: Content-Disposition has an ASCII filename and filename*",
+      "ok": true,
+      "detail": "attachment; filename=\"ep03_Study_Guide.md\"; filename*=UTF-8''ep03_%E7%B2%BE%E8%AF%BB%E6%89%8B%E5%86%8C_Study_G"
+    },
+    {
+      "check": "episode:ep03/study_guide_md: response headers are latin-1 safe",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "episode:ep03/study_guide_md: body is not empty",
+      "ok": true,
+      "detail": "12265 bytes"
+    },
+    {
+      "check": "episode:ep03/study_guide_md: body is valid UTF-8 text",
+      "ok": true,
+      "detail": "11458 chars"
+    },
+    {
+      "check": "episode:ep03/study_guide_md: body is not an error message",
+      "ok": true,
+      "detail": "# 🏛️ ep03_精读手册 听说精读词表手册\n\n> 哈佛大学《Justice》公开课 · Michael Sandel 教授\n\n| 序号 | 单词 | 音标 | 词性与中文释义 | 英英释义 | 课堂原声例句 | 中文翻译 |\n| :--"
+    },
+    {
+      "check": "episode:ep03/study_guide_md: every word present in the study_guide_md payload",
+      "ok": true,
+      "detail": "0 missing e.g. []"
+    },
+    {
+      "check": "episode:ep03/study_guide_md: English definitions (44) present in study_guide_md",
+      "ok": true,
+      "detail": "0 missing e.g. []"
+    },
+    {
+      "check": "episode:ep03/anki_csv: HTTP 200",
+      "ok": true,
+      "detail": "status=200"
+    },
+    {
+      "check": "episode:ep03/anki_csv: Content-Type is text/csv",
+      "ok": true,
+      "detail": "text/csv; charset=utf-8"
+    },
+    {
+      "check": "episode:ep03/anki_csv: Content-Disposition has an ASCII filename and filename*",
+      "ok": true,
+      "detail": "attachment; filename=\"ep03_Anki.csv\"; filename*=UTF-8''ep03_%E7%B2%BE%E8%AF%BB%E6%89%8B%E5%86%8C_Anki.csv"
+    },
+    {
+      "check": "episode:ep03/anki_csv: response headers are latin-1 safe",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "episode:ep03/anki_csv: body is not empty",
+      "ok": true,
+      "detail": "71053 bytes"
+    },
+    {
+      "check": "episode:ep03/anki_csv: body is valid UTF-8 text",
+      "ok": true,
+      "detail": "69167 chars"
+    },
+    {
+      "check": "episode:ep03/anki_csv: body is not an error message",
+      "ok": true,
+      "detail": "Front,Back,Word,Phonetic,Definition,EnglishDefinition,Example,Translation\r\n<div style='font-family:sans-serif; text-alig"
+    },
+    {
+      "check": "episode:ep03/anki_csv: every word present in the anki_csv payload",
+      "ok": true,
+      "detail": "0 missing e.g. []"
+    },
+    {
+      "check": "episode:ep03/anki_csv: English definitions (44) present in anki_csv",
+      "ok": true,
+      "detail": "0 missing e.g. []"
+    },
+    {
+      "check": "episode:ep03/eudic_quizlet: HTTP 200",
+      "ok": true,
+      "detail": "status=200"
+    },
+    {
+      "check": "episode:ep03/eudic_quizlet: Content-Type is text/plain",
+      "ok": true,
+      "detail": "text/plain; charset=utf-8"
+    },
+    {
+      "check": "episode:ep03/eudic_quizlet: Content-Disposition has an ASCII filename and filename*",
+      "ok": true,
+      "detail": "attachment; filename=\"ep03_Eudic_Quizlet.txt\"; filename*=UTF-8''ep03_%E7%B2%BE%E8%AF%BB%E6%89%8B%E5%86%8C_Eudi"
+    },
+    {
+      "check": "episode:ep03/eudic_quizlet: response headers are latin-1 safe",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "episode:ep03/eudic_quizlet: body is not empty",
+      "ok": true,
+      "detail": "11032 bytes"
+    },
+    {
+      "check": "episode:ep03/eudic_quizlet: body is valid UTF-8 text",
+      "ok": true,
+      "detail": "10331 chars"
+    },
+    {
+      "check": "episode:ep03/eudic_quizlet: body is not an error message",
+      "ok": true,
+      "detail": "libertarian\t/ˌlɪbərˈteəriən/ n./adj. 自由至上主义者；自由至上主义的\\na person who believes that individual freedom should be protected "
+    },
+    {
+      "check": "episode:ep03/eudic_quizlet: every word present in the eudic_quizlet payload",
+      "ok": true,
+      "detail": "0 missing e.g. []"
+    },
+    {
+      "check": "episode:ep03/eudic_quizlet: English definitions (44) present in eudic_quizlet",
+      "ok": true,
+      "detail": "0 missing e.g. []"
+    },
+    {
+      "check": "episode:ep03/words_only: HTTP 200",
+      "ok": true,
+      "detail": "status=200"
+    },
+    {
+      "check": "episode:ep03/words_only: Content-Type is text/plain",
+      "ok": true,
+      "detail": "text/plain; charset=utf-8"
+    },
+    {
+      "check": "episode:ep03/words_only: Content-Disposition has an ASCII filename and filename*",
+      "ok": true,
+      "detail": "attachment; filename=\"ep03_Words_Only.txt\"; filename*=UTF-8''ep03_%E7%B2%BE%E8%AF%BB%E6%89%8B%E5%86%8C_Words_O"
+    },
+    {
+      "check": "episode:ep03/words_only: response headers are latin-1 safe",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "episode:ep03/words_only: body is not empty",
+      "ok": true,
+      "detail": "429 bytes"
+    },
+    {
+      "check": "episode:ep03/words_only: body is valid UTF-8 text",
+      "ok": true,
+      "detail": "429 chars"
+    },
+    {
+      "check": "episode:ep03/words_only: body is not an error message",
+      "ok": true,
+      "detail": "libertarian\nlibertarianism\ncoercion\nredistribution\npaternalist\nproprietors\nacquisition\nviolation\nlegislation\ntaxation\nth"
+    },
+    {
+      "check": "episode:ep03/words_only: every word present in the words_only payload",
+      "ok": true,
+      "detail": "0 missing e.g. []"
+    },
+    {
+      "check": "episode:yale_ep01/docx: HTTP 200",
+      "ok": true,
+      "detail": "status=200"
+    },
+    {
+      "check": "episode:yale_ep01/docx: Content-Type is application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "ok": true,
+      "detail": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    },
+    {
+      "check": "episode:yale_ep01/docx: Content-Disposition has an ASCII filename and filename*",
+      "ok": true,
+      "detail": "attachment; filename=\"yale_ep01_Study_Guide.docx\"; filename*=UTF-8''yale_ep01_%E7%B2%BE%E8%AF%BB%E6%89%8B%E5%8"
+    },
+    {
+      "check": "episode:yale_ep01/docx: response headers are latin-1 safe",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "episode:yale_ep01/docx: body is not empty",
+      "ok": true,
+      "detail": "17179 bytes"
+    },
+    {
+      "check": "episode:yale_ep01/docx: body is really a zip package",
+      "ok": true,
+      "detail": "magic=b'PK\\x03\\x04\\x14\\x00\\x00\\x00'"
+    },
+    {
+      "check": "episode:yale_ep01/docx: Content-Length matches the body",
+      "ok": true,
+      "detail": "17179 vs 17179"
+    },
+    {
+      "check": "episode:yale_ep01/docx: embedded .docx passes the package gate",
+      "ok": true,
+      "detail": "0/30 checks failed"
+    },
+    {
+      "check": "episode:yale_ep01/study_guide_md: HTTP 200",
+      "ok": true,
+      "detail": "status=200"
+    },
+    {
+      "check": "episode:yale_ep01/study_guide_md: Content-Type is text/markdown",
+      "ok": true,
+      "detail": "text/markdown; charset=utf-8"
+    },
+    {
+      "check": "episode:yale_ep01/study_guide_md: Content-Disposition has an ASCII filename and filename*",
+      "ok": true,
+      "detail": "attachment; filename=\"yale_ep01_Study_Guide.md\"; filename*=UTF-8''yale_ep01_%E7%B2%BE%E8%AF%BB%E6%89%8B%E5%86%"
+    },
+    {
+      "check": "episode:yale_ep01/study_guide_md: response headers are latin-1 safe",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "episode:yale_ep01/study_guide_md: body is not empty",
+      "ok": true,
+      "detail": "13721 bytes"
+    },
+    {
+      "check": "episode:yale_ep01/study_guide_md: body is valid UTF-8 text",
+      "ok": true,
+      "detail": "9836 chars"
+    },
+    {
+      "check": "episode:yale_ep01/study_guide_md: body is not an error message",
+      "ok": true,
+      "detail": "# 🏛️ yale_ep01_精读手册 听说精读词表手册\n\n> 哈佛大学《Justice》公开课 · Michael Sandel 教授\n\n| 序号 | 单词 | 音标 | 词性与中文释义 | 英英释义 | 课堂原声例句 | 中文翻译 |\n"
+    },
+    {
+      "check": "episode:yale_ep01/study_guide_md: every word present in the study_guide_md payload",
+      "ok": true,
+      "detail": "0 missing e.g. []"
+    },
+    {
+      "check": "episode:yale_ep01/study_guide_md: English definitions (32) present in study_guide_md",
+      "ok": true,
+      "detail": "0 missing e.g. []"
+    },
+    {
+      "check": "episode:yale_ep01/anki_csv: HTTP 200",
+      "ok": true,
+      "detail": "status=200"
+    },
+    {
+      "check": "episode:yale_ep01/anki_csv: Content-Type is text/csv",
+      "ok": true,
+      "detail": "text/csv; charset=utf-8"
+    },
+    {
+      "check": "episode:yale_ep01/anki_csv: Content-Disposition has an ASCII filename and filename*",
+      "ok": true,
+      "detail": "attachment; filename=\"yale_ep01_Anki.csv\"; filename*=UTF-8''yale_ep01_%E7%B2%BE%E8%AF%BB%E6%89%8B%E5%86%8C_Ank"
+    },
+    {
+      "check": "episode:yale_ep01/anki_csv: response headers are latin-1 safe",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "episode:yale_ep01/anki_csv: body is not empty",
+      "ok": true,
+      "detail": "60170 bytes"
+    },
+    {
+      "check": "episode:yale_ep01/anki_csv: body is valid UTF-8 text",
+      "ok": true,
+      "detail": "52260 chars"
+    },
+    {
+      "check": "episode:yale_ep01/anki_csv: body is not an error message",
+      "ok": true,
+      "detail": "Front,Back,Word,Phonetic,Definition,EnglishDefinition,Example,Translation\r\n<div style='font-family:sans-serif; text-alig"
+    },
+    {
+      "check": "episode:yale_ep01/anki_csv: every word present in the anki_csv payload",
+      "ok": true,
+      "detail": "0 missing e.g. []"
+    },
+    {
+      "check": "episode:yale_ep01/anki_csv: English definitions (32) present in anki_csv",
+      "ok": true,
+      "detail": "0 missing e.g. []"
+    },
+    {
+      "check": "episode:yale_ep01/eudic_quizlet: HTTP 200",
+      "ok": true,
+      "detail": "status=200"
+    },
+    {
+      "check": "episode:yale_ep01/eudic_quizlet: Content-Type is text/plain",
+      "ok": true,
+      "detail": "text/plain; charset=utf-8"
+    },
+    {
+      "check": "episode:yale_ep01/eudic_quizlet: Content-Disposition has an ASCII filename and filename*",
+      "ok": true,
+      "detail": "attachment; filename=\"yale_ep01_Eudic_Quizlet.txt\"; filename*=UTF-8''yale_ep01_%E7%B2%BE%E8%AF%BB%E6%89%8B%E5%"
+    },
+    {
+      "check": "episode:yale_ep01/eudic_quizlet: response headers are latin-1 safe",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "episode:yale_ep01/eudic_quizlet: body is not empty",
+      "ok": true,
+      "detail": "12747 bytes"
+    },
+    {
+      "check": "episode:yale_ep01/eudic_quizlet: body is valid UTF-8 text",
+      "ok": true,
+      "detail": "8968 chars"
+    },
+    {
+      "check": "episode:yale_ep01/eudic_quizlet: body is not an error message",
+      "ok": true,
+      "detail": "harmony\t/ˈhɑːrməni/ n. 和谐，融洽；协调\\na state of peaceful agreement among different parts\tPlato argues that justice in the so"
+    },
+    {
+      "check": "episode:yale_ep01/eudic_quizlet: every word present in the eudic_quizlet payload",
+      "ok": true,
+      "detail": "0 missing e.g. []"
+    },
+    {
+      "check": "episode:yale_ep01/eudic_quizlet: English definitions (32) present in eudic_quizlet",
+      "ok": true,
+      "detail": "0 missing e.g. []"
+    },
+    {
+      "check": "episode:yale_ep01/words_only: HTTP 200",
+      "ok": true,
+      "detail": "status=200"
+    },
+    {
+      "check": "episode:yale_ep01/words_only: Content-Type is text/plain",
+      "ok": true,
+      "detail": "text/plain; charset=utf-8"
+    },
+    {
+      "check": "episode:yale_ep01/words_only: Content-Disposition has an ASCII filename and filename*",
+      "ok": true,
+      "detail": "attachment; filename=\"yale_ep01_Words_Only.txt\"; filename*=UTF-8''yale_ep01_%E7%B2%BE%E8%AF%BB%E6%89%8B%E5%86%"
+    },
+    {
+      "check": "episode:yale_ep01/words_only: response headers are latin-1 safe",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "episode:yale_ep01/words_only: body is not empty",
+      "ok": true,
+      "detail": "438 bytes"
+    },
+    {
+      "check": "episode:yale_ep01/words_only: body is valid UTF-8 text",
+      "ok": true,
+      "detail": "438 chars"
+    },
+    {
+      "check": "episode:yale_ep01/words_only: body is not an error message",
+      "ok": true,
+      "detail": "harmony\nrational\nconflict\nvirtue\nreflection\nproportion\nflourish\ninstinct\ndiscipline\nperspective\neudaimonia\ntemperance\nap"
+    },
+    {
+      "check": "episode:yale_ep01/words_only: every word present in the words_only payload",
+      "ok": true,
+      "detail": "0 missing e.g. []"
+    },
+    {
+      "check": "collection:harvard_justice/docx: HTTP 200",
+      "ok": true,
+      "detail": "status=200"
+    },
+    {
+      "check": "collection:harvard_justice/docx: Content-Type is application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "ok": true,
+      "detail": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    },
+    {
+      "check": "collection:harvard_justice/docx: Content-Disposition has an ASCII filename and filename*",
+      "ok": true,
+      "detail": "attachment; filename=\"Justice_Study_Guide.docx\"; filename*=UTF-8''%E5%93%88%E4%BD%9B%E5%A4%A7%E5%AD%A6%E3%80%8"
+    },
+    {
+      "check": "collection:harvard_justice/docx: response headers are latin-1 safe",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "collection:harvard_justice/docx: body is not empty",
+      "ok": true,
+      "detail": "84295 bytes"
+    },
+    {
+      "check": "collection:harvard_justice/docx: body is really a zip package",
+      "ok": true,
+      "detail": "magic=b'PK\\x03\\x04\\x14\\x00\\x00\\x00'"
+    },
+    {
+      "check": "collection:harvard_justice/docx: Content-Length matches the body",
+      "ok": true,
+      "detail": "84295 vs 84295"
+    },
+    {
+      "check": "collection:harvard_justice/docx: embedded .docx passes the package gate",
+      "ok": true,
+      "detail": "0/30 checks failed"
+    },
+    {
+      "check": "collection:harvard_justice/study_guide_md: HTTP 200",
+      "ok": true,
+      "detail": "status=200"
+    },
+    {
+      "check": "collection:harvard_justice/study_guide_md: Content-Type is text/markdown",
+      "ok": true,
+      "detail": "text/markdown; charset=utf-8"
+    },
+    {
+      "check": "collection:harvard_justice/study_guide_md: Content-Disposition has an ASCII filename and filename*",
+      "ok": true,
+      "detail": "attachment; filename=\"Justice_Study_Guide.md\"; filename*=UTF-8''%E5%93%88%E4%BD%9B%E5%A4%A7%E5%AD%A6%E3%80%8A%"
+    },
+    {
+      "check": "collection:harvard_justice/study_guide_md: response headers are latin-1 safe",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "collection:harvard_justice/study_guide_md: body is not empty",
+      "ok": true,
+      "detail": "121968 bytes"
+    },
+    {
+      "check": "collection:harvard_justice/study_guide_md: body is valid UTF-8 text",
+      "ok": true,
+      "detail": "110675 chars"
+    },
+    {
+      "check": "collection:harvard_justice/study_guide_md: body is not an error message",
+      "ok": true,
+      "detail": "# 🏛️ 哈佛大学《公正：该如何做是好？》(Justice)_合集精读手册 听说精读词表手册\n\n> 哈佛大学《Justice》公开课 · Michael Sandel 教授\n\n| 序号 | 单词 | 音标 | 词性与中文释义 | 英英释义 "
+    },
+    {
+      "check": "collection:harvard_justice/study_guide_md: every word present in the study_guide_md payload",
+      "ok": true,
+      "detail": "0 missing e.g. []"
+    },
+    {
+      "check": "collection:harvard_justice/study_guide_md: English definitions (414) present in study_guide_md",
+      "ok": true,
+      "detail": "0 missing e.g. []"
+    },
+    {
+      "check": "collection:harvard_justice/anki_csv: HTTP 200",
+      "ok": true,
+      "detail": "status=200"
+    },
+    {
+      "check": "collection:harvard_justice/anki_csv: Content-Type is text/csv",
+      "ok": true,
+      "detail": "text/csv; charset=utf-8"
+    },
+    {
+      "check": "collection:harvard_justice/anki_csv: Content-Disposition has an ASCII filename and filename*",
+      "ok": true,
+      "detail": "attachment; filename=\"Justice_Anki.csv\"; filename*=UTF-8''%E5%93%88%E4%BD%9B%E5%A4%A7%E5%AD%A6%E3%80%8A%E5%85%"
+    },
+    {
+      "check": "collection:harvard_justice/anki_csv: response headers are latin-1 safe",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "collection:harvard_justice/anki_csv: body is not empty",
+      "ok": true,
+      "detail": "685061 bytes"
+    },
+    {
+      "check": "collection:harvard_justice/anki_csv: body is valid UTF-8 text",
+      "ok": true,
+      "detail": "658203 chars"
+    },
+    {
+      "check": "collection:harvard_justice/anki_csv: body is not an error message",
+      "ok": true,
+      "detail": "Front,Back,Word,Phonetic,Definition,EnglishDefinition,Example,Translation\r\n\"<div style='font-family:sans-serif; text-ali"
+    },
+    {
+      "check": "collection:harvard_justice/anki_csv: every word present in the anki_csv payload",
+      "ok": true,
+      "detail": "0 missing e.g. []"
+    },
+    {
+      "check": "collection:harvard_justice/anki_csv: English definitions (414) present in anki_csv",
+      "ok": true,
+      "detail": "0 missing e.g. []"
+    },
+    {
+      "check": "collection:harvard_justice/eudic_quizlet: HTTP 200",
+      "ok": true,
+      "detail": "status=200"
+    },
+    {
+      "check": "collection:harvard_justice/eudic_quizlet: Content-Type is text/plain",
+      "ok": true,
+      "detail": "text/plain; charset=utf-8"
+    },
+    {
+      "check": "collection:harvard_justice/eudic_quizlet: Content-Disposition has an ASCII filename and filename*",
+      "ok": true,
+      "detail": "attachment; filename=\"Justice_Eudic_Quizlet.txt\"; filename*=UTF-8''%E5%93%88%E4%BD%9B%E5%A4%A7%E5%AD%A6%E3%80%"
+    },
+    {
+      "check": "collection:harvard_justice/eudic_quizlet: response headers are latin-1 safe",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "collection:harvard_justice/eudic_quizlet: body is not empty",
+      "ok": true,
+      "detail": "112221 bytes"
+    },
+    {
+      "check": "collection:harvard_justice/eudic_quizlet: body is valid UTF-8 text",
+      "ok": true,
+      "detail": "101070 chars"
+    },
+    {
+      "check": "collection:harvard_justice/eudic_quizlet: body is not an error message",
+      "ok": true,
+      "detail": "hurdling\t/ˈhɜːrdlɪŋ/ v. (present participle) 疾驰、飞驰（形容失控电车高速冲下轨道）\\nmoving rapidly and uncontrollably forward, as a vehicl"
+    },
+    {
+      "check": "collection:harvard_justice/eudic_quizlet: every word present in the eudic_quizlet payload",
+      "ok": true,
+      "detail": "0 missing e.g. []"
+    },
+    {
+      "check": "collection:harvard_justice/eudic_quizlet: English definitions (414) present in eudic_quizlet",
+      "ok": true,
+      "detail": "0 missing e.g. []"
+    },
+    {
+      "check": "collection:harvard_justice/words_only: HTTP 200",
+      "ok": true,
+      "detail": "status=200"
+    },
+    {
+      "check": "collection:harvard_justice/words_only: Content-Type is text/plain",
+      "ok": true,
+      "detail": "text/plain; charset=utf-8"
+    },
+    {
+      "check": "collection:harvard_justice/words_only: Content-Disposition has an ASCII filename and filename*",
+      "ok": true,
+      "detail": "attachment; filename=\"Justice_Words_Only.txt\"; filename*=UTF-8''%E5%93%88%E4%BD%9B%E5%A4%A7%E5%AD%A6%E3%80%8A%"
+    },
+    {
+      "check": "collection:harvard_justice/words_only: response headers are latin-1 safe",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "collection:harvard_justice/words_only: body is not empty",
+      "ok": true,
+      "detail": "4580 bytes"
+    },
+    {
+      "check": "collection:harvard_justice/words_only: body is valid UTF-8 text",
+      "ok": true,
+      "detail": "4580 chars"
+    },
+    {
+      "check": "collection:harvard_justice/words_only: body is not an error message",
+      "ok": true,
+      "detail": "hurdling\ndesperate\nhelpless\nside track\nsparing\npoll\nhandful\nvast majority\ninvestigate\nvolunteer\ntragic\nminority\nmentalit"
+    },
+    {
+      "check": "collection:harvard_justice/words_only: every word present in the words_only payload",
+      "ok": true,
+      "detail": "0 missing e.g. []"
+    },
+    {
+      "check": "collection:yale_philosophy/docx: HTTP 200",
+      "ok": true,
+      "detail": "status=200"
+    },
+    {
+      "check": "collection:yale_philosophy/docx: Content-Type is application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "ok": true,
+      "detail": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    },
+    {
+      "check": "collection:yale_philosophy/docx: Content-Disposition has an ASCII filename and filename*",
+      "ok": true,
+      "detail": "attachment; filename=\"Human_Nature_Study_Guide.docx\"; filename*=UTF-8''%E8%80%B6%E9%B2%81%E5%A4%A7%E5%AD%A6%E3"
+    },
+    {
+      "check": "collection:yale_philosophy/docx: response headers are latin-1 safe",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "collection:yale_philosophy/docx: body is not empty",
+      "ok": true,
+      "detail": "17266 bytes"
+    },
+    {
+      "check": "collection:yale_philosophy/docx: body is really a zip package",
+      "ok": true,
+      "detail": "magic=b'PK\\x03\\x04\\x14\\x00\\x00\\x00'"
+    },
+    {
+      "check": "collection:yale_philosophy/docx: Content-Length matches the body",
+      "ok": true,
+      "detail": "17266 vs 17266"
+    },
+    {
+      "check": "collection:yale_philosophy/docx: embedded .docx passes the package gate",
+      "ok": true,
+      "detail": "0/30 checks failed"
+    },
+    {
+      "check": "collection:yale_philosophy/study_guide_md: HTTP 200",
+      "ok": true,
+      "detail": "status=200"
+    },
+    {
+      "check": "collection:yale_philosophy/study_guide_md: Content-Type is text/markdown",
+      "ok": true,
+      "detail": "text/markdown; charset=utf-8"
+    },
+    {
+      "check": "collection:yale_philosophy/study_guide_md: Content-Disposition has an ASCII filename and filename*",
+      "ok": true,
+      "detail": "attachment; filename=\"Human_Nature_Study_Guide.md\"; filename*=UTF-8''%E8%80%B6%E9%B2%81%E5%A4%A7%E5%AD%A6%E3%8"
+    },
+    {
+      "check": "collection:yale_philosophy/study_guide_md: response headers are latin-1 safe",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "collection:yale_philosophy/study_guide_md: body is not empty",
+      "ok": true,
+      "detail": "13771 bytes"
+    },
+    {
+      "check": "collection:yale_philosophy/study_guide_md: body is valid UTF-8 text",
+      "ok": true,
+      "detail": "9856 chars"
+    },
+    {
+      "check": "collection:yale_philosophy/study_guide_md: body is not an error message",
+      "ok": true,
+      "detail": "# 🏛️ 耶鲁大学《哲学与人性科学》(Human Nature)_合集精读手册 听说精读词表手册\n\n> 哈佛大学《Justice》公开课 · Michael Sandel 教授\n\n| 序号 | 单词 | 音标 | 词性与中文释义 | 英英释"
+    },
+    {
+      "check": "collection:yale_philosophy/study_guide_md: every word present in the study_guide_md payload",
+      "ok": true,
+      "detail": "0 missing e.g. []"
+    },
+    {
+      "check": "collection:yale_philosophy/study_guide_md: English definitions (32) present in study_guide_md",
+      "ok": true,
+      "detail": "0 missing e.g. []"
+    },
+    {
+      "check": "collection:yale_philosophy/anki_csv: HTTP 200",
+      "ok": true,
+      "detail": "status=200"
+    },
+    {
+      "check": "collection:yale_philosophy/anki_csv: Content-Type is text/csv",
+      "ok": true,
+      "detail": "text/csv; charset=utf-8"
+    },
+    {
+      "check": "collection:yale_philosophy/anki_csv: Content-Disposition has an ASCII filename and filename*",
+      "ok": true,
+      "detail": "attachment; filename=\"Human_Nature_Anki.csv\"; filename*=UTF-8''%E8%80%B6%E9%B2%81%E5%A4%A7%E5%AD%A6%E3%80%8A%E"
+    },
+    {
+      "check": "collection:yale_philosophy/anki_csv: response headers are latin-1 safe",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "collection:yale_philosophy/anki_csv: body is not empty",
+      "ok": true,
+      "detail": "60170 bytes"
+    },
+    {
+      "check": "collection:yale_philosophy/anki_csv: body is valid UTF-8 text",
+      "ok": true,
+      "detail": "52260 chars"
+    },
+    {
+      "check": "collection:yale_philosophy/anki_csv: body is not an error message",
+      "ok": true,
+      "detail": "Front,Back,Word,Phonetic,Definition,EnglishDefinition,Example,Translation\r\n<div style='font-family:sans-serif; text-alig"
+    },
+    {
+      "check": "collection:yale_philosophy/anki_csv: every word present in the anki_csv payload",
+      "ok": true,
+      "detail": "0 missing e.g. []"
+    },
+    {
+      "check": "collection:yale_philosophy/anki_csv: English definitions (32) present in anki_csv",
+      "ok": true,
+      "detail": "0 missing e.g. []"
+    },
+    {
+      "check": "collection:yale_philosophy/eudic_quizlet: HTTP 200",
+      "ok": true,
+      "detail": "status=200"
+    },
+    {
+      "check": "collection:yale_philosophy/eudic_quizlet: Content-Type is text/plain",
+      "ok": true,
+      "detail": "text/plain; charset=utf-8"
+    },
+    {
+      "check": "collection:yale_philosophy/eudic_quizlet: Content-Disposition has an ASCII filename and filename*",
+      "ok": true,
+      "detail": "attachment; filename=\"Human_Nature_Eudic_Quizlet.txt\"; filename*=UTF-8''%E8%80%B6%E9%B2%81%E5%A4%A7%E5%AD%A6%E"
+    },
+    {
+      "check": "collection:yale_philosophy/eudic_quizlet: response headers are latin-1 safe",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "collection:yale_philosophy/eudic_quizlet: body is not empty",
+      "ok": true,
+      "detail": "12747 bytes"
+    },
+    {
+      "check": "collection:yale_philosophy/eudic_quizlet: body is valid UTF-8 text",
+      "ok": true,
+      "detail": "8968 chars"
+    },
+    {
+      "check": "collection:yale_philosophy/eudic_quizlet: body is not an error message",
+      "ok": true,
+      "detail": "harmony\t/ˈhɑːrməni/ n. 和谐，融洽；协调\\na state of peaceful agreement among different parts\tPlato argues that justice in the so"
+    },
+    {
+      "check": "collection:yale_philosophy/eudic_quizlet: every word present in the eudic_quizlet payload",
+      "ok": true,
+      "detail": "0 missing e.g. []"
+    },
+    {
+      "check": "collection:yale_philosophy/eudic_quizlet: English definitions (32) present in eudic_quizlet",
+      "ok": true,
+      "detail": "0 missing e.g. []"
+    },
+    {
+      "check": "collection:yale_philosophy/words_only: HTTP 200",
+      "ok": true,
+      "detail": "status=200"
+    },
+    {
+      "check": "collection:yale_philosophy/words_only: Content-Type is text/plain",
+      "ok": true,
+      "detail": "text/plain; charset=utf-8"
+    },
+    {
+      "check": "collection:yale_philosophy/words_only: Content-Disposition has an ASCII filename and filename*",
+      "ok": true,
+      "detail": "attachment; filename=\"Human_Nature_Words_Only.txt\"; filename*=UTF-8''%E8%80%B6%E9%B2%81%E5%A4%A7%E5%AD%A6%E3%8"
+    },
+    {
+      "check": "collection:yale_philosophy/words_only: response headers are latin-1 safe",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "collection:yale_philosophy/words_only: body is not empty",
+      "ok": true,
+      "detail": "438 bytes"
+    },
+    {
+      "check": "collection:yale_philosophy/words_only: body is valid UTF-8 text",
+      "ok": true,
+      "detail": "438 chars"
+    },
+    {
+      "check": "collection:yale_philosophy/words_only: body is not an error message",
+      "ok": true,
+      "detail": "harmony\nrational\nconflict\nvirtue\nreflection\nproportion\nflourish\ninstinct\ndiscipline\nperspective\neudaimonia\ntemperance\nap"
+    },
+    {
+      "check": "collection:yale_philosophy/words_only: every word present in the words_only payload",
+      "ok": true,
+      "detail": "0 missing e.g. []"
+    },
+    {
+      "check": "collection:custom_imports/docx: HTTP 200",
+      "ok": true,
+      "detail": "status=200"
+    },
+    {
+      "check": "collection:custom_imports/docx: Content-Type is application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "ok": true,
+      "detail": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    },
+    {
+      "check": "collection:custom_imports/docx: Content-Disposition has an ASCII filename and filename*",
+      "ok": true,
+      "detail": "attachment; filename=\"User_Imports_Study_Guide.docx\"; filename*=UTF-8''%E6%B3%95%E7%90%86%E5%AD%A6%E4%B8%8E%E5"
+    },
+    {
+      "check": "collection:custom_imports/docx: response headers are latin-1 safe",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "collection:custom_imports/docx: body is not empty",
+      "ok": true,
+      "detail": "10268 bytes"
+    },
+    {
+      "check": "collection:custom_imports/docx: body is really a zip package",
+      "ok": true,
+      "detail": "magic=b'PK\\x03\\x04\\x14\\x00\\x00\\x00'"
+    },
+    {
+      "check": "collection:custom_imports/docx: Content-Length matches the body",
+      "ok": true,
+      "detail": "10268 vs 10268"
+    },
+    {
+      "check": "collection:custom_imports/docx: embedded .docx passes the package gate",
+      "ok": true,
+      "detail": "0/30 checks failed"
+    },
+    {
+      "check": "collection:custom_imports/study_guide_md: HTTP 200",
+      "ok": true,
+      "detail": "status=200"
+    },
+    {
+      "check": "collection:custom_imports/study_guide_md: Content-Type is text/markdown",
+      "ok": true,
+      "detail": "text/markdown; charset=utf-8"
+    },
+    {
+      "check": "collection:custom_imports/study_guide_md: Content-Disposition has an ASCII filename and filename*",
+      "ok": true,
+      "detail": "attachment; filename=\"User_Imports_Study_Guide.md\"; filename*=UTF-8''%E6%B3%95%E7%90%86%E5%AD%A6%E4%B8%8E%E5%8"
+    },
+    {
+      "check": "collection:custom_imports/study_guide_md: response headers are latin-1 safe",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "collection:custom_imports/study_guide_md: body is not empty",
+      "ok": true,
+      "detail": "5500 bytes"
+    },
+    {
+      "check": "collection:custom_imports/study_guide_md: body is valid UTF-8 text",
+      "ok": true,
+      "detail": "3974 chars"
+    },
+    {
+      "check": "collection:custom_imports/study_guide_md: body is not an error message",
+      "ok": true,
+      "detail": "# 🏛️ 法理学与公共伦理名家研讨合集 (User Imports)_合集精读手册 听说精读词表手册\n\n> 哈佛大学《Justice》公开课 · Michael Sandel 教授\n\n| 序号 | 单词 | 音标 | 词性与中文释义 | 英"
+    },
+    {
+      "check": "collection:custom_imports/study_guide_md: every word present in the study_guide_md payload",
+      "ok": true,
+      "detail": "0 missing e.g. []"
+    },
+    {
+      "check": "collection:custom_imports/study_guide_md: English definitions (12) present in study_guide_md",
+      "ok": true,
+      "detail": "0 missing e.g. []"
+    },
+    {
+      "check": "collection:custom_imports/anki_csv: HTTP 200",
+      "ok": true,
+      "detail": "status=200"
+    },
+    {
+      "check": "collection:custom_imports/anki_csv: Content-Type is text/csv",
+      "ok": true,
+      "detail": "text/csv; charset=utf-8"
+    },
+    {
+      "check": "collection:custom_imports/anki_csv: Content-Disposition has an ASCII filename and filename*",
+      "ok": true,
+      "detail": "attachment; filename=\"User_Imports_Anki.csv\"; filename*=UTF-8''%E6%B3%95%E7%90%86%E5%AD%A6%E4%B8%8E%E5%85%AC%E"
+    },
+    {
+      "check": "collection:custom_imports/anki_csv: response headers are latin-1 safe",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "collection:custom_imports/anki_csv: body is not empty",
+      "ok": true,
+      "detail": "22983 bytes"
+    },
+    {
+      "check": "collection:custom_imports/anki_csv: body is valid UTF-8 text",
+      "ok": true,
+      "detail": "20075 chars"
+    },
+    {
+      "check": "collection:custom_imports/anki_csv: body is not an error message",
+      "ok": true,
+      "detail": "Front,Back,Word,Phonetic,Definition,EnglishDefinition,Example,Translation\r\n\"<div style='font-family:sans-serif; text-ali"
+    },
+    {
+      "check": "collection:custom_imports/anki_csv: every word present in the anki_csv payload",
+      "ok": true,
+      "detail": "0 missing e.g. []"
+    },
+    {
+      "check": "collection:custom_imports/anki_csv: English definitions (12) present in anki_csv",
+      "ok": true,
+      "detail": "0 missing e.g. []"
+    },
+    {
+      "check": "collection:custom_imports/eudic_quizlet: HTTP 200",
+      "ok": true,
+      "detail": "status=200"
+    },
+    {
+      "check": "collection:custom_imports/eudic_quizlet: Content-Type is text/plain",
+      "ok": true,
+      "detail": "text/plain; charset=utf-8"
+    },
+    {
+      "check": "collection:custom_imports/eudic_quizlet: Content-Disposition has an ASCII filename and filename*",
+      "ok": true,
+      "detail": "attachment; filename=\"User_Imports_Eudic_Quizlet.txt\"; filename*=UTF-8''%E6%B3%95%E7%90%86%E5%AD%A6%E4%B8%8E%E"
+    },
+    {
+      "check": "collection:custom_imports/eudic_quizlet: response headers are latin-1 safe",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "collection:custom_imports/eudic_quizlet: body is not empty",
+      "ok": true,
+      "detail": "4912 bytes"
+    },
+    {
+      "check": "collection:custom_imports/eudic_quizlet: body is valid UTF-8 text",
+      "ok": true,
+      "detail": "3524 chars"
+    },
+    {
+      "check": "collection:custom_imports/eudic_quizlet: body is not an error message",
+      "ok": true,
+      "detail": "utilitarianism\t/ˌjuːtɪlɪˈteəriənɪzəm/ n. 功利主义（以最大幸福为道德标准的伦理理论）\\nthe belief that the right action is the one that produce"
+    },
+    {
+      "check": "collection:custom_imports/eudic_quizlet: every word present in the eudic_quizlet payload",
+      "ok": true,
+      "detail": "0 missing e.g. []"
+    },
+    {
+      "check": "collection:custom_imports/eudic_quizlet: English definitions (12) present in eudic_quizlet",
+      "ok": true,
+      "detail": "0 missing e.g. []"
+    },
+    {
+      "check": "collection:custom_imports/words_only: HTTP 200",
+      "ok": true,
+      "detail": "status=200"
+    },
+    {
+      "check": "collection:custom_imports/words_only: Content-Type is text/plain",
+      "ok": true,
+      "detail": "text/plain; charset=utf-8"
+    },
+    {
+      "check": "collection:custom_imports/words_only: Content-Disposition has an ASCII filename and filename*",
+      "ok": true,
+      "detail": "attachment; filename=\"User_Imports_Words_Only.txt\"; filename*=UTF-8''%E6%B3%95%E7%90%86%E5%AD%A6%E4%B8%8E%E5%8"
+    },
+    {
+      "check": "collection:custom_imports/words_only: response headers are latin-1 safe",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "collection:custom_imports/words_only: body is not empty",
+      "ok": true,
+      "detail": "205 bytes"
+    },
+    {
+      "check": "collection:custom_imports/words_only: body is valid UTF-8 text",
+      "ok": true,
+      "detail": "205 chars"
+    },
+    {
+      "check": "collection:custom_imports/words_only: body is not an error message",
+      "ok": true,
+      "detail": "utilitarianism\ndeontological ethics\nprinciple of utility\ngeneral welfare\njurisprudence\nconsequentialist\nhuman dignity\nde"
+    },
+    {
+      "check": "collection:custom_imports/words_only: every word present in the words_only payload",
+      "ok": true,
+      "detail": "0 missing e.g. []"
+    },
+    {
+      "check": "vocab-bank/docx: HTTP 200",
+      "ok": true,
+      "detail": "status=200"
+    },
+    {
+      "check": "vocab-bank/docx: Content-Type is application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "ok": true,
+      "detail": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    },
+    {
+      "check": "vocab-bank/docx: Content-Disposition has an ASCII filename and filename*",
+      "ok": true,
+      "detail": "attachment; filename=\"Harvard_Justice_Universal_Vocab_Bank_Study_Guide.docx\"; filename*=UTF-8''Harvard_Justice"
+    },
+    {
+      "check": "vocab-bank/docx: response headers are latin-1 safe",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "vocab-bank/docx: body is not empty",
+      "ok": true,
+      "detail": "163230 bytes"
+    },
+    {
+      "check": "vocab-bank/docx: body is really a zip package",
+      "ok": true,
+      "detail": "magic=b'PK\\x03\\x04\\x14\\x00\\x00\\x00'"
+    },
+    {
+      "check": "vocab-bank/docx: Content-Length matches the body",
+      "ok": true,
+      "detail": "163230 vs 163230"
+    },
+    {
+      "check": "vocab-bank/docx: embedded .docx passes the package gate",
+      "ok": true,
+      "detail": "0/30 checks failed"
+    },
+    {
+      "check": "vocab-bank/study_guide_md: HTTP 200",
+      "ok": true,
+      "detail": "status=200"
+    },
+    {
+      "check": "vocab-bank/study_guide_md: Content-Type is text/markdown",
+      "ok": true,
+      "detail": "text/markdown; charset=utf-8"
+    },
+    {
+      "check": "vocab-bank/study_guide_md: Content-Disposition has an ASCII filename and filename*",
+      "ok": true,
+      "detail": "attachment; filename=\"Harvard_Justice_Universal_Vocab_Bank_Study_Guide.md\"; filename*=UTF-8''Harvard_Justice_U"
+    },
+    {
+      "check": "vocab-bank/study_guide_md: response headers are latin-1 safe",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "vocab-bank/study_guide_md: body is not empty",
+      "ok": true,
+      "detail": "209061 bytes"
+    },
+    {
+      "check": "vocab-bank/study_guide_md: body is valid UTF-8 text",
+      "ok": true,
+      "detail": "153829 chars"
+    },
+    {
+      "check": "vocab-bank/study_guide_md: body is not an error message",
+      "ok": true,
+      "detail": "# 🏛️ Harvard_Justice_Universal_Vocab_Bank 听说精读词表手册\n\n> 哈佛大学《Justice》公开课 · Michael Sandel 教授\n\n| 序号 | 单词 | 音标 | 词性与中文释义 | 英"
+    },
+    {
+      "check": "vocab-bank/study_guide_md: every word present in the study_guide_md payload",
+      "ok": true,
+      "detail": "0 missing e.g. []"
+    },
+    {
+      "check": "vocab-bank/study_guide_md: English definitions (502) present in study_guide_md",
+      "ok": true,
+      "detail": "0 missing e.g. []"
+    },
+    {
+      "check": "vocab-bank/anki_csv: HTTP 200",
+      "ok": true,
+      "detail": "status=200"
+    },
+    {
+      "check": "vocab-bank/anki_csv: Content-Type is text/csv",
+      "ok": true,
+      "detail": "text/csv; charset=utf-8"
+    },
+    {
+      "check": "vocab-bank/anki_csv: Content-Disposition has an ASCII filename and filename*",
+      "ok": true,
+      "detail": "attachment; filename=\"Harvard_Justice_Universal_Vocab_Bank_Anki.csv\"; filename*=UTF-8''Harvard_Justice_Univers"
+    },
+    {
+      "check": "vocab-bank/anki_csv: response headers are latin-1 safe",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "vocab-bank/anki_csv: body is not empty",
+      "ok": true,
+      "detail": "950443 bytes"
+    },
+    {
+      "check": "vocab-bank/anki_csv: body is valid UTF-8 text",
+      "ok": true,
+      "detail": "834651 chars"
+    },
+    {
+      "check": "vocab-bank/anki_csv: body is not an error message",
+      "ok": true,
+      "detail": "Front,Back,Word,Phonetic,Definition,EnglishDefinition,Example,Translation\r\n<div style='font-family:sans-serif; text-alig"
+    },
+    {
+      "check": "vocab-bank/anki_csv: every word present in the anki_csv payload",
+      "ok": true,
+      "detail": "0 missing e.g. []"
+    },
+    {
+      "check": "vocab-bank/anki_csv: English definitions (502) present in anki_csv",
+      "ok": true,
+      "detail": "0 missing e.g. []"
+    },
+    {
+      "check": "vocab-bank/eudic_quizlet: HTTP 200",
+      "ok": true,
+      "detail": "status=200"
+    },
+    {
+      "check": "vocab-bank/eudic_quizlet: Content-Type is text/plain",
+      "ok": true,
+      "detail": "text/plain; charset=utf-8"
+    },
+    {
+      "check": "vocab-bank/eudic_quizlet: Content-Disposition has an ASCII filename and filename*",
+      "ok": true,
+      "detail": "attachment; filename=\"Harvard_Justice_Universal_Vocab_Bank_Eudic_Quizlet.txt\"; filename*=UTF-8''Harvard_Justic"
+    },
+    {
+      "check": "vocab-bank/eudic_quizlet: response headers are latin-1 safe",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "vocab-bank/eudic_quizlet: body is not empty",
+      "ok": true,
+      "detail": "197330 bytes"
+    },
+    {
+      "check": "vocab-bank/eudic_quizlet: body is valid UTF-8 text",
+      "ok": true,
+      "detail": "142196 chars"
+    },
+    {
+      "check": "vocab-bank/eudic_quizlet: body is not an error message",
+      "ok": true,
+      "detail": "utilitarianism\t/ˌjuːtɪlɪˈteriənɪzəm/ n. 功利主义，功利论（以多数人利益和幸福为衡量正义的标准）\\nthe belief that the right action is the one that pr"
+    },
+    {
+      "check": "vocab-bank/eudic_quizlet: every word present in the eudic_quizlet payload",
+      "ok": true,
+      "detail": "0 missing e.g. []"
+    },
+    {
+      "check": "vocab-bank/eudic_quizlet: English definitions (502) present in eudic_quizlet",
+      "ok": true,
+      "detail": "0 missing e.g. []"
+    },
+    {
+      "check": "vocab-bank/words_only: HTTP 200",
+      "ok": true,
+      "detail": "status=200"
+    },
+    {
+      "check": "vocab-bank/words_only: Content-Type is text/plain",
+      "ok": true,
+      "detail": "text/plain; charset=utf-8"
+    },
+    {
+      "check": "vocab-bank/words_only: Content-Disposition has an ASCII filename and filename*",
+      "ok": true,
+      "detail": "attachment; filename=\"Harvard_Justice_Universal_Vocab_Bank_Words_Only.txt\"; filename*=UTF-8''Harvard_Justice_U"
+    },
+    {
+      "check": "vocab-bank/words_only: response headers are latin-1 safe",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "vocab-bank/words_only: body is not empty",
+      "ok": true,
+      "detail": "5775 bytes"
+    },
+    {
+      "check": "vocab-bank/words_only: body is valid UTF-8 text",
+      "ok": true,
+      "detail": "5775 chars"
+    },
+    {
+      "check": "vocab-bank/words_only: body is not an error message",
+      "ok": true,
+      "detail": "utilitarianism\nconsequentialist\ncategorical\ntrolley\nsidetrack\nconundrum\ndilemma\nonlooker\ndeliberation\ncannibalism\nshipwr"
+    },
+    {
+      "check": "vocab-bank/words_only: every word present in the words_only payload",
+      "ok": true,
+      "detail": "0 missing e.g. []"
+    },
+    {
+      "check": "CJK download title (the ticket's trigger) returns a real .docx",
+      "ok": true,
+      "detail": "status=200 magic=b'PK\\x03\\x04\\x14\\x00\\x00\\x00'"
+    }
+  ],
+  "notes": []
+}

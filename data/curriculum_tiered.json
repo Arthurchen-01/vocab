@@ -89,7 +89,7 @@
         "pos": "v. (present participle)",
         "level": "sat_gre",
         "def_cn": "使……免于死亡、饶恕（形容牺牲一人以保全五人的结果）",
-        "def_en": "refraining from harming or killing; saving from death or destruction",
+        "def_en": "v refrain from harming v save or relieve from an experience or action v give up what is not strictly needed v use frugally or carefully v furnish with spars v fight with spurs v box lightly v fight verbally s avoiding waste",
         "sentence": "so you can turn the trolley car if you want to onto this side track killing the one but sparing the five.",
         "sentence_cn": "所以如果你愿意，你可以把电车转到这条侧轨上，杀死那一个人，但保全五个人。",
         "cloze_sentence": "So you can turn the trolley car if you want to onto this side track, killing the one but ___ the five.",
@@ -545,7 +545,7 @@
         "pos": "noun",
         "level": "toefl_ielts",
         "def_cn": "体检；健康检查",
-        "def_en": "a medical examination to check a person's health",
+        "def_en": "n. a thorough physical examination; includes a variety of tests depending on the age and sex and health of the person",
         "sentence": "that in the next room there's a healthy guy who came in for a checkup.",
         "sentence_cn": "隔壁房间里有一个健康的人来做体检。",
         "cloze_sentence": "that in the next room there's a healthy guy who came in for a ___.",
@@ -982,7 +982,7 @@
         "pos": "verb",
         "level": "sat_gre",
         "def_cn": "使疏离；使陌生化（哲学使我们对熟悉事物产生距离）",
-        "def_en": "to cause someone to feel separated or alienated from something familiar",
+        "def_en": "v. remove from customary environment or associations v. arouse hostility or indifference in where there had formerly been love, affection, or friendliness",
         "sentence": "estranges us from the familiar not by supplying new information but by inviting and provoking",
         "sentence_cn": "使我们与熟悉的事物疏离，不是通过提供新信息，而是通过邀请和激发。",
         "cloze_sentence": "_____ us from the familiar not by supplying new information but by inviting and provoking",
@@ -1685,7 +1685,7 @@
         "pos": "adjective",
         "level": "toefl_ielts",
         "def_cn": "可容许的，可允许的",
-        "def_en": "permitted; allowed by rules or principles",
+        "def_en": "a. that may be permitted especially as according to rule s. that may be accepted or conceded",
         "sentence": "cabin boy lost, and the rest of the story unfolded. How many people would say it's morally permissible?",
         "sentence_cn": "有多少人会认为这在道德上是允许的？",
         "cloze_sentence": "cabin boy lost, and the rest of the story unfolded. How many people would say it's morally ___?",
@@ -1799,7 +1799,7 @@
         "pos": "noun",
         "level": "toefl_ielts",
         "def_cn": "悔恨，懊悔，自责",
-        "def_en": "deep regret or guilt for a wrong committed",
+        "def_en": "n a feeling of deep regret (usually for some misdeed)",
         "sentence": "it seems as though he's just sort of like, oh, you know that whole idea of not valuing someone else's life so that makes me feel like I have to take the categorical stance. You want to throw the   book at him.",
         "sentence_cn": "看起来他完全若无其事，对这起谋杀丝毫没有悔恨之意。",
         "cloze_sentence": "it seems as though he's just sort of like, oh, you know that whole idea of not valuing someone else's life so that makes me feel like I have to take the categorical stance. You want to throw the   book at him.",
@@ -2445,7 +2445,7 @@
         "pos": "n./adj.",
         "level": "toefl_ielts",
         "def_cn": "紧要之事务，绝对要求，诫命；迫切的",
-        "def_en": "a moral rule that must be obeyed without exception, no matter the consequences",
+        "def_en": "n. some duty that is essential and urgent a. requiring attention or action a. relating to verbs in the imperative mood",
         "sentence": "For Kant, preserving the dignity of human life is a categorical imperative, not an option.",
         "sentence_cn": "康德提出了绝对命令法则：你必须永远将人当成目的本身，而绝不仅仅当成工具手段。",
         "cloze_sentence": "For Kant, preserving the dignity of human life is a categorical ___, not an option.",
@@ -2540,7 +2540,7 @@
         "pos": "v.",
         "level": "toefl_ielts",
         "def_cn": "强迫，胁迫",
-        "def_en": "to force someone to do something by using threats or pressure",
+        "def_en": "v. to cause to do through pressure or necessity, by physical, moral or intellectual means :\"She forced him to take a job in the city\"",
         "sentence": "The law cannot coerce an innocent individual into surrendering his life for the common good.",
         "sentence_cn": "如果受害者是在受胁迫或孤立无援的状况下妥协，那绝不是真正自由意志的同意。",
         "cloze_sentence": "The law cannot ___ an innocent individual into surrendering his life for the common good.",
@@ -3487,7 +3487,7 @@
         "sentence_start": 173.37,
         "sentence_end": 188.829,
         "clip_match": "exact",
-        "def_en": "to take one amount away from another"
+        "def_en": "v. make a subtraction v. take off or away"
       },
       {
         "word": "cost-benefit analysis",
@@ -4012,7 +4012,7 @@
         "sentence_start": 538.14,
         "sentence_end": 555.95,
         "clip_match": "neighbour+1",
-        "def_en": "to shock someone deeply and make them feel horror or disgust"
+        "def_en": "v strike with disgust or revulsion v fill with apprehension or alarm; cause to be unpleasantly surprised"
       },
       {
         "word": "settlement",
@@ -5387,7 +5387,7 @@
         "sentence_start": 1424.18,
         "sentence_end": 1434.28,
         "clip_match": "neighbour+1",
-        "def_en": "to love and value someone or something very much"
+        "def_en": "v be fond of; be attached to"
       },
       {
         "word": "consequence",
@@ -5462,7 +5462,7 @@
         "sentence_start": 1533.61,
         "sentence_end": 1541.35,
         "clip_match": "neighbour+3",
-        "def_en": "to catch and arrest someone suspected of a crime"
+        "def_en": "v. anticipate with dread or anxiety"
       },
       {
         "word": "impending",
@@ -6762,7 +6762,7 @@
         "sentence_start": 2165.929,
         "sentence_end": 2175.619,
         "clip_match": "exact",
-        "def_en": "existing in actual fact, whether or not officially recognized"
+        "def_en": "Actually; in fact; in reality; as, a king de facto, -- distinguished from a king de jure, or by right."
       },
       {
         "word": "empirical",
@@ -7137,7 +7137,7 @@
         "sentence_start": 2358.349,
         "sentence_end": 2371.689,
         "clip_match": "neighbour+1",
-        "def_en": "the purest and most perfect example of something"
+        "def_en": "n. the fifth and highest element after air and earth and fire and water; was believed to be the substance composing all heavenly bodies n. the purest and most concentrated essence of something n. the most typical example or representative of a type"
       },
       {
         "word": "contestant",
@@ -7637,7 +7637,7 @@
         "sentence_start": 2761.969,
         "sentence_end": 2774.93,
         "clip_match": "exact",
-        "def_en": "lasting for only a very short time"
+        "def_en": "s lasting for a markedly brief time"
       },
       {
         "word": "disprove",

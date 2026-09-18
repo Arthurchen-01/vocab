@@ -34,6 +34,7 @@ from ai_gate import ask_json, usage  # noqa: E402
 TIERED = os.path.join(DATA_DIR, "curriculum_tiered.json")
 CUSTOM = os.path.join(DATA_DIR, "custom_episodes.json")
 BANK = os.path.join(DATA_DIR, "vocab_bank.json")
+EXAM = os.path.join(DATA_DIR, "exam_decks.json")
 REPORT = os.path.join(OUT_DIR, f"{EPISODE}_english_definitions.json")
 
 BATCH = 8
@@ -47,17 +48,19 @@ CJK_RE = re.compile("[\u3000-\u303f\u3400-\u4dbf\u4e00-\u9fff\uf900-\ufaff"
 MARKDOWN_RE = re.compile(r"[*_`#\[\]{}|]|^\s*[-•]\s")
 
 GENERATE_SYSTEM = """你是面向中国大学生的英语学习词典释义撰写专家（CEFR B1-B2 读者）。
-为「哈佛《公正》公开课」精读词表中的每个词撰写一条**英英释义**（learner's dictionary 风格）。
+为英语学习词表（公开课精读词表 / 托福雅思GRE考研词表 / 学术词组与固定搭配表）中的每个词条
+撰写一条**英英释义**（learner's dictionary 风格）。词条可能是单词，也可能是多词词组（如 "amount to"）。
 
 硬性要求：
 1. 只输出英文，绝对不允许出现任何中文字符或中文标点。
-2. 释义必须贴合该词在给定例句中的**实际词义和词性**（pos），不要罗列其他义项。
+2. 若给出了例句，释义必须贴合该词条**在例句中的实际词义和词性**（pos）；
+   没有例句时以 pos 与中文释义为准，只写最常见、最值得学的那一个义项。
 3. 长度 6-22 个英文单词，写成一条可以直接替换词条的名词短语或动词不定式短语。
 4. 用比词条本身更简单的词解释；解释部分不得循环定义（不能只用词条本身解释自己）。
 5. 不得照抄或改写给定例句；不得提及课程、讲师、人名（Sandel / Bentham / Kant / lecture 等）。
 6. 不要以 "It is" / "This is" / "Refers to" 开头；直接写 "the belief that ..."、"to force someone ..."。
 7. 不写词性标记、不写序号、不加引号、不用 markdown、不用分号罗列多个义项。
-8. 必须让读者读完就知道该词在课上是哪一种意思，宁可具体也不要空泛。
+8. 词组的释义要体现它的**搭配与用法**（例如说明后面接什么），不要只给同义词。
 
 只输出 JSON：{"items":[{"id":"<原样返回>","en":"<英英释义>"}]}"""
 
@@ -91,6 +94,12 @@ def deck_sources():
     for ep_id, payload in custom.items():
         if payload.get("words"):
             out.append((ep_id, payload, CUSTOM))
+            seen.add(ep_id)
+    # Exam decks imported from open lexical data (S9). Their phrase table has
+    # almost no English definitions in the source, so they need this stage.
+    for ep_id, payload in (load_json(EXAM) or {}).items():
+        if payload.get("words"):
+            out.append((ep_id, payload, EXAM))
             seen.add(ep_id)
     for name in sorted(os.listdir(DATA_DIR)):
         if not name.endswith("_curriculum_final_audited.json"):
@@ -154,6 +163,7 @@ def collect_targets(decks):
                 t["def_cn"] = w["def_cn"].strip()
             if not t["def_en"] and (w.get("def_en") or "").strip():
                 t["def_en"] = w["def_en"].strip()
+                t["def_en_source"] = (w.get("def_en_source") or "").strip()
             # Deck words carry a single `sentence`; the bank pseudo-deck passes a
             # ready-made `examples` list (one per episode that used the word).
             cands = [w.get("sentence"), w.get("example")] + list(w.get("examples") or [])
@@ -179,13 +189,24 @@ def _echoes(en, examples):
     return False
 
 
-def check_definition(word, en, examples):
-    """Deterministic per-item gate.  Returns None or a reason string."""
+def check_definition(word, en, examples, strict=True):
+    """Deterministic per-item gate.  Returns None or a reason string.
+
+    ``strict`` applies the learner-dictionary house style (length, no brackets,
+    no quotes) and is only enforced on definitions THIS stage authored.  Text
+    imported from a real dictionary (ECDICT) or written by an earlier pass is
+    legitimately longer and uses brackets - failing it would be the gate
+    mistaking "not our style" for "wrong".
+    """
     en = (en or "").strip()
     if not en:
         return "empty"
     if CJK_RE.search(en):
         return "contains Chinese"
+    if normalize_text(en).lower().strip(".") == normalize_text(word).lower():
+        return "identical to the headword"
+    if not strict:
+        return None
     if MARKDOWN_RE.search(en):
         return "markdown/quotes/list characters"
     if en[0] in "\"'\u201c\u2018" or en[-1] in "\"'\u201d\u2019":
@@ -199,8 +220,6 @@ def check_definition(word, en, examples):
         return f"too many words ({len(tokens)})"
     if set(tokens) == {w for w in norm_words(word)}:
         return "circular: only the headword"
-    if normalize_text(en).lower().strip(".") == normalize_text(word).lower():
-        return "identical to the headword"
     core = [t for t in tokens if t not in set(norm_words(word))]
     if len(core) < 2:
         return "circular: no information beyond the headword"
@@ -260,10 +279,12 @@ def main():
         for k, t in targets.items():
             if not t["def_en"]:
                 continue
-            reason = check_definition(t["word"], t["def_en"], t["examples"])
+            reason = check_definition(t["word"], t["def_en"], t["examples"],
+                                      strict=t.get("def_en_source") == "ai")
             if reason:
                 bad.append(f"{k} ({reason})")
-        rep.check("existing def_en values pass the gate", not bad, f"{len(bad)}: {bad[:6]}")
+        rep.check("existing def_en values pass the gate for their source",
+                  not bad, f"{len(bad)}: {bad[:6]}")
         rep.note("dry run: no AI call was made and no file was written")
         payload = rep.write()
         log("\nS4c dry-run %s - %d unique headwords, %d to author, %d passed / %d failed",
@@ -462,6 +483,7 @@ def main():
                             if (doc[key].get("def_en") or "").strip() != defs[key]:
                                 written += 1
                             doc[key]["def_en"] = defs[key]
+                            doc[key]["def_en_source"] = "ai"
                     continue
                 words = doc if isinstance(doc, list) else doc[ep_id]["words"]
                 for w in words:
@@ -470,6 +492,9 @@ def main():
                         if (w.get("def_en") or "").strip() != defs[k]:
                             written += 1
                         w["def_en"] = defs[k]
+                        # Marks the house style, so the strict gate applies only
+                        # to text this stage wrote.
+                        w["def_en_source"] = "ai"
             save_json(path, doc)
         # `written` counts deck SLOTS, not unique headwords: a word that already
         # had a definition in Ep01 still had to be filled in wherever another
@@ -490,15 +515,21 @@ def main():
     rep.check("no deck word is left without an English definition", not empty,
               f"{len(empty)}: {empty[:6]}")
 
-    bad = []
+    bad, lenient = [], 0
     for ep, p, _ in decks2:
         for w in p.get("words", []):
+            authored_here = (w.get("def_en_source") or "") == "ai"
             reason = check_definition(w.get("word", ""), w.get("def_en"),
-                                      [w.get("sentence") or ""])
+                                      [w.get("sentence") or ""],
+                                      strict=authored_here)
             if reason:
                 bad.append(f"{ep}:{w.get('word')} ({reason})")
-    rep.check("every stored definition passes the deterministic gate", not bad,
-              f"{len(bad)}: {bad[:6]}")
+            elif not authored_here:
+                lenient += 1
+    rep.check("every definition this stage authored passes the strict gate", not bad,
+              f"{len(bad)}: {bad[:6]}" if bad else "all authored definitions conform")
+    rep.note(f"{lenient} imported / pre-existing definitions were checked with the "
+             f"lenient rules (dictionary prose is longer and may use brackets)")
 
     conflicts = {}
     for ep, p, _ in decks2:

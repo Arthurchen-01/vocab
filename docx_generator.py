@@ -465,7 +465,7 @@ def _context_cell(item, fill):
                 if trans else "")
         paras.append(para(head + body + tail, after=20, before=20))
     if not paras:
-        paras.append(para(runs("（课堂暂无独立例句）", sz=17, color=COLOR_FAINT),
+        paras.append(para(runs("（该词条暂无例句）", sz=17, color=COLOR_FAINT),
                           before=20, after=20))
     return _cell(COL_CONTEXT, fill, "".join(paras), v_align="top")
 

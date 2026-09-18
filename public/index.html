@@ -878,6 +878,9 @@
             <button onclick="filterVocabBankByEpisode('custom')" class="vb-ep-filter-btn px-3 py-1 rounded-xl text-xs font-semibold bg-white text-slate-700 border border-slate-200 hover:bg-slate-50" data-ep="custom">
               B站/自定义 (5)
             </button>
+            <button onclick="filterVocabBankByEpisode('exam')" class="vb-ep-filter-btn px-3 py-1 rounded-xl text-xs font-semibold bg-white text-slate-700 border border-slate-200 hover:bg-slate-50" data-ep="exam">
+              考试词汇 (3000)
+            </button>
           </div>
         </div>
 
@@ -2149,7 +2152,10 @@ https://traffic.megaphone.fm/SAM8705727348.mp3"></textarea>
 
       // Cloze Deletion
       const escaped = w.word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-      const clozeHtml = (w.sentence || '').replace(new RegExp(escaped, 'gi'), `<span class="px-2 py-0.5 border-b-2 border-rose-800 bg-rose-100/80 text-rose-950 font-bold rounded font-sans">_______</span>`);
+      const rawSentence = (w.sentence || '').trim();
+      const clozeHtml = rawSentence
+        ? rawSentence.replace(new RegExp(escaped, 'gi'), `<span class="px-2 py-0.5 border-b-2 border-rose-800 bg-rose-100/80 text-rose-950 font-bold rounded font-sans">_______</span>`)
+        : '<span class="text-slate-400 font-normal text-sm">该词条来自词典词表，暂无例句（不显示编造的句子）</span>';
       document.getElementById('focus-sentence').innerHTML = clozeHtml;
 
       // Back Face Population
@@ -2873,9 +2879,13 @@ https://traffic.megaphone.fm/SAM8705727348.mp3"></textarea>
           // therefore showed words the episode no longer teaches.
           let matchEp;
           if (Array.isArray(w.taught_in)) {
-            matchEp = app.vocabEpisodeFilter === 'custom'
-              ? w.taught_in.some(id => (id || '').startsWith('custom'))
-              : w.taught_in.includes(app.vocabEpisodeFilter);
+            if (app.vocabEpisodeFilter === 'custom') {
+              matchEp = w.taught_in.some(id => (id || '').startsWith('custom'));
+            } else if (app.vocabEpisodeFilter === 'exam') {
+              matchEp = w.taught_in.some(id => (id || '').startsWith('exam_'));
+            } else {
+              matchEp = w.taught_in.includes(app.vocabEpisodeFilter);
+            }
           } else {
             matchEp = (w.contexts || []).some(c => {
               const sid = (c.source_id || '').toLowerCase();

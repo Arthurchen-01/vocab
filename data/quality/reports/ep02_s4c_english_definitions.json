@@ -1,0 +1,31 @@
+{
+  "stage": "ep02_s4c_english_definitions",
+  "started": "2026-09-17 21:10:23",
+  "finished": "2026-09-17 21:10:23",
+  "ok": true,
+  "passed": 3,
+  "failed": 0,
+  "checks": [
+    {
+      "check": "deck files available",
+      "ok": true,
+      "detail": "ep01=163, ep02=215, ep03=44, yale_ep01=32, custom_1789528228=12"
+    },
+    {
+      "check": "every headword has a Chinese gloss for the AI to anchor on",
+      "ok": true,
+      "detail": "0: []"
+    },
+    {
+      "check": "existing def_en values pass the gate",
+      "ok": true,
+      "detail": "0: []"
+    }
+  ],
+  "notes": [
+    "53 master-bank words are taught by no deck and are authored here too (written back into the bank)",
+    "502 unique headwords, 102 already carry def_en, 400 to author",
+    "0 headwords have no example sentence: []",
+    "dry run: no AI call was made and no file was written"
+  ]
+}

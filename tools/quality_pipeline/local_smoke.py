@@ -32,6 +32,9 @@ class StrictServer:
     @staticmethod
     def make():
         sys.path.insert(0, REPO)
+        # server.py reads sys.argv[1] as its port; this script's own flags must
+        # not be mistaken for one.
+        sys.argv = [sys.argv[0]]
         import server
         import http.server
 

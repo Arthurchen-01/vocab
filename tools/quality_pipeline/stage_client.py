@@ -82,9 +82,24 @@ def main():
         sys.exit("pip install paramiko")
 
     host, user, pwd = credentials()
-    c = paramiko.SSHClient()
-    c.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-    c.connect(host, 22, user, pwd, timeout=30)
+
+    def connect_with_retry(host, user, pwd, attempts=6):
+        last = None
+        for attempt in range(attempts):
+            try:
+                client = paramiko.SSHClient()
+                client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+                client.connect(host, 22, user, pwd, timeout=30,
+                              banner_timeout=30, auth_timeout=30)
+                return client
+            except Exception as exc:  # noqa: BLE001
+                last = exc
+                print("   [ssh] connect attempt %d failed: %s"
+                      % (attempt + 1, type(exc).__name__))
+                time.sleep(8)
+        sys.exit("cannot reach %s: %s" % (host, last))
+
+    c = connect_with_retry(host, user, pwd)
 
     def run(cmd, timeout=600, quiet=False):
         _i, o, e = c.exec_command(cmd, timeout=timeout)
@@ -101,17 +116,41 @@ def main():
     log_path = "%s/logs/%s.log" % (PIPE, label)
 
     uploads = [f.strip() for f in args.upload.split(",") if f.strip()] or UPLOAD_ALL
-    sftp = c.open_sftp()
-    missing = []
-    for name in uploads:
-        local = os.path.join(HERE, name)
-        if not os.path.isfile(local):
-            missing.append(name)
-            continue
-        sftp.put(local, posixpath.join(PIPE, name))
-    print("[upload] %d files -> %s%s"
-          % (len(uploads) - len(missing), PIPE,
-             ("  (missing locally: %s)" % missing) if missing else ""))
+    print("[upload] %d files -> %s" % (len(uploads), PIPE))
+    pending, missing = list(uploads), []
+    # The host drops SFTP sessions mid-transfer often enough that one connection
+    # cannot be trusted for the whole batch: verify per file and reconnect.
+    for _attempt in range(4):
+        if not pending:
+            break
+        sftp = c.open_sftp()
+        still = []
+        for name in pending:
+            local = os.path.join(HERE, name)
+            if not os.path.isfile(local):
+                missing.append(name)
+                continue
+            try:
+                sftp.put(local, posixpath.join(PIPE, name))
+            except Exception as exc:  # noqa: BLE001
+                print("   [sftp] %s failed (%s), retrying"
+                      % (name, type(exc).__name__))
+                still.append(name)
+                try:
+                    sftp.close()
+                except Exception:  # noqa: BLE001
+                    pass
+                c = connect_with_retry(host, user, pwd)
+                sftp = c.open_sftp()
+        try:
+            sftp.close()
+        except Exception:  # noqa: BLE001
+            pass
+        pending = still
+    if pending:
+        sys.exit("upload failed for: %s" % pending)
+    if missing:
+        print("   (missing locally: %s)" % missing)
 
     env = "VOCAB_APP_DIR=%s VOCAB_WORK_DIR=%s" % (APP, PIPE)
     if args.dry_run:

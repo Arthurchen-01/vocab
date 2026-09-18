@@ -1,0 +1,81 @@
+{
+  "stage": "s8_local",
+  "started": "2026-09-18 00:36:31",
+  "finished": "2026-09-18 00:36:31",
+  "ok": true,
+  "passed": 14,
+  "failed": 0,
+  "checks": [
+    {
+      "check": "downloader.py: no fabricated transcript sentence in live code",
+      "ok": true,
+      "detail": "[]"
+    },
+    {
+      "check": "downloader.py: no string literal assigned to a transcript field",
+      "ok": true,
+      "detail": "[]"
+    },
+    {
+      "check": "server.py: no fabricated transcript sentence in live code",
+      "ok": true,
+      "detail": "[]"
+    },
+    {
+      "check": "server.py: no string literal assigned to a transcript field",
+      "ok": true,
+      "detail": "[]"
+    },
+    {
+      "check": "docx_generator.py: no fabricated transcript sentence in live code",
+      "ok": true,
+      "detail": "[]"
+    },
+    {
+      "check": "docx_generator.py: no string literal assigned to a transcript field",
+      "ok": true,
+      "detail": "[]"
+    },
+    {
+      "check": "s4c_english_definitions.py: no fabricated transcript sentence in live code",
+      "ok": true,
+      "detail": "[]"
+    },
+    {
+      "check": "s4c_english_definitions.py: no string literal assigned to a transcript field",
+      "ok": true,
+      "detail": "[]"
+    },
+    {
+      "check": "export_conformance.py: no fabricated transcript sentence in live code",
+      "ok": true,
+      "detail": "[]"
+    },
+    {
+      "check": "export_conformance.py: no string literal assigned to a transcript field",
+      "ok": true,
+      "detail": "[]"
+    },
+    {
+      "check": "at least the app modules were scanned",
+      "ok": true,
+      "detail": "['.\\\\downloader.py', '.\\\\server.py', '.\\\\docx_generator.py', 'C:\\\\Users\\\\s990uma\\\\.gemini\\\\antigravity\\\\scratch\\\\harvard_justice_app\\\\tools\\\\quality_pipeline\\\\s4c_english_definitions.py', 'C:\\\\Users\\\\s990uma\\\\.gemini\\\\antigravity\\\\scratch\\\\harvard_justice_app\\\\tools\\\\quality_pipeline\\\\export_conformance.py']"
+    },
+    {
+      "check": "live: bare media link does not return invented text",
+      "ok": true,
+      "detail": "['Scientific American · Science Quickly Podcast']"
+    },
+    {
+      "check": "live: has_subtitles never disagrees with the transcript",
+      "ok": true,
+      "detail": "0 items"
+    },
+    {
+      "check": "live: link import refuses to invent a transcript",
+      "ok": true,
+      "detail": "status=503 body={\"error\": \"服务端未配置 DeepSeek API Key，无法执行 AI 词汇抽取。\"}"
+    }
+  ],
+  "notes": []
+}

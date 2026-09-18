@@ -41,6 +41,7 @@ from config import (BACKUP_DIR, CURRICULUM_KEYS_ORDER, DATA_DIR, EPISODE, OUT_DI
 
 TIERED = os.path.join(DATA_DIR, "curriculum_tiered.json")
 CUSTOM = os.path.join(DATA_DIR, "custom_episodes.json")
+EXAM = os.path.join(DATA_DIR, "exam_decks.json")
 BANK = os.path.join(DATA_DIR, "vocab_bank.json")
 STUDY = os.path.join(DATA_DIR, "study_records.json")
 REPORT = os.path.join(OUT_DIR, f"{EPISODE}_bank_sync.json")
@@ -57,6 +58,10 @@ def deck_sources():
         if ep_id in tiered:
             out[ep_id] = tiered[ep_id]
     for ep_id, payload in (load_json(CUSTOM) or {}).items():
+        out[ep_id] = payload
+    # Exam decks imported from open lexical data (S9) belong in the master bank
+    # too: they are real study material with their own def_cn/def_en.
+    for ep_id, payload in (load_json(EXAM) or {}).items():
         out[ep_id] = payload
     return out
 
@@ -108,6 +113,10 @@ def main():
                     "phonetic": (w.get("phonetic") or "").strip(),
                     "pos": (w.get("pos") or "").strip(),
                     "def_cn": (w.get("def_cn") or "").strip(),
+                    # The English definition is part of the card now (S4c); a
+                    # rebuild that dropped it would silently undo that stage.
+                    "def_en": (w.get("def_en") or "").strip(),
+                    "def_en_source": (w.get("def_en_source") or "").strip(),
                     "contexts": [],
                     "stats": None,
                 }
@@ -115,8 +124,8 @@ def main():
                     order.append(key)
             else:
                 # keep the richest metadata
-                for f in ("phonetic", "pos", "def_cn"):
-                    if not e[f] and (w.get(f) or "").strip():
+                for f in ("phonetic", "pos", "def_cn", "def_en", "def_en_source"):
+                    if not e.get(f) and (w.get(f) or "").strip():
                         e[f] = w[f].strip()
             if not any(c["source_id"] == ep_id for c in e["contexts"]):
                 e["contexts"].append(ctx)
@@ -139,6 +148,8 @@ def main():
             "phonetic": old.get("phonetic", ""),
             "pos": old.get("pos", ""),
             "def_cn": old.get("def_cn", ""),
+            "def_en": old.get("def_en", ""),
+            "def_en_source": old.get("def_en_source", ""),
             "contexts": old.get("contexts", []),
             "bank_only": True,
         }

@@ -1,0 +1,68 @@
+{
+  "stage": "s8_no_fabrication",
+  "started": "2026-09-18 00:27:58",
+  "finished": "2026-09-18 00:27:58",
+  "ok": true,
+  "passed": 11,
+  "failed": 0,
+  "checks": [
+    {
+      "check": "downloader.py: no fabricated transcript sentence in live code",
+      "ok": true,
+      "detail": "[]"
+    },
+    {
+      "check": "downloader.py: no string literal assigned to a transcript field",
+      "ok": true,
+      "detail": "[]"
+    },
+    {
+      "check": "server.py: no fabricated transcript sentence in live code",
+      "ok": true,
+      "detail": "[]"
+    },
+    {
+      "check": "server.py: no string literal assigned to a transcript field",
+      "ok": true,
+      "detail": "[]"
+    },
+    {
+      "check": "docx_generator.py: no fabricated transcript sentence in live code",
+      "ok": true,
+      "detail": "[]"
+    },
+    {
+      "check": "docx_generator.py: no string literal assigned to a transcript field",
+      "ok": true,
+      "detail": "[]"
+    },
+    {
+      "check": "s4c_english_definitions.py: no fabricated transcript sentence in live code",
+      "ok": true,
+      "detail": "[]"
+    },
+    {
+      "check": "s4c_english_definitions.py: no string literal assigned to a transcript field",
+      "ok": true,
+      "detail": "[]"
+    },
+    {
+      "check": "export_conformance.py: no fabricated transcript sentence in live code",
+      "ok": true,
+      "detail": "[]"
+    },
+    {
+      "check": "export_conformance.py: no string literal assigned to a transcript field",
+      "ok": true,
+      "detail": "[]"
+    },
+    {
+      "check": "at least the app modules were scanned",
+      "ok": true,
+      "detail": "['.\\\\downloader.py', '.\\\\server.py', '.\\\\docx_generator.py', 'C:\\\\Users\\\\s990uma\\\\.gemini\\\\antigravity\\\\scratch\\\\harvard_justice_app\\\\tools\\\\quality_pipeline\\\\s4c_english_definitions.py', 'C:\\\\Users\\\\s990uma\\\\.gemini\\\\antigravity\\\\scratch\\\\harvard_justice_app\\\\tools\\\\quality_pipeline\\\\export_conformance.py']"
+    }
+  ],
+  "notes": [
+    "no --base given: live probes skipped"
+  ]
+}

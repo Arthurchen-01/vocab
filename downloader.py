@@ -15,6 +15,8 @@ Supports:
 import os
 import re
 import json
+import shutil
+import tempfile
 import urllib.request
 import urllib.parse
 import subprocess
@@ -22,7 +24,75 @@ import time
 
 USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"
 
-# Curated Scientific American Science Quickly fallback catalog for guaranteed offline resilience
+# ---------------------------------------------------------------------------
+# Transcript honesty
+# ---------------------------------------------------------------------------
+# This module used to answer every request with a canned "transcript" whenever
+# the real subtitles could not be fetched - invented sentences such as
+# "[01:15] Suppose you're the driver of a trolley car hurtling down the track...",
+# always with has_subtitles=True. Those strings are indistinguishable from real
+# lecture text once they reach the UI or the AI word extractor, which is how a
+# deck of words that were never spoken can be produced (the Ep03 deck had 24 of
+# 44 words that never occur in the lecture).
+#
+# Rule enforced from here on: `transcript` is only ever text actually fetched
+# from the source. When nothing real is available the field is empty,
+# has_subtitles is False, and transcript_source says why. Curated catalogs keep
+# their real metadata (title/author/duration/url) but their sample text is named
+# `demo_transcript` and is never surfaced as a transcript.
+NO_SUBTITLE_NOTICE = (
+    "未获取到该来源的真实字幕/逐字稿，因此系统不提供任何“课堂原文”，也不会用编造文本冒充。"
+    "请改用带字幕的来源（B站 CC 字幕 / YouTube 字幕），或粘贴 SRT、VTT、DownSub 文稿后再做 AI 词汇提炼。"
+)
+
+
+def _transcript_fields(text, source):
+    """The single place that decides whether text may be called a transcript."""
+    text = (text or "").strip()
+    if not text:
+        return {"transcript": "", "has_subtitles": False,
+                "transcript_source": "unavailable",
+                "subtitle_notice": NO_SUBTITLE_NOTICE}
+    return {"transcript": text, "has_subtitles": True, "transcript_source": source}
+
+
+def _ytdlp_bin():
+    return shutil.which("yt-dlp") or ("/usr/local/bin/yt-dlp"
+                                      if os.path.exists("/usr/local/bin/yt-dlp") else "")
+
+
+def fetch_youtube_transcript(vid, timeout=120):
+    """Real subtitles only, via yt-dlp. Returns (text, source)."""
+    binary = _ytdlp_bin()
+    if not binary:
+        return "", ""
+    workdir = tempfile.mkdtemp(prefix="verbaLEX_subs_")
+    try:
+        subprocess.run(
+            [binary, "--no-warnings", "--skip-download", "--write-subs",
+             "--write-auto-subs", "--sub-langs", "en.*,en", "--sub-format", "srt",
+             "--convert-subs", "srt", "-o", os.path.join(workdir, "%(id)s.%(ext)s"),
+             "https://www.youtube.com/watch?v=%s" % vid],
+            capture_output=True, timeout=timeout)
+        for name in sorted(os.listdir(workdir)):
+            if name.endswith((".srt", ".vtt")):
+                with open(os.path.join(workdir, name), encoding="utf-8",
+                          errors="replace") as f:
+                    text = parse_srt_to_transcript(f.read())
+                if text:
+                    return text, "yt-dlp:%s" % name.rsplit(".", 1)[-1]
+        return "", ""
+    except Exception as exc:  # noqa: BLE001 - network, timeout, missing ffmpeg
+        print("[WARN] YouTube subtitle fetch failed: %s" % exc)
+        return "", ""
+    finally:
+        shutil.rmtree(workdir, ignore_errors=True)
+
+
+# Curated Scientific American Science Quickly fallback catalog for guaranteed offline resilience.
+# NOTE: `demo_transcript` is illustrative sample text, NOT the episode's real
+# transcript. It exists only so the cards have something to show offline; it must
+# never be returned as `transcript` (see _transcript_fields).
 SCIAM_FALLBACK_CATALOG = [
     {
         "url_match": "friendship",
@@ -31,7 +101,7 @@ SCIAM_FALLBACK_CATALOG = [
         "cover": "https://static.scientificamerican.com/dam/asset/d666c57a-f730-4e99-a70d-3552a4db8a75/2609_SQ_WED_FRIENDSHIP-1.png?w=1200",
         "duration": "14 分钟",
         "direct_mp3": "https://traffic.megaphone.fm/SAM7091445305.mp3",
-        "transcript": "[00:15] Welcome to Science Quickly, I'm Jessica Ayers. Today we examine the evolutionary psychology of human friendship.\n[02:10] Why do humans feel acute loneliness when social bonds deteriorate?\n[05:30] Neurological imaging shows that emotional isolation triggers similar pain pathways as physical trauma.\n[09:45] Cultivating meaningful reciprocal relationships remains essential for cognitive resilience."
+        "demo_transcript": "[00:15] Welcome to Science Quickly, I'm Jessica Ayers. Today we examine the evolutionary psychology of human friendship.\n[02:10] Why do humans feel acute loneliness when social bonds deteriorate?\n[05:30] Neurological imaging shows that emotional isolation triggers similar pain pathways as physical trauma.\n[09:45] Cultivating meaningful reciprocal relationships remains essential for cognitive resilience."
     },
     {
         "url_match": "music",
@@ -40,7 +110,7 @@ SCIAM_FALLBACK_CATALOG = [
         "cover": "https://static.scientificamerican.com/dam/asset/d666c57a-f730-4e99-a70d-3552a4db8a75/2609_SQ_WED_FRIENDSHIP-1.png?w=1200",
         "duration": "12 分钟",
         "direct_mp3": "https://traffic.megaphone.fm/SAM4307756875.mp3",
-        "transcript": "[00:20] Music is a universal feature of human culture spanning millennia.\n[03:15] When we listen to harmonious melodies, dopamine pathways in the striatum light up with predictive anticipation.\n[07:40] Auditory cortex synchronization allows ensembles of musicians to coordinate in milliseconds."
+        "demo_transcript": "[00:20] Music is a universal feature of human culture spanning millennia.\n[03:15] When we listen to harmonious melodies, dopamine pathways in the striatum light up with predictive anticipation.\n[07:40] Auditory cortex synchronization allows ensembles of musicians to coordinate in milliseconds."
     },
     {
         "url_match": "data-center",
@@ -49,7 +119,7 @@ SCIAM_FALLBACK_CATALOG = [
         "cover": "https://static.scientificamerican.com/dam/asset/d666c57a-f730-4e99-a70d-3552a4db8a75/2609_SQ_WED_FRIENDSHIP-1.png?w=1200",
         "duration": "15 分钟",
         "direct_mp3": "https://traffic.megaphone.fm/SAM8705727348.mp3",
-        "transcript": "[00:30] Artificial intelligence clusters demand gigawatts of electrical infrastructure.\n[04:00] Mathematical optimizations in matrix multiplication can drastically reduce computational latency.\n[08:20] Renewable power integration and water-cooling mechanics represent key engineering hurdles."
+        "demo_transcript": "[00:30] Artificial intelligence clusters demand gigawatts of electrical infrastructure.\n[04:00] Mathematical optimizations in matrix multiplication can drastically reduce computational latency.\n[08:20] Renewable power integration and water-cooling mechanics represent key engineering hurdles."
     }
 ]
 
@@ -162,11 +232,11 @@ def fetch_scientific_american_info(url):
     duration = "14 分钟"
     direct_mp3 = ""
     transcript = ""
+    transcript_source = ""
     
     if clean_url.lower().endswith(".mp3") or ("traffic.megaphone.fm" in clean_url and ".mp3" in clean_url):
         direct_mp3 = clean_url
         title = "Scientific American · Science Quickly Podcast"
-        transcript = "[00:15] Welcome to Science Quickly from Scientific American.\n[02:00] In this episode we explore breakthroughs in modern empirical science.\n[06:30] Researchers examine multi-system experimental validation and theoretical models."
     else:
         try:
             req = urllib.request.Request(clean_url, headers={"User-Agent": USER_AGENT})
@@ -190,7 +260,11 @@ def fetch_scientific_american_info(url):
                 if img_match:
                     cover = img_match.group(1)
                     
-                # Description or article paragraphs for transcript
+                # Article paragraphs are real fetched text, but they are NOT
+                # audio-aligned dialogue: the old code stamped invented
+                # "[00:00]-style" timestamps on them, which made a written
+                # article look like a transcript. Keep the text, drop the fake
+                # timings, and label the source honestly.
                 paragraphs = re.findall(r'<p[^>]*>(.*?)</p>', html, re.DOTALL)
                 clean_paras = []
                 for p in paragraphs[:15]:
@@ -198,10 +272,10 @@ def fetch_scientific_american_info(url):
                     if len(cp) > 50 and not cp.startswith("©") and "Scientific American" not in cp:
                         clean_paras.append(cp)
                 if clean_paras:
-                    cues = [f"[{i*2:02d}:00] {p}" for i, p in enumerate(clean_paras[:8])]
-                    transcript = '\n'.join(cues)
+                    transcript = '\n'.join(clean_paras[:8])
+                    transcript_source = "article_text"
         except Exception as e:
-            print(f"[WARN] SciAm live parse warning: {e}, engaging resilient fallback...")
+            print(f"[WARN] SciAm live parse warning: {e}")
 
     # If live extraction didn't find mp3, engage curated fallback
     if not direct_mp3:
@@ -214,8 +288,7 @@ def fetch_scientific_american_info(url):
         direct_mp3 = matched_fb["direct_mp3"]
         cover = matched_fb["cover"]
         duration = matched_fb["duration"]
-        if not transcript:
-            transcript = matched_fb["transcript"]
+        # `demo_transcript` is sample text and is deliberately NOT used here.
 
     safe_name = re.sub(r'[^a-zA-Z0-9_-]', '_', title).strip('_')[:40]
     stream_download_url = f"/api/media/stream-download?url={urllib.parse.quote(direct_mp3)}&filename={safe_name}.mp3&media_type=audio&platform=sciam"
@@ -231,10 +304,9 @@ def fetch_scientific_american_info(url):
         "media_type": "audio",
         "direct_media_url": direct_mp3,
         "download_url": stream_download_url,
-        "transcript": transcript,
-        "has_subtitles": bool(transcript),
         "tier_used": "Tier 1: 官方原装播客 CDN 直链 (Megaphone 无损秒发)",
-        "status": "ready"
+        "status": "ready",
+        **_transcript_fields(transcript, transcript_source or "fetched"),
     }
 
 def fetch_bilibili_video_info(url_or_bvid):
@@ -280,11 +352,10 @@ def fetch_bilibili_video_info(url_or_bvid):
                     sub_url = chosen.get("subtitle_url", "")
                     transcript = parse_bilibili_subtitles(sub_url)
     except Exception as e:
-        print(f"[WARN] Bilibili API error: {e}, engaging resilient fallback...")
+        print(f"[WARN] Bilibili API error: {e}")
 
-    if not transcript:
-        transcript = "[01:15] Suppose you're the driver of a trolley car hurtling down the track at 60 miles an hour.\n[02:30] At the end of the track you notice five workers. What is the right thing to do?\n[04:45] Bentham argues that moral judgment must be grounded entirely in maximizing utility."
-
+    # No CC subtitles means no transcript. Returning invented lecture text here
+    # is what produced decks whose words never occur in the lecture.
     safe_title = re.sub(r'[^a-zA-Z0-9_\u4e00-\u9fa5-]', '_', title).strip('_')[:40]
     target_bili_url = f"https://www.bilibili.com/video/{bvid}"
     stream_download_url = f"/api/media/stream-download?url={urllib.parse.quote(target_bili_url)}&filename={safe_title}.mp3&media_type=audio&platform=bilibili"
@@ -301,10 +372,9 @@ def fetch_bilibili_video_info(url_or_bvid):
         "media_type": "audio",
         "direct_media_url": target_bili_url,
         "download_url": stream_download_url,
-        "transcript": transcript,
-        "has_subtitles": bool(transcript),
         "tier_used": "Tier 2: Bilibili 官方 API 与多协议游客防爬穿透",
-        "status": "ready"
+        "status": "ready",
+        **_transcript_fields(transcript, "bilibili_cc"),
     }
 
 def detect_bilibili_collection(url_or_bvid):
@@ -485,8 +555,9 @@ def fetch_youtube_video_info(url):
             author = data.get("author_name", author)
     except Exception as e:
         print(f"[WARN] YouTube oEmbed fetch error: {e}")
-    
-    transcript = "[01:00] Welcome to this special seminar on moral theory and utilitarianism.\n[03:20] Mill proposes higher and lower pleasures as a defense of individual liberty.\n[07:15] Consequentialist reasoning weighs benefits against measurable costs."
+
+    # Fetch the real subtitle track instead of shipping a canned paragraph.
+    transcript, transcript_source = fetch_youtube_transcript(vid)
     safe_title = re.sub(r'[^a-zA-Z0-9_-]', '_', title).strip('_')[:40]
     stream_download_url = f"/api/media/stream-download?url={urllib.parse.quote(yt_full_url)}&filename={safe_title}.mp3&media_type=audio&platform=youtube"
 
@@ -502,10 +573,9 @@ def fetch_youtube_video_info(url):
         "media_type": "audio",
         "direct_media_url": yt_full_url,
         "download_url": stream_download_url,
-        "transcript": transcript,
-        "has_subtitles": True,
         "tier_used": "Tier 2: yt-dlp Android/iOS 移动协议伪装 (免登录人机拦截)",
-        "status": "ready"
+        "status": "ready",
+        **_transcript_fields(transcript, transcript_source),
     }
 
 def fetch_direct_media_info(url):
@@ -520,6 +590,7 @@ def fetch_direct_media_info(url):
 
     stream_download_url = f"/api/media/stream-download?url={urllib.parse.quote(clean_url)}&filename={filename}&media_type={media_type}&platform=direct"
 
+    # A bare media URL carries no text at all; say so rather than inventing one.
     return {
         "platform": "direct_media",
         "platform_name": "Direct Media Stream (直链音频/视频)",
@@ -531,10 +602,9 @@ def fetch_direct_media_info(url):
         "media_type": media_type,
         "direct_media_url": clean_url,
         "download_url": stream_download_url,
-        "transcript": "[00:01] Direct audio stream imported from web resource.\n[01:00] Ready for high-definition playback and AI vocabulary analysis.",
-        "has_subtitles": True,
         "tier_used": "Tier 1: 原始 HTTP/HTTPS 流媒体直达通道",
-        "status": "ready"
+        "status": "ready",
+        **_transcript_fields("", ""),
     }
 
 def fetch_direct_subtitles(url):
@@ -599,6 +669,7 @@ def auto_fetch_subtitles_and_meta(url):
                 "duration": "45 分钟",
                 "transcript": txt,
                 "has_subtitles": True,
+                "transcript_source": "direct_subtitle",
                 "tier_used": "Tier 1: 字幕文件直连解析"
             }
             
@@ -658,15 +729,18 @@ def batch_resolve_media(raw_urls_input, mode="media", media_type="audio", auto_e
                             "media_type": media_type,
                             "direct_media_url": ep["url"],
                             "download_url": stream_download_url,
-                            "transcript": f"[{ep_title}] 课堂原声英文字幕逐字稿同步挂载就绪。\n[01:00] In this lecture, we explore fundamental moral and ethical principles.",
-                            "has_subtitles": True,
                             "is_collection_item": True,
                             "collection_title": col.get("collection_title"),
                             "collection_total": col.get("total_episodes"),
                             "episode_page": ep.get("page", 1),
                             "tier_used": col.get("tier_used", "Tier 3: B站单链接自动识别全集合集展开"),
                             "status": "ready",
-                            "success": True
+                            "success": True,
+                            # Expanding a collection yields URLs, not text. Each
+                            # episode's subtitles must be fetched individually;
+                            # until then its transcript is honestly empty.
+                            **_transcript_fields(ep.get("transcript", ""),
+                                                 ep.get("transcript_source", "")),
                         })
                         item_counter += 1
                     continue
