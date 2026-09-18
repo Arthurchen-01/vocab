@@ -229,9 +229,10 @@ COLLECTIONS_DATA = {
         "instructor": "Prof. Michael J. Sandel",
         "cover_scene": "/assets/scenes/banner_harvard_series.jpg",
         "badge": "哈佛旗舰 · 伦理法理必修",
-        "total_episodes": 3,
-        "desc": "探讨功利主义、自由至上主义与康德道德绝对论的经典哲学名篇，哈佛大学最负盛名的思辨殿堂。",
-        "episodes": ["ep01", "ep02", "ep03"]
+        "total_episodes": 4,
+        "desc": "探讨功利主义、自由至上主义与康德道德绝对论的经典哲学名篇，哈佛大学最负盛名的思辨殿堂。"
+                "含一册长难句精读：取自讲座真实原句与已审校译文。",
+        "episodes": ["ep01", "ep02", "ep03", "hj_longsent"]
     },
     "exam_vocabulary": {
         "id": "exam_vocabulary",
@@ -287,32 +288,63 @@ def load_curriculum_tiered():
 EPISODE_DATA = load_curriculum_tiered()
 
 EXAM_DECKS_FILE = os.path.join(DATA_DIR, "exam_decks.json")
+LONGSENT_DECKS_FILE = os.path.join(DATA_DIR, "longsent_decks.json")
+
+_EXTRA_DECKS_CACHE = None
 
 def load_exam_decks():
-    """Exam word decks imported from open lexical data (see docs/THIRD_PARTY_DATA.md).
+    """Extra study decks that are not lecture transcriptions.
 
-    Kept in their own file so the lecture decks stay untouched: these are real
-    dictionary entries, not transcriptions of a lecture, and they carry no audio
-    clips.  Audio for them is synthesised per word like any custom entry.
+    * `exam_decks.json`  - exam vocabulary imported from open lexical data
+      (ECDICT/MIT, Tatoeba/CC-BY; see docs/THIRD_PARTY_DATA.md).
+    * `longsent_decks.json` - long/difficult sentences taken from the lecture
+      transcripts this project already processed, each with its reviewed
+      translation and its real audio span.
+
+    Kept out of curriculum_tiered.json so the lecture decks stay untouched.
+
+    Cached on purpose: `ensure_word_audio_urls()` enriches these entries in
+    place, and re-reading the file on every call threw that enrichment away, so
+    every imported card came back without an `audio_url` at all.
     """
-    if not os.path.exists(EXAM_DECKS_FILE):
-        return {}
-    try:
-        with open(EXAM_DECKS_FILE, "r", encoding="utf-8") as f:
-            return json.load(f) or {}
-    except Exception as e:
-        print(f"[WARN] Failed to load exam_decks.json: {e}")
-        return {}
+    global _EXTRA_DECKS_CACHE
+    if _EXTRA_DECKS_CACHE is not None:
+        return _EXTRA_DECKS_CACHE
+    out = {}
+    for path in (EXAM_DECKS_FILE, LONGSENT_DECKS_FILE):
+        if not os.path.exists(path):
+            continue
+        try:
+            with open(path, "r", encoding="utf-8") as f:
+                out.update(json.load(f) or {})
+        except Exception as e:
+            print(f"[WARN] Failed to load {os.path.basename(path)}: {e}")
+    _EXTRA_DECKS_CACHE = out
+    return out
 
 def ensure_word_audio_urls():
+    """Attach audio URLs that actually resolve.
+
+    These used to be built unconditionally, so every card in an imported deck
+    (exam vocabulary, long sentences) advertised an .mp3 that was never
+    generated and the play button failed silently. The server knows which files
+    exist, so it decides here: a real file when there is one, otherwise the
+    on-demand TTS endpoint, otherwise no clip at all.
+    """
     global EPISODE_DATA
     if not EPISODE_DATA:
         EPISODE_DATA = load_curriculum_tiered()
+    tts = lambda text: "/api/audio/tts?text=" + urllib.parse.quote(text or "")
     for ep_id, ep in list(EPISODE_DATA.items()) + list(load_exam_decks().items()):
         for w in ep.get("words", []):
             safe = re.sub(r'[^a-zA-Z0-9_]', '_', w['word'].lower()).strip('_')
-            w['audio_url'] = f"/assets/audio/{ep_id}_{safe}.mp3"
-            w['native_clip_url'] = f"/assets/audio/clips/{ep_id}_{safe}_native.mp3"
+            word_rel = f"/assets/audio/{ep_id}_{safe}.mp3"
+            clip_rel = f"/assets/audio/clips/{ep_id}_{safe}_native.mp3"
+            w['audio_url'] = (word_rel if os.path.exists(os.path.join(PUBLIC_DIR, word_rel.lstrip('/')))
+                              else tts(w['word']))
+            w['native_clip_url'] = (clip_rel
+                                    if os.path.exists(os.path.join(PUBLIC_DIR, clip_rel.lstrip('/')))
+                                    else "")
             if ep_id == 'ep01':
                 w['scene_img'] = f"/assets/scenes/ep01/frame_{safe}.jpg"
 

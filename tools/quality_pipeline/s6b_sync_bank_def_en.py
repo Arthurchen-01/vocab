@@ -87,8 +87,10 @@ def main():
     for k, entry in bank.items():
         taught = sorted(decks.get(k, {}).get("decks", []))
         entry["taught_in"] = taught
+        # Set AND clear: a word that was historical and is later picked up by a
+        # deck must stop being labelled a history word in the UI.
+        entry["bank_only"] = not taught
         if not taught:
-            entry["bank_only"] = True
             srcs = sorted({(c.get("source_id") or "") for c in (entry.get("contexts") or [])})
             stale.append((k, srcs))
     rep.note(f"{len(bank_only)} entries are taught by no current deck "

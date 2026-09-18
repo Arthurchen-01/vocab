@@ -102,15 +102,34 @@ def main():
     c = connect_with_retry(host, user, pwd)
 
     def run(cmd, timeout=600, quiet=False):
-        _i, o, e = c.exec_command(cmd, timeout=timeout)
-        try:
-            out = (o.read() + e.read()).decode("utf-8", "replace")
-        except Exception as exc:  # noqa: BLE001
-            out = "(channel closed: %s)" % type(exc).__name__
-        if not quiet:
-            sys.stdout.write(out)
-            sys.stdout.flush()
-        return out
+        """One remote command, reconnecting if the channel dies mid-run.
+
+        The host drops SSH sessions often enough that a plain exec_command killed
+        the follow loop with EOFError even though the server-side job had already
+        finished successfully.
+        """
+        nonlocal c
+        last = None
+        for _attempt in range(4):
+            try:
+                _i, o, e = c.exec_command(cmd, timeout=timeout)
+                out = (o.read() + e.read()).decode("utf-8", "replace")
+                if not quiet:
+                    sys.stdout.write(out)
+                    sys.stdout.flush()
+                return out
+            except Exception as exc:  # noqa: BLE001
+                last = exc
+                print("   [ssh] %s while running '%s', reconnecting"
+                      % (type(exc).__name__, cmd.split()[0]))
+                try:
+                    c.close()
+                except Exception:  # noqa: BLE001
+                    pass
+                c = connect_with_retry(host, user, pwd)
+                time.sleep(3)
+        print("   [ssh] gave up on '%s': %s" % (cmd[:40], last))
+        return ""
 
     label = args.stage or os.path.splitext(args.script)[0]
     log_path = "%s/logs/%s.log" % (PIPE, label)
@@ -166,19 +185,28 @@ def main():
         % (PIPE, env, args.script, args.args, log_path))
     print("\n[log] %s\n" % log_path)
 
-    seen, started = 0, time.time()
+    seen, started, idle = 0, time.time(), 0
     while True:
         chunk = run("tail -c +%d %s 2>/dev/null" % (seen + 1, log_path), quiet=True)
         if chunk:
+            idle = 0
             for line in chunk.splitlines():
                 if not line.startswith("    ai["):
                     print(line, flush=True)
             seen += len(chunk.encode("utf-8", "replace"))
-        if "RESULT:" in chunk or "S4c " in chunk or "S6b " in chunk or "S7B " in chunk:
+        else:
+            idle += 1
+        # A stage is finished when its report has been written, whenever it names
+        # itself ("S9 ... PASS", "S7B export gate PASS", "RESULT: ALL STAGES
+        # PASSED"). Matching a hard-coded list of stage names silently stopped
+        # working the moment a new stage was added, so match the shape instead.
+        if chunk and any(tok in chunk for tok in
+                         ("RESULT:", "S10 ", "S11 ", "S8 ", "S9 ",
+                          "S4c ", "S6b ", "S7B ", "export gate")):
             break
         alive = run("pgrep -f %s >/dev/null && echo RUNNING || echo DONE" % args.script,
                     quiet=True).strip()
-        if "DONE" in alive and not chunk:
+        if "DONE" in alive and idle >= 2:
             print(run("grep -vE '^ +ai\\[' %s | tail -25" % log_path, quiet=True))
             break
         if time.time() - started > args.timeout:

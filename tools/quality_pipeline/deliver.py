@@ -47,12 +47,14 @@ STAGES = [
     ("s4c", "s4c_english_definitions.py", "author the English definition (def_en) for every deck word"),
     ("s5", "s5_apply_and_verify.py", "apply to data files + end-to-end verification"),
     ("s6", "s6_sync_bank.py", "rebuild the master vocab bank from the episode decks"),
+    ("s6b", "s6b_sync_bank_def_en.py",
+     "write def_en/taught_in into the bank and prove it matches the decks"),
     ("s7", "s7_deploy_verify.py", "restart the service + live acceptance report"),
     ("s7b", "export_conformance.py", "verify every export format over live HTTP"),
 ]
 REPORT_NAME = {"s0": "acquire", "s1": "sentences", "s0b": "deck", "s2": "word_map", "s3": "media",
                "s4": "translation", "s4b": "deck_translations", "s4c": "english_definitions",
-               "s5": "apply_verify", "s6": "bank_sync", "s7": "deploy",
+               "s5": "apply_verify", "s6": "bank_sync", "s6b": "bank_def_en", "s7": "deploy",
                "s7b": "export"}
 
 

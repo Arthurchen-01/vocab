@@ -42,6 +42,7 @@ from config import (BACKUP_DIR, CURRICULUM_KEYS_ORDER, DATA_DIR, EPISODE, OUT_DI
 TIERED = os.path.join(DATA_DIR, "curriculum_tiered.json")
 CUSTOM = os.path.join(DATA_DIR, "custom_episodes.json")
 EXAM = os.path.join(DATA_DIR, "exam_decks.json")
+LONGSENT = os.path.join(DATA_DIR, "longsent_decks.json")
 BANK = os.path.join(DATA_DIR, "vocab_bank.json")
 STUDY = os.path.join(DATA_DIR, "study_records.json")
 REPORT = os.path.join(OUT_DIR, f"{EPISODE}_bank_sync.json")
@@ -59,9 +60,11 @@ def deck_sources():
             out[ep_id] = tiered[ep_id]
     for ep_id, payload in (load_json(CUSTOM) or {}).items():
         out[ep_id] = payload
-    # Exam decks imported from open lexical data (S9) belong in the master bank
-    # too: they are real study material with their own def_cn/def_en.
+    # Exam decks imported from open lexical data (S9) and the long-sentence deck
+    # (S10) both belong in the master bank.
     for ep_id, payload in (load_json(EXAM) or {}).items():
+        out[ep_id] = payload
+    for ep_id, payload in (load_json(LONGSENT) or {}).items():
         out[ep_id] = payload
     return out
 

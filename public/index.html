@@ -2231,13 +2231,23 @@ https://traffic.megaphone.fm/SAM8705727348.mp3"></textarea>
       const w = app.activeEpisodeData.words[app.focusCardIndex];
       const safe = (w.word || '').toLowerCase().replace(/[^a-z0-9_]/g, '_');
       const clipUrl = w.native_clip_url || `/assets/audio/clips/${app.activeEpisodeId || 'ep01'}_${safe}_native.mp3`;
+      // Imported decks (exam vocabulary) have no lecture clip; say so instead of
+      // firing a request that 404s silently.
+      if (w.source === 'ecdict' && !w.native_clip_url) {
+        alert('该词条来自词典词表，没有讲座原声切片。可以播放单词发音（TTS）。');
+        return;
+      }
       playAudio(clipUrl, w.sentence);
     }
 
     function playFocusWordAudio() {
       if (!app.activeEpisodeData) return;
       const w = app.activeEpisodeData.words[app.focusCardIndex];
-      playAudio(w.audio_url, w.word);
+      // Pre-generate word audio only exists for the lecture decks; for imported
+      // decks fall back to the on-demand TTS endpoint (cached server-side) so
+      // every card can actually be heard.
+      const url = w.audio_url || `/api/audio/tts?text=${encodeURIComponent(w.word || '')}`;
+      playAudio(url, w.word);
     }
 
     function playFocusActiveContextAudio() {

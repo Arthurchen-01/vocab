@@ -35,6 +35,7 @@ TIERED = os.path.join(DATA_DIR, "curriculum_tiered.json")
 CUSTOM = os.path.join(DATA_DIR, "custom_episodes.json")
 BANK = os.path.join(DATA_DIR, "vocab_bank.json")
 EXAM = os.path.join(DATA_DIR, "exam_decks.json")
+LONGSENT = os.path.join(DATA_DIR, "longsent_decks.json")
 REPORT = os.path.join(OUT_DIR, f"{EPISODE}_english_definitions.json")
 
 BATCH = 8
@@ -100,6 +101,11 @@ def deck_sources():
     for ep_id, payload in (load_json(EXAM) or {}).items():
         if payload.get("words"):
             out.append((ep_id, payload, EXAM))
+            seen.add(ep_id)
+    # Long-sentence deck (S10) - built from the lecture transcripts we own.
+    for ep_id, payload in (load_json(LONGSENT) or {}).items():
+        if payload.get("words"):
+            out.append((ep_id, payload, LONGSENT))
             seen.add(ep_id)
     for name in sorted(os.listdir(DATA_DIR)):
         if not name.endswith("_curriculum_final_audited.json"):
