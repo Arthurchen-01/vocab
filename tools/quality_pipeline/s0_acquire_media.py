@@ -137,6 +137,8 @@ def main():
     ap.add_argument("--url", default="", help="source URL (overrides the catalog)")
     ap.add_argument("--force", action="store_true", help="re-download even if artefacts exist")
     ap.add_argument("--keep-subtitles", action="store_true")
+    ap.add_argument("--no-video", action="store_true",
+                    help="audio-only acquisition (no card frames; saves ~130 MB per episode)")
     args = ap.parse_args()
 
     ep = args.ep_id or args.episode
@@ -195,10 +197,16 @@ def main():
     rep.check("audio present and probeable", bool(adur), f"{audio} ({adur:.0f}s)" if adur else audio)
 
     # ---------- video (for frames) ----------
-    need_video = args.force or not os.path.isfile(video)
-    if not need_video:
-        d = ffprobe_duration(video)
-        need_video = d is None or (media_dur and abs(d - media_dur) > 60)
+    # Optional: the clips are cut from the audio, and only Ep01 uses card frames.
+    # On a host with little disk headroom, 130 MB per episode is worth skipping.
+    if args.no_video:
+        rep.note("--no-video: skipping the video download (no card frames for this episode)")
+        need_video = False
+    else:
+        need_video = args.force or not os.path.isfile(video)
+        if not need_video:
+            d = ffprobe_duration(video)
+            need_video = d is None or (media_dur and abs(d - media_dur) > 60)
     if need_video:
         rc, out, err = sh(["yt-dlp", "--no-warnings", "-f", VIDEO_FMT, "--merge-output-format", "mp4",
                            "-o", os.path.join(WORK, f"{ep}_video.%(ext)s"), src["url"]], timeout=5400)
@@ -207,8 +215,12 @@ def main():
             os.replace(produced, video)
         else:
             rep.check("video downloaded", False, (err or out).strip().splitlines()[-1][:200] if (err or out) else "no output")
+    if args.no_video:
+        rep.check("video skipped on request", True, "(audio-only episode)")
+    else:
+        vdur = ffprobe_duration(video) if os.path.isfile(video) else None
+        rep.check("video present and probeable", bool(vdur), f"{video} ({vdur:.0f}s)" if vdur else video)
     vdur = ffprobe_duration(video) if os.path.isfile(video) else None
-    rep.check("video present and probeable", bool(vdur), f"{video} ({vdur:.0f}s)" if vdur else video)
     if adur and vdur:
         rep.check("audio and video durations agree", abs(adur - vdur) < 5, f"{adur:.1f}s vs {vdur:.1f}s")
 

@@ -31,6 +31,62 @@
         "duration": 3299,
         "title": "Justice: What's The Right Thing To Do? Episode 04: \"THIS LAND IS MY LAND\"",
         "cn_title": "第 04 集：这片土地是我的 / 同意即正当吗"
+      },
+      "ep05": {
+        "url": "https://www.youtube.com/watch?v=8yT4RZy1t3s",
+        "video_id": "8yT4RZy1t3s",
+        "duration": 3310,
+        "title": "Justice: What's The Right Thing To Do? Episode 05: \"HIRED GUNS\"",
+        "cn_title": "第 05 集：雇凶杀人 / 出售母职"
+      },
+      "ep06": {
+        "url": "https://www.youtube.com/watch?v=8rv-4aUbZxQ",
+        "video_id": "8rv-4aUbZxQ",
+        "duration": 3314,
+        "title": "Justice: What's The Right Thing To Do? Episode 06: \"MIND YOUR MOTIVE\"",
+        "cn_title": "第 06 集：注意你的动机 / 康德的绝对命令"
+      },
+      "ep07": {
+        "url": "https://www.youtube.com/watch?v=KqzW0eHzDSQ",
+        "video_id": "KqzW0eHzDSQ",
+        "duration": 3305,
+        "title": "Justice: What's The Right Thing To Do? Episode 07: \"A LESSON IN LYING\"",
+        "cn_title": "第 07 集：谎言的教训 / 约定就是约定"
+      },
+      "ep08": {
+        "url": "https://www.youtube.com/watch?v=VcL66zx_6No",
+        "video_id": "VcL66zx_6No",
+        "duration": 3307,
+        "title": "Justice: What's The Right Thing To Do? Episode 08: \"WHATS A FAIR START?\"",
+        "cn_title": "第 08 集：什么是公平的起点 / 罗尔斯的无知之幕"
+      },
+      "ep09": {
+        "url": "https://www.youtube.com/watch?v=AUhReMT5uqA",
+        "video_id": "AUhReMT5uqA",
+        "duration": 3301,
+        "title": "Justice: What's The Right Thing To Do? Episode 09: \"ARGUING AFFIRMATIVE ACTION\"",
+        "cn_title": "第 09 集：平权行动的辩论 / 目的何在"
+      },
+      "ep10": {
+        "url": "https://www.youtube.com/watch?v=MuiazbyOSqQ",
+        "video_id": "MuiazbyOSqQ",
+        "duration": 3308,
+        "title": "Justice: What's The Right Thing To Do? Episode 10: \"THE GOOD CITIZEN\"",
+        "cn_title": "第 10 集：好公民 / 亚里士多德的目的论"
+      },
+      "ep11": {
+        "url": "https://www.youtube.com/watch?v=iOotE9_OGGs",
+        "video_id": "iOotE9_OGGs",
+        "duration": 3311,
+        "title": "Justice: What's The Right Thing To Do? Episode 11: \"THE CLAIMS OF COMMUNITY\"",
+        "cn_title": "第 11 集：忠诚的边界 / 我们的忠诚何在"
+      },
+      "ep12": {
+        "url": "https://www.youtube.com/watch?v=EzD9P-9sj4M",
+        "video_id": "EzD9P-9sj4M",
+        "duration": 3311,
+        "title": "Justice: What's The Right Thing To Do? Episode 12: \"DEBATING SAME-SEX MARRIAGE\"",
+        "cn_title": "第 12 集：同性婚姻的辩论 / 美好生活"
       }
     }
   }

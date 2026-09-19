@@ -42,3 +42,12 @@
 | TED2020 / News-Commentary / OpenSubtitles | CC-BY-NC-ND / NC-SA，禁止商用或改作 |
 | **SAT 词表** | **ECDICT 没有 `sat` 标签**，因此本仓库不提供 SAT 词表——
   用托福/GRE 词重新贴标签属于伪造数据，本项目明确拒绝这样做。 |
+
+## SAT 词表（qwerty-learner）
+
+- 项目：https://github.com/Kaiyiwing/qwerty-learner
+- 取用文件：`public/dicts/SAT_3_T.json`（4463 条）
+- 许可：**GPL-3.0**（该仓库根许可），且其部分词书据信源自商业出版物（如新东方 SAT）。
+- 说明：ECDICT 没有 `sat` 标签，用托福/GRE 词重贴 SAT 标签属于伪造数据，因此经仓库所有者决定，
+  改用市面流行词书并**如实记录本条 provenance**。该词表隔离在 `data/sat_deck.json`，
+  删除该文件即可整体移除；其内容不作为本项目原创或已核验内容呈现。

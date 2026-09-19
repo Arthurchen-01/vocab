@@ -83,6 +83,8 @@ def stage_args(key, args, ep):
         out += ["--url", args.url] if args.url else ["--episode", ep]
         if args.force:
             out.append("--force")
+        if args.no_video:
+            out.append("--no-video")
         return out
     if key == "s0b":
         return ["--episode", ep, "--count", str(args.deck_size)] + (["--rebuild"] if args.rebuild_deck else [])
@@ -129,6 +131,8 @@ def main():
     ap.add_argument("--deploy-check", default="", help="base URL to cross-check in S5")
     ap.add_argument("--no-restart", action="store_true", help="S7 without restarting the service")
     ap.add_argument("--force", action="store_true", help="re-acquire media even if present")
+    ap.add_argument("--no-video", action="store_true",
+                    help="acquire audio only (no card frames; saves ~130 MB per episode)")
     ap.add_argument("--deck-size", type=int, default=45, help="words to pick when building a new deck")
     ap.add_argument("--rebuild-deck", action="store_true", help="rebuild the deck even if it looks grounded")
     ap.add_argument("--stage-timeout", type=int, default=7200)

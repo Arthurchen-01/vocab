@@ -242,11 +242,13 @@ COLLECTIONS_DATA = {
         "instructor": "ECDICT (MIT) · Tatoeba (CC-BY 2.0 FR)",
         "cover_scene": "/assets/scenes/scene_theatre.jpg",
         "badge": "真实词表导入 · 含词组与固定搭配",
-        "total_episodes": 5,
+        "total_episodes": 6,
         "desc": "由开源词典数据 ECDICT（MIT 许可）按考试标签筛选导入：托福、雅思、GRE、考研核心词汇，"
-                "以及单独整理的真实学术词组与固定搭配表（600 条，全部为多词单位）。"
-                "词条不是 AI 生成的，来源与许可见 docs/THIRD_PARTY_DATA.md。",
-        "episodes": ["exam_toefl", "exam_ielts", "exam_gre", "exam_ky", "exam_phrases"]
+                "以及单独整理的真实学术词组与固定搭配表（600 条，全部为多词单位）；"
+                "SAT 词表取自市面流行的公开词书（GPL-3.0，见 docs/THIRD_PARTY_DATA.md）。"
+                "词条不是 AI 生成的，来源与许可均已记录。",
+        "episodes": ["exam_toefl", "exam_ielts", "exam_gre", "exam_ky",
+                     "exam_phrases", "exam_sat"]
     },
     "yale_philosophy": {
         "id": "yale_philosophy",
@@ -289,6 +291,7 @@ EPISODE_DATA = load_curriculum_tiered()
 
 EXAM_DECKS_FILE = os.path.join(DATA_DIR, "exam_decks.json")
 LONGSENT_DECKS_FILE = os.path.join(DATA_DIR, "longsent_decks.json")
+SAT_DECK_FILE = os.path.join(DATA_DIR, "sat_deck.json")
 
 _EXTRA_DECKS_CACHE = None
 
@@ -311,7 +314,7 @@ def load_exam_decks():
     if _EXTRA_DECKS_CACHE is not None:
         return _EXTRA_DECKS_CACHE
     out = {}
-    for path in (EXAM_DECKS_FILE, LONGSENT_DECKS_FILE):
+    for path in (EXAM_DECKS_FILE, LONGSENT_DECKS_FILE, SAT_DECK_FILE):
         if not os.path.exists(path):
             continue
         try:

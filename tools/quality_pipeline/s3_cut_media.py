@@ -133,9 +133,31 @@ def main():
         rep.write()
         return 1
     audio_dur = probe_duration(RAW_AUDIO) or 0
+
+    # ASR timestamps can overshoot the media: Ep04's last sentence ended at
+    # 3306.5s while the audio is 3298.4s. The correct answer is computable, so
+    # clamp instead of failing - a sentence whose whole span lies past the end of
+    # the audio is dropped, and a partial overshoot is trimmed to the media.
+    clamped, dropped_tail = 0, []
+    kept_sents = []
+    for s in sents:
+        if audio_dur and s["start"] >= audio_dur:
+            dropped_tail.append(s.get("sent_id", s.get("a")))
+            continue
+        if audio_dur and s["end"] > audio_dur:
+            s["end"] = max(s["start"] + 0.8, audio_dur - 0.05)
+            clamped += 1
+        kept_sents.append(s)
+    if clamped or dropped_tail:
+        rep.note("clamped %d sentence end(s) to the audio length; dropped %d sentence(s) "
+                 "whose span lies past the end: %s"
+                 % (clamped, len(dropped_tail), dropped_tail[:6]))
+    sents = kept_sents
+
     rep.check("raw audio is long enough for every window",
-              all(s["end"] + CLIP_PAD_TAIL <= audio_dur + 0.5 for s in sents),
-              f"audio={audio_dur:.1f}s, last sentence ends at {sents[-1]['end']:.1f}s")
+              bool(sents) and all(s["end"] + CLIP_PAD_TAIL <= audio_dur + 0.5 for s in sents),
+              f"audio={audio_dur:.1f}s, last sentence ends at {sents[-1]['end']:.1f}s"
+              if sents else "no sentence left")
     has_video = os.path.isfile(RAW_VIDEO)
     rep.note(f"raw video present: {has_video} ({RAW_VIDEO})")
 

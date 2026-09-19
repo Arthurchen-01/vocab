@@ -474,8 +474,10 @@ def _meaning_cell(item, fill):
     pos = (item.get("pos") or "").strip()
     def_cn = (item.get("def_cn") or "").strip()
     def_en = (item.get("def_en") or "").strip()
-    paras = [para(runs("[%s] " % pos, bold=True, sz=19, color=COLOR_ACCENT)
-                  + runs(def_cn, sz=19, color=COLOR_INK), before=20, after=20)]
+    # Imported decks (SAT, phrase lists) carry no part of speech; printing "[]"
+    # would look like a defect.
+    label = runs("[%s] " % pos, bold=True, sz=19, color=COLOR_ACCENT) if pos else ""
+    paras = [para(label + runs(def_cn, sz=19, color=COLOR_INK), before=20, after=20)]
     if def_en:
         paras.append(para(runs("EN ", bold=True, sz=16, color=COLOR_ACCENT)
                           + runs(def_en, sz=18, color=COLOR_BODY),

@@ -165,8 +165,21 @@ def renumber(sents):
     return sents
 
 
+# Closing quotes/brackets may follow the terminal mark: He said "no."
+_TRAILING = "\"'\u201d\u2019)]}\u300d\u300f\u2026"
+
+
 def has_terminal_punct(t):
-    return (t or "").rstrip().endswith((".", "!", "?"))
+    """True when the sentence ends with . ! ? even behind a closing quote.
+
+    The previous version only looked at the very last character, so a perfectly
+    finished `He said "no."` counted as unterminated and the sweep then appended
+    a second mark to it.
+    """
+    s = (t or "").rstrip()
+    while s and s[-1] in _TRAILING and s[-1] != "\u2026":
+        s = s[:-1].rstrip()
+    return s.endswith((".", "!", "?", "\u2026"))
 
 
 def punctuate(text):
@@ -617,11 +630,13 @@ def main():
     sents = merge_short_spans(sents, rep)
 
     # deterministic last sweep: no sentence may be left without a terminal mark
+    # (every sentence, including one-word ones like "Yes." - the old guard skipped
+    # anything under two words and left 12 of Ep04's sentences unterminated)
     swept = 0
     for s in sents:
         before = s["text"]
         s["text"] = tidy_english(s["text"])
-        if len(norm_words(s["text"])) >= 2 and not has_terminal_punct(s["text"]):
+        if s["text"].strip() and not has_terminal_punct(s["text"]):
             s["text"] = punctuate(s["text"])
         if s["text"] != before:
             swept += 1
