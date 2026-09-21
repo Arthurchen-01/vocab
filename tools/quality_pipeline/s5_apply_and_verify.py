@@ -173,9 +173,27 @@ def main():
             missing_frame.append(m["word"])
     rep.check("all clips present on disk", not missing_clip, str(missing_clip[:6]))
     rep.check("all clip durations match the declared window", not bad_dur, str(bad_dur[:6]))
-    rep.check("all frames present on disk", not missing_frame, str(missing_frame[:6]))
 
     payload_words = build_payload(words, sents, wmap, trans, clip_bounds)
+
+    # Frames are extracted from the source video. An episode acquired audio-only
+    # (S0 --no-video) has no video to extract one from, so demanding a frame per
+    # word failed ep09-ep11 for something that cannot exist. When frames do exist
+    # every word must have one; when they do not, no card may point at a missing
+    # frame file (a broken image would be the real defect).
+    scene_dir = os.path.join(SCENE_DIR, EPISODE)
+    scene_files = set(os.listdir(scene_dir)) if os.path.isdir(scene_dir) else set()
+    if any(f.startswith("frame_") for f in scene_files):
+        rep.check("all frames present on disk", not missing_frame, str(missing_frame[:6]))
+    else:
+        broken = [w["word"] for w in payload_words
+                  if (w.get("scene_img") or "").startswith(f"/assets/scenes/{EPISODE}/")
+                  and not os.path.isfile(os.path.join(PUBLIC_DIR,
+                                                      w["scene_img"].lstrip("/")))]
+        rep.check("no card links to a frame file that does not exist", not broken,
+                  str(broken[:6]))
+        rep.note("episode acquired audio-only: no classroom frames exist, so "
+                 "%d cards use the collection cover instead" % len(payload_words))
     rep.check("word count unchanged", len(payload_words) == len(words), f"{len(payload_words)}")
     # Compare against THIS deck's own distribution: the tier mix is episode
     # specific (Ep02 is 104/51/25/35, Ep03 is its own thing), so a hardcoded

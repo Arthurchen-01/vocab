@@ -175,13 +175,27 @@ def main():
     rep.check("all used sentences have a translation", len(translations) == len(used),
               f"{len(translations)}/{len(used)}")
 
-    latin = []
+    # What this gate must catch is the model leaving an English PHRASE
+    # untranslated. A single Latin word inside Chinese academic prose is normal
+    # and often deliberate (a proper noun, or a term like "telos"/"polis"), so
+    # counting single words produced false failures: ep09 was rejected for
+    # ['David', 'Anisha', 'telos'] while the message claimed proper nouns were
+    # allowed. Three or more consecutive English words is real residue.
+    latin, two_word = [], []
     for sid, t in translations.items():
-        runs = re.findall(r"[A-Za-z][A-Za-z'\- ]{3,}", t["cn"])
-        if runs:
-            latin.append((sid, runs[:3]))
-    rep.check("no long English residue inside Chinese", len(latin) <= max(2, len(translations) // 40),
-              f"{len(latin)} sentences contain Latin runs (proper nouns allowed): {latin[:5]}")
+        runs = [r.strip() for r in re.findall(
+            r"[A-Za-z][A-Za-z'\-]*(?:\s+[A-Za-z][A-Za-z'\-]*)+", t["cn"])]
+        long_runs = [r for r in runs if len(r.split()) >= 3]
+        short_runs = [r for r in runs if len(r.split()) == 2]
+        if long_runs:
+            latin.append((sid, long_runs[:3]))
+        elif short_runs:
+            two_word.append((sid, short_runs[:3]))
+    rep.check("no untranslated English phrase left in the Chinese", not latin,
+              f"{len(latin)} sentences contain 3+ word English runs: {latin[:5]}")
+    if two_word:
+        rep.note("two-word Latin runs kept in the Chinese (often legitimate, e.g. "
+                 "'a priori'): %s" % two_word[:5])
 
     short = [(sid, len(t["cn"])) for sid, t in translations.items()
              if len(t["cn"]) > 2 and len(t["cn"]) < 0.10 * len(sent_by_id[sid]["text"])]

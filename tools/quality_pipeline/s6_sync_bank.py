@@ -52,12 +52,20 @@ DEFAULT_STATS = {"review_count": 0, "today_seconds": 0, "total_seconds": 0,
 
 
 def deck_sources():
-    """Ordered {source_id: payload} for every deck that can contribute words."""
+    """Ordered {source_id: payload} for every deck that can contribute words.
+
+    The lecture decks are deliberately NOT limited to CURRICULUM_KEYS_ORDER: that
+    list fixes the rebuild ORDER, and using it as a filter silently dropped
+    ep04..ep12 from the master bank once the series grew past the three episodes
+    the list was written for (598 headwords missing, caught by S6b).
+    """
     out = {}
     tiered = load_json(TIERED) or {}
     for ep_id in CURRICULUM_KEYS_ORDER:
         if ep_id in tiered:
             out[ep_id] = tiered[ep_id]
+    for ep_id, payload in tiered.items():
+        out.setdefault(ep_id, payload)
     for ep_id, payload in (load_json(CUSTOM) or {}).items():
         out[ep_id] = payload
     # Exam decks imported from open lexical data (S9) and the long-sentence deck
@@ -201,20 +209,29 @@ def main():
     rep.check("no dictionary entry lost", set(old_bank) <= set(new_bank),
               f"removed: {sorted(set(old_bank) - set(new_bank))[:6]}")
 
+    # The bank keeps ONE context per (word, episode) - the first card of that
+    # deck - so a deck may legitimately hold several cards for the same word
+    # (hj_longsent has three different long sentences for "utilitarian"). The
+    # invariant that matters is that the bank's text ORIGINATES from that deck,
+    # not that it equals every card, which is what this used to demand: it
+    # reported 12 phantom "text-drift" mismatches for the long-sentence deck.
     mism = []
     for ep_id, payload in decks.items():
+        cards = {}
         for w in payload.get("words", []):
             key = (w.get("word") or "").strip().lower()
+            cards.setdefault(key, set()).add(
+                ((w.get("sentence") or "").strip(), (w.get("sentence_cn") or "").strip()))
+        for key, texts in cards.items():
             e = new_bank.get(key)
             if not e:
                 continue
             ctx = next((c for c in e["contexts"] if c["source_id"] == ep_id), None)
             if ctx is None:
                 mism.append((key, ep_id, "missing-context"))
-            elif (ctx["sentence"] != (w.get("sentence") or "").strip()
-                  or ctx["trans"] != (w.get("sentence_cn") or "").strip()):
+            elif (ctx["sentence"], ctx["trans"]) not in texts:
                 mism.append((key, ep_id, "text-drift"))
-    rep.check("bank context text == deck card text for every (word, episode)",
+    rep.check("bank context text comes from that deck for every (word, episode)",
               not mism, f"{len(mism)} mismatches: {mism[:6]}")
 
     empty_def = [k for k, e in new_bank.items() if not e["def_cn"]]

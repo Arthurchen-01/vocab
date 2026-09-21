@@ -389,6 +389,23 @@ def ensure_word_audio_urls():
 
 ensure_word_audio_urls()
 
+def harvard_series_episodes():
+    """The Harvard Justice series membership, derived from what is actually served.
+
+    COLLECTIONS_DATA used to hard-code ["ep01","ep02","ep03","hj_longsent"]. Once
+    the series grew to twelve episodes that list was never extended, so the
+    collection page offered only the first three even though ep04..ep12 were
+    served and present in the master bank. Deriving it means the collection can
+    no longer drift away from the decks.
+    """
+    eps = get_all_episodes()
+    justice = sorted((k for k in eps if re.fullmatch(r"ep\d+", k)),
+                     key=lambda k: int(k[2:]))
+    if "hj_longsent" in eps:
+        justice.append("hj_longsent")
+    return justice
+
+
 def get_all_episodes():
     eps = dict(EPISODE_DATA)
     eps.update(load_custom_episodes())
@@ -737,6 +754,9 @@ class RequestHandler(http.server.SimpleHTTPRequestHandler):
                 if c_id == "custom_imports":
                     c_copy["episodes"] = list(custom_eps.keys())
                     c_copy["total_episodes"] = len(custom_eps)
+                elif c_id == "harvard_justice":
+                    c_copy["episodes"] = harvard_series_episodes()
+                    c_copy["total_episodes"] = len(c_copy["episodes"])
                 
                 # Calculate total words in this collection
                 all_eps = get_all_episodes()
@@ -760,6 +780,8 @@ class RequestHandler(http.server.SimpleHTTPRequestHandler):
             all_eps = get_all_episodes()
             if cid == "custom_imports":
                 c_copy["episodes"] = list(load_custom_episodes().keys())
+            elif cid == "harvard_justice":
+                c_copy["episodes"] = harvard_series_episodes()
 
             ep_details = []
             for eid in c_copy.get("episodes", []):
