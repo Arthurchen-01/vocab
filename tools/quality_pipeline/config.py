@@ -51,22 +51,39 @@ CURRICULUM_KEYS_ORDER = [k for k in (os.environ.get("VOCAB_DECK_ORDER") or
                                      "ep01,ep02,ep03,yale_ep01").split(",") if k]
 
 # ---------------------------------------------------------------- AI gateway
-AI_BASE = os.environ.get("VOCAB_AI_BASE", "https://api.deepseek.com")
-AI_MODEL = os.environ.get("VOCAB_AI_MODEL", "deepseek-chat")
-AI_REVIEW_MODEL = os.environ.get("VOCAB_AI_REVIEW_MODEL", AI_MODEL)
-
+# Resolution order for every AI setting: environment, then data/secret_config.json,
+# then the built-in default. Hard-coding one vendor's base URL and model id meant a
+# switch to a self-hosted gateway required editing code in two places.
 SECRET_FILE = os.path.join(DATA_DIR, "secret_config.json")
+
+
+def _secret():
+    try:
+        with open(SECRET_FILE, encoding="utf-8") as f:
+            return json.load(f) or {}
+    except Exception:
+        return {}
+
+
+def _setting(env_key, secret_key, default=""):
+    value = (os.environ.get(env_key) or "").strip()
+    if value:
+        return value
+    return (str(_secret().get(secret_key) or "")).strip() or default
+
+
+AI_BASE = _setting("VOCAB_AI_BASE", "api_base", "https://api.deepseek.com")
+AI_MODEL = _setting("VOCAB_AI_MODEL", "model", "deepseek-chat")
+AI_REVIEW_MODEL = _setting("VOCAB_AI_REVIEW_MODEL", "review_model", AI_MODEL)
 
 
 def api_key():
     k = (os.environ.get("DEEPSEEK_API_KEY") or "").strip()
     if k:
         return k
-    try:
-        with open(SECRET_FILE, encoding="utf-8") as f:
-            return (json.load(f).get("deepseek_api_key") or "").strip()
-    except Exception:
-        return ""
+    # A gateway may hand out "token;model" credentials; only the token is the key.
+    raw = (str(_secret().get("deepseek_api_key") or "")).strip()
+    return raw.split(";", 1)[0].strip() if ";" in raw else raw
 
 
 # ---------------------------------------------------------------- tunables

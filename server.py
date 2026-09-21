@@ -87,23 +87,59 @@ SECRET_FILE = os.path.join(DATA_DIR, "secret_config.json")
 def load_server_api_key():
     key = (os.environ.get("DEEPSEEK_API_KEY") or "").strip()
     if key:
-        return key
+        return key.split(";", 1)[0].strip() if ";" in key else key
     try:
         with open(SECRET_FILE, "r", encoding="utf-8") as f:
-            return (json.load(f).get("deepseek_api_key") or "").strip()
+            raw = (json.load(f).get("deepseek_api_key") or "").strip()
+        # A gateway may hand out "token;model" credentials; only the token is the key.
+        return raw.split(";", 1)[0].strip() if ";" in raw else raw
     except Exception:
         return ""
 
-# Default DeepSeek Configuration
+
+def _ai_setting(env_key, secret_key, default=""):
+    """Resolve an AI endpoint setting: environment first, then secret_config.json.
+
+    Hard-coding a single vendor's base URL and model id meant switching to a
+    self-hosted gateway (or any OpenAI-compatible endpoint) required editing this
+    file. Both are operator settings, so both are configurable now.
+    """
+    value = (os.environ.get(env_key) or "").strip()
+    if value:
+        return value
+    try:
+        with open(SECRET_FILE, "r", encoding="utf-8") as f:
+            return (json.load(f).get(secret_key) or "").strip() or default
+    except Exception:
+        return default
+
+
+# Default AI Configuration (overridable per deployment)
 DEFAULT_CONFIG = {
-    "provider": "deepseek",
-    "api_base": "https://api.deepseek.com",
+    "provider": _ai_setting("VOCAB_AI_PROVIDER", "provider", "deepseek"),
+    "api_base": _ai_setting("VOCAB_AI_BASE", "api_base", "https://api.deepseek.com"),
     "api_key": load_server_api_key(),
-    "model": "deepseek-chat"
+    "model": _ai_setting("VOCAB_AI_MODEL", "model", "deepseek-chat"),
 }
 
-# Only these hosts may ever be contacted with a server API key or as an AI proxy.
+# Hosts that may ever be contacted with a server API key or as an AI proxy.
 ALLOWED_AI_HOSTS = {"api.deepseek.com", "api.openai.com", "api.anthropic.com"}
+_CONFIGURED_AI_HOST = urllib.parse.urlparse(DEFAULT_CONFIG["api_base"]).hostname or ""
+if _CONFIGURED_AI_HOST:
+    ALLOWED_AI_HOSTS.add(_CONFIGURED_AI_HOST)
+
+
+def ai_base_allowed(api_base):
+    """https anywhere in the allowlist; http only for the operator's own gateway.
+
+    A caller-supplied api_base used to be an SSRF hole, so the allowlist stays.
+    But an operator-run gateway is typically plain http on a private address, and
+    refusing it would make the app unable to use its own configured endpoint.
+    """
+    parsed = urllib.parse.urlparse(api_base or "")
+    if not parsed.hostname or parsed.hostname not in ALLOWED_AI_HOSTS:
+        return False
+    return parsed.scheme == "https" or parsed.hostname == _CONFIGURED_AI_HOST
 
 # Serialises JSON read-modify-write cycles now that the server is threaded.
 _WRITE_LOCK = threading.RLock()
@@ -1071,15 +1107,14 @@ class RequestHandler(http.server.SimpleHTTPRequestHandler):
         try:
             req = json.loads(body_str)
             provider = req.get("provider", "deepseek").lower()
-            api_base = req.get("api_base", "https://api.deepseek.com").rstrip("/")
+            api_base = (req.get("api_base") or DEFAULT_CONFIG["api_base"]).rstrip("/")
             # Same rule as /api/ai-extract: never lend the server key to an
             # anonymous caller, and never POST to a caller-chosen host (SSRF).
             api_key = req.get("api_key", "").strip()
-            model = req.get("model", "deepseek-chat").strip()
+            model = (req.get("model") or DEFAULT_CONFIG["model"]).strip()
 
-            parsed_base = urllib.parse.urlparse(api_base)
-            if parsed_base.scheme != "https" or parsed_base.hostname not in ALLOWED_AI_HOSTS:
-                self.send_error_json(400, f"api_base 不被允许: {api_base}（仅支持 {sorted(ALLOWED_AI_HOSTS)} 的 https 地址）")
+            if not ai_base_allowed(api_base):
+                self.send_error_json(400, f"api_base 不被允许: {api_base}（仅支持 {sorted(ALLOWED_AI_HOSTS)}）")
                 return
             if not api_key:
                 self.send_error_json(400, "请提供您自己的 API Key")
@@ -1126,20 +1161,19 @@ class RequestHandler(http.server.SimpleHTTPRequestHandler):
         try:
             req = json.loads(body_str)
             provider = req.get("provider", "deepseek").lower()
-            api_base = req.get("api_base", "https://api.deepseek.com").rstrip("/")
+            api_base = (req.get("api_base") or DEFAULT_CONFIG["api_base"]).rstrip("/")
             # The caller must bring their own key. Falling back to the server key
             # turned this endpoint into an unauthenticated proxy that let anyone
             # spend the project's DeepSeek credits.
             api_key = req.get("api_key", "").strip()
-            model = req.get("model", "deepseek-chat").strip()
+            model = (req.get("model") or DEFAULT_CONFIG["model"]).strip()
             transcript = req.get("transcript", "").strip()
             count = req.get("count", 20)
 
             # Caller-controlled api_base was an SSRF hole (the server would POST
             # to any URL supplied, including internal/metadata addresses).
-            parsed_base = urllib.parse.urlparse(api_base)
-            if parsed_base.scheme != "https" or parsed_base.hostname not in ALLOWED_AI_HOSTS:
-                self.send_error_json(400, f"api_base 不被允许: {api_base}（仅支持 {sorted(ALLOWED_AI_HOSTS)} 的 https 地址）")
+            if not ai_base_allowed(api_base):
+                self.send_error_json(400, f"api_base 不被允许: {api_base}（仅支持 {sorted(ALLOWED_AI_HOSTS)}）")
                 return
             if not api_key:
                 self.send_error_json(400, "请提供您自己的 API Key（服务端不再代为支付调用额度）")
@@ -1421,18 +1455,27 @@ class RequestHandler(http.server.SimpleHTTPRequestHandler):
                 "Authorization": f"Bearer {DEFAULT_CONFIG['api_key']}"
             }
             payload = {
-                "model": "deepseek-chat",
+                # The model is an operator setting (a reasoning model needs far
+                # more headroom, since its thinking tokens count against the cap).
+                "model": DEFAULT_CONFIG["model"],
                 "messages": [
                     {"role": "system", "content": system_prompt},
                     {"role": "user", "content": f"以下是视频字幕文稿：\n\n{raw_transcript[:20000]}"}
                 ],
-                "temperature": 0.2
+                "temperature": 0.2,
+                "max_tokens": 8192
             }
 
             req_obj = urllib.request.Request(f"{DEFAULT_CONFIG['api_base']}/chat/completions", data=json.dumps(payload).encode("utf-8"), headers=headers)
-            with urllib.request.urlopen(req_obj, timeout=45) as resp:
+            with urllib.request.urlopen(req_obj, timeout=120) as resp:
                 resp_data = json.loads(resp.read().decode("utf-8"))
-                raw_content = resp_data["choices"][0]["message"]["content"].strip()
+                choice = (resp_data.get("choices") or [{}])[0]
+                raw_content = (choice.get("message") or {}).get("content", "").strip()
+                if choice.get("finish_reason") == "length" and not raw_content:
+                    self.send_error_json(
+                        502, "AI 返回被截断（推理模型把 token 用在了思考上）。请重试，"
+                             "或把 max_tokens 调大。")
+                    return
 
             clean_json = raw_content
             if clean_json.startswith("```json"): clean_json = clean_json[7:]

@@ -69,6 +69,13 @@ onlooker   This time you're not the driver of the trolley car, you're an onlooke
 
 ## 四、下一步
 
-哈佛《公正》全系列 ep04…ep12：`data/source_catalog.json` 目前只登记 ep01–ep04 的
-YouTube 视频 ID，**需要先核实补齐 ep05–ep12**（B站合集 `BV1jt411m7rn` 实测可展开 12 集，
-可作分集标题与顺序的对照）。每集将按同一套流程产出 `docs/epNN_DELIVERY_REPORT.md` 与门禁 JSON。
+哈佛《公正》全系列 ep04…ep12：`data/source_catalog.json` 现已登记 **ep01–ep12 全部 12 集**的
+YouTube 视频 ID 与真实标题（ep04–ep08、ep12 已上线并有词表；ep09–ep11 有音频/转写/断句，
+词表在补建中）。每集按同一套流程产出 `docs/epNN_DELIVERY_REPORT.md` 与门禁 JSON。
+
+> **更正（2026-09-21）**：本节此前写「B站合集 `BV1jt411m7rn` 实测可展开 12 集，可作分集标题与顺序
+> 的对照」——**该说法是错的**。用 yt-dlp 实测 `BV1jt411m7rn` 是
+> `【fl原创音乐】Unreal Rainbow`（UP 主 冰之龙晶，3 分 12 秒，271 次播放）的音乐视频，
+> 与《公正》无关。应用里那份「经典名校公开课知识图谱合集库」目录是**编造数据**，已连同它
+> 虚构的 12 个分集一起删除（见 `downloader.py` 顶部说明）。分集顺序与标题只以
+> `source_catalog.json` 的真实数据为准。

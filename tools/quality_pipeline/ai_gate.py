@@ -34,8 +34,15 @@ def _flush_usage():
 
 
 def chat(system, user, tag, model=None, max_tokens=8000, temperature=0.2,
-         json_mode=True, use_cache=True, retries=3, timeout=180):
-    """Single LLM round-trip. Returns the raw assistant text (JSON string if json_mode)."""
+         json_mode=True, use_cache=True, retries=3, timeout=300):
+    """Single LLM round-trip. Returns the raw assistant text (JSON string if json_mode).
+
+    Reasoning models (e.g. a gateway exposing deepseek-v4.1-flash) spend part of
+    `max_tokens` on hidden thinking, so a request can come back with
+    finish_reason="length" and a truncated body. Two consequences are handled
+    here: the budget is doubled and retried, and a truncated answer is NEVER
+    cached - caching one would poison every later run that hits the same key.
+    """
     model = model or AI_MODEL
     key = sha1("\u0000".join([model, system or "", user or "", str(temperature), str(json_mode)]))
     cp = _cache_path(tag, key)
@@ -50,18 +57,19 @@ def chat(system, user, tag, model=None, max_tokens=8000, temperature=0.2,
     if not k:
         raise RuntimeError("no API key available (DEEPSEEK_API_KEY or data/secret_config.json)")
 
-    payload = {
-        "model": model,
-        "messages": ([{"role": "system", "content": system}] if system else [])
-                    + [{"role": "user", "content": user}],
-        "temperature": temperature,
-        "max_tokens": max_tokens,
-    }
-    if json_mode:
-        payload["response_format"] = {"type": "json_object"}
-
+    budget = int(max_tokens)
     last_err = None
-    for attempt in range(1, retries + 1):
+    attempts = max(retries, 4)
+    for attempt in range(1, attempts + 1):
+        payload = {
+            "model": model,
+            "messages": ([{"role": "system", "content": system}] if system else [])
+                        + [{"role": "user", "content": user}],
+            "temperature": temperature,
+            "max_tokens": budget,
+        }
+        if json_mode:
+            payload["response_format"] = {"type": "json_object"}
         body = json.dumps(payload).encode("utf-8")
         req = urllib.request.Request(
             f"{AI_BASE}/chat/completions", data=body,
@@ -70,15 +78,35 @@ def chat(system, user, tag, model=None, max_tokens=8000, temperature=0.2,
             t0 = time.time()
             with urllib.request.urlopen(req, timeout=timeout) as r:
                 data = json.loads(r.read().decode("utf-8"))
-            content = data["choices"][0]["message"]["content"]
+            choice = (data.get("choices") or [{}])[0]
+            message = choice.get("message") or {}
+            content = (message.get("content") or "").strip()
+            finish = choice.get("finish_reason")
             u = data.get("usage") or {}
             _usage["calls"] += 1
             _usage["prompt_tokens"] += int(u.get("prompt_tokens") or 0)
             _usage["completion_tokens"] += int(u.get("completion_tokens") or 0)
             _flush_usage()
-            log("    ai[%s] %d chars in %.1fs (prompt=%s completion=%s)",
+            log("    ai[%s] %d chars in %.1fs (prompt=%s completion=%s finish=%s budget=%d)",
                 tag, len(content), time.time() - t0,
-                u.get("prompt_tokens"), u.get("completion_tokens"))
+                u.get("prompt_tokens"), u.get("completion_tokens"), finish, budget)
+            if finish == "length":
+                # Truncated: the JSON cannot be trusted and must not be cached.
+                last_err = ("truncated response (finish_reason=length, %d chars at "
+                            "max_tokens=%d); the model's reasoning tokens count "
+                            "against the budget" % (len(content), budget))
+                budget = min(budget * 2, 32768)
+                log("    ai[%s] attempt %d/%d truncated; retrying with max_tokens=%d",
+                    tag, attempt, attempts, budget)
+                time.sleep(1)
+                continue
+            if not content:
+                last_err = ("empty content (reasoning-only response, %d reasoning chars)"
+                            % len(message.get("reasoning_content") or ""))
+                budget = min(budget * 2, 32768)
+                log("    ai[%s] attempt %d/%d empty; retrying with max_tokens=%d",
+                    tag, attempt, attempts, budget)
+                continue
             if use_cache:
                 save_json(cp, {"content": content, "model": model, "tag": tag})
             return content
@@ -87,9 +115,9 @@ def chat(system, user, tag, model=None, max_tokens=8000, temperature=0.2,
             last_err = f"HTTP {e.code}: {detail}"
         except Exception as e:  # noqa: BLE001
             last_err = f"{type(e).__name__}: {e}"
-        log("    ai[%s] attempt %d/%d failed: %s", tag, attempt, retries, last_err)
+        log("    ai[%s] attempt %d/%d failed: %s", tag, attempt, attempts, last_err)
         time.sleep(2 * attempt)
-    raise RuntimeError(f"AI call '{tag}' failed after {retries} attempts: {last_err}")
+    raise RuntimeError(f"AI call '{tag}' failed after {attempts} attempts: {last_err}")
 
 
 def _extract_json(text):
