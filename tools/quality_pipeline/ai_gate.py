@@ -15,7 +15,8 @@ import urllib.error
 import urllib.request
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from config import AI_BASE, AI_MODEL, CACHE_DIR, api_key, load_json, log, save_json, sha1  # noqa: E402
+from config import (AI_BASE, AI_MIN_TOKENS, AI_MODEL, CACHE_DIR, api_key, load_json,  # noqa: E402
+                    log, save_json, sha1)
 
 USAGE_FILE = os.path.join(CACHE_DIR, "_usage.json")
 _usage = load_json(USAGE_FILE, {"calls": 0, "cached": 0, "prompt_tokens": 0, "completion_tokens": 0})
@@ -57,7 +58,7 @@ def chat(system, user, tag, model=None, max_tokens=8000, temperature=0.2,
     if not k:
         raise RuntimeError("no API key available (DEEPSEEK_API_KEY or data/secret_config.json)")
 
-    budget = int(max_tokens)
+    budget = max(int(max_tokens), AI_MIN_TOKENS) if AI_MIN_TOKENS else int(max_tokens)
     last_err = None
     attempts = max(retries, 4)
     for attempt in range(1, attempts + 1):

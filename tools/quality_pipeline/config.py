@@ -75,6 +75,14 @@ def _setting(env_key, secret_key, default=""):
 AI_BASE = _setting("VOCAB_AI_BASE", "api_base", "https://api.deepseek.com")
 AI_MODEL = _setting("VOCAB_AI_MODEL", "model", "deepseek-chat")
 AI_REVIEW_MODEL = _setting("VOCAB_AI_REVIEW_MODEL", "review_model", AI_MODEL)
+# A reasoning model spends part of max_tokens on hidden thinking, so the small
+# budgets some stages use (400-3000) always truncate once before succeeding.
+# Raising the floor centrally avoids a wasted round-trip per call; it is an
+# operator setting because it only applies to reasoning-style models.
+try:
+    AI_MIN_TOKENS = int(_setting("VOCAB_AI_MIN_TOKENS", "min_tokens", "0") or 0)
+except ValueError:
+    AI_MIN_TOKENS = 0
 
 
 def api_key():
