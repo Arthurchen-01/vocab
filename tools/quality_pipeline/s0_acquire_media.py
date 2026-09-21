@@ -33,6 +33,7 @@ import os
 import re
 import subprocess
 import sys
+import time
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from config import (DATA_DIR, OUT_DIR, RAW_AUDIO_DIR, RAW_VIDEO_DIR, Report,  # noqa: E402
@@ -47,9 +48,61 @@ VIDEO_FMT = "bv*[height<=480][vcodec^=avc1]+ba[ext=m4a]/bv*[height<=480]+ba/b[he
 AUDIO_FMT = "bestaudio/best"
 
 
-def sh(cmd, timeout=3600, cwd=None):
-    p = subprocess.run(cmd, capture_output=True, text=True, timeout=timeout, cwd=cwd)
+def sh(cmd, timeout=3600, cwd=None, env=None):
+    p = subprocess.run(cmd, capture_output=True, text=True, timeout=timeout, cwd=cwd,
+                       env=env)
     return p.returncode, p.stdout, p.stderr
+
+
+def asr_env():
+    """Environment for the local ASR model.
+
+    Measured on this host: huggingface.co and hf-mirror.com answer 200, but
+    cdn-lfs.huggingface.co and the Xet CAS endpoint (cas-server.xethub.hf.co) are
+    unreachable, so the default client path fails with "File reconstruction
+    error". Disabling Xet and pointing at the mirror is what actually downloads
+    the model.
+    """
+    env = dict(os.environ)
+    env.setdefault("HF_HUB_DISABLE_XET", "1")
+    env.setdefault("HF_ENDPOINT", os.environ.get("VOCAB_HF_ENDPOINT",
+                                                 "https://hf-mirror.com"))
+    env.setdefault("HF_HUB_ENABLE_HF_TRANSFER", "0")
+    return env
+
+
+def transcribe_with_asr(audio_path, model="small", compute="int8", lang="en",
+                        timeout=7200):
+    """Local faster-whisper -> [{start, duration, text}] in the SRT segment shape.
+
+    This is the fallback that makes a source with NO subtitles usable at all.
+    It runs in its own interpreter (`/opt/asr-venv`) because faster-whisper is a
+    heavy dependency the rest of the pipeline does not need.
+    """
+    py = os.environ.get("VOCAB_ASR_PYTHON", "/opt/asr-venv/bin/python")
+    runner = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                          "..", "..", "providers", "asr_runner.py")
+    runner = os.path.abspath(runner)
+    if not os.path.isfile(runner) or not os.path.isfile(py):
+        return [], "ASR runner or venv missing (%s / %s)" % (runner, py)
+    rc, out, err = sh([py, runner, audio_path, model, compute, lang],
+                      timeout=timeout, env=asr_env())
+    payload = None
+    for line in (out or "").splitlines():
+        line = line.strip()
+        if line.startswith("{"):
+            try:
+                payload = json.loads(line)
+            except ValueError:
+                continue
+    if not payload or payload.get("error"):
+        return [], (payload or {}).get("error") or (err or out or "")[-200:]
+    segs = [{"start": float(s["start"]),
+             "duration": round(float(s["end"]) - float(s["start"]), 3),
+             "text": (s.get("text") or "").strip()}
+            for s in payload.get("segments", []) if (s.get("text") or "").strip()]
+    return segs, "whisper_asr:%s (%s segments, %.1fx realtime)" % (
+        model, len(segs), payload.get("realtime_factor") or 0)
 
 
 def ffprobe_duration(path):
@@ -139,6 +192,10 @@ def main():
     ap.add_argument("--keep-subtitles", action="store_true")
     ap.add_argument("--no-video", action="store_true",
                     help="audio-only acquisition (no card frames; saves ~130 MB per episode)")
+    ap.add_argument("--no-asr", action="store_true",
+                    help="do not fall back to local transcription when a source has no subtitles")
+    ap.add_argument("--asr-model", default=os.environ.get("VOCAB_ASR_MODEL", "small"),
+                    help="faster-whisper model size used by the ASR fallback")
     args = ap.parse_args()
 
     ep = args.ep_id or args.episode
@@ -226,6 +283,7 @@ def main():
 
     # ---------- transcript ----------
     ok, why = (False, "missing")
+    used_asr = False
     if os.path.isfile(transcript) and not args.force:
         ok, why = transcript_ok(transcript, vdur or adur)
     if ok:
@@ -250,10 +308,37 @@ def main():
                 for f in cand:
                     os.remove(f)
         else:
-            rep.check("subtitles fetched", False, (err or out).strip().splitlines()[-1][:200] if (err or out) else "no subtitle files")
+            rep.note("no subtitle files from yt-dlp: %s"
+                     % ((err or out).strip().splitlines()[-1][:160] if (err or out) else ""))
+
+        # ASR fallback. Measured on this host: YouTube exposes real subtitles but
+        # Bilibili exposes none at all, so without this a Bilibili lecture simply
+        # cannot be delivered. The transcript is written in the same segment shape
+        # and is labelled as a machine transcript in the source record.
+        if not os.path.isfile(transcript) and not args.no_asr:
+            if os.path.isfile(audio):
+                rep.note("no subtitles -> transcribing the audio locally "
+                         "(faster-whisper %s)" % args.asr_model)
+                t_asr = time.time()
+                segs, asr_why = transcribe_with_asr(audio, model=args.asr_model)
+                if segs:
+                    save_json(transcript, segs)
+                    used_asr = True
+                    rep.note("ASR produced %s in %.0fs" % (asr_why, time.time() - t_asr))
+                else:
+                    rep.check("ASR fallback produced a transcript", False, asr_why)
+            else:
+                rep.note("no audio on disk, so ASR cannot be attempted")
+
         if os.path.isfile(transcript):
-            ok, why = transcript_ok(transcript, vdur or adur)
+            # An ASR transcript has slightly fewer, longer segments per minute than
+            # a subtitle track, so the floor scales with the media length.
+            floor = (max(40, int((adur or 0) / 60.0 * 12)) if used_asr else 200)
+            ok, why = transcript_ok(transcript, vdur or adur, min_segments=floor)
             rep.check("transcript acquired", ok, why)
+            if used_asr:
+                rep.note("transcript source: whisper_asr:%s (machine transcript, "
+                         "not human subtitles)" % args.asr_model)
 
     # ---------- final gates ----------
     if adur and os.path.isfile(transcript):

@@ -650,57 +650,34 @@ def fetch_direct_subtitles(url):
         print(f"[WARN] Direct subtitle fetch error: {e}")
         return ""
 
-def auto_fetch_subtitles_and_meta(url):
-    """Unified single-URL dispatcher."""
-    url = url.strip()
+def auto_fetch_subtitles_and_meta(url, need=None, policy=None):
+    """Unified single-URL dispatcher - a thin delegate to the provider chain.
+
+    The chain lives in `providers/` and is pluggable: each tool declares the
+    capabilities it can supply (metadata / media / subtitles / asr) and the
+    resolver orders them by measured health for that host. This function keeps its
+    original contract so `server.py` did not have to change.
+
+    `need` is what makes the chain adjustable per use case: the media-download
+    centre asks for (metadata, media) and never pays for transcription, while the
+    import path asks for a transcript and may therefore fall back to local ASR.
+    """
+    url = (url or "").strip()
     if not url:
         return {"success": False, "error": "URL 不能为空"}
-    
-    # 1. Scientific American
-    if "scientificamerican.com" in url or "traffic.megaphone.fm" in url:
-        info = fetch_scientific_american_info(url)
-        if info:
-            return {"success": True, **info}
-
-    # 2. Bilibili
-    if "bilibili.com" in url or re.search(r"BV[0-9A-Za-z]{10}", url):
-        info = fetch_bilibili_video_info(url)
-        if info:
-            return {"success": True, **info}
-    
-    # 3. YouTube
-    if "youtube.com" in url or "youtu.be" in url:
-        info = fetch_youtube_video_info(url)
-        if info:
-            return {"success": True, **info}
-            
-    # 4. Direct Media (.mp3, .mp4, .m4a)
-    if any(url.lower().endswith(ext) for ext in [".mp3", ".mp4", ".m4a", ".wav", ".aac"]):
-        info = fetch_direct_media_info(url)
-        if info:
-            return {"success": True, **info}
-
-    # 5. Direct Subtitle URL
-    if any(url.lower().endswith(ext) for ext in [".srt", ".vtt", ".txt", ".json"]) or "downsub.com" in url:
-        txt = fetch_direct_subtitles(url)
-        if txt:
-            return {
-                "success": True,
-                "platform": "direct_subtitle",
-                "title": "已提取的字幕逐字稿",
-                "author": "公开课原声字幕",
-                "cover": "/assets/scenes/banner_harvard_series.jpg",
-                "duration": "45 分钟",
-                "transcript": txt,
-                "has_subtitles": True,
-                "transcript_source": "direct_subtitle",
-                "tier_used": "Tier 1: 字幕文件直连解析"
-            }
-            
-    return {
-        "success": False,
-        "error": "未识别的音视频或字幕网址，系统支持科学美国人播客、YouTube、Bilibili 及 Direct MP3 链接"
-    }
+    try:
+        from providers.base import CAP_MEDIA, CAP_METADATA, CAP_SUBTITLES
+        from providers.resolver import resolve
+    except Exception as exc:  # noqa: BLE001
+        return {"success": False, "error": "provider 链不可用: %s" % exc}
+    if need is None:
+        need = (CAP_METADATA, CAP_MEDIA, CAP_SUBTITLES)
+    try:
+        result, _trail = resolve(url, need=need, overrides=policy)
+    except Exception as exc:  # noqa: BLE001
+        return {"success": False, "error": "解析异常: %s: %s" % (type(exc).__name__, exc)}
+    result.setdefault("media_type", "audio")
+    return result
 
 def batch_resolve_media(raw_urls_input, mode="media", media_type="audio", auto_expand_collections=True):
     """
@@ -771,9 +748,14 @@ def batch_resolve_media(raw_urls_input, mode="media", media_type="audio", auto_e
             except Exception as ce:
                 print(f"[WARN] Error expanding collection for {u}: {ce}")
 
-        # Standard single URL resolution
+        # Standard single URL resolution.
+        # The download centre only needs metadata + a media stream: asking for a
+        # transcript here would trigger local ASR (minutes per episode) for no
+        # benefit. The import path asks for the transcript separately.
         try:
-            item = auto_fetch_subtitles_and_meta(u)
+            from providers.base import CAP_MEDIA, CAP_METADATA
+            want = (CAP_METADATA, CAP_MEDIA) if mode == "media" else None
+            item = auto_fetch_subtitles_and_meta(u, need=want)
             if item.get("success"):
                 item["index"] = item_counter
                 item["req_mode"] = mode

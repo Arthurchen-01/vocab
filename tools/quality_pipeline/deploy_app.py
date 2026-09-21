@@ -93,6 +93,21 @@ def main():
         sys.exit("pip install paramiko")
 
     files = [f.strip() for f in args.files.split(",") if f.strip()]
+    expanded = []
+    for f in files:
+        local = os.path.join(REPO, f.replace("/", os.sep))
+        if os.path.isdir(local):
+            # A directory argument means "deploy this package": list its files so
+            # `--files providers` works instead of naming every module.
+            for root, _dirs, names in os.walk(local):
+                for name in sorted(names):
+                    if name.endswith((".pyc",)):
+                        continue
+                    rel = os.path.relpath(os.path.join(root, name), REPO)
+                    expanded.append(rel.replace(os.sep, "/"))
+        else:
+            expanded.append(f)
+    files = expanded
     for f in files:
         if not os.path.isfile(os.path.join(REPO, f.replace("/", os.sep))):
             sys.exit("not in the repo: %s" % f)
