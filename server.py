@@ -49,6 +49,23 @@ def _resolve_port():
 
 
 PORT = _resolve_port()
+
+
+def _app_version():
+    """The single source of truth is the VERSION file at the repo root.
+
+    Resolved from this file's own location rather than BASE_DIR, so the constant
+    can be defined before BASE_DIR without an import-time NameError.
+    """
+    path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "VERSION")
+    try:
+        with open(path, encoding="utf-8") as f:
+            return f.read().strip() or "0.0.0"
+    except Exception:
+        return "0.0.0"
+
+
+APP_VERSION = _app_version()
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 PUBLIC_DIR = os.path.join(BASE_DIR, "public")
 DATA_DIR = os.path.join(BASE_DIR, "data")
@@ -696,7 +713,13 @@ class RequestHandler(http.server.SimpleHTTPRequestHandler):
             self.send_header("Content-Type", "application/json; charset=utf-8")
             self.send_header("Access-Control-Allow-Origin", "*")
             self.end_headers()
-            self.wfile.write(json.dumps({"status": "ok", "service": "Harvard Justice AI Studio"}, ensure_ascii=False).encode("utf-8"))
+            self.wfile.write(json.dumps({
+                "status": "ok",
+                "service": "Harvard Justice AI Studio",
+                # Lets anyone (and the release checklist) confirm which version the
+                # running deployment is actually serving.
+                "version": APP_VERSION,
+            }, ensure_ascii=False).encode("utf-8"))
             return
 
         # 0. API Documentation and OpenAPI Spec

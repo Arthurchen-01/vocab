@@ -1,0 +1,161 @@
+{
+  "stage": "s7b_live2_docx",
+  "started": "2026-09-21 17:01:50",
+  "finished": "2026-09-21 17:01:59",
+  "ok": true,
+  "passed": 30,
+  "failed": 0,
+  "checks": [
+    {
+      "check": "package opens as a zip",
+      "ok": true,
+      "detail": "12 parts"
+    },
+    {
+      "check": "all required OOXML parts present",
+      "ok": true,
+      "detail": "12 parts"
+    },
+    {
+      "check": "every XML part is well-formed",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "no XML-illegal control characters",
+      "ok": true,
+      "detail": "[]"
+    },
+    {
+      "check": "[Content_Types].xml declares every part",
+      "ok": true,
+      "detail": "[]"
+    },
+    {
+      "check": "every relationship target exists",
+      "ok": true,
+      "detail": "[]"
+    },
+    {
+      "check": "word/document.xml parses",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "every r:id used in document.xml resolves",
+      "ok": true,
+      "detail": "[]"
+    },
+    {
+      "check": "document.xml child order matches ECMA-376 sequences",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "styles.xml child order",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "settings.xml child order",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "fontTable.xml child order",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "app.xml child order",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "theme1.xml child order",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "only WPS/Windows-guaranteed fonts are referenced",
+      "ok": true,
+      "detail": "used: ['Times New Roman', '宋体']"
+    },
+    {
+      "check": "every referenced font is declared in fontTable.xml",
+      "ok": true,
+      "detail": "[]"
+    },
+    {
+      "check": "every text run sets ascii/hAnsi/eastAsia/cs",
+      "ok": true,
+      "detail": "0 of 50711 runs incomplete"
+    },
+    {
+      "check": "every text run sets w:lang",
+      "ok": true,
+      "detail": "0 runs"
+    },
+    {
+      "check": "every text run pairs w:sz with w:szCs",
+      "ok": true,
+      "detail": "0 runs"
+    },
+    {
+      "check": "hint=eastAsia exactly on runs containing CJK",
+      "ok": true,
+      "detail": "0 mismatches e.g. []"
+    },
+    {
+      "check": "table grid width equals w:tblW",
+      "ok": true,
+      "detail": "grid=[560, 1900, 3100, 4186] sum=9746 tblW=9746"
+    },
+    {
+      "check": "table uses fixed layout",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "header row repeats across pages",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "w:sectPr is the last body element",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "check": "document carries extractable text",
+      "ok": true,
+      "detail": "653117 chars"
+    },
+    {
+      "check": "every word appears in the document",
+      "ok": true,
+      "detail": "0 missing e.g. []"
+    },
+    {
+      "check": "every def_cn appears in the document",
+      "ok": true,
+      "detail": "0 missing e.g. []"
+    },
+    {
+      "check": "every def_en appears in the document",
+      "ok": true,
+      "detail": "0/3568 missing e.g. []"
+    },
+    {
+      "check": "table has one row per word plus a header",
+      "ok": true,
+      "detail": "3569 rows for 3568 words"
+    },
+    {
+      "check": "declared word count matches the payload",
+      "ok": true,
+      "detail": "meta line: 共收录 3568 个学术词汇 · 英文释义 3568 条 · 导出于 2026-09-21 07:59"
+    }
+  ],
+  "notes": []
+}

@@ -1,11 +1,17 @@
 # 🏛️ VerbaLex Studio (知源思辨)
 ### 哈佛大学公开课沉浸式学术英语听说与词汇预习研学系统
 
+[![Version](https://img.shields.io/badge/Version-1.0.0-rose.svg)](CHANGELOG.md)
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-emerald.svg)](https://opensource.org/licenses/MIT)
 [![OpenAPI 3.0](https://img.shields.io/badge/OpenAPI-3.0.3-brightgreen.svg)](https://vocab.samuraiguan.cloud/docs)
 [![Production Live](https://img.shields.io/badge/Production-Live-rose.svg)](https://vocab.samuraiguan.cloud)
-[![AI Engine](https://img.shields.io/badge/AI%20Engine-DeepSeek%20V3-blueviolet.svg)](https://deepseek.com)
+[![AI Engine](https://img.shields.io/badge/AI%20Engine-OpenAI--compatible%20gateway-blueviolet.svg)](tools/quality_pipeline/config.py)
+
+> **当前版本：v1.0.0**（首次正式发布，详见 [CHANGELOG.md](CHANGELOG.md)）  
+> 线上服务：<https://vocab.samuraiguan.cloud> · 版本号同时写在 `VERSION` 与 `/api/health` 的
+> `version` 字段里，可用 `curl -s .../api/health` 核对线上跑的是哪一版。
+
 
 > **VerbaLex Studio** 是专为全球名校公开课研学者（以哈佛大学迈克尔·桑德尔教授《公正：该如何做是好？》为标杆课程）打造的企业级听说精读与词汇深度预习系统。  
 > 告别脱离语境的孤立背词表，通过**原汁原味课堂现场视频帧抓取**、**毫秒级现场原声音频切片**、**四维学术词表标准对标**与 **Anki 级全键盘盲刷自测**，帮助学员在课前扫清听力障碍，在课后实现抗遗忘长效内化。
@@ -15,20 +21,33 @@
 ## 🌟 核心工程特性与创新架构 (Key Features)
 
 ### 1. 🎞️ 现场授课真实视频逐帧截图 (Authentic Video Frames)
-- 彻底摒弃网图与合成占位图，云端对标哈佛公开课官方 480p 视频源（`ep01_video.mp4`）；
-- 使用 `ffmpeg` 依据全量 161 词在真实演讲逐字稿中的毫秒级时间戳，精准抽取 **161 张** 桑德尔教授课堂现场授课截图（保存在 `/assets/scenes/ep01/frame_{word}.jpg`）；
-- 还原真实的 Sanders Theatre 现场大厅、黑板板书、手势互动与听众席提问氛围。
+- 彻底摒弃网图与合成占位图，云端对标哈佛公开课官方视频源，按逐字稿毫秒级时间戳抽帧；
+- 每一集的抽帧保存在 `/assets/scenes/{episode}/frame_{word}.jpg`，还原 Sanders Theatre 现场大厅、
+  黑板板书、手势互动与听众席提问氛围；
+- **音频-only 采集的集数没有视频源**，此时卡片改用合集封面，而不是指向一个不存在的帧文件
+  （门禁会强制这一点）。
 
 ### 2. 🎙️ 课堂原汁原味现场原声切片 (Native Lecture Audio Clips)
-- 全本 54 分钟授课高清录音物理切割，产出 **161 个** 专属原生切片（保存在 `/assets/audio/clips/`）；
-- 双轨音频矩阵：支持【🎙️ 课堂原声 (Sandel现场原音)】与【🔊 词典标准真人发音 (329个独立音频)】一键对比切换。
+- 每集 55 分钟授课录音按**完整句边界**物理切割，产出该集专属原生切片（`/assets/audio/clips/`）；
+- 双轨音频矩阵：支持【🎙️ 课堂原声 (Sandel 现场原音)】与【🔊 词典标准真人发音】一键对比切换；
+- 切片窗口由句子起止时间决定（而非固定 6 秒），门禁校验「每个切片完整覆盖其句子（含前后 pad）」，
+  实测偏差 ≤ 0.30s。
 
-### 3. 🎯 四维词库权威深度对标与扩充 (Four-Tiered Academic Curriculum)
-全量提取哈佛 Ep01 真实 1,142 句逐字稿（7,242 词），依托官方标准与 DeepSeek 大模型独立审计会话沉淀 **161 个核心词条与动词短语**：
-- 📘 **托福 / 雅思核心高频词 (TOEFL/IELTS)**：94 词
-- ⚡ **GRE / SAT 拔高与思辨难词 (GRE/SAT)**：21 词
-- 🏛️ **道德哲学与法理学术专精术语 (Philosophy & Law)**：24 词
-- 🔥 **核心动词短语与固定搭配 (Phrasal Verbs)**：22 组
+### 3. 🎯 全系列学术词表 + 考试词表 (Curriculum & Exam Vocabulary)
+**哈佛《公正》全 12 集**共 **1020 个词条**（每词均含 `def_cn`、`def_en`、课堂原声例句与中译）：
+
+| 集 | 词数 | 集 | 词数 | 集 | 词数 |
+| :--- | ---: | :--- | ---: | :--- | ---: |
+| ep01 杀人的道德侧面 | 117 | ep05 雇凶杀人 | 105 | ep09 平权行动的辩论 | 39 |
+| ep02 给生命标价 | 215 | ep06 注意你的动机 | 91 | ep10 好公民 | 43 |
+| ep03 自由选择权 | 44 | ep07 谎言的教训 | 84 | ep11 忠诚的边界 | 41 |
+| ep04 这片土地是我的 | 98 | ep08 什么是公平的起点 | 51 | ep12 同性婚姻的辩论 | 92 |
+
+另有耶鲁《哲学与人性科学》32 词、**长难句精读 97 条**（取自讲座真实原句 + 已审校译文），
+以及**考试词表 3000 词**（托福 / 雅思 / GRE / 考研 / 学术词组各 600，来自 ECDICT（MIT 许可），
+含真实词组与固定搭配；来源与许可见 [docs/THIRD_PARTY_DATA.md](docs/THIRD_PARTY_DATA.md)）。
+
+跨集复用的词在**总词库**里是一条 entry 多个 context（当前 4166 条），不会因为后一集出现而被丢弃。
 
 ### 4. ⌨️ Anki 经典全键盘沉浸式盲刷 (Anki-Style Keyboard Flow)
 自测过程双手无需离开键盘：
@@ -81,8 +100,18 @@
 │   └── yt-dlp & ffmpeg (音视频提取与毫秒级时间戳切帧引擎)
 │
 ├── 智能体与模型中枢 (AI Proxy)
-│   ├── DeepSeek-V3 / DeepSeek-Chat (官方直连或代理)
-│   └── Anthropic Claude 3.5 Sonnet (学术语义与法理术语萃取)
+│   ├── 任何 OpenAI 兼容端点（**供应商可配置**，不写死厂商）
+│   │   └── base / model / review_model 三级解析：环境变量 → data/secret_config.json → 默认值
+│   ├── 兼容 `token;model` 形式的网关凭据（只取分号前那段作为 key）
+│   └── 推理模型适配：`finish_reason=length` / 空正文自动翻倍重试，截断结果**不写缓存**
+│
+├── 质量流水线 (tools/quality_pipeline/)
+│   ├── 采集 → 断句 → 选词 → 绑定 → 切媒体 → 翻译 → 释义 → 落盘 → 词库 → 部署 → 线上验收
+│   ├── 编排器 `deliver.py`（粘贴一个链接即可跑完一集并出验收报告）
+│   ├── 门禁：`docx_conformance`（30 项）、`export_conformance`（389 项）、
+│   │         `no_fabrication_gate`（反造假 15 项）
+│   └── 客户端：`stage_client.py`（跑单个阶段）、`deploy_app.py`（带备份的部署）、
+│             `local_smoke.py`（部署前本地验收）
 │
 └── 生产基础设施 (Production & Infra)
     ├── Ubuntu 22.04 LTS (公网 IP: 38.76.174.32)

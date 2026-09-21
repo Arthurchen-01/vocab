@@ -1,0 +1,35 @@
+# Gate report - s7b_live2_docx
+
+- finished: 2026-09-21 17:01:59
+- result: **PASS** (30 passed / 0 failed)
+
+- [x] package opens as a zip — 12 parts
+- [x] all required OOXML parts present — 12 parts
+- [x] every XML part is well-formed
+- [x] no XML-illegal control characters — []
+- [x] [Content_Types].xml declares every part — []
+- [x] every relationship target exists — []
+- [x] word/document.xml parses
+- [x] every r:id used in document.xml resolves — []
+- [x] document.xml child order matches ECMA-376 sequences
+- [x] styles.xml child order
+- [x] settings.xml child order
+- [x] fontTable.xml child order
+- [x] app.xml child order
+- [x] theme1.xml child order
+- [x] only WPS/Windows-guaranteed fonts are referenced — used: ['Times New Roman', '宋体']
+- [x] every referenced font is declared in fontTable.xml — []
+- [x] every text run sets ascii/hAnsi/eastAsia/cs — 0 of 50711 runs incomplete
+- [x] every text run sets w:lang — 0 runs
+- [x] every text run pairs w:sz with w:szCs — 0 runs
+- [x] hint=eastAsia exactly on runs containing CJK — 0 mismatches e.g. []
+- [x] table grid width equals w:tblW — grid=[560, 1900, 3100, 4186] sum=9746 tblW=9746
+- [x] table uses fixed layout
+- [x] header row repeats across pages
+- [x] w:sectPr is the last body element
+- [x] document carries extractable text — 653117 chars
+- [x] every word appears in the document — 0 missing e.g. []
+- [x] every def_cn appears in the document — 0 missing e.g. []
+- [x] every def_en appears in the document — 0/3568 missing e.g. []
+- [x] table has one row per word plus a header — 3569 rows for 3568 words
+- [x] declared word count matches the payload — meta line: 共收录 3568 个学术词汇 · 英文释义 3568 条 · 导出于 2026-09-21 07:59
