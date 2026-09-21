@@ -4,7 +4,8 @@
 `deliver.py`'s S7 can restart the service, and `deliver_client.py` pulls data
 back, but nothing in the toolkit ever pushed application code to the host: the
 live server.py was three commits behind the repository, which is exactly how the
-`导出合集是 nothing` fix stayed un-deployed while the source looked correct.
+"export collection is nothing" fix stayed un-deployed while the source looked
+correct.
 
     python tools/quality_pipeline/deploy_app.py --dry-run
     python tools/quality_pipeline/deploy_app.py
@@ -97,18 +98,58 @@ def main():
             sys.exit("not in the repo: %s" % f)
 
     host, user, pwd = credentials()
-    c = connect_with_retry(host, user, pwd)
+    state = {"client": connect_with_retry(host, user, pwd)}
 
-    def run(cmd, timeout=300, quiet=False):
-        _i, o, e = c.exec_command(cmd, timeout=timeout)
-        try:
-            out = (o.read() + e.read()).decode("utf-8", "replace")
-        except Exception as exc:  # noqa: BLE001
-            out = "(channel closed: %s)" % type(exc).__name__
-        if not quiet:
-            sys.stdout.write(out)
-            sys.stdout.flush()
-        return out
+    def run(cmd, timeout=300, quiet=False, attempts=4):
+        """Run a remote command, reconnecting when the channel drops.
+
+        This host resets SSH sessions mid-deploy (EOFError / WinError 10054), so
+        a single connection cannot be trusted for a whole deployment.
+        """
+        last = None
+        for attempt in range(attempts):
+            try:
+                _i, o, e = state["client"].exec_command(cmd, timeout=timeout)
+                out = (o.read() + e.read()).decode("utf-8", "replace")
+                if not quiet:
+                    sys.stdout.write(out)
+                    sys.stdout.flush()
+                return out
+            except Exception as exc:  # noqa: BLE001
+                last = exc
+                print("   [ssh] command failed (%s), reconnecting"
+                      % type(exc).__name__)
+                time.sleep(6)
+                try:
+                    state["client"].close()
+                except Exception:  # noqa: BLE001
+                    pass
+                state["client"] = connect_with_retry(host, user, pwd)
+        print("   [ssh] giving up on: %s" % cmd[:60])
+        return "(failed: %s)" % type(last).__name__
+
+    def sftp_put(local, remote, attempts=4):
+        last = None
+        for attempt in range(attempts):
+            try:
+                sftp = state["client"].open_sftp()
+                try:
+                    sftp.put(local, remote)
+                finally:
+                    sftp.close()
+                return True
+            except Exception as exc:  # noqa: BLE001
+                last = exc
+                print("   [sftp] %s failed (%s), reconnecting"
+                      % (os.path.basename(local), type(exc).__name__))
+                time.sleep(6)
+                try:
+                    state["client"].close()
+                except Exception:  # noqa: BLE001
+                    pass
+                state["client"] = connect_with_retry(host, user, pwd)
+        print("   [sftp] giving up on %s: %s" % (local, last))
+        return False
 
     print("[compare] local vs deployed")
     changed = []
@@ -124,11 +165,11 @@ def main():
                                % (rh[:10] or "absent", lh[:10])))
     if not changed:
         print("\nnothing to deploy.")
-        c.close()
+        state["client"].close()
         return 0
     if args.dry_run:
         print("\n[dry run] would upload %d file(s) and restart" % len(changed))
-        c.close()
+        state["client"].close()
         return 0
 
     stamp = time.strftime("%Y%m%d-%H%M%S")
@@ -138,14 +179,17 @@ def main():
             % (APP, f, BACKUP_ROOT, stamp), quiet=True)
     print("\n[backup] %s/%s" % (BACKUP_ROOT, stamp))
 
-    sftp = c.open_sftp()
     print("[upload]")
+    upload_failed = []
     for f in changed:
         remote = posixpath.join(APP, f)
         run("mkdir -p %s" % posixpath.dirname(remote), quiet=True)
-        sftp.put(os.path.join(REPO, f.replace("/", os.sep)), remote)
-        print("    %s" % f)
-    sftp.close()
+        if sftp_put(os.path.join(REPO, f.replace("/", os.sep)), remote):
+            print("    %s" % f)
+        else:
+            upload_failed.append(f)
+    if upload_failed:
+        sys.exit("upload failed for: %s" % upload_failed)
 
     print("\n[verify upload]")
     ok = True
@@ -160,7 +204,7 @@ def main():
 
     if args.no_restart:
         print("\n[restart] skipped (--no-restart); the service still runs the old code")
-        c.close()
+        state["client"].close()
         return 0
 
     print("\n[restart]")
@@ -173,7 +217,7 @@ def main():
         code = run("curl -s -o /dev/null -w '%%{http_code}' %s%s" % (args.origin, path),
                    quiet=True).strip()
         print("    %-34s %s" % (path, code))
-    c.close()
+    state["client"].close()
     print("\ndone. Roll back with: cp -r %s/%s/* %s/" % (BACKUP_ROOT, stamp, APP))
     return 0
 

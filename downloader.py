@@ -63,6 +63,54 @@ def _ytdlp_bin():
 
 def fetch_youtube_transcript(vid, timeout=120):
     """Real subtitles only, via yt-dlp. Returns (text, source)."""
+    return ytdlp_transcript("https://www.youtube.com/watch?v=%s" % vid, timeout=timeout)
+
+
+def ytdlp_run(url, extra=None, timeout=150):
+    """Run yt-dlp and return its stdout lines. Empty list on any failure."""
+    binary = _ytdlp_bin()
+    if not binary:
+        return []
+    cmd = [binary, "--no-warnings", "--skip-download"] + (extra or []) + [url]
+    try:
+        proc = subprocess.run(cmd, capture_output=True, timeout=timeout)
+    except Exception as exc:  # noqa: BLE001
+        print("[WARN] yt-dlp failed for %s: %s" % (url[:60], exc))
+        return []
+    out = proc.stdout.decode("utf-8", "replace")
+    return [ln for ln in out.splitlines() if ln.strip()]
+
+
+def ytdlp_metadata(url, extra=None, timeout=150):
+    """First JSON object yt-dlp prints, or {}.
+
+    yt-dlp is the reliable path for Bilibili from this host: the official
+    api.bilibili.com/x/web-interface/view endpoint answers HTTP 412 (risk
+    control), which is what made the app fall back to invented titles.
+    """
+    for line in ytdlp_run(url, (extra or []) + ["--dump-json"], timeout=timeout):
+        if line.lstrip().startswith("{"):
+            try:
+                return json.loads(line)
+            except ValueError:
+                continue
+    return {}
+
+
+def ytdlp_playlist(url, timeout=200):
+    """Every entry of a playlist/season/multi-part video, with real titles."""
+    entries = []
+    for line in ytdlp_run(url, ["--flat-playlist", "--dump-json"], timeout=timeout):
+        if line.lstrip().startswith("{"):
+            try:
+                entries.append(json.loads(line))
+            except ValueError:
+                continue
+    return entries
+
+
+def ytdlp_transcript(url, timeout=150):
+    """Download a real subtitle track with yt-dlp. Returns (text, source)."""
     binary = _ytdlp_bin()
     if not binary:
         return "", ""
@@ -70,9 +118,9 @@ def fetch_youtube_transcript(vid, timeout=120):
     try:
         subprocess.run(
             [binary, "--no-warnings", "--skip-download", "--write-subs",
-             "--write-auto-subs", "--sub-langs", "en.*,en", "--sub-format", "srt",
-             "--convert-subs", "srt", "-o", os.path.join(workdir, "%(id)s.%(ext)s"),
-             "https://www.youtube.com/watch?v=%s" % vid],
+             "--write-auto-subs", "--sub-langs", "en.*,en,zh.*,zh", "--sub-format",
+             "srt", "--convert-subs", "srt", "-o",
+             os.path.join(workdir, "%(id)s.%(ext)s"), url],
             capture_output=True, timeout=timeout)
         for name in sorted(os.listdir(workdir)):
             if name.endswith((".srt", ".vtt")):
@@ -83,7 +131,7 @@ def fetch_youtube_transcript(vid, timeout=120):
                     return text, "yt-dlp:%s" % name.rsplit(".", 1)[-1]
         return "", ""
     except Exception as exc:  # noqa: BLE001 - network, timeout, missing ffmpeg
-        print("[WARN] YouTube subtitle fetch failed: %s" % exc)
+        print("[WARN] subtitle fetch failed for %s: %s" % (url[:60], exc))
         return "", ""
     finally:
         shutil.rmtree(workdir, ignore_errors=True)
@@ -123,51 +171,18 @@ SCIAM_FALLBACK_CATALOG = [
     }
 ]
 
-# Curated High-Availability Knowledge Catalog for Popular Bilibili Academic Collections
-BILIBILI_COLLECTIONS_CATALOG = {
-    "BV1jt411m7rn": {
-        "collection_title": "哈佛大学公开课：公正 Justice（全12集官方精校完整版）",
-        "author": "Michael J. Sandel · Harvard University",
-        "university": "Harvard University",
-        "cover": "/assets/scenes/banner_harvard_series.jpg",
-        "total_episodes": 12,
-        "desc": "哈佛大学著名政治哲学公开课，迈克尔·桑德尔教授主讲，系统探讨功利主义、自由主义、康德义务论、罗尔斯正义论与古典目的论。",
-        "episodes": [
-            {"page": 1, "title": "第1集 谋杀的道德侧面 (The Moral Side of Murder / Trolley Dilemma)", "duration": "55 分钟", "url": "https://www.bilibili.com/video/BV1jt411m7rn?p=1"},
-            {"page": 2, "title": "第2集 给生命标价 (Putting a Price on Life / Utilitarianism)", "duration": "55 分钟", "url": "https://www.bilibili.com/video/BV1jt411m7rn?p=2"},
-            {"page": 3, "title": "第3集 自由选择 (Free to Choose / Who Owns Me?)", "duration": "55 分钟", "url": "https://www.bilibili.com/video/BV1jt411m7rn?p=3"},
-            {"page": 4, "title": "第4集 这片土地是我的 (This Land is My Land / Consenting Adults)", "duration": "55 分钟", "url": "https://www.bilibili.com/video/BV1jt411m7rn?p=4"},
-            {"page": 5, "title": "第5集 雇佣枪手 (Hired Guns? / For Sale: Motherhood)", "duration": "55 分钟", "url": "https://www.bilibili.com/video/BV1jt411m7rn?p=5"},
-            {"page": 6, "title": "第6集 注意你的动机 (Mind Your Motive / Kant's Categorical Imperative)", "duration": "55 分钟", "url": "https://www.bilibili.com/video/BV1jt411m7rn?p=6"},
-            {"page": 7, "title": "第7集 谎言的教训 (A Lesson in Lying / A Deal is a Deal)", "duration": "55 分钟", "url": "https://www.bilibili.com/video/BV1jt411m7rn?p=7"},
-            {"page": 8, "title": "第8集 什么是公平的起点 (What's a Fair Start? / Rawls' Veil of Ignorance)", "duration": "55 分钟", "url": "https://www.bilibili.com/video/BV1jt411m7rn?p=8"},
-            {"page": 9, "title": "第9集 辩论平权行动 (Debating Affirmative Action / What's the Purpose?)", "duration": "55 分钟", "url": "https://www.bilibili.com/video/BV1jt411m7rn?p=9"},
-            {"page": 10, "title": "第10集 好公民 (The Good Citizen / Aristotle's Telos)", "duration": "55 分钟", "url": "https://www.bilibili.com/video/BV1jt411m7rn?p=10"},
-            {"page": 11, "title": "第11集 忠诚的边界 (The Claims of Community / Where Our Loyalty Lies)", "duration": "55 分钟", "url": "https://www.bilibili.com/video/BV1jt411m7rn?p=11"},
-            {"page": 12, "title": "第12集 辩论同性婚姻 (Debating Same-sex Marriage / The Good Life)", "duration": "55 分钟", "url": "https://www.bilibili.com/video/BV1jt411m7rn?p=12"}
-        ]
-    },
-    "BV1xx411c7mD": {
-        "collection_title": "耶鲁大学公开课：古希腊历史与古代哲学（全10集）",
-        "author": "Donald Kagan · Yale University",
-        "university": "Yale University",
-        "cover": "/assets/scenes/scene_theatre.jpg",
-        "total_episodes": 10,
-        "desc": "耶鲁大学古希腊与古典哲学系列研讨课，深入柏拉图《理想国》、修昔底德《伯罗奔尼撒战争史》与苏格拉底对话录。",
-        "episodes": [
-            {"page": 1, "title": "第1集 导论与古代城邦 (Introduction to Ancient Polis)", "duration": "48 分钟", "url": "https://www.bilibili.com/video/BV1xx411c7mD?p=1"},
-            {"page": 2, "title": "第2集 黑暗时代与荷马史诗 (The Dark Ages and Homer)", "duration": "50 分钟", "url": "https://www.bilibili.com/video/BV1xx411c7mD?p=2"},
-            {"page": 3, "title": "第3集 斯巴达政体与城邦律法 (The Spartan Constitution)", "duration": "52 分钟", "url": "https://www.bilibili.com/video/BV1xx411c7mD?p=3"},
-            {"page": 4, "title": "第4集 雅典民主制的起源 (The Rise of Athenian Democracy)", "duration": "49 分钟", "url": "https://www.bilibili.com/video/BV1xx411c7mD?p=4"},
-            {"page": 5, "title": "第5集 希波战争的转折 (The Persian Wars)", "duration": "51 分钟", "url": "https://www.bilibili.com/video/BV1xx411c7mD?p=5"},
-            {"page": 6, "title": "第6集 伯里克利时代与帝国繁荣 (Periclean Athens)", "duration": "53 分钟", "url": "https://www.bilibili.com/video/BV1xx411c7mD?p=6"},
-            {"page": 7, "title": "第7集 伯罗奔尼撒战争爆发 (The Peloponnesian War Begins)", "duration": "47 分钟", "url": "https://www.bilibili.com/video/BV1xx411c7mD?p=7"},
-            {"page": 8, "title": "第8集 米洛斯对话与现实主义 (The Melian Dialogue)", "duration": "52 分钟", "url": "https://www.bilibili.com/video/BV1xx411c7mD?p=8"},
-            {"page": 9, "title": "第9集 西西里远征的溃败 (The Sicilian Expedition)", "duration": "54 分钟", "url": "https://www.bilibili.com/video/BV1xx411c7mD?p=9"},
-            {"page": 10, "title": "第10集 苏格拉底的审判与哲学反思 (The Trial of Socrates)", "duration": "55 分钟", "url": "https://www.bilibili.com/video/BV1xx411c7mD?p=10"}
-        ]
-    }
-}
+# The curated Bilibili "knowledge graph" catalog that used to live here was
+# FABRICATED and has been deleted. Verified with yt-dlp on 2026-09-21:
+#
+#   catalog said: BV1jt411m7rn = "哈佛大学公开课：公正 Justice（全12集官方精校完整版）"
+#   reality:      BV1jt411m7rn = "【fl原创音乐】 Unreal Rainbow 不知道做的是什么鬼.."
+#                                by 冰之龙晶, 3:12, 271 views  (a music video)
+#
+# It also presented 12 invented "episodes" pointing at ?p=1..12 of that video, and
+# the UI told users to paste that BV id as the example. Any real metadata now
+# comes from yt-dlp (see ytdlp_metadata / ytdlp_playlist); when nothing can be
+# fetched the caller reports the BV id and says so, instead of inventing a title.
+
 
 def parse_srt_to_transcript(srt_text):
     """Parses SRT format into timestamped text [MM:SS] Dialogue."""
@@ -309,226 +324,235 @@ def fetch_scientific_american_info(url):
         **_transcript_fields(transcript, transcript_source or "fetched"),
     }
 
-def fetch_bilibili_video_info(url_or_bvid):
-    """
-    Tier 2 Resolver: Bilibili
-    Fetches Bilibili video metadata, audio streams, and CC subtitles.
-    """
-    m = re.search(r"(BV[0-9A-Za-z]{10})", url_or_bvid)
+def _bili_target(url_or_bvid):
+    """(bvid, canonical_url, page_number) for a Bilibili link or a bare BV id."""
+    m = re.search(r"(BV[0-9A-Za-z]{10})", str(url_or_bvid))
     if not m:
-        return None
+        return "", "", 1
     bvid = m.group(1)
-    api_url = f"https://api.bilibili.com/x/web-interface/view?bvid={bvid}"
+    page = 1
+    pm = re.search(r"[?&]p=(\d+)", str(url_or_bvid))
+    if pm:
+        page = max(1, int(pm.group(1)))
+    url = "https://www.bilibili.com/video/%s" % bvid
+    if page > 1:
+        url += "?p=%d" % page
+    return bvid, url, page
+
+
+def _bili_api_view(bvid):
+    """Official view API. Returns {} when Bilibili risk-controls us (HTTP 412)."""
+    api_url = "https://api.bilibili.com/x/web-interface/view?bvid=%s" % bvid
     req = urllib.request.Request(api_url, headers={
         "User-Agent": USER_AGENT,
         "Referer": "https://www.bilibili.com",
-        "Cookie": "buvid3=F8B7B618-6A47-19B4-0994-39908FEE998188198infoc; b_nut=1700000000;"
+        "Cookie": "buvid3=F8B7B618-6A47-19B4-0994-39908FEE998188198infoc;",
     })
-    
-    title = f"Bilibili 经典公开课深度精讲 ({bvid})"
-    author = "Bilibili 学术名师"
-    cover = "/assets/scenes/banner_harvard_series.jpg"
-    duration_str = "45 分钟"
-    transcript = ""
-
     try:
         with urllib.request.urlopen(req, timeout=8) as resp:
-            res = json.loads(resp.read().decode("utf-8"))
-            if res.get("code") == 0:
-                data = res.get("data", {})
-                title = data.get("title", title)
-                cover = data.get("pic", cover)
-                sec = data.get("duration", 0)
-                duration_str = f"{sec // 60} 分钟" if sec else "45 分钟"
-                author = data.get("owner", {}).get("name", author)
-                
-                subtitles_list = data.get("subtitle", {}).get("subtitles", [])
-                if subtitles_list:
-                    chosen = subtitles_list[0]
-                    for s in subtitles_list:
-                        if "en" in s.get("lan", "") or "英" in s.get("lan_doc", ""):
-                            chosen = s
-                            break
-                    sub_url = chosen.get("subtitle_url", "")
-                    transcript = parse_bilibili_subtitles(sub_url)
-    except Exception as e:
-        print(f"[WARN] Bilibili API error: {e}")
+            if resp.status != 200:
+                return {}
+            body = resp.read()
+            if not body.lstrip().startswith(b"{"):
+                return {}
+            res = json.loads(body.decode("utf-8"))
+            return res.get("data", {}) if res.get("code") == 0 else {}
+    except Exception as exc:  # noqa: BLE001 - a 412 risk-control block lands here
+        print("[WARN] Bilibili view API unavailable (%s); relying on yt-dlp"
+              % type(exc).__name__)
+        return {}
 
-    # No CC subtitles means no transcript. Returning invented lecture text here
-    # is what produced decks whose words never occur in the lecture.
-    safe_title = re.sub(r'[^a-zA-Z0-9_\u4e00-\u9fa5-]', '_', title).strip('_')[:40]
-    target_bili_url = f"https://www.bilibili.com/video/{bvid}"
-    stream_download_url = f"/api/media/stream-download?url={urllib.parse.quote(target_bili_url)}&filename={safe_title}.mp3&media_type=audio&platform=bilibili"
+
+def fetch_bilibili_video_info(url_or_bvid):
+    """Real Bilibili metadata and real subtitles. Neither is ever invented.
+
+    api.bilibili.com/x/web-interface/view answers HTTP 412 (risk control) from
+    this host, which is why the previous implementation fell through to a
+    hardcoded title - "Bilibili 经典公开课深度精讲 (BVxxx)" - a fabricated
+    description of whatever the video actually was (the reported bug: a Planet
+    Money podcast episode came back looking like a Harvard lecture). yt-dlp reads
+    Bilibili fine from here, so it is the primary source and the API is a
+    fallback. When both fail, the caller gets the BV id and an explicit notice.
+    """
+    bvid, target, page = _bili_target(url_or_bvid)
+    if not bvid:
+        return None
+
+    meta = ytdlp_metadata(target)
+    source = "yt-dlp" if meta else ""
+    api = {} if meta else _bili_api_view(bvid)
+    if api:
+        source = "bilibili_api"
+
+    title = (meta.get("title") or api.get("title") or "").strip()
+    author = (meta.get("uploader") or api.get("owner", {}).get("name") or "").strip()
+    cover = (meta.get("thumbnail") or api.get("pic") or "").strip()
+    seconds = meta.get("duration") or api.get("duration") or 0
+    duration_str = ("%d 分钟" % (seconds // 60)) if seconds else ""
+
+    transcript, tsrc = ytdlp_transcript(target)
+    if not transcript:
+        subs = (api.get("subtitle") or {}).get("subtitles") or []
+        chosen = None
+        for s in subs:
+            if "en" in s.get("lan", "") or "英" in s.get("lan_doc", ""):
+                chosen = s
+                break
+        chosen = chosen or (subs[0] if subs else None)
+        if chosen:
+            transcript = parse_bilibili_subtitles(chosen.get("subtitle_url", ""))
+            tsrc = "bilibili_cc" if transcript else ""
+
+    safe_title = re.sub(r"[^a-zA-Z0-9_\u4e00-\u9fa5-]", "_",
+                        title or bvid).strip("_")[:40]
+    stream_download_url = (
+        "/api/media/stream-download?url=%s&filename=%s.mp3"
+        "&media_type=audio&platform=bilibili"
+        % (urllib.parse.quote(target), safe_title))
 
     return {
         "platform": "bilibili",
-        "platform_name": "Bilibili (哔哩哔哩公开课)",
+        "platform_name": "Bilibili (哔哩哔哩)",
         "platform_icon": "fa-brands fa-bilibili",
         "video_id": bvid,
-        "title": title,
-        "author": author,
-        "cover": cover,
-        "duration": duration_str,
+        # Either the real title or the id itself - never a descriptive guess.
+        "title": title or bvid,
+        "author": author or "未知 UP 主",
+        "cover": cover or "/assets/scenes/banner_harvard_series.jpg",
+        "duration": duration_str or "时长未知",
         "media_type": "audio",
-        "direct_media_url": target_bili_url,
+        "direct_media_url": target,
         "download_url": stream_download_url,
-        "tier_used": "Tier 2: Bilibili 官方 API 与多协议游客防爬穿透",
+        "page": page,
+        "metadata_source": source or "unavailable",
+        "metadata_notice": "" if source else
+        "未能获取该视频的真实标题与作者（B 站接口风控、yt-dlp 亦失败），"
+        "因此只显示 BV 号，不猜测视频内容。",
+        "tier_used": "Tier 2: yt-dlp 元数据/字幕解析（官方 API 风控时回退）",
         "status": "ready",
-        **_transcript_fields(transcript, "bilibili_cc"),
+        **_transcript_fields(transcript, tsrc),
     }
 
+
 def detect_bilibili_collection(url_or_bvid):
+    """Is this link a multi-part video or a season? Answered with real data only.
+
+    yt-dlp's flat playlist gives the real entry titles and urls; the official API
+    (ugc_season / pages) is the fallback. There is deliberately NO curated
+    fallback catalog: the one that used to exist here was fabricated, and the UI
+    advertised its BV id as the paste-me example.
     """
-    Detects if a single Bilibili video belongs to a multi-part collection/series.
-    Inspects live API for ugc_season or multi-page (pages > 1).
-    Falls back to high-availability academic knowledge graph catalog.
-    """
-    m = re.search(r"(BV[0-9A-Za-z]{10})", str(url_or_bvid))
-    if not m:
-        return {"success": False, "is_collection": False, "error": "未能在链接中找到有效的 Bilibili BV号"}
-    
-    bvid = m.group(1)
-    api_url = f"https://api.bilibili.com/x/web-interface/view?bvid={bvid}"
-    req = urllib.request.Request(api_url, headers={
-        "User-Agent": USER_AGENT,
-        "Referer": "https://www.bilibili.com",
-        "Cookie": "buvid3=F8B7B618-6A47-19B4-0994-39908FEE998188198infoc;"
-    })
+    bvid, target, page = _bili_target(url_or_bvid)
+    if not bvid:
+        return {"success": False, "is_collection": False,
+                "error": "未能在链接中找到有效的 Bilibili BV号"}
 
-    # 1. Try Live Bilibili View API
-    try:
-        with urllib.request.urlopen(req, timeout=7) as resp:
-            res = json.loads(resp.read().decode("utf-8"))
-            if res.get("code") == 0:
-                data = res.get("data", {})
-                title = data.get("title", f"Bilibili 视频 ({bvid})")
-                author = data.get("owner", {}).get("name", "Bilibili 主讲人")
-                cover = data.get("pic", "/assets/scenes/banner_harvard_series.jpg")
-
-                # A. Check ugc_season
-                ugc = data.get("ugc_season")
-                if ugc and ugc.get("sections"):
-                    season_title = ugc.get("title") or title
-                    all_eps = []
-                    p_idx = 1
-                    for sec in ugc.get("sections", []):
-                        for ep in sec.get("episodes", []):
-                            ep_title = ep.get("title", f"第{p_idx}集")
-                            ep_bvid = ep.get("bvid", bvid)
-                            dur_sec = ep.get("arc", {}).get("duration", 0)
-                            dur_str = f"{dur_sec // 60} 分钟" if dur_sec else "45 分钟"
-                            all_eps.append({
-                                "page": p_idx,
-                                "title": ep_title,
-                                "bvid": ep_bvid,
-                                "duration": dur_str,
-                                "cover": ep.get("arc", {}).get("pic", cover),
-                                "url": f"https://www.bilibili.com/video/{ep_bvid}",
-                                "platform": "bilibili"
-                            })
-                            p_idx += 1
-                    
-                    if len(all_eps) > 1:
-                        return {
-                            "success": True,
-                            "is_collection": True,
-                            "collection_type": "ugc_season",
-                            "collection_title": season_title,
-                            "total_episodes": len(all_eps),
-                            "author": author,
-                            "cover": cover,
-                            "bvid": bvid,
-                            "episodes": all_eps,
-                            "tier_used": "Tier 2: 哔哩哔哩官方 UGC Season 合集解析引擎"
-                        }
-
-                # B. Check pages (multi-part video P1..Pn)
-                pages = data.get("pages", [])
-                if len(pages) > 1:
-                    all_eps = []
-                    for p in pages:
-                        p_num = p.get("page", 1)
-                        p_part = p.get("part", "").strip() or f"第{p_num}部分"
-                        dur_sec = p.get("duration", 0)
-                        dur_str = f"{dur_sec // 60} 分钟" if dur_sec else "45 分钟"
-                        all_eps.append({
-                            "page": p_num,
-                            "title": f"第{p_num}集 {p_part}",
-                            "bvid": bvid,
-                            "duration": dur_str,
-                            "cover": cover,
-                            "url": f"https://www.bilibili.com/video/{bvid}?p={p_num}",
-                            "platform": "bilibili"
-                        })
-
-                    return {
-                        "success": True,
-                        "is_collection": True,
-                        "collection_type": "multi_page",
-                        "collection_title": title,
-                        "total_episodes": len(all_eps),
-                        "author": author,
-                        "cover": cover,
-                        "bvid": bvid,
-                        "episodes": all_eps,
-                        "tier_used": "Tier 2: 哔哩哔哩官方 Multi-page 分P合集解析引擎"
-                    }
-    except Exception as e:
-        print(f"[WARN] Live Bilibili collection detect warning: {e}, checking curated fallback catalog...")
-
-    # 2. Resilient Knowledge Catalog Fallback
-    if bvid in BILIBILI_COLLECTIONS_CATALOG:
-        cat = BILIBILI_COLLECTIONS_CATALOG[bvid]
+    entries = ytdlp_playlist(target)
+    if len(entries) > 1:
+        eps = []
+        for i, e in enumerate(entries, 1):
+            ep_url = e.get("url") or ""
+            if ep_url and not ep_url.startswith("http"):
+                ep_url = "https://www.bilibili.com/video/%s" % ep_url
+            if not ep_url:
+                ep_url = target if i == 1 else "%s?p=%d" % (target, i)
+            dur = e.get("duration") or 0
+            eps.append({
+                "page": i,
+                "title": (e.get("title") or "第%d集" % i).strip(),
+                "bvid": e.get("id") or bvid,
+                "duration": ("%d 分钟" % (dur // 60)) if dur else "",
+                "url": ep_url,
+                "platform": "bilibili",
+            })
         return {
             "success": True,
             "is_collection": True,
-            "collection_type": "curated_catalog",
-            "collection_title": cat["collection_title"],
-            "total_episodes": cat["total_episodes"],
-            "author": cat["author"],
-            "university": cat.get("university", "Global Academic"),
-            "cover": cat["cover"],
-            "desc": cat.get("desc", ""),
+            "collection_type": "multi_part",
+            "collection_title": (entries[0].get("playlist_title")
+                                 or entries[0].get("title") or bvid),
+            "total_episodes": len(eps),
+            "author": entries[0].get("uploader") or "",
             "bvid": bvid,
-            "episodes": cat["episodes"],
-            "tier_used": "Tier 3: 经典名校公开课全景知识图谱合集库 (免反爬秒级识别)"
+            "episodes": eps,
+            "tier_used": "Tier 2: yt-dlp 分P/合集真实展开",
         }
 
-    # 3. If neither, check if any catalog entry matches url
-    for cat_bvid, cat in BILIBILI_COLLECTIONS_CATALOG.items():
-        if cat_bvid in str(url_or_bvid):
+    # Fallback: the official API can still describe seasons/multi-page videos.
+    api = _bili_api_view(bvid)
+    pages = api.get("pages") or []
+    if len(pages) > 1:
+        eps = []
+        for p in pages:
+            p_num = p.get("page", 1)
+            part = (p.get("part") or "").strip() or "第%d部分" % p_num
+            dur = p.get("duration", 0)
+            eps.append({
+                "page": p_num,
+                "title": "第%d集 %s" % (p_num, part),
+                "bvid": bvid,
+                "duration": ("%d 分钟" % (dur // 60)) if dur else "",
+                "url": "https://www.bilibili.com/video/%s?p=%d" % (bvid, p_num),
+                "platform": "bilibili",
+            })
+        return {
+            "success": True, "is_collection": True, "collection_type": "multi_page",
+            "collection_title": api.get("title") or bvid,
+            "total_episodes": len(eps),
+            "author": api.get("owner", {}).get("name") or "",
+            "cover": api.get("pic") or "",
+            "bvid": bvid, "episodes": eps,
+            "tier_used": "Tier 2: 哔哩哔哩官方 Multi-page 分P解析",
+        }
+    ugc = api.get("ugc_season") or {}
+    if ugc.get("sections"):
+        eps, idx = [], 1
+        for sec in ugc.get("sections", []):
+            for ep in sec.get("episodes", []):
+                ep_bvid = ep.get("bvid", bvid)
+                dur = ep.get("arc", {}).get("duration", 0)
+                eps.append({
+                    "page": idx,
+                    "title": (ep.get("title") or "第%d集" % idx).strip(),
+                    "bvid": ep_bvid,
+                    "duration": ("%d 分钟" % (dur // 60)) if dur else "",
+                    "url": "https://www.bilibili.com/video/%s" % ep_bvid,
+                    "platform": "bilibili",
+                })
+                idx += 1
+        if len(eps) > 1:
             return {
-                "success": True,
-                "is_collection": True,
-                "collection_type": "curated_catalog",
-                "collection_title": cat["collection_title"],
-                "total_episodes": cat["total_episodes"],
-                "author": cat["author"],
-                "university": cat.get("university", "Global Academic"),
-                "cover": cat["cover"],
-                "desc": cat.get("desc", ""),
-                "bvid": cat_bvid,
-                "episodes": cat["episodes"],
-                "tier_used": "Tier 3: 经典名校公开课全景知识图谱合集库 (免反爬秒级识别)"
+                "success": True, "is_collection": True,
+                "collection_type": "ugc_season",
+                "collection_title": ugc.get("title") or api.get("title") or bvid,
+                "total_episodes": len(eps),
+                "author": api.get("owner", {}).get("name") or "",
+                "cover": api.get("pic") or "",
+                "bvid": bvid, "episodes": eps,
+                "tier_used": "Tier 2: 哔哩哔哩官方 UGC Season 合集解析",
             }
 
-    # Standalone single video
+    info = fetch_bilibili_video_info(target) or {}
     return {
-        "success": True,
-        "is_collection": False,
-        "collection_type": "single",
-        "collection_title": f"Bilibili 视频 ({bvid})",
+        "success": True, "is_collection": False, "collection_type": "single",
+        "collection_title": info.get("title") or bvid,
         "total_episodes": 1,
-        "author": "Bilibili 主讲人",
-        "cover": "/assets/scenes/banner_harvard_series.jpg",
+        "author": info.get("author") or "",
+        "cover": info.get("cover") or "",
         "bvid": bvid,
+        "duration": info.get("duration") or "",
+        "has_subtitles": bool(info.get("has_subtitles")),
+        "transcript_source": info.get("transcript_source", "unavailable"),
+        "subtitle_notice": info.get("subtitle_notice", ""),
+        "metadata_source": info.get("metadata_source", "unavailable"),
         "episodes": [{
-            "page": 1,
-            "title": f"Bilibili 视频 ({bvid})",
-            "duration": "45 分钟",
-            "url": f"https://www.bilibili.com/video/{bvid}"
+            "page": page,
+            "title": info.get("title") or bvid,
+            "bvid": bvid,
+            "duration": info.get("duration") or "",
+            "url": target,
         }],
-        "tier_used": "Tier 2: 单视频独立内容（未在当前页面检测到更多分集）"
+        "tier_used": "Tier 2: 单视频（yt-dlp 已校验，无分P/合集）",
     }
 
 def fetch_youtube_video_info(url):

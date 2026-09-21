@@ -936,7 +936,7 @@
         <div class="space-y-1.5">
           <label class="font-bold text-slate-700">输入音视频链接 (Bilibili BV号 / YouTube 链接)：</label>
           <div class="flex flex-wrap sm:flex-nowrap gap-2">
-            <input id="modal-import-url" type="text" placeholder="例如：https://www.bilibili.com/video/BV1jt411m7rn 或 YouTube 链接" class="flex-1 px-3 py-2 rounded-xl border border-slate-300">
+            <input id="modal-import-url" type="text" placeholder="粘贴一个链接，例如 https://www.bilibili.com/video/你的BV号 或 YouTube 链接" class="flex-1 px-3 py-2 rounded-xl border border-slate-300">
             <button onclick="detectAndFillCollectionInfo()" id="btn-detect-collection" class="px-3.5 py-2 rounded-xl bg-purple-600 hover:bg-purple-700 text-white font-bold flex items-center gap-1.5 shadow-sm transition whitespace-nowrap" title="单个视频链接自动识别关联的完整多P/合集信息与分集列表">
               <i class="fa-solid fa-layer-group text-xs"></i>
               <span>🌟 自动识别整部合集</span>
@@ -1091,14 +1091,8 @@
           <span class="text-[11px] text-slate-400">支持一行一个链接</span>
         </label>
         <div class="flex flex-wrap gap-2">
-          <button type="button" onclick="insertBatchPresetUrls('bili_single')" class="px-2.5 py-1 rounded-lg bg-amber-50 hover:bg-amber-100 text-amber-800 text-xs font-bold border border-amber-300 transition flex items-center gap-1.5 shadow-xs" title="单个B站链接自动嗅探整部合集12集">
-            <i class="fa-solid fa-wand-magic-sparkles text-amber-600"></i> 🌟 B站单链接自动识别全集 (12集)
-          </button>
           <button type="button" onclick="insertBatchPresetUrls('sciam')" class="px-2.5 py-1 rounded-lg bg-emerald-50 hover:bg-emerald-100 text-emerald-800 text-xs font-semibold border border-emerald-200 transition flex items-center gap-1.5">
             <i class="fa-solid fa-podcast text-emerald-600"></i> 科学美国人 3连
-          </button>
-          <button type="button" onclick="insertBatchPresetUrls('bilibili')" class="px-2.5 py-1 rounded-lg bg-sky-50 hover:bg-sky-100 text-sky-800 text-xs font-semibold border border-sky-200 transition flex items-center gap-1.5">
-            <i class="fa-brands fa-bilibili text-sky-500"></i> B站公开课 (Ep01/02)
           </button>
           <button type="button" onclick="insertBatchPresetUrls('youtube')" class="px-2.5 py-1 rounded-lg bg-rose-50 hover:bg-rose-100 text-rose-800 text-xs font-semibold border border-rose-200 transition flex items-center gap-1.5">
             <i class="fa-brands fa-youtube text-rose-600"></i> YouTube 桑德尔研学会
@@ -1120,15 +1114,15 @@
             <span class="px-2 py-0.2 rounded-md bg-amber-200 text-amber-900 font-bold text-[10px]">智能嗅探</span>
           </div>
           <p class="text-[11px] text-amber-900 leading-relaxed">
-            B站多P合集<b>只需粘贴合集中【任意一集的链接或 BV 号】</b>（例如 <code class="bg-white/80 px-1 py-0.5 rounded border border-amber-300 text-amber-950 font-mono text-[10px]">BV1jt411m7rn</code>），系统将自动识别并展开该合集的所有分集（如全部 12 集）进行批量解析与流式原声下载！
+            B站多P视频/合集<b>只需粘贴其中【任意一集的链接或 BV 号】</b>，系统会用 yt-dlp 读取真实的分集列表并自动展开，无需逐集复制。识别结果里的标题与 UP 主都来自视频本身；若某视频没有字幕，系统会明确告知"未获取到真实字幕"，不会用编造文本冒充原文。
           </p>
         </div>
       </div>
 
       <!-- Multi-line URL Input -->
       <div class="space-y-2">
-        <textarea id="batch-urls-input" rows="4" class="w-full px-4 py-3 rounded-2xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-emerald-600 font-mono text-xs text-slate-800 placeholder:text-slate-400 shadow-xs" placeholder="在此粘贴多个音视频链接（每行一个），例如：
-https://www.bilibili.com/video/BV1jt411m7rn
+        <textarea id="batch-urls-input" rows="4" class="w-full px-4 py-3 rounded-2xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-emerald-600 font-mono text-xs text-slate-800 placeholder:text-slate-400 shadow-xs" placeholder="在此粘贴音视频链接（每行一个），例如：
+https://www.bilibili.com/video/你的BV号
 https://www.scientificamerican.com/podcast/episode/the-science-of-friendship-and-loneliness/
 https://www.youtube.com/watch?v=kBdfcR-8hEY
 https://traffic.megaphone.fm/SAM8705727348.mp3"></textarea>
@@ -1288,10 +1282,12 @@ https://traffic.megaphone.fm/SAM8705727348.mp3"></textarea>
       const modal = document.getElementById('modal-batch-media');
       if (modal) {
         modal.classList.remove('hidden');
+        // Deliberately does NOT pre-fill the box with sample links. It used to,
+        // and that is exactly what broke a user: their freshly pasted link
+        // became the SECOND line, while "smart detect" only read the first line,
+        // so they got a completely different course back.
         const input = document.getElementById('batch-urls-input');
-        if (input && !input.value.trim()) {
-          insertBatchPresetUrls('sciam');
-        }
+        if (input) input.focus();
       }
     }
 
@@ -1304,18 +1300,15 @@ https://traffic.megaphone.fm/SAM8705727348.mp3"></textarea>
     function insertBatchPresetUrls(type) {
       const input = document.getElementById('batch-urls-input');
       if (!input) return;
-      if (type === 'bili_single') {
-        input.value = 'https://www.bilibili.com/video/BV1jt411m7rn';
-      } else if (type === 'sciam') {
+      // Only verified-real sample URLs are offered here. The old Bilibili
+      // presets inserted a BV id that this app described as the Harvard Justice
+      // collection but which is actually an unrelated music video, so those
+      // presets were removed rather than re-labelled.
+      if (type === 'sciam') {
         input.value = [
           'https://www.scientificamerican.com/podcast/episode/the-science-of-friendship-and-loneliness/',
           'https://www.scientificamerican.com/podcast/episode/why-the-human-brain-craves-music-and-rhythm/',
           'https://traffic.megaphone.fm/SAM8705727348.mp3'
-        ].join('\n');
-      } else if (type === 'bilibili') {
-        input.value = [
-          'https://www.bilibili.com/video/BV1jt411m7rn',
-          'https://www.bilibili.com/video/BV1Zs411d7o8'
         ].join('\n');
       } else if (type === 'youtube') {
         input.value = [
@@ -1325,7 +1318,6 @@ https://traffic.megaphone.fm/SAM8705727348.mp3"></textarea>
       } else if (type === 'mixed') {
         input.value = [
           'https://www.scientificamerican.com/podcast/episode/the-science-of-friendship-and-loneliness/',
-          'https://www.bilibili.com/video/BV1jt411m7rn',
           'https://www.youtube.com/watch?v=kBdfcR-8hEY'
         ].join('\n');
       }
@@ -1336,8 +1328,18 @@ https://traffic.megaphone.fm/SAM8705727348.mp3"></textarea>
       if (!input) return;
       let text = input.value.trim();
       if (!text) {
-        text = 'https://www.bilibili.com/video/BV1jt411m7rn';
-        input.value = text;
+        alert('请先粘贴一个视频链接或 BV 号，再点"立即测试嗅探展开"。');
+        return;
+      }
+      // Only the link the user just pasted may be inspected. This used to read
+      // the FIRST line and silently fall back to a hardcoded BV id, so a stale
+      // sample link above the user's own link hijacked the whole detection.
+      const lines = text.split('\n').map(l => l.trim()).filter(Boolean);
+      if (lines.length > 1) {
+        const chosen = lines[lines.length - 1];
+        input.value = chosen;
+        alert('检测到 ' + lines.length + ' 个链接，只保留最后粘贴的这一个进行识别：\n' + chosen);
+        text = chosen;
       }
       const firstLine = text.split('\n')[0].trim();
       
@@ -1377,7 +1379,7 @@ https://traffic.megaphone.fm/SAM8705727348.mp3"></textarea>
 
       const url = urlInput ? urlInput.value.trim() : '';
       if (!url) {
-        alert('请先输入 Bilibili 视频链接或 BV 号（例如：https://www.bilibili.com/video/BV1jt411m7rn）');
+        alert('请先输入一个 Bilibili 视频链接或 BV 号（例如 https://www.bilibili.com/video/BVxxxxxxxxxx）');
         return;
       }
 
@@ -1504,7 +1506,7 @@ https://traffic.megaphone.fm/SAM8705727348.mp3"></textarea>
                 </span>
               </div>
               <div class="text-[11px] text-slate-600 mt-0.5">
-                课程合集：<b>${c.title}</b>（BVID: ${c.bvid || 'BV1jt411m7rn'}）· 已自动展开各集原声与独立下载通道
+                课程合集：<b>${c.title}</b>${c.bvid ? '（BVID: ' + c.bvid + '）' : ''}· 已自动展开各集原声与独立下载通道
               </div>
             </div>
           </div>
