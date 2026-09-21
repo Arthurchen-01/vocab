@@ -105,11 +105,18 @@
 │   ├── 兼容 `token;model` 形式的网关凭据（只取分号前那段作为 key）
 │   └── 推理模型适配：`finish_reason=length` / 空正文自动翻倍重试，截断结果**不写缓存**
 │
+├── 来源解析 (providers/)  —— 可插拔、按能力组链、有实测健康度
+│   ├── yt-dlp / you-get / B 站 CC / 直链媒体 / 字幕文件 / 科学美国人
+│   ├── **本地 faster-whisper 兜底**：完全没有字幕的来源（如 B 站）也能出逐字稿，
+│   │   并标注 `transcript_source=whisper_asr:<model>` + `is_machine_transcript`
+│   ├── 策略开关：`quality=fast|best`、`allow_asr`、`asr_model`、`max_minutes`、`cookies_file`
+│   └── 详见 [docs/SOURCE_PROVIDERS.md](docs/SOURCE_PROVIDERS.md)
+│
 ├── 质量流水线 (tools/quality_pipeline/)
 │   ├── 采集 → 断句 → 选词 → 绑定 → 切媒体 → 翻译 → 释义 → 落盘 → 词库 → 部署 → 线上验收
 │   ├── 编排器 `deliver.py`（粘贴一个链接即可跑完一集并出验收报告）
 │   ├── 门禁：`docx_conformance`（30 项）、`export_conformance`（389 项）、
-│   │         `no_fabrication_gate`（反造假 15 项）
+│   │         `no_fabrication_gate`（反造假 15 项）、`provider_matrix_gate`（来源链路 26 项）
 │   └── 客户端：`stage_client.py`（跑单个阶段）、`deploy_app.py`（带备份的部署）、
 │             `local_smoke.py`（部署前本地验收）
 │
