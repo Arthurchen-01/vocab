@@ -6,6 +6,77 @@
 
 ---
 
+## [1.1.0] - 2026-09-21
+
+> 版本跨度：`v1.0.0` → `v1.1.0`（2 个提交）
+> 基线提交：`448ea08`（v1.0.0）→ 本次发布提交
+> 代码量：**19 个文件，+1,497 / −56 行**（其中 12 个是新增的 provider 模块）
+
+### 上一版（v1.0.0）的状态 —— 改之前是什么样
+
+| 文件 / 目录 | v1.0.0 时的状态 |
+| :--- | :--- |
+| `downloader.py` | 解析是一条写死的 `if/elif` 链；"Tier 1..4" **只是文案**。加一个新工具必须改这个核心文件；无法按需求在"快/准"之间切换；降级顺序是人工写死的，不是实测出来的 |
+| 字幕来源 | **只有 yt-dlp 一条路**。实测：YouTube 有人工+自动字幕，**Bilibili 完全没有字幕**（`subs=NA`、无自动字幕），官方 API 又被 **HTTP 412** 风控挡住 → 粘贴 B 站链接**必然**走到"没有真实字幕"的报错，等于 B 站这条线根本不通 |
+| `tools/quality_pipeline/s0_acquire_media.py` | 只从 yt-dlp 抓字幕；没有字幕就**整集交付不了**，没有任何兜底 |
+| 转写能力 | 无。服务器上也没有任何 ASR 依赖 |
+| 可观测性 | 无。不知道"哪个站用哪个工具最灵"，也无从按实测数据排序 |
+| 备份 | 名义上有"多级容灾"，实际只有 yt-dlp 一个真实可用的下载器 |
+
+### 本次改动的文件 —— 改了什么
+
+| 文件 | 类型 | 改动行数 | 改了什么 |
+| :--- | :--- | ---: | :--- |
+| `providers/base.py` | **新** | 96 | Provider 协议 + 能力常量（metadata/media/subtitles/asr）+ 注册表；依赖缺失只摘掉该 provider，不炸整条链 |
+| `providers/resolver.py` | **新** | 187 | 按能力组链 → 按**实测健康度**排序 → 合并各 provider 的部分结果 → 记录健康度；ASR 只走显式兜底（不进候选链） |
+| `providers/policy.py` | **新** | 50 | 按请求/按用户的开关（数据不是分支）：`quality=fast\|best`、`allow_asr`、`asr_model`、`asr_max_minutes`、`max_minutes`、`cookies_file` |
+| `providers/health.py` | **新** | 80 | 每个 (provider, host) 的成功率与平均耗时，决定链顺序 |
+| `providers/whisper_asr.py` | **新** | 180 | **本地 faster-whisper 兜底**：下载音频→转写→标注 `whisper_asr:<model>` + `is_machine_transcript`；含 HF 镜像/Xet 规避环境 |
+| `providers/asr_runner.py` | **新** | 56 | 在 ASR venv 里跑的转写器（重依赖隔离在独立解释器） |
+| `providers/ytdlp_provider.py` | **新** | 74 | yt-dlp：YouTube/Bilibili/任意支持站点；通用站点也返回真实元数据 |
+| `providers/bilibili_cc.py` | **新** | 99 | B 站官方 CC/AI 字幕（被 412 挡时如实失败）；支持 cookie 文件 |
+| `providers/youget.py` | **新** | 95 | you-get 作为第二个下载器（中文视频站备份） |
+| `providers/direct_media.py` | **新** | 26 | 直链音视频；**不声称任何逐字稿** |
+| `providers/direct_subtitle.py` | **新** | 43 | SRT/VTT/DownSub 文本 |
+| `providers/sciam.py` | **新** | 26 | 科学美国人播客 CDN + 文章正文（标注 `article_text`） |
+| `downloader.py` | 改 | +33 / −51 | 公开函数保留、内部改为**委托**给 provider 链（`server.py` 一行未改）；媒体下载路径只要 `(metadata, media)`，不触发转写 |
+| `tools/quality_pipeline/s0_acquire_media.py` | 改 | +89 / −4 | 采集阶段增加同一个 ASR 兜底（`--no-asr` / `--asr-model`）；无字幕的来源从"交付不了"变成"可交付" |
+| `tools/quality_pipeline/provider_matrix_gate.py` | **新** | 183 | 来源链路门禁：逐条实测每个 provider 与每个策略开关（26 项） |
+| `tools/quality_pipeline/deploy_app.py` | 改 | 15 | `--files providers` 支持整目录部署 |
+| `docs/SOURCE_PROVIDERS.md` | **新** | 141 | 架构、能力矩阵、加新工具的配方、策略说明、实测结果、待办 |
+| `README.md` | 改 | +8 / −1 | 架构树补上 `providers/` 与四类门禁 |
+
+### Added
+
+- `providers/` 可插拔来源链（12 个模块）：能力声明、实测健康度排序、按需策略
+- **本地 ASR 兜底**（faster-whisper `small` int8），以及它的独立 venv 与转写器
+- `provider_matrix_gate.py`（26 项来源链路门禁）
+- `docs/SOURCE_PROVIDERS.md`（架构与配方）
+
+### Changed
+
+- `downloader.py` 从"写死的链"变成"委托给链"；`server.py` 无需改动
+- S0 采集阶段具备 ASR 兜底，`--no-asr` 可关闭
+
+### Fixed
+
+- **B 站链接此前完全无法产出词表**（无字幕 → 直接失败）；现在由本地 ASR 补齐并如实标注为机器转写
+- 门禁抓到本次改动自身的一个真 bug：`whisper_asr` 声明 `CAP_SUBTITLES` 且接受任意 URL，
+  于是混进候选链，在 `allow_asr=off` 时仍跑了 302 秒并产出逐字稿；已改为只走显式兜底
+
+### Verified（生产机实测）
+
+| 验收项 | 结果 |
+| :--- | :--- |
+| `provider_matrix_gate` | **26 passed / 0 failed** |
+| YouTube 导入路径 | 10.0s，真实字幕 `yt-dlp:srt`，1142 行，**未触发 ASR** |
+| Bilibili 导入路径（用户报告的链接） | 419.7s：`bilibili_cc:no(0.57s)` → `you-get:no(6.38s)` → `yt-dlp:ok(8.5s)` 真实标题 → `whisper_asr:ok(403s)` 逐字稿；180 段 / 1800 词 / 1.74x 实时 |
+| 媒体下载路径（只要元数据+媒体） | **9.8s，不转写**（速度保证成立） |
+| 策略 `allow_asr=off` | 不产出任何逐字稿（`source=unavailable`），且明确说明原因 |
+| ASR 空载速度 | 10.6 分钟音频 → 转写 58.8s（**10.9x 实时**）；有并发时 1.7x |
+
+---
+
 ## [1.0.0] - 2026-09-21
 
 > 版本跨度：首次打版本（此前无 tag）
