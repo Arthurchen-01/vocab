@@ -6,6 +6,49 @@
 
 ---
 
+## [1.1.1] - 2026-09-22
+
+> 版本跨度：`v1.1.0` → `v1.1.1`（1 个提交）
+> 基线提交：`006edc7`（v1.1.0）→ 本次发布提交
+> 代码量：**5 个文件，+169 / −22 行**
+
+### 上一版（v1.1.0）的状态 —— 改之前是什么样
+
+| 文件 / 目录 | v1.1.0 时的状态 |
+| :--- | :--- |
+| 下载 URL 构造 | `download_url` 里的 `filename=` 是**未编码的中文**（如 `filename=谁在为加州…mp3`）。浏览器会静默百分号编码，所以看着正常；但任何严格客户端在发请求前就 `UnicodeEncodeError` |
+| `server.py` 媒体代理 | yt-dlp 的真实媒体流解析**只对 YouTube 生效**（`if is_youtube:`）→ 粘贴 B 站链接"下载"到的是**它的 HTML 网页**，不是音频 |
+| `server.py` 媒体代理 | `Content-Disposition` 直接塞原始中文文件名 → 在 http.server 内部 latin-1 抛异常。**这正是工单里「导出合集是 nothing」的同一个缺陷**，当时的修复只落在导出端点，这个端点漏了 |
+| 下载链路验证 | **完全没有**。没有任何门禁验证过"用户点下载能不能真的拿到媒体" |
+
+### 本次改动的文件 —— 改了什么
+
+| 文件 | 类型 | 改动行数 | 改了什么 |
+| :--- | :--- | ---: | :--- |
+| `downloader.py` | 改 | +20 / −12 | 新增 `media_proxy_url()` 统一构造函数（每个组成部分都百分号编码）；7 处手拼 URL 全部改走它 |
+| `server.py` | 改 | +24 / −16 | 媒体代理的 yt-dlp 解析从"仅 YouTube"改为**除 direct 外全平台**（超时 15s→60s）；`Content-Disposition` 改用 `build_content_disposition()`（ASCII 回退 + RFC 5987 `filename*`） |
+| `providers/ytdlp_provider.py` | 改 | +6 / −4 | 走统一的 URL 构造函数 |
+| `providers/youget.py` | 改 | +2 / −4 | 同上 |
+| `tools/quality_pipeline/download_gate.py` | **新** | 138 | 下载链路门禁：跟随 `download_url` 发 Range 请求，校验状态、字节数、容器魔数，以及 URL 是否 ASCII 安全 |
+
+### Fixed
+
+- **B 站下载此前根本不通**（代理到的是网页 HTML，不是音频）
+- 下载 URL 里的中文未编码（严格客户端直接崩）
+- 媒体代理的 `Content-Disposition` 中文导致 latin-1 崩溃（工单同类缺陷的遗漏端点）
+
+### Verified（生产机实测，`download_gate.py` 18/18）
+
+| 来源 | 状态 | 实测 | 总大小 | 容器 |
+| :--- | :--- | :--- | ---: | :--- |
+| Bilibili | HTTP 206 | 1 MB / 3.8s | 10,720,262 B | m4a ✓ |
+| YouTube | HTTP 206 | 1 MB / 6.7s | 166,424,048 B | m4a ✓ |
+| 直链 mp3 | HTTP 206 | 1 MB / 5.0s | 16,694,855 B | ID3 ✓ |
+
+三者的 `download_url` 均通过"ASCII 安全"校验。
+
+---
+
 ## [1.1.0] - 2026-09-21
 
 > 版本跨度：`v1.0.0` → `v1.1.0`（2 个提交）

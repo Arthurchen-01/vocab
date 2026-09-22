@@ -1,14 +1,14 @@
 # 🏛️ VerbaLex Studio (知源思辨)
 ### 哈佛大学公开课沉浸式学术英语听说与词汇预习研学系统
 
-[![Version](https://img.shields.io/badge/Version-1.1.0-rose.svg)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/Version-1.1.1-rose.svg)](CHANGELOG.md)
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-emerald.svg)](https://opensource.org/licenses/MIT)
 [![OpenAPI 3.0](https://img.shields.io/badge/OpenAPI-3.0.3-brightgreen.svg)](https://vocab.samuraiguan.cloud/docs)
 [![Production Live](https://img.shields.io/badge/Production-Live-rose.svg)](https://vocab.samuraiguan.cloud)
 [![AI Engine](https://img.shields.io/badge/AI%20Engine-OpenAI--compatible%20gateway-blueviolet.svg)](tools/quality_pipeline/config.py)
 
-> **当前版本：v1.1.0**（来源解析可插拔 + 本地 ASR 兜底，详见 [CHANGELOG.md](CHANGELOG.md)）  
+> **当前版本：v1.1.1**（B 站/YouTube 下载已实测打通，详见 [CHANGELOG.md](CHANGELOG.md)）  
 > 线上服务：<https://vocab.samuraiguan.cloud> · 版本号同时写在 `VERSION` 与 `/api/health` 的
 > `version` 字段里，可用 `curl -s .../api/health` 核对线上跑的是哪一版。
 
