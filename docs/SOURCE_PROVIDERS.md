@@ -49,8 +49,9 @@ providers/
   health.py     每个 (provider, host) 的实测成功率与耗时 → 决定链的顺序
   resolver.py   选链 → 合并各 provider 的部分结果 → 记录健康度 → 标注机器转写
   ytdlp_provider.py   YouTube / Bilibili / 任意 yt-dlp 支持的站点
+  bbdown.py           B 站专用下载器（**自探针**：被风控时自动不参与，见下）
   youget.py           备用下载器（中文视频站）
-  bilibili_cc.py      B 站官方 CC/AI 字幕（被 412 挡时如实失败）
+  bilibili_cc.py      B 站官方接口：元数据 + CC/AI 字幕（走 WBI 端点，见下）
   direct_media.py     直链音视频
   direct_subtitle.py  SRT/VTT/DownSub 文本
   sciam.py            科学美国人播客 CDN + 文章正文
@@ -58,6 +59,43 @@ providers/
 ```
 
 `downloader.py` 保留原有公开函数并改为**委托**，所以 `server.py` 一行没改。
+
+### ★ B 站的 412 是「按接口」封的（2026-09-22 实测）
+
+这条是理解整件事的关键。**同一台机器**上：
+
+| 接口 | 结果 |
+| :--- | :--- |
+| `x/web-interface/view` | **HTTP 412**（风控）← BBDown 1.6.3 只用这个 |
+| `x/web-interface/wbi/view` | **HTTP 200**，完整 JSON ← yt-dlp 用这个 |
+| `x/web-interface/view/detail` | HTTP 412 |
+| `x/player/pagelist` | HTTP 200 |
+| `x/player/wbi/v2` | HTTP 200（需有效 cid） |
+
+裸 curl、带 UA+Referer、带 `buvid3` cookie —— 对 `x/web-interface/view` **全都是 412**；
+而 WBI 版本**什么都不用带**就返回 200。所以：
+
+- **yt-dlp 能用**是因为它走 WBI 路线（同机 B 站元数据 8/8 成功、下载到 10.7 MB 真实音频）；
+- **BBDown 不能用**是因为它只调被封的那个老接口，报错甚至写着"请尝试升级到最新版本"，
+  而 **1.6.3 已经是上游最新版（2024-08）**；
+- 我自己的 `bilibili_cc` 原先也用被封的那个接口（健康度一直 0/3），
+  **已改为 WBI 优先 + 老接口回退**。
+
+### BBDown：装了，但**自探针**让它自动不参与
+
+BBDown 在 WEB / TV / APP / INTL **四种模式下全部 412**，带 cookie 也一样。
+与其上线一个"永远失败"的 provider（会给每次 B 站解析加一次超时 + 一条失败健康记录），
+`bbdown.py` 会**自检**：
+
+```python
+def available(self):
+    # 24h 缓存一次探针：让 BBDown 解析一个固定视频
+    # 412 -> False -> 整个 provider 被排除出链，零成本零噪音
+```
+
+现状是「已安装、已接线、被排除」；**哪天 B 站放开那个接口、或上游出了新版、
+或配上登录 cookie，它会自动加入链，不需要改代码**。探针结果缓存在
+`out/bbdown_probe.json`（默认 24h TTL），不是每次请求都跑。
 
 ### 三个关键设计
 
@@ -133,9 +171,10 @@ class MyToolProvider(Provider):
 
 | 项 | 状态 | 说明 |
 | :--- | :--- | :--- |
+| **下载（B 站 / YouTube）** | ✅ **已实测打通** | `download_gate.py` 18/18：B 站 10.7 MB、YouTube 166 MB、直链 16.7 MB，全是真实媒体字节 |
 | B 站 **AI 字幕**（`--cookies`） | **未实测** | 需要登录 cookie。若可用，可省掉 ASR 开销（预期可行，未验证） |
-| `you-get` 在 B 站 | ❌ 0/3 | 本机实测失败（与 yt-dlp 失败原因不同，保留作备份仍有价值） |
-| `bilibili_cc` | ❌ 0/3 | 官方接口 412 风控；风控解除或带 cookie 时才会赢 |
-| `BBDown` | 未接入 | B 站专用（AI 字幕 + 大会员画质），作为 P3 备份 |
+| `BBDown` | ⚠️ 已装、已接线、**被自探针排除** | 见上文：它只调被封的 `x/web-interface/view`；四种 API 模式全 412 |
+| `bilibili_cc` | ✅ **已修好** | 改用 WBI 端点后能返回平台元数据；有 CC 的视频还能直接拿平台字幕 |
+| `you-get` 在 B 站 | ❌ 0/3 | 本机实测失败（失败原因与 yt-dlp 不同，保留作备份仍有价值） |
 | ASR 语言 | 仅 `en` | 讲座是英文；中文/多语需扩参数 |
 | ASR 质量门禁 | 已兼容 | S1 断句重建本来就是为 ASR 噪声设计的，ASR 产物走同一套门禁 |

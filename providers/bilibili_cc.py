@@ -1,28 +1,45 @@
 # -*- coding: utf-8 -*-
-"""bilibili_cc - the platform's own subtitle track, via the official API.
+"""bilibili_cc - the platform's own metadata + subtitle track, via the official API.
 
-Kept as a separate provider (rather than folded into the yt-dlp one) because it
-fails independently: measured from the production host, `x/web-interface/view`
-answers **HTTP 412 (risk control)** for every request, so this provider usually
-loses to yt-dlp. It stays in the chain because
+Endpoint choice is not cosmetic here. Measured from the production host:
+
+    x/web-interface/view         -> HTTP 412 (risk control)   <- the classic one
+    x/web-interface/wbi/view     -> HTTP 200, full JSON
+    x/web-interface/view/detail  -> HTTP 412
+    x/player/pagelist            -> HTTP 200
+
+The block is **per endpoint**, not per IP and not per header: the WBI variant of the
+same call answers normally with nothing but a UA and a Referer. This provider
+originally used the blocked endpoint, so it failed every time (0/3 in the health
+store) while yt-dlp succeeded on the same host - yt-dlp simply uses the WBI route.
+It now tries WBI first and falls back to the classic path, and it declares
+CAP_METADATA so it can serve as a real metadata backup too.
+
+It stays in the chain because
   * it is the only route to Bilibili's **AI subtitles**, which need a logged-in
     cookie (`policy.cookies_file`), and
-  * when the risk control lifts, it is cheaper than transcribing audio.
+  * when the video has CC, platform subtitles beat a machine transcript.
 """
 import json
 import os
 import re
 import urllib.request
 
-from providers.base import CAP_SUBTITLES, Provider
+from providers.base import CAP_METADATA, CAP_SUBTITLES, Provider
 
 USER_AGENT = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
               "(KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36")
 
+# WBI first: the classic endpoint is the one this host is blocked on.
+API_ENDPOINTS = (
+    "https://api.bilibili.com/x/web-interface/wbi/view?bvid=%s",
+    "https://api.bilibili.com/x/web-interface/view?bvid=%s",
+)
+
 
 class BilibiliCCProvider(Provider):
     name = "bilibili_cc"
-    capabilities = (CAP_SUBTITLES,)
+    capabilities = (CAP_METADATA, CAP_SUBTITLES)
     priority = 40
 
     def can_handle(self, url):
@@ -41,26 +58,47 @@ class BilibiliCCProvider(Provider):
             headers["Cookie"] = _cookie_header(cookies)
         else:
             headers["Cookie"] = "buvid3=F8B7B618-6A47-19B4-0994-39908FEE998188198infoc;"
-        api = "https://api.bilibili.com/x/web-interface/view?bvid=%s" % bvid
-        try:
-            req = urllib.request.Request(api, headers=headers)
-            with urllib.request.urlopen(req, timeout=12) as resp:
-                body = resp.read()
-            if not body.lstrip().startswith(b"{"):
-                return {"success": False,
-                        "error": "B 站接口返回非 JSON（HTTP %s，通常是 412 风控）"
-                                 % getattr(resp, "status", "?")}
-            data = json.loads(body.decode("utf-8"))
-        except Exception as exc:  # noqa: BLE001
-            return {"success": False, "error": "B 站接口不可用: %s" % type(exc).__name__}
-        if data.get("code") != 0:
-            return {"success": False,
-                    "error": "B 站接口返回 code=%s %s"
-                             % (data.get("code"), data.get("message"))}
-        info = data.get("data", {})
+        info, errors = None, []
+        for template in API_ENDPOINTS:
+            endpoint = template.split("?")[0].rsplit("/", 1)[-1]
+            try:
+                req = urllib.request.Request(template % bvid, headers=headers)
+                with urllib.request.urlopen(req, timeout=15) as resp:
+                    status = getattr(resp, "status", 200)
+                    body = resp.read()
+            except Exception as exc:  # noqa: BLE001
+                errors.append("%s -> %s" % (endpoint, type(exc).__name__))
+                continue
+            if status != 200 or not body.lstrip().startswith(b"{"):
+                errors.append("%s -> HTTP %s (risk control)" % (endpoint, status))
+                continue
+            try:
+                data = json.loads(body.decode("utf-8"))
+            except ValueError:
+                errors.append("%s -> not JSON" % endpoint)
+                continue
+            if data.get("code") != 0:
+                errors.append("%s -> code=%s %s" % (endpoint, data.get("code"),
+                                                    data.get("message")))
+                continue
+            info = data.get("data", {})
+            break
+        if not info:
+            return {"success": False, "error": "B 站接口均不可用: %s" % "; ".join(errors)}
+
+        seconds = info.get("duration") or 0
+        result = {
+            "success": True,
+            "title": (info.get("title") or "").strip(),
+            "author": (info.get("owner") or {}).get("name", ""),
+            "cover": info.get("pic", ""),
+            "duration": ("%d 分钟" % (seconds // 60)) if seconds else "",
+            "metadata_source": "bilibili_cc",
+            **self.no_text(),
+        }
         subs = (info.get("subtitle") or {}).get("subtitles") or []
         if not subs:
-            return {"success": False, "error": "该视频没有平台字幕（CC/AI 字幕均无）"}
+            return result
         chosen = None
         for s in subs:
             if "en" in s.get("lan", "") or "英" in s.get("lan_doc", ""):
@@ -69,17 +107,14 @@ class BilibiliCCProvider(Provider):
         chosen = chosen or subs[0]
         text = downloader.parse_bilibili_subtitles(chosen.get("subtitle_url", ""))
         if not text:
-            return {"success": False, "error": "字幕地址为空或解析失败"}
-        return {
-            "success": True,
-            "title": (info.get("title") or "").strip(),
-            "author": (info.get("owner") or {}).get("name", ""),
-            "cover": info.get("pic", ""),
+            return result
+        result.update({
             "transcript": text,
             "has_subtitles": True,
             "transcript_source": "bilibili_cc",
             "is_machine_transcript": False,
-        }
+        })
+        return result
 
 
 def _cookie_header(path):

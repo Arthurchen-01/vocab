@@ -6,6 +6,67 @@
 
 ---
 
+## [1.2.0] - 2026-09-22
+
+> 版本跨度：`v1.1.1` → `v1.2.0`（1 个提交）
+> 基线提交：`7062340`（v1.1.1）→ 本次发布提交
+> 代码量：**5 个文件，+133 / −40 行**（含 1 个新增 provider）
+
+### 上一版（v1.1.1）的状态 —— 改之前是什么样
+
+| 文件 / 目录 | v1.1.1 时的状态 |
+| :--- | :--- |
+| `providers/bilibili_cc.py` | 调用 `api.bilibili.com/x/web-interface/view` —— 该接口对本机返回 **HTTP 412**，所以它**每次都失败**（健康度 0/3）。更糟的是失败时**整条结果作废**：连已经拿到的元数据也不返回 |
+| BBDown | 未接入（用户要求加的"B 站专用下载备份"） |
+| 对 412 的理解 | 只知道"官方 API 被风控"，**没有分清是哪个接口** —— 因此误以为"整个 B 站 API 都不通" |
+
+### ★ 本轮查明的根因：412 是「按接口」封的
+
+**同一台机器**上逐接口实测：
+
+| 接口 | 结果 |
+| :--- | :--- |
+| `x/web-interface/view` | **HTTP 412** ← BBDown 1.6.3 只用这个 |
+| `x/web-interface/wbi/view` | **HTTP 200**，完整 JSON ← yt-dlp 用这个 |
+| `x/web-interface/view/detail` | HTTP 412 |
+| `x/player/pagelist` | HTTP 200 |
+| `x/player/wbi/v2` | HTTP 200（需有效 cid） |
+
+裸 curl、带 UA+Referer、带 `buvid3` cookie —— 对前者**全都是 412**；WBI 版本**什么都不用带**就 200。
+这同时解释了三件事：yt-dlp 同机为什么能下载、BBDown 为什么四种 API 模式全 412
+（它报错写着"请尝试升级到最新版本"，而 **1.6.3 已是上游最新版 2024-08**）、
+以及我自己的 `bilibili_cc` 为什么一直 0/3。
+
+### 本次改动的文件 —— 改了什么
+
+| 文件 | 类型 | 改动行数 | 改了什么 |
+| :--- | :--- | ---: | :--- |
+| `providers/bilibili_cc.py` | 改 | +68 / −33 | **改用 WBI 端点**（WBI 优先 + 老接口回退，并记录每个接口的失败原因）；声明 `CAP_METADATA`，可作为元数据备份；没有字幕时返回**真实元数据**（部分成功）而不是整条失败 |
+| `providers/bbdown.py` | **新** | +15（净） | BBDown provider（B 站专用下载备份），带 **24h 缓存的自我探针**：探不通就把自己排除出链，零成本零噪音；接口放开/上游更新/配上 cookie 时自动加入，不需改代码 |
+| `providers/base.py` | 改 | +7 / −3 | 注册 `bbdown`；跳过原因表述改为"依赖缺失**或自探针失败**" |
+| `tools/quality_pipeline/provider_matrix_gate.py` | 改 | +15 | 新增 **WBI 端点回归检查**（防止有人改回被封的那个接口）；记录 bbdown 被自探针排除的原因 |
+| `docs/SOURCE_PROVIDERS.md` | 改 | +43 / −4 | 接口级 412 实测表、BBDown 现状与自探针设计、待办更新 |
+
+### Added
+
+- `providers/bbdown.py`：BBDown（nilaoda/BBDown 1.6.3，自包含二进制，无需 .NET 运行时）作为 B 站专用下载备份，带自探针
+
+### Fixed
+
+- `bilibili_cc` 改用 WBI 端点后**从 0/3 变为可用**（实测 `ok(0.13s)`，此前 `no(0.57s)` 撞 412）
+- `bilibili_cc` 不再因为"没有字幕"而丢弃已经拿到的元数据
+
+### Verified（生产机实测）
+
+| 验收项 | 结果 |
+| :--- | :--- |
+| `provider_matrix_gate` | **26 passed / 0 failed**（含新的 WBI 回归检查） |
+| `download_gate` | **18 passed / 0 failed**（B 站 10.7 MB / YouTube 166 MB / 直链 16.7 MB 真实媒体） |
+| BBDown 四种模式（WEB/TV/APP/INTL） | 均 HTTP 412 → 自探针正确地将其排除出链 |
+| `bilibili_cc` 走 WBI 后 | `bilibili_cc:ok(0.13s)`（此前 `no(0.57s)`） |
+
+---
+
 ## [1.1.1] - 2026-09-22
 
 > 版本跨度：`v1.1.0` → `v1.1.1`（1 个提交）

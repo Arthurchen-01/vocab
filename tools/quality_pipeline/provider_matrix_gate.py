@@ -75,6 +75,13 @@ def main():
                      "bilibili_cc", "whisper_asr", "you-get"):
         rep.check("provider available: %s" % required, required in names,
                   "missing" if required not in names else "ok")
+    # BBDown is installed on this host but excluded by its own probe, because
+    # Bilibili answers 412 to the endpoint it calls. Recorded, not failed: the
+    # probe is exactly what keeps a broken tool out of the chain.
+    if "bbdown" not in names:
+        rep.note("bbdown installed but excluded by its self-probe "
+                 "(Bilibili blocks x/web-interface/view with HTTP 412 here; "
+                 "the WBI variant works, which is what yt-dlp uses)")
 
     # 1. YouTube: real subtitles, and ASR must not be needed.
     t0 = time.time()
@@ -113,6 +120,14 @@ def main():
                  % (stats.get("segments"), stats.get("words"), stats.get("seconds") or 0,
                     stats.get("realtime_factor") or 0))
         log("    Bilibili in %.1fs -> %s", time.time() - t0, trail_summary(trail))
+
+        # Regression guard for the endpoint fix: the official API is blocked per
+        # endpoint, so this provider must use the WBI variant (which answers 200)
+        # rather than the classic one (which answers 412 here).
+        cc = next((t for t in trail if t["provider"] == "bilibili_cc"), None)
+        rep.check("bilibili_cc: platform metadata resolves (WBI endpoint, not the 412 one)",
+                  bool(cc and cc["ok"]),
+                  trail_summary([cc]) if cc else "provider not in the chain")
 
         # 3. policy: ASR disabled must refuse, not fabricate.
         res2, trail2 = resolve(BILIBILI, need=(CAP_METADATA, CAP_MEDIA, CAP_SUBTITLES),

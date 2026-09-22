@@ -66,13 +66,14 @@ def load_registry(verbose=False):
     health and priority. An import error or a missing dependency drops just that
     provider.
     """
-    from providers import (bilibili_cc, direct_media, direct_subtitle, sciam,
-                           whisper_asr, ytdlp_provider, youget)
+    from providers import (bbdown, bilibili_cc, direct_media, direct_subtitle,
+                           sciam, whisper_asr, ytdlp_provider, youget)
     classes = [
         sciam.SciAmProvider,
         direct_subtitle.DirectSubtitleProvider,
         direct_media.DirectMediaProvider,
         ytdlp_provider.YtDlpProvider,
+        bbdown.BBDownProvider,
         youget.YouGetProvider,
         bilibili_cc.BilibiliCCProvider,
         whisper_asr.WhisperASRProvider,
@@ -92,5 +93,8 @@ def load_registry(verbose=False):
         if ready:
             out.append(p)
         elif verbose:
-            print("[providers] %s skipped: dependency missing" % p.name)
+            # `available()` is also how a provider declares "the tool is installed
+            # but cannot currently work" - BBDown probes itself for exactly that.
+            print("[providers] %s skipped (dependency missing or self-probe failed)"
+                  % p.name)
     return out
