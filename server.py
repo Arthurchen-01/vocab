@@ -1762,26 +1762,32 @@ class RequestHandler(http.server.SimpleHTTPRequestHandler):
             # Determine Content-Type
             content_type = "audio/mpeg" if (safe_filename.endswith(".mp3") or media_type == "audio") else "video/mp4"
 
-            # Check if upstream is YouTube
-            is_youtube = ("youtube.com" in raw_url or "youtu.be" in raw_url or platform == "youtube")
-
-            # If YouTube, try to resolve via yt-dlp direct stream or piping
-            if is_youtube:
+            # Resolve a page URL into a real media stream before proxying it.
+            #
+            # This used to run only for YouTube, so a Bilibili link was proxied as
+            # its HTML watch page instead of audio - the download produced a web
+            # page. yt-dlp resolves both (and any other supported site), so it is
+            # attempted for every platform except `direct`, where the URL already
+            # points at a media file.
+            if platform != "direct":
                 import shutil
                 import subprocess
                 ytdlp_bin = shutil.which("yt-dlp") or ("/usr/local/bin/yt-dlp" if os.path.exists("/usr/local/bin/yt-dlp") else None)
                 if ytdlp_bin:
                     try:
-                        # Extract direct stream URL using yt-dlp -g
-                        cmd = [
-                            ytdlp_bin, "-g",
-                            "-f", "bestaudio[ext=m4a]/bestaudio/best" if media_type == "audio" else "best[ext=mp4]/best",
-                            "--extractor-args", "youtube:player_client=android,ios,web",
-                            raw_url
-                        ]
-                        proc = subprocess.run(cmd, capture_output=True, text=True, timeout=15)
+                        fmt = ("bestaudio[ext=m4a]/bestaudio/best" if media_type == "audio"
+                               else "best[ext=mp4]/best")
+                        cmd = [ytdlp_bin, "-g", "-f", fmt]
+                        if "youtube.com" in raw_url or "youtu.be" in raw_url:
+                            cmd += ["--extractor-args", "youtube:player_client=android,ios,web"]
+                        cmd.append(raw_url)
+                        # 15s was too tight for Bilibili (measured ~7s, with spikes).
+                        proc = subprocess.run(cmd, capture_output=True, text=True, timeout=60)
                         if proc.returncode == 0 and proc.stdout.strip():
                             raw_url = proc.stdout.strip().split("\n")[0]
+                        else:
+                            print(f"[WARN] yt-dlp -g gave no stream for {raw_url[:60]}: "
+                                  f"{(proc.stderr or '').strip()[-160:]}")
                     except Exception as yt_err:
                         print(f"[WARN] yt-dlp -g resolution: {yt_err}")
 
@@ -1803,7 +1809,11 @@ class RequestHandler(http.server.SimpleHTTPRequestHandler):
                 status_code = resp.status if hasattr(resp, 'status') else 200
                 self.send_response(status_code)
                 self.send_header("Content-Type", content_type)
-                self.send_header("Content-Disposition", f'attachment; filename="{safe_filename}"')
+                # Must be ASCII-safe: a Chinese filename in this header raises
+                # UnicodeEncodeError inside http.server, which is exactly the bug
+                # the export path had ("导出合集是 nothing"). build_content_disposition
+                # emits an ASCII fallback plus an RFC 5987 filename*.
+                self.send_header("Content-Disposition", build_content_disposition(safe_filename))
                 self.send_header("Accept-Ranges", "bytes")
                 self.send_header("Access-Control-Allow-Origin", "*")
                 

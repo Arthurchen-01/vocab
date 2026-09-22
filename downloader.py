@@ -306,7 +306,7 @@ def fetch_scientific_american_info(url):
         # `demo_transcript` is sample text and is deliberately NOT used here.
 
     safe_name = re.sub(r'[^a-zA-Z0-9_-]', '_', title).strip('_')[:40]
-    stream_download_url = f"/api/media/stream-download?url={urllib.parse.quote(direct_mp3)}&filename={safe_name}.mp3&media_type=audio&platform=sciam"
+    stream_download_url = media_proxy_url(direct_mp3, safe_name + ".mp3", "audio", "sciam")
 
     return {
         "platform": "scientific_american",
@@ -405,10 +405,7 @@ def fetch_bilibili_video_info(url_or_bvid):
 
     safe_title = re.sub(r"[^a-zA-Z0-9_\u4e00-\u9fa5-]", "_",
                         title or bvid).strip("_")[:40]
-    stream_download_url = (
-        "/api/media/stream-download?url=%s&filename=%s.mp3"
-        "&media_type=audio&platform=bilibili"
-        % (urllib.parse.quote(target), safe_title))
+    stream_download_url = media_proxy_url(target, safe_title + ".mp3", "audio", "bilibili")
 
     return {
         "platform": "bilibili",
@@ -583,7 +580,7 @@ def fetch_youtube_video_info(url):
     # Fetch the real subtitle track instead of shipping a canned paragraph.
     transcript, transcript_source = fetch_youtube_transcript(vid)
     safe_title = re.sub(r'[^a-zA-Z0-9_-]', '_', title).strip('_')[:40]
-    stream_download_url = f"/api/media/stream-download?url={urllib.parse.quote(yt_full_url)}&filename={safe_title}.mp3&media_type=audio&platform=youtube"
+    stream_download_url = media_proxy_url(yt_full_url, safe_title + ".mp3", "audio", "youtube")
 
     return {
         "platform": "youtube",
@@ -612,7 +609,7 @@ def fetch_direct_media_info(url):
     is_video = any(clean_url.lower().endswith(ext) for ext in [".mp4", ".mkv", ".webm", ".mov"])
     media_type = "video" if is_video else "audio"
 
-    stream_download_url = f"/api/media/stream-download?url={urllib.parse.quote(clean_url)}&filename={filename}&media_type={media_type}&platform=direct"
+    stream_download_url = media_proxy_url(clean_url, filename, media_type, "direct")
 
     # A bare media URL carries no text at all; say so rather than inventing one.
     return {
@@ -649,6 +646,21 @@ def fetch_direct_subtitles(url):
     except Exception as e:
         print(f"[WARN] Direct subtitle fetch error: {e}")
         return ""
+
+def media_proxy_url(source_url, filename, media_type="audio", platform="generic"):
+    """Build the app's media-proxy URL.
+
+    Every component is percent-encoded, and that matters: a Bilibili title contains
+    Chinese, so a raw `filename=` value left the URL non-ASCII and any client that
+    does not silently encode it fails outright - `urllib` raises
+    `UnicodeEncodeError: 'ascii' codec can't encode characters`. Browsers hide this,
+    which is why it survived until a strict client tried to download.
+    """
+    quote = urllib.parse.quote
+    return ("/api/media/stream-download?url=%s&filename=%s&media_type=%s&platform=%s"
+            % (quote(source_url or "", safe=""), quote(filename or "media", safe=""),
+               quote(media_type or "audio", safe=""), quote(platform or "generic", safe="")))
+
 
 def auto_fetch_subtitles_and_meta(url, need=None, policy=None):
     """Unified single-URL dispatcher - a thin delegate to the provider chain.
@@ -714,7 +726,8 @@ def batch_resolve_media(raw_urls_input, mode="media", media_type="audio", auto_e
                     for ep in col["episodes"]:
                         ep_title = ep.get("title", "公开课分集")
                         safe_title = re.sub(r'[^a-zA-Z0-9_\u4e00-\u9fa5-]', '_', ep_title).strip('_')[:40]
-                        stream_download_url = f"/api/media/stream-download?url={urllib.parse.quote(ep['url'])}&filename={safe_title}.mp3&media_type={media_type}&platform=bilibili"
+                        stream_download_url = media_proxy_url(ep['url'], safe_title + ".mp3",
+                                                              media_type, "bilibili")
                         
                         results.append({
                             "index": item_counter,

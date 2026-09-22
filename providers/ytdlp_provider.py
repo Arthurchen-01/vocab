@@ -19,10 +19,16 @@ from providers.base import CAP_MEDIA, CAP_METADATA, CAP_SUBTITLES, Provider
 
 
 def _stream_proxy(url, title, media_type="audio", platform="generic"):
+    """Media-proxy URL via downloader's helper, so the filename is percent-encoded.
+
+    Building it by hand left a Chinese title raw in the query string, and a strict
+    client then failed with UnicodeEncodeError (browsers silently encode it, which
+    is why it went unnoticed).
+    """
+    import downloader
     safe = re.sub(r"[^a-zA-Z0-9_\u4e00-\u9fa5-]", "_", title or "media").strip("_")[:40]
     ext = "mp4" if media_type == "video" else "mp3"
-    return ("/api/media/stream-download?url=%s&filename=%s.%s&media_type=%s&platform=%s"
-            % (urllib.parse.quote(url), safe, ext, media_type, platform))
+    return downloader.media_proxy_url(url, "%s.%s" % (safe, ext), media_type, platform)
 
 
 class YtDlpProvider(Provider):

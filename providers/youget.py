@@ -74,9 +74,8 @@ class YouGetProvider(Provider):
         if not best:
             best = first_url(data.get("src"))
         safe = re.sub(r"[^a-zA-Z0-9_\u4e00-\u9fa5-]", "_", title or "media")[:40]
-        download_url = ("/api/media/stream-download?url=%s&filename=%s.mp4"
-                        "&media_type=video&platform=youget"
-                        % (urllib.parse.quote(url), safe))
+        import downloader
+        download_url = downloader.media_proxy_url(url, safe + ".mp4", "video", "youget")
         return {
             "success": bool(title),
             "platform": "youget",
